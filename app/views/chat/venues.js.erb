@@ -1,0 +1,54 @@
+<% @venues.each do |v| %>
+    var v = $("<%= escape_javascript(render :partial => 'chat/venue', :locals => {:v => v}) %>");
+    $('#list').append(v);
+    v.click(function(e) {
+	$.ajax({url:'/chat/'+$(this).attr('data-id')});
+    }); 
+<% end %>
+
+var timeouts = [];
+var bounds = [];
+
+setTimeout(function() {
+    $('.restaurant').click(function() {
+	if(typeof p === 'undefined') return;
+	
+	map.removePolylines();
+	clearTimeouts();
+	bounds = [];
+
+	var lat = JSON.parse($(this).attr('data-lat'));
+	var lon = JSON.parse($(this).attr('data-lon'));
+	map.travelRoute({
+	    origin: [p.coords.latitude, p.coords.longitude],
+	    destination: [lon, lat],
+	    travelMode: 'driving',
+	    step: function(e) {
+		map.setCenter(p.coords.latitude, p.coords.longitude);
+		bounds.push(e.end_location);
+		var t = setTimeout(function() {
+		    map.drawPolyline({
+			path: e.path,
+			strokeColor: '#131540',
+			strokeOpacity: 0.6,
+			strokeWeight: 6
+		    });
+		    map.setCenter(e.end_location.lat(), e.end_location.lng());
+		}, 1000 * (e.step_number+1));
+		timeouts.push(t);
+	    }
+	});
+	map.setZoom(15);
+    });
+}, 0);
+
+function clearTimeouts() {
+    var len = timeouts.length
+    for (var i=0; i<len; ++i) {
+	if (i in timeouts) {
+	    //not exact item, but same length, so we're golden
+	    var s = timeouts.pop();
+	    clearTimeout(s);
+	}
+    }
+}

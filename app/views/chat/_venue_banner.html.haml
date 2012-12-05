@@ -1,0 +1,10 @@
+.venue_banner
+  .price= "$"*@v.price
+  .phone= @v.phone
+  = image_tag @v.image.thumb('75x75#').url
+  #info
+    %h1= @v.name
+    %span.address= @v.full_address
+    .time= "Today: #{@v.open_at}"
+  %p= @v.description
+  .bigButton.ns Vote For This Venue

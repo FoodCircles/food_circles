@@ -1,0 +1,33 @@
+var o;
+
+//verify latter sections are gone
+$('#profile').remove();
+$('#charities').remove();
+$('#confirm').remove();
+
+$('#holder').append("<%= escape_javascript(render :partial => 'venue_profile', :locals => {:v => @v}) %>");
+
+setTimeout(function() {
+    //$('#profile').ScrollTo({duration: 0}).animate({opacity: 1},1000);
+    $('#holder').get(0).scrollTop = $('#holder').get(0).scrollHeight;
+    $('#profile').ScrollTo({duration: 1000}).animate({opacity: 1},1000);
+    $('tr').click(function() {
+    	$('input:radio').prop('checked', false);
+	$(this).find('input:radio').prop('checked', true);
+        $('.bigButton').attr('data-active', 'true');
+    });
+    $('.bigButton').click(function() {
+	if ($('input:radio:checked').length == 0) {
+	    alert('Please select a perk.');
+	} else {
+	    o = $('input:radio:checked').attr('data-id');
+	    $.ajax({url:'/getCharities'});
+	}
+        $(this).attr('data-active', 'false');
+    });
+    if (typeof o !== 'undefined') {
+        $('input:radio[data-id="'+o+'"]').prop('checked', true);
+	$.ajax({url:'/getCharities'});
+	$('.bigButton').attr('data-active', 'false');
+    }
+},0);

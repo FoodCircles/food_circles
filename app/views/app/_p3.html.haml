@@ -1,0 +1,61 @@
+#confirm
+  %p Great! Review the details below and if it looks correct, hit submit. We'll send you a text message to your phone to confirm.
+  %p When you're en route to the restaurant, text back your final group size (ex: "6") and we will alert the staff. Less confused servers this way, though this cannot be guaranteed. :)
+  %hr
+  = image_tag @v.image.thumb('75x75#').url
+  #info
+    %h1= @v.name
+    %span.address= @address
+  .clear
+  %b Reward selected:
+  .tag= @o.name
+  %b with a group size of at least
+  .tag= @o.min_diners
+  %img#venue_map{:src => "http://maps.google.com/maps/api/staticmap?zoom=14&size=700x170&maptype=roadmap&markers=color:red|#{@address}&sensor=false"}
+  %b Charity:
+  .tag= link_to @c.name, @c.web
+  %hr
+  #tabs
+    .tab{:data => {:active => 'true'}} Sign Up
+    .tab Sign In
+    .clear
+    #tabContent
+      #signup
+        %table
+          %tr
+            %td Name
+            %td
+              %input{:type => 'text', :id => 'siname'}
+          %tr
+            %td Email
+            %td
+              %input{:type => 'text', :id => 'siemail'}
+          %tr
+            %td Password
+            %td
+              %input{:type => 'password', :id => 'sipass'}
+          %tr
+            %td Phone
+            %td
+              %input{:type => 'text', :id => 'siphone'}
+          %tr
+            %td Occasion (optional)
+            %td
+              %input{:type => 'text', :id => 'siocc'}
+
+        #b1.bigButton Sign Up and Eat Out!
+      #signin
+        %table
+          %tr
+            %td Email
+            %td
+              %input{:type => 'text', :id => 'suemail'}
+          %tr
+            %td Password
+            %td
+              %input{:type => 'password', :id => 'supass'}
+          %tr
+            %td Occasion (optional)
+            %td
+              %input{:type => 'text', :id => 'suocc'}
+        #b2.bigButton Sign In and Eat Out!

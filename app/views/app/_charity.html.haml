@@ -1,0 +1,12 @@
+- if plain
+  .charity.charity_plain{:data => {:id => "#{c.id}"}}
+    = image_tag c.image.thumb('50x50#').url
+    %div
+      %h4= c.name
+      = link_to c.web, c.web, :target => '_blank'
+- else
+  .charity{:data => {:id => "#{c.id}"}}
+    = image_tag c.image.thumb('50x50#').url
+    %div
+      %h4= c.name
+      = link_to c.web, c.web, :target => '_blank'

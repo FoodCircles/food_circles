@@ -1,0 +1,13 @@
+= render :partial => 'partials/header'
+#ec
+%table#schedule
+  %tr
+    %td
+    - 7.times do |i|
+      %td
+        = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][i]
+  - 48.times do |i|
+    %tr
+      %td= "#{(Date.today.beginning_of_day + (30*i).minutes).strftime("%I:%M %p").downcase}" if i.even?
+      - 7.times do
+        %td

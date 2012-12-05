@@ -1,0 +1,10 @@
+%li
+  %span.logo= image_tag(v.circle_image.thumb('110x').url, :alt => "") if v.circle_image
+  - if v.offers.first.name.length > 30
+    %p.long_not
+      %strong= v.name
+      %span.current= v.offers.first.name
+  - else
+    %p.not
+      %strong= v.name
+      %span.current= v.offers.first.name

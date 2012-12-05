@@ -1,0 +1,261 @@
+@import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+/* reset */
+html {margin:0;padding:0;border:0;}
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+article, aside, dialog, figure, footer, header, hgroup, nav, section {display:block;}
+body {line-height:1.5;background:#fff;color:#4e4e4e;font-family:'Rokkitt',serif;font-size:16px}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+table, th, td {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:'';}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+:focus {outline:0;}
+
+/*
+ * Base
+ */ 
+
+input[type=email], input[type=password], input[type=text] {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+input[type=submit] {
+    padding: 5px 10px;
+}
+.wrapper {
+    margin: 0 auto;
+    max-width: 980px;
+    position: relative;
+}
+
+a:link,
+a:visited,
+a:active {
+    color: #4e4e4e;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+strong {
+    color: #333;
+    font-weight: normal;
+    font-size: 1.1em;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    margin: 0;
+}
+
+#footer > h6 {
+    color: #fff;
+}
+
+h1 { font-size: 46px; font-weight: 700; text-transform: uppercase; }
+h2 { font-size: 42px; font-weight: 700; text-transform: uppercase; }
+h3 { font-size: 36px; font-weight: 700; text-transform: uppercase; }
+h4 { font-size: 32px; }
+h5 { font-size: 24px; }
+h6 {
+    text-shadow: 0px 1px 0px #000;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 980px;
+    position: relative;
+}
+
+/*
+ * Header
+ */
+
+#header {
+    background: #8f3e3e;
+    border-bottom: 3px solid #4d1818;
+    height: 128px;
+}
+
+#header a {
+    color: #fff;
+}
+
+#logo {
+    background: transparent url(home/sprites_header.png) 0 0 no-repeat;
+    height: 181px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -999px;
+    top: 0;
+    width: 202px;
+}
+
+#slogan {
+    background: transparent url(home/sprites_header.png) -202px 0 no-repeat;
+    color: #fff;
+    font-size: 18px;
+    height: 33px;
+    left: 235px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -999px;
+    top: 85px;
+    width: 428px; 
+}
+
+#social {
+    left: 235px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 16px;
+    li {
+	float: left;
+	margin-right: 10px;
+    }
+    a {
+	background: transparent url(home/sprites_header.png) no-repeat;
+	display: block;
+	height: 26px;
+	overflow: hidden;
+	text-indent: -999px;
+	width: 24px;
+    }
+    .blog {
+	background-position: -202px -33px;
+    }
+    .facebook {
+	background-position: -226px -33px;
+    }
+    .twitter {
+	background-position: -250px -33px;
+    }
+}
+
+#login {
+    position: absolute;
+    right: 0;
+    top: 16px;
+    input {
+	border: 0; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'Rokkitt', serif;
+	height: 29px;
+	line-height: 29px;
+	vertical-align: top;
+    }
+    .email,
+    .password {
+	background: #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: solid #4d1818;
+	border-width: 1px 0 0 1px;
+	padding: 0 8px;
+	width: 180px;
+    }
+    .login {
+	background: transparent url(home/sprites_header.png) -202px -59px no-repeat;
+	height: 29px;
+	overflow: hidden;
+	text-indent: -999px;
+	margin-top: 1px;
+	width: 92px;
+	&:hover {
+	    background-position: -202px -88px;
+	    cursor: pointer;
+	}
+    }
+    span {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+    }
+    .forgot {
+	padding-left: 190px;
+	width: 180px;
+    }
+    .signup a {
+	font-size: 14px;
+	font-weight: 700;
+    }
+}
+
+.welcome {
+    color: white;
+    font-family: 'Rokkitt',serif;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    text-align: right;
+    text-shadow: 0 2px 0 rgba(0,0,0,1);
+    top: 16px;
+    right: 0;
+}
+
+#basicContainer {
+    margin: 80px 0;
+
+}
+.tightWrapper {
+    margin: 0 auto;
+    max-width: 700px;
+    position: relative;
+}
+
+.donated {
+    background-image: url('home/circle.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+    font-size: 24px;
+    font-style: italic;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    width: 32px;
+    vertical-align: middle;
+}
+
+.ns {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -1,0 +1,7 @@
+%tr
+  %td
+    %input{:type => 'radio', :data => {:id => "#{o.id}"}}
+  %td
+    = pluralize o.min_diners, 'Diner'
+  %td
+    = o.name

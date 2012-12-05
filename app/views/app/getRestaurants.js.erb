@@ -1,0 +1,10 @@
+$('#holder').html("<%= escape_javascript(render :partial => 'p1') %>");
+setTimeout(function() {
+    $('.restaurant').click(function() {
+	$('.restaurant').attr('data-active', 'false');
+	$(this).attr('data-active', 'true');
+	var id = $(this).data('id');
+	var s = {'id':id};
+	$.ajax({url:'/getRestaurant',data:s});
+    });
+},0);

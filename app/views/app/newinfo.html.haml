@@ -1,0 +1,31 @@
+= render :partial => 'partials/header'
+#content
+  .sub_header Welcome Newcomer!
+  #to_come
+    %h2 Venue
+    %h5= "#{@o.name} for #{@o.min_diners} at"
+    = render :partial => 'app/venue_confirm'
+    %h2 Charity
+    %h5 1 Child Fed With
+    = render :partial => 'app/charity', :locals => {:c => @c, :plain => true}
+  %h3 We're almost done
+  %h5 Name
+  %input#name{:type => 'text', :placeholder => "What's your name?"}
+  %h5 Phone (optional)
+  %input#phone{:type => 'text', :placeholder => "(616) 555-5555"}
+  %br
+  #submit Submit
+:javascript
+  var o = "#{@o.id}";
+  var c = "#{@c.id}";
+  var email = "#{@email}";
+
+  $(function() {
+  $('#submit').click(function() {
+  if($('#name').val() === '') {
+  alert('Please input a name');
+  } else {
+  $.ajax({url:'/create_voucher',data:{'email':email,'name':$('#name').val(),'phone':$('#phone').val(),'offer':o,'charity':c}});
+  }
+  });
+  });

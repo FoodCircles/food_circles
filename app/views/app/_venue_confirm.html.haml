@@ -1,0 +1,5 @@
+.venue_banner
+  = image_tag @v.image.thumb('75x75#').url
+  #info
+    %h1= @v.name
+    %span.address= @v.full_address

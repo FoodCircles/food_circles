@@ -1,0 +1,36 @@
+#footer
+  .wrapper
+    .block.supported
+      %h6 Distribution Partners
+      %ul
+        %li
+          = image_tag "home/supported01.gif", :alt => ''
+          %a{:href => "http://www.worldvision.org/", :target => '_blank'} World vision
+        %li
+          = image_tag "home/supported02.gif", :alt => ''
+          %a{:href => "http://kidsfoodbasket.org/", :target => '_blank'} Kids food basket
+    .block.inthenews
+      %h6 In the news
+      %ul
+        %li= link_to image_tag('home/news1.png',:width => "26", :height => "26"), "http://www.mlive.com/business/west-michigan/index.ssf/2011/11/u-m_grads_new_online_business.html", :target => '_blank'
+        %li= link_to image_tag('home/news2.png', :width => "65", :height => "26"), "http://www.woodtv.com/dpp/news/local/kent_county/FoodCircles-uses-dining-out-to-feed-kids", :target => '_blank'
+        %li= link_to image_tag('home/news3.png', :width => "93", :height => "26"), "http://www.rapidgrowthmedia.com/dogood/01192012FoodCircle.aspx", :target => '_blank'
+        %li= link_to image_tag('home/news4.png', :width => "90", :height => "26"), "http://www.fox17online.com/videogallery/66763055/News/Gojo-Ethiopian-Cuisine-#1---12.14.11", :target => '_blank'
+      .links
+        %a{:href => "/cater"} Big Groups/Catering
+        |
+        %a{:href => ""} Jobs
+        |
+        %a.for-restaurants{:href => ""} For Restaurants
+        |
+        %a.not-in-rapids{:href => ""} Not in Grand Rapids?
+    .block.contactus
+      %h6 Contact us
+      %a.mail{:href => "mailto:support@foodcircles.net"} support@foodcircles.net
+      .links
+        %p © 2012 All Rights Reserved
+        %a{:href => "http://blog.foodcircles.net/about-us/"} About Us
+        |
+        %a{:href => "/pdf/PrivacyPolicy.pdf"} Privacy
+        |
+        %a{:href => "/pdf/Terms.pdf"} Terms

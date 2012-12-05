@@ -1,0 +1,8 @@
+.restaurant{:data => {:id => "#{v.id}", :lat => "#{v.latlon.lat}", :lon => "#{v.latlon.lon}"}}
+  = image_tag v.image.thumb('50x50#').url if v.image
+  %div
+    %h4= v.name
+    = "#{v.venue_tags.first.name} | #{v.neighborhood}" if v.venue_tags.any?
+    %br
+    %span= v.offers.first.name if v.offers.any?
+  

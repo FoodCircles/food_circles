@@ -1,0 +1,9 @@
+.closed.ns{:data => {:id => "#{v.id}", :content => "Available at: #{v.open_at}"}}
+  = image_tag v.image.thumb('50x50#').url if v.image
+  %div
+    %span= "$"*v.price
+    %h4= v.name
+    = "#{v.venue_tags.first.name} | #{v.neighborhood}" if v.venue_tags.any?
+    %br
+    %ul
+      %li up to #{v.offers.find_by_min_diners(6).name}

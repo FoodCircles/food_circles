@@ -1,0 +1,13 @@
+= render :partial => 'partials/header'
+#content
+  %h3 Your voucher
+  .vouch
+    %strong Confirmation code:
+    /= (@reservation.user.name ? "\"#{@reservation.user.name.titleize} for #{@reservation.offer.min_diners}\"" : r.coupon)
+    = @reservation.coupon
+  %h4 This entitles you to
+  %h6.black_me_up= "#{@reservation.offer.name} for #{@reservation.offer.min_diners} at"
+  = render :partial => 'app/venue_confirm'
+  %h4 Your donation of a meal will go to
+  = render :partial => 'app/charity', :locals => {:c => @reservation.charity, :plain => true}
+  %h2 Thank you!

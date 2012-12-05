@@ -1,0 +1,4 @@
+#charities
+  .sub_header Select a Charity
+  - @charities.each do |c|
+    = render :partial => 'charity', :locals => {:c => c, :plain => false}

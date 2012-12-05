@@ -1,0 +1,8 @@
+$('#profile').remove();
+var profile = $("<%= escape_javascript(render :partial => 'chat/venue_profile') %>");
+$('#container').append(profile);
+profile.find('.bigButton').click(function() {
+    $(this).html("You've voted!").attr('data-active', 'false');
+    socket.emit('vote', $('#profile').attr('data-id'));
+});
+socket.emit('considering', "<%= @v.name %>");

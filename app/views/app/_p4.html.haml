@@ -1,0 +1,25 @@
+#voucher
+  %h1 Great!
+  Your voucher code is
+  .tag= (current_user.name ? "#{current_user.name.capitalize}-for-#{@r.offer.min_diners}" : @r.coupon)
+  %p If you'd like, simply respond to the text message with your group size, and we'll call ahead for you (not a reservation, just a notification). Voucher expires today.
+  %hr
+  .restaurant
+    = image_tag @r.venue.image.thumb('75x75#').url
+    #info
+      %h1= @r.venue.name
+      %span.address= "#{@r.venue.address} | #{@r.venue.neighborhood}"
+      %br= @r.venue.phone
+    .clear
+    Reward selected:
+    .tag= @r.offer.name
+    with a group size of at least
+    .tag= @r.offer.min_diners
+    = @r.offer.details
+    %img#venue_map{:src => "http://maps.google.com/maps/api/staticmap?zoom=14&size=700x170&maptype=roadmap&markers=color:red|#{@r.venue.address}&sensor=false"}
+    Charity
+    .tag= link_to @r.charity.name, @r.charity.web
+    %br
+    #sharing
+      Share with others
+      %span#sharebtn.st_sharethis_large{:displayText => "Share This"}

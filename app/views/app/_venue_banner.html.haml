@@ -1,0 +1,22 @@
+.venue_banner
+  .price= "$"*@v.price
+  .phone= @v.phone
+  = image_tag @v.image.thumb('75x75#').url
+  #info
+    %h1= @v.name
+    %span.address= @v.full_address
+    .time= "Today: #{@v.open_at}"
+  %p= @v.description
+  %h2 Choose a Reward
+  - if @v.available? and @v.voucher != '0'
+    %table#rewards
+      - @v.offers.sort{|u,v|u.min_diners<=>v.min_diners}.each do |o|
+        = render :partial => 'app/offer', :locals => {:o => o}
+  - elsif !@v.available? and @v.voucher != '0'
+    %table#rewards.closed
+      - @v.offers.sort{|u,v|u.min_diners<=>v.min_diners}.each do |o|
+        = render :partial => 'app/offer', :locals => {:o => o}
+  - else
+    %table#rewards
+      No Reward is available
+  .bigButton{:data => {:active => 'false'}} Select this Perk and Continue >>

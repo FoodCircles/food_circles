@@ -1,0 +1,19 @@
+- avail = v.available?
+%li
+  - if avail
+    %span.logo= link_to image_tag(v.circle_image.thumb('110x').url, :alt => ""), venue_path(v) if v.circle_image
+  - else
+    %span.logo= image_tag(v.circle_image.thumb('110x').url, :alt => "")
+  %p
+    %strong= v.name
+    %span.time
+      %span= (v.available? ? "AVAILABLE NOW" : v.open_at)
+    - if v.voucher != '0'
+      = pluralize(v.voucher, "Voucher")
+      %br
+      %span.current= link_to v.offers.first.name, venue_path(v)
+    - elsif !avail and v.voucher != '0'
+      %span.current.strike= link_to v.offers.first.name, venue_path(v)
+
+    - else
+      No Voucher

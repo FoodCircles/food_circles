@@ -1,0 +1,16 @@
+#header
+  .wrapper
+    = link_to root_path do
+      %strong#logo FoodCircles
+    %em#slogan Feel good dinning.
+    - if current_user
+      = render :partial => 'partials/header_signed_in'
+    - else
+      = render :partial => 'partials/header_sign_in'
+    %ul#social
+      %li
+        %a.blog{:href => "http://blog.foodcircles.net"} Blog
+      %li
+        %a.facebook{:href => "http://facebook.com/foodcircles"} Facebook
+      %li
+        %a.twitter{:href => "https://twitter.com/#!/FoodCircles"} Twitter

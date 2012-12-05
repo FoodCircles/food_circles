@@ -1,0 +1,19 @@
+// Place all the styles related to the NewApp controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#time {
+    background-color: #333;
+    border: 3px solid #222;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.4);
+    color: #fff;
+    font-family: sans-serif;
+    margin: 100px auto 0;
+    padding: 30px 50px;
+    width: 700px;
+    span {
+	font-weight: bold;
+	text-shadow: 2px 2px 0 rgba(0,0,0,1);
+    }
+}

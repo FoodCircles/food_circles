@@ -1,0 +1,41 @@
+// Place all the styles related to the mobile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
+
+body {
+     background-color: #8F3E3E;
+     font-family: sans-serif;
+}
+
+h2 {
+    font-family: Rokkit, serif;
+    text-align: center;
+    font-size: 18px;
+}
+
+#container {
+    background-color: #FFFFFF;
+    border: 3px solid #4D1818;
+    padding: 10px;
+    text-align: center;
+    #logo {
+	width: 50%;
+    }
+    #phone {
+	width: 50%;
+    }
+    #dl {
+	margin-top: -4px;
+	width: 90%;
+    }
+}
+
+#footer {
+    padding: 5px;
+    text-align: right;
+    > a {
+	color: #fff;
+    }
+}

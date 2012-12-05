@@ -1,0 +1,11 @@
+$('#holder').html("<%= escape_javascript(render :partial => 'venues') %>");
+setTimeout(function() {
+    $('.restaurant').click(function() {
+	$('.restaurant').attr('data-active', 'false');
+	$(this).attr('data-active', 'true');
+	o = undefined;
+	$.ajax({url:'/getVenue',data:{'id':$(this).data('id')}});
+    });
+
+    if (typeof v !== 'undefined') $.ajax({url:'/getVenue',data:{'id':v}});
+},0);

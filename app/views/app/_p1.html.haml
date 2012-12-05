@@ -1,0 +1,6 @@
+#restaurants
+  - @v.each do |v|
+    = render :partial => 'venue', :locals => {:v => v}
+  - if @vc
+    - @vc.each do |v|
+      = render :partial => 'n_venue', :locals => {:v => v}

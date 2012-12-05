@@ -1,0 +1,12 @@
+%div.welcome
+  Welcome back,
+  - if current_user.name
+    = "#{current_user.name.capitalize}!"
+  - else
+    = "#{current_user.email}!"
+  %br
+    %span.donated= "#{current_user.reservations.where(:created_at => (Time.now.beginning_of_month..Time.now.end_of_month)).count}"
+    = "meals donated in #{Time.now.strftime('%B')}"
+  = link_to "Use App", app_path
+  |
+  = link_to "Logout", destroy_user_session_path, :method => :delete

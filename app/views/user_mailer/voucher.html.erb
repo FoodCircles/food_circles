@@ -1,0 +1,30 @@
+<html>
+  <head>
+    
+  </head>
+  <body>
+    Your voucher for your upcoming meal at <%= @r.venue.name.capitalize %>
+    <% if @r.user.name %>
+      Your check-in name at </strong><%= @r.venue.name.titleize %></strong> is:
+      <br /><br />
+      <strong><%= "#{@r.name.titleize}-for-#{@r.num_diners}" %></strong>
+    <% else %>
+      Your check-in coupon at <strong><%= @r.venue.name.titleize %></strong> is:
+      <br /><br />
+      <strong><%= @r.coupon %></strong>
+    <% end %>
+    <br /><br />
+    Show them the voucher on your phone or call ahead using the in-app system.
+    <br />
+    Since you used FoodCircles to feed a child in need, simply buy 1 main item per person to recieve <strong><%= @r.offer.name %></strong>.
+    <br /><br />
+    <%= @r.venue.name.titleize %>
+    <br />
+    <%= @r.venue.address %>
+    <br />
+    <%= @r.venue.phone %>
+    <br /><br />
+    FoodCircles team
+    <%= link_to "support@foodcircles.net", "mailto:support@foodcircles.net" %>
+  </body>
+</html>

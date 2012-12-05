@@ -1,0 +1,16 @@
+if($('#confirm').length > 0) $('#confirm').remove();
+$('#holder').append("<%= escape_javascript(render :partial => 'app/confirm') %>");
+
+setTimeout(function() {
+	$('#holder').get(0).scrollTop = $('#holder').get(0).scrollHeight;
+    $('#confirm').ScrollTo({duration: 1000}).animate({opacity:1},1000);
+
+    $('#submit').click(function() {
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	if (re.test($('#email').val())) {
+	    $.ajax({url:'/submit',data:{'offer':o,'charity':c,'email':$('#email').val()}});
+	} else {
+	    alert('Please input a valid email address.');
+	}
+    });
+}, 0);

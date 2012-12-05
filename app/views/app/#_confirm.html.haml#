@@ -1,0 +1,15 @@
+#confirm
+  .sub_header Confirm Your Order
+  .fifty.one
+    %h2 Venue
+    %h5= "#{@o.name} for #{@o.min_diners} at"
+    = render :partial => 'app/venue_confirm'
+  .fifty.two
+    %h2 Charity
+    %h5 1 Child Fed With
+    = render :partial => 'app/charity', :locals => {:c => @c, :plain => true}
+  %h2 Some Info
+  %h6 Email address
+  %input#email{:type => 'text', :placeholder => 'your@email.com'}
+  %br
+  #submit Confirm

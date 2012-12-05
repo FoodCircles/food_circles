@@ -1,0 +1,11 @@
+= form_for("user", :url => user_session_path, :html => {:id => :login}) do |f|
+  %div
+    = f.text_field :email, :placeholder => "Email Address...", :class => "email"
+    = f.password_field :password, :placeholder => "********", :class => "password"
+    = f.submit :value => "submit", :class => 'login'
+    %div
+      %span.forgot
+        = link_to "Forgot password?", new_user_password_path
+      %span.signup
+        Or
+        = link_to "Sign Up", new_user_registration_path

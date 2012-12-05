@@ -1,0 +1,78 @@
+#container
+  = render :partial => 'partials/header'
+  #main
+    .wrapper
+      %ul#intro
+        %li Get a free dish for a group of friends
+        %li Give a free meal to a child in need (178 fed so far)
+        %li See a table filled for a local restaurant
+      #app
+        #use
+          %a#web.redButton{:href => '/app'} VIEW RESTAURANTS
+          %br
+          %a#android.redButton{:href => 'https://play.google.com/store/apps/details?id=co.foodcircles'} GET THE APP
+        #remind
+          #thankyou
+            Thank you!
+          %input{:placeholder => "email address or phone number..."}
+          %br
+          %a SIGN UP
+          %p
+            Not hungry now? Sign up via text or email.
+  #slider
+    %a.prev{:href => "#"} «
+    %a.next{:href => "#"} »
+    .wrapper
+      %ul
+        - begin
+          - Venue.active.currently_available.each do |v|
+            = render :partial => 'venue', :locals => {:v => v}
+        - rescue
+        - begin
+          - Venue.active.not_available.each do |v|
+            = render :partial => 'venue', :locals => {:v => v}
+        - rescue
+  #features
+    %h2 How does it work?
+    %ul#workflow
+      %li.step1
+        %i Pick a restaurant (and a free dish!)
+        %span.arrow
+      %li.step2
+        %i Pick the charity the restaurant donates to
+        %span.arrow
+      %li.step3
+        %i Head in with a voucher (or let us call ahead!)
+    %ul#feats
+      %li
+        = image_tag "home/feature03.png", :alt => ''
+        %h5 Call Aheads
+        %p Save time; we call ahead for you.
+      %li
+        = image_tag "home/feature01.png", :alt => ''
+        %h5 Donated Meals
+        %p Given on your behalf, every time you eat.
+      %li
+        = image_tag "home/feature02.png", :alt => ''
+        %h5 Perks
+        %p Special treatment for our diners.
+    %ul#quotes
+      %li.small
+        %blockquote
+          %p
+            It's like getting a new customer to fall in love with your company. I love the philosophy behind it.” And the call ahead is fantastic - lets us give the "high touch" for new guests.
+            %cite
+              &#45; Christian Dorsch,
+              = link_to "Ballantine Restaurant", "http://ballantinewilloughby.com/"
+      %li.medium
+        %blockquote
+          %p
+            Well, this is a great idea. Hopefully we’ll be talking to you more about this soon.
+            %cite - Susan Shaw, NBC WOODTV 8
+      %li.small
+        %blockquote
+          %p
+            What a great opportunity for doing business with a client. How impressive is it if the GM greets you by name, takes you to a table perfect for your needs, & throws in an appetizer compliments of the house?
+            %cite - Dave Robinson, 1230AM Talk of the Town
+    = render :partial => "partials/footer"
+    = render :partial => "partials/home_extra"

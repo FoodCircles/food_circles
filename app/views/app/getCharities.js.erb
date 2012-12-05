@@ -1,0 +1,20 @@
+var c;
+
+//verify latter sections are gone
+$('#charities').remove();
+$('#confirm').remove();
+
+$('#holder').append("<%= escape_javascript(render :partial => 'app/charities') %>");
+setTimeout(function() {
+	$('#holder').get(0).scrollTop = $('#holder').get(0).scrollHeight;
+    $('#charities').ScrollTo({duration:1000}).animate({opacity:1},1000);
+    $('.charity').click(function() {
+	$('.charity').attr('data-active', 'false');
+	$(this).attr('data-active', 'true');
+	c = $(this).data('id');
+	$.ajax({url:'/confirm',data:{'charity':c,'offer':o}});
+    });
+    $('.charity > a').click(function(e) {
+	e.stopPropagation();
+    });
+}, 0);

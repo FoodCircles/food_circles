@@ -1,0 +1,2 @@
+module NewAppHelper
+end

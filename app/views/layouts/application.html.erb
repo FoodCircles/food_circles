@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FoodCircles</title>
+    <meta property="og:title" content="FoodCircles - Buy One, Feed One." />
+    <meta property="og:type" content="company" />
+    <meta property="og:site_name" content="FoodCircles" />
+    <meta property="og:url" content="http://foodcircles.net" />
+    <meta property="og:image" content="foodcircles.net/logo.png" />
+    <meta property="og:description" content="What if every time you ate, you put food on the plate of someone else?" />
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "#{controller_name}" %>
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

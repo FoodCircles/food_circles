@@ -1,0 +1,227 @@
+= render :partial => 'partials/header'
+#race
+  .container
+    %div{:role => "main"}
+      %section.content
+        %img.logo{:alt => "The Great Race", :src => "/assets/race/tgr-logo.png"}/
+        #about
+          %h2 Be first to one of 15 restaurants, and we'll buy your dinner.
+          %p
+            Each time you use the FoodCircles app to grab an open table at a restaurant, via
+            = succeed "," do
+              %a{:href => "https://play.google.com/store/apps/details?id=co.foodcircles", :target => "_blank"} Android
+            = succeed "," do
+              %a{:href => "http://itunes.apple.com/us/app/id526107767?mt=8", :target => "_blank"} Apple
+            any
+            = succeed "," do
+              %a{:href => "http://m.foodcircles.net", :target => "_blank"} other smart device
+            or just our
+            = succeed "," do
+              %a{:href => "http://foodcircles.net", :target => "_blank"} website
+            we provide a meal to a kid living under the poverty line.
+            %b Buy one, feed one.
+            (BOFO)
+            %br
+              %br
+                We love BOFO so much,
+                %b that we're buying the first round.
+      %section.content
+        #steps
+          %h2 How to Participate
+          %ul
+            %li
+              %img{:alt => "Step 1", :src => "/assets/race/step-1.png"}>/
+              Check the Claims List
+            %li
+              %img{:alt => "Step 2", :src => "/assets/race/step-2.png"}>/
+              Use Our App to Dine Out
+            %li
+              %img{:alt => "Step 3", :src => "/assets/race/step-3.png"}>/
+              Post Receipt to
+              = succeed "/" do
+                %a{:href => "http://twitter.com/foodcircles"} Tw
+              %a{:href => "http://facebook.com/foodcircles"} Fb
+            %li
+              %img{:alt => "Step 4", :src => "/assets/race/step-4.png"}>/
+              Get a Check in the Mail
+          .apps
+            %p
+              %a{:href => "https://www.google.com/search?q=foodcircles+app"} Download App
+              \/
+              %a{:href => "http://foodcircles.net/app"} Use Website
+      %section.content
+        #claim-list
+          %h2 Claims List
+          %ul
+            %li.unclaimed.alt
+              Subs N' More - Up to $7.50/head
+              %span UNCLAIMED
+            %li.unclaimed
+              Tre Cugini - Up to $15/head
+              %span UNCLAIMED
+            %li.unclaimed.alt
+              Chez Olga - Up to $7.50/head
+              %span UNCLAIMED
+            %li.claimed
+              Brann's Steakhouse - Up to $10/head
+              %span CLAIMED
+            %li.claimed.alt
+              Eastown Sports Bar - Up to $10/head
+              %span CLAIMED
+            %li.claimed
+              Bar Divani - Up to $15/head
+              %span CLAIMED
+            %li.claimed.alt
+              Eastown Cafe - Up to $7.50/head
+              %span CLAIMED
+            %li.claimed
+              Parsley's - Up to $7.50/head
+              %span CLAIMED
+            %li.claimed.alt
+              San Chez Bistro - Up to $15/head
+              %span CLAIMED
+            %li.unclaimed
+              Gojo Ethiopian - Up to $10/head
+              %span UNCLAIMED
+            %li.unclaimed.alt
+              Skywalk Deli - Up to $7.50/head
+              %span UNCLAIMED
+            %li.unclaimed
+              Szechuan Garden - Up to $10/head
+              %span UNCLAIMED
+            %li.claimed.alt
+              Queen's Pub - Up to $10/head
+              %span CLAIMED
+            %li.unclaimed
+              Olive's - Up to $12.50/head
+              %span UNCLAIMED
+            %li.claimed.alt
+              Georgio's Gourmet Pizza - Up to $5/head
+              %span CLAIMED
+          .apps
+            %p
+              %a{:href => "https://www.google.com/search?q=foodcircles+app"} Download App
+              \/
+              %a{:href => "http://foodcircles.net/app"} Use Website
+      %section.content
+        #faq
+          %h2 FAQ
+          %ul
+            %li
+              %h3 How do I participate?
+              %p Simply use our app or website to eat at a FoodCircles Restaurant.
+            %li
+              %h3 Which restaurants?
+              %p Any of the FoodCircles Restaurants.  We're buying one meal at each one.  It's up to you to be first one to claim it.
+            %li
+              %h3 What if I want to go to a different restaurant?
+              %p Ask staff you know at any restaurants to join the Buy One, Feed One movement.  If they end up doing so, let us know you got the ball rolling, call a couple friends together, and let us buy you a meal there.
+            %li
+              %h3 Where are donated meals going?
+              %p
+                We buy meals for people in need either through our local partner,
+                = succeed "," do
+                  %a{:href => "http://kidsfoodbasket.org"} Kids Food Basket
+                or our partner based in Kenya,
+                %a{:href => "http://worldvision.org"} World Vision
+            %li
+              %h3 What if I go over the spending limit?
+              %p Great! It's good to support local-owned business.  We can only afford to reimburse up to our stated limit, but splurging just got a whole lot cheaper.
+            %li
+              %h3 What if my party is more than 6 people?
+              %p Great way to help local-owned restaurants.  We can only reimburse the per-diner spend for 5 of your friends though (so choose wisely).
+            %li
+              %h3 Does this include alcohol / tips / etc?
+              %p We just need to see the bottom line of receipt, friend.  Make sure you follow individual restaurant rules too!
+            %li
+              %h3 Do I need to tell the restaurant anything special?
+              %p Nope.  Use our call-ahead if you want, and just show staff the ticket on your phone like you'd normally do when using our app.  Purchase your meal as regular, and enjoy a special free dish for being there under the Buy One, Feed One flag.
+            %li
+              %h3 When does the Great Race end?
+              %p When our "Claims List" has been exhausted, we will conclude the race.
+            %li
+              %h3 Can I use the app after The Great Race is over?
+              %p We hope you see the opportunity cost of not using it when you eat out!  You really can put food on someone's plate through this app, and get special treatment in the process.
+            %li
+              %h3 How many times can I claim a Great Race Restaurant?
+              %p Once per legal name/email address/Facebook or Twitter account.
+            %li
+              %h3 I'm having trouble with the FoodCircles app/site - what do I do?
+              %p
+                Give us a call at 312 945 8627, or email <a href"mailto:support@foodcircles.net">support@foodcircles.net
+                \.
+            %li
+              %h3 Why are some unclaimed restaurants unavailable?
+              %p Restaurants choose to be available only during times they know they'll have seating.  Less waiting for you, and a more beneficial opportunity for them.  So, depending on what time you visit our app, you might see an unclaimed restaurant as unavailable.  Feel free to email/facebook/tweet us on when a certain restaurant will be "open" next.
+            %li
+              %h3 Can I make a reservation for later?
+              %p Not at this time.  When you download a ticket, it'll only be available for a short time and a short time after.  Another reason to move quickly. :-)
+            %li
+              %h3 What if I want to donate my compensated check to someone who needs it?
+              %p We would be happy to donate your compensated check, in the form of a huge restaurant gift card, to the family of your choice.  You could really rock someone's world.
+            %li
+              %h3 Why are you guys doing this?
+              %p We think there exists "space" where restaurants can benefit, and consumers can benefit at the same time without harming each other.  Economics majors might call what exists today "a Pareto inefficiency".  Anywayâ¦ if restaurants fill tables when they're vacant, and those obliging to fill tables get special treatment, all through FoodCircles, our company might stand to benefit.  At the core of each of us though, we know that if we benefit, we have the responsibility to help others not as fortunate.  So that's why we buy a meal for someone in need every time someone fills a table through our app.  When you eat, so do they.
+          .apps
+            %p
+              %a{:href => "https://www.google.com/search?q=foodcircles+app"} Download App
+              \/
+              %a{:href => "http://foodcircles.net/app"} Use Website
+      %section.content
+        #rules
+          %h2 Rules of the Race
+          %p ALL FEDERAL, STATE, LOCAL, AND MUNICIPAL LAWS AND REGULATIONS APPLY. VOID WHERE PROHIBITED.
+          %ol
+            %li
+              %h3 Eligibility
+              %p The Great Race (the Contest) is open to legal residents of the fifty (50) United States and the District of Columbia who are at least eighteen (18) years old at the time of entry. Volunteers & Contractors of FoodCircles LLC and other companies associated with the promotion of the Contest, and their respective parents, subsidiaries, affiliates and advertising and promotion agencies as well as the immediate family (spouse, parents, siblings, and children) and household members of each such person are not eligible. The Contest is subject to federal, state, and local laws and regulations.
+            %li
+              %h3 Sponsor
+              %p The Sweepstakes is sponsored by FoodCircles LLC, located at 38 Fulton W, Grand Rapids, Michigan 49503.
+            %li
+              %h3 Agreement to Official Rules
+              %p Participation in the Sweepstakes constitutes entrants full and unconditional agreement to and acceptance of these Official Rules and the decisions of the Sponsor, which are final and binding. Winning a prize is contingent upon being compliant with these Official Rules and fulfilling all other requirements set forth herein.
+            %li
+              %h3 Contest Period
+              %p The Contest begins on May 22, 2012 at 12:00pm EST and ends on June 05, 2012 at 12:00pm EST (the Contest Period). Entries that are submitted before or after the Contest Period will be disqualified. Submissions will be accepted for the duration of the Contest using the web application at http://foodcircles.net, http://m.foodcircles.net, or the downloadable applications on Android and iOS.
+            %li
+              %h3 How to Enter
+              %p The method of entry will be available by visiting our website (http://foodcircles.net) or downloading our mobile apps.  Entrant should pick an available restaurant, perk, and charity as the app dictates, create an account, and download a voucher for their outing.  With a group of up to 6 people total, redeem the voucher before the specified expiry time by purchasing a regular meal for each person, and receiving a complimentary side item (the restaurant will donate the cost to provide 1 meal for a person in need through your selected charity).  Limit one (1) entry per person, per email address, and per household for the duration of the Sweepstakes Period, regardless of method of entry. Entries received from any person, e-mail address, or household in excess of the stated limitation will be void. All entries become the property of Sponsor and will not be acknowledged or returned.
+            %li
+              %h3 How to Redeem
+              %p
+                Keep all receipts/proofs of purchase! You will not be eligible to receive a reimbursement check without it!  The number of compensated meals available is equal to the number of FoodCircles Restaurant partners.  One (1) compensated meal is available per restaurant.  To receive a reimbursement check, entrant must be the first to dine at the restaurant using a valid voucher from FoodCircles after the start of The Great Race, and before the end of The Great Race.  Before June 05, 2012, entrant must submit a photo, or scanned copy, of the receipt onto either a personal Facebook.com page or a personal Twitter.com page.  The entrant must "tag" and/or "mention" FoodCircles in the posting of the image.  A successful "tag" on Facebook will require the account to have "Liked" the FoodCircles Facebook page.  FoodCircles LLC reserves the right to demand further proof, resubmission, or original copy in order to verify accuracy of the receipt.  If verified to be accurate AND if the first receipt "posted" on
+                Facebook or Twitter from a previously unclaimed FoodCircles restaurant, FoodCircles LLC will contact, via electronic media, the entrant requesting the entrant's mailing address.  A list of claimed and unclaimed FoodCircles Restaurants will be made available on the FoodCircles website.  FoodCircles LLC will write & dispatch one (1) reimbursement check for the amount listed on the receipt, or the listed limit on our website, whichever is lower.  FoodCircles LLC is not responsible for an inaccuracy in the given address, failed delivery/receipt, lost mail, etc. If the potential winner cannot be contacted within five (5) days after the date of the first attempt to contact him/her, the FoodCircles LLC may cancel payment or select an alternate winner at their sole discretion.
+            %li
+              %h3 Winner Notification
+              %p
+                The potential winners will be notified via electronic correspondence (email, Facebook, or Twitter in most cases). Each winner (parent/legal guardian if a minor in his/her state of residence) will be required to submit a legal US address within five (5) days of the date notice or attempted notice is sent, in order to claim his/her prize. If a potential winner cannot be contacted, or fails to submit the address within the required time period (if applicable), or check is returned as undeliverable, potential winner forfeits prize. If the potential winner is at least 18 but still considered a minor in his/her jurisdiction of residence, FoodCircles LLC reserves the right to award the prize in the name of his/her parent or legal guardian, who will be required to submit the address on the potential winners behalf and fulfill any other requirements imposed on winner set forth herein. Potential winners must continue to comply with all terms and conditions of these Official Rules, and winning is
+                contingent upon fulfilling all requirements. Prizes will be fulfilled within 10 weeks after the conclusion of The Great Race.
+            %li
+              %h3 Prizes
+              Reimbursement check of meal purchased (up to stated limit)
+            %li
+              %h3 General Conditions
+              %p
+                In the event that the operation, security, or administration of the Contest is impaired in any way for any reason, including, but not limited to fraud, virus, bug, worm, unauthorized human intervention or other technical problem, or in the event the Contest is unable to run as planned for any other reason, as determined by Sponsor in its sole discretion, the Sponsor may, in its sole discretion, either (a) suspend the Contest to address the impairment and then resume the Sweepstakes in a manner that best conforms to the spirit of these Official Rules or (b) terminate the Sweepstakes and, in the event of termination, award the prize at random from among the eligible, non-suspect entries received up to the time of the impairment. The Sponsor reserves the right in its sole discretion to disqualify any individual it finds to be tampering with the entry process or the operation of the Contest or to be acting in violation of these Official Rules or in an unsportsmanlike or disruptive manner. Any
+                attempt by any person to damage the website or undermine the legitimate operation of the Contest may be a violation of criminal and civil law, and, should such an attempt be made, the Sponsor reserves the right to seek damages (including attorneys fees) and any other remedies from any such person to the fullest extent permitted by law. Failure by the Sponsor to enforce any provision of these Official Rules shall not constitute a waiver of that provision
+            %li
+              %h3 Release and Limitations of Liability
+              %p
+                By participating in the Contest, entrants agree to release and hold harmless the FoodCircles LLC, and each of their respective parents, subsidiaries, affiliates, advertising and promotion agencies, other companies associated with the Sweepstakes, and each of their respective officers, directors, employees, shareholders, representatives, and agents (the Released Parties) from and against any claim or cause of action arising out of participation in the Contest or receipt or use of the prize (including any travel or activity related thereto), including, but not limited to: (a) any technical errors associated with the Contest, including lost, interrupted or unavailable Internet Service Provider (ISP), network, server, wireless service provider, or other connections, availability or accessibility or miscommunications or failed computer, satellite, telephone, cellular tower or cable transmissions, lines, or technical failure or jumbled, scrambled, delayed, or misdirected transmissions or computer
+                hardware or software malfunctions, failures or difficulties; (b) unauthorized human intervention in the Contest; (c) mechanical, network, electronic, computer, human, printing or typographical errors; (d)application downloads, (e) any other errors or problems in connection with the Contest, including, without limitation, errors that may occur in the administration of the Contest, the announcement of the winner, the cancellation or postponement of the event and/or the flyover, if applicable, the incorrect downloading of the application the processing of entries application downloads or in any Contest-related materials; or (f) injury, death, losses or damages of any kind, to persons or property which may be caused, directly or indirectly, in whole or in part, from entrants participation in the Sweepstakes or acceptance, receipt or misuse of the prize (including any travel or activity related thereto). Entrant further agrees that in any cause of action, the Released Parties liability will be limited to the cost
+                of entering and participating in the Contest, and in no event shall the entrant be entitled to receive attorneys fees. Released Parties are also not responsible for any incorrect or inaccurate information, whether caused by site users, tampering, hacking, or by any equipment or programming associated with or utilized in the Contest. Entrant waives the right to claim any damages whatsoever, including, but not limited to, punitive, consequential, direct, or indirect damages.
+            %li
+              %h3 Disputes
+              %p Except where prohibited, each entrant agrees that any and all disputes, claims and causes of action arising out of, or connected with, the Sweepstakes or any prize awarded shall be resolved individually, without resort to any form of class action, and exclusively by the appropriate court located in Michigan. All issues and questions concerning the construction, validity, interpretation and enforceability of these Official Rules, entrants rights and obligations, or the rights and obligations of the Sponsor in connection with the Sweepstakes, shall be governed by, and construed in accordance with, the laws of Michigan, without giving effect to any choice of law or conflict of law rules, which would cause the application of the laws of any jurisdiction other than Michigan.
+            %li
+              %h3 Privacy
+              %p Information collected from entrants is subject to FoodCircles LLC privacy policy, available on http://foodcircles.net.
+            %li
+              %h3 Winner List
+              %p To request the name of the winners send a self-addressed, stamped envelope to FoodCircles, 423 4th St NW, Grand Rapids MI 49504.  For the Winner List, you can also send an email to support@foodcircles.net.
+      %section.content
+        #contact
+          %h2
+            Contact Us:
+            %a{:href => "mailto:hey@foodcircles.net"} hey@foodcircles.net
