@@ -12,6 +12,8 @@ end
 
 module Foodcircles
 
+
+
   class Engine < Rails::Engine
     
     def self.activate
@@ -31,6 +33,7 @@ module Foodcircles
     config.to_prepare &method(:activate).to_proc
 
   end
+
 
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
