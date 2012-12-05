@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  author_name: MyString
+  content: MyText
+  rating: 1
+  venue_id: 1
+
+two:
+  author_name: MyString
+  content: MyText
+  rating: 1
+  venue_id: 1

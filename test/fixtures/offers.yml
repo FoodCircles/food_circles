@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  venue_id: 1
+  name: MyString
+  details: MyText
+  min_diners: 1
+
+two:
+  venue_id: 1
+  name: MyString
+  details: MyText
+  min_diners: 1

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  venue_id: 1
+  offer_id: 1
+  charity_id: 1
+  num_diners: 1
+  occasion: MyString
+  confirmed: false
+  time_confirmed: 2012-05-02 09:05:50
+  coupon: MyString
+  name: MyString
+  phone: MyString
+
+two:
+  user_id: 1
+  venue_id: 1
+  offer_id: 1
+  charity_id: 1
+  num_diners: 1
+  occasion: MyString
+  confirmed: false
+  time_confirmed: 2012-05-02 09:05:50
+  coupon: MyString
+  name: MyString
+  phone: MyString
