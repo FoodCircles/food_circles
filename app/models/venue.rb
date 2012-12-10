@@ -21,6 +21,7 @@ class Venue < ActiveRecord::Base
   image_accessor :circle_image
   
   validates_presence_of :name
+  validates :voucher, :numericality => { :greater_than_or_equal_to => 0 }
 
   def as_json(options={})
     if !options[:not_available]
