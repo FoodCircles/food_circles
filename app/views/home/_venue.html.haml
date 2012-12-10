@@ -12,8 +12,10 @@
       = pluralize(v.voucher, "Voucher")
       %br
       %span.current= link_to v.offers.first.name, venue_path(v)
-    - elsif !avail and v.voucher != '0'
+    - elsif !avail
       %span.current.strike= link_to v.offers.first.name, venue_path(v)
 
     - else
       No Voucher
+      %br
+      %span.current.strike= link_to v.offers.first.name, venue_path(v)
