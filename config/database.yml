@@ -26,19 +26,28 @@
 development:
   adapter: postgis
   encoding: unicode
-  database: foodcircles_development
+  database: foodcircles
   pool: 5
   username: postgres
-  password: postgres
+  password: root
+  port: 5432
+
+production:
+  adapter: postgis
+  encoding: unicode
+  database: foodcircles
+  pool: 5
+  username: postgres
+  password: root
   port: 5432
 
 staging:
   adapter: postgis
   encoding: unicode
-  database: foodcircles_development
+  database: foodcircles
   pool: 5
   username: postgres
-  password: postgres
+  password: error#007
   port: 5432
 
 #  template: template0

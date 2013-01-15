@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121203062437) do
+ActiveRecord::Schema.define(:version => 20130115174407) do
 
   create_table "charities", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,23 @@ ActiveRecord::Schema.define(:version => 20121203062437) do
     t.string   "image_uid"
     t.integer  "region_id"
     t.integer  "state_id"
+  end
+
+  create_table "contact_types", :id => false, :force => true do |t|
+    t.integer  "id",         :null => false
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "contacts", :id => false, :force => true do |t|
+    t.integer  "id",               :null => false
+    t.string   "content"
+    t.integer  "contact_type_id"
+    t.integer  "contactable_id"
+    t.string   "contactable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -43,9 +60,33 @@ ActiveRecord::Schema.define(:version => 20121203062437) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "invoices", :force => true do |t|
+    t.string   "Group_Name"
+    t.integer  "Group_Size"
+    t.string   "Code"
+    t.datetime "Time"
+    t.string   "Perk"
+    t.decimal  "Amount"
+  end
+
   create_table "notifications", :force => true do |t|
     t.string   "content"
     t.string   "ticker"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "offer_taggables", :id => false, :force => true do |t|
+    t.integer  "id",           :null => false
+    t.integer  "offer_tag_id"
+    t.integer  "offer_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "offer_tags", :id => false, :force => true do |t|
+    t.integer  "id",         :null => false
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,0 +1,148 @@
+﻿How to take postgree database dump from remote server ans take it to local:
+How to take
+
+
+INSTALLATION ON SERVER
+1) On terminal run the following commands:
+$sudo apt-get update
+$sudo apt-get install apache2 curl git build-essential zlibc zlib1g-dev zlib1g libcurl4-openssl-dev libssl-dev libopenssl-ruby apache2-prefork-dev libapr1-dev libaprutil1-dev libreadline6 libreadline6-dev
+$sudo apt-get install postgresql-9.1 postgresql-9.1-postgis
+$curl -L https://get.rvm.io | bash -s stable –ruby
+$source /usr/local/rvm/scripts/rvm
+
+
+2) Then copy project to directory 'root/home' in folder demo
+3) Then go into project's folder at '/home/places2' and run the following commands,
+
+
+$rvmsudo bundle install
+
+
+DATABASE SETTINGS FOR POSTGIS
+
+
+1) Install the postgis extension in your database by running the following commands:
+
+
+$sudo -u postgres createlang plpgsql foodcircles_development
+$sudo -u postgres psql -d foodcircles_development -f /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql
+$sudo -u postgres psql -d foodcircles_development -f /usr/share/postgresql/9.1/contrib/postgis-1.5/spatial_ref_sys.sql
+$sudo -u postgres psql -d foodcircles_development -f /usr/share/postgresql/9.1/contrib/postgis_comments.sql
+
+2) For logging into database via terminal
+
+
+$sudo -u postgres psql foodcircles_development
+
+
+3) Then populate db with provided places2.csv file by running the following command in postgresql,
+
+
+copy places from '/PATH_TO_FILE/places2.csv' DELIMITERS ',' CSV HEADER;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONFIGURING SERVER
+
+To allow the demo to run at all times install the passenger gem,
+
+Installing Passenger
+
+Start by installing passenger. Then install passenger-install-apache2-module using rvmsudo. The module installer is very helpful and will give you directions if anything is missing.
+
+
+$gem install passenger
+$rvmsudo passenger-install-apache2-module
+
+In the end, the installer will show how to configure the apache configuration files in order to use passenger. Instead of editing the configuration files directly, we'll place 2 files (passenger.load and passenger.conf) in /etc/apache2/mods-available, so that we can use a2enmod and a2dismod to active/deactivate the module. Use sudo to edit these files. The contents below are indicative, use what the passenger installer will return to you. (most likely, the version numbers will change with time)
+
+
+“THESE ARE INDICATIVE FILES ONLY USE THE ONE THAT  PASSENGER INSTALLER GIVE YOU”
+
+#/etc/apache2/mods-available/passenger.load
+LoadModule passenger_module /usr/rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.9/ext/apache2/mod_passenger.so
+#/etc/apache2/mods-available/passenger.conf
+PassengerRoot /usr/local/rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.9
+PassengerRuby /usr/local/rvm/wrappers/ruby-1.9.2-p290/ruby
+
+Activate the passenger module and restart Apache.
+
+
+$sudo a2enmod passenger
+$sudo service apache2 restart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Configure a vhost
+
+The easiest way to check if your rails site is working, is to redirect the default virtual host to your rails app. However, if you have a domain name you could also point the DNS settings to your server and setup a vhost to serve that domain. For simplicity we have turned off the default vhost and redirect all traffic to our railsapp vhost. Note: the vhost needs to direct to the public folder of your app, everything else is handled by Passenger automagically.
+
+# /etc/apache2/sites-available/myrailsapp
+<VirtualHost _default_:80>
+ # ServerName www.example.com # Commented out for default
+ DocumentRoot /var/www/myrailsapp/public # be sure to point to public
+ <Directory /var/www/myrailsapp/public/>
+   AllowOverride all
+   Options -MultiViews
+ </Directory>
+</VirtualHost>
+
+Now, activate the vhost by running sudo a2ensite myrailsapp, then deactivate the default vhost by running sudo a2dissite default, and then reload the apache configuration using sudo service apache2 reload and send your browser to http://<serverip>/.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+psql -c "create role foodcircles;"
+createdb -E UTF8 foodcircles_dev
+psql -d foodcircles_dev < /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql
+psql -d foodcircles_dev < /usr/share/postgresql/9.1/contrib/postgis-1.5/spatial_ref_sys.sql
+psql -c "alter table geometry_columns owner to gisgroup;" foodcircles_dev
+psql -c "alter table spatial_ref_sys owner to gisgroup;" foodcircles_dev
+
+Dump
+psql -U postgres foodcircles_dev < dev.sql
+
+
+
+
+
+

@@ -13,5 +13,5 @@ class LongTasks < ActiveRecord::Base
       #we tried
     end
   end
-  handle_asynchronously :handle_text
+ handle_asynchronously :handle_text
 end

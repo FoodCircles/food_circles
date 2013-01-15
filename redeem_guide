@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Olive's & FoodCircles sitting in a tree..</title>
+		
+	<style type="text/css">
+		#outlook a{
+			padding:0;
+		}
+		body{
+			width:100% !important;
+		}
+		.ReadMsgBody{
+			width:100%;
+		}
+		.ExternalClass{
+			width:100%;
+		}
+		body{
+			-webkit-text-size-adjust:none;
+		}
+		body{
+			margin:0;
+			padding:0;
+		}
+		img{
+			border:0;
+			height:auto;
+			line-height:100%;
+			outline:none;
+			text-decoration:none;
+		}
+		table td{
+			border-collapse:collapse;
+		}
+		#backgroundTable{
+			height:100% !important;
+			margin:0;
+			padding:0;
+			width:100% !important;
+		}
+		body,#backgroundTable{
+			background-color:#FAFAFA;
+		}
+		#templateContainer{
+			border:0;
+		}
+		h1,.h1{
+			color:#202020;
+			display:block;
+			font-family:Arial;
+			font-size:40px;
+			font-weight:bold;
+			line-height:100%;
+			margin-top:2%;
+			margin-right:0;
+			margin-bottom:1%;
+			margin-left:0;
+			text-align:left;
+		}
+		h2,.h2{
+			color:#404040;
+			display:block;
+			font-family:Arial;
+			font-size:18px;
+			font-weight:bold;
+			line-height:100%;
+			margin-top:2%;
+			margin-right:0;
+			margin-bottom:1%;
+			margin-left:0;
+			text-align:left;
+		}
+		h3,.h3{
+			color:#606060;
+			display:block;
+			font-family:Arial;
+			font-size:16px;
+			font-weight:bold;
+			line-height:100%;
+			margin-top:2%;
+			margin-right:0;
+			margin-bottom:1%;
+			margin-left:0;
+			text-align:left;
+		}
+		h4,.h4{
+			color:#808080;
+			display:block;
+			font-family:Arial;
+			font-size:14px;
+			font-weight:bold;
+			line-height:100%;
+			margin-top:2%;
+			margin-right:0;
+			margin-bottom:1%;
+			margin-left:0;
+			text-align:left;
+		}
+		#templatePreheader{
+			background-color:#FFFFFF;
+		}
+		.preheaderContent div{
+			color:#707070;
+			font-family:Arial;
+			font-size:10px;
+			line-height:100%;
+			text-align:left;
+		}
+		.preheaderContent div a:link,.preheaderContent div a:visited,.preheaderContent div a .yshortcuts{
+			color:#336699;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		#social div{
+			text-align:right;
+		}
+		#templateHeader{
+			background-color:#8F3E3E;
+			border-bottom:5px solid #505050;
+		}
+		.leftHeaderContent div{
+			color:#202020;
+			font-family:Arial;
+			font-size:32px;
+			font-weight:bold;
+			line-height:100%;
+			text-align:right;
+			vertical-align:middle;
+		}
+		.rightHeaderContent div{
+			color:#202020;
+			font-family:Arial;
+			font-size:32px;
+			font-weight:bold;
+			line-height:100%;
+			text-align:left;
+			vertical-align:middle;
+		}
+		.leftHeaderContent div a:link,.leftHeaderContent div a:visited,.rightHeaderContent div a:link,.rightHeaderContent div a:visited{
+			color:#336699;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		#headerImage{
+			height:auto;
+			max-width:180px !important;
+		}
+		#templateContainer,.bodyContent{
+			background-color:#FDFDFD;
+		}
+		.bodyContent div{
+			color:#505050;
+			font-family:Arial;
+			font-size:14px;
+			line-height:150%;
+			text-align:left;
+		}
+		.bodyContent div a:link,.bodyContent div a:visited,.bodyContent div a .yshortcuts{
+			color:#336699;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		.bodyContent img{
+			display:inline;
+			height:auto;
+		}
+		#templateFooter{
+			background-color:#8F3E3E;
+			border-top:3px solid #909090;
+		}
+		.footerContent div{
+			color:#FFFFFF;
+			font-family:Arial;
+			font-size:12px;
+			line-height:125%;
+			text-align:left;
+		}
+		.footerContent div a:link,.footerContent div a:visited,.footerContent div a .yshortcuts{
+			color:#336699;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		.footerContent img{
+			display:inline;
+		}
+		#social{
+			background-color:#8F3E3E;
+			border:0;
+		}
+		#social div{
+			text-align:left;
+		}
+		#utility{
+			background-color:#8F3E3E;
+			border-top:0;
+		}
+		#utility div{
+			text-align:left;
+		}
+		#monkeyRewards img{
+			max-width:170px !important;
+		}
+		.headerContent{
+			font-family:Arial;
+		}
+		.headerContent a{
+			color:#000000;
+			text-decoration:none;
+		}
+		body,#backgroundTable{
+			background-color:#FFFFFF;
+		}
+		#templateContainer,.bodyContent{
+			background-color:#FDFDFD;
+		}
+</style></head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust: none;margin: 0;padding: 0;background-color: #FFFFFF;width: 100% !important;">
+    	<center>
+        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable" style="margin: 0;padding: 0;background-color: #FFFFFF;height: 100% !important;width: 100% !important;">
+            	<tr>
+                	<td align="center" valign="top" style="border-collapse: collapse;">
+                        <!-- // Begin Template Preheader \\ -->
+                        <table border="0" cellpadding="10" cellspacing="0" width="600" id="templatePreheader" style="background-color: #FFFFFF;">
+                            <tr>
+                                <td valign="top" class="preheaderContent" style="border-collapse: collapse;">
+                                
+                                	<!-- // Begin Module: Standard Preheader \ -->
+                                    <table border="0" cellpadding="3" cellspacing="0" width="100%">
+                                    	<tr>
+                                        	<td valign="top" style="border-collapse: collapse;">
+                                            	<div style="color: #707070;font-family: Arial;font-size: 10px;line-height: 100%;text-align: left;">Re-purpose your dining plans to feed children in need.</div>
+                                            </td>
+                                            <!-- 
+											<!-- 
+ -->
+                                        </tr>
+                                    </table>
+                                	<!-- // End Module: Standard Preheader \ -->
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // End Template Preheader \\ -->
+                    	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer" style="border: 0;background-color: #FDFDFD;">
+                        	<tr>
+                            	<td align="center" valign="top" style="border-collapse: collapse;">
+                                    <!-- // Begin Template Header \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="background-color: #8F3E3E;border-bottom: 5px solid #505050;">
+                                        <tr>
+                                            <td class="headerContent" style="border-collapse: collapse;font-family: Arial;">
+                                            
+                                                <!-- // Begin Module: Letterhead, Center Header Image \\ -->
+                                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                                    <tr>
+                                                    	<td class="leftHeaderContent" style="border-collapse: collapse;">
+                                                            <div style="color: #202020;font-family: Arial;font-size: 32px;font-weight: bold;line-height: 100%;text-align: right;vertical-align: middle;"><a href="http://itunes.apple.com/th/app/foodcircles/id526107767?mt=8" target="_blank" style="color: #336699;text-decoration: underline;font-weight: normal;"><img align="none" height="55" src="http://gallery.mailchimp.com/ae083950237bb7c8e292ebda4/images/apple_badge.png" style="width: 150px;height: 55px;border: 0;line-height: 100%;outline: none;text-decoration: none;" width="150"></a></div>
+                                                        </td>
+                                                        <td valign="middle" width="180" style="border-collapse: collapse;">
+                                                            <div style="text-align: left;"><a href="http://foodcircles.net" style="color: #000000;text-decoration: none;"><img src="http://gallery.mailchimp.com/ae083950237bb7c8e292ebda4/images/logo.png" alt="FoodCircles" border="0" style="border: px none;border-color: ;border-style: none;border-width: px;height: 161px;width: 180px;margin: 0;padding: 0;max-width: 180px;line-height: 100%;outline: none;text-decoration: none;" width="180" height="161" id="headerImage campaign-icon"></a></div>
+                                                        </td>
+                                                        <td class="rightHeaderContent" style="border-collapse: collapse;">
+                                                            <div style="color: #202020;font-family: Arial;font-size: 32px;font-weight: bold;line-height: 100%;text-align: left;vertical-align: middle;">&nbsp;<a href="https://play.google.com/store/apps/details?id=co.foodcircles" target="_blank" style="color: #336699;text-decoration: underline;font-weight: normal;"><img align="none" height="56" src="http://gallery.mailchimp.com/ae083950237bb7c8e292ebda4/images/android_badge.png" style="width: 150px;height: 56px;border: 0;line-height: 100%;outline: none;text-decoration: none;" width="150"></a></div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- // End Module: Letterhead, Center Header Image \\ -->
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Header \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top" style="border-collapse: collapse;">
+                                    <!-- // Begin Template Body \\ -->
+                                	<table border="0" cellpadding="10" cellspacing="0" width="600" id="templateBody">
+                                    	<tr>
+                                        	<td valign="top" class="bodyContent" style="border-collapse: collapse;background-color: #e4ebeb;">
+                                            
+                                                <!-- // Begin Module: Standard Content \\ -->
+                                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td valign="top" style="border-collapse: collapse;">
+                                                            <div style="color: #505050;font-family: Arial;font-size: 14px;line-height: 150%;text-align: left;"><h2 class="h2" style="color: #404040;display: block;font-family: Arial;font-size: 18px;font-weight: bold;line-height: 100%;margin-top: 2%;margin-right: 0;margin-bottom: 1%;margin-left: 0;text-align: left;">
+	<span style="font-size:14px;">Buy One, Feed One.</span></h2>
+We've been working with FoodCircles for awhile now <a href="http://www.foodcircles.net/venues/2" target="_blank" style="color: #3373ba;font-weight: normal;text-decoration: underline;">(check us on their site!)</a>, and are proud to be in the first 20 venues in the country to join <strong>&quot;Buy One, Feed One&quot;</strong> before their national journey.<br>
+<h3 class="h3" style="color: #606060;display: block;font-family: Arial;font-size: 16px;font-weight: bold;line-height: 100%;margin-top: 2%;margin-right: 0;margin-bottom: 1%;margin-left: 0;text-align: left;">
+	<br>
+	<br>
+	<span style="font-size:24px;">What is FoodCircles?</span></h3>
+<br>
+An app &amp; website offering you a new way to dine out and feed a malnourished child in the process.<br>
+<h3 class="h3" style="color: #606060;display: block;font-family: Arial;font-size: 16px;font-weight: bold;line-height: 100%;margin-top: 2%;margin-right: 0;margin-bottom: 1%;margin-left: 0;text-align: left;">
+	<br>
+	<br>
+	<span style="font-size:24px;">How Do I Get Involved?</span></h3>
+<br>
+<strong>3 easy steps:</strong><br>
+1. Get the app or visit their <a href="http://foodcircles.net" target="_blank" style="color: #336699;font-weight: normal;text-decoration: underline;">site</a>.<br>
+2. Pick a charity to support through your bill.<br>
+3. Get a free text message or email to show to your server.<br>
+(<strong>btw,</strong> we give <strong>free</strong> appetizers and desserts to participants :)<br>
+<br>
+<br>
+<div style="text-align: center;color: #505050;font-family: Arial;font-size: 14px;line-height: 150%;">
+	<span style="font-size:24px;"><a href="http://itunes.apple.com/th/app/foodcircles/id526107767?mt=8" target="_blank" style="color: #336699;font-weight: normal;text-decoration: underline;">Grab the app on iPhone!</a></span></div><br>
+<div style="text-align: center;color: #505050;font-family: Arial;font-size: 14px;line-height: 150%;">
+	<span style="font-size:20px;"><a href="https://play.google.com/store/apps/details?id=co.foodcircles" target="_blank" style="color: #336699;font-weight: normal;text-decoration: underline;">(or Android!)</a></span></div>
+<div style="color: #505050;font-family: Arial;font-size: 14px;line-height: 150%;text-align: left;">
+	<br>
+	<br>
+	<span style="font-size:14px;">Feel good about dining,<br>
+	Friends at Olive's</span></div>
+</div>
+														</td>
+                                                    </tr>
+                                                </table>
+                                                <!-- // End Module: Standard Content \\ -->
+                                            
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Body \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top" style="border-collapse: collapse;">
+                                    <!-- // Begin Template Footer \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateFooter" style="background-color: #8F3E3E;border-top: 3px solid #909090;">
+                                    	<tr>
+                                        	<td valign="top" class="footerContent" style="border-collapse: collapse;">
+                                            
+                                                <!-- // Begin Module: Standard Footer \\ -->
+                                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td colspan="2" valign="middle" id="social" style="border-collapse: collapse;background-color: #8F3E3E;border: 0;">
+                                                            <div style="color: #FFFFFF;font-family: Arial;font-size: 12px;line-height: 125%;text-align: left;">&nbsp;<a href="https://www.facebook.com/pages/Olives/92174824604?ref=ts&fref=ts" target="_blank" style="color: #73E9F0;font-weight: normal;text-decoration: underline;">Olive's on Facebook</a> |&nbsp;<a href="http://facebook.com/foodcircles" target="_blank" style="color: #73E9F0;font-weight: normal;text-decoration: underline;">FoodCircles on Facebook</a><br>
+</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" width="350" style="border-collapse: collapse;">
+                                                            <div style="color: #FFFFFF;font-family: Arial;font-size: 12px;line-height: 125%;text-align: left;"><span style="font-size:11px;">FoodCircles provides meals to children in need via <a href="https://kidsfoodbasket.org" target="_blank" style="color: #73E9F0;font-weight: normal;text-decoration: underline;">Kids Food Basket</a> (based in Grand Rapids) and <a href="https://worldvision.org" target="_blank" style="color: #73E9F0;font-weight: normal;text-decoration: underline;">World Vision</a> (based in Nairobi, Kenya).</span><br>
+</div>
+                                                        </td>
+                                                        <td valign="top" width="190" id="monkeyRewards" style="border-collapse: collapse;">
+                                                            <div style="color: #FFFFFF;font-family: Arial;font-size: 12px;line-height: 125%;text-align: left;"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" valign="middle" id="utility" style="border-collapse: collapse;background-color: #8F3E3E;border-top: 0;">
+                                                            <div style="color: #FFFFFF;font-family: Arial;font-size: 12px;line-height: 125%;text-align: left;">
+                                                            	<!-- INSERT UNSUBSCRIBE LINK HERE -->
+                                                                &nbsp;<a href="http://eatatolives.com/feedback/" target="_blank" style="color: #5b87b6;font-weight: normal;text-decoration: underline;">Unsubscribe</a>&nbsp;
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- // End Module: Standard Footer \\ -->
+                                            
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Footer \\ -->
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <center>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+    </center></body>
+</html>
+
