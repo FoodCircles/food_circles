@@ -12,6 +12,7 @@ class AppController < ApplicationController
   def getVenues
     @v = Venue.active.currently_available
     @vc = Venue.active.not_available
+
   end
 
   def getCharities
