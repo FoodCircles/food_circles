@@ -1,0 +1,2 @@
+module MonthlyInvoiceHelper
+end

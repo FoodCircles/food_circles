@@ -1,5 +1,8 @@
 Foodcircles::Application.routes.draw do
 
+  get "monthly_invoice/monthly_invoice"
+  match '/monthly_invoice' => 'monthly_invoice#monthly_invoice', :as => :invoice
+
   resources :chat, :only => [:index, :show] do
     collection do
       get 'venues'
@@ -8,7 +11,6 @@ Foodcircles::Application.routes.draw do
 
   resources :remind_list, :only => [:create]
   resources :venues, :only => [:show]
-
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
@@ -21,6 +23,7 @@ Foodcircles::Application.routes.draw do
   match '/newinfo' => 'app#newinfo', :as => :user_info
   match '/create_voucher' => 'app#create_voucher'
   match '/voucher' => 'app#voucher'
+
 
   match '/api/venues/:id' => 'venues#show'
   match '/api/venues' => 'venues#index'

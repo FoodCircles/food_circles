@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   def cater
   end
 
+
   def thanks
   end
 end

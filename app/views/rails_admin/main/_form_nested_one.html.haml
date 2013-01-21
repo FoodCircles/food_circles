@@ -1,0 +1,10 @@
+.controls{:data => { :nestedone => true }}
+  %ul.nav{:style => 'margin-bottom:0px; display:none'}
+  %a.btn.btn-info.toggler{:'data-toggle' => "button", :'data-target' => "#{form.jquery_namespace(field)} > .tab-content", :class => (field.active? ? 'active' : '') }
+  = form.errors_for(field)
+  = form.help_for(field)
+
+- form.object.send("build_#{field.name}") unless form.object.send(field.name)
+.tab-content
+  = form.fields_for field.name do |nested_form|
+    = nested_form.generate({:action => :nested, :model_config => field.associated_model_config, :nested_in => field.name })

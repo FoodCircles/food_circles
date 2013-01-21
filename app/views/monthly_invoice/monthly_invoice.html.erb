@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <script src="javascripts/jquery.min.js" type="text/javascript"></script>
+ <style media="print" type="text/css">
+      #download {display: none;}
+  </style>
+  <style>
+
+
+      #customers
+      {
+          font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+          width:100%;
+          /*border-collapse:collapse;*/
+
+      }
+
+      #customers td, #customers th
+      {
+          font-size:1em;
+          /*border:1px solid #98bf21;*/
+          padding:3px 7px 2px 7px;
+      }
+      #customers th
+      {
+          font-size:1.1em;
+          text-align:left;
+          padding-top:5px;
+          padding-bottom:4px;
+          background-color:#A7C942;
+          color:#ffffff;
+      }
+      #summary th
+      {
+          font-size:1.1em;
+          text-align:left;
+          padding-top:5px;
+          padding-bottom:4px;
+          background-color:#EAF2D3;
+          color:#000000;
+      }
+      #summary td, #summary th
+      {
+          font-size:1em;
+          border:5px solid #a9dba9;
+          padding:5px 7px 2px 7px;
+      }
+      #summary
+      {
+          font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+          width:80%;
+          border-collapse:collapse;
+
+      }
+      #customers tr.alt td
+      {
+          color:#000000;
+          background-color:#EAF2D3;
+      }
+      table
+      {
+          margin-left: auto;
+          margin-top: 1px;
+          margin-right: auto;
+      }
+      #container_div
+      {
+
+          width:100%;
+          margin-top: 0px;
+
+
+      }
+      td
+      {
+          color: #000000;
+      }
+      #foodcircles_address
+      {
+
+      }
+      #venue_address
+      {
+
+      }
+
+  </style>
+</head>
+
+<body>
+
+<div style="margin-left: auto;margin-right: auto;width: 80%;">
+<table id="customers" align = "center">
+  <caption><h1>FoodCircles Invoice</h1>
+    <hr>
+    <div id="container_div">
+    <table border="0" style="margin-left: 0px; margin-top: 0px;">
+      <tr>
+        <td valign ="top">
+         <div id="foodcircles_address"><b>Buy One, Feed One.<br>FoodCircles LLC<br>
+           423 4th St NW
+           Grand Rapids MI, 49504<br>
+           ph: 312 945 8627<br>
+           Email: support@foodcircles.net
+         </b>
+         </div>
+        </td>
+        <td>
+
+            <%= image_tag 'logo.png' , :size =>'150x150' %>
+        </td>
+        <td>
+          <div id="venue_address"><b>Invoice Date:<strong><%= "#{@s.to_date.to_formatted_s(:rfc822)} To #{@e.to_date.to_formatted_s(:rfc822)}" %></strong><br>
+            Bill to our Friend: <%= @venue_names[0][:name] %>
+            <br>
+            Address:<br>
+            <%=  @venue_names[0][:address]  %>
+
+          </b>
+          </div>
+        </td>
+        </td>
+      </tr>
+    </table>
+    </div>
+    <hr>
+
+
+  </caption>
+<tr>
+    <th>Group Name</th>
+    <th>Group Size </th>
+    <th>Code</th>
+    <th>Time</th>
+    <th>Perk </th>
+    <th>Amount</th>
+</tr>
+  <%- total_amount =0  %>
+  <%- group_sent = 0 %>
+  <%- customers_sent = 0 %>
+
+  <%- @reserve_venues.each_with_index do |data,index| %>
+
+  <tr>
+
+    <%- group_sent = group_sent + 1  %>
+    <td><%= get_name(@reserve_venues[index][:user_id].to_i) %></td>
+    <td><%= @reserve_venues[index][:num_diners] %></td>
+    <%-customers_sent = customers_sent + @reserve_venues[index][:num_diners]  %>
+    <td><%= @reserve_venues[index][:coupon] %></td>
+    <td><%= @reserve_venues[index][:created_at] %></td>
+    <td><%= get_offer(@reserve_venues[index][:offer_id].to_i) %></td>
+    <td style="background:#F3F861;"><%= "$" + (( @venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f)).to_s  %></td>
+    <%- total_amount=total_amount + ( @venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f)%>
+  </tr>
+
+  <%end %>
+  <tr>
+    <td colspan="4"></td>
+    <td style="text-align: center;"><b>Invoice Total</b></td>
+    <td><%= "$" + total_amount.to_s %></td>
+  </tr>
+  <tr>
+    <td colspan="3"></td>
+    <td style="text-align: center;" colspan="2"><b>mini-chalkboard and decal material (charged at-cost)</b></td>
+    <td><%= "$" + 10.0.to_s  %></td>
+
+  </tr>
+
+  <tr class="alt">
+    <td colspan="4"></td>
+    <td style="text-align: center;"><b style="font: bold;">Total</b></td>
+    <td><%= "$" +( total_amount + 10.0 ).to_s %></td>
+
+  </tr>
+
+
+</table>
+
+<table id="summary" align = "left" style="width: 100%;margin-top: 10px;">
+
+  <tr>
+    <th>Groups Sent</th>
+    <th>Total Customers Met </th>
+    <th>Meals Donated to Kids Food Basket</th>
+    <th>Meals Donated to World Vision</th>
+
+  </tr>
+  <tr>
+    <td><%= group_sent %></td>
+    <td><%= customers_sent %></td>
+    <td><%= @gr_kids[0][:gr_kids] if @gr_kids.present?  %></td>
+    <td><%= @world_kids[0][:world_kids] if @world_kids.present?%></td>
+  </tr>
+  <tr>
+    <td colspan="4" style="color:#000000;">We appreciate you letting us advertise <b><%= @venue_names[0][:name] if @venue_names.present?%></b> through our app all these months.
+      Your payment will go to feed<%= @gr_kids[0][:gr_kids] if @gr_kids.present?  %> children locally in GR and <%= @world_kids[0][:world_kids] if @world_kids.present?%>kids in northeast Africa.
+      Checks can be made payable to FoodCircles at the address above.
+      <b>Thank you for believing in Buy One, Feed One.</b>
+    </td>
+  </tr>
+
+
+</table></br>
+  <div  style ='text-align:center; margin-top:160px' id="download">
+    <%= button_to "Download", invoice_path(:vid =>@venue_names[0][:id],:months_before =>@months_before,:format => 'pdf')%>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

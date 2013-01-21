@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115174407) do
+ActiveRecord::Schema.define(:version => 20130116231639) do
 
   create_table "charities", :force => true do |t|
     t.string   "name"
@@ -61,12 +61,15 @@ ActiveRecord::Schema.define(:version => 20130115174407) do
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "invoices", :force => true do |t|
-    t.string   "Group_Name"
-    t.integer  "Group_Size"
-    t.string   "Code"
-    t.datetime "Time"
-    t.string   "Perk"
-    t.decimal  "Amount"
+    t.string   "group_name"
+    t.integer  "group_size"
+    t.string   "code"
+    t.datetime "time"
+    t.string   "perk"
+    t.decimal  "amount"
+    t.string   "venue"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "notifications", :force => true do |t|
@@ -236,6 +239,7 @@ ActiveRecord::Schema.define(:version => 20130115174407) do
     t.boolean  "active",                                                                       :default => true
     t.spatial  "latlon",           :limit => {:srid=>4326, :type=>"point", :geographic=>true}
     t.string   "voucher",                                                                      :default => "5"
+    t.decimal  "multiplier",                                                                   :default => 1.5
   end
 
 end
