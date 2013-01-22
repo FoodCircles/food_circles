@@ -7,7 +7,14 @@
   </style>
   <style>
 
-
+      body
+      {
+          font-size:80%;
+          font-weight:normal ;
+      }
+      h1.title {
+          font-size: 180%;
+      }
       #customers
       {
           font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -19,7 +26,7 @@
       #customers td, #customers th
       {
           font-size:1em;
-          /*border:1px solid #98bf21;*/
+          border:1px solid #98bf21;
           padding:3px 7px 2px 7px;
       }
       #customers th
@@ -92,12 +99,12 @@
 
 <div style="margin-left: auto;margin-right: auto;width: 80%;">
 <table id="customers" align = "center">
-  <caption><h1>FoodCircles Invoice</h1>
-    <hr>
+  <caption><h1 class="title">FoodCircles Invoice</h1>
+    <hr style="border:2px solid #98bf21 ;" >
     <div id="container_div">
     <table border="0" style="margin-left: 0px; margin-top: 0px;">
       <tr>
-        <td valign ="top">
+        <td valign ="top" style="border:none; width:10%;">
          <div id="foodcircles_address"><b>Buy One, Feed One.<br>FoodCircles LLC<br>
            423 4th St NW
            Grand Rapids MI, 49504<br>
@@ -106,11 +113,11 @@
          </b>
          </div>
         </td>
-        <td>
+        <td style="border:none; width:3%;">
 
-            <%= image_tag 'logo.png' , :size =>'150x150' %>
+            <%= image_tag 'logo.png' , :style => "width:150px"%>
         </td>
-        <td>
+        <td style="border:none; width:30%;">
           <div id="venue_address"><b>Invoice Date:<strong><%= "#{@s.to_date.to_formatted_s(:rfc822)} To #{@e.to_date.to_formatted_s(:rfc822)}" %></strong><br>
             Bill to our Friend: <%= @venue_names[0][:name] %>
             <br>
@@ -124,7 +131,7 @@
       </tr>
     </table>
     </div>
-    <hr>
+    <hr style="border:2px solid #98bf21 ;margin-top: 2px;" >
 
 
   </caption>
