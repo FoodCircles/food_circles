@@ -124,24 +124,12 @@
 
 
             }
-
-
-
-
-
-
             else
             {
 
             }
-
-
-
-        });
-
-
-
-    });
+});
+});
 
 </script>
 
@@ -327,6 +315,8 @@
         <% end %>
 
       </tr>
+
+      <%- if params[:fee_message].present? && params[:fee_cost].present?  %>
       <tr>
         <td colspan="3" >  </td>
         <td style="text-align: right; color:#000000;" colspan="2"  id="extra"><b><%= params[:fee_message] %></b></td>
@@ -339,6 +329,7 @@
             <td class="amount" style="color: #000000;"><%= "$" +(apply_charge).to_s %></td>
 
         <% end %>
+
       </tr>
 
       <tr class="alt">
@@ -358,6 +349,9 @@
 
       </tr>
 
+      <% else %>
+
+      <%- end  %>
 
     </table>
 

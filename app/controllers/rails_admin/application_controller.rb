@@ -23,9 +23,9 @@ module RailsAdmin
       raise RailsAdmin::ModelNotFound unless (@abstract_model = RailsAdmin::AbstractModel.new(@model_name))
       raise RailsAdmin::ModelNotFound if (@model_config = @abstract_model.config).excluded?
       @properties = @abstract_model.properties
-      if (params[:query].present? && params[:query].to_i >=0 && params[:query].to_i <=5)
+      if (params[:query].present? && params[:query].to_i > 0 && params[:query].to_i <=5)
 
-        @months_before = params[:query].to_i
+        @months_before = params[:query].to_i - 1
 
       else
         @months_before = 1
