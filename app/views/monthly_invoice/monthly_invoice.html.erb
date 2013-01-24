@@ -7,12 +7,99 @@
 
       $(document).ready(function(){
 
-
+           var text_field =0;
+           var cost_field =0;
+           var note_field =0;
           $(".amount").click(function(event){
 
-              change_view("<%= @vid %>","<%=@months_before %>");
+              var Id = jQuery(this).attr("id");
+              if(Id == "amount_heading")
+              {
+                  change_view("<%= @vid %>","<%=@months_before %>");
+               }
+
+
 
           });
+          $(".edit_able").click(function(event){
+
+              var Id = jQuery(this).attr("id");
+
+              if(Id == "extra")
+              {
+                      if(text_field == 0)
+                      {
+
+
+                          $('#extra').removeClass("edit_able");
+                          $('#extra').addClass("selected");
+                          $('#extra').append('<input type="text" name="file"  id="extra_fee" size = 40 />');
+
+                          text_field = text_field + 1
+                      }
+                      else
+                      {
+
+                      }
+
+              }
+
+              if(Id == "cost")
+              {
+                  if(cost_field == 0)
+                  {
+
+                      $('#cost').removeClass("edit_able");
+                      $('#cost').addClass("selected");
+                      $('#cost').append('<input type="text" name="file"  id="cost" size =6 />');
+                      $('#save_changes').html("");
+                      $('#download').html("");
+                      $('#download').append('<button value="Save Changes"  id="cost" size =6  onclick = alert("gdf"); >Apply Changes</>');
+                      cost_field = cost_field + 1
+                  }
+
+                  else
+                  {
+
+                  }
+
+              }
+              if(Id == "note")
+              {
+
+                    if(note_field == 0)
+                    {
+                    $('#note').removeClass("edit_able");
+                    $('#note').addClass("selected");
+                    $('#note').append('<input type="text" name="file"  id="note" size = 100 />');
+
+                     $('#download').html("");
+                     $('#download').append('<button value="Save Changes"  id="cost" size =6  onclick = alert("gdf"); >Apply Changes</>');
+                     note_field = note_field + 1;
+                   }
+                    else
+                  {
+
+                  }
+
+
+              }
+
+
+
+
+
+
+              else
+              {
+
+              }
+
+
+
+          });
+
+
 
       });
 
@@ -111,6 +198,21 @@
       .amount
       {
             cursor: pointer;
+
+      }
+      .edit_able
+      {
+          color: #ffffff;
+
+      }
+      .edit_able:hover
+      {
+          color: #aaaaaa;
+
+      }
+      .selected
+      {
+          color:black;
       }
 
   </style>
@@ -167,39 +269,68 @@
   <%- total_amount =0  %>
   <%- group_sent = 0 %>
   <%- customers_sent = 0 %>
+  <%- price = 0 %>
 
   <%- @reserve_venues.each_with_index do |data,index| %>
 
   <tr>
 
-    <%- group_sent = group_sent + 1  %>
+    <%- group_sent = group_sent + 1 %>
     <td><%= get_name(@reserve_venues[index][:user_id].to_i) %></td>
     <td><%= @reserve_venues[index][:num_diners] %></td>
-    <%-customers_sent = customers_sent + @reserve_venues[index][:num_diners]  %>
+    <%- customers_sent = customers_sent + @reserve_venues[index][:num_diners] %>
     <td><%= @reserve_venues[index][:coupon] %></td>
     <td><%= @reserve_venues[index][:created_at] %></td>
     <td><%= get_offer(@reserve_venues[index][:offer_id].to_i) %></td>
-    <td style="background:#F3F861;"><%= "$" + (( @venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f)).to_s  %></td>
-    <%- total_amount=total_amount + ( @venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f)%>
-  </tr>
+    <%- price = (@venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f) %>
+    <%- total_amount=total_amount + price %>
+    <%- if price.to_s[price.to_s.length-2] == "." %>
+        <td style="background:#F3F861;" class="amount"><%= "$" + ((@venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f)).to_s + "0" %></td>
+    <% else %>
+        <td style="background:#F3F861;" class="amount"><%= "$" + ((@venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f)).to_s %></td>
+    <% end %>
 
   <%end %>
   <tr>
     <td colspan="4"></td>
-    <td style="text-align: center;"><b>Invoice Total</b></td>
-    <td><%= "$" + total_amount.to_s %></td>
+
+    <td style="text-align:right;"><b>Invoice Total</b></td>
+    <%- if total_amount.to_s[total_amount.to_s.length-2] == "." %>
+        <td class="amount"><%= "$" + total_amount.to_s+ "0" %></td>
+    <% else %>
+        <td class="amount"><%= "$" + total_amount.to_s %></td>
+
+    <% end %>
+
   </tr>
   <tr>
-    <td colspan="3"></td>
-    <td style="text-align: center;" colspan="2"><b>mini-chalkboard and decal material (charged at-cost)</b></td>
-    <td><%= "$" + 10.0.to_s  %></td>
+    <td colspan="3" >  </td>
+    <td style="text-align: right;" colspan="2"  class = "edit_able" id="extra"><b>Fee Message :</b></td>
+    <%- apply_charge = @venue_names[0][:feecharge].to_f %>
 
+    <%- if apply_charge.to_s[apply_charge.to_s.length-2] == "." %>
+
+        <td  class ="edit_able" id="cost"><b id="cost">Enter Cost :</b><%#= "$" +(apply_charge).to_s + "0" %></td>
+    <% else %>
+        <td class="amount">Enter Amount<%#= "$" +(apply_charge).to_s %></td>
+
+    <% end %>
   </tr>
 
   <tr class="alt">
-    <td colspan="4"></td>
-    <td style="text-align: center;"><b style="font: bold;">Total</b></td>
-    <td><%= "$" +( total_amount + 10.0 ).to_s %></td>
+    <td colspan="4" class="amount"></td>
+    <td style="text-align: right;" class="amount"><b style="font: bold;">Total</b></td>
+    <%- total = total_amount + @venue_names[0][:feecharge].to_f %>
+
+    <%- if total.to_s[total.to_s.length-2] == "." %>
+        <td class="amount" id = "save_changes"><%= "$" +(total).to_s + "0" %></td>
+    <% else %>
+        <td class="amount" id = "save_changes"><%= "$" +(total).to_s %></td>
+
+
+
+    <% end %>
+
 
   </tr>
 
@@ -223,9 +354,9 @@
   </tr>
   <tr>
     <td colspan="4" style="color:#000000;">We appreciate you letting us advertise <b><%= @venue_names[0][:name] if @venue_names.present?%></b> through our app all these months.
-      Your payment will go to feed<%= @gr_kids[0][:gr_kids] if @gr_kids.present?  %> children locally in GR and <%= @world_kids[0][:world_kids] if @world_kids.present?%>kids in northeast Africa.
+      Your payment will go to feed <%= @gr_kids[0][:gr_kids] if @gr_kids[0][:gr_kids].present? && @gr_kids[0][:gr_kids].to_i !=0 %> children locally in GR and <%= @world_kids[0][:world_kids] if @world_kids.present? && @world_kids[0][:world_kids].to_i != 0 %> kids in northeast Africa.
       Checks can be made payable to FoodCircles at the address above.
-      <b>Thank you for believing in Buy One, Feed One.</b>
+      <div class = "edit_able" id = "note"><b>Thank you for believing in Buy One, Feed One.</b> </div>
     </td>
   </tr>
 
@@ -237,6 +368,8 @@
 </div>
 </div>
 </body>
+</div>
+
 </html>
 
 
