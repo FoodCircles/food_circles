@@ -34,7 +34,8 @@
                           $('#extra').removeClass("edit_able");
                           $('#extra').addClass("selected");
                           $('#extra').append('<input type="text" name="file"  id="extra_fee" size = 40 />');
-
+                          $('#download').html("");
+                          $('#download').append('<button value="Save Changes"  id="cost" size =6  onclick = alert("gdf"); >Apply Changes</>');
                           text_field = text_field + 1
                       }
                       else
@@ -69,12 +70,14 @@
 
                     if(note_field == 0)
                     {
+
+                    $('#note').html("");
+
                     $('#note').removeClass("edit_able");
                     $('#note').addClass("selected");
-                    $('#note').append('<input type="text" name="file"  id="note" size = 100 />');
-
-                     $('#download').html("");
-                     $('#download').append('<button value="Save Changes"  id="cost" size =6  onclick = alert("gdf"); >Apply Changes</>');
+                    $('#note').append('<textarea rows="3" cols="120" >' + $('#note_cp').text() + '</textarea>');
+                    $('#download').html("");
+                    $('#download').append('<button value="Save Changes"  id="cost" size =6  onclick = alert("gdf"); >Apply Changes</>');
                      note_field = note_field + 1;
                    }
                     else
@@ -90,7 +93,7 @@
 
 
 
-              else
+             else
               {
 
               }
@@ -106,7 +109,7 @@
   </script>
 
  <style media="print" type="text/css">
-      #download {display: none;}
+      #download,#amount_remove{display: none;}
   </style>
 
   <style>
@@ -203,6 +206,7 @@
       .edit_able
       {
           color: #ffffff;
+          cursor: pointer;
 
       }
       .edit_able:hover
@@ -214,6 +218,7 @@
       {
           color:black;
       }
+
 
   </style>
 </head>
@@ -264,7 +269,7 @@
     <th>Code</th>
     <th>Time</th>
     <th>Perk </th>
-  <th class="amount" id="amount_heading"> Amount [X] </th>
+  <th class="amount" id="amount_heading"> Amount <div id="amount_remove" style="float: right;">[X]</div> </th>
 </tr>
   <%- total_amount =0  %>
   <%- group_sent = 0 %>
@@ -305,7 +310,7 @@
   </tr>
   <tr>
     <td colspan="3" >  </td>
-    <td style="text-align: right;" colspan="2"  class = "edit_able" id="extra"><b>Fee Message :</b></td>
+    <td style="text-align: right;" colspan="2"  class = "edit_able " id="extra"><b>Fee Message :</b></td>
     <%- apply_charge = @venue_names[0][:feecharge].to_f %>
 
     <%- if apply_charge.to_s[apply_charge.to_s.length-2] == "." %>
@@ -353,7 +358,7 @@
     <td><%= @world_kids[0][:world_kids] if @world_kids.present?%></td>
   </tr>
   <tr>
-    <td colspan="4" style="color:#000000;">We appreciate you letting us advertise <b><%= @venue_names[0][:name] if @venue_names.present?%></b> through our app all these months.
+    <td colspan="4" style="color:#000000;" id="note_cp">We appreciate you letting us advertise <b><%= @venue_names[0][:name] if @venue_names.present?%></b> through our app all these months.
       Your payment will go to feed <%= @gr_kids[0][:gr_kids] if @gr_kids[0][:gr_kids].present? && @gr_kids[0][:gr_kids].to_i !=0 %> children locally in GR and <%= @world_kids[0][:world_kids] if @world_kids.present? && @world_kids[0][:world_kids].to_i != 0 %> kids in northeast Africa.
       Checks can be made payable to FoodCircles at the address above.
       <div class = "edit_able" id = "note"><b>Thank you for believing in Buy One, Feed One.</b> </div>
@@ -362,7 +367,7 @@
 
 
 </table></br>
-  <div  style ='text-align:center; margin-top:130px' id="download">
+  <div  style ='text-align:center; margin-top:160px' id="download">
     <%= button_to "Download", invoice_path(:vid =>@venue_names[0][:id],:months_before =>@months_before,:format => 'pdf')%>
   </div>
 </div>
