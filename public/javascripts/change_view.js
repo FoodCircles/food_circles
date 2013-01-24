@@ -2,7 +2,7 @@ function change_view(vid,months_before){
 
     $.ajax({
         type: 'GET',
-        url: '/monthly_invoice/new_layout?vid='+vid+'&months_before='+months_before,
+        url: '/monthly_invoice/new_layout?vid='+vid+'&months_before='+months_before+'&input_note='+input_note,
         success: function(data) {
 
             if(data == "") {

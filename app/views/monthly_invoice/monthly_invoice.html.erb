@@ -258,9 +258,9 @@
   <caption><h1 class="title">FoodCircles Invoice</h1>
     <hr style="border:2px solid #98bf21 ;" >
     <div id="container_div">
-    <table border="0" style="margin-left: 0px; margin-top: 0px;">
+    <table border="0" style="margin-left: 0px; margin-top: 0px;width: 100%;">
       <tr>
-        <td valign ="top" style="border:none; width:10%;">
+        <td valign ="top" style="border:none; width:30%;">
          <div id="foodcircles_address"><b>Buy One, Feed One.<br>FoodCircles LLC<br>
            423 4th St NW
            Grand Rapids MI, 49504<br>
@@ -269,9 +269,9 @@
          </b>
          </div>
         </td>
-        <td style="border:none; width:3%;">
+        <td style="border:none; width:40%;">
 
-            <%= image_tag 'logo.png' , :style => "width:150px"%>
+            <%= image_tag 'logo.png' , :style => "width:150px; display:block;margin:10px auto; " %>
         </td>
         <td style="border:none; width:30%;">
           <div id="venue_address"><b>Invoice Date:<strong><%= "#{@s.to_date.to_formatted_s(:rfc822)} To #{@e.to_date.to_formatted_s(:rfc822)}" %></strong><br>
@@ -349,24 +349,6 @@
 
     <% end %>
   </tr>
-
-  <tr class="alt">
-    <td colspan="4" class="amount"></td>
-    <td style="text-align: right;" class="amount"><b style="font: bold;">Total</b></td>
-    <%- total = total_amount + @venue_names[0][:feecharge].to_f %>
-
-    <%- if total.to_s[total.to_s.length-2] == "." %>
-        <td class="amount" id = "save_changes"><%= "$" +(total).to_s + "0" %></td>
-    <% else %>
-        <td class="amount" id = "save_changes"><%= "$" +(total).to_s %></td>
-
-
-
-    <% end %>
-
-
-  </tr>
-
 
 </table>
 
