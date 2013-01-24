@@ -2,6 +2,7 @@ Foodcircles::Application.routes.draw do
 
   get "monthly_invoice/monthly_invoice"
   match '/monthly_invoice' => 'monthly_invoice#monthly_invoice', :as => :invoice
+  match '/monthly_invoice/new_layout' => 'monthly_invoice#new_layout', :as => :new_layout
 
   resources :chat, :only => [:index, :show] do
     collection do

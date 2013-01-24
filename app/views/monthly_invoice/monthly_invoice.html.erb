@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
-  <script src="javascripts/jquery.min.js" type="text/javascript"></script>
+  <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+  <script src="/javascripts/change_view.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+
+
+          $(".amount").click(function(event){
+
+              change_view("<%= @vid %>","<%=@months_before %>");
+
+          });
+
+      });
+
+  </script>
+
  <style media="print" type="text/css">
       #download {display: none;}
   </style>
+
   <style>
 
       body
@@ -91,12 +108,16 @@
       {
 
       }
+      .amount
+      {
+            cursor: pointer;
+      }
 
   </style>
 </head>
 
 <body>
-
+<div id="new_layout" >
 <div style="margin-left: auto;margin-right: auto;width: 80%;">
 <table id="customers" align = "center">
   <caption><h1 class="title">FoodCircles Invoice</h1>
@@ -141,7 +162,7 @@
     <th>Code</th>
     <th>Time</th>
     <th>Perk </th>
-    <th>Amount</th>
+  <th class="amount" id="amount_heading"> Amount [X] </th>
 </tr>
   <%- total_amount =0  %>
   <%- group_sent = 0 %>
@@ -210,9 +231,10 @@
 
 
 </table></br>
-  <div  style ='text-align:center; margin-top:160px' id="download">
+  <div  style ='text-align:center; margin-top:130px' id="download">
     <%= button_to "Download", invoice_path(:vid =>@venue_names[0][:id],:months_before =>@months_before,:format => 'pdf')%>
   </div>
+</div>
 </div>
 </body>
 </html>
