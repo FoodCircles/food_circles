@@ -52,4 +52,10 @@ class MonthlyInvoiceController < ApplicationController
     puts ""
 
   end
+  def custom_invoice
+
+    generate_invoice()
+    #please add route and view
+
+  end
 end

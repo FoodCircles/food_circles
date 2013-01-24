@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+<script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/change_view.js" type="text/javascript"></script>
+<script type="text/javascript">
+    text_field =0;
+    var cost_field =0;
+    var note_field =0;
+    fee_message = ""
+    fee_cost = ""
+    input_note = ""
+
+    function send_changes_to_server()
+    {
+
+
+        if( $('#extra_fee').length != 0)
+        {
+            fee_message =  $('#extra_fee').val()
+
+        }
+        if($('#cost_value').length != 0)
+        {
+            fee_cost = $('#cost_value').val()
+        }
+        if( $('#area_input').length !=0)
+        {
+            input_note =  $('#area_input').val()
+
+        }
+
+        else
+        {
+
+
+        }
+        alert(fee_message )
+        alert(fee_cost)
+        alert(input_note)
+
+        change_request("<%= @vid %>","<%=@months_before %>",fee_message,fee_cost,input_note);
+
+
+
+    }
+    $(document).ready(function(){
+
+
+
+        $(".amount").click(function(event){
+
+            var Id = jQuery(this).attr("id");
+            if(Id == "amount_heading")
+            {
+                change_view("<%= @vid %>","<%=@months_before %>");
+            }
+
+
+
+        });
+        $(".edit_able").click(function(event){
+
+            var Id = jQuery(this).attr("id");
+
+            if(Id == "extra")
+            {
+                if(text_field == 0)
+                {
+
+
+                    $('#extra').removeClass("edit_able");
+                    $('#extra').addClass("selected");
+                    $('#extra').append('<input type="text"  value="" id="extra_fee" size = 40 />');
+                    $('#download').html("");
+                    $('#download').append('<button value="Save Changes"  size =6  onclick = send_changes_to_server();>Apply Changes </button>');
+                    text_field = text_field + 1
+                }
+                else
+                {
+
+                }
+
+            }
+
+            if(Id == "cost")
+            {
+                if(cost_field == 0)
+                {
+
+                    $('#cost').removeClass("edit_able");
+                    $('#cost').addClass("selected");
+                    $('#cost').append('<input type="text" id="cost_value" value="" size="6" maxlength="6" />');
+                    $('#save_changes').html("");
+                    $('#download').html("");
+                    $('#download').append('<button value="Apply Changes"   onclick = send_changes_to_server(); >Apply Changes</button>');
+                    cost_field = cost_field + 1
+                }
+
+                else
+                {
+
+                }
+
+            }
+            if(Id == "note")
+            {
+
+                if(note_field == 0)
+                {
+
+                    $('#note').html("");
+                    $('#note').removeClass("edit_able");
+                    $('#note').addClass("selected");
+                    $('#note').append('<textarea rows="3" cols="120" value="" id="area_input">' + $('#note_cp').text() + '</textarea>');
+                    $('#download').html("");
+                    $('#download').append('<button value="Save Changes"  size =6  onclick = send_changes_to_server(); >Apply Changes </button>');
+                    note_field = note_field + 1;
+                }
+                else
+                {
+
+                }
+
+
+            }
+
+
+
+
+
+
+            else
+            {
+
+            }
+
+
+
+        });
+
+
+
+    });
+
+</script>
+
+<style media="print" type="text/css">
+    #download,#amount_remove{display: none;}
+</style>
+
+<style>
+
+    body
+    {
+        font-size:80%;
+        font-weight:normal ;
+        color: #000000;
+    }
+    h1.title {
+        font-size: 180%;
+    }
+    #customers
+    {
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        width:100%;
+    }
+    #customers td, #customers th
+    {
+        font-size:1em;
+        border:1px solid #98bf21;
+        padding:3px 7px 2px 7px;
+    }
+    #customers th
+    {
+        font-size:1.1em;
+        text-align:left;
+        padding-top:5px;
+        padding-bottom:4px;
+        background-color:#A7C942;
+        color:#ffffff;
+    }
+    #summary th
+    {
+        font-size:1.1em;
+        text-align:left;
+        padding-top:5px;
+        padding-bottom:4px;
+        background-color:#EAF2D3;
+        color:#000000;
+    }
+    #summary td, #summary th
+    {
+        font-size:1em;
+        border:5px solid #a9dba9;
+        padding:5px 7px 2px 7px;
+    }
+    #summary
+    {
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        width:80%;
+        border-collapse:collapse;
+
+    }
+    #customers tr.alt td
+    {
+        color:#000000;
+        background-color:#EAF2D3;
+    }
+    table
+    {
+        margin-left: auto;
+        margin-top: 1px;
+        margin-right: auto;
+    }
+    #container_div
+    {
+
+        width:100%;
+        margin-top: 0px;
+
+
+    }
+    td
+    {
+        color: #000000;
+    }
+    #foodcircles_address
+    {
+
+    }
+    #venue_address
+    {
+
+    }
+    .amount
+    {
+        cursor: pointer;
+
+    }
+
+</style>
+</head>
+
+<body>
+<div id="new_layout" >
+  <div style="margin-left: auto;margin-right: auto;width: 80%;">
+    <table id="customers" align = "center">
+      <caption><h1 class="title">FoodCircles Invoice</h1>
+        <hr style="border:2px solid #98bf21 ;" >
+        <div id="container_div">
+          <table border="0" style="margin-left: 0px; margin-top: 0px;">
+            <tr>
+              <td valign ="top" style="border:none; width:10%;">
+                <div id="foodcircles_address"><b>Buy One, Feed One.<br>FoodCircles LLC<br>
+                  423 4th St NW
+                  Grand Rapids MI, 49504<br>
+                  ph: 312 945 8627<br>
+                  Email: support@foodcircles.net
+                </b>
+                </div>
+              </td>
+              <td style="border:none; width:3%;">
+
+                <%= image_tag 'logo.png' , :style => "width:150px"%>
+              </td>
+              <td style="border:none; width:30%;">
+                <div id="venue_address"><b>Invoice Date:<strong><%= "#{@s.to_date.to_formatted_s(:rfc822)} To #{@e.to_date.to_formatted_s(:rfc822)}" %></strong><br>
+                  Bill to our Friend: <%= @venue_names[0][:name] %>
+                  <br>
+                  Address:<br>
+                  <%=  @venue_names[0][:address]  %>
+
+                </b>
+                </div>
+              </td>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <hr style="border:2px solid #98bf21 ;margin-top: 2px;" >
+
+
+      </caption>
+      <tr>
+        <th>Group Name</th>
+        <th>Group Size </th>
+        <th>Code</th>
+        <th>Time</th>
+        <th>Perk </th>
+        <th class="amount" id="amount_heading"> Amount <div id="amount_remove" style="float: right;">[X]</div> </th>
+      </tr>
+      <%- total_amount =0  %>
+      <%- group_sent = 0 %>
+      <%- customers_sent = 0 %>
+      <%- price = 0 %>
+
+      <%- @reserve_venues.each_with_index do |data,index| %>
+
+          <tr>
+
+            <%- group_sent = group_sent + 1 %>
+            <td><%= get_name(@reserve_venues[index][:user_id].to_i) %></td>
+            <td><%= @reserve_venues[index][:num_diners] %></td>
+            <%- customers_sent = customers_sent + @reserve_venues[index][:num_diners] %>
+            <td><%= @reserve_venues[index][:coupon] %></td>
+            <td><%= @reserve_venues[index][:created_at] %></td>
+            <td><%= get_offer(@reserve_venues[index][:offer_id].to_i) %></td>
+            <%- price = (@venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f) %>
+            <%- total_amount=total_amount + price %>
+            <%- if price.to_s[price.to_s.length-2] == "." %>
+                <td style="background:#F3F861;" class="amount"><%= "$" + ((@venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f)).to_s + "0" %></td>
+            <% else %>
+                <td style="background:#F3F861;" class="amount"><%= "$" + ((@venue_names[0][:multiplier].to_f)*(@reserve_venues[index][:num_diners].to_f)).to_s %></td>
+            <% end %>
+
+      <%end %>
+      <tr>
+        <td colspan="4"></td>
+
+        <td style="text-align:right;"><b>Invoice Total</b></td>
+        <%- if total_amount.to_s[total_amount.to_s.length-2] == "." %>
+            <td class="amount"><%= "$" + total_amount.to_s+ "0" %></td>
+        <% else %>
+            <td class="amount"><%= "$" + total_amount.to_s %></td>
+
+        <% end %>
+
+      </tr>
+      <tr>
+        <td colspan="3" >  </td>
+        <td style="text-align: right; color:#000000;" colspan="2"  id="extra"><b><%= params[:fee_message] %></b></td>
+        <%- apply_charge = params[:fee_cost].to_f %>
+
+        <%- if apply_charge.to_s[apply_charge.to_s.length-2] == "." %>
+
+            <td   id="cost"><b id="cost"></b><%= "$" +(apply_charge).to_s + "0" %></td>
+        <% else %>
+            <td class="amount" style="color: #000000;"><%= "$" +(apply_charge).to_s %></td>
+
+        <% end %>
+      </tr>
+
+      <tr class="alt">
+        <td colspan="4" class="amount"></td>
+        <td style="text-align: right;" class="amount"><b style="font: bold;">Total</b></td>
+        <%- total = total_amount + apply_charge %>
+
+        <%- if total.to_s[total.to_s.length-2] == "." %>
+            <td class="amount" id = "save_changes"><%= "$" +(total).to_s + "0" %></td>
+        <% else %>
+            <td class="amount" id = "save_changes"><%= "$" +(total).to_s %></td>
+
+
+
+        <% end %>
+
+
+      </tr>
+
+
+    </table>
+
+    <table id="summary" align = "left" style="width: 100%;margin-top: 10px;">
+
+      <tr>
+        <th>Groups Sent</th>
+        <th>Total Customers Met </th>
+        <th>Meals Donated to Kids Food Basket</th>
+        <th>Meals Donated to World Vision</th>
+
+      </tr>
+      <tr>
+        <td><%= group_sent %></td>
+        <td><%= customers_sent %></td>
+        <td><%= @gr_kids[0][:gr_kids] if @gr_kids.present?  %></td>
+        <td><%= @world_kids[0][:world_kids] if @world_kids.present?%></td>
+      </tr>
+      <tr>
+        <td colspan="4" style="color:#000000;"><%= params[:input_note] %></div>
+        </td>
+      </tr>
+
+
+    </table></br>
+    <div  style ='text-align:center; margin-top:160px' id="download">
+      <%= button_to "Download", custom_invoice_path(:vid =>@venue_names[0][:id],:months_before =>@months_before,:fee_message =>params[:fee_message],:fee_cost => params[:fee_cost],:input_note => params[:input_note],:format => 'pdf')%>
+    </div>
+  </div>
+</div>
+</body>
+</div>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

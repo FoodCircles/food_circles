@@ -4,12 +4,48 @@
   <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
   <script src="/javascripts/change_view.js" type="text/javascript"></script>
   <script type="text/javascript">
+       text_field =0;
+       var cost_field =0;
+       var note_field =0;
+       var fee_message = ""
+       fee_cost = ""
+       input_note = ""
 
+       function send_changes_to_server()
+      {
+
+
+         if( $('#extra_fee').length != 0)
+         {
+             fee_message =  $('#extra_fee').val()
+
+         }
+         if($('#cost_value').length != 0)
+         {
+             fee_cost = $('#cost_value').val()
+         }
+          if( $('#area_input').length !=0)
+         {
+              input_note =  $('#area_input').val()
+
+         }
+
+         else
+          {
+
+
+          }
+
+
+          change_request("<%= @vid %>","<%=@months_before %>",fee_message,fee_cost,input_note)
+
+
+
+      }
       $(document).ready(function(){
 
-           var text_field =0;
-           var cost_field =0;
-           var note_field =0;
+
+
           $(".amount").click(function(event){
 
               var Id = jQuery(this).attr("id");
@@ -33,9 +69,9 @@
 
                           $('#extra').removeClass("edit_able");
                           $('#extra').addClass("selected");
-                          $('#extra').append('<input type="text" name="file"  id="extra_fee" size = 40 />');
+                          $('#extra').append('<input type="text"  value="" id="extra_fee" size = 40 />');
                           $('#download').html("");
-                          $('#download').append('<button value="Save Changes"  id="cost" size =6  onclick = alert("gdf"); >Apply Changes</>');
+                          $('#download').append('<button value="Save Changes"  size =6  onclick = send_changes_to_server();>Apply Changes</button>');
                           text_field = text_field + 1
                       }
                       else
@@ -52,10 +88,10 @@
 
                       $('#cost').removeClass("edit_able");
                       $('#cost').addClass("selected");
-                      $('#cost').append('<input type="text" name="file"  id="cost" size =6 />');
+                      $('#cost').append('<input type="text" id="cost_value" value="" size="6" maxlength="6" />');
                       $('#save_changes').html("");
                       $('#download').html("");
-                      $('#download').append('<button value="Save Changes"  id="cost" size =6  onclick = alert("gdf"); >Apply Changes</>');
+                      $('#download').append('<button value="Apply Changes"   onclick = send_changes_to_server(); >Apply Changes</button>');
                       cost_field = cost_field + 1
                   }
 
@@ -71,29 +107,24 @@
                     if(note_field == 0)
                     {
 
-                    $('#note').html("");
+                        $('#note').html("");
+                        $('#note').removeClass("edit_able");
+                        $('#note').addClass("selected");
 
-                    $('#note').removeClass("edit_able");
-                    $('#note').addClass("selected");
-                    $('#note').append('<textarea rows="3" cols="120" >' + $('#note_cp').text() + '</textarea>');
-                    $('#download').html("");
-                    $('#download').append('<button value="Save Changes"  id="cost" size =6  onclick = alert("gdf"); >Apply Changes</>');
-                     note_field = note_field + 1;
-                   }
+                        $('#note').append('<textarea rows="3" cols="120" value="" id="area_input">' + $('#remove').text() + '</textarea>');
+                        $('#download').html("");
+                        $('#download').append('<button value="Save Changes"    onclick = send_changes_to_server(); >Apply Changes</button>');
+                        $('#remove').html("")
+                        note_field = note_field + 1;
+                    }
                     else
-                  {
+                    {
 
-                  }
+                    }
 
 
               }
-
-
-
-
-
-
-             else
+              else
               {
 
               }
@@ -126,10 +157,7 @@
       {
           font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
           width:100%;
-          /*border-collapse:collapse;*/
-
       }
-
       #customers td, #customers th
       {
           font-size:1em;
@@ -358,10 +386,11 @@
     <td><%= @world_kids[0][:world_kids] if @world_kids.present?%></td>
   </tr>
   <tr>
-    <td colspan="4" style="color:#000000;" id="note_cp">We appreciate you letting us advertise <b><%= @venue_names[0][:name] if @venue_names.present?%></b> through our app all these months.
+    <td colspan="4" style="color:#000000;" id="note_cp"><div id="remove">We appreciate you letting us advertise <b><%= @venue_names[0][:name] if @venue_names.present?%></b> through our app all these months.
       Your payment will go to feed <%= @gr_kids[0][:gr_kids] if @gr_kids[0][:gr_kids].present? && @gr_kids[0][:gr_kids].to_i !=0 %> children locally in GR and <%= @world_kids[0][:world_kids] if @world_kids.present? && @world_kids[0][:world_kids].to_i != 0 %> kids in northeast Africa.
-      Checks can be made payable to FoodCircles at the address above.
+      Checks can be made payable to FoodCircles at the address above.</div>
       <div class = "edit_able" id = "note"><b>Thank you for believing in Buy One, Feed One.</b> </div>
+
     </td>
   </tr>
 
