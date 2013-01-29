@@ -47,6 +47,7 @@
     $(document).ready(function(){
 
 
+        $("#loading").hide();
 
         $(".amount").click(function(event){
 
@@ -254,7 +255,7 @@
               </td>
               <td style="border:none; width:30%;">
                 <div id="venue_address"><b>Invoice Date:<strong><%= "#{@s.to_date.to_formatted_s(:rfc822)} To #{@e.to_date.to_formatted_s(:rfc822)}" %></strong><br>
-                  Bill to our Friend: <%= @venue_names[0][:name] %>
+                   <%= @venue_names[0][:name] %>
                   <br>
                   Address:<br>
                   <%=  @venue_names[0][:address]  %>
@@ -392,7 +393,9 @@
     <div  style ='text-align:center; margin-top:160px' id="download">
       <%= button_to "Download", custom_invoice_path(:vid =>@venue_names[0][:id],:months_before =>@months_before,:fee_message =>params[:fee_message],:fee_cost => params[:fee_cost],:input_note => params[:input_note],:format => 'pdf')%>
     </div>
+    <div id="loading" style="background-color: #ff8c00; color: #ffffff; width: 70px;"><b>Loading....</b></div>
   </div>
+</div>
 </div>
 </body>
 </div>

@@ -44,7 +44,7 @@
       }
       $(document).ready(function(){
 
-
+                 $("#loading").hide();
 
           $(".amount").click(function(event){
 
@@ -69,7 +69,7 @@
 
                           $('#extra').removeClass("edit_able");
                           $('#extra').addClass("selected");
-                          $('#extra').append('<input type="text"  value="" id="extra_fee" size = 40 />');
+                          $('#extra').append('<input type="text"  value="" id="extra_fee" size = 40 />')
                           $('#download').html("");
                           $('#download').append('<button value="Save Changes"  size =6  onclick = send_changes_to_server();>Apply Changes</button>');
                           text_field = text_field + 1
@@ -140,7 +140,7 @@
   </script>
 
  <style media="print" type="text/css">
-      #download,#amount_remove{display: none;}
+      #download, #amount_remove, .edit_able{display: none;}
   </style>
 
   <style>
@@ -233,18 +233,23 @@
       }
       .edit_able
       {
-          color: #ffffff;
+
+          color: #aaaaaa;
           cursor: pointer;
 
       }
       .edit_able:hover
       {
-          color: #aaaaaa;
+          color: #4F4F4F;
 
       }
       .selected
       {
           color:black;
+      }
+      #loading
+     {
+
       }
 
 
@@ -272,10 +277,13 @@
         <td style="border:none; width:40%;">
 
             <%= image_tag 'logo.png' , :style => "width:150px; display:block;margin:10px auto; " %>
+
+
         </td>
+
         <td style="border:none; width:30%;">
           <div id="venue_address"><b>Invoice Date:<strong><%= "#{@s.to_date.to_formatted_s(:rfc822)} To #{@e.to_date.to_formatted_s(:rfc822)}" %></strong><br>
-            Bill to our Friend: <%= @venue_names[0][:name] %>
+           <%= @venue_names[0][:name] %>
             <br>
             Address:<br>
             <%=  @venue_names[0][:address]  %>
@@ -338,12 +346,12 @@
   </tr>
   <tr>
     <td colspan="3" >  </td>
-    <td style="text-align: right;" colspan="2"  class = "edit_able " id="extra"><b>Fee Message :</b></td>
+    <td style="text-align: right;" colspan="2"  class = "edit_able " id="extra"><b>Add extra item :</b></td>
     <%- apply_charge = @venue_names[0][:feecharge].to_f %>
 
     <%- if apply_charge.to_s[apply_charge.to_s.length-2] == "." %>
 
-        <td  class ="edit_able" id="cost"><b id="cost">Enter Cost :</b><%#= "$" +(apply_charge).to_s + "0" %></td>
+        <td  class ="edit_able" id="cost"><b id="cost">Add extra fee :</b><%#= "$" +(apply_charge).to_s + "0" %></td>
     <% else %>
         <td class="amount">Enter Amount<%#= "$" +(apply_charge).to_s %></td>
 
@@ -371,7 +379,7 @@
     <td colspan="4" style="color:#000000;" id="note_cp"><div id="remove">We appreciate you letting us advertise <b><%= @venue_names[0][:name] if @venue_names.present?%></b> through our app all these months.
       Your payment will go to feed <%= @gr_kids[0][:gr_kids] if @gr_kids[0][:gr_kids].present? && @gr_kids[0][:gr_kids].to_i !=0 %> children locally in GR and <%= @world_kids[0][:world_kids] if @world_kids.present? && @world_kids[0][:world_kids].to_i != 0 %> kids in northeast Africa.
       Checks can be made payable to FoodCircles at the address above.</div>
-      <div class = "edit_able" id = "note"><b>Thank you for believing in Buy One, Feed One.</b> </div>
+      <div class = "edit_able" id = "note"><b>Edit message.</b> </div>
 
     </td>
   </tr>
@@ -381,6 +389,7 @@
   <div  style ='text-align:center; margin-top:160px' id="download">
     <%= button_to "Download", invoice_path(:vid =>@venue_names[0][:id],:months_before =>@months_before,:format => 'pdf')%>
   </div>
+  <div id="loading" style="background-color: #ff8c00; color: #ffffff; width: 70px;"><b>Loading....</b></div>
 </div>
 </div>
 </body>
