@@ -40,6 +40,6 @@ function change_request(vid,months_before,fee_message,fee_cost,input_note){
             }
         }
     });
-    $("#loading").hide();
 
+    $("#loading").hide();
 }

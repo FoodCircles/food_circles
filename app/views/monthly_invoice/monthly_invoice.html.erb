@@ -44,7 +44,7 @@
       }
       $(document).ready(function(){
 
-                 $("#loading").hide();
+           $("#loading").hide();
 
           $(".amount").click(function(event){
 
@@ -346,12 +346,12 @@
   </tr>
   <tr>
     <td colspan="3" >  </td>
-    <td style="text-align: right;" colspan="2"  class = "edit_able " id="extra"><b>Add extra item :</b></td>
+    <td style="text-align: right;" colspan="2"  class = "edit_able " id="extra"><b><i>Add extra item :</i></b></td>
     <%- apply_charge = @venue_names[0][:feecharge].to_f %>
 
     <%- if apply_charge.to_s[apply_charge.to_s.length-2] == "." %>
 
-        <td  class ="edit_able" id="cost"><b id="cost">Add extra fee :</b><%#= "$" +(apply_charge).to_s + "0" %></td>
+        <td  class ="edit_able" id="cost"><i id="cost"><b> Add extra fee : </b></i></td>
     <% else %>
         <td class="amount">Enter Amount<%#= "$" +(apply_charge).to_s %></td>
 
@@ -379,7 +379,7 @@
     <td colspan="4" style="color:#000000;" id="note_cp"><div id="remove">We appreciate you letting us advertise <b><%= @venue_names[0][:name] if @venue_names.present?%></b> through our app all these months.
       Your payment will go to feed <%= @gr_kids[0][:gr_kids] if @gr_kids[0][:gr_kids].present? && @gr_kids[0][:gr_kids].to_i !=0 %> children locally in GR and <%= @world_kids[0][:world_kids] if @world_kids.present? && @world_kids[0][:world_kids].to_i != 0 %> kids in northeast Africa.
       Checks can be made payable to FoodCircles at the address above.</div>
-      <div class = "edit_able" id = "note"><b>Edit message.</b> </div>
+      <div class = "edit_able" id = "note"><b><i>Edit message.</i></b> </div>
 
     </td>
   </tr>
@@ -389,7 +389,7 @@
   <div  style ='text-align:center; margin-top:160px' id="download">
     <%= button_to "Download", invoice_path(:vid =>@venue_names[0][:id],:months_before =>@months_before,:format => 'pdf')%>
   </div>
-  <div id="loading" style="background-color: #ff8c00; color: #ffffff; width: 70px;"><b>Loading....</b></div>
+  <div id="loading" style="position: absolute; width: 100%; height: 100%; top:0"><div style="background-color: #ff8c00; color: #ffffff; width: 70px; margin:200px auto 0;"><b>Loading....</b></div></div>
 </div>
 </div>
 </body>
