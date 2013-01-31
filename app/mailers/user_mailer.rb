@@ -12,6 +12,11 @@ class UserMailer < ActionMailer::Base
                              :enable_starttls_auto => true }
   end
 
+  def weekly_mail()
+    mail(:to => "ateq.ejaz@tkxel.com", :subject => "Weekly email from Whenever Cron Jobs")
+    puts "================================================================================Gone====================================="
+  end
+
   def setup_email(user,r)
     mail = Mail.deliver do
       file = "redeem_guide"

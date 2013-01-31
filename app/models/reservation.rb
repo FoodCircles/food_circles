@@ -12,4 +12,10 @@ class Reservation < ActiveRecord::Base
     }
   end
 
+  def self.weekly_update
+
+    UserMailer.weekly_mail().deliver
+
+  end
+
 end
