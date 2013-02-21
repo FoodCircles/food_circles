@@ -2,6 +2,7 @@
 #
 
 every 1.days do
+
   runner "Reservation.weekly_update", :environment => 'development', :output => 'log/cron.log'
 end
 

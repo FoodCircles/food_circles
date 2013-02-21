@@ -1,6 +1,7 @@
 class AppController < ApplicationController
 
   def index
+    Reservation.all(:select => "created_at, user_id")
     @vid = params[:v] if params[:v]
     @oid = params[:o] if params[:o]
   end
@@ -10,6 +11,7 @@ class AppController < ApplicationController
   end
 
   def getVenues
+
     @v = Venue.active.currently_available
     @vc = Venue.active.not_available
 
