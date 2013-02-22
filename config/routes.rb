@@ -1,5 +1,7 @@
 Foodcircles::Application.routes.draw do
 
+  get "user_signup/create"
+
   get "monthly_invoice/monthly_invoice"
   match '/monthly_invoice' => 'monthly_invoice#monthly_invoice', :as => :invoice
   match '/monthly_invoice/new_layout' => 'monthly_invoice#new_layout', :as => :new_layout
@@ -13,7 +15,7 @@ Foodcircles::Application.routes.draw do
 
   resources :remind_list, :only => [:create]
   resources :venues, :only => [:show]
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   match '/app' => 'app#index'
