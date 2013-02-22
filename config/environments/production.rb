@@ -68,8 +68,8 @@ Foodcircles::Application.configure do
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => 'localhost',
-      :user_name            => 'h@foodcircles.net',
-      :password             => 'muxmool25',
+      :user_name            => 'hey@foodcircles.net',
+      :password             => 'foodcircles',
       :authentication       => 'plain',
       :enable_starttls_auto => true
   }

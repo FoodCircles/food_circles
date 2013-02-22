@@ -73,7 +73,6 @@ class AppController < ApplicationController
   def voucher
     @reservation = Reservation.find params[:reservation_id]
     @v = @reservation.venue
-    @v.voucher = @v.voucher.to_i - 1
     @v.save
   end
 

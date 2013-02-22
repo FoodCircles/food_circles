@@ -16,6 +16,7 @@ Foodcircles::Application.routes.draw do
   resources :remind_list, :only => [:create]
   resources :venues, :only => [:show]
   devise_for :users, :controllers => {:registrations => "registrations"}
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   match '/app' => 'app#index'

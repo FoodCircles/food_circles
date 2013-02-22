@@ -12,35 +12,34 @@ class UserMailer < ActionMailer::Base
   end
   def food_mail(email)
     @url = 'http://www.foodcircles.net/app'
-    mail(:to => email, :subject => "Do good. Eat well.")
+    mail(:to => email,:reply_to => 'jonathan@foodcircles.net', :subject => "Do good. Eat well.")
 
   end
   def setup_email(user,r)
 
+     user_reservation = Reservation.find_by_offer_id(r.offer_id.to_i)
+     deal = Offer.find(user_reservation.offer_id)
       mail = Mail.deliver do
-      file = "redeem_guide"
-      to user.email
-      from 'FoodCircles <voucher@foodcircles.net>'
+     to user.email
+      from 'FoodCircles <hey@foodcircles.net>'
       subject "Got your coupon code for #{r.venue.name.capitalize.gsub(/\'/,"\\\'") }"
+      reply_to 'support@foodcircles.net'
       html_part do
         content_type 'text/html; charset=UTF-8'
-        body "<b>reply-to: support@foodcircles.net</b><br><p>Print this email or just show it off on a fancy electronic device.</p>
-              <br>confirmation code: <b>[5-digit code]</b><br>
-              good for: <b>[deal]</b><br>
-              only at: <b>[venue]</b><br>
-              with a minimum of: <b>[min. groupsize] diners </b><br>
-              <b>expiring: (2/28/13) <-today's date + 7 days </b><br>
-              <b>3 steps to redeem:</b><p><br><br>
-
+        body "<table width = '550px'><tr><td><p>Print this email or just show it off on a fancy electronic device.</p>
+              confirmation code: #{r.coupon}<br>
+              good for: #{deal.name}<br>
+              only at: #{r.venue.name.capitalize.gsub(/\'/,"\\\'") }<br>
+              with a minimum of: #{user_reservation.num_diners} diners<br>
+              expiring: #{7.days.from_now.to_date}<br><br>
+              <b>3 steps to redeem:</b><p><br>
               <b>1)</b> Show server this message before you order.  They should jot your code down and confirm.<br>
               <b>2)</b> Order regular food or drink for each person in party.<br>
               <b>3)</b> " "Your Buy One, Feed One"  "item(s) will be taken off your final receipt.</p> <br>Enjoy!<br>
               Contact support at <b>support@foodcircles.net</b> if you have any concerns or questions whatsoever.<br>
-              <h3><u>FOR SERVERS:</u></h3><br><br>"
-
-
-
-      end
+              <h3><u>FOR SERVERS:</u></h3>
+              <p><b>Write down the confirmation code on the table's receipt or your POS system</b>.  Place a " "Buy One, Feed One" " emblem on the guest's table, and mark a tally on your chalkboard (if available).  Call us at 312 945 8627 with any questions!</p></td></tr></table>"
+        end
     end
   end
 
