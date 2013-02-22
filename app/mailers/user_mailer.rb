@@ -11,7 +11,7 @@ class UserMailer < ActionMailer::Base
                              :enable_starttls_auto => true }
   end
   def food_mail(email)
-    @url = 'http://www.foodcircles.net/app'
+    @url = 'http://www.foodcircles.net'
     mail(:to => email,:reply_to => 'jonathan@foodcircles.net', :subject => "Do good. Eat well.")
 
   end
