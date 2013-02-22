@@ -9,7 +9,7 @@ class RemindListController < ApplicationController
 	        errors.add(:email, "Your email address does not appear to be valid")
 	    else
         if validate_email_domain(email)
-	    	  UserMailer.remind_mail( email )
+	    	  UserMailer.food_mail(email).deliver
         else
           sendText( email )
         end

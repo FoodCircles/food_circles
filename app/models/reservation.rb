@@ -12,4 +12,13 @@ class Reservation < ActiveRecord::Base
     }
   end
 
+  def self.weekly_update
+
+
+    auto_emails = Reservation.all(:select => "created_at");
+
+    UserMailer.weekly_mail().deliver
+
+  end
+
 end

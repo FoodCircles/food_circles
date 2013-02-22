@@ -8,14 +8,13 @@
     %strong= v.name
     %span.time
       %span= (v.available? ? "AVAILABLE NOW" : v.open_at)
-    - if v.voucher.to_i != 0
-      = pluralize(v.voucher, "Voucher")
-      %br
+    - if v.voucher != '0'
+      -#= pluralize(v.voucher, "Voucher")
+      -#%br
     - else
-
-      = "Sold out"
-
+      -#No Voucher
+      -#%br
     - if avail and v.voucher != '0'
       %span.current= link_to v.offers.first.name, venue_path(v)
     - else
-      -#%span.current.strike= link_to v.offers.first.name, venue_path(v)
+      %span.current.strike= link_to v.offers.first.name, venue_path(v)
