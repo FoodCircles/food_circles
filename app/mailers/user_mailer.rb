@@ -42,7 +42,7 @@ class UserMailer < ActionMailer::Base
               Enjoy!<br><br>
               Contact support at <b>support@foodcircles.net</b> if you have any concerns or questions whatsoever.<br><br><br>
               <h3><u>FOR SERVERS:</u></h3>
-              <p style= text-align: justify;><b>Write down the confirmation code on the table's receipt or your POS system</b>.  Place a  \"Buy One, Feed One\" emblem on the guest's table, and mark a tally on your chalkboard (if available).  Call us at 312 945 8627 with any questions!</p></td></tr></table>"
+              <p style= text-align: justify;><b>Write down the confirmation code on the table's receipt or your POS system</b>.  Place a  \"Buy One, Feed One\"  placard on the guest's table, and mark a tally on your chalkboard (if available).  Call us at 312 945 8627 with any questions!</p></td></tr></table>"
         end
     end
   end
