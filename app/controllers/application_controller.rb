@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :email_server
   before_filter :prepare_for_mobile
 
   ACCOUNT_SID = "AC085df9dc6444a3588933ae0ddd9d95e7"
@@ -9,6 +10,13 @@ class ApplicationController < ActionController::Base
 
   CALLER_ID = "14422223663"
 
+  def email_server
+
+    user_agent =  request.env['HTTP_USER_AGENT'].downcase
+    redirect_to "https://play.google.com/store/apps/details?id=co.foodcircles"  if ( (user_agent.include?"android") && (params['app'].include?"mobile_email") )
+    redirect_to "http://itunes.apple.com/us/app/foodcircles/id526107767" if ( (user_agent.include?"iphone") && (params['app'].include?"mobile_email"))
+
+  end
   def genCoupon
     s = [('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
     (0..4).map{s[rand(s.length)]}.join.downcase
