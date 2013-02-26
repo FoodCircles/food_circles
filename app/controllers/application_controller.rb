@@ -19,9 +19,9 @@ class ApplicationController < ActionController::Base
       #Go to rooth_path
       prepare_for_mobile
     else
-      redirect_to "https://play.google.com/store/apps/details?id=co.foodcircles"  if(user_agent.include?"android")
-      redirect_to "http://itunes.apple.com/us/app/foodcircles/id526107767" if(user_agent.include?"iphone")
-
+      redirect_to "http://play.google.com/store/apps/details?id=co.foodcircles"  if(user_agent.include?"android")
+      redirect_to "http://itunes.apple.com/us/app/foodcircles/id526107767"   if(user_agent.include?"iphone")
+      redirect_to "http://foodcircles.net:443/app"  if params['app'].present?
     end
   end
   def genCoupon
