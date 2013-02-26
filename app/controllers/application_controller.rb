@@ -13,16 +13,27 @@ class ApplicationController < ActionController::Base
   def email_server
 
     user_agent =  request.env['HTTP_USER_AGENT'].downcase
+    request.user_agent =~ /Mobile|webOS/
 
-    if(params['app'].nil?)
+    if(params['app'].present?)
 
-      #Go to rooth_path
-      prepare_for_mobile
+      if(user_agent.include?"android")
+        redirect_to "http://play.google.com/store/apps/details?id=co.foodcircles"
+      elsif (user_agent.include?"iphone")
+        redirect_to "http://itunes.apple.com/us/app/foodcircles/id526107767"
+      elsif !((request.user_agent =~ /Mobile/).nil?)
+        redirect_to root_path
+      else
+
+        redirect_to  "http://www.foodcircles.net:443/app"
+
+      end
     else
-      redirect_to "http://play.google.com/store/apps/details?id=co.foodcircles"  if(user_agent.include?"android")
-      redirect_to "http://itunes.apple.com/us/app/foodcircles/id526107767"   if(user_agent.include?"iphone")
-      redirect_to "http://foodcircles.net:443/app"  if params['app'].present?
+
+      prepare_for_mobile
+
     end
+
   end
   def genCoupon
     s = [('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
