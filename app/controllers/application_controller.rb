@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
         redirect_to root_path
       else
 
-        redirect_to  "http://www.foodcircles.net:443/app"
+        redirect_to  "http://www.foodcircles.net/app"
 
       end
     else
