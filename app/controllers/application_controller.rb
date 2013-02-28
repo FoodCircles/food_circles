@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     if(params['app'].present?)
 
       if(user_agent.include?"android")
+
         redirect_to  "https://play.google.com/store/apps/details?id=co.foodcircles"
 
       elsif (user_agent.include?"iphone")
