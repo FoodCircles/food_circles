@@ -1,6 +1,7 @@
 Foodcircles::Application.routes.draw do
 
   get "user_signup/create"
+  resources :stripe_payments, :only =>[:new, :create]
 
   get "monthly_invoice/monthly_invoice"
   match '/monthly_invoice' => 'monthly_invoice#monthly_invoice', :as => :invoice

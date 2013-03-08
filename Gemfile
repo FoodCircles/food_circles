@@ -20,7 +20,8 @@ gem 'urbanairship'
 gem 'therubyracer'
 gem 'execjs'
 gem 'mail'
-gem  'pdfkit'
+gem 'pdfkit'
+gem 'stripe'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
