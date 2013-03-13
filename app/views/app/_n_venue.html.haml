@@ -6,4 +6,4 @@
     = "#{v.venue_tags.first.name} | #{v.neighborhood}" if v.venue_tags.any?
     %br
     %ul
-      %li up to #{v.offers.find_by_min_diners(6).name}
+      %li up to #{v.offers[0].name}
