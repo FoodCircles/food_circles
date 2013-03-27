@@ -1,5 +1,5 @@
 class AppController < ApplicationController
-
+ #tkxel_dev: Main controller for Voucher creation and Email notifications
   def index
     Reservation.all(:select => "created_at, user_id")
     @vid = params[:v] if params[:v]
@@ -11,6 +11,7 @@ class AppController < ApplicationController
   end
 
   def getVenues
+
 
     @v = Venue.active.currently_available
     @vc = Venue.active.not_available
@@ -95,7 +96,7 @@ class AppController < ApplicationController
   end
 
   def handle_email(user, r)
-    #UserMailer.delay.voucher(current_user, r)
+    #tkxel_dev:Send user voucher confirmation via Email
     UserMailer.create_voucher(user, r)
   end
 

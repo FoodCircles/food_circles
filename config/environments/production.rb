@@ -63,7 +63,7 @@ Foodcircles::Application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { :host => 'foodcircles.net' }
   config.action_mailer.delivery_method = :smtp
-
+  #tkxel_dev: Credentials added for Email Service
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,

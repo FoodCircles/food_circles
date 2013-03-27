@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   BASE_URL = "http://foodcircles.net"
 
   CALLER_ID = "14422223663"
+  #tkxel_dev: Following method detects incoming request from an email server and redirect users
+  #To respective app store to downloaf foodcircles app.
 
   def email_server
 
@@ -130,6 +132,8 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  #tkxel_dev: Following method collect data for monthly invoice reports in PDF formats.
 
   def generate_invoice
 

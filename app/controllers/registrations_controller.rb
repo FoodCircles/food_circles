@@ -1,4 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
+  #tkxel_dev: Devise Controller override for Email Forget and signup scenario and for Email Sending.
+
   prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
 

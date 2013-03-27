@@ -1,4 +1,5 @@
 class UserMailer < ActionMailer::Base
+  #tkxel_dev: SendGrid credentilas for email.
   default from:"\"FoodCircles\" <voucher@foodcircles.net>"
   require 'mail'
   Mail.defaults do
@@ -10,12 +11,14 @@ class UserMailer < ActionMailer::Base
                              :authentication => 'plain',
                              :enable_starttls_auto => true }
   end
+  #tkxel_dev: Send email upon voucher creation
   def food_mail(email)
 
     @url = 'http://foodcircles.net/?app=mobile_email'
     mail(:to => email,:reply_to => 'jonathan@foodcircles.net', :subject => "Do good. Eat well.")
 
   end
+  #tkxel_dev: Email Content creation is handled in the following method.
   def setup_email(user,r)
 
      user_reservation = Reservation.find_by_offer_id(r.offer_id.to_i)
@@ -62,6 +65,8 @@ class UserMailer < ActionMailer::Base
   end
 
   def create_voucher(user,r)
+
+    #tkxel_dev: send Emails to users.
     @user = user
     @r = r
     setup_email(@user,@r)
