@@ -1,0 +1,267 @@
+// Place all the styles related to the faq controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#sidebar {
+  padding-top: 5px; }
+  #sidebar ul {
+    list-style: none;
+    padding: 15px 0; }
+  #sidebar li {
+    padding: 0;
+    line-height: 40px;
+    height: 53px; }
+    #sidebar li a {
+      display: block;
+      padding: 5px 0;
+      font-size: 22px;
+      font-family: "museo-slab", "Neutraface Slab", serif;
+      color: #ababab; }
+    #sidebar li.active {
+      background: #cdc7be;
+      position: relative;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px; }
+      #sidebar li.active:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 25px;
+        border-color: transparent;
+        border-right-color: #cdc7be;
+        position: absolute;
+        left: -50px;
+        top: 2px; }
+      #sidebar li.active a {
+        color: #7e7e7e;
+        text-decoration: none;
+        background: #fff;
+        position: relative;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px; }
+        #sidebar li.active a:before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 25px;
+          border-color: transparent;
+          border-right-color: #fff;
+          position: absolute;
+          left: -50px;
+          top: 0; }
+
+#about .question h3, #faqmain .question h3, #faq .question h3 {
+  color: #a34a4b;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  font-weight: bold; }
+#about .question:nth-of-type(even) h3, #faqmain .question:nth-of-type(even) h3, #faq .question:nth-of-type(even) h3 {
+  color: #701a1a; }
+#about .question p, #faqmain .question p, #faq .question p {
+  color: #666;
+  font-size: 16px;
+  font-family: "museo-slab", "Neutraface Slab", serif; }
+
+#about #sidebar {
+  float: right;
+  padding-left: 88px;
+  padding-right: 8px;
+  width: 304px; }
+#about .questions {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 544px; }
+
+#faqmain #sidebar {
+  float: right;
+  padding-left: 168px;
+  padding-right: 8px;
+  width: 304px; }
+#faqmain .questions {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 464px; }
+
+#about, #faqmain {
+  padding-bottom: 10px;
+  background: url(../img/faq_hshadow.png) center bottom no-repeat; }
+  #about .questions, #faqmain .questions {
+    padding-top: 5px; }
+  #about .question, #faqmain .question {
+    padding: 10px 0 15px;
+    background: url(../img/faq_hshadow_short.png) center bottom no-repeat; }
+    #about .question:nth-of-type(even), #faqmain .question:nth-of-type(even) {
+      background: url(../img/faq_hshadow_short_even.png) center bottom no-repeat; }
+    #about .question:last-child, #faqmain .question:last-child {
+      background: none; }
+    #about .question h3, #faqmain .question h3 {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 10px;
+      padding: 5px 6px; }
+    #about .question p, #faqmain .question p {
+      padding: 0 8px 2px;
+      line-height: 1.6; }
+
+#faq .question {
+  zoom: 1;
+  padding: 30px 0 25px;
+  background: url(../img/faq_hshadow.png) center bottom no-repeat; }
+  #faq .question:after {
+    clear: both;
+    content: "";
+    display: table; }
+  #faq .question:nth-of-type(even) {
+    background: url(../img/faq_hshadow_even.png) center bottom no-repeat; }
+  #faq .question h3 {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 304px;
+    font-size: 15px; }
+  #faq .question p {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 624px; }
+  #faq .question:nth-of-type(even) p {
+    color: #4e4e4e; }
+
+#fbcomments {
+  margin-top: 20px;
+  padding: 20px 0; }
+  #fbcomments h4 {
+    color: #7e7e7e;
+    font-family: "museo-slab", "Neutraface Slab", serif;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px; }
+    #fbcomments h4 a {
+      font-weight: bold; }
+  #fbcomments .fb-container {
+    float: left;
+    padding-left: 88px;
+    padding-right: 8px;
+    width: 784px;
+    padding-top: 10px; }
+  #fbcomments .fb-comments {
+    background: #fff; }
+
+#team {
+  margin-top: 40px; }
+  #team .teampick {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 304px;
+    position: relative; }
+    #team .teampick:before {
+      content: "";
+      display: block;
+      width: 376px;
+      height: 319px;
+      background: url(../img/about_team_shadow.png) 0 0 no-repeat;
+      position: absolute;
+      left: -17px;
+      top: -32px; }
+    #team .teampick ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      position: relative; }
+    #team .teampick li {
+      margin-top: -10px;
+      width: 325px;
+      height: 56px;
+      padding-top: 19px;
+      background: url(../img/about_team.png) 0 0 no-repeat; }
+      #team .teampick li a {
+        display: block;
+        height: 25px;
+        padding-top: 31px;
+        padding-right: 8px;
+        overflow: hidden;
+        text-align: right;
+        line-height: 25px;
+        font-family: "museo-slab", "Neutraface Slab", serif;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 0 0 15px black, 0 0 10px black, 0 0 5px black;
+        text-decoration: none;
+        text-indent: 500px; }
+        #team .teampick li a:hover {
+          text-indent: 0;
+          border-left: 4px solid #a34a4b; }
+      #team .teampick li.jonathan {
+        background-position: 0 0; }
+        #team .teampick li.jonathan.active {
+          background-position: 0 -75px; }
+      #team .teampick li.adam {
+        background-position: 0 -150px; }
+        #team .teampick li.adam.active {
+          background-position: 0 -225px; }
+      #team .teampick li.carly {
+        background-position: -325px 0; }
+        #team .teampick li.carly.active {
+          background-position: -325px -75px; }
+      #team .teampick li.kerri {
+        background-position: -325px -150px; }
+        #team .teampick li.kerri.active {
+          background-position: -325px -225px; }
+  #team .teammember {
+    float: left;
+    padding-left: 88px;
+    padding-right: 8px;
+    width: 544px;
+    display: none; }
+    #team .teammember.active {
+      display: block; }
+    #team .teammember h3 {
+      font-size: 24px;
+      font-family: "museo-slab", "Neutraface Slab", serif;
+      font-weight: bold;
+      color: #a34a4b; }
+    #team .teammember h4 {
+      color: #666;
+      font-size: 18px;
+      font-family: "museo-slab", "Neutraface Slab", serif;
+      font-style: italic;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      background: url(../img/about_location.png) 0 50% no-repeat; }
+    #team .teammember p {
+      color: #666;
+      font-size: 16px;
+      font-family: "museo-slab", "Neutraface Slab", serif;
+      margin-bottom: 20px; }
+    #team .teammember strong {
+      color: #a34a4b;
+      font-style: normal;
+      font-weight: bold; }
+    #team .teammember ul.contact {
+      margin: 40px 0 0 0;
+      padding: 0;
+      list-style: none; }
+      #team .teammember ul.contact li {
+        display: inline-block; }
+        #team .teammember ul.contact li a {
+          display: block;
+          width: 32px;
+          height: 32px;
+          text-indent: -999px;
+          overflow: hidden;
+          background: url(../img/about_social.png) 0 0 no-repeat; }
+          #team .teammember ul.contact li a.fb {
+            background-position: 0 0; }
+          #team .teammember ul.contact li a.tw {
+            background-position: -32px 0; }
+          #team .teammember ul.contact li a.sk {
+            background-position: -64px 0; }
+          #team .teammember ul.contact li a.em {
+            background-position: -96px 0; }
+          #team .teammember ul.contact li a.li {
+            background-position: -128px 0; }

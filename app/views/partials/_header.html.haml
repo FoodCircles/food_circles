@@ -14,15 +14,14 @@
       %li
         %a.si{:href => "#"} Sign in ▸
     %ul#nav
-      %li.active
-        %a{:href => "#"} Home
+      %li{:class => "#{ 'active' if controller_name == 'home' }"}
+        =link_to 'Home', root_path
+      %li{:class => "#{ 'active' if controller_name == 'faq' }"}
+        =link_to 'FAQ', faq_path
       %li
-        %a{:href => "#"} FAQ
+        =link_to 'About Us', '#'
       %li
-        %a{:href => "#"} About Us
-      %li
-        %a{:href => "#"} For Restaurants ▾
-
+        =link_to 'For Restaurants', "#"
   / .wrapper
   /   = link_to root_path do
   /     %strong#logo FoodCircles

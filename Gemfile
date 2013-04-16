@@ -7,6 +7,7 @@ gem 'activerecord-postgis-adapter'
 gem 'rgeo'
 gem 'haml'
 gem 'devise'
+gem 'high_voltage'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly'
 gem "rails_admin", "~> 0.0.5"

@@ -1,0 +1,442 @@
+/* line 4, ../../app/assets/stylesheets/faq.css.scss */
+#sidebar {
+  padding-top: 5px;
+}
+
+/* line 6, ../../app/assets/stylesheets/faq.css.scss */
+#sidebar ul {
+  list-style: none;
+  padding: 15px 0;
+}
+
+/* line 9, ../../app/assets/stylesheets/faq.css.scss */
+#sidebar li {
+  padding: 0;
+  line-height: 40px;
+  height: 53px;
+}
+
+/* line 13, ../../app/assets/stylesheets/faq.css.scss */
+#sidebar li a {
+  display: block;
+  padding: 5px 0;
+  font-size: 22px;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  color: #ababab;
+}
+
+/* line 19, ../../app/assets/stylesheets/faq.css.scss */
+#sidebar li.active {
+  background: #cdc7be;
+  position: relative;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* line 24, ../../app/assets/stylesheets/faq.css.scss */
+#sidebar li.active:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px;
+  border-color: transparent;
+  border-right-color: #cdc7be;
+  position: absolute;
+  left: -50px;
+  top: 2px;
+}
+
+/* line 35, ../../app/assets/stylesheets/faq.css.scss */
+#sidebar li.active a {
+  color: #7e7e7e;
+  text-decoration: none;
+  background: #fff;
+  position: relative;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* line 42, ../../app/assets/stylesheets/faq.css.scss */
+#sidebar li.active a:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px;
+  border-color: transparent;
+  border-right-color: #fff;
+  position: absolute;
+  left: -50px;
+  top: 0;
+}
+
+/* line 54, ../../app/assets/stylesheets/faq.css.scss */
+#about .question h3, #faqmain .question h3, #faq .question h3 {
+  color: #a34a4b;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  font-weight: bold;
+}
+
+/* line 58, ../../app/assets/stylesheets/faq.css.scss */
+#about .question:nth-of-type(even) h3, #faqmain .question:nth-of-type(even) h3, #faq .question:nth-of-type(even) h3 {
+  color: #701a1a;
+}
+
+/* line 60, ../../app/assets/stylesheets/faq.css.scss */
+#about .question p, #faqmain .question p, #faq .question p {
+  color: #666;
+  font-size: 16px;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+}
+
+/* line 65, ../../app/assets/stylesheets/faq.css.scss */
+#about #sidebar {
+  float: right;
+  padding-left: 88px;
+  padding-right: 8px;
+  width: 304px;
+}
+
+/* line 70, ../../app/assets/stylesheets/faq.css.scss */
+#about .questions {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 544px;
+}
+
+/* line 76, ../../app/assets/stylesheets/faq.css.scss */
+#faqmain #sidebar {
+  float: right;
+  padding-left: 168px;
+  padding-right: 8px;
+  width: 304px;
+}
+
+/* line 81, ../../app/assets/stylesheets/faq.css.scss */
+#faqmain .questions {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 464px;
+}
+
+/* line 87, ../../app/assets/stylesheets/faq.css.scss */
+#about, #faqmain {
+  padding-bottom: 10px;
+  background: url(/assets/images/faq/faq_hshadow.png) center bottom no-repeat;
+}
+
+/* line 90, ../../app/assets/stylesheets/faq.css.scss */
+#about .questions, #faqmain .questions {
+  padding-top: 5px;
+}
+
+/* line 92, ../../app/assets/stylesheets/faq.css.scss */
+#about .question, #faqmain .question {
+  padding: 10px 0 15px;
+  background: url(/assets/images/faq/faq_hshadow_short.png) center bottom no-repeat;
+}
+
+/* line 95, ../../app/assets/stylesheets/faq.css.scss */
+#about .question:nth-of-type(even), #faqmain .question:nth-of-type(even) {
+  background: url(/assets/images/faq/faq_hshadow_short_even.png) center bottom no-repeat;
+}
+
+/* line 97, ../../app/assets/stylesheets/faq.css.scss */
+#about .question:last-child, #faqmain .question:last-child {
+  background: none;
+}
+
+/* line 99, ../../app/assets/stylesheets/faq.css.scss */
+#about .question h3, #faqmain .question h3 {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  padding: 5px 6px;
+}
+
+/* line 104, ../../app/assets/stylesheets/faq.css.scss */
+#about .question p, #faqmain .question p {
+  padding: 0 8px 2px;
+  line-height: 1.6;
+}
+
+/* line 108, ../../app/assets/stylesheets/faq.css.scss */
+#faq .question {
+  zoom: 1;
+  padding: 30px 0 25px;
+  background: url(/assets/images/faq/faq_hshadow.png) center bottom no-repeat;
+}
+
+/* line 112, ../../app/assets/stylesheets/faq.css.scss */
+#faq .question:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 116, ../../app/assets/stylesheets/faq.css.scss */
+#faq .question:nth-of-type(even) {
+  background: url(/assets/images/faq/faq_hshadow_even.png) center bottom no-repeat;
+}
+
+/* line 118, ../../app/assets/stylesheets/faq.css.scss */
+#faq .question h3 {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 304px;
+  font-size: 15px;
+}
+
+/* line 124, ../../app/assets/stylesheets/faq.css.scss */
+#faq .question p {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 624px;
+}
+
+/* line 129, ../../app/assets/stylesheets/faq.css.scss */
+#faq .question:nth-of-type(even) p {
+  color: #4e4e4e;
+}
+
+/* line 132, ../../app/assets/stylesheets/faq.css.scss */
+#fbcomments {
+  margin-top: 20px;
+  padding: 20px 0;
+}
+
+/* line 135, ../../app/assets/stylesheets/faq.css.scss */
+#fbcomments h4 {
+  color: #7e7e7e;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* line 141, ../../app/assets/stylesheets/faq.css.scss */
+#fbcomments h4 a {
+  font-weight: bold;
+}
+
+/* line 143, ../../app/assets/stylesheets/faq.css.scss */
+#fbcomments .fb-container {
+  float: left;
+  padding-left: 88px;
+  padding-right: 8px;
+  width: 784px;
+  padding-top: 10px;
+}
+
+/* line 149, ../../app/assets/stylesheets/faq.css.scss */
+#fbcomments .fb-comments {
+  background: #fff;
+}
+
+/* line 152, ../../app/assets/stylesheets/faq.css.scss */
+#team {
+  margin-top: 40px;
+}
+
+/* line 154, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 304px;
+  position: relative;
+}
+
+/* line 160, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick:before {
+  content: "";
+  display: block;
+  width: 376px;
+  height: 319px;
+  background: url(/assets/images/faq/about_team_shadow.png) 0 0 no-repeat;
+  position: absolute;
+  left: -17px;
+  top: -32px;
+}
+
+/* line 169, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* line 174, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li {
+  margin-top: -10px;
+  width: 325px;
+  height: 56px;
+  padding-top: 19px;
+  background: url(/assets/images/faq/about_team.png) 0 0 no-repeat;
+}
+
+/* line 180, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li a {
+  display: block;
+  height: 25px;
+  padding-top: 31px;
+  padding-right: 8px;
+  overflow: hidden;
+  text-align: right;
+  line-height: 25px;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 15px black, 0 0 10px black, 0 0 5px black;
+  text-decoration: none;
+  text-indent: 500px;
+}
+
+/* line 196, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li a:hover {
+  text-indent: 0;
+  border-left: 4px solid #a34a4b;
+}
+
+/* line 199, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li.jonathan {
+  background-position: 0 0;
+}
+
+/* line 201, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li.jonathan.active {
+  background-position: 0 -75px;
+}
+
+/* line 203, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li.adam {
+  background-position: 0 -150px;
+}
+
+/* line 205, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li.adam.active {
+  background-position: 0 -225px;
+}
+
+/* line 207, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li.carly {
+  background-position: -325px 0;
+}
+
+/* line 209, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li.carly.active {
+  background-position: -325px -75px;
+}
+
+/* line 211, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li.kerri {
+  background-position: -325px -150px;
+}
+
+/* line 213, ../../app/assets/stylesheets/faq.css.scss */
+#team .teampick li.kerri.active {
+  background-position: -325px -225px;
+}
+
+/* line 215, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember {
+  float: left;
+  padding-left: 88px;
+  padding-right: 8px;
+  width: 544px;
+  display: none;
+}
+
+/* line 221, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember.active {
+  display: block;
+}
+
+/* line 223, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember h3 {
+  font-size: 24px;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  font-weight: bold;
+  color: #a34a4b;
+}
+
+/* line 228, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember h4 {
+  color: #666;
+  font-size: 18px;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  font-style: italic;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  background: url(/assets/images/faq/about_location.png) 0 50% no-repeat;
+}
+
+/* line 236, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember p {
+  color: #666;
+  font-size: 16px;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  margin-bottom: 20px;
+}
+
+/* line 241, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember strong {
+  color: #a34a4b;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* line 245, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember ul.contact {
+  margin: 40px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 249, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember ul.contact li {
+  display: inline-block;
+}
+
+/* line 251, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember ul.contact li a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  text-indent: -999px;
+  overflow: hidden;
+  background: url(/assets/images/faq/about_social.png) 0 0 no-repeat;
+}
+
+/* line 258, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember ul.contact li a.fb {
+  background-position: 0 0;
+}
+
+/* line 260, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember ul.contact li a.tw {
+  background-position: -32px 0;
+}
+
+/* line 262, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember ul.contact li a.sk {
+  background-position: -64px 0;
+}
+
+/* line 264, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember ul.contact li a.em {
+  background-position: -96px 0;
+}
+
+/* line 266, ../../app/assets/stylesheets/faq.css.scss */
+#team .teammember ul.contact li a.li {
+  background-position: -128px 0;
+}

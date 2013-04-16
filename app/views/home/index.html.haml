@@ -1,232 +1,229 @@
-#container
-  = render :partial => 'partials/header'
-  #hero
+#hero
+.container
+  = image_tag "home/hero.jpg"
+  %br/
+  %br/
+#home
   .container
-    = image_tag "home/hero.jpg"
-    %br/
-    %br/
-  #home
-    .container
-      .getapp
-        %strong Get the app
-        %a.button.iphone{:href => "#"} iPhone
-        %a.button.android{:href => "#"} Android
-      .join
-        %form{:action => ""}
-          %strong Join the cause
-          %input{:name => "", :placeholder => "email or phone number", :type => "text"}/
-          %input.button{:type => "submit", :value => "Send ▸"}/
-    .container
-      .filters
-        .loc
-          Location:
-          %a{:href => "#"} All ▾
-        .cat
-          Category:
-          %a{:href => "#"} All ▾
-        %h2 View Restaurants
-    .container
-      .index
-        / COLUMN
-        .col
-          .item
-            .pic-container
-              %span.meter
-                .count{:style => "height: 50px"}
-                  %b.lt10
-                    %i 5
-                    left
+    .getapp
+      %strong Get the app
+      %a.button.iphone{:href => "#"} iPhone
+      %a.button.android{:href => "#"} Android
+    .join
+      %form{:action => ""}
+        %strong Join the cause
+        %input{:name => "", :placeholder => "email or phone number", :type => "text"}/
+        %input.button{:type => "submit", :value => "Send ▸"}/
+  .container
+    .filters
+      .loc
+        Location:
+        %a{:href => "#"} All ▾
+      .cat
+        Category:
+        %a{:href => "#"} All ▾
+      %h2 View Restaurants
+  .container
+    .index
+      / COLUMN
+      .col
+        .item
+          .pic-container
+            %span.meter
+              .count{:style => "height: 50px"}
+                %b.lt10
+                  %i 5
+                  left
+            .pic
+              = image_tag "home/pic01.jpg"
+          %h3 free desserts
+          %h4 at georgio's pizza
+          .tags
+            %strong Categorized in
+            = succeed "," do
+              %a{:href => "#"} open late
+            = succeed "," do
+              %a{:href => "#"} easy in easy out
+            %a{:href => "#"} cheap
+            \&
+            %a{:href => "#"} close to you
+        .item
+          .pic-container
+            %span.meter
+              .count{:style => "height: 20px"}
+                %b.lt5
+                  %i 2
+                  left
               .pic
                 = image_tag "home/pic01.jpg"
-            %h3 free desserts
-            %h4 at georgio's pizza
-            .tags
-              %strong Categorized in
-              = succeed "," do
-                %a{:href => "#"} open late
-              = succeed "," do
-                %a{:href => "#"} easy in easy out
-              %a{:href => "#"} cheap
-              \&
-              %a{:href => "#"} close to you
-          .item
-            .pic-container
-              %span.meter
-                .count{:style => "height: 20px"}
-                  %b.lt5
-                    %i 2
-                    left
-                .pic
-                  = image_tag "home/pic01.jpg"
-            %h3 free loaded crack fries
-            %h4 at hopcat
-            .tags
-              %strong Categorized in
-              = succeed "," do
-                %a{:href => "#"} open late
-              = succeed "," do
-                %a{:href => "#"} easy in easy out
-              %a{:href => "#"} cheap
-              \&
-              %a{:href => "#"} close to you
-          .item
-            .pic-container
-              %span.meter
-                .count{:style => "height: 50px"}
-                  %b.lt10
-                    %i 5
-                    left
-              .pic
-                = image_tag "home/pic01.jpg"
-            %h3 free desserts
-            %h4 at georgio's pizza
-            .tags
-              %strong Categorized in
-              = succeed "," do
-                %a{:href => "#"} open late
-              = succeed "," do
-                %a{:href => "#"} easy in easy out
-              %a{:href => "#"} cheap
-              \&
-              %a{:href => "#"} close to you
-        / /COLUMN
-        / COLUMN
-        .col
-          .item
-            .pic-container
-              %span.meter
-                .count{:style => "height: 100px"}
-                  %b.gt10
-                    %i 11
-                    left
-              .pic
-                = image_tag "home/pic02.jpg"
-            %h3 free appetizers
-            %h4 at sanchez bistro
-            .tags
-              %strong Categorized in
-              = succeed "," do
-                %a{:href => "#"} open late
-              = succeed "," do
-                %a{:href => "#"} easy in easy out
-              %a{:href => "#"} cheap
-              \&
-              %a{:href => "#"} close to you
-          .item
-            .pic-container
-              %span.meter
-                .count{:style => "height: 50px"}
-                  %b.lt10
-                    %i 5
-                    left
-              .pic
-                = image_tag "home/pic01.jpg"
-            %h3 free desserts
-            %h4 at georgio's pizza
-            .tags
-              %strong Categorized in
-              = succeed "," do
-                %a{:href => "#"} open late
-              = succeed "," do
-                %a{:href => "#"} easy in easy out
-              %a{:href => "#"} cheap
-              \&
-              %a{:href => "#"} close to you
-          .item
-            .pic-container
-              %span.meter
-                .count{:style => "height: 70px"}
-                  %b.lt10
-                    %i 7
-                    left
-              .pic
-                = image_tag "home/pic01.jpg"
-            %h3 free desserts
-            %h4 at georgio's pizza
-            .tags
-              %strong Categorized in
-              = succeed "," do
-                %a{:href => "#"} open late
-              = succeed "," do
-                %a{:href => "#"} easy in easy out
-              %a{:href => "#"} cheap
-              \&
-              %a{:href => "#"} close to you
-        / /COLUMN
-        / COLUMN
-        .col
-          .item
-            .pic-container
-              %span.meter
-                .count{:style => "height: 10px"}
-                  %b.lt5
-                    %i 1
-                    left
-              .pic
-                = image_tag "home/pic01.jpg"
-            %h3 free loaded crack fries
-            %h4 at hopcat
-            .tags
-              %strong Categorized in
-              = succeed "," do
-                %a{:href => "#"} open late
-              = succeed "," do
-                %a{:href => "#"} easy in easy out
-              %a{:href => "#"} cheap
-              \&
-              %a{:href => "#"} close to you
-          .item
-            .pic-container
-              %span.meter
-                .count{:style => "height: 10px"}
-                  %b.out sold out
-              .pic
-                = image_tag "home/pic01.jpg"
-            %h3 free loaded crack fries
-            %h4 at hopcat
-            .tags
-              %strong Categorized in
-              = succeed "," do
-                %a{:href => "#"} open late
-              = succeed "," do
-                %a{:href => "#"} easy in easy out
-              %a{:href => "#"} cheap
-              \&
-              %a{:href => "#"} close to you
-          .item
-            .pic-container
-              %span.meter
-                .count{:style => "height: 40px"}
-                  %b.lt5
-                    %i 4
-                    left
-              .pic
-                = image_tag "home/pic01.jpg"
-            %h3 free loaded crack fries
-            %h4 at hopcat
-            .tags
-              %strong Categorized in
-              = succeed "," do
-                %a{:href => "#"} open late
-              = succeed "," do
-                %a{:href => "#"} easy in easy out
-              %a{:href => "#"} cheap
-              \&
-              %a{:href => "#"} close to you
+          %h3 free loaded crack fries
+          %h4 at hopcat
+          .tags
+            %strong Categorized in
+            = succeed "," do
+              %a{:href => "#"} open late
+            = succeed "," do
+              %a{:href => "#"} easy in easy out
+            %a{:href => "#"} cheap
+            \&
+            %a{:href => "#"} close to you
+        .item
+          .pic-container
+            %span.meter
+              .count{:style => "height: 50px"}
+                %b.lt10
+                  %i 5
+                  left
+            .pic
+              = image_tag "home/pic01.jpg"
+          %h3 free desserts
+          %h4 at georgio's pizza
+          .tags
+            %strong Categorized in
+            = succeed "," do
+              %a{:href => "#"} open late
+            = succeed "," do
+              %a{:href => "#"} easy in easy out
+            %a{:href => "#"} cheap
+            \&
+            %a{:href => "#"} close to you
+      / /COLUMN
+      / COLUMN
+      .col
+        .item
+          .pic-container
+            %span.meter
+              .count{:style => "height: 100px"}
+                %b.gt10
+                  %i 11
+                  left
+            .pic
+              = image_tag "home/pic02.jpg"
+          %h3 free appetizers
+          %h4 at sanchez bistro
+          .tags
+            %strong Categorized in
+            = succeed "," do
+              %a{:href => "#"} open late
+            = succeed "," do
+              %a{:href => "#"} easy in easy out
+            %a{:href => "#"} cheap
+            \&
+            %a{:href => "#"} close to you
+        .item
+          .pic-container
+            %span.meter
+              .count{:style => "height: 50px"}
+                %b.lt10
+                  %i 5
+                  left
+            .pic
+              = image_tag "home/pic01.jpg"
+          %h3 free desserts
+          %h4 at georgio's pizza
+          .tags
+            %strong Categorized in
+            = succeed "," do
+              %a{:href => "#"} open late
+            = succeed "," do
+              %a{:href => "#"} easy in easy out
+            %a{:href => "#"} cheap
+            \&
+            %a{:href => "#"} close to you
+        .item
+          .pic-container
+            %span.meter
+              .count{:style => "height: 70px"}
+                %b.lt10
+                  %i 7
+                  left
+            .pic
+              = image_tag "home/pic01.jpg"
+          %h3 free desserts
+          %h4 at georgio's pizza
+          .tags
+            %strong Categorized in
+            = succeed "," do
+              %a{:href => "#"} open late
+            = succeed "," do
+              %a{:href => "#"} easy in easy out
+            %a{:href => "#"} cheap
+            \&
+            %a{:href => "#"} close to you
+      / /COLUMN
+      / COLUMN
+      .col
+        .item
+          .pic-container
+            %span.meter
+              .count{:style => "height: 10px"}
+                %b.lt5
+                  %i 1
+                  left
+            .pic
+              = image_tag "home/pic01.jpg"
+          %h3 free loaded crack fries
+          %h4 at hopcat
+          .tags
+            %strong Categorized in
+            = succeed "," do
+              %a{:href => "#"} open late
+            = succeed "," do
+              %a{:href => "#"} easy in easy out
+            %a{:href => "#"} cheap
+            \&
+            %a{:href => "#"} close to you
+        .item
+          .pic-container
+            %span.meter
+              .count{:style => "height: 10px"}
+                %b.out sold out
+            .pic
+              = image_tag "home/pic01.jpg"
+          %h3 free loaded crack fries
+          %h4 at hopcat
+          .tags
+            %strong Categorized in
+            = succeed "," do
+              %a{:href => "#"} open late
+            = succeed "," do
+              %a{:href => "#"} easy in easy out
+            %a{:href => "#"} cheap
+            \&
+            %a{:href => "#"} close to you
+        .item
+          .pic-container
+            %span.meter
+              .count{:style => "height: 40px"}
+                %b.lt5
+                  %i 4
+                  left
+            .pic
+              = image_tag "home/pic01.jpg"
+          %h3 free loaded crack fries
+          %h4 at hopcat
+          .tags
+            %strong Categorized in
+            = succeed "," do
+              %a{:href => "#"} open late
+            = succeed "," do
+              %a{:href => "#"} easy in easy out
+            %a{:href => "#"} cheap
+            \&
+            %a{:href => "#"} close to you
 
-  / #slider
-  /   %a.prev{:href => "#"} «
-  /   %a.next{:href => "#"} »
-  /   .wrapper
-  /     %ul
-  /       - begin
-  /         - Venue.active.currently_available.each do |v|
-  /           = render :partial => 'venue', :locals => {:v => v}
-  /       - rescue
-  /       - begin
-  /         - Venue.active.not_available.each do |v|
-  /           = render :partial => 'venue', :locals => {:v => v}
-  /       - rescue
-  
-  = render :partial => "partials/footer"
-  = render :partial => "partials/home_extra"
+/ #slider
+/   %a.prev{:href => "#"} «
+/   %a.next{:href => "#"} »
+/   .wrapper
+/     %ul
+/       - begin
+/         - Venue.active.currently_available.each do |v|
+/           = render :partial => 'venue', :locals => {:v => v}
+/       - rescue
+/       - begin
+/         - Venue.active.not_available.each do |v|
+/           = render :partial => 'venue', :locals => {:v => v}
+/       - rescue
+
+= render :partial => "partials/home_extra"

@@ -51,6 +51,10 @@ Foodcircles::Application.routes.draw do
   match '/race' => 'race#index'
   match '/cater' => 'home#cater', :as => :notgr
   match '/thanks' => 'home#thanks', :as => :notgr
+  
+  #HighVoltage
+  get '/faq/:id' => 'faq#show', :as => 'faq'
+  get '/faq'     => 'faq#show', :as => 'faq', :id => 'faq'
 
   root :to => 'home#index'
 end
