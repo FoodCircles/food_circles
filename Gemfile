@@ -17,7 +17,7 @@ gem 'delayed_job_active_record', :git => 'https://github.com/collectiveidea/dela
 gem 'libv8', '~> 3.11.8' # added for RubyRacer
 gem 'daemons'
 gem 'urbanairship'
-gem 'therubyracer'
+# gem 'therubyracer'
 gem 'execjs'
 gem 'mail'
 gem 'pdfkit'

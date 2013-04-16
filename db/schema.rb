@@ -11,37 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130116231639) do
+ActiveRecord::Schema.define(:version => 20130301170958) do
 
   create_table "charities", :force => true do |t|
     t.string   "name"
     t.string   "web"
+    t.integer  "region_id"
     t.string   "address"
     t.string   "city"
+    t.integer  "state_id"
     t.string   "zip"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image_uid"
-    t.integer  "region_id"
-    t.integer  "state_id"
-  end
-
-  create_table "contact_types", :id => false, :force => true do |t|
-    t.integer  "id",         :null => false
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "contacts", :id => false, :force => true do |t|
-    t.integer  "id",               :null => false
-    t.string   "content"
-    t.integer  "contact_type_id"
-    t.integer  "contactable_id"
-    t.string   "contactable_type"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -75,21 +58,6 @@ ActiveRecord::Schema.define(:version => 20130116231639) do
   create_table "notifications", :force => true do |t|
     t.string   "content"
     t.string   "ticker"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "offer_taggables", :id => false, :force => true do |t|
-    t.integer  "id",           :null => false
-    t.integer  "offer_tag_id"
-    t.integer  "offer_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  create_table "offer_tags", :id => false, :force => true do |t|
-    t.integer  "id",         :null => false
-    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -228,8 +196,8 @@ ActiveRecord::Schema.define(:version => 20130116231639) do
     t.string   "neighborhood"
     t.string   "web"
     t.integer  "price"
-    t.datetime "created_at",                                                                                     :null => false
-    t.datetime "updated_at",                                                                                     :null => false
+    t.datetime "created_at",                                                                                                    :null => false
+    t.datetime "updated_at",                                                                                                    :null => false
     t.string   "image_uid"
     t.string   "phone"
     t.string   "circle_image_uid"
@@ -240,6 +208,10 @@ ActiveRecord::Schema.define(:version => 20130116231639) do
     t.spatial  "latlon",           :limit => {:srid=>4326, :type=>"point", :geographic=>true}
     t.string   "voucher",                                                                      :default => "5"
     t.decimal  "multiplier",                                                                   :default => 1.5
+    t.string   "feemessage",                                                                   :default => "Enter fee mesage."
+    t.decimal  "feecharge",                                                                    :default => 0.0
+    t.boolean  "apply_able",                                                                   :default => false
+    t.string   "email",                                                                        :default => "venue@example.com"
   end
 
 end

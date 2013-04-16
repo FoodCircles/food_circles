@@ -1,0 +1,402 @@
+@import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+/* reset */
+/* line 17, ../../app/assets/stylesheets/application.css.scss */
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* line 18, ../../app/assets/stylesheets/application.css.scss */
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 19, ../../app/assets/stylesheets/application.css.scss */
+article, aside, dialog, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/* line 20, ../../app/assets/stylesheets/application.css.scss */
+body {
+  line-height: 1.5;
+  background: #fff;
+  color: #4e4e4e;
+  font-family: 'Rokkitt',serif;
+  font-size: 16px;
+}
+
+/* line 21, ../../app/assets/stylesheets/application.css.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* line 22, ../../app/assets/stylesheets/application.css.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  float: none !important;
+}
+
+/* line 23, ../../app/assets/stylesheets/application.css.scss */
+table, th, td {
+  vertical-align: middle;
+}
+
+/* line 24, ../../app/assets/stylesheets/application.css.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+}
+
+/* line 25, ../../app/assets/stylesheets/application.css.scss */
+blockquote, q {
+  quotes: "" "";
+}
+
+/* line 26, ../../app/assets/stylesheets/application.css.scss */
+a img {
+  border: none;
+}
+
+/* line 27, ../../app/assets/stylesheets/application.css.scss */
+:focus {
+  outline: 0;
+}
+
+/*
+ * Base
+ */
+/* line 33, ../../app/assets/stylesheets/application.css.scss */
+input[type=email], input[type=password], input[type=text] {
+  border: 1px solid #cccccc;
+  padding: 5px 10px;
+}
+
+/* line 37, ../../app/assets/stylesheets/application.css.scss */
+input[type=submit] {
+  padding: 5px 10px;
+}
+
+/* line 40, ../../app/assets/stylesheets/application.css.scss */
+.wrapper {
+  margin: 0 auto;
+  max-width: 980px;
+  position: relative;
+}
+
+/* line 48, ../../app/assets/stylesheets/application.css.scss */
+a:link,
+a:visited,
+a:active {
+  color: #4e4e4e;
+  text-decoration: underline;
+}
+
+/* line 53, ../../app/assets/stylesheets/application.css.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 57, ../../app/assets/stylesheets/application.css.scss */
+strong {
+  color: #333;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+
+/* line 64, ../../app/assets/stylesheets/application.css.scss */
+h1, h2, h3,
+h4, h5, h6 {
+  margin: 0;
+}
+
+/* line 68, ../../app/assets/stylesheets/application.css.scss */
+#footer > h6 {
+  color: #fff;
+}
+
+/* line 72, ../../app/assets/stylesheets/application.css.scss */
+h1 {
+  font-size: 46px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* line 73, ../../app/assets/stylesheets/application.css.scss */
+h2 {
+  font-size: 42px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* line 74, ../../app/assets/stylesheets/application.css.scss */
+h3 {
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* line 75, ../../app/assets/stylesheets/application.css.scss */
+h4 {
+  font-size: 32px;
+}
+
+/* line 76, ../../app/assets/stylesheets/application.css.scss */
+h5 {
+  font-size: 24px;
+}
+
+/* line 77, ../../app/assets/stylesheets/application.css.scss */
+h6 {
+  text-shadow: 0px 1px 0px black;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* line 86, ../../app/assets/stylesheets/application.css.scss */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 91, ../../app/assets/stylesheets/application.css.scss */
+.wrapper {
+  margin: 0 auto;
+  max-width: 980px;
+  position: relative;
+}
+
+/*
+ * Header
+ */
+/* line 101, ../../app/assets/stylesheets/application.css.scss */
+#header {
+  background: #8f3e3e;
+  border-bottom: 3px solid #4d1818;
+  height: 128px;
+}
+
+/* line 107, ../../app/assets/stylesheets/application.css.scss */
+#header a {
+  color: #fff;
+}
+
+/* line 111, ../../app/assets/stylesheets/application.css.scss */
+#logo {
+  background: transparent url(home/sprites_header.png) 0 0 no-repeat;
+  height: 181px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -999px;
+  top: 0;
+  width: 202px;
+}
+
+/* line 122, ../../app/assets/stylesheets/application.css.scss */
+#slogan {
+  background: transparent url(home/sprites_header.png) -202px 0 no-repeat;
+  color: #fff;
+  font-size: 18px;
+  height: 33px;
+  left: 235px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -999px;
+  top: 85px;
+  width: 428px;
+}
+
+/* line 135, ../../app/assets/stylesheets/application.css.scss */
+#social {
+  left: 235px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 16px;
+}
+/* line 142, ../../app/assets/stylesheets/application.css.scss */
+#social li {
+  float: left;
+  margin-right: 10px;
+}
+/* line 146, ../../app/assets/stylesheets/application.css.scss */
+#social a {
+  background: transparent url(home/sprites_header.png) no-repeat;
+  display: block;
+  height: 26px;
+  overflow: hidden;
+  text-indent: -999px;
+  width: 24px;
+}
+/* line 154, ../../app/assets/stylesheets/application.css.scss */
+#social .blog {
+  background-position: -202px -33px;
+}
+/* line 157, ../../app/assets/stylesheets/application.css.scss */
+#social .facebook {
+  background-position: -226px -33px;
+}
+/* line 160, ../../app/assets/stylesheets/application.css.scss */
+#social .twitter {
+  background-position: -250px -33px;
+}
+
+/* line 165, ../../app/assets/stylesheets/application.css.scss */
+#login {
+  position: absolute;
+  right: 0;
+  top: 16px;
+}
+/* line 169, ../../app/assets/stylesheets/application.css.scss */
+#login input {
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Rokkitt", serif;
+  height: 29px;
+  line-height: 29px;
+  vertical-align: top;
+}
+/* line 180, ../../app/assets/stylesheets/application.css.scss */
+#login .email,
+#login .password {
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: solid #4d1818;
+  border-width: 1px 0 0 1px;
+  padding: 0 8px;
+  width: 180px;
+}
+/* line 193, ../../app/assets/stylesheets/application.css.scss */
+#login .login {
+  background: transparent url(home/sprites_header.png) -202px -59px no-repeat;
+  height: 29px;
+  overflow: hidden;
+  text-indent: -999px;
+  margin-top: 1px;
+  width: 92px;
+}
+/* line 200, ../../app/assets/stylesheets/application.css.scss */
+#login .login:hover {
+  background-position: -202px -88px;
+  cursor: pointer;
+}
+/* line 205, ../../app/assets/stylesheets/application.css.scss */
+#login span {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+}
+/* line 210, ../../app/assets/stylesheets/application.css.scss */
+#login .forgot {
+  padding-left: 190px;
+  width: 180px;
+}
+/* line 214, ../../app/assets/stylesheets/application.css.scss */
+#login .signup a {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* line 220, ../../app/assets/stylesheets/application.css.scss */
+.welcome {
+  color: white;
+  font-family: 'Rokkitt',serif;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  text-align: right;
+  text-shadow: 0 2px 0 black;
+  top: 16px;
+  right: 0;
+}
+
+/* line 232, ../../app/assets/stylesheets/application.css.scss */
+#basicContainer {
+  margin: 80px 0;
+}
+
+/* line 236, ../../app/assets/stylesheets/application.css.scss */
+.tightWrapper {
+  margin: 0 auto;
+  max-width: 700px;
+  position: relative;
+}
+
+/* line 242, ../../app/assets/stylesheets/application.css.scss */
+.donated {
+  background-image: url("home/circle.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  font-size: 24px;
+  font-style: italic;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  width: 32px;
+  vertical-align: middle;
+}
+
+/* line 255, ../../app/assets/stylesheets/application.css.scss */
+.ns {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media print {
+  /* line 263, ../../app/assets/stylesheets/application.css.scss */
+  body {
+    background-color: #FFF;
+  }
+
+  /* line 267, ../../app/assets/stylesheets/application.css.scss */
+  #container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  /* line 274, ../../app/assets/stylesheets/application.css.scss */
+  #line_items {
+    page-break-before: always;
+  }
+
+  /* line 278, ../../app/assets/stylesheets/application.css.scss */
+  #pdf_link {
+    display: none;
+  }
+}

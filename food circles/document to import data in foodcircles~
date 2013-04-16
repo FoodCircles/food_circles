@@ -10,6 +10,7 @@ psql -c "create role foodcircles;"
 createdb -E UTF8 foodcircles_dev
 psql -d foodcircles_dev < /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql
 psql -d foodcircles_dev < /usr/share/postgresql/9.1/contrib/postgis-1.5/spatial_ref_sys.sql
+psql -c "create role gisgroups;"
 psql -c "alter table geometry_columns owner to gisgroup;" foodcircles_dev
 psql -c "alter table spatial_ref_sys owner to gisgroup;" foodcircles_dev
 

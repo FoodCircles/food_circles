@@ -1,0 +1,1039 @@
+  [1m[36m (8.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (5.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'schema_migrations'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (15.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (2.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'
+PG::Error: ERROR:  relation "geometry_columns" does not exist
+LINE 1: SELECT * FROM geometry_columns WHERE f_table_name='schema_mi...
+                      ^
+: SELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'
+  [1m[36m (1.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'[0m
+PG::Error: ERROR:  relation "geometry_columns" does not exist
+LINE 1: SELECT * FROM geometry_columns WHERE f_table_name='schema_mi...
+                      ^
+: SELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'
+  [1m[36m (0.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'[0m
+PG::Error: ERROR:  relation "geometry_columns" does not exist
+LINE 1: SELECT * FROM geometry_columns WHERE f_table_name='schema_mi...
+                      ^
+: SELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'
+  [1m[36m (5.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'schema_migrations'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (5.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.7ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'
+  [1m[36m (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20120501170115)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (24.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (5.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.2ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36mColumns for index index_users_on_email on users (1.2ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 17338
+ AND a.attnum IN (2)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (6.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120501170115')[0m
+  [1m[35m (7.2ms)[0m  COMMIT
+Migrating to CreateVenues (20120501171335)
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (23.3ms)[0m  CREATE TABLE "venues" ("id" serial primary key, "name" character varying(255), "user_id" integer, "description" text, "address" character varying(255), "city" character varying(255), "state_id" integer, "zip" character varying(255), "neighborhood" character varying(255), "web" character varying(255), "timezone_id" integer, "price" integer, "latlon" GEOGRAPHY(POINT,4326), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120501171335')[0m
+  [1m[35m (2.1ms)[0m  COMMIT
+Migrating to CreateOpenTimes (20120501171708)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (29.7ms)[0m  CREATE TABLE "open_times" ("id" serial primary key, "openable_id" integer, "openable_type" character varying(255), "start" integer, "end" integer, "start_date" date, "end_date" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120501171708')[0m
+  [1m[35m (15.9ms)[0m  COMMIT
+Migrating to CreateContacts (20120501172102)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (17.0ms)[0m  CREATE TABLE "contacts" ("id" serial primary key, "content" character varying(255), "contact_type_id" integer, "contactable_id" integer, "contactable_type" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120501172102')[0m
+  [1m[35m (4.8ms)[0m  COMMIT
+Migrating to CreateContactTypes (20120501172120)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (10.3ms)[0m  CREATE TABLE "contact_types" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120501172120')[0m
+  [1m[35m (4.6ms)[0m  COMMIT
+Migrating to CreateStates (20120502155959)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.2ms)[0m  CREATE TABLE "states" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120502155959')[0m
+  [1m[35m (9.3ms)[0m  COMMIT
+Migrating to CreateOfferTags (20120502160014)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (9.0ms)[0m  CREATE TABLE "offer_tags" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120502160014')[0m
+  [1m[35m (1.5ms)[0m  COMMIT
+Migrating to CreateCharities (20120502160141)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (24.2ms)[0m  CREATE TABLE "charities" ("id" serial primary key, "name" character varying(255), "web" character varying(255), "region_id" integer, "address" character varying(255), "city" character varying(255), "state_id" integer, "zip" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120502160141')[0m
+  [1m[35m (2.2ms)[0m  COMMIT
+Migrating to CreateOffers (20120502160237)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (20.8ms)[0m  CREATE TABLE "offers" ("id" serial primary key, "venue_id" integer, "name" character varying(255), "details" text, "min_diners" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120502160237')[0m
+  [1m[35m (1.2ms)[0m  COMMIT
+Migrating to CreateOfferTaggables (20120502160325)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (12.9ms)[0m  CREATE TABLE "offer_taggables" ("id" serial primary key, "offer_tag_id" integer, "offer_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120502160325')[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to CreateReservations (20120502160550)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (14.2ms)[0m  CREATE TABLE "reservations" ("id" serial primary key, "user_id" integer, "venue_id" integer, "offer_id" integer, "charity_id" integer, "num_diners" integer, "occasion" character varying(255), "confirmed" boolean, "time_confirmed" timestamp, "coupon" character varying(255), "name" character varying(255), "phone" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120502160550')[0m
+  [1m[35m (2.0ms)[0m  COMMIT
+Migrating to CreateRailsAdminHistoriesTable (20120503121049)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (21.0ms)[0m  CREATE TABLE "rails_admin_histories" ("id" serial primary key, "message" text, "username" character varying(255), "item" integer, "table" character varying(255), "month" smallint, "year" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'rails_admin_histories'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (4.5ms)[0m  CREATE INDEX "index_rails_admin_histories" ON "rails_admin_histories" ("item", "table", "month", "year")
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120503121049')[0m
+  [1m[35m (1.4ms)[0m  COMMIT
+Migrating to CreateTimeZones (20120504105429)
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35m (24.6ms)[0m  CREATE TABLE "time_zones" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120504105429')[0m
+  [1m[35m (2.3ms)[0m  COMMIT
+Migrating to AddImageToVenue (20120504111253)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "venues" ADD COLUMN "image_uid" character varying(255)
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120504111253')[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to CreateVenueTags (20120504120508)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (14.0ms)[0m  CREATE TABLE "venue_tags" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120504120508')[0m
+  [1m[35m (1.5ms)[0m  COMMIT
+Migrating to CreateVenueTaggables (20120504120615)
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (8.9ms)[0m  CREATE TABLE "venue_taggables" ("id" serial primary key, "venue_tag_id" integer, "venue_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120504120615')[0m
+  [1m[35m (13.2ms)[0m  COMMIT
+Migrating to AddImageToCharity (20120507145355)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "charities" ADD COLUMN "image_uid" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120507145355')[0m
+  [1m[35m (6.3ms)[0m  COMMIT
+Migrating to CreateRegions (20120507145604)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (6.7ms)[0m  CREATE TABLE "regions" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120507145604')[0m
+  [1m[35m (5.4ms)[0m  COMMIT
+Migrating to AddNameToUser (20120510105952)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "users" ADD COLUMN "name" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120510105952')[0m
+  [1m[35m (5.8ms)[0m  COMMIT
+Migrating to AddPhoneToVenue (20120510133529)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "venues" ADD COLUMN "phone" character varying(255)
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120510133529')[0m
+  [1m[35m (10.9ms)[0m  COMMIT
+Migrating to AddCircleImageToVenue (20120518105515)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "venues" ADD COLUMN "circle_image_uid" character varying(255)
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120518105515')[0m
+  [1m[35m (35.1ms)[0m  COMMIT
+Migrating to FixTimeZoneForVenues (20120524200219)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venues'
+  [1m[36m (2.3ms)[0m  [1mALTER TABLE "venues" DROP "timezone_id"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "venues" ADD COLUMN "time_zone_id" integer
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120524200219')[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to AddPhoneToUser (20120611111656)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "users" ADD COLUMN "phone" character varying(255)
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120611111656')[0m
+  [1m[35m (7.0ms)[0m  COMMIT
+Migrating to AddAdminToUser (20120613121855)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (39.3ms)[0m  ALTER TABLE "users" ADD COLUMN "admin" boolean DEFAULT 'f'
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120613121855')[0m
+  [1m[35m (3.9ms)[0m  COMMIT
+Migrating to AddCalledToReservation (20120613172050)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (17.6ms)[0m  ALTER TABLE "reservations" ADD COLUMN "called" boolean DEFAULT 'f'
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120613172050')[0m
+  [1m[35m (4.4ms)[0m  COMMIT
+Migrating to CreateDelayedJobs (20120627170159)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (13.7ms)[0m  CREATE TABLE "delayed_jobs" ("id" serial primary key, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" text, "run_at" timestamp, "locked_at" timestamp, "failed_at" timestamp, "locked_by" character varying(255), "queue" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'delayed_jobs'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (5.5ms)[0m  CREATE INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120627170159')[0m
+  [1m[35m (1.4ms)[0m  COMMIT
+Migrating to AddRatingToVenue (20120712152416)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "venues" ADD COLUMN "rating" float
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120712152416')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+Migrating to AddReferenceToVenue (20120718153820)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "venues" ADD COLUMN "reference" character varying(255)
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120718153820')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+Migrating to CreateReviews (20120718163322)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (17.7ms)[0m  CREATE TABLE "reviews" ("id" serial primary key, "author_name" character varying(255), "content" text, "rating" integer, "venue_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.9ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'reviews'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (13.0ms)[0m  CREATE INDEX "index_reviews_on_venue_id" ON "reviews" ("venue_id")
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120718163322')[0m
+  [1m[35m (1.4ms)[0m  COMMIT
+Migrating to AddActiveToVenue (20120719151936)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (14.8ms)[0m  ALTER TABLE "venues" ADD COLUMN "active" boolean DEFAULT 't'
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120719151936')[0m
+  [1m[35m (9.6ms)[0m  COMMIT
+Migrating to ResetLatLonColumnInVenue (20120719163342)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venues'
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "venues" DROP "latlon"[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "venues" ADD COLUMN "latlon" GEOGRAPHY(POINT,4326)
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120719163342')[0m
+  [1m[35m (1.2ms)[0m  COMMIT
+Migrating to AddTimeToReviews (20120723192124)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "reviews" ADD COLUMN "time" integer
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120723192124')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+Migrating to DropOfferTags (20120723202118)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  DELETE from geometry_columns where f_table_name='offer_tags'
+  [1m[36m (1.1ms)[0m  [1mDROP TABLE "offer_tags"[0m
+  [1m[35m (0.3ms)[0m  DELETE from geometry_columns where f_table_name='offer_taggables'
+  [1m[36m (1.0ms)[0m  [1mDROP TABLE "offer_taggables"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120723202118')
+  [1m[36m (7.0ms)[0m  [1mCOMMIT[0m
+Migrating to DropContactTypes (20120723203310)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mDELETE from geometry_columns where f_table_name='contact_types'[0m
+  [1m[35m (1.1ms)[0m  DROP TABLE "contact_types"
+  [1m[36m (0.3ms)[0m  [1mDELETE from geometry_columns where f_table_name='contacts'[0m
+  [1m[35m (1.4ms)[0m  DROP TABLE "contacts"
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120723203310')[0m
+  [1m[35m (4.3ms)[0m  COMMIT
+Migrating to CreateRemindLists (20120815173829)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (22.3ms)[0m  CREATE TABLE "remind_lists" ("id" serial primary key, "phone" character varying(255), "email" character varying(255), "blah" character varying(255), "last_reminded" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120815173829')[0m
+  [1m[35m (2.3ms)[0m  COMMIT
+Migrating to CreateNotifications (20120904180943)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (18.4ms)[0m  CREATE TABLE "notifications" ("id" serial primary key, "content" character varying(255), "ticker" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120904180943')[0m
+  [1m[35m (3.2ms)[0m  COMMIT
+Migrating to AddVoucherToVenues (20121203062437)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (48.8ms)[0m  ALTER TABLE "venues" ADD COLUMN "voucher" character varying(255) DEFAULT 5
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121203062437')[0m
+  [1m[35m (2.6ms)[0m  COMMIT
+Migrating to CreateInvoices (20130115231614)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (12.5ms)[0m  CREATE TABLE "invoices" ("id" serial primary key, "group_name" character varying(255), "group_size" integer, "code" character varying(255), "time" timestamp, "perk" character varying(255), "amount" decimal, "venue" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130115231614')[0m
+  [1m[35m (6.2ms)[0m  COMMIT
+Migrating to AddMultiplierToVenues (20130116231639)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  ALTER TABLE "venues" ADD COLUMN "multiplier" decimal DEFAULT 1.5
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130116231639')[0m
+  [1m[35m (2.9ms)[0m  COMMIT
+Migrating to AddFeemessageFeechargeApplyAbleToVenues (20130122214656)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (36.7ms)[0m  ALTER TABLE "venues" ADD COLUMN "feemessage" character varying(255) DEFAULT 'Enter fee mesage.'
+  [1m[36m (16.0ms)[0m  [1mALTER TABLE "venues" ADD COLUMN "feecharge" decimal DEFAULT 0.0[0m
+  [1m[35m (34.3ms)[0m  ALTER TABLE "venues" ADD COLUMN "apply_able" boolean DEFAULT 'f'
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130122214656')[0m
+  [1m[35m (6.9ms)[0m  COMMIT
+Migrating to AddEmailToVenues (20130301170958)
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35m (12.7ms)[0m  ALTER TABLE "venues" ADD COLUMN "email" character varying(255) DEFAULT 'venue@example.com'
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130301170958')[0m
+  [1m[35m (3.1ms)[0m  COMMIT
+  [1m[36m (1.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'[0m
+  [1m[35m (0.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='charities'[0m
+  [1m[35mPK and serial sequence (8.5ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"charities"'::regclass
+
+  [1m[36m (4.6ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'charities'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (0.6ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='delayed_jobs'
+  [1m[36mPK and serial sequence (5.2ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"delayed_jobs"'::regclass
+[0m
+  [1m[35m (2.7ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'delayed_jobs'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36mColumns for index delayed_jobs_priority on delayed_jobs (1.4ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 17511
+ AND a.attnum IN (2,6)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (0.5ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='invoices'
+  [1m[36mPK and serial sequence (4.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"invoices"'::regclass
+[0m
+  [1m[35m (2.3ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'invoices'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='notifications'[0m
+  [1m[35mPK and serial sequence (5.0ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"notifications"'::regclass
+
+  [1m[36m (1.6ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'notifications'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='offers'
+  [1m[36mPK and serial sequence (3.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"offers"'::regclass
+[0m
+  [1m[35m (1.6ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'offers'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='open_times'[0m
+  [1m[35mPK and serial sequence (2.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"open_times"'::regclass
+
+  [1m[36m (1.6ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'open_times'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='rails_admin_histories'
+  [1m[36mPK and serial sequence (3.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"rails_admin_histories"'::regclass
+[0m
+  [1m[35m (1.6ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'rails_admin_histories'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36mColumns for index index_rails_admin_histories on rails_admin_histories (0.7ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 17449
+ AND a.attnum IN (4,5,6,7)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='regions'
+  [1m[36mPK and serial sequence (3.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"regions"'::regclass
+[0m
+  [1m[35m (1.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'regions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='remind_lists'[0m
+  [1m[35mPK and serial sequence (3.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"remind_lists"'::regclass
+
+  [1m[36m (1.6ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'remind_lists'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='reservations'
+  [1m[36mPK and serial sequence (2.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"reservations"'::regclass
+[0m
+  [1m[35m (1.6ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'reservations'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='reviews'[0m
+  [1m[35mPK and serial sequence (2.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"reviews"'::regclass
+
+  [1m[36m (1.6ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'reviews'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_reviews_on_venue_id on reviews (0.6ms)[0m   SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 17525
+ AND a.attnum IN (5)
+ AND a.atttypid = t.oid
+
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='states'[0m
+  [1m[35mPK and serial sequence (4.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"states"'::regclass
+
+  [1m[36m (2.6ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'states'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='time_zones'
+  [1m[36mPK and serial sequence (3.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"time_zones"'::regclass
+[0m
+  [1m[35m (1.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'time_zones'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='users'[0m
+  [1m[35mPK and serial sequence (3.0ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+
+  [1m[36m (1.6ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_users_on_email on users (0.6ms)[0m   SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 17338
+ AND a.attnum IN (2)
+ AND a.atttypid = t.oid
+
+  [1m[36mColumns for index index_users_on_reset_password_token on users (0.6ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 17338
+ AND a.attnum IN (4)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venue_taggables'
+  [1m[36mPK and serial sequence (2.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"venue_taggables"'::regclass
+[0m
+  [1m[35m (2.0ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'venue_taggables'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venue_tags'[0m
+  [1m[35mPK and serial sequence (3.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"venue_tags"'::regclass
+
+  [1m[36m (1.5ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'venue_tags'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venues'
+  [1m[36mPK and serial sequence (3.1ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"venues"'::regclass
+[0m
+  [1m[35m (1.6ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'venues'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-15 23:56:25 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header_sign_in.html.haml (35.1ms)
+  Rendered partials/_header.html.haml (47.6ms)
+  [1m[36m (4.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35m (0.6ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='open_times'
+  [1m[36m (0.7ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mVenue Load (7.0ms)[0m  SELECT DISTINCT "venues".* FROM "venues" INNER JOIN "offers" ON "offers"."venue_id" = "venues"."id" INNER JOIN "open_times" ON "open_times"."openable_id" = "offers"."id" AND "open_times"."openable_type" = 'Offer' WHERE "venues"."active" = 't' AND (1736.4272100927499 BETWEEN open_times.start AND open_times.end)
+  [1m[36mVenue Load (4.0ms)[0m  [1mSELECT DISTINCT "venues".* FROM "venues" INNER JOIN "offers" ON "offers"."venue_id" = "venues"."id" INNER JOIN "open_times" ON "open_times"."openable_id" = "offers"."id" AND "open_times"."openable_type" = 'Offer' WHERE "venues"."active" = 't' AND (open_times.start BETWEEN 1736.4327625649335 AND 1739.9999999999832)[0m
+  Rendered partials/_footer.html.haml (16.0ms)
+  Rendered partials/_home_extra.html.erb (0.4ms)
+  Rendered home/index.html.haml within layouts/application (603.7ms)
+Compiled application.css  (143ms)  (pid 6887)
+Compiled home.css  (559ms)  (pid 6887)
+Compiled jquery.js  (4ms)  (pid 6887)
+Compiled jquery_ujs.js  (1ms)  (pid 6887)
+Compiled application.js  (141ms)  (pid 6887)
+Compiled home.js  (0ms)  (pid 6887)
+  Rendered layouts/_google-analytics.html.erb (0.5ms)
+Completed 200 OK in 1827ms (Views: 1751.2ms | ActiveRecord: 73.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-15 23:56:27 +0400
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-15 23:56:27 +0400
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-15 23:56:27 +0400
+Served asset /jquery.js - 200 OK (20ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-15 23:56:27 +0400
+Served asset /home.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-15 23:56:27 +0400
+Served asset /application.js - 200 OK (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-15 23:56:27 +0400
+Served asset /jquery_ujs.js - 200 OK (10ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/sprites_header.png - 200 OK (25ms)
+
+
+Started GET "/assets/home/background.jpg" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/background.jpg - 200 OK (104ms)
+
+
+Started GET "/assets/home/2-channels.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/2-channels.png - 200 OK (20ms)
+
+
+Started GET "/assets/home/divider.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/divider.png - 200 OK (13ms)
+
+
+Started GET "/assets/home/title.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/title.png - 200 OK (23ms)
+
+
+Started GET "/assets/home/main_intro_high.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/main_intro_high.png - 200 OK (22ms)
+
+
+Started GET "/assets/home/spirtes_slider.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/spirtes_slider.png - 200 OK (11ms)
+
+
+Started GET "/assets/home/sprites_features.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/sprites_features.png - 200 OK (19ms)
+
+
+Started GET "/assets/home/feature03.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/feature03.png - 200 OK (9ms)
+
+
+Started GET "/assets/home/feature01.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/feature01.png - 200 OK (96ms)
+
+
+Started GET "/assets/home/feature02.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/feature02.png - 200 OK (11ms)
+
+
+Started GET "/assets/home/supported02.gif" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/supported02.gif - 200 OK (16ms)
+
+
+Started GET "/assets/home/supported01.gif" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/supported01.gif - 200 OK (10ms)
+
+
+Started GET "/assets/home/news1.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/news1.png - 200 OK (6ms)
+
+
+Started GET "/assets/home/news3.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/news3.png - 200 OK (15ms)
+
+
+Started GET "/assets/home/news2.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/news2.png - 200 OK (14ms)
+
+
+Started GET "/assets/home/news4.png" for 127.0.0.1 at 2013-04-15 23:56:28 +0400
+Served asset /home/news4.png - 200 OK (11ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 13:14:29 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header_sign_in.html.haml (20.1ms)
+  Rendered partials/_header.html.haml (26.0ms)
+  [1m[36m (16.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='open_times'
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mVenue Load (5.9ms)[0m  SELECT DISTINCT "venues".* FROM "venues" INNER JOIN "offers" ON "offers"."venue_id" = "venues"."id" INNER JOIN "open_times" ON "open_times"."openable_id" = "offers"."id" AND "open_times"."openable_type" = 'Offer' WHERE "venues"."active" = 't' AND (2534.49303662795 BETWEEN open_times.start AND open_times.end)
+  [1m[36mVenue Load (1.6ms)[0m  [1mSELECT DISTINCT "venues".* FROM "venues" INNER JOIN "offers" ON "offers"."venue_id" = "venues"."id" INNER JOIN "open_times" ON "open_times"."openable_id" = "offers"."id" AND "open_times"."openable_type" = 'Offer' WHERE "venues"."active" = 't' AND (open_times.start BETWEEN 2534.4963081370834 AND 3179.9999999999836)[0m
+  Rendered partials/_footer.html.haml (8.4ms)
+  Rendered partials/_home_extra.html.erb (0.4ms)
+  Rendered home/index.html.haml within layouts/application (369.7ms)
+  Rendered layouts/_google-analytics.html.erb (0.5ms)
+Completed 200 OK in 619ms (Views: 533.4ms | ActiveRecord: 85.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 13:14:30 +0400
+Served asset /home.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 13:14:30 +0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 13:14:30 +0400
+Served asset /jquery.js - 304 Not Modified (50ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 13:14:30 +0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 13:14:30 +0400
+Served asset /home.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 13:14:30 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 13:14:30 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (35ms)
+
+
+Started GET "/assets/home/background.jpg" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/background.jpg - 304 Not Modified (25ms)
+
+
+Started GET "/assets/home/title.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/title.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/spirtes_slider.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/spirtes_slider.png - 304 Not Modified (66ms)
+
+
+Started GET "/assets/home/main_intro_high.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/main_intro_high.png - 304 Not Modified (106ms)
+
+
+Started GET "/assets/home/divider.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/divider.png - 304 Not Modified (81ms)
+
+
+Started GET "/assets/home/2-channels.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/2-channels.png - 304 Not Modified (54ms)
+
+
+Started GET "/assets/home/sprites_features.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/sprites_features.png - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home/feature03.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/feature03.png - 304 Not Modified (76ms)
+
+
+Started GET "/assets/home/feature01.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/feature01.png - 304 Not Modified (10ms)
+
+
+Started GET "/assets/home/feature02.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/feature02.png - 304 Not Modified (27ms)
+
+
+Started GET "/assets/home/supported01.gif" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/supported01.gif - 304 Not Modified (19ms)
+
+
+Started GET "/assets/home/supported02.gif" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/supported02.gif - 304 Not Modified (30ms)
+
+
+Started GET "/assets/home/news1.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/news1.png - 304 Not Modified (10ms)
+
+
+Started GET "/assets/home/news2.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/news2.png - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home/news3.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/news3.png - 304 Not Modified (7ms)
+
+
+Started GET "/assets/home/news4.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
+Served asset /home/news4.png - 304 Not Modified (19ms)
