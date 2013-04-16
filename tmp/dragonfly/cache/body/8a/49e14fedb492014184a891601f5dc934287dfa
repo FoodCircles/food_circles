@@ -1,0 +1,244 @@
+/* line 9, ../../app/assets/stylesheets/home.css.scss */
+#hero {
+  margin-top: 20px;
+}
+
+/* line 12, ../../app/assets/stylesheets/home.css.scss */
+#home .getapp {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 464px;
+}
+
+/* line 17, ../../app/assets/stylesheets/home.css.scss */
+#home .getapp a {
+  width: 100px;
+}
+
+/* line 19, ../../app/assets/stylesheets/home.css.scss */
+#home .join {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 464px;
+  text-align: right;
+}
+
+/* line 25, ../../app/assets/stylesheets/home.css.scss */
+#home .join input[type="text"] {
+  margin-right: 5px;
+}
+
+/* line 27, ../../app/assets/stylesheets/home.css.scss */
+#home .getapp strong, #home .join strong {
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  color: #7e7e7e;
+  margin-right: 10px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+/* line 37, ../../app/assets/stylesheets/home.css.scss */
+#home .filters {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  height: 90px;
+  line-height: 80px;
+  background: url(../img/viewres_heading.jpg) 50% 0 no-repeat;
+}
+
+/* line 43, ../../app/assets/stylesheets/home.css.scss */
+#home .filters h2 {
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  color: #7e7e7e;
+  text-align: center;
+  margin: 0;
+  float: left;
+  padding-left: 328px;
+  padding-right: 8px;
+  width: 304px;
+}
+
+/* line 55, ../../app/assets/stylesheets/home.css.scss */
+#home .filters .cat, #home .filters .loc {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 144px;
+  color: #999;
+  float: right;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* line 64, ../../app/assets/stylesheets/home.css.scss */
+#home .index .col {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 304px;
+}
+
+/* line 69, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item {
+  background: #fcfcfc;
+  -webkit-box-shadow: 0 1px 2px #d6cdbd;
+  -moz-box-shadow: 0 1px 2px #d6cdbd;
+  box-shadow: 0 1px 2px #d6cdbd;
+  padding: 12px 0 0;
+  margin-bottom: 20px;
+}
+
+/* line 76, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .pic-container {
+  position: relative;
+  margin: 0 12px 12px;
+}
+
+/* line 79, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .pic {
+  margin-left: 28px;
+  overflow: hidden;
+}
+
+/* line 82, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .pic img {
+  display: block;
+}
+
+/* line 84, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .meter {
+  background: url(../img/stripes.gif);
+  width: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+/* line 91, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .meter .count {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  background: #3e8621 url(../img/meter.png) 0 bottom no-repeat;
+}
+
+/* line 97, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .meter b {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  left: -8px;
+  top: -30px;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #419625;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#419625), to(#459926));
+  background-image: -webkit-linear-gradient(top, #419625, #459926);
+  background-image: -moz-linear-gradient(top, #419625, #459926);
+  background-image: -o-linear-gradient(top, #419625, #459926);
+  background-image: linear-gradient(to bottom, #419625, #459926);
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5), inset 0px 4px 3px -2px rgba(0, 0, 0, 0.5);
+}
+
+/* line 123, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .meter b.lt10 {
+  background-color: #c9a908;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#c9a908), to(#c57c47));
+  background-image: -webkit-linear-gradient(top, #c9a908, #c57c47);
+  background-image: -moz-linear-gradient(top, #c9a908, #c57c47);
+  background-image: -o-linear-gradient(top, #c9a908, #c57c47);
+  background-image: linear-gradient(to bottom, #c9a908, #c57c47);
+}
+
+/* line 130, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .meter b.lt5 {
+  background-color: #c96a6b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#c96a6b), to(#c86a6b));
+  background-image: -webkit-linear-gradient(top, #c96a6b, #c86a6b);
+  background-image: -moz-linear-gradient(top, #c96a6b, #c86a6b);
+  background-image: -o-linear-gradient(top, #c96a6b, #c86a6b);
+  background-image: linear-gradient(to bottom, #c96a6b, #c86a6b);
+}
+
+/* line 137, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .meter b.out {
+  background-color: #d3c9b9;
+  background-image: none;
+  color: #615c54;
+  text-shadow: none;
+  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+  line-height: 10px;
+  font-size: 9px;
+  font-weight: bold;
+  font-weight: normal;
+  height: auto;
+  top: auto;
+  bottom: 0;
+  padding: 4px 0;
+}
+
+/* line 153, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .meter b i {
+  font-size: 25px;
+  font-style: normal;
+  display: block;
+  line-height: 20px;
+  padding-top: 5px;
+}
+
+/* line 159, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item h3 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4e4e4e;
+}
+
+/* line 164, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item h4 {
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* line 170, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .tags {
+  background: url(../img/stripes.gif);
+  margin-top: 15px;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #6c6152;
+}
+
+/* line 177, ../../app/assets/stylesheets/home.css.scss */
+#home .index .item .tags strong {
+  font-size: 10px;
+  text-transform: uppercase;
+}

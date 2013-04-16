@@ -1,0 +1,319 @@
+@import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+/* reset */
+/* line 17, ../../app/assets/stylesheets/application.css.scss */
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* line 18, ../../app/assets/stylesheets/application.css.scss */
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 19, ../../app/assets/stylesheets/application.css.scss */
+article, aside, dialog, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/* line 20, ../../app/assets/stylesheets/application.css.scss */
+body {
+  line-height: 1.5;
+  background: #fff;
+  color: #4e4e4e;
+  font-family: 'Rokkitt',serif;
+  font-size: 16px;
+}
+
+/* line 21, ../../app/assets/stylesheets/application.css.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* line 22, ../../app/assets/stylesheets/application.css.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  float: none !important;
+}
+
+/* line 23, ../../app/assets/stylesheets/application.css.scss */
+table, th, td {
+  vertical-align: middle;
+}
+
+/* line 24, ../../app/assets/stylesheets/application.css.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+}
+
+/* line 25, ../../app/assets/stylesheets/application.css.scss */
+blockquote, q {
+  quotes: "" "";
+}
+
+/* line 26, ../../app/assets/stylesheets/application.css.scss */
+a img {
+  border: none;
+}
+
+/* line 27, ../../app/assets/stylesheets/application.css.scss */
+:focus {
+  outline: 0;
+}
+
+/*
+ * Base
+ */
+/* line 34, ../../app/assets/stylesheets/application.css.scss */
+.container {
+  margin: 0 auto;
+  width: 960px;
+  zoom: 1;
+  position: relative;
+}
+
+/* line 39, ../../app/assets/stylesheets/application.css.scss */
+.container:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 44, ../../app/assets/stylesheets/application.css.scss */
+#header {
+  background-color: #f0e9de;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f2eb), to(#f0e9de));
+  background-image: -webkit-linear-gradient(top, #f6f2eb, #f0e9de);
+  background-image: -moz-linear-gradient(top, #f6f2eb, #f0e9de);
+  background-image: -o-linear-gradient(top, #f6f2eb, #f0e9de);
+  background-image: linear-gradient(to bottom, #f6f2eb, #f0e9de);
+}
+
+/* line 51, ../../app/assets/stylesheets/application.css.scss */
+#header .container {
+  height: 130px;
+}
+
+/* line 54, ../../app/assets/stylesheets/application.css.scss */
+#logo {
+  background: url(../img/logo.png) no-repeat;
+  display: block;
+  height: 130px;
+  overflow: hidden;
+  text-indent: -999px;
+  width: 360px;
+}
+
+/* line 62, ../../app/assets/stylesheets/application.css.scss */
+#fed {
+  position: absolute;
+  right: 50%;
+  top: 50px;
+  color: #d9d5cd;
+  font-size: 65px;
+  line-height: 20px;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+}
+
+/* line 70, ../../app/assets/stylesheets/application.css.scss */
+#fed .num {
+  color: #bdbab5;
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: 1px;
+  vertical-align: middle;
+}
+
+/* line 76, ../../app/assets/stylesheets/application.css.scss */
+.lt-ie8 #fed {
+  top: 30px;
+  line-height: 35px;
+}
+
+/* line 79, ../../app/assets/stylesheets/application.css.scss */
+#fed .kids {
+  color: #878685;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+}
+
+/* line 85, ../../app/assets/stylesheets/application.css.scss */
+#nav {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  right: 8px;
+  top: 58px;
+}
+
+/* line 93, ../../app/assets/stylesheets/application.css.scss */
+#nav li {
+  border-left: 1px solid #a04f50;
+  border-right: 1px solid #bd7475;
+  float: left;
+}
+
+/* line 97, ../../app/assets/stylesheets/application.css.scss */
+#nav li.active {
+  border-left: 1px solid #542020;
+  border-right: 1px solid #611c1c;
+}
+
+/* line 100, ../../app/assets/stylesheets/application.css.scss */
+#nav li:first-child {
+  border-left: 0;
+}
+
+/* line 102, ../../app/assets/stylesheets/application.css.scss */
+#nav li:last-child {
+  border-right: 0;
+}
+
+/* line 104, ../../app/assets/stylesheets/application.css.scss */
+#nav a {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 40px;
+  padding: 0 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 1px #701a1a;
+}
+
+/* line 113, ../../app/assets/stylesheets/application.css.scss */
+#nav .active a {
+  background-color: #701a1a;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#701a1a), to(#874444));
+  background-image: -webkit-linear-gradient(top, #701a1a, #874444);
+  background-image: -moz-linear-gradient(top, #701a1a, #874444);
+  background-image: -o-linear-gradient(top, #701a1a, #874444);
+  background-image: linear-gradient(to bottom, #701a1a, #874444);
+  -webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* line 124, ../../app/assets/stylesheets/application.css.scss */
+#social {
+  font-size: 14px;
+  font-weight: bold;
+  list-style: none;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  margin: 0;
+  padding: 0;
+  line-height: 28px;
+}
+
+/* line 134, ../../app/assets/stylesheets/application.css.scss */
+#social li {
+  float: left;
+  margin-right: 8px;
+}
+
+/* line 137, ../../app/assets/stylesheets/application.css.scss */
+#social a.bl, #social a.fb, #social a.tw {
+  background: url(../img/social.png) 0 0 no-repeat;
+  display: block;
+  height: 28px;
+  overflow: hidden;
+  text-indent: -99px;
+  width: 28px;
+}
+
+/* line 144, ../../app/assets/stylesheets/application.css.scss */
+#social a.fb {
+  background-position: -28px 0;
+}
+
+/* line 146, ../../app/assets/stylesheets/application.css.scss */
+#social a.tw {
+  background-position: -56px 0;
+}
+
+/* line 148, ../../app/assets/stylesheets/application.css.scss */
+#social a.si {
+  margin-left: 15px;
+}
+
+/* line 151, ../../app/assets/stylesheets/application.css.scss */
+#footer {
+  background-color: #f0e9de;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0e9de), to(#d3c9b9));
+  background-image: -webkit-linear-gradient(top, #f0e9de, #d3c9b9);
+  background-image: -moz-linear-gradient(top, #f0e9de, #d3c9b9);
+  background-image: -o-linear-gradient(top, #f0e9de, #d3c9b9);
+  background-image: linear-gradient(to bottom, #f0e9de, #d3c9b9);
+}
+
+/* line 158, ../../app/assets/stylesheets/application.css.scss */
+#footer .container {
+  line-height: 90px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* line 164, ../../app/assets/stylesheets/application.css.scss */
+#footer .nav,
+#footer .copyright,
+#footer .quicklinks {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 304px;
+}
+
+/* line 169, ../../app/assets/stylesheets/application.css.scss */
+#footer .copyright {
+  text-align: center;
+}
+
+/* line 171, ../../app/assets/stylesheets/application.css.scss */
+#footer .quicklinks {
+  text-align: right;
+}
+
+/* line 173, ../../app/assets/stylesheets/application.css.scss */
+#footer a {
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+/* line 177, ../../app/assets/stylesheets/application.css.scss */
+h2 {
+  font-size: 24px;
+  color: #7e7e7e;
+  text-align: center;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  line-height: 24px;
+}

@@ -1,16 +1,42 @@
 #header
-  .wrapper
-    = link_to root_path do
-      %strong#logo FoodCircles
-    %em#slogan Feel good dinning.
-    - if current_user
-      = render :partial => 'partials/header_signed_in'
-    - else
-      = render :partial => 'partials/header_sign_in'
+  .container
+    = link_to root_path, "FoodCircles - Buy One, Feed One", id: "logo"
+    #fed
+      %span.num 123
+      %span.kids kids fed
     %ul#social
       %li
-        %a.blog{:href => "http://blog.foodcircles.net" , :target => "_blank"} Blog
+        %a.bl{:href => "#"} Blog
       %li
-        %a.facebook{:href => "http://facebook.com/foodcircles",:target => "_blank"} Facebook
+        %a.fb{:href => "#"} Facebook
       %li
-        %a.twitter{:href => "https://twitter.com/#!/FoodCircles", :target => "_blank"} Twitter
+        %a.tw{:href => "#"} Twitter
+      %li
+        %a.si{:href => "#"} Sign in ▸
+    %ul#nav
+      %li.active
+        %a{:href => "#"} Home
+      %li
+        %a{:href => "#"} FAQ
+      %li
+        %a{:href => "#"} About Us
+      %li
+        %a{:href => "#"} For Restaurants ▾
+
+  / .wrapper
+  /   = link_to root_path do
+  /     %strong#logo FoodCircles
+  /   %em#slogan Feel good dinning.
+  /   - if current_user
+  /     = render :partial => 'partials/header_signed_in'
+  /   - else
+  /     = render :partial => 'partials/header_sign_in'
+  /   %ul#social
+  /     %li
+  /       %a.blog{:href => "http://blog.foodcircles.net" , :target => "_blank"} Blog
+  /     %li
+  /       %a.facebook{:href => "http://facebook.com/foodcircles",:target => "_blank"} Facebook
+  /     %li
+  /       %a.twitter{:href => "https://twitter.com/#!/FoodCircles", :target => "_blank"} Twitter
+
+

@@ -1037,3 +1037,3020 @@ Served asset /home/news3.png - 304 Not Modified (7ms)
 
 Started GET "/assets/home/news4.png" for 127.0.0.1 at 2013-04-16 13:14:31 +0400
 Served asset /home/news4.png - 304 Not Modified (19ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 13:28:06 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header_sign_in.html.haml (5.8ms)
+  Rendered partials/_header.html.haml (9.5ms)
+  [1m[35mVenue Load (3.0ms)[0m  SELECT DISTINCT "venues".* FROM "venues" INNER JOIN "offers" ON "offers"."venue_id" = "venues"."id" INNER JOIN "open_times" ON "open_times"."openable_id" = "offers"."id" AND "open_times"."openable_type" = 'Offer' WHERE "venues"."active" = 't' AND (2548.1062969132668 BETWEEN open_times.start AND open_times.end)
+  [1m[36mVenue Load (2.7ms)[0m  [1mSELECT DISTINCT "venues".* FROM "venues" INNER JOIN "offers" ON "offers"."venue_id" = "venues"."id" INNER JOIN "open_times" ON "open_times"."openable_id" = "offers"."id" AND "open_times"."openable_type" = 'Offer' WHERE "venues"."active" = 't' AND (open_times.start BETWEEN 2548.106402521183 AND 3179.9999999999836)[0m
+  Rendered partials/_footer.html.haml (2.3ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (30.2ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 45.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 13:28:06 +0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 13:28:06 +0400
+Served asset /home.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 13:28:06 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 13:28:06 +0400
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 13:28:06 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 13:28:06 +0400
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/feature01.png" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/feature01.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/feature03.png" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/feature03.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/supported01.gif" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/supported01.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/feature02.png" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/feature02.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home/supported02.gif" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/supported02.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/news1.png" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/news1.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/news2.png" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/news2.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home/news3.png" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/news3.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/news4.png" for 127.0.0.1 at 2013-04-16 13:28:13 +0400
+Served asset /home/news4.png - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 13:45:00 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (17.4ms)
+  Rendered home/index.html.haml within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (undefined method `gsub' for nil:NilClass):
+    1: #header
+    2: .container
+    3:   = link_to root_path "FoodCircles - Buy One, Feed One"
+    4:   #fed
+    5:     (
+    6:     %span.num> 123
+  app/views/partials/_header.html.haml:3:in `_app_views_partials__header_html_haml__195155227_82485270'
+  app/views/home/index.html.haml:2:in `_app_views_home_index_html_haml__771846514_79981060'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (16.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (40.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 13:45:20 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (17.2ms)
+  Rendered home/index.html.haml within layouts/application (19.3ms)
+Completed 500 Internal Server Error in 26ms
+
+ActionView::Template::Error (undefined method `gsub' for nil:NilClass):
+    1: #header
+    2: .container
+    3:   = link_to root_path "FoodCircles - Buy One, Feed One"
+    4:   #fed
+    5:     %span.num 123
+    6:     %span.kids kids fed
+  app/views/partials/_header.html.haml:3:in `_app_views_partials__header_html_haml__195155227_83141830'
+  app/views/home/index.html.haml:2:in `_app_views_home_index_html_haml__771846514_79981060'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 13:46:12 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (16.0ms)
+  [1m[35mVenue Load (2.8ms)[0m  SELECT DISTINCT "venues".* FROM "venues" INNER JOIN "offers" ON "offers"."venue_id" = "venues"."id" INNER JOIN "open_times" ON "open_times"."openable_id" = "offers"."id" AND "open_times"."openable_type" = 'Offer' WHERE "venues"."active" = 't' AND (2566.2096297056833 BETWEEN open_times.start AND open_times.end)
+  [1m[36mVenue Load (2.3ms)[0m  [1mSELECT DISTINCT "venues".* FROM "venues" INNER JOIN "offers" ON "offers"."venue_id" = "venues"."id" INNER JOIN "open_times" ON "open_times"."openable_id" = "offers"."id" AND "open_times"."openable_type" = 'Offer' WHERE "venues"."active" = 't' AND (open_times.start BETWEEN 2566.2097356931667 AND 3179.9999999999836)[0m
+  Rendered partials/_footer.html.haml (1.2ms)
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (34.6ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+Completed 200 OK in 49ms (Views: 42.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 13:46:12 +0400
+Served asset /application.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 13:46:12 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 13:46:12 +0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 13:46:12 +0400
+Served asset /application.js - 304 Not Modified (45ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 13:46:12 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 13:46:12 +0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 13:46:20 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/feature03.png" for 127.0.0.1 at 2013-04-16 13:46:21 +0400
+Served asset /home/feature03.png - 304 Not Modified (28ms)
+
+
+Started GET "/assets/home/feature02.png" for 127.0.0.1 at 2013-04-16 13:46:21 +0400
+Served asset /home/feature02.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/supported02.gif" for 127.0.0.1 at 2013-04-16 13:46:21 +0400
+Served asset /home/supported02.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/supported01.gif" for 127.0.0.1 at 2013-04-16 13:46:21 +0400
+Served asset /home/supported01.gif - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/feature01.png" for 127.0.0.1 at 2013-04-16 13:46:21 +0400
+Served asset /home/feature01.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/news1.png" for 127.0.0.1 at 2013-04-16 13:46:21 +0400
+Served asset /home/news1.png - 304 Not Modified (16ms)
+
+
+Started GET "/assets/home/news2.png" for 127.0.0.1 at 2013-04-16 13:46:21 +0400
+Served asset /home/news2.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/news4.png" for 127.0.0.1 at 2013-04-16 13:46:21 +0400
+Served asset /home/news4.png - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home/news3.png" for 127.0.0.1 at 2013-04-16 13:46:21 +0400
+Served asset /home/news3.png - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 13:51:11 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.3ms)
+  Rendered partials/_footer.html.haml (2.1ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (37.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 13:51:11 +0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 13:51:11 +0400
+Served asset /home.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 13:51:11 +0400
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 13:51:11 +0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 13:51:11 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 13:51:11 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (0ms)
+
+
+Started GET "/img/hero.jpg" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/hero.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/assets/home/feature01.png" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/feature01.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/feature02.png" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/feature02.png - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home/feature03.png" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/feature03.png - 304 Not Modified (7ms)
+
+
+Started GET "/assets/home/supported02.gif" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/supported02.gif - 304 Not Modified (15ms)
+
+
+Started GET "/assets/home/supported01.gif" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/supported01.gif - 304 Not Modified (11ms)
+
+
+Started GET "/assets/home/news1.png" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/news1.png - 304 Not Modified (13ms)
+
+
+Started GET "/assets/home/news2.png" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/news2.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home/news3.png" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/news3.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/news4.png" for 127.0.0.1 at 2013-04-16 13:51:13 +0400
+Served asset /home/news4.png - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 13:56:39 +0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (54.5ms)
+Completed 500 Internal Server Error in 62ms
+
+ActionView::Template::Error (Illegal nesting: nesting within a tag that already has content is illegal.):
+    288:   /         %p
+    289:   /           What a great opportunity for doing business with a client. How impressive is it if the GM greets you by name, takes you to a table perfect for your needs, & throws in an appetizer compliments of the house?
+    290:   /           %cite - Dave Robinson, 1230AM Talk of the Town
+    291:     = render :partial => "partials/footer"
+    292:     = render :partial => "partials/home_extra"
+  app/views/home/index.html.haml:291
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (33.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 13:57:29 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.4ms)
+  Rendered partials/_footer.html.haml (2.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (119.2ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 140ms (Views: 139.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 13:57:30 +0400
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 13:57:30 +0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 13:57:30 +0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 13:57:30 +0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 13:57:30 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 13:57:30 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 13:57:31 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (0ms)
+
+
+Started GET "/img/hero.jpg" for 127.0.0.1 at 2013-04-16 13:57:32 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/hero.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/img/pic01.jpg" for 127.0.0.1 at 2013-04-16 13:57:32 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/pic01.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/img/pic02.jpg" for 127.0.0.1 at 2013-04-16 13:57:32 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/pic02.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/assets/home/supported01.gif" for 127.0.0.1 at 2013-04-16 13:57:32 +0400
+Served asset /home/supported01.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/supported02.gif" for 127.0.0.1 at 2013-04-16 13:57:32 +0400
+Served asset /home/supported02.gif - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/news1.png" for 127.0.0.1 at 2013-04-16 13:57:32 +0400
+Served asset /home/news1.png - 304 Not Modified (11ms)
+
+
+Started GET "/assets/home/news2.png" for 127.0.0.1 at 2013-04-16 13:57:32 +0400
+Served asset /home/news2.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home/news3.png" for 127.0.0.1 at 2013-04-16 13:57:32 +0400
+Served asset /home/news3.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/news4.png" for 127.0.0.1 at 2013-04-16 13:57:32 +0400
+Served asset /home/news4.png - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:02:21 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.6ms)
+  Rendered partials/_footer.html.haml (9.1ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (204.3ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 226ms (Views: 224.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:02:21 +0400
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:02:21 +0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:02:21 +0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:02:21 +0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:02:21 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:02:21 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 14:02:36 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (1ms)
+
+
+Started GET "/img/hero.jpg" for 127.0.0.1 at 2013-04-16 14:02:36 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/hero.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/img/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:02:36 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/pic01.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/img/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:02:36 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/pic02.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:15:11 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.6ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (14.4ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:15:11 +0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:15:11 +0400
+Served asset /home.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:15:11 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:15:11 +0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:15:11 +0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:15:11 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 14:15:17 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (0ms)
+
+
+Started GET "/img/hero.jpg" for 127.0.0.1 at 2013-04-16 14:15:17 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/hero.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/img/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:15:17 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/pic02.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/img/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:15:17 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/pic01.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:18:26 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.7ms)
+  Rendered partials/_footer.html.haml (0.6ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (259.7ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 281ms (Views: 280.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:18:26 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:18:26 +0400
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:18:26 +0400
+Served asset /jquery.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:18:26 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:18:27 +0400
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:18:27 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 14:18:28 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (1ms)
+
+
+Started GET "/images/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:18:28 +0400
+
+ActionController::RoutingError (No route matches [GET] "/images/home/hero.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/images/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:18:28 +0400
+
+ActionController::RoutingError (No route matches [GET] "/images/home/pic01.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+
+
+Started GET "/images/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:18:28 +0400
+
+ActionController::RoutingError (No route matches [GET] "/images/home/pic02.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:24:39 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.3ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (100.6ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 121ms (Views: 120.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:24:40 +0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:24:40 +0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:24:40 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:24:40 +0400
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:24:40 +0400
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:24:40 +0400
+Served asset /home.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 14:24:42 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (1ms)
+
+
+Started GET "/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:24:42 +0400
+
+ActionController::RoutingError (No route matches [GET] "/home/hero.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:24:42 +0400
+
+ActionController::RoutingError (No route matches [GET] "/home/pic02.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:24:42 +0400
+
+ActionController::RoutingError (No route matches [GET] "/home/pic01.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:30:06 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.6ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (191.7ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 212ms (Views: 211.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:30:07 +0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:30:07 +0400
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:30:07 +0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:30:07 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:30:07 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:30:07 +0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 14:30:08 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:30:08 +0400
+Served asset /home/hero.jpg - 200 OK (30ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:30:09 +0400
+Served asset /home/pic01.jpg - 200 OK (18ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:30:09 +0400
+Served asset /home/pic02.jpg - 200 OK (12ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:32:39 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.4ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (16.0ms)
+Compiled home.css  (782ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 835ms (Views: 833.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:32:40 +0400
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:32:40 +0400
+Served asset /home.css - 200 OK (134ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:32:40 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:32:40 +0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:32:40 +0400
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:32:40 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 14:32:45 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (1ms)
+
+
+Started GET "/img/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 14:32:45 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/viewres_heading.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/img/stripes.gif" for 127.0.0.1 at 2013-04-16 14:32:45 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/stripes.gif"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:32:45 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:32:45 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:32:45 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:34:25 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.1ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (15.9ms)
+Compiled home.css  (829ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 881ms (Views: 879.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:34:27 +0400
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:34:27 +0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:34:27 +0400
+Served asset /home.css - 200 OK (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:34:27 +0400
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:34:27 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:34:27 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 14:34:30 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:34:30 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/img/stripes.gif" for 127.0.0.1 at 2013-04-16 14:34:30 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/stripes.gif"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:34:30 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/img/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 14:34:30 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/viewres_heading.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:34:30 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:39:02 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.5ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (16.9ms)
+Compiled application.css  (399ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 454ms (Views: 452.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:39:02 +0400
+Served asset /application.css - 200 OK (14ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:39:03 +0400
+Served asset /home.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:39:03 +0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:39:03 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:39:03 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:39:03 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 14:39:18 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:39:18 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/sprites_header.png" for 127.0.0.1 at 2013-04-16 14:39:18 +0400
+Served asset /home/sprites_header.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:39:18 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:39:18 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:40:02 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.2ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (15.7ms)
+Compiled application.css  (189ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 241ms (Views: 239.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:40:02 +0400
+Served asset /application.css - 200 OK (14ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:40:02 +0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:40:02 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:40:02 +0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:40:02 +0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:40:02 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 14:40:06 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:40:06 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:40:06 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:40:06 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:41:25 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.4ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (17.1ms)
+Compiled application.css  (273ms)  (pid 3786)
+Compiled home.css  (173ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 512ms (Views: 510.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:41:26 +0400
+Served asset /application.css - 200 OK (28ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:41:26 +0400
+Served asset /home.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:41:26 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:41:26 +0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:41:26 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:41:26 +0400
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 14:41:30 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/img/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 14:41:30 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/viewres_heading.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:41:30 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:41:30 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/img/stripes.gif" for 127.0.0.1 at 2013-04-16 14:41:30 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/stripes.gif"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:41:30 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:44:56 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.6ms)
+  Rendered partials/_footer.html.haml (0.8ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (17.5ms)
+Compiled application.css  (309ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+Completed 200 OK in 351ms (Views: 350.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:44:57 +0400
+Served asset /application.css - 200 OK (30ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:44:57 +0400
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:44:57 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:44:57 +0400
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:44:57 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:44:57 +0400
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 14:44:58 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:44:58 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:44:58 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:44:58 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:52:15 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.3ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (16.5ms)
+Compiled home.css  (1021ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 1075ms (Views: 1073.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:52:17 +0400
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:52:17 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:52:17 +0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:52:17 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:52:17 +0400
+Served asset /home.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:52:17 +0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 14:52:23 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:52:23 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/img/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 14:52:23 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/viewres_heading.jpg"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:52:23 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/img/stripes.gif" for 127.0.0.1 at 2013-04-16 14:52:23 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/stripes.gif"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:52:23 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:53:31 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.3ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (16.5ms)
+Compiled home.css  (996ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 1051ms (Views: 1049.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:53:33 +0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:53:33 +0400
+Served asset /home.css - 200 OK (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:53:33 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:53:33 +0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:53:33 +0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:53:33 +0400
+Served asset /home.js - 304 Not Modified (2ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 14:53:55 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:53:55 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/img/stripes.gif" for 127.0.0.1 at 2013-04-16 14:53:55 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/stripes.gif"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 14:53:55 +0400
+Served asset /home/viewres_heading.jpg - 200 OK (21ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:53:55 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:53:56 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:56:33 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.4ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (100.8ms)
+Completed 500 Internal Server Error in 135ms
+
+ActionView::Template::Error (Invalid CSS after "...home/background": expected ")", was ".jpg) 50% 0 no-..."
+  (in /home/a/Projects/foodcircles/app/assets/stylesheets/home.css.scss)):
+    10:     <meta property="og:description" content="What if every time you ate, you put food on the plate of someone else?" />
+    11: 
+    12:     <%= stylesheet_link_tag "application", :media => "all" %>
+    13:     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
+    14:     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+    15:     <%= javascript_include_tag "#{controller_name}" %>
+    16: 
+  app/assets/stylesheets/home.css.scss:12
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__843167920_84181710'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (16.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (38.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 14:57:18 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.2ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (16.1ms)
+Compiled home.css  (177ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 229ms (Views: 227.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 14:57:19 +0400
+Served asset /application.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 14:57:19 +0400
+Served asset /home.css - 200 OK (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 14:57:19 +0400
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 14:57:19 +0400
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 14:57:19 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 14:57:19 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 14:57:22 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 14:57:22 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 14:57:22 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-04-16 14:57:22 +0400
+Served asset /home/stripes.gif - 200 OK (7ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 14:57:22 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:01:34 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.5ms)
+  Rendered partials/_footer.html.haml (0.8ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (104.1ms)
+Compiled home.css  (395ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 590ms (Views: 588.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:01:35 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:01:35 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:01:35 +0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:01:35 +0400
+Served asset /home.css - 200 OK (7ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:01:35 +0400
+Served asset /home.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:01:35 +0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 15:01:56 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:01:56 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-04-16 15:01:56 +0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:01:56 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:01:56 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:02:51 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.4ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (16.5ms)
+Compiled home.css  (540ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 593ms (Views: 592.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:02:52 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:02:52 +0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:02:52 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:02:52 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:02:52 +0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:02:52 +0400
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 15:02:54 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:02:54 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-04-16 15:02:54 +0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 15:02:54 +0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:02:54 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:02:54 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:07:55 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.8ms)
+  Rendered partials/_footer.html.haml (0.8ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (172.8ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 194ms (Views: 192.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:07:56 +0400
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:07:56 +0400
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:07:56 +0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:07:56 +0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:07:56 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:07:56 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 15:08:02 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:08:02 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:08:02 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-04-16 15:08:02 +0400
+Served asset /home/meter.png - 200 OK (104ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:08:02 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:09:26 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.3ms)
+  Rendered partials/_footer.html.haml (0.6ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (102.8ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 123ms (Views: 121.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:09:27 +0400
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:09:27 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:09:27 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:09:27 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:09:27 +0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:09:27 +0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 15:09:51 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:09:51 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:09:51 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:09:51 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:10:56 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.4ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (16.9ms)
+Compiled home.css  (352ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 445ms (Views: 444.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:10:57 +0400
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:10:57 +0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:10:57 +0400
+Served asset /home.css - 200 OK (5ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:10:57 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:10:57 +0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:10:57 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 15:11:17 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:11:17 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-04-16 15:11:17 +0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:11:17 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-04-16 15:11:17 +0400
+Served asset /home/meter.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:11:17 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 15:11:17 +0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:11:42 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (1.9ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (15.8ms)
+Compiled home.css  (349ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 390ms (Views: 389.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:11:43 +0400
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:11:43 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:11:43 +0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:11:43 +0400
+Served asset /home.css - 200 OK (12ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:11:43 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:11:43 +0400
+Served asset /application.js - 304 Not Modified (92ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 15:12:02 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:12:02 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 15:12:02 +0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-04-16 15:12:02 +0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:12:02 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-04-16 15:12:02 +0400
+Served asset /home/meter.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:12:02 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:14:57 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (8.5ms)
+  Rendered partials/_footer.html.haml (0.4ms)
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (15.8ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:14:57 +0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:14:57 +0400
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:14:57 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:14:57 +0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:14:57 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:14:57 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/img/logo.png" for 127.0.0.1 at 2013-04-16 15:15:18 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/logo.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/img/social.png" for 127.0.0.1 at 2013-04-16 15:15:18 +0400
+
+ActionController::RoutingError (No route matches [GET] "/img/social.png"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:15:18 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:15:18 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:15:18 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:18:07 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.3ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (Invalid CSS after "@import ": expected file to import (string or url()), was "image-url(http:..."
+  (in /home/a/Projects/foodcircles/app/assets/stylesheets/application.css.scss)):
+    9:     <meta property="og:image" content="foodcircles.net/logo.png" />
+    10:     <meta property="og:description" content="What if every time you ate, you put food on the plate of someone else?" />
+    11: 
+    12:     <%= stylesheet_link_tag "application", :media => "all" %>
+    13:     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
+    14:     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+    15:     <%= javascript_include_tag "#{controller_name}" %>
+  app/assets/stylesheets/application.css.scss:1
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__843167920_84181710'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (74.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (96.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:18:25 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (1.1ms)
+  Rendered partials/_footer.html.haml (0.4ms)
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (Invalid CSS after "@import ": expected file to import (string or url()), was "image-url(http:..."
+  (in /home/a/Projects/foodcircles/app/assets/stylesheets/application.css.scss)):
+    9:     <meta property="og:image" content="foodcircles.net/logo.png" />
+    10:     <meta property="og:description" content="What if every time you ate, you put food on the plate of someone else?" />
+    11: 
+    12:     <%= stylesheet_link_tag "application", :media => "all" %>
+    13:     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
+    14:     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+    15:     <%= javascript_include_tag "#{controller_name}" %>
+  app/assets/stylesheets/application.css.scss:1
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__843167920_84181710'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (14.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:18:45 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.3ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 152ms
+
+ActionView::Template::Error (Invalid CSS after "...url(home/social": expected ")", was ".png) 0 0 no-re..."
+  (in /home/a/Projects/foodcircles/app/assets/stylesheets/application.css.scss)):
+    9:     <meta property="og:image" content="foodcircles.net/logo.png" />
+    10:     <meta property="og:description" content="What if every time you ate, you put food on the plate of someone else?" />
+    11: 
+    12:     <%= stylesheet_link_tag "application", :media => "all" %>
+    13:     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
+    14:     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+    15:     <%= javascript_include_tag "#{controller_name}" %>
+  app/assets/stylesheets/application.css.scss:230
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__843167920_84181710'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:19:10 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (1.1ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 143ms
+
+ActionView::Template::Error (Invalid CSS after "...url(home/social": expected ")", was ".png) 0 0 no-re..."
+  (in /home/a/Projects/foodcircles/app/assets/stylesheets/application.css.scss)):
+    9:     <meta property="og:image" content="foodcircles.net/logo.png" />
+    10:     <meta property="og:description" content="What if every time you ate, you put food on the plate of someone else?" />
+    11: 
+    12:     <%= stylesheet_link_tag "application", :media => "all" %>
+    13:     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
+    14:     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+    15:     <%= javascript_include_tag "#{controller_name}" %>
+  app/assets/stylesheets/application.css.scss:230
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__843167920_84181710'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (77.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (100.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:19:16 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (1.4ms)
+  Rendered partials/_footer.html.haml (0.4ms)
+  Rendered partials/_home_extra.html.erb (0.2ms)
+  Rendered home/index.html.haml within layouts/application (9.0ms)
+Compiled application.css  (170ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 210ms (Views: 209.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:19:16 +0400
+Served asset /application.css - 200 OK (20ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:19:17 +0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:19:17 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:19:17 +0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:19:17 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:19:17 +0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-04-16 15:19:37 +0400
+Served asset /home/logo.png - 200 OK (8ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-04-16 15:19:37 +0400
+Served asset /home/social.png - 200 OK (6ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:19:37 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:19:37 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:19:37 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:23:20 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (3.0ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (17.0ms)
+Compiled home.css  (430ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 564ms (Views: 562.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:23:21 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:23:21 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:23:21 +0400
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:23:21 +0400
+Served asset /home.css - 200 OK (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:23:21 +0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:23:21 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:24:06 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.7ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (17.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:24:07 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (1.1ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (8.8ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:24:07 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (1.1ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (8.0ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:24:07 +0400
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:24:07 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:24:07 +0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:24:07 +0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:24:07 +0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:24:07 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-04-16 15:24:08 +0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-04-16 15:24:09 +0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:24:09 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 15:24:09 +0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-04-16 15:24:09 +0400
+Served asset /home/meter.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-04-16 15:24:09 +0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:24:09 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:24:09 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-16 15:25:26 +0400
+Processing by HomeController#index as HTML
+  Rendered partials/_header.html.haml (2.4ms)
+  Rendered partials/_footer.html.haml (0.8ms)
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (161.3ms)
+Compiled home.css  (263ms)  (pid 3786)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+Completed 200 OK in 459ms (Views: 458.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-16 15:25:27 +0400
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-16 15:25:27 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-16 15:25:27 +0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-16 15:25:27 +0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-16 15:25:27 +0400
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-16 15:25:27 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-04-16 15:25:44 +0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-04-16 15:25:44 +0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-04-16 15:25:44 +0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-04-16 15:25:44 +0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-04-16 15:25:44 +0400
+Served asset /home/meter.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-04-16 15:25:44 +0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-04-16 15:25:44 +0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-04-16 15:25:45 +0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
