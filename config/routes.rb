@@ -1,5 +1,7 @@
 Foodcircles::Application.routes.draw do
 
+  match '/payment' => 'payment#index', :as => :payment
+
   get "user_signup/create"
   resources :stripe_payments, :only =>[:new, :create]
 
@@ -17,6 +19,8 @@ Foodcircles::Application.routes.draw do
   resources :remind_list, :only => [:create]
   resources :venues, :only => [:show]
   devise_for :users, :controllers => {:registrations => "registrations"}
+
+  resources :payment_notifications
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

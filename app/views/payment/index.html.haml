@@ -1,0 +1,31 @@
+.row-fluid.span12
+  .trayOuter.formTraySmall
+    .trayInner.clearfix
+      %form#ismForm.formMedium.lap{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :name => "esmForm", :target => "_parent"}
+        %input#myAllTextSubmitID{:name => "myAllTextSubmitID", :type => "hidden"}/
+        %input{:name => "cmd", :type => "hidden", :value => "_xclick"}/
+        %input#email{:name => "business", :type => "hidden", :value => "#{@paypal.recipient}"}/
+        - if @paypal.item_name != ""
+          %input{:name => "item_name", :type => "hidden", :value => "#{@paypal.item_type}"}
+        - if @paypal.item_name != :blank
+          %input{:name => "item_number", :type => "hidden", :value => "#{@paypal.item_name}"}
+        %input#currency{:name => "currency_code", :type => "hidden", :value => "#{@currency.data}"}
+        %input#custom{:name => "custom", :type => "hidden", :value => "#{@paypal.user_id}"}
+        %input#notify{:name => "notify_url", :type => "hidden", :value => "http://www.the_website_URL.com/payment_notifications"}
+        %input{:name => "lc", :type => "hidden", :value => "#{@locale.data}"}
+        - if @paypal.shipping == true
+          %input{:name => "no_shipping", :type => "hidden", :value => "0"}/
+          %input{:name => "shipping", :type => :hidden, :value => "#{@paypal.shipping_amount}"}/
+        - else
+          %input{:name => "no_shipping", :type => "hidden", :value => "1"}/
+
+        - if @paypal.fixed_price == true
+          %input#sm_from.amount{:name => "amount", :type => "hidden", :value => "#{@paypal.item_amount}"}
+        - else
+          .textInput.textInputAmount
+            %label{:for => "sm_from"}
+              = "Amount in #{@currency.name.pluralize}"
+            %input#sm_from.amount{:name => "amount", :type => "text"}/
+
+        %input#submit.button.signUpBtn.clear{:alt => "Pay", :name => "submit.x", :type => "submit", :value => "Submit"}/
+        %input{:name => "flow_name", :type => "hidden", :value => ""}/

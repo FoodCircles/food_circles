@@ -75,6 +75,11 @@ GEM
     fastercsv (1.5.5)
     fssm (0.2.9)
     haml (3.1.7)
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     high_voltage (1.2.1)
     hike (1.2.1)
     i18n (0.6.1)
@@ -202,6 +207,7 @@ DEPENDENCIES
   execjs
   fastercsv
   haml
+  haml-rails
   high_voltage
   jquery-rails
   libv8 (~> 3.11.8)
