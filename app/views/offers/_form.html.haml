@@ -1,3 +1,5 @@
 = form_for @offer do |f|
   = f.label :name
   = f.text_field :name
+  = f.label :vendor
+  = f.select(:vendor_id)

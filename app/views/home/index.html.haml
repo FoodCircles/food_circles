@@ -26,6 +26,14 @@
   .container
     .index
       / COLUMN
+      = @offers.in_groups_of(3).each do |offer_group|
+        .col
+          .item
+            = offer_group.each do |offer| 
+              = offer.name
+
+
+
       .col
         .item
           .pic-container
