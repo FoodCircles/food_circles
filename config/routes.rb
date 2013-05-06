@@ -1,5 +1,7 @@
 Foodcircles::Application.routes.draw do
 
+  match '/restaurants' => 'restaurants#index', :as => :restaurants
+  match '/timeline' => 'timeline#index', :as => :timeline
   match '/payment' => 'payment#index', :as => :payment
 
   get "user_signup/create"
