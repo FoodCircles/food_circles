@@ -5,4 +5,12 @@ class OffersController < ApplicationController
       render :json => @offer, :callback => params[:callback]
     end
   end
+
+  def index
+  end
+
+  def new
+    @offer = Offer.new
+  end
+
 end
