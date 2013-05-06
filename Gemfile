@@ -6,6 +6,7 @@ gem 'whenever', :require => false
 gem 'activerecord-postgis-adapter'
 gem 'rgeo'
 gem 'haml'
+gem 'haml-rails'
 gem 'devise'
 gem 'high_voltage'
 gem 'rack-cache', :require => 'rack/cache'

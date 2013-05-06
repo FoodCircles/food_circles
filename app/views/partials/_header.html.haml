@@ -12,7 +12,9 @@
       %li
         %a.tw{:href => "#"} Twitter
       %li
-        %a.si{:href => "#"} Sign in ▸
+        = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
+        = link_to('Sign in ▸', main_app.new_user_session_path) unless current_user
+        / %a.si{:href => "#"} Sign in ▸
     %ul#nav
       %li{:class => "#{ 'active' if controller_name == 'home' }"}
         =link_to 'Home', root_path
@@ -21,7 +23,7 @@
       %li
         =link_to 'About Us', '#'
       %li
-        =link_to 'For Restaurants', "#"
+        =link_to 'For Restaurants', main_app.restaurants_path
   / .wrapper
   /   = link_to root_path do
   /     %strong#logo FoodCircles
