@@ -4,7 +4,8 @@ Foodcircles::Application.routes.draw do
   resources :offers
   match '/restaurants' => 'restaurants#index', :as => :restaurants
   match '/timeline' => 'timeline#index', :as => :timeline
-  match '/payment' => 'payment#index', :as => :payment
+  #match '/payment' => 'payment#index', :as => :payment
+  match '/payment/stripe' => 'payment#stripe', :as => :stripe
 
   get "user_signup/create"
   resources :stripe_payments, :only =>[:new, :create]

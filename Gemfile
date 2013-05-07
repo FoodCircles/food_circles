@@ -16,7 +16,7 @@ gem "rails_admin", "~> 0.0.5"
 gem 'twilio-ruby'
 gem 'fastercsv'
 gem 'delayed_job_active_record', :git => 'https://github.com/collectiveidea/delayed_job_active_record.git'
-gem 'libv8', '~> 3.11.8' # added for RubyRacer
+#gem 'libv8', '~> 3.11.8' # added for RubyRacer
 gem 'daemons'
 gem 'urbanairship'
 # gem 'therubyracer'

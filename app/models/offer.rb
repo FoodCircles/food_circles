@@ -1,6 +1,8 @@
 class Offer < ActiveRecord::Base
   belongs_to :venue
   has_many :open_times, :as => :openable, :dependent => :destroy
+  has_and_belongs_to_many :category
+  has_and_belongs_to_many :payment
 
   def as_json(options={})
     { :id => self.id,
