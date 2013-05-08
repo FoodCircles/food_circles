@@ -9,4 +9,7 @@
     = f.label :image
     = f.file_field :image
   .field
+    = f.label :category
+    = f.select(:category_ids, Category.all.collect { |o| [o.name, o.id] }, {}, { :multiple => true, :size => 5 } )
+  .field
     = f.submit

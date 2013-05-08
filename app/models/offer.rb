@@ -4,7 +4,7 @@ class Offer < ActiveRecord::Base
   has_and_belongs_to_many :category
   has_and_belongs_to_many :payment
 
-  attr_accessible :image, :name, :venue_id
+  attr_accessible :image, :name, :venue_id, :category_ids
   attr_accessor :image
 
   has_attached_file :image, styles: {

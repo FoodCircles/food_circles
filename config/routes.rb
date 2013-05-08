@@ -2,6 +2,7 @@ Foodcircles::Application.routes.draw do
 
   # match '/offers' => 'offers#index', :as => :offers
   resources :offers
+  resources :categories
   match '/restaurants' => 'restaurants#index', :as => :restaurants
   match '/timeline' => 'timeline#index', :as => :timeline
   #match '/payment' => 'payment#index', :as => :payment
