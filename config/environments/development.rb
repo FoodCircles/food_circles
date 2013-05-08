@@ -50,5 +50,12 @@ Foodcircles::Application.configure do
       :enable_starttls_auto => true
   }
 
-
+  config.paperclip_defaults = {
+  :storage => :s3,
+    :s3_credentials => {
+    :bucket => 'foodcircles',
+    :access_key_id => '0BRVRK6FWACPYQ6BCSR2',
+    :secret_access_key => 'DXbUDzUdDIvyA9x3jajgDoM4/szI783MIujFp39E'
+    }
+  }
 end
