@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507140506) do
+ActiveRecord::Schema.define(:version => 20130507200118) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -73,8 +73,12 @@ ActiveRecord::Schema.define(:version => 20130507140506) do
     t.string   "name"
     t.text     "details"
     t.integer  "min_diners"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "open_times", :force => true do |t|
@@ -255,5 +259,17 @@ ActiveRecord::Schema.define(:version => 20130507140506) do
     t.boolean  "apply_able",                                                                   :default => false
     t.string   "email",                                                                        :default => "venue@example.com"
   end
+
+  create_table "vouchers", :force => true do |t|
+    t.date     "start"
+    t.date     "end"
+    t.integer  "total"
+    t.integer  "available"
+    t.integer  "offer_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "vouchers", ["offer_id"], :name => "index_vouchers_on_offer_id"
 
 end

@@ -4,6 +4,15 @@ class Offer < ActiveRecord::Base
   has_and_belongs_to_many :category
   has_and_belongs_to_many :payment
 
+  attr_accessible :image, :name, :venue_id
+  attr_accessor :image
+
+  has_attached_file :image, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
+
   def as_json(options={})
     { :id => self.id,
       :title => self.name,
