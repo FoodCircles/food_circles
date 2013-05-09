@@ -28,11 +28,26 @@
       / COLUMN
       - @offers.in_groups_of(3).each do |offer_group|
         .col
-          .item
-            - offer_group.each do |offer| 
-              = offer.name
-
-
+          - offer_group.each do |offer|
+            .item
+              - if offer
+                .pic-container
+                  %span.meter
+                    .count{:style => "height: 50px"}
+                      %b.lt10
+                        %i 5
+                        left
+                  .pic
+                    = image_tag "home/pic01.jpg"
+                %h3
+                  = offer.name
+                %h4
+                  at
+                  = offer.venue.name if offer
+                .tags
+                  - if offer and not offer.category.empty?
+                    %strong Categorized in
+                    = offer.category.map(&:name).join(",")
 
       .col
         .item
