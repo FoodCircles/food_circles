@@ -1,3 +1,96 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.placard {
+	width: 100%;
+	background-color: white;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin-top: 60px;
+	-moz-box-shadow: 3px 3px 2px #d6cdbd;
+	-webkit-box-shadow: 3px 3px 2px #d6cdbd;
+	box-shadow: 3px 3px 2px #d6cdbd;
+	text-align: center;
+	display: block;
+	padding: 0 0 40px 0;
+	color: #4e3e34;
+	font-family: "museo-slab", sans-serif;
+}
+
+.placard-heading {
+	font-size: 24px;
+	font-family: serif;
+	position: relative;
+	top: -80px;
+	margin-bottom: 30px;
+}
+
+.stringleft{
+	position: relative;
+	top: -85px;
+	padding-right: 750px;
+}
+
+.stringright{
+	position: relative;
+	top: -85px;
+}
+
+.omega {
+	margin-bottom: 100px;
+	padding-bottom: 0;
+}
+
+.steps {
+	width: 90%;
+	margin: 10px auto;
+	position: relative;
+	top: -80px;
+}
+
+.steps p {
+	width: 90%;
+	margin: 0 auto;
+	font-family: "pragmatica-web", sans-serif;
+}
+
+.steps h3 {
+	font-size: 20px;
+}
+
+.step1 {
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.step2 {
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.step3 {
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#jointhecause {
+	display: inline-block;
+}
+
+.alpha {
+	position: relative;
+	top: 20px;
+}
+
+.leadchar {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+
+#restaurant-invite {
+	margin-top: 30px;
+}

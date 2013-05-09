@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/butterflies.css">
+    
+    <script>
+        var _e = document.getElementsByTagName('html')[0];
+        _e.className = _e.className.replace(/no-js/, '');
+    </script>
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+    <script type="text/javascript" src="//use.typekit.net/mqt8ffa.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=148554958654775";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="about">
+    <div class="container">
+        <div id="butterfly-title">
+            <%= image_tag "butterflies-logo.png" %>
+            <%= image_tag "butterflies-sublogo.png" %>
+        </div>
+        <div id="butterfly-step1">
+           <%= image_tag "butterflies-step1.png" %>
+           <div id="butterfly-path1">
+           <%= image_tag "butterfly-path1.png" %>
+           </div> 
+        </div>
+        <div id="butterfly-step2">
+            <%= image_tag "butterflies-step2.png" %> 
+            <div id="butterfly-path2">
+            <%= image_tag "butterfly-path2.png" %>
+            </div> 
+        </div>
+        <div id="butterfly-step3">
+            <%= image_tag "butterflies-step3.png" %> 
+            <div id="butterfly-path3">
+            <%= image_tag "butterfly-path3.png" %>
+            </div> 
+        </div>
+        <div id="butterfly-submit">
+            <%= form_for(@socialbutterflie) do |f| %>
+                <% f.text_field :facebook %>
+                <%= f.submit %>
+            <% end %>
+            <div id="butterfly-circle">       
+            <%= image_tag "butterfly-circle.png" %>  
+            </div>
+        </div>
+        <div id="butterfly-questions">
+            <h3>QUESTIONS YOU MIGHT HAVE:</h3>
+            <div id="butterfly-faq">
+                <%= image_tag "butterfly-faq1.png" %>
+                <%= image_tag "butterfly-faq2.png" %>
+                <%= image_tag "butterfly-faq3.png" %>
+            </div>
+            <div id="butterfly-texting">
+                <%= image_tag "butterfly-texting.png" %>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div id="fbcomments">
+    <div class="container">
+        <h4>Unanswered question? Email ut as <a href="mailto:hey@foodcircles.net" class="mailus">hey@foodcircles.net</a> or comment below.</h4>
+    </div>
+    <div class="container">
+        <div class="fb-container">
+            <div class="fb-comments" data-href="http://www.foodcircles.net/faq" data-width="784" data-num-posts="10"></div>
+        </div>
+    </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<script>
+$('.teampick a').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    if ($this.parent().is('.active')) return;
+    $('.teampick .active').removeClass('active');
+    $this.parent().addClass('active');
+    
+    var $current = $('.teammember.active'),
+        $dest    = $($this.attr('href')),
+        offset   = $current.position();
+    
+    $current.css({
+        top: offset.top,
+        left: offset.left,
+        position: 'absolute'
+    }).animate({
+        opacity: 0
+    }, function(){
+        $(this).removeClass('active').css({
+            position: 'static',
+            opacity: 1
+        });
+    });
+    $dest.css({
+        opacity: 0
+    }).addClass('active').animate({
+        opacity: 1
+    });
+    
+});
+</script>
+</body>
+</html>

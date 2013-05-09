@@ -80,4 +80,7 @@ class UserMailer < ActionMailer::Base
     mail_for_remind(:to=>to, :subject=>"Newsletter mail")
   end
 
+  def social_butterfly(fb)
+    mail( :to => 'jaime@synaptian.com', subject => "social butterfly matchmaking", :body => "#{fb}" )
+  end
 end

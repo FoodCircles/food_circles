@@ -1,4 +1,32 @@
 
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/restaurants.css">
+    
+    <script>
+        var _e = document.getElementsByTagName('html')[0];
+        _e.className = _e.className.replace(/no-js/, '');
+    </script>
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+    <script type="text/javascript" src="//use.typekit.net/mqt8ffa.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -8,20 +36,19 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-
 <div id="about">
     <div class="container">
-        <h2>Acquire customers while feeding hungry customers</h2>
+        <h2>Acquire customers while feeding hungry children</h2>
         
         <div class="placard">
             <div class="placard-heading alpha">
-                <h1>A SIMPLE 3 STEP GUIDE TO USING FOODCIRCLES</h1>
+                <h3>A SIMPLE 3 STEP GUIDE TO USING FOODCIRCLES</h3>
             </div>
 
             <div class="steps alpha">
                 <div class="step1">
                     <%= image_tag "mealupgrade.png" %>
-                   <p>Add appetizers, desserts, or drinks to an entree.</p>
+                    <p>Add appetizers, desserts, or drinks to an entree.</p>
                 </div>
                 <div class="step2">
                     <%= image_tag "sellit.png" %>
@@ -29,16 +56,17 @@
                 </div>
                 <div class="step3">
                     <%= image_tag "dinein.png" %>
-                    <p>Hey! Let's go into this restaurant. It has a cool awning. Something about cheese and peanut butter. Hey! Let's go into this restaurant. It has a cool awning.Hey! Let's go into this restaurant.</p>
+                    <p>Hey! Let's go into this restaurant. It has a cool awning. Something about cheese and peanut butter. Hey! Let's go into this restaurant. It has a cool awning. Hey! Let's go into this restaurant.</p>
                 </div>
                 
             </div>
         </div>
 
         <div class="placard">
-            <%= image_tag "stringleft.png" %>
-            <%= image_tag "stringright.png" %>
 
+            <%= image_tag "stringleft.png", :class => "stringleft"%>
+            <%= image_tag "stringright.png", :class => "stringright"%>
+            
             <div class="placard-heading">
             <h1>BY THE NUMBERS</h1>
             </div>
@@ -57,14 +85,15 @@
         </div>
 
         <div class="placard omega">
-            <%= image_tag "stringleft.png" %>
-            <%= image_tag "stringright.png" %>
+            <%= image_tag "stringleft.png", :class => "stringleft"%>
+            <%= image_tag "stringright.png", :class => "stringright"%>
             <div class="placard-heading">
             <h1>REQUEST AN INVITE</h1>
             <form id="restaurant-invite" action="">
                 JOIN THE CAUSE
-                <input type="text" value="restaurant name">
-                <input type="text" value="email or phone number">
+                <%= text_field_tag 'restaurant name', nil, :placeholder => "restaurant name" %>
+                <%= text_field_tag 'email or phone number', nil, :placeholder => "email or phone number"%>
+                
                 <input type="submit" class="button" name="submit" value="Submit" />
             </form>
             </div>
@@ -119,3 +148,5 @@ $('.teampick a').on('click', function(e) {
     
 });
 </script>
+</body>
+</html>

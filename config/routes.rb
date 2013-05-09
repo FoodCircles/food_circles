@@ -1,8 +1,11 @@
 Foodcircles::Application.routes.draw do
 
+  get "socialbutterflies/index"
+
   # match '/offers' => 'offers#index', :as => :offers
   resources :offers
   match '/restaurants' => 'restaurants#index', :as => :restaurants
+  match '/butterflies' => 'socialbutterflies#index', :as => :socialbutterflies
   match '/timeline' => 'timeline#index', :as => :timeline
   match '/payment' => 'payment#index', :as => :payment
 
@@ -27,6 +30,9 @@ Foodcircles::Application.routes.draw do
   resources :payment_notifications
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  resources :socialbutterflies
+
 
   match '/app' => 'app#index'
   match '/getVenue' => 'app#getVenue'
