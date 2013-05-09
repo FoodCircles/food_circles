@@ -81,6 +81,6 @@ class UserMailer < ActionMailer::Base
   end
 
   def social_butterfly(fb)
-    mail( :to => 'jaime@synaptian.com', subject => "social butterfly matchmaking", :body => "#{fb}" )
+    mail( :to => 'jaime@synaptian.com', :subject => "social butterfly matchmaking", :body => "#{fb}" )
   end
 end

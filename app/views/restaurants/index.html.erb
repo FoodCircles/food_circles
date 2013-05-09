@@ -89,13 +89,12 @@
             <%= image_tag "stringright.png", :class => "stringright"%>
             <div class="placard-heading">
             <h1>REQUEST AN INVITE</h1>
-            <form id="restaurant-invite" action="">
                 JOIN THE CAUSE
-                <%= text_field_tag 'restaurant name', nil, :placeholder => "restaurant name" %>
-                <%= text_field_tag 'email or phone number', nil, :placeholder => "email or phone number"%>
-                
-                <input type="submit" class="button" name="submit" value="Submit" />
-            </form>
+                <%#= form_for (@restaurant) do |f| %>
+                    <%#= f.text_field :name, :placeholder => "restaurant name" %>
+                    <%#= f.text_field :email, :placeholder => "email or phone number"%>
+                    <%#= f.submit %>
+                <%# end %>
             </div>
         </div>
     </div>

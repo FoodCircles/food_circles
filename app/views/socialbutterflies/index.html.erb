@@ -61,8 +61,8 @@
             </div> 
         </div>
         <div id="butterfly-submit">
-            <%= form_for(@socialbutterflie) do |f| %>
-                <% f.text_field :facebook %>
+            <%= form_for(@socialbutterflies) do |f| %>
+                <%= f.text_field :facebook %><br />
                 <%= f.submit %>
             <% end %>
             <div id="butterfly-circle">       
