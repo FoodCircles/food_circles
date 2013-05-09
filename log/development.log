@@ -38416,3 +38416,1468 @@ ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
   Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
   Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
   Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.7ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2013-05-09 16:09:15 -0400
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+  [1m[36mUser Load (8.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (12.6ms)
+  Rendered partials/_footer.html.haml (0.6ms)
+Completed 200 OK in 70ms (Views: 57.9ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 16:09:16 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2013-05-09 16:09:16 -0400
+Served asset /restaurants.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 16:09:16 -0400
+Served asset /jquery.js - 304 Not Modified (46ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 16:09:16 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 16:09:16 -0400
+Served asset /application.js - 304 Not Modified (13ms)
+
+
+Started GET "/css/restaurants.css" for 127.0.0.1 at 2013-05-09 16:09:16 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/restaurants.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/css/main.css" for 127.0.0.1 at 2013-05-09 16:09:17 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2013-05-09 16:09:17 -0400
+Served asset /restaurants.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-09 16:09:18 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-09 16:09:19 -0400
+Served asset /home/social.png - 304 Not Modified (40ms)
+
+
+Started GET "/assets/mealupgrade.png" for 127.0.0.1 at 2013-05-09 16:09:19 -0400
+Served asset /mealupgrade.png - 304 Not Modified (9ms)
+
+
+Started GET "/assets/sellit.png" for 127.0.0.1 at 2013-05-09 16:09:19 -0400
+Served asset /sellit.png - 304 Not Modified (19ms)
+
+
+Started GET "/assets/stringright.png" for 127.0.0.1 at 2013-05-09 16:09:19 -0400
+Served asset /stringright.png - 304 Not Modified (8ms)
+
+
+Started GET "/assets/stringleft.png" for 127.0.0.1 at 2013-05-09 16:09:19 -0400
+Served asset /stringleft.png - 304 Not Modified (22ms)
+
+
+Started GET "/assets/dinein.png" for 127.0.0.1 at 2013-05-09 16:09:19 -0400
+Served asset /dinein.png - 304 Not Modified (13ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2013-05-09 16:09:51 -0400
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.erb within layouts/application (5997.4ms)
+Completed 500 Internal Server Error in 6003ms
+
+ActionView::Template::Error (undefined local variable or method `sumbit_tag' for #<#<Class:0xb4781bf8>:0xb48066a0>):
+    92:                 JOIN THE CAUSE
+    93:                 <%= text_field_tag 'restaurant name', nil, :placeholder => "restaurant name" %>
+    94:                 <%= text_field_tag 'email or phone number', nil, :placeholder => "email or phone number"%>
+    95:                 <%= sumbit_tag %>
+    96:                 <%# to be implemented %>
+    97:                 <%#= form_for (@restaurant) do |f| %>
+    98:                     <%#= f.text_field :name, :placeholder => "restaurant name" %>
+  app/views/restaurants/index.html.erb:95:in `_app_views_restaurants_index_html_erb__280384466__633327888'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.1ms)
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.3ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2013-05-09 16:10:46 -0400
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.erb within layouts/application (15.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+  [1m[35mUser Load (2.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (13.8ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 53ms (Views: 44.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 16:10:47 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2013-05-09 16:10:47 -0400
+Served asset /restaurants.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2013-05-09 16:10:47 -0400
+Served asset /restaurants.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 16:10:47 -0400
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 16:10:47 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 16:10:47 -0400
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/css/main.css" for 127.0.0.1 at 2013-05-09 16:10:47 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.5ms)
+
+
+Started GET "/css/restaurants.css" for 127.0.0.1 at 2013-05-09 16:10:47 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/restaurants.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-09 16:10:48 -0400
+Served asset /home/logo.png - 304 Not Modified (156ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-09 16:10:48 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mealupgrade.png" for 127.0.0.1 at 2013-05-09 16:10:48 -0400
+Served asset /mealupgrade.png - 304 Not Modified (38ms)
+
+
+Started GET "/assets/sellit.png" for 127.0.0.1 at 2013-05-09 16:10:49 -0400
+Served asset /sellit.png - 304 Not Modified (11ms)
+
+
+Started GET "/assets/dinein.png" for 127.0.0.1 at 2013-05-09 16:10:49 -0400
+Served asset /dinein.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/stringright.png" for 127.0.0.1 at 2013-05-09 16:10:49 -0400
+Served asset /stringright.png - 304 Not Modified (33ms)
+
+
+Started GET "/assets/stringleft.png" for 127.0.0.1 at 2013-05-09 16:10:49 -0400
+Served asset /stringleft.png - 304 Not Modified (27ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2013-05-09 16:11:45 -0400
+Processing by RestaurantsController#index as HTML
+ERROR: compiling _app_views_restaurants_index_html_erb__280384466_89764090 RAISED /home/siesna/Projects/food_circles/app/views/restaurants/index.html.erb:95: syntax error, unexpected tASSOC
+...( submit_tag "Submit", class => "btn" );@output_buffer.safe_...
+...                               ^
+Function body:           def _app_views_restaurants_index_html_erb__280384466_89764090(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "restaurants/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/restaurants.css">
+    
+    <script>
+        var _e = document.getElementsByTagName(\'html\')[0];
+        _e.className = _e.className.replace(/no-js/, \'\');
+    </script>
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write(\'<script src="js/vendor/html5shiv.js"><\\/script>\')</script>
+    <![endif]-->
+    <script type="text/javascript" src="//use.typekit.net/mqt8ffa.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=148554958654775";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, \'script\', \'facebook-jssdk\'));</script>
+
+<div id="about">
+    <div class="container">
+        <h2>Acquire customers while feeding hungry children</h2>
+        
+        <div class="placard">
+            <div class="placard-heading alpha">
+                <h3>A SIMPLE 3 STEP GUIDE TO USING FOODCIRCLES</h3>
+            </div>
+
+            <div class="steps alpha">
+                <div class="step1">
+                    ');@output_buffer.append= ( image_tag "mealupgrade.png" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                    <p>Add appetizers, desserts, or drinks to an entree.</p>
+                </div>
+                <div class="step2">
+                    ');@output_buffer.append= ( image_tag "sellit.png" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                    <p>We will promote and sell the upgraded meal to our base of customers.</p>
+                </div>
+                <div class="step3">
+                    ');@output_buffer.append= ( image_tag "dinein.png" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                    <p>Hey! Let\'s go into this restaurant. It has a cool awning. Something about cheese and peanut butter. Hey! Let\'s go into this restaurant. It has a cool awning. Hey! Let\'s go into this restaurant.</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="placard">
+
+            ');@output_buffer.append= ( image_tag "stringleft.png", :class => "stringleft");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('            ');@output_buffer.append= ( image_tag "stringright.png", :class => "stringright");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('            
+            <div class="placard-heading">
+            <h1>BY THE NUMBERS</h1>
+            </div>
+            <div class="steps">
+                <div class="step1">
+                    <p><span class="leadchar">3 of 4</span> diners we talked to say that <strong>Buy One, Feed One</strong> philosophy at certain restaurants affects where they decide to eat out.</p>
+                </div>
+                <div class="step2">
+                   <p><span class="leadchar">$3</span> is the average cost of a donated appetizer. The value? Meeting a high quality customer who shares your belief that <strong>no child</strong> should <strong>go hungry</strong>.</p> 
+                </div>
+                <div class="step3">
+                    <p><span class="leadchar">$1</span> is the cost to a provide a meal to a child in need. We <strong>do not</strong> keep any <strong>%</strong> of the diner\'s donation so the good you\'re doing stays transparent.</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="placard omega">
+            ');@output_buffer.append= ( image_tag "stringleft.png", :class => "stringleft");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('            ');@output_buffer.append= ( image_tag "stringright.png", :class => "stringright");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('            <div class="placard-heading">
+            <h1>REQUEST AN INVITE</h1>
+                JOIN THE CAUSE
+                ');@output_buffer.append= ( text_field_tag 'restaurant name', nil, :placeholder => "restaurant name" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                ');@output_buffer.append= ( text_field_tag 'email or phone number', nil, :placeholder => "email or phone number");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                ');@output_buffer.append= ( submit_tag "Submit", class => "btn" );@output_buffer.safe_concat('
+');
+
+
+
+
+
+@output_buffer.safe_concat('            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="fbcomments">
+    <div class="container">
+        <h4>Unanswered question? Email ut as <a href="mailto:hey@foodcircles.net" class="mailus">hey@foodcircles.net</a> or comment below.</h4>
+    </div>
+    <div class="container">
+        <div class="fb-container">
+            <div class="fb-comments" data-href="http://www.foodcircles.net/faq" data-width="784" data-num-posts="10"></div>
+        </div>
+    </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write(\'<script src="js/vendor/jquery-1.8.3.min.js"><\\/script>\')</script>
+<script>
+$(\'.teampick a\').on(\'click\', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    if ($this.parent().is(\'.active\')) return;
+    $(\'.teampick .active\').removeClass(\'active\');
+    $this.parent().addClass(\'active\');
+    
+    var $current = $(\'.teammember.active\'),
+        $dest    = $($this.attr(\'href\')),
+        offset   = $current.position();
+    
+    $current.css({
+        top: offset.top,
+        left: offset.left,
+        position: \'absolute\'
+    }).animate({
+        opacity: 0
+    }, function(){
+        $(this).removeClass(\'active\').css({
+            position: \'static\',
+            opacity: 1
+        });
+    });
+    $dest.css({
+        opacity: 0
+    }).addClass(\'active\').animate({
+        opacity: 1
+    });
+    
+});
+</script>
+</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `module_eval'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `compile'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/template.rb:233:in `compile!'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/template.rb:142:in `block in render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/notifications.rb:125:in `instrument'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/template.rb:141:in `render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:42:in `block (2 levels) in render_template'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:41:in `block in render_template'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:49:in `render_with_layout'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:13:in `render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:109:in `_render_template'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:88:in `render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/remotipart-1.0.2/lib/remotipart/render_overrides.rb:8:in `render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:167:in `process_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:436:in `_run__609679391__process_action__317733503__callbacks'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:121:in `process'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:45:in `process'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal.rb:203:in `dispatch'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_controller/metal.rb:246:in `block in action'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:30:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:594:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-pjax-0.6.0/lib/rack/pjax.rb:12:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/sass-3.2.4/lib/sass/plugin/rack.rb:54:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/pdfkit-0.5.2/lib/pdfkit/middleware.rb:16:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/warden-1.2.1/lib/warden/manager.rb:34:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/remotipart-1.0.2/lib/remotipart/middleware.rb:30:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/dragonfly-0.9.12/lib/dragonfly/cookie_monster.rb:9:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.2/lib/active_record/query_cache.rb:64:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `_run__89953404__call__382181688__callbacks'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.2/lib/rails/rack/logger.rb:26:in `call_app'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.2/lib/rails/rack/logger.rb:16:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.2/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/static.rb:61:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/dragonfly-0.9.12/lib/dragonfly/middleware.rb:13:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.2/lib/rails/engine.rb:479:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.2/lib/rails/application.rb:220:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.2/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered restaurants/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (/home/siesna/Projects/food_circles/app/views/restaurants/index.html.erb:95: syntax error, unexpected tASSOC
+...( submit_tag "Submit", class => "btn" );@output_buffer.safe_...
+...                               ^):
+    92:                 JOIN THE CAUSE
+    93:                 <%= text_field_tag 'restaurant name', nil, :placeholder => "restaurant name" %>
+    94:                 <%= text_field_tag 'email or phone number', nil, :placeholder => "email or phone number"%>
+    95:                 <%= submit_tag "Submit", class => "btn" %>
+    96:                 <%# to be implemented %>
+    97:                 <%#= form_for (@restaurant) do |f| %>
+    98:                     <%#= f.text_field :name, :placeholder => "restaurant name" %>
+  actionpack (3.2.2) lib/action_view/template.rb:285:in `module_eval'
+  actionpack (3.2.2) lib/action_view/template.rb:285:in `compile'
+  actionpack (3.2.2) lib/action_view/template.rb:233:in `compile!'
+  actionpack (3.2.2) lib/action_view/template.rb:142:in `block in render'
+  activesupport (3.2.2) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.2) lib/action_view/template.rb:141:in `render'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:42:in `block (2 levels) in render_template'
+  actionpack (3.2.2) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.2) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:41:in `block in render_template'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:49:in `render_with_layout'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+  actionpack (3.2.2) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.2) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:109:in `_render_template'
+  actionpack (3.2.2) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.2) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.2) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.2) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.2) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.2) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  remotipart (1.0.2) lib/remotipart/render_overrides.rb:8:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.2) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:436:in `_run__609679391__process_action__317733503__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+  activerecord (3.2.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.2) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.2) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:30:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:594:in `call'
+  rack-pjax (0.6.0) lib/rack/pjax.rb:12:in `call'
+  sass (3.2.4) lib/sass/plugin/rack.rb:54:in `call'
+  pdfkit (0.5.2) lib/pdfkit/middleware.rb:16:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/head.rb:14:in `call'
+  remotipart (1.0.2) lib/remotipart/middleware.rb:30:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  dragonfly (0.9.12) lib/dragonfly/cookie_monster.rb:9:in `call'
+  activerecord (3.2.2) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `_run__89953404__call__382181688__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (22.5ms)
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (82.5ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2013-05-09 16:12:01 -0400
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (6.0ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 32ms (Views: 27.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 16:12:01 -0400
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2013-05-09 16:12:01 -0400
+Served asset /restaurants.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 16:12:01 -0400
+Served asset /jquery.js - 304 Not Modified (84ms)
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2013-05-09 16:12:01 -0400
+Served asset /restaurants.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 16:12:01 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 16:12:01 -0400
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/css/restaurants.css" for 127.0.0.1 at 2013-05-09 16:12:01 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/restaurants.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/css/main.css" for 127.0.0.1 at 2013-05-09 16:12:02 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-09 16:12:02 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-09 16:12:02 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mealupgrade.png" for 127.0.0.1 at 2013-05-09 16:12:02 -0400
+Served asset /mealupgrade.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/stringleft.png" for 127.0.0.1 at 2013-05-09 16:12:02 -0400
+Served asset /stringleft.png - 304 Not Modified (24ms)
+
+
+Started GET "/assets/dinein.png" for 127.0.0.1 at 2013-05-09 16:12:02 -0400
+Served asset /dinein.png - 304 Not Modified (8ms)
+
+
+Started GET "/assets/sellit.png" for 127.0.0.1 at 2013-05-09 16:12:02 -0400
+Served asset /sellit.png - 304 Not Modified (31ms)
+
+
+Started GET "/assets/stringright.png" for 127.0.0.1 at 2013-05-09 16:12:03 -0400
+Served asset /stringright.png - 304 Not Modified (11ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2013-05-09 16:13:59 -0400
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+  [1m[35mUser Load (7.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (15.5ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 73ms (Views: 63.9ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 16:13:59 -0400
+Served asset /application.css - 304 Not Modified (67ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2013-05-09 16:13:59 -0400
+Served asset /restaurants.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 16:13:59 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 16:14:00 -0400
+Served asset /jquery.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 16:14:00 -0400
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2013-05-09 16:14:00 -0400
+Served asset /restaurants.js - 304 Not Modified (9ms)
+
+
+Started GET "/css/main.css" for 127.0.0.1 at 2013-05-09 16:14:00 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/css/restaurants.css" for 127.0.0.1 at 2013-05-09 16:14:00 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/restaurants.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-09 16:14:00 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-09 16:14:01 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mealupgrade.png" for 127.0.0.1 at 2013-05-09 16:14:01 -0400
+Served asset /mealupgrade.png - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sellit.png" for 127.0.0.1 at 2013-05-09 16:14:01 -0400
+Served asset /sellit.png - 304 Not Modified (29ms)
+
+
+Started GET "/assets/dinein.png" for 127.0.0.1 at 2013-05-09 16:14:01 -0400
+Served asset /dinein.png - 304 Not Modified (21ms)
+
+
+Started GET "/assets/stringright.png" for 127.0.0.1 at 2013-05-09 16:14:01 -0400
+Served asset /stringright.png - 304 Not Modified (11ms)
+
+
+Started GET "/assets/stringleft.png" for 127.0.0.1 at 2013-05-09 16:14:01 -0400
+Served asset /stringleft.png - 304 Not Modified (10ms)
+
+
+Started GET "/butterflies" for 127.0.0.1 at 2013-05-09 16:14:12 -0400
+Processing by SocialbutterfliesController#index as HTML
+  Rendered socialbutterflies/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    61:             </div> 
+    62:         </div>
+    63:         <div id="butterfly-submit">
+    64:             <%= form_for(@socialbutterflies) do |f| %>
+    65:                 <%= f.text_field :facebook %><br />
+    66:                 <%= f.submit %>
+    67:             <% end %>
+  app/views/socialbutterflies/index.html.erb:64:in `_app_views_socialbutterflies_index_html_erb___142267732__631864128'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.5ms)
+
+
+Started GET "/butterflies" for 127.0.0.1 at 2013-05-09 16:16:07 -0400
+Processing by SocialbutterfliesController#index as HTML
+  Rendered socialbutterflies/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+  [1m[36mUser Load (14.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (18.3ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+Completed 200 OK in 67ms (Views: 51.3ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 16:16:09 -0400
+Served asset /application.css - 304 Not Modified (69ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 16:16:09 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 16:16:09 -0400
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/socialbutterflies.js?body=1" for 127.0.0.1 at 2013-05-09 16:16:09 -0400
+Served asset /socialbutterflies.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/socialbutterflies.css?body=1" for 127.0.0.1 at 2013-05-09 16:16:09 -0400
+Served asset /socialbutterflies.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 16:16:09 -0400
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/css/main.css" for 127.0.0.1 at 2013-05-09 16:16:09 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/css/butterflies.css" for 127.0.0.1 at 2013-05-09 16:16:09 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/butterflies.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-09 16:16:10 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-09 16:16:10 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-logo.png" for 127.0.0.1 at 2013-05-09 16:16:10 -0400
+Served asset /butterflies-logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-sublogo.png" for 127.0.0.1 at 2013-05-09 16:16:10 -0400
+Served asset /butterflies-sublogo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-step1.png" for 127.0.0.1 at 2013-05-09 16:16:10 -0400
+Served asset /butterflies-step1.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/butterfly-path1.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterfly-path1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-step2.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterflies-step2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-step3.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterflies-step3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-path2.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterfly-path2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-path3.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterfly-path3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-circle.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterfly-circle.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-faq1.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterfly-faq1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-faq2.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterfly-faq2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-faq3.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterfly-faq3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-texting.png" for 127.0.0.1 at 2013-05-09 16:16:11 -0400
+Served asset /butterfly-texting.png - 304 Not Modified (0ms)
+
+
+Started GET "/butterflies" for 127.0.0.1 at 2013-05-09 16:18:05 -0400
+Processing by SocialbutterfliesController#index as HTML
+  Rendered socialbutterflies/index.html.erb within layouts/application (8182.2ms)
+Completed 500 Internal Server Error in 8202ms
+
+ActionView::Template::Error (undefined method `img_submit_tag' for #<#<Class:0xb4762258>:0xb383d688>):
+    62:         </div>
+    63:         <div id="butterfly-submit">
+    64:             <%= text_field_tag 'facebook', nil, :placeholder => "http://www.facebook.com/yourprofile", :size => "45" %>
+    65:             <%= img_submit_tag("butterfly-apply.png") %>
+    66:             <%# to be implemented %>
+    67:             <%#= form_for(@socialbutterflies) do |f| %>
+    68:                 <%#= f.text_field :facebook %><br />
+  app/views/socialbutterflies/index.html.erb:65:in `_app_views_socialbutterflies_index_html_erb___142267732__641603868'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.3ms)
+
+
+Started GET "/butterflies" for 127.0.0.1 at 2013-05-09 16:19:05 -0400
+Processing by SocialbutterfliesController#index as HTML
+  Rendered socialbutterflies/index.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (5.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (10.7ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 66ms (Views: 59.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 16:19:05 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/socialbutterflies.css?body=1" for 127.0.0.1 at 2013-05-09 16:19:06 -0400
+Served asset /socialbutterflies.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 16:19:06 -0400
+Served asset /jquery.js - 304 Not Modified (70ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 16:19:06 -0400
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/socialbutterflies.js?body=1" for 127.0.0.1 at 2013-05-09 16:19:06 -0400
+Served asset /socialbutterflies.js - 304 Not Modified (13ms)
+
+
+Started GET "/css/main.css" for 127.0.0.1 at 2013-05-09 16:19:06 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 16:19:07 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/css/butterflies.css" for 127.0.0.1 at 2013-05-09 16:19:07 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/butterflies.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-09 16:19:07 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-logo.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /butterflies-logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-sublogo.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /butterflies-sublogo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-path2.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /butterfly-path2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-step2.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /butterflies-step2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-step1.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /butterflies-step1.png - 304 Not Modified (9ms)
+
+
+Started GET "/assets/butterfly-path1.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /butterfly-path1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-step3.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /butterflies-step3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-path3.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /butterfly-path3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-apply.png" for 127.0.0.1 at 2013-05-09 16:19:08 -0400
+Served asset /butterfly-apply.png - 304 Not Modified (21ms)
+
+
+Started GET "/assets/butterfly-circle.png" for 127.0.0.1 at 2013-05-09 16:19:09 -0400
+Served asset /butterfly-circle.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-faq1.png" for 127.0.0.1 at 2013-05-09 16:19:09 -0400
+Served asset /butterfly-faq1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-faq2.png" for 127.0.0.1 at 2013-05-09 16:19:09 -0400
+Served asset /butterfly-faq2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-texting.png" for 127.0.0.1 at 2013-05-09 16:19:09 -0400
+Served asset /butterfly-texting.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-faq3.png" for 127.0.0.1 at 2013-05-09 16:19:09 -0400
+Served asset /butterfly-faq3.png - 304 Not Modified (0ms)
+
+
+Started GET "/butterflies" for 127.0.0.1 at 2013-05-09 16:19:24 -0400
+Processing by SocialbutterfliesController#index as HTML
+  Rendered socialbutterflies/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_google-analytics.html.erb (0.3ms)
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (6.9ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 53ms (Views: 47.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 16:19:25 -0400
+Served asset /application.css - 304 Not Modified (50ms)
+
+
+Started GET "/assets/socialbutterflies.css?body=1" for 127.0.0.1 at 2013-05-09 16:19:25 -0400
+Served asset /socialbutterflies.css - 304 Not Modified (29ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 16:19:25 -0400
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 16:19:25 -0400
+Served asset /application.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/socialbutterflies.js?body=1" for 127.0.0.1 at 2013-05-09 16:19:25 -0400
+Served asset /socialbutterflies.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 16:19:25 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (26ms)
+
+
+Started GET "/css/main.css" for 127.0.0.1 at 2013-05-09 16:19:25 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/css/butterflies.css" for 127.0.0.1 at 2013-05-09 16:19:25 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/butterflies.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/siesna/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/siesna/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-logo.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterflies-logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-path2.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterfly-path2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-step2.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterflies-step2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-step1.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterflies-step1.png - 304 Not Modified (6ms)
+
+
+Started GET "/assets/butterfly-path1.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterfly-path1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-sublogo.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterflies-sublogo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterflies-step3.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterflies-step3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-path3.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterfly-path3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-apply.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterfly-apply.png - 304 Not Modified (26ms)
+
+
+Started GET "/assets/butterfly-circle.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterfly-circle.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-faq1.png" for 127.0.0.1 at 2013-05-09 16:19:27 -0400
+Served asset /butterfly-faq1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-faq2.png" for 127.0.0.1 at 2013-05-09 16:19:28 -0400
+Served asset /butterfly-faq2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-texting.png" for 127.0.0.1 at 2013-05-09 16:19:28 -0400
+Served asset /butterfly-texting.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/butterfly-faq3.png" for 127.0.0.1 at 2013-05-09 16:19:28 -0400
+Served asset /butterfly-faq3.png - 304 Not Modified (0ms)

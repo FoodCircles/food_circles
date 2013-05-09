@@ -61,10 +61,13 @@
             </div> 
         </div>
         <div id="butterfly-submit">
-            <%= form_for(@socialbutterflies) do |f| %>
-                <%= f.text_field :facebook %><br />
-                <%= f.submit %>
-            <% end %>
+            <%= text_field_tag 'facebook', nil, :placeholder => "http://www.facebook.com/yourprofile", :size => "45" %><br />
+            <%= image_submit_tag("butterfly-apply.png") %>
+            <%# to be implemented %>
+            <%#= form_for(@socialbutterflies) do |f| %>
+                <%#= f.text_field :facebook %><br />
+                <%#= f.submit %>
+            <%# end %>
             <div id="butterfly-circle">       
             <%= image_tag "butterfly-circle.png" %>  
             </div>
