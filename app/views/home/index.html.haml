@@ -205,6 +205,11 @@
               = image_tag "home/pic01.jpg"
           %h3 free loaded crack fries
           %h4 at hopcat
+
+          .pic-container
+            %form{:action => ""}
+              %input{:name => "", :placeholder => "get notified", :type => "text"}/
+              %input.button{:type => "submit", :value => "Send ▸"}/
           .tags
             %strong Categorized in
             = succeed "," do

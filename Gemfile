@@ -26,6 +26,7 @@ gem 'pdfkit'
 gem 'stripe'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'rb-readline', '~> 0.4.2' # for rails console
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
