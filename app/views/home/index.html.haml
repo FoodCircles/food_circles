@@ -26,28 +26,28 @@
   .container
     .index
       / COLUMN
-      - @offers.in_groups_of(3).each do |offer_group|
+      - @vouchers.in_groups_of(3).each do |voucher_group|
         .col
-          - offer_group.each do |offer|
+          - voucher_group.each do |voucher|
             .item
-              - if offer
+              - if voucher
                 .pic-container
                   %span.meter
                     .count{:style => "height: 50px"}
                       %b.lt10
-                        %i 5
+                        %i #{voucher.available}
                         left
                   .pic
-                    = image_tag "home/pic01.jpg"
+                    = image_tag voucher.offer.image.url
                 %h3
-                  = offer.name
+                  = voucher.offer.name
                 %h4
                   at
-                  = offer.venue.name if offer
+                  = voucher.offer.venue.name
                 .tags
-                  - if offer and not offer.category.empty?
+                  - if not voucher.offer.category.empty?
                     %strong Categorized in
-                    = offer.category.map(&:name).join(",")
+                    = voucher.offer.category.map(&:name).join(",")
 
       .col
         .item
