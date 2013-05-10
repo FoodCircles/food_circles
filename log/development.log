@@ -47776,3 +47776,6 @@ Served asset /butterfly-texting.png - 304 Not Modified (0ms)
 Started GET "/assets/butterfly-faq3.png" for 127.0.0.1 at 2013-05-09 16:19:28 -0400
 Served asset /butterfly-faq3.png - 304 Not Modified (0ms)
 >>>>>>> 380def2e635d5fdb7e57086d77dc734a5f5d07f3
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
