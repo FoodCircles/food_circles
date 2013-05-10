@@ -24690,3 +24690,2751 @@ Served asset /home/logo.png - 304 Not Modified (0ms)
 Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-07 16:48:19 -0400
 Served asset /home/social.png - 304 Not Modified (0ms)
   [1m[36m (24.2ms)[0m  [1mSET search_path TO public,postgis[0m
+
+
+Started GET "/offers/2" for 127.0.0.1 at 2013-05-08 15:27:37 -0400
+  [1m[35m (0.7ms)[0m  SET search_path TO public,postgis
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36m (373.9ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (33.6ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered offers/show.html.haml within layouts/application (2.2ms)
+  Rendered layouts/_google-analytics.html.erb (0.4ms)
+  [1m[36m (10.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='users'[0m
+  [1m[35mUser Load (27.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (123.8ms)
+  Rendered partials/_footer.html.haml (2.5ms)
+Completed 200 OK in 1044ms (Views: 377.6ms | ActiveRecord: 639.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 15:27:38 -0400
+Served asset /application.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 15:27:39 -0400
+Served asset /jquery.js - 200 OK (80ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 15:27:39 -0400
+Served asset /offers.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 15:27:39 -0400
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 15:27:39 -0400
+Served asset /application.js - 200 OK (4ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 15:27:39 -0400
+Served asset /offers.js - 200 OK (1ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 15:27:39 -0400
+Served asset /home/logo.png - 304 Not Modified (15ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 15:27:39 -0400
+Served asset /home/social.png - 304 Not Modified (9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 15:27:47 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (1.1ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  Rendered home/index.html.haml within layouts/application (34.3ms)
+Completed 500 Internal Server Error in 50ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    30:         .col
+    31:           .item
+    32:             - offer_group.each do |offer| 
+    33:               = offer.name
+    34: 
+    35: 
+    36: 
+  app/views/home/index.html.haml:33:in `block (2 levels) in _app_views_home_index_html_haml__629062729419359711_38857060'
+  app/views/home/index.html.haml:32:in `each'
+  app/views/home/index.html.haml:32:in `block in _app_views_home_index_html_haml__629062729419359711_38857060'
+  app/views/home/index.html.haml:29:in `each'
+  app/views/home/index.html.haml:29:in `_app_views_home_index_html_haml__629062729419359711_38857060'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 15:28:46 -0400
+Processing by HomeController#index as HTML
+  [1m[35m (14.7ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='offers'
+  [1m[36mOffer Load (1.6ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  Rendered home/index.html.haml within layouts/application (54.7ms)
+Completed 500 Internal Server Error in 96ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    30:         .col
+    31:           .item
+    32:             - offer_group.each do |offer| 
+    33:               = offer.name
+    34: 
+    35: 
+    36: 
+  app/views/home/index.html.haml:33:in `block (2 levels) in _app_views_home_index_html_haml__629062729419359711_38857060'
+  app/views/home/index.html.haml:32:in `each'
+  app/views/home/index.html.haml:32:in `block in _app_views_home_index_html_haml__629062729419359711_38857060'
+  app/views/home/index.html.haml:29:in `each'
+  app/views/home/index.html.haml:29:in `_app_views_home_index_html_haml__629062729419359711_38857060'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.3ms)
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 15:37:36 -0400
+Processing by HomeController#index as HTML
+  [1m[35mOffer Load (1.1ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  Rendered partials/_home_extra.html.erb (0.8ms)
+  Rendered home/index.html.haml within layouts/application (35.3ms)
+Compiled home.css  (98ms)  (pid 3100)
+Compiled home.js  (0ms)  (pid 3100)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36m (4.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='users'[0m
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (44.8ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 239ms (Views: 224.6ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 15:37:37 -0400
+Served asset /application.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 15:37:37 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 15:37:37 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-08 15:37:37 -0400
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-08 15:37:37 -0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 15:37:37 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 15:37:38 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 15:37:38 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-05-08 15:37:38 -0400
+Served asset /home/stripes.gif - 304 Not Modified (44ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-05-08 15:37:38 -0400
+Served asset /home/hero.jpg - 304 Not Modified (17ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-05-08 15:37:38 -0400
+Served asset /home/meter.png - 304 Not Modified (20ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-05-08 15:37:38 -0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (15ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-05-08 15:37:38 -0400
+Served asset /home/pic01.jpg - 304 Not Modified (34ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-05-08 15:37:38 -0400
+Served asset /home/pic02.jpg - 304 Not Modified (17ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (3.3ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /restaurants.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /restaurants.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /home/logo.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sellit.png" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /sellit.png - 200 OK (8ms)
+
+
+Started GET "/assets/dinein.png" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /dinein.png - 200 OK (29ms)
+
+
+Started GET "/assets/mealupgrade.png" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /mealupgrade.png - 200 OK (26ms)
+
+
+Started GET "/assets/stringright.png" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /stringright.png - 200 OK (86ms)
+
+
+Started GET "/assets/stringleft.png" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /stringleft.png - 200 OK (2ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 15:40:09 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 15:40:20 -0400
+Processing by HomeController#index as HTML
+  [1m[35mOffer Load (1.2ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (6.3ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (2.9ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 15:40:20 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 15:40:20 -0400
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-08 15:40:20 -0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-08 15:40:20 -0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 15:40:20 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 15:40:20 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-05-08 15:40:21 -0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-05-08 15:40:21 -0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 15:40:21 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-05-08 15:40:21 -0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 15:40:21 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-05-08 15:40:21 -0400
+Served asset /home/meter.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-05-08 15:40:21 -0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-05-08 15:40:21 -0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 15:48:12 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %h4 and nested within it.):
+    41:               %h3
+    42:                 = offer.name if offer
+    43:               %h4 at
+    44:                 = offer.vendor.name
+    45:               .tags
+    46:                 %strong Categorized in
+    47:                 = succeed "," do
+  app/views/home/index.html.haml:44
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (35.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (40.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 15:48:27 -0400
+Processing by HomeController#index as HTML
+  [1m[35mOffer Load (1.1ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  Rendered home/index.html.haml within layouts/application (30.8ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (undefined method `vendor' for #<Offer:0x00000004a79c08>):
+    42:                 = offer.name if offer
+    43:               %h4
+    44:                 at
+    45:                 = offer.vendor.name
+    46:               .tags
+    47:                 %strong Categorized in
+    48:                 = succeed "," do
+  app/views/home/index.html.haml:45:in `block (2 levels) in _app_views_home_index_html_haml__629062729419359711_39103160'
+  app/views/home/index.html.haml:31:in `each'
+  app/views/home/index.html.haml:31:in `block in _app_views_home_index_html_haml__629062729419359711_39103160'
+  app/views/home/index.html.haml:29:in `each'
+  app/views/home/index.html.haml:29:in `_app_views_home_index_html_haml__629062729419359711_39103160'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 15:48:58 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (1.0ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35m (8.1ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venues'
+  [1m[36mVenue Load (26.7ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mVenue Load (0.6ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  Rendered home/index.html.haml within layouts/application (344.2ms)
+Completed 500 Internal Server Error in 346ms
+
+ActionView::Template::Error (undefined method `venue' for nil:NilClass):
+    42:                 = offer.name if offer
+    43:               %h4
+    44:                 at
+    45:                 = offer.venue.name
+    46:               .tags
+    47:                 %strong Categorized in
+    48:                 = succeed "," do
+  app/views/home/index.html.haml:45:in `block (2 levels) in _app_views_home_index_html_haml__629062729419359711_70308246660040'
+  app/views/home/index.html.haml:31:in `each'
+  app/views/home/index.html.haml:31:in `block in _app_views_home_index_html_haml__629062729419359711_70308246660040'
+  app/views/home/index.html.haml:29:in `each'
+  app/views/home/index.html.haml:29:in `_app_views_home_index_html_haml__629062729419359711_70308246660040'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 15:50:13 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (1.1ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35mVenue Load (1.1ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mVenue Load (1.1ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1[0m
+  [1m[35mVenue Load (1.1ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1[0m
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (89.4ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (5.5ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+Completed 200 OK in 104ms (Views: 97.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 15:50:13 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-08 15:50:13 -0400
+Served asset /home.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 15:50:13 -0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 15:50:13 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 15:50:13 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-08 15:50:13 -0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 15:50:15 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 15:50:15 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-05-08 15:50:15 -0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-05-08 15:50:15 -0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-05-08 15:50:15 -0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+PG::Error: ERROR:  relation "categories_offers" does not exist
+LINE 1: ...ELECT "categories".* FROM "categories" INNER JOIN "categorie...
+                                                             ^
+: SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 3
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[35m (12.6ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'
+  [1m[36m (11.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20120501170115)
+Migrating to CreateVenues (20120501171335)
+Migrating to CreateOpenTimes (20120501171708)
+Migrating to CreateContacts (20120501172102)
+Migrating to CreateContactTypes (20120501172120)
+Migrating to CreateStates (20120502155959)
+Migrating to CreateOfferTags (20120502160014)
+Migrating to CreateCharities (20120502160141)
+Migrating to CreateOffers (20120502160237)
+Migrating to CreateOfferTaggables (20120502160325)
+Migrating to CreateReservations (20120502160550)
+Migrating to CreateRailsAdminHistoriesTable (20120503121049)
+Migrating to CreateTimeZones (20120504105429)
+Migrating to AddImageToVenue (20120504111253)
+Migrating to CreateVenueTags (20120504120508)
+Migrating to CreateVenueTaggables (20120504120615)
+Migrating to AddImageToCharity (20120507145355)
+Migrating to CreateRegions (20120507145604)
+Migrating to AddNameToUser (20120510105952)
+Migrating to AddPhoneToVenue (20120510133529)
+Migrating to AddCircleImageToVenue (20120518105515)
+Migrating to FixTimeZoneForVenues (20120524200219)
+Migrating to AddPhoneToUser (20120611111656)
+Migrating to AddAdminToUser (20120613121855)
+Migrating to AddCalledToReservation (20120613172050)
+Migrating to CreateDelayedJobs (20120627170159)
+Migrating to AddRatingToVenue (20120712152416)
+Migrating to AddReferenceToVenue (20120718153820)
+Migrating to CreateReviews (20120718163322)
+Migrating to AddActiveToVenue (20120719151936)
+Migrating to ResetLatLonColumnInVenue (20120719163342)
+Migrating to AddTimeToReviews (20120723192124)
+Migrating to DropOfferTags (20120723202118)
+Migrating to DropContactTypes (20120723203310)
+Migrating to CreateRemindLists (20120815173829)
+Migrating to CreateNotifications (20120904180943)
+Migrating to AddVoucherToVenues (20121203062437)
+Migrating to CreateInvoices (20130115231614)
+Migrating to AddMultiplierToVenues (20130116231639)
+Migrating to AddFeemessageFeechargeApplyAbleToVenues (20130122214656)
+Migrating to AddEmailToVenues (20130301170958)
+Migrating to CreatePaymentNotification (20130502185808)
+Migrating to CreateCategories (20130506210300)
+Migrating to CreatePayments (20130507140506)
+Migrating to CreateVouchers (20130507175737)
+Migrating to AddImageToOffers (20130507182116)
+Migrating to CreateCategoriesOffersJoinTable (20130508201332)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (185.8ms)[0m  [1mCREATE TABLE "categories_offers" ("category_id" integer, "offer_id" integer) [0m
+  [1m[35m (75.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130508201332')
+  [1m[36m (16.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SET search_path TO public,postgis
+  [1m[36m (4.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (4.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35mPK and serial sequence (5.3ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"categories"'::regclass
+
+  [1m[36m (10.8ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'categories'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (4.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36mPK and serial sequence (6.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"categories_offers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (29.5ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"categories_offers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+
+  [1m[36m (2.8ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'categories_offers'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (11.9ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='charities'
+  [1m[36mPK and serial sequence (5.3ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"charities"'::regclass
+[0m
+  [1m[35m (2.8ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'charities'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (4.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='delayed_jobs'[0m
+  [1m[35mPK and serial sequence (4.3ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"delayed_jobs"'::regclass
+
+  [1m[36m (14.1ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'delayed_jobs'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index delayed_jobs_priority on delayed_jobs (2.2ms)[0m   SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 257017
+ AND a.attnum IN (2,6)
+ AND a.atttypid = t.oid
+
+  [1m[36m (4.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='invoices'[0m
+  [1m[35mPK and serial sequence (5.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"invoices"'::regclass
+
+  [1m[36m (2.8ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'invoices'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (4.0ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='notifications'
+  [1m[36mPK and serial sequence (5.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"notifications"'::regclass
+[0m
+  [1m[35m (2.7ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'notifications'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (3.9ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mPK and serial sequence (5.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"offers"'::regclass
+
+  [1m[36m (2.7ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'offers'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (4.1ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='open_times'
+  [1m[36mPK and serial sequence (5.8ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"open_times"'::regclass
+[0m
+  [1m[35m (2.7ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'open_times'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (4.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='payment_notifications'[0m
+  [1m[35mPK and serial sequence (5.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"payment_notifications"'::regclass
+
+  [1m[36m (2.8ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'payment_notifications'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (4.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='payments'
+  [1m[36mPK and serial sequence (6.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"payments"'::regclass
+[0m
+  [1m[35m (2.9ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'payments'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36mColumns for index index_payments_on_user_id on payments (1.2ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 262663
+ AND a.attnum IN (2)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (4.1ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='rails_admin_histories'
+  [1m[36mPK and serial sequence (5.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"rails_admin_histories"'::regclass
+[0m
+  [1m[35m (2.8ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'rails_admin_histories'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36mColumns for index index_rails_admin_histories on rails_admin_histories (1.5ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 256955
+ AND a.attnum IN (4,5,6,7)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (4.1ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='regions'
+  [1m[36mPK and serial sequence (5.8ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"regions"'::regclass
+[0m
+  [1m[35m (2.7ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'regions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (4.1ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='remind_lists'[0m
+  [1m[35mPK and serial sequence (5.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"remind_lists"'::regclass
+
+  [1m[36m (2.7ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'remind_lists'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (4.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='reservations'
+  [1m[36mPK and serial sequence (5.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"reservations"'::regclass
+[0m
+  [1m[35m (2.7ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'reservations'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (4.1ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='reviews'[0m
+  [1m[35mPK and serial sequence (5.8ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"reviews"'::regclass
+
+  [1m[36m (2.9ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'reviews'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_reviews_on_venue_id on reviews (1.2ms)[0m   SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 257031
+ AND a.attnum IN (5)
+ AND a.atttypid = t.oid
+
+  [1m[36m (4.0ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='states'[0m
+  [1m[35mPK and serial sequence (5.8ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"states"'::regclass
+
+  [1m[36m (2.7ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'states'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (4.0ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='time_zones'
+  [1m[36mPK and serial sequence (5.8ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"time_zones"'::regclass
+[0m
+  [1m[35m (2.7ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'time_zones'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (4.1ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='users'[0m
+  [1m[35mPK and serial sequence (5.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+
+  [1m[36m (2.9ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_users_on_email on users (1.2ms)[0m   SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 256844
+ AND a.attnum IN (2)
+ AND a.atttypid = t.oid
+
+  [1m[36mColumns for index index_users_on_reset_password_token on users (1.1ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 256844
+ AND a.attnum IN (4)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (4.1ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venue_taggables'
+  [1m[36mPK and serial sequence (5.8ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"venue_taggables"'::regclass
+[0m
+  [1m[35m (2.7ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'venue_taggables'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (4.0ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venue_tags'[0m
+  [1m[35mPK and serial sequence (5.8ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"venue_tags"'::regclass
+
+  [1m[36m (2.7ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'venue_tags'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (4.2ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venues'
+  [1m[36mPK and serial sequence (2.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"venues"'::regclass
+[0m
+  [1m[35m (1.1ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'venues'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='vouchers'[0m
+  [1m[35mPK and serial sequence (5.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"vouchers"'::regclass
+
+  [1m[36m (2.8ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'vouchers'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_vouchers_on_offer_id on vouchers (1.1ms)[0m   SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 262672
+ AND a.attnum IN (6)
+ AND a.atttypid = t.oid
+
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+
+
+Started GET "/offers/1/edit" for 127.0.0.1 at 2013-05-08 16:17:30 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36m (1.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (0.6ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered offers/_form.html.haml (0.8ms)
+  Rendered offers/edit.html.haml within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (Inconsistent indentation: 33 spaces were used for indentation, but the rest of the document was indented using 2 spaces.):
+    15:                                   ['Type C', 'Type C'],
+    16:                                   ['Type D', 'Type D'],
+    17:                                   ['Type E', 'Type E']
+    18:                                  ],{ :prompt => "Please select"},
+    19:                                    { :multiple => true, :size => 5 } )
+    20:   .field
+    21:     = f.submit
+  app/views/offers/_form.html.haml:18
+  app/views/offers/edit.html.haml:1:in `_app_views_offers_edit_html_haml___2623182988614873971_38795320'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/offers/1/edit" for 127.0.0.1 at 2013-05-08 16:18:06 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffer Load (0.9ms)[0m  [1mSELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (4.5ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venues'
+  [1m[36mVenue Load (1.0ms)[0m  [1mSELECT "venues".* FROM "venues" [0m
+  [1m[35m (4.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories'
+  [1m[36m (4.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories_offers'[0m
+  [1m[35mCategory Load (1.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  Rendered offers/_form.html.haml (334.6ms)
+  Rendered offers/edit.html.haml within layouts/application (335.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+  [1m[36m (1.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='users'[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (33.1ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 385ms (Views: 344.4ms | ActiveRecord: 37.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:18:06 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:18:06 -0400
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:18:06 -0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 16:18:06 -0400
+Served asset /offers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:18:06 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:18:06 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:18:07 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:18:07 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/offers/1/edit" for 127.0.0.1 at 2013-05-08 16:19:19 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffer Load (1.0ms)[0m  [1mSELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mVenue Load (1.4ms)[0m  SELECT "venues".* FROM "venues" 
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  Rendered offers/_form.html.haml (9.8ms)
+  Rendered offers/edit.html.haml within layouts/application (10.3ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (3.1ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 26ms (Views: 18.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:19:19 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:19:19 -0400
+Served asset /jquery.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 16:19:19 -0400
+Served asset /offers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:19:19 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:19:19 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:19:19 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:19:19 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:19:20 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[36m (0.6ms)[0m  [1mSET search_path TO public,postgis[0m
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2013-05-08 16:31:14 -0400
+  [1m[35m (4.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories'
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.haml (3.4ms)
+  Rendered categories/new.html.haml within layouts/application (4.8ms)
+Compiled categories.css  (1ms)  (pid 3100)
+Compiled categories.js  (0ms)  (pid 3100)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36m (4.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='users'[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (35.5ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 113ms (Views: 89.8ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:15 -0400
+Served asset /categories.css - 200 OK (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:15 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:15 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:15 -0400
+Served asset /categories.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:15 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:15 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:31:15 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:31:15 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 16:31:23 -0400
+Processing by HomeController#index as HTML
+  [1m[36m (4.0ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (0.3ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36m (1.8ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mVenue Load (0.6ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1[0m
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (111.8ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (2.7ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 137ms (Views: 106.4ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:23 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:23 -0400
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:23 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:23 -0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:23 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:31:24 -0400
+Served asset /home/logo.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-05-08 16:31:24 -0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-05-08 16:31:24 -0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:31:24 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-05-08 16:31:24 -0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-05-08 16:31:24 -0400
+Served asset /home/meter.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-05-08 16:31:24 -0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-05-08 16:31:24 -0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fadIaj/B2J38zOg+3dwDLNGrXlsn8TJf741i0GxzJ5g=", "category"=>{"name"=>"open late"}, "commit"=>"Save"}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (147.4ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Wed, 08 May 2013 20:31:36 UTC +00:00], ["name", "open late"], ["updated_at", Wed, 08 May 2013 20:31:36 UTC +00:00]]
+  [1m[36m (12.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 168ms (ActiveRecord: 160.2ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (1.9ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered categories/show.html.haml within layouts/application (5.4ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (5.2ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+Completed 200 OK in 26ms (Views: 20.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:31:36 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2013-05-08 16:31:41 -0400
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.haml within layouts/application (2.7ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (5.1ms)
+  Rendered partials/_footer.html.haml (0.8ms)
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:41 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:41 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:41 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:41 -0400
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:41 -0400
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:41 -0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:31:41 -0400
+Served asset /home/logo.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:31:41 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2013-05-08 16:31:46 -0400
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.haml (1.6ms)
+  Rendered categories/new.html.haml within layouts/application (2.3ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (3.2ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:46 -0400
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:46 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:46 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:46 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:46 -0400
+Served asset /categories.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:46 -0400
+Served asset /categories.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:31:46 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:31:46 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fadIaj/B2J38zOg+3dwDLNGrXlsn8TJf741i0GxzJ5g=", "category"=>{"name"=>"easy in easy out"}, "commit"=>"Save"}
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Wed, 08 May 2013 20:31:58 UTC +00:00], ["name", "easy in easy out"], ["updated_at", Wed, 08 May 2013 20:31:58 UTC +00:00]]
+  [1m[36m (39.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/categories/2
+Completed 302 Found in 47ms (ActiveRecord: 40.6ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered categories/show.html.haml within layouts/application (0.7ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (3.0ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Served asset /categories.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:31:58 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2013-05-08 16:32:00 -0400
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (1.0ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.haml within layouts/application (1.7ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (5.3ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:00 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:00 -0400
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:00 -0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:00 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:00 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (43ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:00 -0400
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:32:00 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:32:00 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2013-05-08 16:32:02 -0400
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.haml (1.6ms)
+  Rendered categories/new.html.haml within layouts/application (2.2ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (2.9ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:02 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:02 -0400
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:02 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:02 -0400
+Served asset /categories.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:02 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:02 -0400
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:32:02 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:32:02 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fadIaj/B2J38zOg+3dwDLNGrXlsn8TJf741i0GxzJ5g=", "category"=>{"name"=>"cheap"}, "commit"=>"Save"}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Wed, 08 May 2013 20:32:12 UTC +00:00], ["name", "cheap"], ["updated_at", Wed, 08 May 2013 20:32:12 UTC +00:00]]
+  [1m[36m (18.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/categories/3
+Completed 302 Found in 28ms (ActiveRecord: 19.9ms)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "3"]]
+  Rendered categories/show.html.haml within layouts/application (2.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (2.7ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:32:12 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2013-05-08 16:32:14 -0400
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.haml within layouts/application (3.0ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (2.4ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:14 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:14 -0400
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:14 -0400
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:14 -0400
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:14 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:14 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:32:14 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:32:14 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2013-05-08 16:32:18 -0400
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.haml (1.6ms)
+  Rendered categories/new.html.haml within layouts/application (2.2ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (2.9ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:18 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:18 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:18 -0400
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:18 -0400
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:18 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:18 -0400
+Served asset /categories.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:32:18 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:32:18 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fadIaj/B2J38zOg+3dwDLNGrXlsn8TJf741i0GxzJ5g=", "category"=>{"name"=>"close to you"}, "commit"=>"Save"}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Wed, 08 May 2013 20:32:34 UTC +00:00], ["name", "close to you"], ["updated_at", Wed, 08 May 2013 20:32:34 UTC +00:00]]
+  [1m[36m (44.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/categories/4
+Completed 302 Found in 52ms (ActiveRecord: 45.9ms)
+
+
+Started GET "/categories/4" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered categories/show.html.haml within layouts/application (2.2ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (5.7ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Served asset /categories.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:32:34 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2013-05-08 16:32:35 -0400
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.haml within layouts/application (2.9ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (2.2ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:35 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:35 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:35 -0400
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:35 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:35 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:35 -0400
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:32:35 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:32:35 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/offers/1" for 127.0.0.1 at 2013-05-08 16:32:43 -0400
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mOffer Load (0.7ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered offers/show.html.haml within layouts/application (0.9ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (2.8ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:43 -0400
+Served asset /offers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:43 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:43 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:43 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:43 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:43 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:32:43 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:32:43 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/offers/1/edit" for 127.0.0.1 at 2013-05-08 16:32:48 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mOffer Load (0.9ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mVenue Load (1.1ms)[0m  [1mSELECT "venues".* FROM "venues" [0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" 
+  [1m[36m (4.7ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories_offers'[0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  Rendered offers/_form.html.haml (47.8ms)
+  Rendered offers/edit.html.haml within layouts/application (48.4ms)
+  Rendered layouts/_google-analytics.html.erb (0.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (4.0ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 66ms (Views: 53.0ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:48 -0400
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:48 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 16:32:48 -0400
+Served asset /offers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:48 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:48 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:32:48 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:32:48 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:32:48 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/offers/1/edit" for 127.0.0.1 at 2013-05-08 16:33:16 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mOffer Load (0.7ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mVenue Load (1.0ms)[0m  [1mSELECT "venues".* FROM "venues" [0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" 
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  Rendered offers/_form.html.haml (11.7ms)
+  Rendered offers/edit.html.haml within layouts/application (12.4ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (5.0ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+Completed 200 OK in 32ms (Views: 27.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:33:16 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 16:33:16 -0400
+Served asset /offers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:16 -0400
+Served asset /application.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:16 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:16 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:16 -0400
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:33:16 -0400
+Served asset /home/logo.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:33:16 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/offers/1/edit" for 127.0.0.1 at 2013-05-08 16:33:27 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffer Load (1.0ms)[0m  [1mSELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mVenue Load (1.6ms)[0m  SELECT "venues".* FROM "venues" 
+  [1m[36mCategory Load (0.8ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  [1m[35mCategory Load (1.0ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  Rendered offers/_form.html.haml (65.9ms)
+  Rendered offers/edit.html.haml within layouts/application (67.3ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (2.9ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 82ms (Views: 74.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:33:27 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:27 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 16:33:27 -0400
+Served asset /offers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:27 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:27 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:27 -0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:33:27 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:33:27 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/offers/1/edit" for 127.0.0.1 at 2013-05-08 16:33:33 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mOffer Load (1.0ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mVenue Load (1.1ms)[0m  [1mSELECT "venues".* FROM "venues" [0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" 
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  Rendered offers/_form.html.haml (16.7ms)
+  Rendered offers/edit.html.haml within layouts/application (17.4ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (2.8ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 40ms (Views: 32.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:33:33 -0400
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:33 -0400
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 16:33:33 -0400
+Served asset /offers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:33 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:33 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:33:33 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:33:33 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:33:33 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started PUT "/offers/1" for 127.0.0.1 at 2013-05-08 16:33:38 -0400
+Processing by OffersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fadIaj/B2J38zOg+3dwDLNGrXlsn8TJf741i0GxzJ5g=", "offer"=>{"name"=>"Free Desserts", "venue_id"=>"3", "category"=>["", "1", "2"]}, "commit"=>"Update Offer", "id"=>"1"}
+  [1m[36mOffer Load (0.8ms)[0m  [1mSELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 3ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: category):
+  app/controllers/offers_controller.rb:38:in `block in update'
+  app/controllers/offers_controller.rb:37:in `update'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.8ms)
+
+
+Started PUT "/offers/1" for 127.0.0.1 at 2013-05-08 16:34:00 -0400
+Processing by OffersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fadIaj/B2J38zOg+3dwDLNGrXlsn8TJf741i0GxzJ5g=", "offer"=>{"name"=>"Free Desserts", "venue_id"=>"3", "category"=>["", "1", "2"]}, "commit"=>"Update Offer", "id"=>"1"}
+  [1m[35m (4.6ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='offers'
+  [1m[36mOffer Load (0.8ms)[0m  [1mSELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 46ms
+
+ActiveRecord::AssociationTypeMismatch (Category(#38261180) expected, got String(#14157160)):
+  app/controllers/offers_controller.rb:38:in `block in update'
+  app/controllers/offers_controller.rb:37:in `update'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started PUT "/offers/1" for 127.0.0.1 at 2013-05-08 16:36:32 -0400
+Processing by OffersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fadIaj/B2J38zOg+3dwDLNGrXlsn8TJf741i0GxzJ5g=", "offer"=>{"name"=>"Free Desserts", "venue_id"=>"3", "category"=>["", "1", "2"]}, "commit"=>"Update Offer", "id"=>"1"}
+  [1m[35m (4.5ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='offers'
+  [1m[36mOffer Load (0.6ms)[0m  [1mSELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 36ms
+
+ActiveRecord::AssociationTypeMismatch (Category(#39153680) expected, got String(#14157160)):
+  app/controllers/offers_controller.rb:38:in `block in update'
+  app/controllers/offers_controller.rb:37:in `update'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/offers/1/edit" for 127.0.0.1 at 2013-05-08 16:38:03 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mOffer Load (0.8ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (4.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (0.8ms)[0m  SELECT "venues".* FROM "venues" 
+  [1m[36m (4.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered offers/_form.html.haml (84.0ms)
+  Rendered offers/edit.html.haml within layouts/application (84.6ms)
+Completed 500 Internal Server Error in 90ms
+
+ActionView::Template::Error (undefined method `category_id' for #<Offer:0x0000000482ae20>):
+    10:     = f.file_field :image
+    11:   .field
+    12:     = f.label :category
+    13:     = f.select(:category_id, Category.all.collect { |o| [o.name, o.id] }, {}, { :multiple => true, :size => 5 } )
+    14:   .field
+    15:     = f.submit
+  app/views/offers/_form.html.haml:13:in `block in _app_views_offers__form_html_haml___2868081486650186561_37897560'
+  app/views/offers/_form.html.haml:1:in `_app_views_offers__form_html_haml___2868081486650186561_37897560'
+  app/views/offers/edit.html.haml:1:in `_app_views_offers_edit_html_haml___2623182988614873971_38795320'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.1ms)
+
+
+Started GET "/offers/1/edit" for 127.0.0.1 at 2013-05-08 16:48:57 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffer Load (0.8ms)[0m  [1mSELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mVenue Load (1.0ms)[0m  SELECT "venues".* FROM "venues" 
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  [1m[35m (4.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36m (0.7ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  Rendered offers/_form.html.haml (16.5ms)
+  Rendered offers/edit.html.haml within layouts/application (17.0ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36m (4.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='users'[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (58.7ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 87ms (Views: 62.7ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 16:48:57 -0400
+Served asset /offers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:48:57 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:48:57 -0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:48:57 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:48:57 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:48:57 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:48:58 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:48:58 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started PUT "/offers/1" for 127.0.0.1 at 2013-05-08 16:49:04 -0400
+Processing by OffersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fadIaj/B2J38zOg+3dwDLNGrXlsn8TJf741i0GxzJ5g=", "offer"=>{"name"=>"Free Desserts", "venue_id"=>"3", "category_ids"=>["", "1", "3"]}, "commit"=>"Update Offer", "id"=>"1"}
+  [1m[36mOffer Load (0.8ms)[0m  [1mSELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 3ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: category_ids):
+  app/controllers/offers_controller.rb:38:in `block in update'
+  app/controllers/offers_controller.rb:37:in `update'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (36.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.4ms)
+
+
+Started PUT "/offers/1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Processing by OffersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fadIaj/B2J38zOg+3dwDLNGrXlsn8TJf741i0GxzJ5g=", "offer"=>{"name"=>"Free Desserts", "venue_id"=>"3", "category_ids"=>["", "1", "3"]}, "commit"=>"Update Offer", "id"=>"1"}
+  [1m[35m (4.5ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='offers'
+  [1m[36mOffer Load (0.6ms)[0m  [1mSELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (4.5ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35mCategory Load (1.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1, 3)
+  [1m[36m (4.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories_offers'[0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "categories_offers" ("offer_id", "category_id") VALUES (1, 1)[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "categories_offers" ("offer_id", "category_id") VALUES (1, 3)
+[paperclip] Saving attachments.
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/offers/1
+Completed 302 Found in 95ms (ActiveRecord: 39.9ms)
+
+
+Started GET "/offers/1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mOffer Load (0.7ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered offers/show.html.haml within layouts/application (0.9ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36m (1.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='users'[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (61.6ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 71ms (Views: 64.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/offers.css?body=1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /offers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/offers.js?body=1" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /offers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /home/social.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:49:23 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (0.5ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35m (4.5ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venues'
+  [1m[36mVenue Load (1.1ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mVenue Load (1.5ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mVenue Load (0.9ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (98.6ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered partials/_header.html.haml (2.9ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 109ms (Views: 95.2ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home/meter.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-05-08 16:55:37 -0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 17:02:04 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %strong and nested within it.):
+    45:                 = offer.venue.name if offer
+    46:               .tags
+    47:                 %strong Categorized in
+    48:                   = offer.category.map(&:name).join(",")
+    49: 
+    50:       .col
+    51:         .item
+  app/views/home/index.html.haml:48
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 17:02:14 -0400
+Processing by HomeController#index as HTML
+  [1m[35mOffer Load (1.0ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36mVenue Load (0.9ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 3
+  [1m[36mVenue Load (0.9ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 4
+  [1m[36mVenue Load (0.9ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (1.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2
+  Rendered home/index.html.haml within layouts/application (81.5ms)
+Completed 500 Internal Server Error in 88ms
+
+ActionView::Template::Error (undefined method `category' for nil:NilClass):
+    46:               .tags
+    47:                 %strong
+    48:                   Categorized in
+    49:                   = offer.category.map(&:name).join(",")
+    50: 
+    51:       .col
+    52:         .item
+  app/views/home/index.html.haml:49:in `block (2 levels) in _app_views_home_index_html_haml__629062729419359711_70308212399200'
+  app/views/home/index.html.haml:31:in `each'
+  app/views/home/index.html.haml:31:in `block in _app_views_home_index_html_haml__629062729419359711_70308212399200'
+  app/views/home/index.html.haml:29:in `each'
+  app/views/home/index.html.haml:29:in `_app_views_home_index_html_haml__629062729419359711_70308212399200'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.4ms)
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 17:03:52 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (1.0ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35mVenue Load (0.9ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.8ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 3[0m
+  [1m[35mVenue Load (0.9ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 4[0m
+  [1m[35mVenue Load (0.8ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (41.4ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (5.5ms)
+  Rendered partials/_footer.html.haml (0.7ms)
+Completed 200 OK in 61ms (Views: 51.7ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 17:03:52 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 17:03:52 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-08 17:03:52 -0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-08 17:03:52 -0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 17:03:52 -0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 17:03:52 -0400
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 17:03:53 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-05-08 17:03:53 -0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 17:03:53 -0400
+Served asset /home/social.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-05-08 17:03:53 -0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-05-08 17:03:53 -0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-05-08 17:03:53 -0400
+Served asset /home/meter.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-05-08 17:03:53 -0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-05-08 17:03:53 -0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 17:04:42 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (1.0ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35mVenue Load (1.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 3[0m
+  [1m[35mVenue Load (1.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 4[0m
+  [1m[35mVenue Load (0.9ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (76.3ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (2.7ms)
+  Rendered partials/_footer.html.haml (0.2ms)
+Completed 200 OK in 91ms (Views: 81.7ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/stripes.gif" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home/stripes.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/viewres_heading.jpg" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home/viewres_heading.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/meter.png" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home/meter.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-05-08 17:04:43 -0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-08 17:18:06 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (1.0ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35mVenue Load (0.9ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 3[0m
+  [1m[35mVenue Load (0.9ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.8ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 4[0m
+  [1m[35mVenue Load (0.8ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.8ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  Rendered partials/_home_extra.html.erb (0.1ms)
+  Rendered home/index.html.haml within layouts/application (42.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered partials/_header.html.haml (4.0ms)
+  Rendered partials/_footer.html.haml (0.4ms)
+Completed 200 OK in 60ms (Views: 50.8ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /application.css - 304 Not Modified (56ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/logo.png" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /home/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/hero.jpg" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /home/hero.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/social.png" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /home/social.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic01.jpg" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /home/pic01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home/pic02.jpg" for 127.0.0.1 at 2013-05-08 17:18:07 -0400
+Served asset /home/pic02.jpg - 304 Not Modified (0ms)
+  [1m[36m (24.6ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
