@@ -56,6 +56,7 @@ Foodcircles::Application.routes.draw do
   match '/mobi/reservation-login' => 'mobile#login'
   match '/mobi/reservation' => 'mobile#signup'
   match '/mobi/reservation_confirm' => 'mobile#callahead'
+  match '/mobi/num_users' => 'mobile#num_users'
   match '/notification' => 'application#notification'
 
 
