@@ -1,8 +1,9 @@
 class Offer < ActiveRecord::Base
   belongs_to :venue
+  
   has_many :open_times, :as => :openable, :dependent => :destroy
   has_and_belongs_to_many :category
-  has_and_belongs_to_many :payment
+  has_many :payments
 
   attr_accessible :image, :name, :venue_id, :category_ids
   attr_accessor :image

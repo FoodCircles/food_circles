@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130508201332) do
+ActiveRecord::Schema.define(:version => 20130512224725) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(:version => 20130508201332) do
     t.string   "stripe_charge_token"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.integer  "offer_id"
   end
 
   add_index "payments", ["user_id"], :name => "index_payments_on_user_id"
@@ -178,6 +179,13 @@ ActiveRecord::Schema.define(:version => 20130508201332) do
     t.boolean  "called",         :default => false
   end
 
+  create_table "restaurants", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "reviews", :force => true do |t|
     t.string   "author_name"
     t.text     "content"
@@ -189,6 +197,12 @@ ActiveRecord::Schema.define(:version => 20130508201332) do
   end
 
   add_index "reviews", ["venue_id"], :name => "index_reviews_on_venue_id"
+
+  create_table "socialbutterflies", :force => true do |t|
+    t.string   "facebook"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "states", :force => true do |t|
     t.string   "name"
