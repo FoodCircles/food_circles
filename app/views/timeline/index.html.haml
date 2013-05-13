@@ -1,2 +1,3 @@
-%h1 Timeline#index
-%p Find me in app/views/timeline/index.html.haml
+- @payments.each do |payment|
+  = payment.amount
+  %h1= payment.offer.venue.name
