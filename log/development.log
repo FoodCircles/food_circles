@@ -47779,3 +47779,4 @@ Served asset /butterfly-faq3.png - 304 Not Modified (0ms)
   [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
   [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
   [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+  [1m[36m (24.2ms)[0m  [1mSET search_path TO public,postgis[0m
