@@ -5,6 +5,7 @@ Foodcircles::Application.routes.draw do
   # match '/offers' => 'offers#index', :as => :offers
   resources :offers
   resources :categories
+  match '/companies' => 'companies#index', :as => :companies
   match '/restaurants' => 'restaurants#index', :as => :restaurants
   match '/butterflies' => 'socialbutterflies#index', :as => :socialbutterflies
   match '/timeline' => 'timeline#index', :as => :timeline
@@ -35,7 +36,7 @@ Foodcircles::Application.routes.draw do
 
   resources :socialbutterflies
   resources :restaurants
-
+  resources :companies
 
   match '/app' => 'app#index'
   match '/getVenue' => 'app#getVenue'

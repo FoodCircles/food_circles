@@ -7887,3 +7887,822 @@ Processing by HomeController#index as HTML
   Rendered partials/_header.html.haml (1.8ms)
   Rendered partials/_footer.html.haml (0.3ms)
 Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-14 13:41:54 -0400
+Processing by HomeController#index as HTML
+  [1m[35m (9.9ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='vouchers'
+  [1m[36mVoucher Load (0.2ms)[0m  [1mSELECT "vouchers".* FROM "vouchers" LIMIT 9[0m
+  Rendered partials/_home_extra.html.erb (0.0ms)
+  Rendered home/index.html.haml within layouts/application (19.9ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  Rendered partials/_header.html.haml (51.4ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 115ms (Views: 93.5ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/companies" for 68.119.102.65 at 2013-05-14 13:41:59 -0400
+
+ActionController::RoutingError (No route matches [GET] "/companies"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/companies" for 68.119.102.65 at 2013-05-14 13:43:19 -0400
+Processing by CompaniesController#index as HTML
+  Rendered companies/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  Rendered partials/_header.html.haml (2.0ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 108ms (Views: 107.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/companies.css" for 68.119.102.65 at 2013-05-14 13:43:20 -0400
+Served asset /companies.css - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/companies.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/assets/companies.js" for 68.119.102.65 at 2013-05-14 13:43:20 -0400
+Served asset /companies.js - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/companies.js"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/css/restaurants.css" for 68.119.102.65 at 2013-05-14 13:43:20 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/restaurants.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/css/main.css" for 68.119.102.65 at 2013-05-14 13:43:20 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/restaurants" for 68.119.102.65 at 2013-05-14 13:43:38 -0400
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.erb within layouts/application (30.8ms)
+  Rendered layouts/_google-analytics.html.erb (0.4ms)
+  Rendered partials/_header.html.haml (8.5ms)
+  Rendered partials/_footer.html.haml (3.1ms)
+Completed 200 OK in 158ms (Views: 157.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/css/main.css" for 68.119.102.65 at 2013-05-14 13:43:39 -0400
+
+
+Started GET "/css/restaurants.css" for 68.119.102.65 at 2013-05-14 13:43:39 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/css/restaurants.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started POST "/companies" for 68.119.102.65 at 2013-05-14 13:44:10 -0400
+
+AbstractController::ActionNotFound (The action 'create' could not be found for CompaniesController):
+  actionpack (3.2.2) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.2) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:30:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:594:in `call'
+  rack-pjax (0.6.0) lib/rack/pjax.rb:12:in `call'
+  sass (3.2.4) lib/sass/plugin/rack.rb:54:in `call'
+  pdfkit (0.5.2) lib/pdfkit/middleware.rb:16:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/head.rb:14:in `call'
+  remotipart (1.0.2) lib/remotipart/middleware.rb:30:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  dragonfly (0.9.12) lib/dragonfly/cookie_monster.rb:9:in `call'
+  activerecord (3.2.2) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `_run__546521410110318691__call__4069254449296233177__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:143:in `pass'
+  rack-cache (1.2) lib/rack/cache/context.rb:155:in `invalidate'
+  rack-cache (1.2) lib/rack/cache/context.rb:71:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started POST "/companies" for 68.119.102.65 at 2013-05-14 13:45:23 -0400
+
+AbstractController::ActionNotFound (The action 'create' could not be found for CompaniesController):
+  actionpack (3.2.2) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.2) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:30:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:594:in `call'
+  rack-pjax (0.6.0) lib/rack/pjax.rb:12:in `call'
+  sass (3.2.4) lib/sass/plugin/rack.rb:54:in `call'
+  pdfkit (0.5.2) lib/pdfkit/middleware.rb:16:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/head.rb:14:in `call'
+  remotipart (1.0.2) lib/remotipart/middleware.rb:30:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  dragonfly (0.9.12) lib/dragonfly/cookie_monster.rb:9:in `call'
+  activerecord (3.2.2) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `_run__546521410110318691__call__4069254449296233177__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:143:in `pass'
+  rack-cache (1.2) lib/rack/cache/context.rb:155:in `invalidate'
+  rack-cache (1.2) lib/rack/cache/context.rb:71:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/companies" for 68.119.102.65 at 2013-05-14 13:45:27 -0400
+Processing by CompaniesController#index as HTML
+  Rendered companies/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  Rendered partials/_header.html.haml (1.8ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 27ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/companies" for 68.119.102.65 at 2013-05-14 13:51:05 -0400
+Processing by CompaniesController#index as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z7Pwlr10OFw1BBKhXBbpJf0XtwJsCknjQntDZVSo9Wo=", "company"=>"Bene Gesserit Sisterhood", "name"=>"Reverend Mother Mohiam", "email"=>"RevMoMo@BGsHood.com", "commit"=>"Submit"}
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/home/tkxel_dev/staging/staging/app/mailers/user_mailer.rb:102: syntax error, unexpected $end, expecting keyword_end):
+  app/controllers/companies_controller.rb:9:in `signup'
+  app/controllers/companies_controller.rb:4:in `index'
+
+
+
+
+Started POST "/companies" for 68.119.102.65 at 2013-05-14 13:52:43 -0400
+Processing by CompaniesController#index as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z7Pwlr10OFw1BBKhXBbpJf0XtwJsCknjQntDZVSo9Wo=", "company"=>"Bene Gesserit Sisterhood", "name"=>"Reverend Mother Mohiam", "email"=>"RevMoMo@BGsHood.com", "commit"=>"Submit"}
+Completed 500 Internal Server Error in 43ms
+
+ArgumentError (wrong number of arguments (3 for 2)):
+  app/mailers/user_mailer.rb:99:in `company_notify'
+  app/controllers/companies_controller.rb:9:in `signup'
+  app/controllers/companies_controller.rb:4:in `index'
+
+
+
+
+Started POST "/companies" for 68.119.102.65 at 2013-05-14 13:53:20 -0400
+Processing by CompaniesController#index as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z7Pwlr10OFw1BBKhXBbpJf0XtwJsCknjQntDZVSo9Wo=", "company"=>"Bene Gesserit Sisterhood", "name"=>"Reverend Mother Mohiam", "email"=>"RevMoMo@BGsHood.com", "commit"=>"Submit"}
+
+Sent mail to jonathan@foodcircles.net (3251ms)
+Date: Tue, 14 May 2013 13:53:20 -0400
+From: FoodCircles <voucher@foodcircles.net>
+To: jonathan@foodcircles.net
+Message-ID: <51927a10a2e6f_6d3e4df05838610@foodcircles.mail>
+Subject: New Company Request
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Reverend Mother Mohiam from Bene Gesserit Sisterhood would like to join Food Circles. Please contact them at RevMoMo@BGsHood.com.
+
+Sent mail to RevMoMo@BGsHood.com (2114ms)
+Date: Tue, 14 May 2013 13:53:23 -0400
+From: FoodCircles <voucher@foodcircles.net>
+To: RevMoMo@BGsHood.com
+Message-ID: <51927a13d6970_6d3e4df05838731@foodcircles.mail>
+Subject: Thanks for signing up.
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Someone will get back with you soon, Reverend Mother Mohiam.
+  Rendered companies/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  Rendered partials/_header.html.haml (50.5ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 5683ms (Views: 76.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/companies.css" for 68.119.102.65 at 2013-05-14 13:53:26 -0400
+Served asset /companies.css - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/companies.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/assets/companies.js" for 68.119.102.65 at 2013-05-14 13:53:26 -0400
+Served asset /companies.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/companies.js"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/css/main.css" for 68.119.102.65 at 2013-05-14 13:53:26 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/main.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/css/restaurants.css" for 68.119.102.65 at 2013-05-14 13:53:26 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/restaurants.css"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  railties (3.2.2) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+

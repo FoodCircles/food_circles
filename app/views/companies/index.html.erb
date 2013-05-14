@@ -90,9 +90,10 @@
             <div class="placard-heading">
             <h1>REQUEST AN INVITE</h1>
                 <br />
-                <%= form_tag restaurants_path, method: :post do %>
+                <%= form_tag companies_path, method: :post do %>
                     <%= label_tag 'join', 'JOIN THE CAUSE' %>
-                    <%= text_field_tag :name, nil, :placeholder => "restaurant name"%>
+                    <%= text_field_tag :company, nil, :placeholder => "company"%>
+                    <%= text_field_tag :name, nil, :placeholder => "name"%>
                     <%= text_field_tag :email, nil, :placeholder => "email"%>
                     <%= submit_tag nil, :class => "button" %>
                 <% end %>
