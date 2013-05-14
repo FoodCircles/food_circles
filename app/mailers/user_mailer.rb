@@ -97,6 +97,6 @@ class UserMailer < ActionMailer::Base
   end
 
   def company_notify(email, name)
-    mail(:to => 'jonathan@foodcircles.net', :subject => "New Company Request", :body => "#{name} would like to join Food Circles. Please contact them at #{email}." )
+    mail(:to => 'jonathan@foodcircles.net', :subject => "New Company Request", :body => "#{name} from #{company} would like to join Food Circles. Please contact them at #{email}." )
   endl
 end
