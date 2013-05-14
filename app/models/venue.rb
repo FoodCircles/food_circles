@@ -1,4 +1,6 @@
 class Venue < ActiveRecord::Base
+  include Validators
+
   belongs_to :state
   belongs_to :time_zone
   belongs_to :user
@@ -21,6 +23,8 @@ class Venue < ActiveRecord::Base
   image_accessor :circle_image
   
   validates_presence_of :name
+  validates :email, :on => :update, :'validators/email' => true
+  validates :email, :on => :create, :allow_nil => true, :'validators/email' => true
 
   def as_json(options={})
     if !options[:not_available]
