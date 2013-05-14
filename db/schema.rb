@@ -38,6 +38,23 @@ ActiveRecord::Schema.define(:version => 20130512224725) do
     t.string   "image_uid"
   end
 
+  create_table "contact_types", :id => false, :force => true do |t|
+    t.integer  "id",         :null => false
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "contacts", :id => false, :force => true do |t|
+    t.integer  "id",               :null => false
+    t.string   "content"
+    t.integer  "contact_type_id"
+    t.integer  "contactable_id"
+    t.string   "contactable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
     t.integer  "attempts",   :default => 0
@@ -69,6 +86,21 @@ ActiveRecord::Schema.define(:version => 20130512224725) do
   create_table "notifications", :force => true do |t|
     t.string   "content"
     t.string   "ticker"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "offer_taggables", :id => false, :force => true do |t|
+    t.integer  "id",           :null => false
+    t.integer  "offer_tag_id"
+    t.integer  "offer_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "offer_tags", :id => false, :force => true do |t|
+    t.integer  "id",         :null => false
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

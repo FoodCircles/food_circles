@@ -30,7 +30,7 @@ development:
   host: localhost
   pool: 5
   username: postgres
-  password: postgres
+  password: root
   port: 5432
   schema_search_path: "public,postgis"
 
@@ -46,10 +46,10 @@ production:
 staging:
   adapter: postgis
   encoding: unicode
-  database: foodcircles
+  database: foodcircles_staging
   pool: 5
   username: postgres
-  password: error#007
+  password: root
   port: 5432
 
 #  template: template0
