@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/restaurants.css">
+    
+    <script>
+        var _e = document.getElementsByTagName('html')[0];
+        _e.className = _e.className.replace(/no-js/, '');
+    </script>
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+    <script type="text/javascript" src="//use.typekit.net/mqt8ffa.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=148554958654775";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="about">
+    <div class="container">
+        <h2>Acquire customers while feeding hungry children</h2>
+        
+        <div class="placard">
+            <div class="placard-heading alpha">
+                <h3>A SIMPLE 3 STEP GUIDE TO USING FOODCIRCLES</h3>
+            </div>
+
+            <div class="steps alpha">
+                <div class="step1">
+                    <%= image_tag "mealupgrade.png" %>
+                    <p>Add appetizers, desserts, or drinks to an entree.</p>
+                </div>
+                <div class="step2">
+                    <%= image_tag "sellit.png" %>
+                    <p>We will promote and sell the upgraded meal to our base of customers.</p>
+                </div>
+                <div class="step3">
+                    <%= image_tag "dinein.png" %>
+                    <p>Hey! Let's go into this restaurant. It has a cool awning. Something about cheese and peanut butter. Hey! Let's go into this restaurant. It has a cool awning. Hey! Let's go into this restaurant.</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="placard">
+
+            <%= image_tag "stringleft.png", :class => "stringleft"%>
+            <%= image_tag "stringright.png", :class => "stringright"%>
+            
+            <div class="placard-heading">
+            <h1>BY THE NUMBERS</h1>
+            </div>
+            <div class="steps">
+                <div class="step1">
+                    <p><span class="leadchar">3 of 4</span> diners we talked to say that <strong>Buy One, Feed One</strong> philosophy at certain restaurants affects where they decide to eat out.</p>
+                </div>
+                <div class="step2">
+                   <p><span class="leadchar">$3</span> is the average cost of a donated appetizer. The value? Meeting a high quality customer who shares your belief that <strong>no child</strong> should <strong>go hungry</strong>.</p> 
+                </div>
+                <div class="step3">
+                    <p><span class="leadchar">$1</span> is the cost to a provide a meal to a child in need. We <strong>do not</strong> keep any <strong>%</strong> of the diner's donation so the good you're doing stays transparent.</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="placard omega">
+            <%= image_tag "stringleft.png", :class => "stringleft"%>
+            <%= image_tag "stringright.png", :class => "stringright"%>
+            <div class="placard-heading">
+            <h1>REQUEST AN INVITE</h1>
+                <br />
+                <%= form_tag restaurants_path, method: :post do %>
+                    <%= label_tag 'join', 'JOIN THE CAUSE' %>
+                    <%= text_field_tag :name, nil, :placeholder => "restaurant name"%>
+                    <%= text_field_tag :email, nil, :placeholder => "email"%>
+                    <%= submit_tag nil, :class => "button" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="fbcomments">
+    <div class="container">
+        <h4>Unanswered question? Email ut as <a href="mailto:hey@foodcircles.net" class="mailus">hey@foodcircles.net</a> or comment below.</h4>
+    </div>
+    <div class="container">
+        <div class="fb-container">
+            <div class="fb-comments" data-href="http://www.foodcircles.net/faq" data-width="784" data-num-posts="10"></div>
+        </div>
+    </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<script>
+$('.teampick a').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    if ($this.parent().is('.active')) return;
+    $('.teampick .active').removeClass('active');
+    $this.parent().addClass('active');
+    
+    var $current = $('.teammember.active'),
+        $dest    = $($this.attr('href')),
+        offset   = $current.position();
+    
+    $current.css({
+        top: offset.top,
+        left: offset.left,
+        position: 'absolute'
+    }).animate({
+        opacity: 0
+    }, function(){
+        $(this).removeClass('active').css({
+            position: 'static',
+            opacity: 1
+        });
+    });
+    $dest.css({
+        opacity: 0
+    }).addClass('active').animate({
+        opacity: 1
+    });
+    
+});
+</script>
+</body>
+</html>
