@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Validators
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,6 +8,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :phone, :admin
+  validates :email, :on => :update, :'validators/email' => true
+  validates :email, :on => :create, :allow_nil => true, :'validators/email' => true
   has_many :reservations
   has_many :venues
 
