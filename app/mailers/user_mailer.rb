@@ -107,4 +107,12 @@ class UserMailer < ActionMailer::Base
   def nonprofits_notify(email, name, organization, website)
     mail(:to => 'jonathan@foodcircles.net', :subject => "New Buy One, Feed One Request", :body => "#{name} from #{organization} would like to join Food Circles. Their website is  #{website}. Please contact them at #{email}." )
   end
+
+  def student_signup(email)
+    mail(:to => email, :subject => "Thanks for your interest.", :body => "Someone will get back with you soon." )
+  end
+
+  def student_notify(email)
+    mail(:to => 'jonathan@foodcircles.net', :subject => "New Student Request", :body => "A student would like to join Food Circles. Please contact them at #{email}." )    
+  end
 end
