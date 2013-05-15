@@ -6,7 +6,7 @@ Foodcircles::Application.routes.draw do
   resources :offers
   resources :categories
   match '/companies' => 'companies#index', :as => :companies
-  match '/nonprofits' => 'nonprofits#indfex', :as => :nonprofits
+  match '/nonprofits' => 'nonprofits#index', :as => :nonprofits
   match '/restaurants' => 'restaurants#index', :as => :restaurants
   match '/butterflies' => 'socialbutterflies#index', :as => :socialbutterflies
   match '/timeline' => 'timeline#index', :as => :timeline
