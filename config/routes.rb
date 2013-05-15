@@ -5,11 +5,8 @@ Foodcircles::Application.routes.draw do
   # match '/offers' => 'offers#index', :as => :offers
   resources :offers
   resources :categories
-<<<<<<< HEAD
   match '/companies' => 'companies#index', :as => :companies
-=======
   match '/nonprofits' => 'nonprofits#indfex', :as => :nonprofits
->>>>>>> adding-for-nonprofits
   match '/restaurants' => 'restaurants#index', :as => :restaurants
   match '/butterflies' => 'socialbutterflies#index', :as => :socialbutterflies
   match '/timeline' => 'timeline#index', :as => :timeline
@@ -40,11 +37,8 @@ Foodcircles::Application.routes.draw do
 
   resources :socialbutterflies
   resources :restaurants
-<<<<<<< HEAD
   resources :companies
-=======
   resources :nonprofits
->>>>>>> adding-for-nonprofits
 
   match '/app' => 'app#index'
   match '/getVenue' => 'app#getVenue'

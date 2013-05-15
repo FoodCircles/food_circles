@@ -3,6 +3,7 @@ class NonprofitsController < ApplicationController
     if params[:email]
       signup
     end
+  end
 
   def signup
     UserMailer.nonprofits_notify(params[:email], params[:name], params[:organization], params[:we_solve]).deliver
