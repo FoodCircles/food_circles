@@ -61,6 +61,8 @@ Foodcircles::Application.routes.draw do
   match '/notification' => 'application#notification'
 
 
+  match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
+
   match '/download' => 'application#download', :as => :download
 
   match '/sms' => 'receive_texts#index', :via => :post
