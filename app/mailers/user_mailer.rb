@@ -81,7 +81,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def social_butterfly(fb)
-    mail(:to => 'toleirisi@gmail.com', :subject => "Social Butterfly Matchmaking", :body => "Someone would like to apply for Social Butterflies! Their profile is #{fb}" )
+    mail(:to => 'jonathan@foodcircles.net', :subject => "Social Butterfly Matchmaking", :body => "Someone would like to apply for Social Butterflies! Their profile is #{fb}" )
   end
 
   def restaurant_signup(email, name)
