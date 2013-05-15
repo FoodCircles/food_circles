@@ -92,20 +92,19 @@ class UserMailer < ActionMailer::Base
    mail(:to => 'jonathan@foodcircles.net', :subject => "New Restaurant Request", :body => "#{name} would like to join Food Circles. Please contact them at #{email}.") 
   end
 
-<<<<<<< HEAD
   def company_signup(email, name, company)
     mail(:to => email, :subject => "Thanks for signing up.", :body => "Someone will get back with you soon, #{name}." )
   end
 
   def company_notify(email, name, company)
     mail(:to => 'jonathan@foodcircles.net', :subject => "New Company Request", :body => "#{name} from #{company} would like to join Food Circles. Please contact them at #{email}." )
-=======
-  def nonprofits_signup(email, name, organization, we_serve)
+  end
+
+  def nonprofits_signup(email, name)
     mail(:to => email, :subject => "Thanks for your interest.", :body => "Someone will get back with you soon, #{name}." )
   end
 
-  def nonprofits_notify(email, name, organization, we_serve)
-    mail(:to => jonathan@foodcircles.net', :subject => "New Buy One, Feed One Request", :body => "#{name} from #{organization} would like more information regarding starting "Buy One, Feed One" in their area."}
->>>>>>> adding-for-nonprofits
+  def nonprofits_notify(email, name, organization, website)
+    mail(:to => 'jonathan@foodcircles.net', :subject => "New Buy One, Feed One Request", :body => "#{name} from #{organization} would like to join Food Circles. Their website is  #{website}. Please contact them at #{email}." )
   end
 end

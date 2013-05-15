@@ -35,32 +35,14 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="header">
-    <div class="container">
-        <a href="#" id="logo">FoodCircles - Buy One, Feed One</a>
-        <ul id="social">
-            <li><a href="#" class="bl">Blog</a></li>
-            <li><a href="#" class="fb">Facebook</a></li>
-            <li><a href="#" class="tw">Twitter</a></li>
-            <li><a href="#" class="si">Sign in &#9656;</a></li>
-        </ul>
-        <ul id="nav">
-            <li><a href="#">Home</a></li>
-            <li class="active"><a href="#">FAQ</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">For Non-Profits &#9662;</a></li>
-        </ul>
-    </div>
-</div>
-
 <div id="about">
     <div class="container">
         <h2>Capture funds through your community</h2>
         <div id="iphone-image">
-            <img src="img/nonprofits-iphone.png" alt="">
+            <%= image_tag "nonprofits/nonprofits-iphone.png" %>
         </div>
         <div id="grtab">
-            <img src="img/nonprofits-grtab.png" alt="">
+            <image_tag "nonprofits/nonprofits-grtab.png" %>
         </div>
 
         <div id="nonprofits-steps">
@@ -71,10 +53,10 @@
 
             <div id="nonprofits-step2">
                 <%= form_tag nonprofits_path, method: :post do %>
-		    <%= text_field_tag :name, nil, :placeholder => "Organization" %>
+		    <%= text_field_tag :organization, nil, :placeholder => "Organization" %>
 		    <%= text_field_tag :name, nil, :placeholder => "Name" %>
-		    <%= text_field_tag :name, nil, :placeholder => "Email" %>
-		    <%= text_field_tag :name, nil, :placeholder => "We solve..." %>
+		    <%= text_field_tag :email, nil, :placeholder => "Email" %>
+		    <%= text_field_tag :website, nil, :placeholder => "Website" %>
 		    <%= submit_tag nil, :class => "button" %>
 		<% end %>
                 <p><span class="bignumber">2</span>You talk to restaurants you know about joining your FoodCirles app. The partnership goes beyond your typical 1-time event and requires little upkeep post-signup.</p>
@@ -106,22 +88,6 @@
     </div>
 </div>
 
-<div id="footer">
-    <div class="container">
-        <div class="nav">
-            <a href="#">For Restaurants</a> |
-            <a href="#">Catering</a> |
-            <a href="#">Jobs</a>
-        </div>
-        <div class="copyright">
-            &copy; 2012 All Rights Reserved
-        </div>
-        <div class="quicklinks">
-            <a href="#">Donate Directly</a> | <a href="#">Contact Us</a>
-        </div>
-    </div>
-</div>
-    
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 <script>

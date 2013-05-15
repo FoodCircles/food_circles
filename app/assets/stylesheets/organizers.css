@@ -14,11 +14,15 @@
 	font-family: "museo-slab", sans-serif;
 }
 
-.placard-heading {
+.placard-body {
+	position: relative;
+	top: -70px;
+}
+
+.placard h1 {
 	font-size: 24px;
 	font-family: serif;
 	position: relative;
-	top: -80px;
 	margin-bottom: 30px;
 }
 
@@ -41,15 +45,12 @@
 .steps {
 	width: 90%;
 	margin: 10px auto;
-	position: relative;
-	top: -80px;
 }
 
 .steps p {
 	width: 90%;
 	margin: 0 auto;
 	font-family: "pragmatica-web", sans-serif;
-	line-height: 30px;
 }
 
 .steps h3 {
@@ -74,31 +75,58 @@
 	vertical-align: top;
 }
 
+#needtoknow {
+	width: 70%;
+	margin: 0 auto;
+}
+
 #jointhecause {
 	display: inline-block;
 }
 
 .alpha {
-	position: relative;
-	top: 20px;
+	padding-top: 20px;
 }
 
-.bignumber {
-	font-size:200%;
+.beta {
+	position: relative;
+	top: -70px;
 }
+
+.leadchar {
+	font-size: 24px;
+	font-weight: 700;
+}
+
 
 #restaurant-invite {
 	margin-top: 30px;
-	display: inline-block;
 }
 
-#restaurant-invite input {
-	margin-left: 10px;
+#organizers {
+	text-align: left;
+	padding: 0 60px 0 60px;
+	margin-top: 40px;
+	padding-bottom: 40px;
+	vertical-align: middle;
 }
 
-#restaurants-send {
-	position: relative;
-	top: -6px;
+#organizers h2 {
+	text-align: left;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-weight: 700;
 }
 
+#organizers p {
+	font-size: 16px;
+	font-weight: 200;
+}
 
+label {
+	margin: 10px;
+}
+
+#organizers input {
+	vetical-align: middle;
+}

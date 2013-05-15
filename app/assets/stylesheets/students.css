@@ -1,0 +1,89 @@
+#about {
+	background: url("../img/students-crowd.png") center bottom no-repeat;
+	background-size: 100%;
+}
+
+#students {
+	display: inline-block;
+	padding-top: 50px;
+}
+
+#students-intro p {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#students-photos {
+	display: block;
+	float: left;
+	width: 450px;
+}
+
+#students-steps {
+	display: block;
+	float: left;
+	width: 450px;
+	padding-top: 50px;
+}
+
+#students-steps img {
+	margin-bottom: 80px
+}
+
+#students-steps p {
+	margin-bottom: 120px;
+	line-height: 30px;
+}
+
+#students-form {
+	width: 600px;
+	margin: 200px auto;
+	color: white;
+}
+
+#students-form h2 {
+	color: white;
+}
+
+#students-form p {
+	width: 400px;
+	margin: 30px auto;
+	font-style: italic; 
+	line-height: 16px;
+}
+
+#students-email {
+	margin-bottom: 5px;
+}
+
+#crowd {
+	text-align: center;
+}
+
+.menu-footer li {
+	display: inline;
+}
+
+.white {
+	color: white;
+}
+
+.white a {
+	color: white;
+}
+
+.white a:hover {
+	text-decoration: underline;
+}
+
+.menu-footer {
+	margin-bottom: 30px;
+}
+
+.copyright {
+	margin-bottom: 30px;
+}
+
+.payments {
+	margin-bottom: 30px;
+}
