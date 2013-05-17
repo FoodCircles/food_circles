@@ -1,5 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+//= require jquery.carouFredSel-6.2.1-packed
+
 $(function() {
     $('#remind a').click(function() {
     	setTimeout(function() {
@@ -116,4 +118,45 @@ $(function() {
 	e.preventDefault();
 	modal_open('<img src="/assets/home/restaurantpage.png"  width="425" height="525" />', 425, 525, -232, -273);
     });
+
+
+    var $doc = $(document)
+
+    //blink fields
+    $doc.on('focusin', '.field, textarea', function() {
+	if(this.title==this.value) {
+	    this.value = '';
+	}
+    }).on('focusout', '.field, textarea', function(){
+	if(this.value=='') {
+	    this.value = this.title;
+	}
+    })
+    
+    $doc.on('click', function(event){
+	if($('.sign-form').css('visibility') == 'visible'){
+	    if(!$(event.target).is('.sign-form') && !$(event.target).closest('.sign-form').length){
+		$('.sign-form').removeClass('expanded');
+	    }
+	}
+    })
+
+    $('.welcome-line > a').on('click', function(event){
+	event.preventDefault();
+	$('.sign-form').toggleClass('expanded');
+    })
+
+
+    //banner slideshow
+    $('.banner .slides').carouFredSel({
+	auto:4000,
+	responsive:true,
+	items:{
+	    visible:1,
+	    height:'28%'
+	},
+	pagination:'.banner .paging',
+	prev:'.banner .slide-prev',
+	next:'.banner .slide-next'
+    })
 });

@@ -1,43 +1,82 @@
-#header
-  .container
-    = link_to "FoodCircles - Buy One, Feed One", root_path, id: "logo"
-    #fed
-      %span.num 123
-      %span.kids kids fed
-    %ul#social
-      %li
-        %a.bl{:href => "#"} Blog
-      %li
-        %a.fb{:href => "#"} Facebook
-      %li
-        %a.tw{:href => "#"} Twitter
-      %li
-        = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
-        = link_to('Sign in ▸', main_app.new_user_session_path) unless current_user
-        / %a.si{:href => "#"} Sign in ▸
-    %ul#nav
-      %li{:class => "#{ 'active' if controller_name == 'home' }"}
-        =link_to 'Home', root_path
-      %li{:class => "#{ 'active' if controller_name == 'faq' }"}
-        =link_to 'FAQ', faq_path
-      %li
-        =link_to 'About Us', '#'
-      %li
-        =link_to 'For Restaurants', main_app.restaurants_path
-  / .wrapper
-  /   = link_to root_path do
-  /     %strong#logo FoodCircles
-  /   %em#slogan Feel good dinning.
-  /   - if current_user
-  /     = render :partial => 'partials/header_signed_in'
-  /   - else
-  /     = render :partial => 'partials/header_sign_in'
-  /   %ul#social
-  /     %li
-  /       %a.blog{:href => "http://blog.foodcircles.net" , :target => "_blank"} Blog
-  /     %li
-  /       %a.facebook{:href => "http://facebook.com/foodcircles",:target => "_blank"} Facebook
-  /     %li
-  /       %a.twitter{:href => "https://twitter.com/#!/FoodCircles", :target => "_blank"} Twitter
+.header
+  .shell
+    #logo
+      = link_to "FoodCircles", main_app.root_path
 
+    %h2{class: "tagline"}
+      Buy One, Feed One.
 
+    .header-utils
+      .socials
+        %a{class: "icon-soc-facebook", href: "http://facebook.com/foodcircles"}
+        %a{class: "icon-soc-twitter", href: "https://twitter.com/#!/FoodCircles"}
+        %a{class: "icon-soc-foodcircles", href: "http://blog.foodcircles.net"}
+
+      .welcome-line
+        Welcome Back!
+        %a{href: "#"}
+          Your Account
+          %i{class: "arrow-right"}
+        / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
+
+        %form{action: "", method: "post", class: "sign-form"}
+          / <i class="arrow-top"><i class="arrow-top"></i></i>
+          .row
+            %a{href: "#", class: "btn-facebook"}
+              Sign up
+              %i{class: "icon-btn-facebook"}
+            %input{type: "text", class: "field medium", value: "new email address", title: "new email address"}
+          .row
+            %a{href: "#", class: "btn-twitter"}
+              Sign up
+              %i{class: "icon-btn-twitter"}
+            %input{type: "text", class: "field medium", value: "new password", title: "new password"}
+          .form-foot
+            %span{class: "btn-small submit"}
+              Sign up
+              %input{type: "submit", value: ""}
+
+            %p{class: "form-caption"}
+              Have an account?
+              = link_to('Sign in', main_app.new_user_session_path) 
+
+    .navigation
+      %ul
+        %li{class: "active"}
+          = link_to "Home", main_app.root_path
+        %li
+          = link_to "FAQ", main_app.faq_path
+          %ul
+            %li
+              = link_to "For Restaurants", main_app.faq_path
+            %li
+              = link_to "For Students", main_app.faq_path
+            %li
+              = link_to "For Events", main_app.faq_path
+            %li
+              = link_to "For Companies", main_app.faq_path
+            %li
+              = link_to "For Non-Profits", main_app.faq_path
+            %li
+              = link_to "Social Butterflies", main_app.faq_path
+          %li
+            %a{href: "#"}
+              About Us
+          %li
+            %a{href: "#"}
+              Get Involved
+              %i{class: "arrow-bottom white"}
+            %ul
+              %li
+                = link_to "For Restaurants", main_app.faq_path
+              %li
+                = link_to "For Students", main_app.faq_path
+              %li
+                = link_to "For Events", main_app.faq_path
+              %li
+                = link_to "For Companies", main_app.faq_path
+              %li
+                = link_to "For Non-Profits", main_app.faq_path
+              %li
+                = link_to "Social Butterflies", main_app.faq_path
+  / %li{:class => "#{ 'active' if controller_name == 'home' }"}

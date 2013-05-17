@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512224725) do
+ActiveRecord::Schema.define(:version => 20130517185604) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -84,6 +84,10 @@ ActiveRecord::Schema.define(:version => 20130512224725) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "available"
+    t.integer  "total"
+    t.float    "price"
+    t.float    "original_price"
   end
 
   create_table "open_times", :force => true do |t|
@@ -280,8 +284,8 @@ ActiveRecord::Schema.define(:version => 20130512224725) do
   end
 
   create_table "vouchers", :force => true do |t|
-    t.date     "start"
-    t.date     "end"
+    t.date     "start_date"
+    t.date     "end_date"
     t.integer  "total"
     t.integer  "available"
     t.integer  "offer_id"
