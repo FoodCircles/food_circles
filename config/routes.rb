@@ -29,7 +29,7 @@ Foodcircles::Application.routes.draw do
 
   resources :remind_list, :only => [:create]
   resources :venues, :only => [:show]
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :payment_notifications
 
@@ -74,7 +74,7 @@ Foodcircles::Application.routes.draw do
   match '/race' => 'race#index'
   match '/cater' => 'home#cater', :as => :notgr
   match '/thanks' => 'home#thanks', :as => :notgr
-  
+
   #HighVoltage
   get '/faq/:id' => 'faq#show', :as => 'faq'
   get '/faq'     => 'faq#show', :as => 'faq', :id => 'faq'
