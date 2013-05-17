@@ -27,7 +27,7 @@ gem 'stripe'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'rb-readline', '~> 0.4.2' # for rails console
-#gem 'omniauth'
+gem 'omniauth'
 gem 'omniauth-facebook', '1.4.1'
 gem 'omniauth-twitter'
 # Gems used only for assets and not required

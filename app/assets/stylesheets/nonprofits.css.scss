@@ -1,0 +1,46 @@
+#iphone-image {
+	text-align: center;
+	z-index: 1;
+}
+
+#grtab {
+	position: relative;
+	left: 850px;
+	top: -100px;
+}
+
+#nonprofits-steps {
+	box-shadow: 1px 1px;
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	background-color: #f0e9de;
+	padding-top: 30px;
+	margin: 0 auto;
+	padding-bottom: 60px;
+}
+
+#nonprofits-step1 {
+	display: inline-block;
+	vertical-align: top;
+	width: 33%;
+}
+
+#nonprofits-step2 {
+	display: inline-block;
+	vertical-align: top;
+	width: 33%;
+}
+
+#nonprofits-step3 {
+	display: inline-block;
+	vertical-align: top;
+	width: 33%;
+}
+
+.bignumber {
+	float:left;
+	width:0.7em;
+	font-size:400%;
+	line-height:80%;
+}

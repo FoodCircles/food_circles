@@ -253,6 +253,7 @@ DEPENDENCIES
   high_voltage
   jquery-rails
   mail
+  omniauth
   omniauth-facebook (= 1.4.1)
   omniauth-twitter
   paperclip
