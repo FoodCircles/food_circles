@@ -1,15 +1,31 @@
-= form_for @offer, :html => { :multipart => true } do |f|
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :venue
-    = collection_select(:offer, :venue_id, Venue.all, :id, :name)
-  .field
-    = f.label :image
-    = f.file_field :image
-  .field
-    = f.label :category
-    = f.select(:category_ids, Category.all.collect { |o| [o.name, o.id] }, {}, { :multiple => true, :size => 5 } )
-  .field
-    = f.submit
+.content
+  = form_for @offer, :html => { :multipart => true } do |f|
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :venue
+      = collection_select(:offer, :venue_id, Venue.all, :id, :name)
+    .field
+      = f.label :image
+      = image_tag @offer.image.url(:thumb) if @offer.image
+      = f.file_field :image
+    .field
+      = f.label :category
+      = f.select(:category_ids, Category.all.collect { |o| [o.name, o.id] }, {}, { :multiple => true, :size => 5 } )
+    .field
+      = f.label :price
+      = f.text_field :price
+    .field
+      = f.label :original_price
+      = f.text_field :original_price
+    .field
+      = f.label :total
+      vouchers
+      = f.text_field :total
+    .field
+      = f.label :available
+      vouchers
+      = f.text_field :available
+    .field
+      = f.submit
