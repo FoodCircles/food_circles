@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/butterflies.css">
+    <link rel="stylesheet" href="css/restaurants.css">
     
     <script>
         var _e = document.getElementsByTagName('html')[0];
@@ -38,50 +38,67 @@
 
 <div id="about">
     <div class="container">
-        <div id="butterfly-title">
-            <%= image_tag "butterflies/butterflies-logo.png" %>
-            <%= image_tag "butterflies/butterflies-sublogo.png" %>
-        </div>
-        <div id="butterfly-step1">
-           <%= image_tag "butterflies/butterflies-step1.png" %>
-           <div id="butterfly-path1">
-           <%= image_tag "butterflies/butterfly-path1.png" %>
-           </div> 
-        </div>
-        <div id="butterfly-step2">
-            <%= image_tag "butterflies/butterflies-step2.png" %> 
-            <div id="butterfly-path2">
-            <%= image_tag "butterflies/butterfly-path2.png" %>
-            </div> 
-        </div>
-        <div id="butterfly-step3">
-            <%= image_tag "butterflies/butterflies-step3.png" %> 
-            <div id="butterfly-path3">
-            <%= image_tag "butterflies/butterfly-path3.png" %>
-            </div> 
-        </div>
-        <div id="butterfly-submit">
-            <%= form_tag socialbutterflies_path, method: :post do %>
-              <%= text_field_tag :facebook, nil, :placeholder => "http://www.facebook.com/yourprofile", :size => "45" %><br />
-              <%= image_submit_tag "butterflies/butterfly-apply.png" %>
-            <% end %>
-            <div id="butterfly-circle">       
-            <%= image_tag "butterflies/butterfly-circle.png" %>  
+        <h2>Acquire customers while feeding hungry children</h2>
+        
+        <div class="placard">
+            <div class="placard-heading alpha">
+                <h3>A SIMPLE 3 STEP GUIDE TO USING FOODCIRCLES</h3>
+            </div>
+
+            <div class="steps alpha">
+                <div class="step1">
+                    <%= image_tag "mealupgrade.png" %>
+                    <p>Add appetizers, desserts, or drinks to an entree.</p>
+                </div>
+                <div class="step2">
+                    <%= image_tag "sellit.png" %>
+                    <p>We will promote and sell the upgraded meal to our base of customers.</p>
+                </div>
+                <div class="step3">
+                    <%= image_tag "dinein.png" %>
+                    <p>Hey! Let's go into this restaurant. It has a cool awning. Something about cheese and peanut butter. Hey! Let's go into this restaurant. It has a cool awning. Hey! Let's go into this restaurant.</p>
+                </div>
+                
             </div>
         </div>
-        <div id="butterfly-questions">
-            <h3>QUESTIONS YOU MIGHT HAVE:</h3>
-            <div id="butterfly-faq">
-                <%= image_tag "butterflies/butterfly-faq1.png" %>
-                <%= image_tag "butterflies/butterfly-faq2.png" %>
-                <%= image_tag "butterflies/butterfly-faq3.png" %>
+
+        <div class="placard">
+
+            <%= image_tag "stringleft.png", :class => "stringleft"%>
+            <%= image_tag "stringright.png", :class => "stringright"%>
+            
+            <div class="placard-heading">
+            <h1>BY THE NUMBERS</h1>
             </div>
-            <div id="butterfly-texting">
-                <%= image_tag "butterflies/butterfly-texting.png" %>
+            <div class="steps">
+                <div class="step1">
+                    <p><span class="leadchar">3 of 4</span> diners we talked to say that <strong>Buy One, Feed One</strong> philosophy at certain restaurants affects where they decide to eat out.</p>
+                </div>
+                <div class="step2">
+                   <p><span class="leadchar">$3</span> is the average cost of a donated appetizer. The value? Meeting a high quality customer who shares your belief that <strong>no child</strong> should <strong>go hungry</strong>.</p> 
+                </div>
+                <div class="step3">
+                    <p><span class="leadchar">$1</span> is the cost to a provide a meal to a child in need. We <strong>do not</strong> keep any <strong>%</strong> of the diner's donation so the good you're doing stays transparent.</p>
+                </div>
             </div>
             
         </div>
-        
+
+        <div class="placard omega">
+            <%= image_tag "stringleft.png", :class => "stringleft"%>
+            <%= image_tag "stringright.png", :class => "stringright"%>
+            <div class="placard-heading">
+            <h1>REQUEST AN INVITE</h1>
+                <br />
+                <%= form_tag companies_path, method: :post do %>
+                    <%= label_tag 'join', 'JOIN THE CAUSE' %>
+                    <%= text_field_tag :company, nil, :placeholder => "company"%>
+                    <%= text_field_tag :name, nil, :placeholder => "name"%>
+                    <%= text_field_tag :email, nil, :placeholder => "email"%>
+                    <%= submit_tag nil, :class => "button" %>
+                <% end %>
+            </div>
+        </div>
     </div>
 </div>
 
