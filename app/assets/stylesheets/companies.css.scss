@@ -1,3 +1,186 @@
-// Place all the styles related to the Companies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#headline {
+	text-align: center;
+	box-shadow: 
+        
+        inset 0px -11px 18px -10px #CCC;
+}
+
+#headline h1 {
+	color: #4e3e34;
+	font-size: 24px;
+	font-weight: 700;
+	font-family: "Museo Slab", sans-serif;
+}
+
+#headline p {
+	color: #a39e97;
+	font-size: 16px;
+	font-family: "Pragmatica Web", sans-serif;
+}
+
+#invite {
+	margin: 30px 0;
+	-moz-box-shadow: 0 0 100px 15px #fff;
+	-webkit-box-shadow: 0 0 100px 15px #fff;
+	box-shadow: 0 0 100px 15px #fff;
+}
+
+#white-section {
+	background-color: #f7f7f7;
+	text-align: left;
+}
+
+#white-section h1 {
+	font-weight: 700;
+	margin-bottom: 5px;
+	color: #4e3e34;
+	font-family: "Museo Slab", sans-serif;
+}
+
+#white-section p {
+	line-height: 18px;
+	color: #999;
+	font-family: "Pragmatica Web", sans-serif;
+}
+
+#chatapp-image {
+	height: 321px;
+}
+
+#chatapp-image img {
+-moz-box-shadow: 0 0 100px 15px #fff;
+	-webkit-box-shadow: 0 0 100px 15px #fff;
+	box-shadow: 0 0 100px 15px #fff;
+}
+
+.grid {
+	border-bottom: 2px solid #C3C3C3;
+	clear: both;
+	height: 200px;
+	padding-top: 50px;
+}
+
+.left-section {
+	float: left;
+	width:403px;
+}
+
+.right-section {
+	float: right;
+	width: 403px;
+}
+
+.right-section img {
+	position: relative;
+	right: 0;
+}
+
+#companies-form {
+	text-align: center;
+	width: 300px;
+	margin: 50px auto;
+
+}
+
+#companies-form p {
+	font-size: 14px;
+	line-height: 14px;
+	color: #999;
+	font-family: "Pragmatica Web", sans-serif;
+}
+
+form input {
+	width: 100%;
+	font-size: 16px;
+	font-family: helvetica, sans-serif;
+	margin: 5px 0;
+}
+
+#submit-image {
+	width: 320px;
+}
+
+#quicklinks ul li {
+	display: inline-block;
+}
+
+#menu-footer {
+	background: url("../img/footer-menu-background.png") no-repeat center;
+	height: 70px;
+	box-shadow: 
+        
+    0px -11px 18px -10px #CCC;
+
+}
+
+#menu-footer ul li {
+	list-style: none;
+	display: inline;
+	position: relative;
+	top: 25px;
+}
+
+.active {
+	text-decoration: underline;
+}
+
+#footer p {
+	padding-top: 20px;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+#footer ul li {
+	list-style: none;
+	display: inline;
+}
+
+.footer-summary {
+	float: left;
+	text-align: left;
+	width: 300px;
+	padding: 0 10px;
+}
+
+.copyright {
+	display: inline-block;
+	float: left;
+	width: 300px;
+	text-align: center;
+	padding: 0 10px;
+}
+
+.copyright p {
+	vertical-align: middle;
+	line-height: 45px;
+	font-family: "Pragmatica Web", sans-serif;
+}
+
+.copyright img {
+	position: relative;
+	top: 3px;
+}
+
+.quicklinks {
+	float: left;
+	width: 300px;
+	padding: 0 10px;
+}
+
+.quicklinks a {
+	color: #999;
+}
+
+.quicklinks ul {
+	height: 40px;
+	line-height: 45px;
+}
+
+#quicklinks-social {
+	margin-bottom: 50px;
+
+}
+
+#quicklinks-links a {
+	font-size: 12px;
+}
