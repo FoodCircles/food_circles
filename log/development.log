@@ -47779,6 +47779,7 @@ Served asset /butterfly-faq3.png - 304 Not Modified (0ms)
   [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
   [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
   [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
+<<<<<<< HEAD
   [1m[36m (1.0ms)[0m  [1mSET search_path TO public,postgis[0m
   [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
   [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
@@ -67845,3 +67846,10 @@ Served asset /pattern.png - 304 Not Modified (0ms)
 
 Started GET "/assets/slide-04.jpg" for 127.0.0.1 at 2013-05-17 17:10:56 -0400
 Served asset /slide-04.jpg - 304 Not Modified (0ms)
+=======
+<<<<<<< HEAD
+  [1m[36m (24.2ms)[0m  [1mSET search_path TO public,postgis[0m
+=======
+  [1m[36m (0.4ms)[0m  [1mSET search_path TO public,postgis[0m
+>>>>>>> adding-for-nonprofits
+>>>>>>> 4c3e0670971c1d55c4221df09949f64fb2a6c4e9

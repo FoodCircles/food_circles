@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -12,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/butterflies.css">
+    <link rel="stylesheet" href="css/nonprofits.css">
     
     <script>
         var _e = document.getElementsByTagName('html')[0];
@@ -38,49 +37,40 @@
 
 <div id="about">
     <div class="container">
-        <div id="butterfly-title">
-            <%= image_tag "butterflies/butterflies-logo.png" %>
-            <%= image_tag "butterflies/butterflies-sublogo.png" %>
+        <h2>Capture funds through your community</h2>
+        <div id="iphone-image">
+            <%= image_tag "nonprofits/nonprofits-iphone.png" %>
         </div>
-        <div id="butterfly-step1">
-           <%= image_tag "butterflies/butterflies-step1.png" %>
-           <div id="butterfly-path1">
-           <%= image_tag "butterflies/butterfly-path1.png" %>
-           </div> 
+        <div id="grtab">
+            <image_tag "nonprofits/nonprofits-grtab.png" %>
         </div>
-        <div id="butterfly-step2">
-            <%= image_tag "butterflies/butterflies-step2.png" %> 
-            <div id="butterfly-path2">
-            <%= image_tag "butterflies/butterfly-path2.png" %>
-            </div> 
-        </div>
-        <div id="butterfly-step3">
-            <%= image_tag "butterflies/butterflies-step3.png" %> 
-            <div id="butterfly-path3">
-            <%= image_tag "butterflies/butterfly-path3.png" %>
-            </div> 
-        </div>
-        <div id="butterfly-submit">
-            <%= form_tag socialbutterflies_path, method: :post do %>
-              <%= text_field_tag :facebook, nil, :placeholder => "http://www.facebook.com/yourprofile", :size => "45" %><br />
-              <%= image_submit_tag "butterflies/butterfly-apply.png" %>
-            <% end %>
-            <div id="butterfly-circle">       
-            <%= image_tag "butterflies/butterfly-circle.png" %>  
+
+        <div id="nonprofits-steps">
+
+            <div id="nonprofits-step1">
+                <p><span class="bignumber">1</span>We create a free mobile site and app for your supporters with integrated FoodCircles dining. Every purchase made on the site/app is 100% sent to you via check.</p>
             </div>
-        </div>
-        <div id="butterfly-questions">
-            <h3>QUESTIONS YOU MIGHT HAVE:</h3>
-            <div id="butterfly-faq">
-                <%= image_tag "butterflies/butterfly-faq1.png" %>
-                <%= image_tag "butterflies/butterfly-faq2.png" %>
-                <%= image_tag "butterflies/butterfly-faq3.png" %>
+
+            <div id="nonprofits-step2">
+                <%= form_tag nonprofits_path, method: :post do %>
+		    <%= text_field_tag :organization, nil, :placeholder => "Organization" %>
+		    <%= text_field_tag :name, nil, :placeholder => "Name" %>
+		    <%= text_field_tag :email, nil, :placeholder => "Email" %>
+		    <%= text_field_tag :website, nil, :placeholder => "Website" %>
+		    <%= submit_tag nil, :class => "button" %>
+		<% end %>
+                <p><span class="bignumber">2</span>You talk to restaurants you know about joining your FoodCirles app. The partnership goes beyond your typical 1-time event and requires little upkeep post-signup.</p>
+                
             </div>
-            <div id="butterfly-texting">
-                <%= image_tag "butterflies/butterfly-texting.png" %>
+
+            <div id="nonprofits-step3">
+                <p><span class="bignumber">3</span>People use your app whenever they eat out. Plus we launch FoodCircles in your area. Both bring funds and awareness 365 days/yr without taking up staff time or event bandwidth.</p>
             </div>
             
+
         </div>
+        
+        
         
     </div>
 </div>
@@ -134,3 +124,4 @@ $('.teampick a').on('click', function(e) {
 </script>
 </body>
 </html>
+

@@ -125,7 +125,7 @@ Devise.setup do |config|
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
   # config.timeout_in = 30.minutes
-  
+
   # If true, expires auth token on session timeout.
   # config.expire_auth_token_on_timeout = false
 
@@ -208,6 +208,11 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   # require "omniauth-facebook"
   # config.omniauth :facebook, '130899700304680', 'f6130e1e67aa3e9cd26293cb4274e5e1'
+
+  # ==> OmniAuth
+  require "omniauth-facebook"
+  config.omniauth :facebook, '130899700304680', 'f6130e1e67aa3e9cd26293cb4274e5e1'
+  config.omniauth :twitter, '55FkOZwwBFlmo1heQYpdCA', 'm2qJp8pvUbCKB19Zm0h5TXx1yjq6fAWRH7PN6S7vU'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
