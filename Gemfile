@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.8'
 gem 'jquery-rails'
 gem 'pg'
 gem 'whenever', :require => false
@@ -24,6 +24,12 @@ gem 'execjs'
 gem 'mail'
 gem 'pdfkit'
 gem 'stripe'
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'rb-readline', '~> 0.4.2' # for rails console
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.1'
+gem 'omniauth-twitter'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

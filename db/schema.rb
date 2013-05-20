@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130502185808) do
+ActiveRecord::Schema.define(:version => 20130517185604) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "categories_offers", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "offer_id"
+  end
 
   create_table "charities", :force => true do |t|
     t.string   "name"
@@ -25,6 +36,23 @@ ActiveRecord::Schema.define(:version => 20130502185808) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image_uid"
+  end
+
+  create_table "contact_types", :id => false, :force => true do |t|
+    t.integer  "id",         :null => false
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "contacts", :id => false, :force => true do |t|
+    t.integer  "id",               :null => false
+    t.string   "content"
+    t.integer  "contact_type_id"
+    t.integer  "contactable_id"
+    t.string   "contactable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -62,13 +90,36 @@ ActiveRecord::Schema.define(:version => 20130502185808) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "offer_taggables", :id => false, :force => true do |t|
+    t.integer  "id",           :null => false
+    t.integer  "offer_tag_id"
+    t.integer  "offer_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "offer_tags", :id => false, :force => true do |t|
+    t.integer  "id",         :null => false
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "offers", :force => true do |t|
     t.integer  "venue_id"
     t.string   "name"
     t.text     "details"
     t.integer  "min_diners"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "available"
+    t.integer  "total"
+    t.float    "price"
+    t.float    "original_price"
   end
 
   create_table "open_times", :force => true do |t|
@@ -107,6 +158,17 @@ ActiveRecord::Schema.define(:version => 20130502185808) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  create_table "payments", :force => true do |t|
+    t.integer  "user_id"
+    t.float    "amount"
+    t.string   "stripe_charge_token"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "offer_id"
+  end
+
+  add_index "payments", ["user_id"], :name => "index_payments_on_user_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -153,6 +215,13 @@ ActiveRecord::Schema.define(:version => 20130502185808) do
     t.boolean  "called",         :default => false
   end
 
+  create_table "restaurants", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "reviews", :force => true do |t|
     t.string   "author_name"
     t.text     "content"
@@ -164,6 +233,12 @@ ActiveRecord::Schema.define(:version => 20130502185808) do
   end
 
   add_index "reviews", ["venue_id"], :name => "index_reviews_on_venue_id"
+
+  create_table "socialbutterflies", :force => true do |t|
+    t.string   "facebook"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "states", :force => true do |t|
     t.string   "name"
@@ -239,5 +314,17 @@ ActiveRecord::Schema.define(:version => 20130502185808) do
     t.boolean  "apply_able",                                                                   :default => false
     t.string   "email",                                                                        :default => "venue@example.com"
   end
+
+  create_table "vouchers", :force => true do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "total"
+    t.integer  "available"
+    t.integer  "offer_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "vouchers", ["offer_id"], :name => "index_vouchers_on_offer_id"
 
 end

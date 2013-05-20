@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'neutra-bold';
+    src: url('fonts/neutrafaceslabtextcbold-webfont.eot');
+    src: url('fonts/neutrafaceslabtextcbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/neutrafaceslabtextcbold-webfont.woff') format('woff'),
+         url('fonts/neutrafaceslabtextcbold-webfont.ttf') format('truetype'),
+         url('fonts/neutrafaceslabtextcbold-webfont.svg#neutrafaceslabtextcbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'neutra-book';
+    src: url('fonts/neutrafaceslabtextcbook-webfont.eot');
+    src: url('fonts/neutrafaceslabtextcbook-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/neutrafaceslabtextcbook-webfont.woff') format('woff'),
+         url('fonts/neutrafaceslabtextcbook-webfont.ttf') format('truetype'),
+         url('fonts/neutrafaceslabtextcbook-webfont.svg#neutrafaceslabtextcbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'neutra-di';
+    src: url('fonts/neutrafaceslabtextcdemiitalic-webfont.eot');
+    src: url('fonts/neutrafaceslabtextcdemiitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/neutrafaceslabtextcdemiitalic-webfont.woff') format('woff'),
+         url('fonts/neutrafaceslabtextcdemiitalic-webfont.ttf') format('truetype'),
+         url('fonts/neutrafaceslabtextcdemiitalic-webfont.svg#neutrafaceslabtextcdemiitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

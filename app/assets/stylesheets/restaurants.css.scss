@@ -1,12 +1,9 @@
-// Place all the styles related to the restaurants controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .placard {
 	width: 100%;
 	background-color: white;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
-	margin-top: 60px;
+	margin-top: 50px;
 	-moz-box-shadow: 3px 3px 2px #d6cdbd;
 	-webkit-box-shadow: 3px 3px 2px #d6cdbd;
 	box-shadow: 3px 3px 2px #d6cdbd;
@@ -27,13 +24,13 @@
 
 .stringleft{
 	position: relative;
-	top: -85px;
+	top: -80px;
 	padding-right: 750px;
 }
 
 .stringright{
 	position: relative;
-	top: -85px;
+	top: -80px;
 }
 
 .omega {
@@ -52,6 +49,7 @@
 	width: 90%;
 	margin: 0 auto;
 	font-family: "pragmatica-web", sans-serif;
+	line-height: 30px;
 }
 
 .steps h3 {
@@ -59,19 +57,19 @@
 }
 
 .step1 {
-	width: 33%;
+	width: 32%;
 	display: inline-block;
 	vertical-align: top;
 }
 
 .step2 {
-	width: 33%;
+	width: 32%;
 	display: inline-block;
 	vertical-align: top;
 }
 
 .step3 {
-	width: 33%;
+	width: 32%;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -85,12 +83,22 @@
 	top: 20px;
 }
 
-.leadchar {
-	font-size: 24px;
-	font-weight: 700;
+.bignumber {
+	font-size:200%;
 }
-
 
 #restaurant-invite {
 	margin-top: 30px;
+	display: inline-block;
 }
+
+#restaurant-invite input {
+	margin-left: 10px;
+}
+
+#restaurants-send {
+	position: relative;
+	top: -6px;
+}
+
+

@@ -1,242 +1,65 @@
-#hero
-.container
-  = image_tag "home/hero.jpg"
-  %br/
-  %br/
-#home
-  .container
-    .getapp
-      %strong Get the app
-      %a.button.iphone{:href => "#"} iPhone
-      %a.button.android{:href => "#"} Android
-    .join
-      %form{:action => ""}
-        %strong Join the cause
-        %input{:name => "", :placeholder => "email or phone number", :type => "text"}/
-        %input.button{:type => "submit", :value => "Send ▸"}/
-  .container
-    .filters
-      .loc
-        Location:
-        %a{:href => "#"} All ▾
-      .cat
-        Category:
-        %a{:href => "#"} All ▾
-      %h2 View Restaurants
-  .container
-    .index
-      / COLUMN
-      - @offers.in_groups_of(3).each do |offer_group|
-        .col
-          .item
-            - offer_group.each do |offer| 
-              = offer.name
+.banner
+  .cnt
+    .centerer
+      .centerer-inner
+        %h3
+          Earth, Fire, Wind, Water, Heart.
+        %p
+          By our powers combined,<br />I am captain planet.
+  %ul{class: "slides"}
+    %li
+      %img{src: "/assets/slide-01.jpg", alt: "", width: "1280", height: "360"}
+    %li
+      %img{src: "/assets/slide-02.jpg", alt: "", width: "1280", height: "360"}
+    %li
+      %img{src: "/assets/slide-03.jpg", alt: "", width: "1280", height: "360"}
+    %li
+      %img{src: "/assets/slide-04.jpg", alt: "", width: "1280", height: "360"}
+  %a{href: "#", class: "slide-prev icon-arrow-prev"}
+  %a{href: "#", class: "slide-next icon-arrow-next"}
 
+  .paging
 
+  .donation-progress
+    .bar{style: "width:74%"}
+      %span{class: "text"}
+        %strong
+          %span
+            37
+            %em of
+          50 meals
+        donated this week
 
-      .col
-        .item
-          .pic-container
-            %span.meter
-              .count{:style => "height: 50px"}
-                %b.lt10
-                  %i 5
-                  left
-            .pic
-              = image_tag "home/pic01.jpg"
-          %h3 free desserts
-          %h4 at georgio's pizza
-          .tags
-            %strong Categorized in
-            = succeed "," do
-              %a{:href => "#"} open late
-            = succeed "," do
-              %a{:href => "#"} easy in easy out
-            %a{:href => "#"} cheap
-            \&
-            %a{:href => "#"} close to you
-        .item
-          .pic-container
-            %span.meter
-              .count{:style => "height: 20px"}
-                %b.lt5
-                  %i 2
-                  left
-              .pic
-                = image_tag "home/pic01.jpg"
-          %h3 free loaded crack fries
-          %h4 at hopcat
-          .tags
-            %strong Categorized in
-            = succeed "," do
-              %a{:href => "#"} open late
-            = succeed "," do
-              %a{:href => "#"} easy in easy out
-            %a{:href => "#"} cheap
-            \&
-            %a{:href => "#"} close to you
-        .item
-          .pic-container
-            %span.meter
-              .count{:style => "height: 50px"}
-                %b.lt10
-                  %i 5
-                  left
-            .pic
-              = image_tag "home/pic01.jpg"
-          %h3 free desserts
-          %h4 at georgio's pizza
-          .tags
-            %strong Categorized in
-            = succeed "," do
-              %a{:href => "#"} open late
-            = succeed "," do
-              %a{:href => "#"} easy in easy out
-            %a{:href => "#"} cheap
-            \&
-            %a{:href => "#"} close to you
-      / /COLUMN
-      / COLUMN
-      .col
-        .item
-          .pic-container
-            %span.meter
-              .count{:style => "height: 100px"}
-                %b.gt10
-                  %i 11
-                  left
-            .pic
-              = image_tag "home/pic02.jpg"
-          %h3 free appetizers
-          %h4 at sanchez bistro
-          .tags
-            %strong Categorized in
-            = succeed "," do
-              %a{:href => "#"} open late
-            = succeed "," do
-              %a{:href => "#"} easy in easy out
-            %a{:href => "#"} cheap
-            \&
-            %a{:href => "#"} close to you
-        .item
-          .pic-container
-            %span.meter
-              .count{:style => "height: 50px"}
-                %b.lt10
-                  %i 5
-                  left
-            .pic
-              = image_tag "home/pic01.jpg"
-          %h3 free desserts
-          %h4 at georgio's pizza
-          .tags
-            %strong Categorized in
-            = succeed "," do
-              %a{:href => "#"} open late
-            = succeed "," do
-              %a{:href => "#"} easy in easy out
-            %a{:href => "#"} cheap
-            \&
-            %a{:href => "#"} close to you
-        .item
-          .pic-container
-            %span.meter
-              .count{:style => "height: 70px"}
-                %b.lt10
-                  %i 7
-                  left
-            .pic
-              = image_tag "home/pic01.jpg"
-          %h3 free desserts
-          %h4 at georgio's pizza
-          .tags
-            %strong Categorized in
-            = succeed "," do
-              %a{:href => "#"} open late
-            = succeed "," do
-              %a{:href => "#"} easy in easy out
-            %a{:href => "#"} cheap
-            \&
-            %a{:href => "#"} close to you
-      / /COLUMN
-      / COLUMN
-      .col
-        .item
-          .pic-container
-            %span.meter
-              .count{:style => "height: 10px"}
-                %b.lt5
-                  %i 1
-                  left
-            .pic
-              = image_tag "home/pic01.jpg"
-          %h3 free loaded crack fries
-          %h4 at hopcat
-          .tags
-            %strong Categorized in
-            = succeed "," do
-              %a{:href => "#"} open late
-            = succeed "," do
-              %a{:href => "#"} easy in easy out
-            %a{:href => "#"} cheap
-            \&
-            %a{:href => "#"} close to you
-        .item
-          .pic-container
-            %span.meter
-              .count{:style => "height: 10px"}
-                %b.out sold out
-            .pic
-              = image_tag "home/pic01.jpg"
-          %h3 free loaded crack fries
-          %h4 at hopcat
-
-          .pic-container
-            %form{:action => ""}
-              %input{:name => "", :placeholder => "get notified", :type => "text"}/
-              %input.button{:type => "submit", :value => "Send ▸"}/
-          .tags
-            %strong Categorized in
-            = succeed "," do
-              %a{:href => "#"} open late
-            = succeed "," do
-              %a{:href => "#"} easy in easy out
-            %a{:href => "#"} cheap
-            \&
-            %a{:href => "#"} close to you
-        .item
-          .pic-container
-            %span.meter
-              .count{:style => "height: 40px"}
-                %b.lt5
-                  %i 4
-                  left
-            .pic
-              = image_tag "home/pic01.jpg"
-          %h3 free loaded crack fries
-          %h4 at hopcat
-          .tags
-            %strong Categorized in
-            = succeed "," do
-              %a{:href => "#"} open late
-            = succeed "," do
-              %a{:href => "#"} easy in easy out
-            %a{:href => "#"} cheap
-            \&
-            %a{:href => "#"} close to you
-
-/ #slider
-/   %a.prev{:href => "#"} «
-/   %a.next{:href => "#"} »
-/   .wrapper
-/     %ul
-/       - begin
-/         - Venue.active.currently_available.each do |v|
-/           = render :partial => 'venue', :locals => {:v => v}
-/       - rescue
-/       - begin
-/         - Venue.active.not_available.each do |v|
-/           = render :partial => 'venue', :locals => {:v => v}
-/       - rescue
-
-= render :partial => "partials/home_extra"
+.main
+  .shell
+    .products
+      .products-head
+        .filters
+          %h6
+            %a{href: "#"}
+              dinner plans in 60 seconds
+      .products-tiles
+        - @offers.each do |offer|
+          %div{class: "tile blue", :"data-city" => "chicago", :"data-cat" => "italian"}
+            %h3= offer.venue.name            
+            .thumb
+              .progress
+                - percent = (offer.available.to_f / offer.total) * 100
+                .bar{style: "height:" + percent.to_s + "%"}
+                .block
+                  %strong= offer.available
+                  %small left
+              %a{href: "#"}
+                .price
+                  %strong= number_to_currency(offer.price, :precision => 0)
+                  %span{class: "old"}
+                    = number_to_currency(offer.original_price, :precision => 0)
+                    %i{class: "icon-strike strike"}
+                  %span{class: "shadow"}
+                = image_tag offer.image.url
+                / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
+                %span{class: "title"}= offer.name
+            .tags
+              - if not offer.category.empty?
+                tags:
+                = raw offer.category.collect { |cat| link_to cat.name, cat }.join(",")

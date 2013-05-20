@@ -39,45 +39,46 @@
 <div id="about">
     <div class="container">
         <div id="butterfly-title">
-            <%= image_tag "butterflies-logo.png" %>
-            <%= image_tag "butterflies-sublogo.png" %>
+            <%= image_tag "butterflies/butterflies-logo.png" %>
+            <%= image_tag "butterflies/butterflies-sublogo.png" %>
         </div>
         <div id="butterfly-step1">
-           <%= image_tag "butterflies-step1.png" %>
+           <%= image_tag "butterflies/butterflies-step1.png" %>
            <div id="butterfly-path1">
-           <%= image_tag "butterfly-path1.png" %>
+           <%= image_tag "butterflies/butterfly-path1.png" %>
            </div> 
         </div>
         <div id="butterfly-step2">
-            <%= image_tag "butterflies-step2.png" %> 
+            <%= image_tag "butterflies/butterflies-step2.png" %> 
             <div id="butterfly-path2">
-            <%= image_tag "butterfly-path2.png" %>
+            <%= image_tag "butterflies/butterfly-path2.png" %>
             </div> 
         </div>
         <div id="butterfly-step3">
-            <%= image_tag "butterflies-step3.png" %> 
+            <%= image_tag "butterflies/butterflies-step3.png" %> 
             <div id="butterfly-path3">
-            <%= image_tag "butterfly-path3.png" %>
+            <%= image_tag "butterflies/butterfly-path3.png" %>
             </div> 
         </div>
         <div id="butterfly-submit">
             <%= form_tag socialbutterflies_path, method: :post do %>
               <%= text_field_tag :facebook, nil, :placeholder => "http://www.facebook.com/yourprofile", :size => "65" %><br />
               <%= image_submit_tag "butterfly-apply.png" %>
+
             <% end %>
             <div id="butterfly-circle">       
-            <%= image_tag "butterfly-circle.png" %>  
+            <%= image_tag "butterflies/butterfly-circle.png" %>  
             </div>
         </div>
         <div id="butterfly-questions">
             <h3>QUESTIONS YOU MIGHT HAVE:</h3>
             <div id="butterfly-faq">
-                <%= image_tag "butterfly-faq1.png" %>
-                <%= image_tag "butterfly-faq2.png" %>
-                <%= image_tag "butterfly-faq3.png" %>
+                <%= image_tag "butterflies/butterfly-faq1.png" %>
+                <%= image_tag "butterflies/butterfly-faq2.png" %>
+                <%= image_tag "butterflies/butterfly-faq3.png" %>
             </div>
             <div id="butterfly-texting">
-                <%= image_tag "butterfly-texting.png" %>
+                <%= image_tag "butterflies/butterfly-texting.png" %>
             </div>
             
         </div>

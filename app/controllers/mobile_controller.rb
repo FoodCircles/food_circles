@@ -57,4 +57,10 @@ class MobileController < ApplicationController
     makeCall(@r.venue, @r, @minutes)
     render :nothing => true
   end
+
+  def num_users
+    count = User.count
+
+    render :json => { count: count }
+  end
 end

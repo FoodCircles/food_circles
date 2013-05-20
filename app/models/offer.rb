@@ -1,6 +1,18 @@
 class Offer < ActiveRecord::Base
   belongs_to :venue
+  
   has_many :open_times, :as => :openable, :dependent => :destroy
+  has_and_belongs_to_many :category
+  has_many :payments
+
+  attr_accessible :image, :name, :venue_id, :category_ids, :price, :original_price, :total, :available
+  attr_accessor :image
+
+  has_attached_file :image, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
 
   def as_json(options={})
     { :id => self.id,

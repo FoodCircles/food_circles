@@ -4,10 +4,14 @@ Foodcircles::Application.routes.draw do
 
   # match '/offers' => 'offers#index', :as => :offers
   resources :offers
+  resources :categories
+  match '/companies' => 'companies#index', :as => :companies
+  match '/nonprofits' => 'nonprofits#index', :as => :nonprofits
   match '/restaurants' => 'restaurants#index', :as => :restaurants
   match '/butterflies' => 'socialbutterflies#index', :as => :socialbutterflies
   match '/timeline' => 'timeline#index', :as => :timeline
-  match '/payment' => 'payment#index', :as => :payment
+  #match '/payment' => 'payment#index', :as => :payment
+  match '/payment/stripe' => 'payment#stripe', :as => :stripe
 
   get "user_signup/create"
   resources :stripe_payments, :only =>[:new, :create]
@@ -25,7 +29,7 @@ Foodcircles::Application.routes.draw do
 
   resources :remind_list, :only => [:create]
   resources :venues, :only => [:show]
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :payment_notifications
 
@@ -33,7 +37,8 @@ Foodcircles::Application.routes.draw do
 
   resources :socialbutterflies
   resources :restaurants
-
+  resources :companies
+  resources :nonprofits
 
   match '/app' => 'app#index'
   match '/getVenue' => 'app#getVenue'
@@ -54,8 +59,11 @@ Foodcircles::Application.routes.draw do
   match '/mobi/reservation-login' => 'mobile#login'
   match '/mobi/reservation' => 'mobile#signup'
   match '/mobi/reservation_confirm' => 'mobile#callahead'
+  match '/mobi/num_users' => 'mobile#num_users'
   match '/notification' => 'application#notification'
 
+
+  match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
 
   match '/download' => 'application#download', :as => :download
 
@@ -66,7 +74,7 @@ Foodcircles::Application.routes.draw do
   match '/race' => 'race#index'
   match '/cater' => 'home#cater', :as => :notgr
   match '/thanks' => 'home#thanks', :as => :notgr
-  
+
   #HighVoltage
   get '/faq/:id' => 'faq#show', :as => 'faq'
   get '/faq'     => 'faq#show', :as => 'faq', :id => 'faq'

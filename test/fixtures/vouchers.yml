@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start: 2013-05-07
+  end: 2013-05-07
+  total: 1
+  available: 1
+  offer: 
+
+two:
+  start: 2013-05-07
+  end: 2013-05-07
+  total: 1
+  available: 1
+  offer: 
