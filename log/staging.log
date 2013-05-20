@@ -38036,3 +38036,2609 @@ ActionController::RoutingError (No route matches [GET] "/img/footer-menu-backgro
 
 
 Connecting to database specified by database.yml
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-17 17:43:58 -0400
+Processing by HomeController#index as HTML
+  [1m[36m (121.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (37.8ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36m (11.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (15.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  Rendered home/index.html.haml within layouts/application (739.1ms)
+Completed 500 Internal Server Error in 755ms
+
+ActionView::Template::Error (undefined method `available' for #<Offer:0x00000005b7ae80>):
+    44:             %h3= offer.venue.name            
+    45:             .thumb
+    46:               .progress
+    47:                 - percent = (offer.available.to_f / offer.total) * 100
+    48:                 .bar{style: "height:" + percent.to_s + "%"}
+    49:                 .block
+    50:                   %strong= offer.available
+  app/views/home/index.html.haml:47:in `block in _app_views_home_index_html_haml___310714035139709997_47805660'
+  app/views/home/index.html.haml:42:in `_app_views_home_index_html_haml___310714035139709997_47805660'
+
+
+Connecting to database specified by database.yml
+  [1m[36m (17.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'[0m
+  [1m[35m (8.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to DeviseCreateUsers (20120501170115)
+Migrating to CreateVenues (20120501171335)
+Migrating to CreateOpenTimes (20120501171708)
+Migrating to CreateContacts (20120501172102)
+Migrating to CreateContactTypes (20120501172120)
+Migrating to CreateStates (20120502155959)
+Migrating to CreateOfferTags (20120502160014)
+Migrating to CreateCharities (20120502160141)
+Migrating to CreateOffers (20120502160237)
+Migrating to CreateOfferTaggables (20120502160325)
+Migrating to CreateReservations (20120502160550)
+Migrating to CreateRailsAdminHistoriesTable (20120503121049)
+Migrating to CreateTimeZones (20120504105429)
+Migrating to AddImageToVenue (20120504111253)
+Migrating to CreateVenueTags (20120504120508)
+Migrating to CreateVenueTaggables (20120504120615)
+Migrating to AddImageToCharity (20120507145355)
+Migrating to CreateRegions (20120507145604)
+Migrating to AddNameToUser (20120510105952)
+Migrating to AddPhoneToVenue (20120510133529)
+Migrating to AddCircleImageToVenue (20120518105515)
+Migrating to FixTimeZoneForVenues (20120524200219)
+Migrating to AddPhoneToUser (20120611111656)
+Migrating to AddAdminToUser (20120613121855)
+Migrating to AddCalledToReservation (20120613172050)
+Migrating to CreateDelayedJobs (20120627170159)
+Migrating to AddRatingToVenue (20120712152416)
+Migrating to AddReferenceToVenue (20120718153820)
+Migrating to CreateReviews (20120718163322)
+Migrating to AddActiveToVenue (20120719151936)
+Migrating to ResetLatLonColumnInVenue (20120719163342)
+Migrating to AddTimeToReviews (20120723192124)
+Migrating to DropOfferTags (20120723202118)
+Migrating to DropContactTypes (20120723203310)
+Migrating to CreateRemindLists (20120815173829)
+Migrating to CreateNotifications (20120904180943)
+Migrating to AddVoucherToVenues (20121203062437)
+Migrating to CreateInvoices (20130115231614)
+Migrating to AddMultiplierToVenues (20130116231639)
+Migrating to AddFeemessageFeechargeApplyAbleToVenues (20130122214656)
+Migrating to AddEmailToVenues (20130301170958)
+Migrating to CreatePaymentNotification (20130502185808)
+Migrating to CreateCategories (20130506210300)
+Migrating to CreatePayments (20130507140506)
+Migrating to CreateVouchers (20130507175737)
+Migrating to AddImageToOffers (20130507182116)
+Migrating to CreateCategoriesOffersJoinTable (20130508201332)
+Migrating to CreateSocialbutterflies (20130509183434)
+Migrating to CreateRestaurants (20130509191432)
+Migrating to AddOfferToPayments (20130512224725)
+Migrating to RenameEndTime (20130513173739)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (33.3ms)[0m  ALTER TABLE "vouchers" RENAME COLUMN "start" TO "start_date"
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "vouchers" RENAME COLUMN "end" TO "end_date"[0m
+  [1m[35m (27.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130513173739')
+  [1m[36m (10.0ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnsToUsers (20130517152514)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (27.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "provider" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "uid" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130517152514')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddQuantitiesToOffer (20130517181339)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (21.0ms)[0m  ALTER TABLE "offers" ADD COLUMN "available" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "offers" ADD COLUMN "total" integer[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130517181339')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddPricesToOffer (20130517185604)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "offers" ADD COLUMN "price" float[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "offers" ADD COLUMN "original_price" float
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130517185604')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (5.9ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (25.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35mPK and serial sequence (4.5ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"categories"'::regclass
+
+  [1m[36m (37.0ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'categories'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36mPK and serial sequence (3.3ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"categories_offers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (12.6ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"categories_offers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+
+  [1m[36m (0.9ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'categories_offers'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='charities'
+  [1m[36mPK and serial sequence (2.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"charities"'::regclass
+[0m
+  [1m[35m (1.0ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'charities'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (9.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='contact_types'[0m
+  [1m[35mPK and serial sequence (2.6ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"contact_types"'::regclass
+
+  [1m[36mPK and custom sequence (1.1ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"contact_types"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35m (0.9ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'contact_types'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='contacts'[0m
+  [1m[35mPK and serial sequence (1.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"contacts"'::regclass
+
+  [1m[36mPK and custom sequence (1.1ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"contacts"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35m (1.0ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'contacts'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.5ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='delayed_jobs'[0m
+  [1m[35mPK and serial sequence (3.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"delayed_jobs"'::regclass
+
+  [1m[36m (1.6ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'delayed_jobs'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index delayed_jobs_priority on delayed_jobs (13.4ms)[0m   SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 21513
+ AND a.attnum IN (2,6)
+ AND a.atttypid = t.oid
+
+  [1m[36m (3.1ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='invoices'[0m
+  [1m[35mPK and serial sequence (2.5ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"invoices"'::regclass
+
+  [1m[36m (1.4ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'invoices'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (2.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='notifications'
+  [1m[36mPK and serial sequence (3.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"notifications"'::regclass
+[0m
+  [1m[35m (1.2ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'notifications'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offer_taggables'[0m
+  [1m[35mPK and serial sequence (3.7ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"offer_taggables"'::regclass
+
+  [1m[36mPK and custom sequence (1.5ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"offer_taggables"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35m (1.0ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'offer_taggables'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offer_tags'[0m
+  [1m[35mPK and serial sequence (2.8ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"offer_tags"'::regclass
+
+  [1m[36mPK and custom sequence (1.2ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"offer_tags"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35m (1.3ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'offer_tags'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mPK and serial sequence (3.4ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"offers"'::regclass
+
+  [1m[36m (1.4ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'offers'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='open_times'
+  [1m[36mPK and serial sequence (3.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"open_times"'::regclass
+[0m
+  [1m[35m (1.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'open_times'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='payment_notifications'[0m
+  [1m[35mPK and serial sequence (3.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"payment_notifications"'::regclass
+
+  [1m[36m (1.5ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'payment_notifications'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='payments'
+  [1m[36mPK and serial sequence (3.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"payments"'::regclass
+[0m
+  [1m[35m (1.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'payments'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36mColumns for index index_payments_on_user_id on payments (0.8ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 21647
+ AND a.attnum IN (2)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (3.2ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='rails_admin_histories'
+  [1m[36mPK and serial sequence (5.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"rails_admin_histories"'::regclass
+[0m
+  [1m[35m (1.9ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'rails_admin_histories'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36mColumns for index index_rails_admin_histories on rails_admin_histories (0.7ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 21451
+ AND a.attnum IN (4,5,6,7)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (2.1ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='regions'
+  [1m[36mPK and serial sequence (3.4ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"regions"'::regclass
+[0m
+  [1m[35m (1.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'regions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='remind_lists'[0m
+  [1m[35mPK and serial sequence (3.5ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"remind_lists"'::regclass
+
+  [1m[36m (1.4ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'remind_lists'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='reservations'
+  [1m[36mPK and serial sequence (2.1ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"reservations"'::regclass
+[0m
+  [1m[35m (1.0ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'reservations'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='restaurants'[0m
+  [1m[35mPK and serial sequence (3.2ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"restaurants"'::regclass
+
+  [1m[36m (1.4ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'restaurants'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (2.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='reviews'
+  [1m[36mPK and serial sequence (3.4ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"reviews"'::regclass
+[0m
+  [1m[35m (1.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'reviews'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36mColumns for index index_reviews_on_venue_id on reviews (0.5ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 21527
+ AND a.attnum IN (5)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (2.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='socialbutterflies'
+  [1m[36mPK and serial sequence (3.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"socialbutterflies"'::regclass
+[0m
+  [1m[35m (1.2ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'socialbutterflies'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='states'[0m
+  [1m[35mPK and serial sequence (3.4ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"states"'::regclass
+
+  [1m[36m (1.6ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'states'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (2.4ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='time_zones'
+  [1m[36mPK and serial sequence (3.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"time_zones"'::regclass
+[0m
+  [1m[35m (1.6ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'time_zones'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.5ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='users'[0m
+  [1m[35mPK and serial sequence (3.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+
+  [1m[36m (1.9ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_users_on_email on users (0.5ms)[0m   SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 21340
+ AND a.attnum IN (2)
+ AND a.atttypid = t.oid
+
+  [1m[36mColumns for index index_users_on_reset_password_token on users (0.4ms)[0m  [1m SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 21340
+ AND a.attnum IN (4)
+ AND a.atttypid = t.oid
+[0m
+  [1m[35m (2.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venue_taggables'
+  [1m[36mPK and serial sequence (3.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"venue_taggables"'::regclass
+[0m
+  [1m[35m (1.5ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'venue_taggables'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venue_tags'[0m
+  [1m[35mPK and serial sequence (4.3ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"venue_tags"'::regclass
+
+  [1m[36m (1.5ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'venue_tags'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35m (2.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venues'
+  [1m[36mPK and serial sequence (4.1ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"venues"'::regclass
+[0m
+  [1m[35m (1.6ms)[0m   SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'venues'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+
+  [1m[36m (2.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='vouchers'[0m
+  [1m[35mPK and serial sequence (3.2ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"vouchers"'::regclass
+
+  [1m[36m (1.7ms)[0m  [1m SELECT DISTINCT i.relname, d.indisunique, d.indkey, t.oid, am.amname
+ FROM pg_class t, pg_class i, pg_index d, pg_am am
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'vouchers'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ AND i.relam = am.oid
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_vouchers_on_offer_id on vouchers (0.5ms)[0m   SELECT a.attnum, a.attname, t.typname
+ FROM pg_attribute a, pg_type t
+ WHERE a.attrelid = 21656
+ AND a.attnum IN (6)
+ AND a.atttypid = t.oid
+
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-17 17:45:23 -0400
+Processing by HomeController#index as HTML
+  [1m[36m (2.0ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (0.3ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36m (1.7ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  Rendered home/index.html.haml within layouts/application (121.7ms)
+Completed 500 Internal Server Error in 161ms
+
+ActionView::Template::Error (nil can't be coerced into Float):
+    44:             %h3= offer.venue.name            
+    45:             .thumb
+    46:               .progress
+    47:                 - percent = (offer.available.to_f / offer.total) * 100
+    48:                 .bar{style: "height:" + percent.to_s + "%"}
+    49:                 .block
+    50:                   %strong= offer.available
+  app/views/home/index.html.haml:47:in `/'
+  app/views/home/index.html.haml:47:in `block in _app_views_home_index_html_haml___310714035139709997_47805660'
+  app/views/home/index.html.haml:42:in `_app_views_home_index_html_haml___310714035139709997_47805660'
+
+
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-17 17:45:33 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (0.3ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  Rendered home/index.html.haml within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (nil can't be coerced into Float):
+    44:             %h3= offer.venue.name            
+    45:             .thumb
+    46:               .progress
+    47:                 - percent = (offer.available.to_f / offer.total) * 100
+    48:                 .bar{style: "height:" + percent.to_s + "%"}
+    49:                 .block
+    50:                   %strong= offer.available
+  app/views/home/index.html.haml:47:in `/'
+  app/views/home/index.html.haml:47:in `block in _app_views_home_index_html_haml___310714035139709997_47805660'
+  app/views/home/index.html.haml:42:in `_app_views_home_index_html_haml___310714035139709997_47805660'
+
+
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-17 17:48:27 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (0.3ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  Rendered home/index.html.haml within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (nil can't be coerced into Float):
+    44:             %h3= offer.venue.name            
+    45:             .thumb
+    46:               .progress
+    47:                 - percent = (offer.available.to_f / offer.total) * 100
+    48:                 .bar{style: "height:" + percent.to_s + "%"}
+    49:                 .block
+    50:                   %strong= offer.available
+  app/views/home/index.html.haml:47:in `/'
+  app/views/home/index.html.haml:47:in `block in _app_views_home_index_html_haml___310714035139709997_47805660'
+  app/views/home/index.html.haml:42:in `_app_views_home_index_html_haml___310714035139709997_47805660'
+
+
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-17 17:48:52 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (0.5ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36m (2.0ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35m (1.7ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36mCategory Load (10.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  [1m[35mVenue Load (9.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16[0m
+  Rendered home/index.html.haml within layouts/application (313.5ms)
+  Rendered layouts/_google-analytics.html.erb (37.2ms)
+  Rendered partials/_header.html.haml (14.8ms)
+  Rendered partials/_footer.html.haml (3.3ms)
+Completed 200 OK in 382ms (Views: 349.9ms | ActiveRecord: 32.2ms)
+
+
+Started GET "/assets/slide-01.jpg" for 68.119.102.65 at 2013-05-17 17:48:55 -0400
+Served asset /slide-01.jpg - 404 Not Found (84ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/slide-01.jpg"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/assets/slide-02.jpg" for 68.119.102.65 at 2013-05-17 17:48:55 -0400
+Served asset /slide-02.jpg - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/slide-02.jpg"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/images/original/missing.png" for 68.119.102.65 at 2013-05-17 17:48:55 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/assets/slide-04.jpg" for 68.119.102.65 at 2013-05-17 17:48:55 -0400
+Served asset /slide-04.jpg - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/slide-04.jpg"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/assets/slide-03.jpg" for 68.119.102.65 at 2013-05-17 17:48:55 -0400
+Served asset /slide-03.jpg - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/slide-03.jpg"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-17 17:50:40 -0400
+Processing by HomeController#index as HTML
+  [1m[36m (147.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (0.8ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36m (3.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (0.7ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36m (2.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35m (1.6ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16[0m
+  Rendered home/index.html.haml within layouts/application (960.5ms)
+Compiled application.css  (435ms)  (pid 6982)
+Compiled jquery.carouFredSel-6.2.1-packed.js  (44ms)  (pid 6982)
+Compiled home.js  (65ms)  (pid 6982)
+  Rendered layouts/_google-analytics.html.erb (0.9ms)
+  Rendered partials/_header.html.haml (23.3ms)
+  Rendered partials/_footer.html.haml (3.8ms)
+Completed 200 OK in 3767ms (Views: 3405.6ms | ActiveRecord: 341.7ms)
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-17 17:50:44 -0400
+Processing by HomeController#index as HTML
+  [1m[35mOffer Load (0.5ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16
+  Rendered home/index.html.haml within layouts/application (35.8ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  Rendered partials/_header.html.haml (4.0ms)
+  Rendered partials/_footer.html.haml (0.6ms)
+Completed 200 OK in 49ms (Views: 44.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/application-c9e99528bb43e0d40b37a67df76e9170.css" for 68.119.102.65 at 2013-05-17 17:50:44 -0400
+Served asset /application-c9e99528bb43e0d40b37a67df76e9170.css - 200 OK (0ms)
+
+
+Started GET "/assets/home-8ecc12014e3349efd92249910420ebb2.js" for 68.119.102.65 at 2013-05-17 17:50:44 -0400
+Served asset /home-8ecc12014e3349efd92249910420ebb2.js - 200 OK (0ms)
+
+
+Started GET "/assets/sprite.png" for 68.119.102.65 at 2013-05-17 17:50:45 -0400
+Served asset /sprite.png - 200 OK (28ms)
+
+
+Started GET "/assets/darken.png" for 68.119.102.65 at 2013-05-17 17:50:45 -0400
+
+
+Started GET "/assets/pattern.png" for 68.119.102.65 at 2013-05-17 17:50:45 -0400
+Served asset /darken.png - 200 OK (30ms)
+Served asset /pattern.png - 200 OK (27ms)
+
+
+Started GET "/assets/slide-01.jpg" for 68.119.102.65 at 2013-05-17 17:50:45 -0400
+Served asset /slide-01.jpg - 200 OK (6ms)
+
+
+Started GET "/assets/slide-02.jpg" for 68.119.102.65 at 2013-05-17 17:50:45 -0400
+Served asset /slide-02.jpg - 200 OK (7ms)
+
+
+Started GET "/assets/slide-03.jpg" for 68.119.102.65 at 2013-05-17 17:50:45 -0400
+
+
+Started GET "/assets/slide-04.jpg" for 68.119.102.65 at 2013-05-17 17:50:45 -0400
+Served asset /slide-04.jpg - 200 OK (5ms)
+Served asset /slide-03.jpg - 200 OK (5ms)
+
+
+Started GET "/images/original/missing.png" for 68.119.102.65 at 2013-05-17 17:50:45 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/offer/1/edit" for 68.119.102.65 at 2013-05-17 17:52:42 -0400
+
+ActionController::RoutingError (No route matches [GET] "/offer/1/edit"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/offers/1/edit" for 68.119.102.65 at 2013-05-17 17:52:44 -0400
+Processing by OffersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36m (10.5ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (1.2ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (2.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (1.0ms)[0m  SELECT "venues".* FROM "venues" 
+  [1m[36m (2.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" 
+  [1m[36m (2.1ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories_offers'[0m
+  [1m[35m (0.5ms)[0m  SELECT "categories".id FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".id FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  Rendered offers/_form.html.haml (425.0ms)
+  Rendered offers/edit.html.haml within layouts/application (434.4ms)
+Compiled offers.css  (12ms)  (pid 7035)
+Compiled offers.js  (0ms)  (pid 7035)
+  Rendered layouts/_google-analytics.html.erb (0.6ms)
+  Rendered partials/_header.html.haml (18.3ms)
+  Rendered partials/_footer.html.haml (56.4ms)
+Completed 200 OK in 997ms (Views: 883.7ms | ActiveRecord: 49.6ms)
+
+
+Started GET "/assets/offers-8b1a83ad92b7f86695905f76f97ecf37.css" for 68.119.102.65 at 2013-05-17 17:52:46 -0400
+
+
+Started GET "/assets/offers-de84f7650ade1a1a53210eb95b8fd3ea.js" for 68.119.102.65 at 2013-05-17 17:52:46 -0400
+Served asset /offers-8b1a83ad92b7f86695905f76f97ecf37.css - 200 OK (0ms)
+Served asset /offers-de84f7650ade1a1a53210eb95b8fd3ea.js - 200 OK (3ms)
+
+
+Started GET "/images/thumb/missing.png" for 68.119.102.65 at 2013-05-17 17:52:46 -0400
+
+
+Started GET "/assets/sprite.png" for 68.119.102.65 at 2013-05-17 17:52:46 -0400
+Served asset /sprite.png - 304 Not Modified (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/images/thumb/missing.png" for 68.119.102.65 at 2013-05-17 17:52:59 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started PUT "/offers/1" for 68.119.102.65 at 2013-05-17 17:53:18 -0400
+Processing by OffersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dpmnbGT2niPqCKL6nHYZuP+umMdsQs/3d2DFcwXKwx8=", "offer"=>{"name"=>"2 free desserts", "venue_id"=>"1", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000003c80188 @original_filename="pic01.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"offer[image]\"; filename=\"pic01.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20130517-6998-7iz3qo>>, "category_ids"=>[""], "price"=>"1", "original_price"=>"7", "total"=>"10", "available"=>"9"}, "commit"=>"Update Offer", "id"=>"1"}
+  [1m[36m (7.8ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (0.7ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 36ms
+
+Paperclip::Error (Offer model missing required attr_accessor for 'image_file_name'):
+  app/controllers/offers_controller.rb:38:in `block in update'
+  app/controllers/offers_controller.rb:37:in `update'
+
+
+Connecting to database specified by database.yml
+
+
+Started PUT "/offers/1" for 68.119.102.65 at 2013-05-17 17:54:57 -0400
+Processing by OffersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dpmnbGT2niPqCKL6nHYZuP+umMdsQs/3d2DFcwXKwx8=", "offer"=>{"name"=>"2 free desserts", "venue_id"=>"1", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000003da1260 @original_filename="pic01.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"offer[image]\"; filename=\"pic01.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20130517-7210-1me9nix>>, "category_ids"=>[""], "price"=>"1", "original_price"=>"7", "total"=>"10", "available"=>"9"}, "commit"=>"Update Offer", "id"=>"1"}
+  [1m[36m (9.2ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (1.0ms)[0m  SELECT "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 43ms
+
+Paperclip::Error (Offer model missing required attr_accessor for 'image_file_name'):
+  app/controllers/offers_controller.rb:38:in `block in update'
+  app/controllers/offers_controller.rb:37:in `update'
+
+
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-17 17:55:27 -0400
+Processing by HomeController#index as HTML
+  [1m[36mOffer Load (0.5ms)[0m  [1mSELECT "offers".* FROM "offers" LIMIT 9[0m
+  [1m[35m (2.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='venues'
+  [1m[36mVenue Load (0.9ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1[0m
+  [1m[35m (1.5ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories'
+  [1m[36m (1.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories_offers'[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16
+  Rendered home/index.html.haml within layouts/application (486.2ms)
+  Rendered layouts/_google-analytics.html.erb (0.4ms)
+  Rendered partials/_header.html.haml (13.3ms)
+  Rendered partials/_footer.html.haml (3.0ms)
+Completed 200 OK in 644ms (Views: 546.3ms | ActiveRecord: 96.6ms)
+
+
+Started GET "/assets/darken.png" for 68.119.102.65 at 2013-05-17 17:55:28 -0400
+Served asset /darken.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sprite.png" for 68.119.102.65 at 2013-05-17 17:55:28 -0400
+Served asset /sprite.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/slide-01.jpg" for 68.119.102.65 at 2013-05-17 17:55:28 -0400
+Served asset /slide-01.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/slide-03.jpg" for 68.119.102.65 at 2013-05-17 17:55:28 -0400
+Served asset /slide-03.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/assets/slide-04.jpg" for 68.119.102.65 at 2013-05-17 17:55:28 -0400
+
+
+Started GET "/assets/slide-02.jpg" for 68.119.102.65 at 2013-05-17 17:55:28 -0400
+Served asset /slide-04.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pattern.png" for 68.119.102.65 at 2013-05-17 17:55:28 -0400
+Served asset /pattern.png - 304 Not Modified (1ms)
+
+
+Started GET "/images/original/missing.png" for 68.119.102.65 at 2013-05-17 17:55:28 -0400
+Served asset /slide-02.jpg - 304 Not Modified (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/" for 67.162.70.65 at 2013-05-17 18:00:12 -0400
+Processing by HomeController#index as HTML
+  [1m[36m (8.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (0.8ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36m (1.9ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (0.8ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36m (1.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35m (2.6ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16[0m
+  Rendered home/index.html.haml within layouts/application (483.0ms)
+  Rendered layouts/_google-analytics.html.erb (0.4ms)
+  Rendered partials/_header.html.haml (15.8ms)
+  Rendered partials/_footer.html.haml (3.1ms)
+Completed 200 OK in 635ms (Views: 567.1ms | ActiveRecord: 47.0ms)
+
+
+Started GET "/assets/slide-03.jpg" for 67.162.70.65 at 2013-05-17 18:00:13 -0400
+
+
+Started GET "/assets/slide-01.jpg" for 67.162.70.65 at 2013-05-17 18:00:13 -0400
+
+
+Started GET "/assets/slide-02.jpg" for 67.162.70.65 at 2013-05-17 18:00:13 -0400
+Served asset /slide-01.jpg - 304 Not Modified (1ms)
+Served asset /slide-03.jpg - 304 Not Modified (1ms)
+Served asset /slide-02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/images/original/missing.png" for 67.162.70.65 at 2013-05-17 18:00:13 -0400
+
+
+Started GET "/assets/slide-04.jpg" for 67.162.70.65 at 2013-05-17 18:00:13 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+Served asset /slide-04.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sprite.png" for 67.162.70.65 at 2013-05-17 18:00:13 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/darken.png" for 67.162.70.65 at 2013-05-17 18:00:13 -0400
+Served asset /darken.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pattern.png" for 67.162.70.65 at 2013-05-17 18:00:13 -0400
+Served asset /pattern.png - 304 Not Modified (1ms)
+
+
+Started GET "/" for 67.162.70.65 at 2013-05-17 18:01:24 -0400
+Processing by HomeController#index as HTML
+  [1m[36m (8.9ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (0.6ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36m (2.0ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (0.7ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36m (2.5ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35m (2.2ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16[0m
+  Rendered home/index.html.haml within layouts/application (454.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.4ms)
+  Rendered partials/_header.html.haml (62.6ms)
+  Rendered partials/_footer.html.haml (3.8ms)
+Completed 200 OK in 654ms (Views: 588.7ms | ActiveRecord: 46.5ms)
+
+
+Started GET "/assets/slide-01.jpg" for 67.162.70.65 at 2013-05-17 18:01:25 -0400
+Served asset /slide-01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/images/original/missing.png" for 67.162.70.65 at 2013-05-17 18:01:25 -0400
+
+
+Started GET "/assets/slide-03.jpg" for 67.162.70.65 at 2013-05-17 18:01:25 -0400
+Served asset /slide-03.jpg - 304 Not Modified (0ms)
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/assets/slide-02.jpg" for 67.162.70.65 at 2013-05-17 18:01:25 -0400
+Served asset /slide-02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slide-04.jpg" for 67.162.70.65 at 2013-05-17 18:01:25 -0400
+Served asset /slide-04.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pattern.png" for 67.162.70.65 at 2013-05-17 18:01:25 -0400
+
+
+Started GET "/assets/darken.png" for 67.162.70.65 at 2013-05-17 18:01:25 -0400
+Served asset /pattern.png - 304 Not Modified (0ms)
+Served asset /darken.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprite.png" for 67.162.70.65 at 2013-05-17 18:01:25 -0400
+Served asset /sprite.png - 304 Not Modified (3ms)
+
+
+Started GET "/" for 67.162.70.65 at 2013-05-17 18:01:37 -0400
+Processing by HomeController#index as HTML
+  [1m[36m (8.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (0.6ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36m (2.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (1.1ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36m (1.8ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35m (1.7ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16[0m
+  Rendered home/index.html.haml within layouts/application (499.5ms)
+  Rendered layouts/_google-analytics.html.erb (0.4ms)
+  Rendered partials/_header.html.haml (14.2ms)
+  Rendered partials/_footer.html.haml (3.0ms)
+Completed 200 OK in 662ms (Views: 596.9ms | ActiveRecord: 45.9ms)
+
+
+Started GET "/images/original/missing.png" for 67.162.70.65 at 2013-05-17 18:01:38 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/assets/slide-01.jpg" for 67.162.70.65 at 2013-05-17 18:01:38 -0400
+Served asset /slide-01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slide-03.jpg" for 67.162.70.65 at 2013-05-17 18:01:38 -0400
+
+
+Started GET "/assets/slide-02.jpg" for 67.162.70.65 at 2013-05-17 18:01:38 -0400
+Served asset /slide-03.jpg - 304 Not Modified (0ms)
+Served asset /slide-02.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprite.png" for 67.162.70.65 at 2013-05-17 18:01:38 -0400
+
+
+Started GET "/assets/slide-04.jpg" for 67.162.70.65 at 2013-05-17 18:01:38 -0400
+
+
+Started GET "/assets/darken.png" for 67.162.70.65 at 2013-05-17 18:01:38 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+Served asset /darken.png - 304 Not Modified (0ms)
+Served asset /slide-04.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pattern.png" for 67.162.70.65 at 2013-05-17 18:01:38 -0400
+Served asset /pattern.png - 304 Not Modified (1ms)
+
+
+Started GET "/nonprofits" for 65.52.100.214 at 2013-05-17 18:27:25 -0400
+Processing by NonprofitsController#index as HTML
+Completed 500 Internal Server Error in 7ms
+
+NoMethodError (undefined method `downcase' for nil:NilClass):
+  app/controllers/application_controller.rb:17:in `email_server'
+
+
+
+
+Started GET "/organizers" for 65.52.100.214 at 2013-05-17 18:36:50 -0400
+Processing by OrganizersController#index as HTML
+Completed 500 Internal Server Error in 9ms
+
+NoMethodError (undefined method `downcase' for nil:NilClass):
+  app/controllers/application_controller.rb:17:in `email_server'
+
+
+
+
+Started GET "/companies" for 65.52.100.214 at 2013-05-17 18:54:25 -0400
+Processing by CompaniesController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `downcase' for nil:NilClass):
+  app/controllers/application_controller.rb:17:in `email_server'
+
+
+
+
+Started GET "/students" for 65.52.100.214 at 2013-05-17 18:54:25 -0400
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `downcase' for nil:NilClass):
+  app/controllers/application_controller.rb:17:in `email_server'
+
+
+
+
+Started GET "/" for 67.162.70.65 at 2013-05-17 19:41:19 -0400
+Processing by HomeController#index as HTML
+  [1m[35mOffer Load (34.6ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36mVenue Load (11.6ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16
+  Rendered home/index.html.haml within layouts/application (397.4ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  Rendered partials/_header.html.haml (5.3ms)
+  Rendered partials/_footer.html.haml (0.4ms)
+Completed 200 OK in 788ms (Views: 525.5ms | ActiveRecord: 49.5ms)
+
+
+Started GET "/assets/slide-01.jpg" for 67.162.70.65 at 2013-05-17 19:41:21 -0400
+Served asset /slide-01.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slide-02.jpg" for 67.162.70.65 at 2013-05-17 19:41:21 -0400
+Served asset /slide-02.jpg - 304 Not Modified (41ms)
+
+
+Started GET "/images/original/missing.png" for 67.162.70.65 at 2013-05-17 19:41:21 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/assets/slide-04.jpg" for 67.162.70.65 at 2013-05-17 19:41:21 -0400
+Served asset /slide-04.jpg - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sprite.png" for 67.162.70.65 at 2013-05-17 19:41:21 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pattern.png" for 67.162.70.65 at 2013-05-17 19:41:21 -0400
+Served asset /pattern.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/darken.png" for 67.162.70.65 at 2013-05-17 19:41:21 -0400
+Served asset /darken.png - 304 Not Modified (5ms)
+
+
+Started GET "/assets/slide-03.jpg" for 67.162.70.65 at 2013-05-17 19:41:21 -0400
+Served asset /slide-03.jpg - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/auth/facebook" for 67.223.3.142 at 2013-05-19 22:57:31 -0400
+
+ActionController::RoutingError (No route matches [GET] "/auth/facebook"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-20 11:27:20 -0400
+Processing by HomeController#index as HTML
+  [1m[36m (154.3ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (10.3ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36m (2.4ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (3.1ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36m (2.0ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35m (1.7ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36mCategory Load (1.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  [1m[35mVenue Load (0.7ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16[0m
+  Rendered home/index.html.haml within layouts/application (780.8ms)
+  Rendered layouts/_google-analytics.html.erb (0.6ms)
+  Rendered partials/_header.html.haml (18.5ms)
+  Rendered partials/_footer.html.haml (3.6ms)
+Completed 200 OK in 1166ms (Views: 823.7ms | ActiveRecord: 284.0ms)
+
+
+Started GET "/assets/sprite.png" for 68.119.102.65 at 2013-05-20 11:27:22 -0400
+Served asset /sprite.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/darken.png" for 68.119.102.65 at 2013-05-20 11:27:22 -0400
+Served asset /darken.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/slide-01.jpg" for 68.119.102.65 at 2013-05-20 11:27:22 -0400
+Served asset /slide-01.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/slide-02.jpg" for 68.119.102.65 at 2013-05-20 11:27:22 -0400
+Served asset /slide-02.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pattern.png" for 68.119.102.65 at 2013-05-20 11:27:22 -0400
+Served asset /pattern.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/slide-03.jpg" for 68.119.102.65 at 2013-05-20 11:27:22 -0400
+Served asset /slide-03.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/slide-04.jpg" for 68.119.102.65 at 2013-05-20 11:27:22 -0400
+
+
+Started GET "/images/original/missing.png" for 68.119.102.65 at 2013-05-20 11:27:22 -0400
+Served asset /slide-04.jpg - 304 Not Modified (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/faq" for 68.119.102.65 at 2013-05-20 11:27:33 -0400
+Processing by FaqController#show as HTML
+  Parameters: {"id"=>"faq"}
+  Rendered partials/_faq_sidebar.html.haml (6.6ms)
+  Rendered faq/faq.html.haml within layouts/application (20.3ms)
+  Rendered layouts/_google-analytics.html.erb (0.6ms)
+  Rendered partials/_header.html.haml (17.7ms)
+  Rendered partials/_footer.html.haml (3.7ms)
+Completed 200 OK in 169ms (Views: 166.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sprite.png" for 68.119.102.65 at 2013-05-20 11:27:34 -0400
+Served asset /sprite.png - 304 Not Modified (1ms)
+
+
+Started GET "/" for 68.119.102.65 at 2013-05-20 11:28:12 -0400
+Processing by HomeController#index as HTML
+  [1m[36m (7.8ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='offers'[0m
+  [1m[35mOffer Load (11.8ms)[0m  SELECT "offers".* FROM "offers" LIMIT 9
+  [1m[36m (2.8ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='venues'[0m
+  [1m[35mVenue Load (0.7ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36m (1.8ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='categories'[0m
+  [1m[35m (1.7ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='categories_offers'
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 2[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 10[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 11[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 12[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 14[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 15[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "categories_offers" ON "categories"."id" = "categories_offers"."category_id" WHERE "categories_offers"."offer_id" = 16[0m
+  Rendered home/index.html.haml within layouts/application (630.1ms)
+  Rendered layouts/_google-analytics.html.erb (0.0ms)
+  Rendered partials/_header.html.haml (4.3ms)
+  Rendered partials/_footer.html.haml (0.3ms)
+Completed 200 OK in 867ms (Views: 701.8ms | ActiveRecord: 144.4ms)
+
+
+Started GET "/assets/sprite.png" for 68.119.102.65 at 2013-05-20 11:28:14 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slide-02.jpg" for 68.119.102.65 at 2013-05-20 11:28:14 -0400
+
+
+Started GET "/assets/slide-01.jpg" for 68.119.102.65 at 2013-05-20 11:28:14 -0400
+
+
+Started GET "/assets/darken.png" for 68.119.102.65 at 2013-05-20 11:28:14 -0400
+Served asset /darken.png - 304 Not Modified (0ms)
+Served asset /slide-01.jpg - 304 Not Modified (9ms)
+Served asset /slide-02.jpg - 304 Not Modified (9ms)
+
+
+Started GET "/assets/slide-04.jpg" for 68.119.102.65 at 2013-05-20 11:28:14 -0400
+Served asset /slide-04.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pattern.png" for 68.119.102.65 at 2013-05-20 11:28:14 -0400
+
+
+Started GET "/assets/slide-03.jpg" for 68.119.102.65 at 2013-05-20 11:28:14 -0400
+
+
+Started GET "/images/original/missing.png" for 68.119.102.65 at 2013-05-20 11:28:14 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  dragonfly (0.9.12) lib/dragonfly/middleware.rb:13:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+Served asset /slide-03.jpg - 304 Not Modified (9ms)
+Served asset /pattern.png - 304 Not Modified (11ms)
