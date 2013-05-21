@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517185604) do
+ActiveRecord::Schema.define(:version => 20130521163939) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -36,23 +36,6 @@ ActiveRecord::Schema.define(:version => 20130517185604) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image_uid"
-  end
-
-  create_table "contact_types", :id => false, :force => true do |t|
-    t.integer  "id",         :null => false
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "contacts", :id => false, :force => true do |t|
-    t.integer  "id",               :null => false
-    t.string   "content"
-    t.integer  "contact_type_id"
-    t.integer  "contactable_id"
-    t.string   "contactable_type"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -86,21 +69,6 @@ ActiveRecord::Schema.define(:version => 20130517185604) do
   create_table "notifications", :force => true do |t|
     t.string   "content"
     t.string   "ticker"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "offer_taggables", :id => false, :force => true do |t|
-    t.integer  "id",           :null => false
-    t.integer  "offer_tag_id"
-    t.integer  "offer_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  create_table "offer_tags", :id => false, :force => true do |t|
-    t.integer  "id",         :null => false
-    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -268,6 +236,8 @@ ActiveRecord::Schema.define(:version => 20130517185604) do
     t.string   "name"
     t.string   "phone"
     t.boolean  "admin",                  :default => false
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -313,7 +283,10 @@ ActiveRecord::Schema.define(:version => 20130517185604) do
     t.decimal  "feecharge",                                                                    :default => 0.0
     t.boolean  "apply_able",                                                                   :default => false
     t.string   "email",                                                                        :default => "venue@example.com"
+    t.string   "slug"
   end
+
+  add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true
 
   create_table "vouchers", :force => true do |t|
     t.date     "start_date"

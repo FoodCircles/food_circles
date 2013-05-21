@@ -1,4 +1,5 @@
 class Venue < ActiveRecord::Base
+  extend FriendlyId
   include Validators
 
   belongs_to :state
@@ -9,6 +10,8 @@ class Venue < ActiveRecord::Base
   has_many :venue_taggables, :dependent => :destroy
   has_many :venue_tags, :through => :venue_taggables
   has_many :reviews
+
+  friendly_id :name, use: :slugged
 
   require 'open-uri'
   require 'json'
@@ -124,7 +127,11 @@ class Venue < ActiveRecord::Base
   end
 
   def full_address
-    "#{self.address}, #{self.city}, #{self.state.name}"
+    addr = "#{self.address}, #{self.city}"
+    if self.state
+      addr += ", #{self.state.name}"
+    end
+    addr
   end
 
   def available?
