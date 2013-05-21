@@ -44,11 +44,23 @@
             %h3= offer.venue.name            
             .thumb
               .progress
-                - percent = (offer.available.to_f / offer.total) * 100
-                .bar{style: "height:" + percent.to_s + "%"}
-                .block
-                  %strong= offer.available
-                  %small left
+                - percent = (offer.available.to_f / offer.total.to_f) * 100
+                - if (offer.available.to_i.nil? or offer.available.to_i == 0)
+                  .bar{style: "height: 0"}
+                    %a{href: "#"}
+                      .block
+                        %small Notify me
+                - else
+                  .bar{style: "height:" + percent.to_s + "%"}
+                    .block
+                      %strong= offer.available.to_i
+                      %small left
+                  
+                  
+                /  .bar{style: "height:" + percent.to_s + "%"}
+                /  .block
+                /    %strong= offer.available.to_i
+                /    %small left
               %a{href: "#"}
                 .price
                   %strong= number_to_currency(offer.price, :precision => 0)
