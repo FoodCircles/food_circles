@@ -21,13 +21,15 @@
   .paging
 
   .donation-progress
-    .bar{style: "width:74%"}
+    - percent = @progress / @adjusted_total
+    .bar{style: "width:" + percent.to_s + "%"}
       %span{class: "text"}
         %strong
           %span
-            37
+            = @progress
             %em of
-          50 meals
+          = @adjusted_total
+          meals
         donated this week
 
 .main
@@ -41,7 +43,7 @@
       .products-tiles
         - @offers.each do |offer|
           %div{class: "tile blue", :"data-city" => "chicago", :"data-cat" => "italian"}
-            %h3= offer.venue.name            
+            %h3= link_to offer.venue.name, offer.venue
             .thumb
               .progress
                 - percent = (offer.available.to_f / offer.total) * 100
