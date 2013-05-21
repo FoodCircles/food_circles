@@ -1,8 +1,12 @@
 class RestaurantsController < ApplicationController
   def index
-  	if params[:email]
-  		signup
-  	end
+    if(params[:email])
+      if valid_email?(params[:email])
+        signup
+      else
+        flash[:error] = 'Invalid email address.'
+      end
+    end
   end
 
   def signup
@@ -15,6 +19,10 @@ class RestaurantsController < ApplicationController
   	@n.content = "Name: #{name}, Email: #{email}"
   	@n.ticker = "A restaurant signup"
   	@n.save
+  end
+
+  def valid_email?(email)
+    return email.match(/^.+@.+\..+$/)
   end
 
 end
