@@ -50,13 +50,14 @@
 
             <div id="nonprofits-step2">
                 <%= form_tag nonprofits_path, method: :post do %>
-		    <%= text_field_tag :organization, nil, :placeholder => "Organization" %>
-		    <%= text_field_tag :name, nil, :placeholder => "Name" %>
-		    <%= text_field_tag :email, nil, :placeholder => "Email" %>
-		    <%= text_field_tag :website, nil, :placeholder => "Website" %>
-		    <%= submit_tag nil, :class => "button" %>
-		<% end %>
+		          <%= text_field_tag :organization, nil, :placeholder => "Organization" %><br />
+		          <%= text_field_tag :name, nil, :placeholder => "Name" %><br />
+		          <%= text_field_tag :email, nil, :placeholder => "Email" %><br />
+		          <%= text_field_tag :website, nil, :placeholder => "Website" %><br />
+		          <%= submit_tag nil, :class => "button" %>
+		        <% end %>
                 <p><span class="bignumber">2</span>You talk to restaurants you know about joining your FoodCirles app. The partnership goes beyond your typical 1-time event and requires little upkeep post-signup.</p>
+
                 
             </div>
 

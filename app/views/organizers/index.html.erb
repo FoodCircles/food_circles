@@ -76,10 +76,10 @@
             <h1>Sign up</h1>
             <%= form_tag organizers_path, method: :post do %>
                 <h2>Will this be for dine-in or dine-out?</h2>
-                <%= label_tag 'same', 'Dining at Restaurant' %>
-                <%= radio_button_tag 'location', 'same', value: "1" %>
-                <%= label_tag 'different', 'Dining at a different location' %>
-                <%= radio_button_tag 'location', 'different', value: "2" %><br />
+                <%= label_tag 'at the restaurant', 'Dining at Restaurant' %>
+                <%= radio_button_tag :location, 'at the restaurant', value: "1" %><br />
+                <%= label_tag 'different location', 'Dining at a different location' %>
+                <%= radio_button_tag :location, 'different location', value: "2" %><br />
                 <%= text_field_tag :address, nil, placeholder: "Delivery address", size: "60" %>
                 <h2>What date and time will this event be?</h2>
                 <%= text_field_tag :date, nil, size: "60" %>
@@ -97,10 +97,10 @@
                 <p>Please enter a valid email address for us to follow up with.</p>
                 <%= text_field_tag :email, nil, size: "60" %>
                 <h2>To Where Should We Donate Meals?</h2>
-                <%= label_tag 'local', 'Locally - www.kidsfoodbasket.org' %>
-                <%= radio_button_tag 'donation', 'local', value: 'locally' %>
-                <%= label_tag 'global', 'Globally - www.worldvision.org' %>
-                <%= radio_button_tag 'donation', 'global', value: 'globally' %><br />
+                <%= label_tag 'locally', 'Locally - www.kidsfoodbasket.org' %>
+                <%= radio_button_tag :donation, 'locally', value: 'locally' %><br />
+                <%= label_tag 'globally', 'Globally - www.worldvision.org' %>
+                <%= radio_button_tag :donation, 'globally', value: 'globally' %><br />
                 <h2>Bear with us as we grow. Is there any feedback you have about this form or about this process?</h2>
                 <%= text_area_tag :feedback, nil, rows: "10", cols: "60" %><br />
                 <%= image_submit_tag "organizers/organizers-submit.png" %>
