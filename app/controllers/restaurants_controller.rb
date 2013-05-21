@@ -12,9 +12,9 @@ class RestaurantsController < ApplicationController
   	UserMailer.restaurant_signup(email, name).deliver
 
   	@n = Notification.create
-	@n.content = "Name: #{name}, Email: #{email}"
-	@n.ticker = "A restaurant signup"
-	@n.save
+  	@n.content = "Name: #{name}, Email: #{email}"
+  	@n.ticker = "A restaurant signup"
+  	@n.save
   end
 
 end

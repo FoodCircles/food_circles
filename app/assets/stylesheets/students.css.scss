@@ -1,3 +1,142 @@
-// Place all the styles related to the students controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#about {
+	/*background: url(students-crowd.png) center bottom no-repeat;*/
+	background-size: 100%;
+}
+
+#students {
+	display: inline-block;
+	padding-top: 50px;
+}
+
+#students-intro p {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#students-photos {
+	display: block;
+	float: left;
+	width: 450px;
+}
+
+#students-steps {
+	display: block;
+	float: left;
+	width: 450px;
+	padding-top: 50px;
+}
+
+#students-steps img {
+	margin-bottom: 80px
+}
+
+#students-steps p {
+	margin-bottom: 120px;
+	line-height: 30px;
+}
+
+#students-form {
+	width: 600px;
+	margin: 200px auto;
+	color: white;
+	font-size: 14px;
+	font-family: "pragmatica-web", sans-serif;
+	width: 380px;
+}
+
+#students-form input {
+	font-size: 14px;
+	font-family: "pragmatica-web", sans-serif;
+	width: 380px;
+}
+
+#students-form h2 {
+	color: white;
+}
+
+#students-form p {
+	width: 400px;
+	margin: 30px auto;
+	font-style: italic; 
+	line-height: 16px;
+}
+
+#students-email {
+	margin-bottom: 5px;
+}
+
+#crowd {
+	text-align: center;
+}
+
+.menu-footer li {
+	display: inline;
+}
+
+.white {
+	color: white;
+}
+
+.white a {
+	color: white;
+}
+
+.white a:hover {
+	text-decoration: underline;
+}
+
+.menu-footer {
+	margin-bottom: 30px;
+}
+
+.copyright {
+	margin-bottom: 30px;
+}
+
+.payments {
+	margin-bottom: 30px;
+}
+
+#students-form .submit-image {
+	margin: 10px 0 10px 0;
+	color: white;
+	font-size: 24px;
+	font-weight: 500;
+	width: 400px;
+	padding: 10px 0;
+	border-radius: 8px;
+	background-color: #b46c6d;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b46c6d), to(#a44b4c));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #b46c6d, #a44b4c);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #b46c6d, #a44b4c);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #b46c6d, #a44b4c);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #b46c6d, #a44b4c);
+}
+
+#students-form .submit-image:hover {
+	background-color: #6c1b1b;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6c1b1b), to(#894242));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #6c1b1b, #894242);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #6c1b1b, #894242);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #6c1b1b, #894242);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #6c1b1b, #894242);
+
+}
