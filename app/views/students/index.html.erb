@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/students.css">
+    
+    <script>
+        var _e = document.getElementsByTagName('html')[0];
+        _e.className = _e.className.replace(/no-js/, '');
+    </script>
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+    <script type="text/javascript" src="//use.typekit.net/mqt8ffa.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=148554958654775";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="about">
+    <div class="container">
+        <h2>Kickstart Buy One, Feed One on Campus</h2>
+        <div id="students-intro">
+        <p>Foodcircles is a website and mobile app that lets you feed a child in need by just eating out. We offer drinks, desserts, and appetizers at restaurants starting at $1. Every dollar spent is donated to feed hungry children.</p>
+        <p>Starting Foodcircles in your area isn't paid, but with the good you'll be doing, the free swag you'll be getting, and the fun you'll be having it might feel like it! Check out the steps to starting FoodCircles and apply below.</p>
+        </div>
+
+    <div id="students">
+
+        <div id="students-photos">
+            <%= image_tag "students/students-1.jpg" %>
+            <%= image_tag "students/students-2.jpg" %>
+            <%= image_tag "students/students-3.jpg" %>
+            <%= image_tag "students/students-4.jpg" %>
+            <%= image_tag "students/students-5.jpg" %>
+            <%= image_tag "students/students-6.jpg" %>
+            <%= image_tag "students/students-7.jpg" %>
+            <%= image_tag "students/students-8.jpg" %>
+            <%= image_tag "students/students-9.jpg" %>
+            <%= image_tag "students/students-10.jpg" %>
+
+        </div>
+
+        <div id="students-steps">
+            <%= image_tag "students/students-step1.png" %>
+            <p>So it turns out, we can’t do a lot of things ourselves.  We need a team.  Far and away, this’ll be the most important decision you make, Commander.  Think of 2-4 individuals you know who are disciplined, wise, and passionate, and start a student organization with them, dedicated to helping people eat powerfully.  Sweet spot for teams are 3-5, including you.</p>
+            <%= image_tag "students/students-step2.png" %>
+            <p>When we do good for others, it’s rewarding to feel connected to them. That’s why it’s important to find a local nonprofit that your community trusts and can get behind.  You’ll want to seek and partner with a hunger-fighting organization in your area that can provide at least one nutrious meal to a child in need for every $1 received.</p>
+            <%= image_tag "students/students-step3.png" %>
+            <p>When restaurants advertise on our site and app, they get to meet new customers while doing good, two things they love.  We think getting introduced from the nonprofit you partner with (or professors, etc.) to restaurant owners they know is the best way to build your initial restaurant list, but there’s always the tried-and-true method of just walking in and asking for a meeting (that’s how we did it). </p>
+            <%= image_tag "students/students-step4.png" %>
+            <p>This is where good starts to happen. Fan the flames though awareness events like Dollar Lunch Day, coffeeshop &amp; hotel partnerships, <strong>Social Butterfly</strong> mixers, and more!  We’ll even buy you and 5 students lunch so you can hear about their experience with FoodCircles and what they want to see next.</p>
+            <%= image_tag "students/students-step5.png" %>
+            <p>Keep our brains on fire with new restaurant options, field reports from the nonprofit, and by sharing the coolest and latest from our restaurants and local foodies on your Fan Page and Twitter.  We’ll also have special programs for new nonprofits that want to get involved and local companies looking to repurpose their dining. After all, who doesn’t eat out?</p>
+            
+        </div>
+        
+    </div>
+        
+     </div>
+
+     <div id="crowd">
+
+         <%= form_tag students_path, method: :post do %>
+            <h2>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h2>
+             <%= text_field_tag :students_email, nil, :placeholder => "you@email.com" %><br />
+             <%= image_submit_tag "students/students-signup.png" %>
+             <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
+         <% end %>
+    </div>   
+
+    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<script>
+$('.teampick a').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    if ($this.parent().is('.active')) return;
+    $('.teampick .active').removeClass('active');
+    $this.parent().addClass('active');
+    
+    var $current = $('.teammember.active'),
+        $dest    = $($this.attr('href')),
+        offset   = $current.position();
+    
+    $current.css({
+        top: offset.top,
+        left: offset.left,
+        position: 'absolute'
+    }).animate({
+        opacity: 0
+    }, function(){
+        $(this).removeClass('active').css({
+            position: 'static',
+            opacity: 1
+        });
+    });
+    $dest.css({
+        opacity: 0
+    }).addClass('active').animate({
+        opacity: 1
+    });
+    
+});
+</script>
+</body>
+</html>
