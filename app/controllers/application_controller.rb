@@ -159,11 +159,11 @@ class ApplicationController < ActionController::Base
     @gr_kids = Reservation.find_by_sql(gr_kids)
     @world_kids=Reservation.find_by_sql(world_kids)
 
-
-
   end
 
-
-
+  # def valid_email?(email)
+  #  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  #  email.present? && (email =~ VALID_EMAIL_REGEX)
+  # end
 end
 

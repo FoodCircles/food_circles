@@ -14021,8 +14021,6 @@ Served asset /home/social.png - 304 Not Modified (0ms)
  AND i.relam = am.oid
  ORDER BY i.relname
 <<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
 
   [1m[36m (10.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
   [1m[35m (1.6ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'
@@ -18592,17 +18590,6 @@ Served asset /home/pic01.jpg - 304 Not Modified (0ms)
   [1m[35m (1.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
   [1m[36m (9.6ms)[0m  [1mSELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'[0m
   [1m[35m (1.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
-=======
-  [1m[36m (0.8ms)[0m  [1mSET search_path TO public,postgis[0m
-  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
-  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
-  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
-  [1m[36m (0.7ms)[0m  [1mSET search_path TO public,postgis[0m
-  [1m[36m (0.6ms)[0m  [1mSET search_path TO public,postgis[0m
-  [1m[36m (0.2ms)[0m  [1mSET search_path TO public,postgis[0m
-  [1m[35m (12.3ms)[0m  SELECT * FROM geometry_columns WHERE f_table_name='schema_migrations'
-  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
->>>>>>> Stashed changes
 Migrating to DeviseCreateUsers (20120501170115)
 Migrating to CreateVenues (20120501171335)
 Migrating to CreateOpenTimes (20120501171708)
@@ -67852,4 +67839,10 @@ Served asset /slide-04.jpg - 304 Not Modified (0ms)
 =======
   [1m[36m (0.4ms)[0m  [1mSET search_path TO public,postgis[0m
 >>>>>>> adding-for-nonprofits
+<<<<<<< HEAD
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+=======
 >>>>>>> 4c3e0670971c1d55c4221df09949f64fb2a6c4e9
+>>>>>>> b3ee0dfc9ce159ed71b9362e469f570970dc0eea

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -11,9 +10,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/restaurants.css">
-    
     <script>
         var _e = document.getElementsByTagName('html')[0];
         _e.className = _e.className.replace(/no-js/, '');
@@ -36,84 +32,94 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="about">
+    <div id="headline">
     <div class="container">
-        <h2>Acquire customers while feeding hungry children</h2>
-        
-        <div class="placard">
-            <div class="placard-heading alpha">
-                <h3>A SIMPLE 3 STEP GUIDE TO USING FOODCIRCLES</h3>
-            </div>
 
-            <div class="steps alpha">
-                <div class="step1">
-                    <%= image_tag "mealupgrade.png" %>
-                    <p>Add appetizers, desserts, or drinks to an entree.</p>
+        <h1>Get Lunch Togther</h1>
+        <p>CHAT ON A MAP + COMPANY TRACKING + COORDINATE PUBLICALLY OR PRIVATELY</p>
+        <a href="#companies-form"><%= image_tag "companies/companies-invite.png", id: "invite" %></a>
+        <div id="chatapp-image">
+            <%= image_tag "companies/companies-chatapp.png" %>
+        </div>
+
+    </div> <!--container -->
+    </div>
+
+    <div id="white-section">
+
+        <div class="container">
+
+            <div id="companies-chat" class="grid">
+                <div class="left-section">
+                    <h1>Chat on a map</h1>
+                    <p>Some random copy goes here. Some random copy goes here. Some random copy goes here.</p>
                 </div>
-                <div class="step2">
-                    <%= image_tag "sellit.png" %>
-                    <p>We will promote and sell the upgraded meal to our base of customers.</p>
-                </div>
-                <div class="step3">
-                    <%= image_tag "dinein.png" %>
-                    <p>Hey! Let's go into this restaurant. It has a cool awning. Something about cheese and peanut butter. Hey! Let's go into this restaurant. It has a cool awning. Hey! Let's go into this restaurant.</p>
+                <div class="right-section">
+                    <%= image_tag "companies/companies-chat.png" %>
                 </div>
                 
             </div>
-        </div>
 
-        <div class="placard">
+            <div id="companies-tracking" class="grid">
 
-            <%= image_tag "stringleft.png", :class => "stringleft"%>
-            <%= image_tag "stringright.png", :class => "stringright"%>
+                 <div class="left-section">
+                    <%= image_tag "companies/companies-tracking.png" %>
+                </div>
+                <div class="right-section">
+                    <h1>Company tracking</h1>
+                    <p>Some random copy goes here. Some random copy goes here. Some random copy goes here.</p>
+                </div>
+                
+            </div>
+
+            <div id="companies-coordinate" class="grid">
+
+                 <div class="left-section">
+                    <h1>Coordinate Publicly Or Privately</h1>
+                    <p>Some random copy goes here. Some random copy goes here. Some random copy goes here.</p>
+                    
+                </div>
+                <div class="right-section">
+                    <%= image_tag "companies/companies-coordinate.png" %>
+                </div>
+                
+            </div>
             
-            <div class="placard-heading">
-            <h1>BY THE NUMBERS</h1>
+            <div id="companies-form">
+
+            <%= form_tag companies_path, method: :post do %>
+                <%= text_field_tag :company, nil, :placeholder => "company"%>
+                <%= text_field_tag :name, nil, :placeholder => "name"%>
+                <%= text_field_tag :email, nil, :placeholder => "email"%>
+                <%= image_submit_tag "companies/companies-invite.png", id: "submit-image" %>
+            <% end %>
+            <p><strong>Get Signed Up</strong></p>
+            <p>Currently open to companies only. Sign up to get more info.</p>
+
             </div>
-            <div class="steps">
-                <div class="step1">
-                    <p><span class="leadchar">3 of 4</span> diners we talked to say that <strong>Buy One, Feed One</strong> philosophy at certain restaurants affects where they decide to eat out.</p>
-                </div>
-                <div class="step2">
-                   <p><span class="leadchar">$3</span> is the average cost of a donated appetizer. The value? Meeting a high quality customer who shares your belief that <strong>no child</strong> should <strong>go hungry</strong>.</p> 
-                </div>
-                <div class="step3">
-                    <p><span class="leadchar">$1</span> is the cost to a provide a meal to a child in need. We <strong>do not</strong> keep any <strong>%</strong> of the diner's donation so the good you're doing stays transparent.</p>
-                </div>
+
+
+        </div> <!-- container -->
+
+    </div>
+
+        <div id="menu-footer">
+            <div class="container">
+            <ul>
+                <li><a href="restaurants.html">FOR RESTAURANTS</a> /</li>
+                <li><a href="companies.html" class="active">FOR COMPANIES</a> /</li></a>
+                <li><a href="nonprofits.html">FOR NON-PROFITS</a> /</li>
+                <li><a href="organizers.html">EVENT ORGANIZERS</a> /</li>
+                <li><a href="students.html">FOR STUDENTS</a> /</li>
+                <li><a href="socialbutterflies.html">SOCIAL BUTTERFLIES</a></li>
+            </ul>
             </div>
-            
-        </div>
+         </div>
+        
 
-        <div class="placard omega">
-            <%= image_tag "stringleft.png", :class => "stringleft"%>
-            <%= image_tag "stringright.png", :class => "stringright"%>
-            <div class="placard-heading">
-            <h1>REQUEST AN INVITE</h1>
-                <br />
-                <%= form_tag companies_path, method: :post do %>
-                    <%= label_tag 'join', 'JOIN THE CAUSE' %>
-                    <%= text_field_tag :company, nil, :placeholder => "company"%>
-                    <%= text_field_tag :name, nil, :placeholder => "name"%>
-                    <%= text_field_tag :email, nil, :placeholder => "email"%>
-                    <%= submit_tag nil, :class => "button" %>
-                <% end %>
-            </div>
-        </div>
-    </div>
-</div>
+    </div> <!-- white section -->
 
 
-
-<div id="fbcomments">
-    <div class="container">
-        <h4>Unanswered question? Email ut as <a href="mailto:hey@foodcircles.net" class="mailus">hey@foodcircles.net</a> or comment below.</h4>
-    </div>
-    <div class="container">
-        <div class="fb-container">
-            <div class="fb-comments" data-href="http://www.foodcircles.net/faq" data-width="784" data-num-posts="10"></div>
-        </div>
-    </div>
-</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
