@@ -1,7 +1,10 @@
 class CompaniesController < ApplicationController
   def index
-    if params[:email]
+  	if(params[:email])
+    #if valid_email?(params[:email])
       signup
+    #else
+    #  flash[:error] = 'Invalid email address.'
     end
   end
 
