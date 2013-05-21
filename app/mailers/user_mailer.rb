@@ -121,6 +121,6 @@ class UserMailer < ActionMailer::Base
   end
 
   def organizers_notify(email, location, address, date, num_diners, occassion, budget, food_preferences, donation, feedback)
-    mail(:to => 'jonathan@foodcircles.net', :subject => "New Organizers Request", :body => "An organizer would like to join Food Circles. They will be dining #{location} on #{date} with #{num_diners}. This is for #{occassion} with a budget of #{budget}. They have #{food_preferences} food preferences. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
+    mail(:to => 'jonathan@foodcircles.net', :subject => "New Organizers Request", :body => "An organizer would like to join Food Circles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
   end
 end
