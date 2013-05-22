@@ -2,6 +2,8 @@
 // All this logic will automatically be available in application.js.
 //= require jquery.carouFredSel-6.2.1-packed
 //= require jquery.colorbox
+//= require jquery.isotope.min
+//= require jquery.infinitescroll.min
 
 (function($){
 
