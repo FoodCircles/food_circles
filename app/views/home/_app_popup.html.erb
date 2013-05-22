@@ -11,6 +11,7 @@
 					<p>Enter your 10-digit US mobile number and we’ll send a download link directly to your phone</p>
 					<% form_tag home_path, method: :post do %>
 						<%= text_field_tag :phone, nil, :placeholder => "(xxx) xxx-xxxx", :class => "field extra-big" %>
+						<%= hidden_field_tag :type, 'iphone' %>
 						<%= submit_tag "Send link", :class => "btn-medium submit" %>
 						<small class="form-caption">Message and data rates may apply.</small>
 					<% end %>
@@ -22,6 +23,7 @@
 					<p>Enter your 10-digit US mobile number and we’ll send a download link directly to your phone</p>
 					<% form_tag home_path, method: :post do %>
 						<%= text_field_tag :phone, nil, :placeholder => "(xxx) xxx-xxxx", :class => "field extra-big" %>
+						<%= hidden_field_tag :type, 'android' %>
 						<%= submit_tag "Send link", :class => "btn-medium submit" %>
 						<small class="form-caption">Message and data rates may apply.</small>
 					<% end %>
