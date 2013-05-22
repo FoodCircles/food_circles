@@ -79,3 +79,7 @@
               - if not offer.category.empty?
                 tags:
                 = raw offer.category.collect { |cat| link_to cat.name, cat }.join(",")
+
+  .div 
+    %a{href: app_popup_path} 
+      get the app
