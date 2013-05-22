@@ -18,6 +18,8 @@ class HomeController < ApplicationController
     end
     @total_vouchers = @total_vouchers.round
     @adjusted_total = 3 * @total_vouchers / 4
+
+    app_popup
   end
 
   def cater
@@ -25,5 +27,9 @@ class HomeController < ApplicationController
 
 
   def thanks
+  end
+
+  def app_popup
+    
   end
 end

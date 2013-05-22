@@ -49,9 +49,11 @@
                 - percent = (offer.available.to_f / offer.total.to_f) * 100
                 - if (offer.available.to_i.nil? or offer.available.to_i == 0)
                   .bar{style: "height: 0"}
-                    %a{href: "#"}
-                      .block
-                        %small Notify me
+                    %span#pbar
+                      %a{href: notify_signup_path}
+                        .block
+                          %span#overlay
+                          %small Notify me
                 - else
                   .bar{style: "height:" + percent.to_s + "%"}
                     .block

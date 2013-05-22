@@ -55309,3 +55309,9 @@ ActionController::RoutingError (No route matches [GET] "/images/original/missing
 
 Started GET "/assets/slide-04.jpg" for 127.0.0.1 at 2013-05-22 14:29:23 -0400
 Served asset /slide-04.jpg - 304 Not Modified (7ms)
+Connecting to database specified by database.yml
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
