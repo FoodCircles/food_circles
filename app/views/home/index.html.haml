@@ -47,7 +47,7 @@
             .thumb
               .progress
                 - percent = (offer.available.to_f / offer.total.to_f) * 100
-                - if (offer.available.to_i.nil? or offer.available.to_i == 0)
+                - if (offer.available.nil? or offer.available.to_i == 0)
                   .bar{style: "height: 0"}
                     %span#pbar
                       %a{href: notify_signup_path}
