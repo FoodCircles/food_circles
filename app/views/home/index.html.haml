@@ -46,11 +46,25 @@
             %h3= link_to offer.venue.name, offer.venue
             .thumb
               .progress
-                - percent = (offer.available.to_f / offer.total) * 100
-                .bar{style: "height:" + percent.to_s + "%"}
-                .block
-                  %strong= offer.available
-                  %small left
+                - percent = (offer.available.to_f / offer.total.to_f) * 100
+                - if (offer.available.nil? or offer.available.to_i == 0)
+                  .bar{style: "height: 0"}
+                    %span#pbar
+                      %a{href: notify_signup_path}
+                        .block
+                          %span#overlay
+                          %small Notify me
+                - else
+                  .bar{style: "height:" + percent.to_s + "%"}
+                    .block
+                      %strong= offer.available.to_i
+                      %small left
+                  
+                  
+                /  .bar{style: "height:" + percent.to_s + "%"}
+                /  .block
+                /    %strong= offer.available.to_i
+                /    %small left
               %a{href: "#"}
                 .price
                   %strong= number_to_currency(offer.price, :precision => 0)
@@ -65,3 +79,7 @@
               - if not offer.category.empty?
                 tags:
                 = raw offer.category.collect { |cat| link_to cat.name, cat }.join(",")
+
+  .div 
+    %a{href: app_popup_path} 
+      get the app

@@ -161,6 +161,11 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def mobile_app(p)
+    b = "Download the Apple app: https://itunes.apple.com/us/app/foodcircles/id526107767?mt=8 Or, download the Android app: https://play.google.com/store/apps/details?id=co.foodcircles"
+    sendText(p, b)
+  end
+
   # def valid_email?(email)
   #  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   #  email.present? && (email =~ VALID_EMAIL_REGEX)
