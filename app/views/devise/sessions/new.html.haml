@@ -1,5 +1,5 @@
 / = render :partial => 'partials/header'
-#basicContainer
+#basicContainer.content
   .tightWrapper
     %h2 Sign in
     = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
@@ -17,3 +17,4 @@
       %div
         = f.submit "Sign in"
     = render 'links'
+

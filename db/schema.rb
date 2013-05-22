@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517185604) do
+ActiveRecord::Schema.define(:version => 20130521163939) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -279,7 +279,10 @@ ActiveRecord::Schema.define(:version => 20130517185604) do
     t.decimal  "feecharge",                                                                    :default => 0.0
     t.boolean  "apply_able",                                                                   :default => false
     t.string   "email",                                                                        :default => "venue@example.com"
+    t.string   "slug"
   end
+
+  add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true
 
   create_table "vouchers", :force => true do |t|
     t.date     "start_date"

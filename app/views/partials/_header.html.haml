@@ -22,12 +22,12 @@
         %form{action: "", method: "post", class: "sign-form"}
           / <i class="arrow-top"><i class="arrow-top"></i></i>
           .row
-            %a{href: "#", class: "btn-facebook"}
+            %a{href: "/users/auth/facebook", class: "btn-facebook"}
               Sign up
               %i{class: "icon-btn-facebook"}
             %input{type: "text", class: "field medium", value: "new email address", title: "new email address"}
           .row
-            %a{href: "#", class: "btn-twitter"}
+            %a{href: "/users/auth/twitter", class: "btn-twitter"}
               Sign up
               %i{class: "icon-btn-twitter"}
             %input{type: "text", class: "field medium", value: "new password", title: "new password"}
@@ -38,7 +38,10 @@
 
             %p{class: "form-caption"}
               Have an account?
-              = link_to('Sign in', main_app.new_user_session_path) 
+              - if current_user
+                = link_to('Logout', main_app.destroy_user_session_path, :method => :delete)
+              - else
+                = link_to('Sign in', main_app.new_user_session_path)
 
     .navigation
       %ul
