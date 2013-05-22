@@ -1,0 +1,33 @@
+<div class="popup">
+	<div class="app-request">
+		<ul class="tabs-nav">
+			<li class="active"><a href="#tab-iphone">iPhone</a></li>
+			<li><a href="#tab-android">Android</a></li>
+		</ul><!-- /.tabs-nav -->
+		<div class="tabs-cnt">
+			<div class="tab-cnt active" id="tab-iphone">
+				<div class="phone-module">
+					<h2>Arm yourself for the streets</h2>
+					<p>Enter your 10-digit US mobile number and we’ll send a download link directly to your phone</p>
+					<% form_tag home_path, method: :post do %>
+						<%= text_field_tag :phone, nil, :placeholder => "(xxx) xxx-xxxx", :class => "field extra-big" %>
+						<%= submit_tag "Send link", :class => "btn-medium submit" %>
+						<small class="form-caption">Message and data rates may apply.</small>
+					<% end %>
+				</div><!-- /.phone-module -->
+			</div><!-- /#tab-iphone.tab-cnt -->
+			<div class="tab-cnt" id="tab-android">
+				<div class="phone-module">
+					<h2>Arm yourself for the streets</h2>
+					<p>Enter your 10-digit US mobile number and we’ll send a download link directly to your phone</p>
+					<% form_tag home_path, method: :post do %>
+						<%= text_field_tag :phone, nil, :placeholder => "(xxx) xxx-xxxx", :class => "field extra-big" %>
+						<%= submit_tag "Send link", :class => "btn-medium submit" %>
+						<small class="form-caption">Message and data rates may apply.</small>
+					<% end %>
+				</div><!-- /.phone-module -->
+			</div><!-- /#tab-android.tab-cnt -->
+		</div><!-- /.tabs-cnt -->
+		<a href="#" class="cancel">Cancel</a>
+	</div><!-- /.app-request -->
+</div><!-- /.popup -->
