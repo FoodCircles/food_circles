@@ -17,4 +17,4 @@ test/version_tmp
 _yardoc
 doc/
 
-/config/database.yml
+database.yml

@@ -233,3 +233,16 @@ h4, h5, h6 {
     #home .index .item .tags strong {
       font-size: 10px;
       text-transform: uppercase; }
+
+
+//TESTING
+
+/*=== Popups ===*/
+.popup { margin:30px; box-shadow:0 2px 7px rgba(0,0,0,0.18); position:relative;
+  background:#f2ede4;
+  background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f2ede4), to(#f5f2ec)); 
+  background-image:-webkit-linear-gradient(#f2ede4, #f5f2ec); 
+  background-image:-moz-linear-gradient(#f2ede4, #f5f2ec); 
+  background-image:-o-linear-gradient(#f2ede4, #f5f2ec); 
+  background-image:linear-gradient(#f2ede4, #f5f2ec); 
+}
