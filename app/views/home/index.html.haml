@@ -42,7 +42,7 @@
               dinner plans in 60 seconds
       .products-tiles
         - @offers.each do |offer|
-          %div{class: "tile blue", :"data-city" => "chicago", :"data-cat" => "italian"}
+          %div{class: "tile blue" + ( offer.available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
             %h3= link_to offer.venue.name, offer.venue
             .thumb
               .progress
@@ -50,10 +50,9 @@
                 - if (offer.available.nil? or offer.available.to_i == 0)
                   .bar{style: "height: 0"}
                     %span#pbar
-                      %a{href: notify_signup_path}
-                        .block
-                          %span#overlay
-                          %small Notify me
+                      %a.block{href: notify_signup_path}
+                        %span#overlay
+                        %small Notify me
                 - else
                   .bar{style: "height:" + percent.to_s + "%"}
                     .block
