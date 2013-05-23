@@ -36,7 +36,7 @@ module RailsAdmin
         @months_before = 1
       end
 
-      #tkxel_dev: Calculate total number of days for last month wether 27,30,31 etc .
+      #tkxel_dev: Calculate total number of days for last month whether 27,30,31 etc .
       sql = "select date_trunc('month', current_date - INTERVAL '#{@months_before} month') as start_date, date_trunc('month', current_date - INTERVAL '#{@months_before} month')+'1month'::interval-'1day'::interval as end_date;"
       @previous_month_dates = Reservation.find_by_sql(sql)
       start_date = @previous_month_dates[0][:start_date]
@@ -58,12 +58,13 @@ module RailsAdmin
         correct_venue_id_format = correct_venue_id_format + listing_id.to_s + ","
       end
 
-      #tkxel_dev: remove Comma from the last index of the array
-      correct_venue_id_format[correct_venue_id_format.length-1] = " "
+      if correct_venue_id_format.length > 0
+        #tkxel_dev: remove Comma from the last index of the array
+        correct_venue_id_format[correct_venue_id_format.length-1] = " "
 
-      find_venue = "select name,id from venues where id IN(#{correct_venue_id_format})"
-      @venue_names = Venue.find_by_sql(find_venue)
-
+        find_venue = "select name,id from venues where id IN(#{correct_venue_id_format})"
+        @venue_names = Venue.find_by_sql(find_venue)
+      end
 
     end
 
