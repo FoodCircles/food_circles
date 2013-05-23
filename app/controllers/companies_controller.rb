@@ -25,7 +25,7 @@ class CompaniesController < ApplicationController
 
   def valid_email?(email)
     valid = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    email.present? && (email =~ VALID_EMAIL_REGEX)
+    email.present? && (email =~ valid)
   end
 
 end
