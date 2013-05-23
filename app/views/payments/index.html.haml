@@ -1,0 +1,23 @@
+%h1 Listing payments
+
+%table
+  %tr
+    %th User
+    %th Amount
+    %th Stripe charge token
+    %th
+    %th
+    %th
+
+  - @payments.each do |payment|
+    %tr
+      %td= payment.user
+      %td= payment.amount
+      %td= payment.stripe_charge_token
+      %td= link_to 'Show', payment
+      %td= link_to 'Edit', edit_payment_path(payment)
+      %td= link_to 'Destroy', payment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Payment', new_payment_path

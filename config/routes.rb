@@ -44,6 +44,7 @@ Foodcircles::Application.routes.draw do
   resources :nonprofits
   resources :students
   resources :organizers
+  resources :payments
 
   match '/app' => 'app#index'
   match '/getVenue' => 'app#getVenue'
