@@ -10,9 +10,8 @@ Foodcircles::Application.routes.draw do
   match '/students' => 'students#index', :as => :students
   match '/organizers' => 'organizers#index', :as => :organizers
   match '/restaurants' => 'restaurants#index', :as => :restaurants
-  match '/butterflies' => 'socialbutterflies#index', :as => :socialbutterflies
+  match '/butterflies' => 'socialbutterflies#index', :as => :butterflies
   match '/timeline' => 'timeline#index', :as => :timeline
-  match '/students' => 'students#index', :as => :students
   #match '/payment' => 'payment#index', :as => :payment
   match '/payment/stripe' => 'payment#stripe', :as => :stripe
 
