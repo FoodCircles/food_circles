@@ -1,6 +1,7 @@
 #about {
-	/*background: url(students-crowd.png) center bottom no-repeat;*/
+	background: url(students-crowd.png) center bottom no-repeat;
 	background-size: 100%;
+	padding-bottom:210px;
 }
 
 #students {
@@ -140,3 +141,13 @@
 	background: -o-linear-gradient(top, #6c1b1b, #894242);
 
 }
+
+h2 {
+  font-size: 24px;
+  color: #7e7e7e;
+  text-align: center;
+  font-family: "museo-slab", "Neutraface Slab", serif;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  line-height: 24px; }
