@@ -1,56 +1,93 @@
-.header
-  #logo
-    = link_to "FoodCircles", main_app.root_path
+#header
+  .shell
+    #logo
+      = link_to "FoodCircles", main_app.root_path
 
-  %h2{class: "tagline"}
-    Buy One, Feed One.
+    %h3{class: "tagline"}
+      Buy One, Feed One.
 
-  .header-utils
-    .socials
-      %a{class: "icon-soc-facebook", href: "http://facebook.com/foodcircles"}
-      %a{class: "icon-soc-twitter", href: "https://twitter.com/#!/FoodCircles"}
-      %a{class: "icon-soc-foodcircles", href: "http://blog.foodcircles.net"}
+    #header-utils
+      %ul{class: "social"}
+        %a{class: "icon-soc-facebook", href: "http://facebook.com/foodcircles"}
+        %a{class: "icon-soc-twitter", href: "https://twitter.com/#!/FoodCircles"}
+        %a{class: "icon-soc-foodcircles", href: "http://blog.foodcircles.net"}
 
-    .welcome-line
-      Welcome Back!
-      %a{href: "#"}
-        Your Account
-        %i{class: "arrow-right"}
-      / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
+      .welcome-line
+        Welcome Back!
+        %a{href: "#"}
+          Your Account
+          %i{class: "arrow-right"}
+        / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
 
-      %form{action: "", method: "post", class: "sign-form"}
-        / <i class="arrow-top"><i class="arrow-top"></i></i>
-        .row
-          %a{href: "/users/auth/facebook", class: "btn-facebook"}
-            Sign up
-            %i{class: "icon-btn-facebook"}
-          %input{type: "text", class: "field medium", value: "new email address", title: "new email address"}
-        .row
-          %a{href: "/users/auth/twitter", class: "btn-twitter"}
-            Sign up
-            %i{class: "icon-btn-twitter"}
-          %input{type: "text", class: "field medium", value: "new password", title: "new password"}
-        .form-foot
-          %span{class: "btn-small submit"}
-            Sign up
-            %input{type: "submit", value: ""}
+        %form{action: "", method: "post", class: "sign-form"}
+          / <i class="arrow-top"><i class="arrow-top"></i></i>
+          .row
+            %a{href: "/users/auth/facebook", class: "btn-facebook"}
+              Sign up
+              %i{class: "icon-btn-facebook"}
+            %input{type: "text", class: "field medium", value: "new email address", title: "new email address"}
+          .row
+            %a{href: "/users/auth/twitter", class: "btn-twitter"}
+              Sign up
+              %i{class: "icon-btn-twitter"}
+            %input{type: "text", class: "field medium", value: "new password", title: "new password"}
+          .form-foot
+            %span{class: "btn-small submit"}
+              Sign up
+              %input{type: "submit", value: ""}
 
-          %p{class: "form-caption"}
-            Have an account?
-            - if current_user
-              = link_to('Logout', main_app.destroy_user_session_path, :method => :delete)
-            - else
-              = link_to('Sign in', main_app.new_user_session_path)
+            %p{class: "form-caption"}
+              Have an account?
+              - if current_user
+                = link_to('Logout', main_app.destroy_user_session_path, :method => :delete)
+              - else
+                = link_to('Sign in', main_app.new_user_session_path)
 
-  .navigation
-    %ul
-      %li{class: "active"}
-        = link_to "Home", main_app.root_path
-      %li
-        = link_to "FAQ", main_app.faq_path
+    #nav
+      %ul
+        %li{class: "active"}
+          = link_to "Home", main_app.root_path
         %li
-          %a{href: "#"}
-            About Us
+          = link_to "FAQ", main_app.faq_path
+          %li
+            %a{href: "#"}
+              About Us
+          %li
+            %a{href: "#"}
+              Get Involved
+              %i{class: "arrow-bottom white"}
+            %ul
+              %li
+                = link_to "For Restaurants", main_app.restaurants_path
+              %li
+                = link_to "For Students", main_app.students_path
+              %li
+                = link_to "For Events", main_app.organizers_path
+              %li
+                = link_to "For Companies", main_app.companies_path
+              %li
+                = link_to "For Non-Profits", main_app.nonprofits_path
+              %li
+                = link_to "Social Butterflies", main_app.socialbutterflies_path
+  / %li{:class => "#{ 'active' if controller_name == 'home' }"}
+
+.mini-header
+  .mh-main
+    .container
+      %a{class: "logo", href: root_path}
+      .donation-count
+        %strong 493
+        meals donated to date
+      .account
+        %a{href: "#"}My Account 
+        %i{class: "arrow-right white"}
+      %ul{class: "nav"}
+        %li
+          = link_to "Home", root_path
+        %li
+          = link_to "FAQ", faq_path
+        %li
+          = link_to "About Us", root_path
         %li
           %a{href: "#"}
             Get Involved
@@ -67,5 +104,19 @@
             %li
               = link_to "For Non-Profits", main_app.nonprofits_path
             %li
-              = link_to "Social Butterflies", main_app.socialbutterflies_path
-/ %li{:class => "#{ 'active' if controller_name == 'home' }"}
+              = link_to "Social Butterflies", main_app.socialbutterflies_path 
+
+
+
+  .mh-sub
+    .container
+      .current-goal
+        .current
+          %strong 37
+          %small meals
+        .progress
+          %span{class: "goal"} this week's goal
+          %span{class: "total"} 50 meals
+          %em{class: "bar", style: "width:74%"}
+      %p.getapp Arm yourself for the streets
+      %a.popup-link{href: app_popup_path} get the app
