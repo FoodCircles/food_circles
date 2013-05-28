@@ -32,8 +32,8 @@
           meals
         donated this week
 
-.main
-  .shell
+#home
+  .container
     .products
       .products-head
         .filters
@@ -78,7 +78,5 @@
                 tags:
                 = raw offer.category.collect { |cat| link_to cat.name, cat }.join(",")
 
-  .div 
-    %a.popup-link{href: app_popup_path} 
-      get the app
+
 

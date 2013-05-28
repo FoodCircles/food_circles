@@ -1,16 +1,17 @@
 #header
-  .shell
+  .container
     #logo
       = link_to "FoodCircles", main_app.root_path
 
-    %h3{class: "tagline"}
+    %h3.tagline
       Buy One, Feed One.
 
-    #header-utils
-      %ul{class: "social"}
-        %a{class: "icon-soc-facebook", href: "http://facebook.com/foodcircles"}
-        %a{class: "icon-soc-twitter", href: "https://twitter.com/#!/FoodCircles"}
-        %a{class: "icon-soc-foodcircles", href: "http://blog.foodcircles.net"}
+    .header-utils
+      #social
+        %ul
+          %a{class: "icon-soc-facebook", href: "http://facebook.com/foodcircles"}
+          %a{class: "icon-soc-twitter", href: "https://twitter.com/#!/FoodCircles"}
+          %a{class: "icon-soc-foodcircles", href: "http://blog.foodcircles.net"}
 
       .welcome-line
         Welcome Back!
@@ -19,29 +20,29 @@
           %i{class: "arrow-right"}
         / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
 
-        %form{action: "", method: "post", class: "sign-form"}
-          / <i class="arrow-top"><i class="arrow-top"></i></i>
-          .row
-            %a{href: "/users/auth/facebook", class: "btn-facebook"}
-              Sign up
-              %i{class: "icon-btn-facebook"}
-            %input{type: "text", class: "field medium", value: "new email address", title: "new email address"}
-          .row
-            %a{href: "/users/auth/twitter", class: "btn-twitter"}
-              Sign up
-              %i{class: "icon-btn-twitter"}
-            %input{type: "text", class: "field medium", value: "new password", title: "new password"}
-          .form-foot
-            %span{class: "btn-small submit"}
-              Sign up
-              %input{type: "submit", value: ""}
+      %form{action: "", method: "post", class: "sign-form"}
+        / <i class="arrow-top"><i class="arrow-top"></i></i>
+        .row
+          %a{href: "/users/auth/facebook", class: "btn-facebook"}
+            Sign up
+            %i{class: "icon-btn-facebook"}
+          %input{type: "text", class: "field medium", value: "new email address", title: "new email address"}
+        .row
+          %a{href: "/users/auth/twitter", class: "btn-twitter"}
+            Sign up
+            %i{class: "icon-btn-twitter"}
+          %input{type: "text", class: "field medium", value: "new password", title: "new password"}
+        .form-foot
+          %span{class: "btn-small submit"}
+            Sign up
+            %input{type: "submit", value: ""}
 
-            %p{class: "form-caption"}
-              Have an account?
-              - if current_user
-                = link_to('Logout', main_app.destroy_user_session_path, :method => :delete)
-              - else
-                = link_to('Sign in', main_app.new_user_session_path)
+          %p{class: "form-caption"}
+            Have an account?
+            - if current_user
+              = link_to('Logout', main_app.destroy_user_session_path, :method => :delete)
+            - else
+              = link_to('Sign in', main_app.new_user_session_path)
 
     #nav
       %ul
@@ -54,8 +55,7 @@
               About Us
           %li
             %a{href: "#"}
-              Get Involved
-              %i{class: "arrow-bottom white"}
+              Get Involved ▾             
             %ul
               %li
                 = link_to "For Restaurants", main_app.restaurants_path
@@ -79,8 +79,9 @@
         %strong 493
         meals donated to date
       .account
-        %a{href: "#"}My Account 
-        %i{class: "arrow-right white"}
+        %a{href: "#"}
+          My Account 
+          %i{class: "arrow-right white"}
       %ul{class: "nav"}
         %li
           = link_to "Home", root_path
@@ -91,7 +92,7 @@
         %li
           %a{href: "#"}
             Get Involved
-            %i{class: "arrow-bottom white"}
+            %i{class: "arrow-down white"}
           %ul
             %li
               = link_to "For Restaurants", main_app.restaurants_path
@@ -118,5 +119,6 @@
           %span{class: "goal"} this week's goal
           %span{class: "total"} 50 meals
           %em{class: "bar", style: "width:74%"}
-      %p.getapp Arm yourself for the streets
-      %a.popup-link{href: app_popup_path} get the app
+      %p.getapp 
+        Arm yourself for the streets.
+        %a.popup-link{href: app_popup_path} Get the App

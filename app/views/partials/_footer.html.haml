@@ -1,5 +1,5 @@
-.footer
-  %ul{class: "targets-nav"}
+#footer
+  %ul{class: "footer-nav"}
     %li
       %a{href: restaurants_path} For Restaurants
     %li
@@ -12,3 +12,33 @@
       %a{href: students_path} For Students
     %li
       %a{href: butterflies_path} Social Butterfiles
+
+  .footer-main
+    .container
+      .col
+        .description
+          %strong FoodCircles
+          curates the best local restaurants and offers appetizers/dessert starting at $1. 
+          %strong All
+          of your purchase is donated to put food on the table for hungry children.
+      .col
+        .copyright
+          &copy; 2013 Foodcircles, LLC
+        .secured
+          %i.icon-secure
+          SECURE – PAYMENTS PROCESSED BY PAYPAL
+      .col
+        %ul.quicklinks
+          %li
+            %a{href: "#"} Terms &amp; Privacy
+          %li
+            %a{href: "#"} About Us
+          %li
+            %a{href: faq_path} FAQ
+
+      .footer-social
+        %a{class: "icon-soc-foodcircles", href: "http://blog.foodcircles.net"}
+        %a{class: "icon-soc-facebook", href: "http://facebook.com/foodcircles"}
+        %a{class: "icon-soc-twitter", href: "https://twitter.com/#!/FoodCircles"}
+        %a{class: "icon-soc-apple", href: "https://itunes.apple.com/us/app/foodcircles/id526107767?mt=8"}
+        %a{class: "icon-soc-android", href: "https://play.google.com/store/apps/details?id=co.foodcircles"}

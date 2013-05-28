@@ -23,10 +23,10 @@
     <%= render 'layouts/google-analytics' %>
   </head>
   <body class="<%= current_user ? 'logged-in' : 'not-logged' %>">
-    <div id='container' >
-      <%= render :partial => 'partials/header' %>
+    <div id='wrapper' >
+        <%= render :partial => 'partials/header' %>
+        <%= yield %>
+        <%= render :partial => "partials/footer" %>
     </div>
-    <%= yield %>
-    <%= render :partial => "partials/footer" %>
   </body>
 </html>

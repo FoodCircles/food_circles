@@ -301,7 +301,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 /*=== Header ===*/
 #header { padding:14px 0 22px; position:relative; z-index:9; background:#f1ebe0; }
 #header .container { *zoom:1; }
-#header .container :after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
+#header .container:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 
 
 /*=== Logo ===*/
