@@ -1,0 +1,2 @@
+module PopupsHelper
+end

@@ -10,9 +10,8 @@ Foodcircles::Application.routes.draw do
   match '/students' => 'students#index', :as => :students
   match '/organizers' => 'organizers#index', :as => :organizers
   match '/restaurants' => 'restaurants#index', :as => :restaurants
-  match '/butterflies' => 'socialbutterflies#index', :as => :socialbutterflies
+  match '/butterflies' => 'socialbutterflies#index', :as => :butterflies
   match '/timeline' => 'timeline#index', :as => :timeline
-  match '/students' => 'students#index', :as => :students
   #match '/payment' => 'payment#index', :as => :payment
   match '/payment/stripe' => 'payment#stripe', :as => :stripe
 
@@ -68,8 +67,10 @@ Foodcircles::Application.routes.draw do
   match '/mobi/num_users' => 'mobile#num_users'
   match '/notification' => 'application#notification'
 
-  match '/notify_signup' => 'home#notify_signup'
-  match '/app_popup' => 'home#_app_popup'
+
+  #Popups
+  match '/notify_signup' => 'popups#notify_signup'
+  match '/app_popup' => 'popups#app_popup'
 
 
   match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'

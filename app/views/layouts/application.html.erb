@@ -11,6 +11,8 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
+    <%= stylesheet_link_tag "colorbox", :media => "all" %>
+    <%= stylesheet_link_tag "fonts", :media => "all" %>
     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
     <%= javascript_include_tag "#{controller_name}" %>
 
@@ -21,10 +23,10 @@
     <%= render 'layouts/google-analytics' %>
   </head>
   <body class="<%= current_user ? 'logged-in' : 'not-logged' %>">
-    <div id='container' >
-      <%= render :partial => 'partials/header' %>
+    <div id='wrapper' >
+        <%= render :partial => 'partials/header' %>
+        <%= yield %>
+        <%= render :partial => "partials/footer" %>
     </div>
-    <%= yield %>
-    <%= render :partial => "partials/footer" %>
   </body>
 </html>

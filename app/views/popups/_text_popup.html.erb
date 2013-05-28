@@ -1,0 +1,13 @@
+<div class="popup">
+	<div class="send-text">
+		<div class="phone-module">
+			<h2>text yourself a receipt</h2>
+			<p>Enter your 10-digit US mobile number and we’ll send a download link directly to your phone</p>
+			<% form_tag home_path, method: :post do %>
+					<%= text_field_tag :phone, nil, :placeholder => "(xxx) xxx-xxxx" %>
+					<%= submit_tag "Send link" %>
+				<small class="form-caption">Message and data rates may apply.</small>
+			<% end %>
+		</div><!-- /.phone-module -->
+		<a href="#" class="close-popup">Cancel</a>
+	</div><!-- /.send-text -->

@@ -1,4 +1,4 @@
-.banner
+#hero.banner
   .cnt
     .centerer
       .centerer-inner
@@ -32,8 +32,8 @@
           meals
         donated this week
 
-.main
-  .shell
+#home
+  .container
     .products
       .products-head
         .filters
@@ -51,7 +51,6 @@
                   .bar{style: "height: 0"}
                     %span#pbar
                       %a.block{href: notify_signup_path}
-                        %span#overlay
                         %small Notify me
                 - else
                   .bar{style: "height:" + percent.to_s + "%"}
@@ -79,6 +78,5 @@
                 tags:
                 = raw offer.category.collect { |cat| link_to cat.name, cat }.join(",")
 
-  .div 
-    %a{href: app_popup_path} 
-      get the app
+
+

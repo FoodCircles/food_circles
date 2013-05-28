@@ -22,8 +22,8 @@ class RestaurantsController < ApplicationController
   end
 
   def valid_email?(email)
-    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    email.present? && (email =~ VALID_EMAIL_REGEX)
+    valid = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    email.present? && (email =~ valid)
   end
 
 end
