@@ -11,7 +11,7 @@
     <div class="container">
         <h2>Kickstart Buy One, Feed One on Campus</h2>
         <div id="students-intro">
-        <p>Foodcircles is a website and mobile app that lets you feed a child in need by just eating out. We offer drinks, desserts, and appetizers at restaurants starting at $1. Every dollar spent is donated to feed hungry children.</p>
+        <p>FoodCircles is a website and mobile app that lets you feed a child in need by just eating out. We offer drinks, desserts, and appetizers at restaurants starting at $1. Every dollar spent is donated to feed hungry children.</p>
         <p>Starting Foodcircles in your area isn't paid, but with the good you'll be doing, the free swag you'll be getting, and the fun you'll be having it might feel like it! Check out the steps to starting FoodCircles and apply below.</p>
         </div>
 
@@ -55,13 +55,22 @@
         </div>
         
     </div>
-        
+     
+
+    <!--<div id="crowd">
+        <form action="" id="students-form" onSubmit("$.colorbox();")>
+            <h2>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h2>
+            <input type="text" size="65" value="you@email.com" id="students-email" onblur="if(this.value == '') { this.value='you@email.com'}" onfocus="if (this.value == 'you@email.com') {this.value=''}"><br />
+            <input type="submit" value="Sign Up" class="submit-image">
+            <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
+        </form>
+    </div>-->        
     <div id="crowd">
         <div id = 'students-form'>
          <%= form_tag students_path, method: :post do %>
             <h2>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h2>
-             <%= text_field_tag :students_email, nil, :placeholder => "you@email.com", :size => "65"%><br />
-             <%= image_submit_tag "students/students-signup.png" %>
+             <%= text_field_tag :students_email, nil, :placeholder => "you@email.com", :style => "margin-bottom: 5px; width:400px"%><br />
+             <%= image_submit_tag "students/students-signup.png", :style => "width:400px" %>
              <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
          <% end %>
      </div>
@@ -111,4 +120,11 @@ $('.teampick a').on('click', function(e) {
     });
     
 });
+</script>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script>
+
+    $("form").colorbox({inline:true, href:"#hidden"});
 </script>
