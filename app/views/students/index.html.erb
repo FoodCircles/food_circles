@@ -1,31 +1,3 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/students.css">
-    
-    <script>
-        var _e = document.getElementsByTagName('html')[0];
-        _e.className = _e.className.replace(/no-js/, '');
-    </script>
-    <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-    <![endif]-->
-    <script type="text/javascript" src="//use.typekit.net/mqt8ffa.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -39,7 +11,7 @@
     <div class="container">
         <h2>Kickstart Buy One, Feed One on Campus</h2>
         <div id="students-intro">
-        <p>Foodcircles is a website and mobile app that lets you feed a child in need by just eating out. We offer drinks, desserts, and appetizers at restaurants starting at $1. Every dollar spent is donated to feed hungry children.</p>
+        <p>FoodCircles is a website and mobile app that lets you feed a child in need by just eating out. We offer drinks, desserts, and appetizers at restaurants starting at $1. Every dollar spent is donated to feed hungry children.</p>
         <p>Starting Foodcircles in your area isn't paid, but with the good you'll be doing, the free swag you'll be getting, and the fun you'll be having it might feel like it! Check out the steps to starting FoodCircles and apply below.</p>
         </div>
 
@@ -50,6 +22,15 @@
             <%= image_tag "students/students-2.jpg" %>
             <%= image_tag "students/students-3.jpg" %>
             <%= image_tag "students/students-4.jpg" %>
+    <div style="display:none">  
+        <div id="hidden">
+            <h1>Thank you for signing up. We'll contact you soon to get your campaign moving.</h1><br />
+            <h2>Like us on <a href="#">Facebook</a><br />
+            Follow us on <a href="#">Twitter</a></h2>
+            <h2><em>or</em></h2>
+            <h2><a href="#">View Restaurants</a></h2>
+        </div>   
+    </div>          
             <%= image_tag "students/students-5.jpg" %>
             <%= image_tag "students/students-6.jpg" %>
             <%= image_tag "students/students-7.jpg" %>
@@ -74,20 +55,38 @@
         </div>
         
     </div>
-        
-     </div>
+     
 
-     <div id="crowd">
-
+    <!--<div id="crowd">
+        <form action="" id="students-form" onSubmit("$.colorbox();")>
+            <h2>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h2>
+            <input type="text" size="65" value="you@email.com" id="students-email" onblur="if(this.value == '') { this.value='you@email.com'}" onfocus="if (this.value == 'you@email.com') {this.value=''}"><br />
+            <input type="submit" value="Sign Up" class="submit-image">
+            <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
+        </form>
+    </div>-->        
+    <div id="crowd">
+        <div id = 'students-form'>
          <%= form_tag students_path, method: :post do %>
             <h2>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h2>
-             <%= text_field_tag :students_email, nil, :placeholder => "you@email.com", :size => "65"%><br />
-             <%= image_submit_tag "students/students-signup.png" %>
+             <%= text_field_tag :students_email, nil, :placeholder => "you@email.com", :style => "margin-bottom: 5px; width:400px"%><br />
+             <%= image_submit_tag "students/students-signup.png", :style => "width:400px" %>
              <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
          <% end %>
-    </div>   
+     </div>
+    </div>
 
-    
+    <div style="display:none">  
+        <div id="hidden">
+            <h1>Thank you for signing up. We'll contact you soon to get your campaign moving.</h1><br />
+            <h2>Like us on <a href="#">Facebook</a><br />
+            Follow us on <a href="#">Twitter</a></h2>
+            <h2><em>or</em></h2>
+            <h2><a href="#">View Restaurants</a></h2>
+        </div>   
+    </div>   
+</div>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 <script>
@@ -122,5 +121,10 @@ $('.teampick a').on('click', function(e) {
     
 });
 </script>
-</body>
-</html>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script>
+
+    $("form").colorbox({inline:true, href:"#hidden"});
+</script>

@@ -25,6 +25,7 @@ class NonprofitsController < ApplicationController
   end
 
   def valid_email?(email)
-    return email.match(/^.+@.+\..+$/)
+    valid = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    email.present? && (email =~ valid)
   end
 end

@@ -5,8 +5,8 @@ class Offer < ActiveRecord::Base
   has_and_belongs_to_many :category
   has_many :payments
 
-  attr_accessible :image, :name, :venue_id, :category_ids, :price, :original_price, :total, :available
-  attr_accessor :image
+  attr_accessible :image, :image_file_name, :name, :venue_id, :category_ids, :price, :original_price, :total, :available
+  attr_accessor :image, :image_file_name
 
   has_attached_file :image, styles: {
     thumb: '100x100>',
