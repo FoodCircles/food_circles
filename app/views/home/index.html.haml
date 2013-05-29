@@ -1,4 +1,4 @@
-.banner
+#hero.banner
   .cnt
     .centerer
       .centerer-inner
@@ -20,26 +20,19 @@
 
   .paging
 
-  .donation-progress
-    - percent = @progress / @adjusted_total
-    .bar{style: "width:" + percent.to_s + "%"}
-      %span{class: "text"}
-        %strong
-          %span
-            = @progress
-            %em of
-          = @adjusted_total
-          meals
-        donated this week
-
-.main
-  .shell
+#home
+  .container
     .products
       .products-head
-        .filters
-          %h6
-            %a{href: "#"}
-              dinner plans in 60 seconds
+        .head-btns
+          %a.btn-standart.popup-link{href: app_popup_path} Get the app
+          %a.btn-standart.popup-link{href: notify_signup_path}Get updates
+          /Code for dropdown and search boxes needs to be added here.
+        %h6 
+          let’s end hunger
+        %i.arrow-down
+          %i.arrow-down 
+        
       .products-tiles
         - @offers.each do |offer|
           %div{class: "tile blue" + ( offer.available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
@@ -51,7 +44,6 @@
                   .bar{style: "height: 0"}
                     %span#pbar
                       %a.block{href: notify_signup_path}
-                        %span#overlay
                         %small Notify me
                 - else
                   .bar{style: "height:" + percent.to_s + "%"}
@@ -64,7 +56,7 @@
                 /  .block
                 /    %strong= offer.available.to_i
                 /    %small left
-              %a{href: "#"}
+              %a{href: deal_popup_not_logged_path}
                 .price
                   %strong= number_to_currency(offer.price, :precision => 0)
                   %span{class: "old"}
@@ -78,7 +70,3 @@
               - if not offer.category.empty?
                 tags:
                 = raw offer.category.collect { |cat| link_to cat.name, cat }.join(",")
-
-  .div 
-    %a{href: app_popup_path} 
-      get the app
