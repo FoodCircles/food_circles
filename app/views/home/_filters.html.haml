@@ -1,0 +1,73 @@
+.filters
+  %form{action: "", method: "post", class: "search"}
+    %a{href: "#", class: "search-btn icon-magnifier"}
+      .field-holder.ui-front
+        %input{type: "text", class: "field", placeholder: "Search restaurants"}
+        %a{href: "#", class: "acomplete-lnk"}
+          Want a
+          %strong restaurant
+          added?
+
+  .filter.location
+    %h5
+      Location:
+      %a{href: "#"}
+        GR
+        %i{class: "arrow-down"}
+    .dropdown
+      %i{class: "arrow-up"}
+        %i{class: "arrow-up"}
+      %p{class: "all-results"}
+        %a{href: "#"}
+          All Results
+          %i{class: "arrow-right"}
+      .col
+        %ul
+          - @cities.each_pair do |city, count|
+            %li
+              %input{type: "checkbox", name: city, value: city, id: city}
+              %label{for: city}
+                = city
+                %em= "(#{count})"
+      .dropdown-foot
+        %a{href: "#", class: "left"} Want to Add a City?
+        %a{href: "#", class: "clear-all"} Clear All
+        %a{href: "#", class: "cancel"} Cancel
+        %a{href: "#", class: "btn-mini filter-btn"} Filter
+
+  .filter.category
+    %h5
+      Category:
+      %a{href:"#"}
+        All
+        %i{class: "arrow-down"}
+    .dropdown
+      %i{class: "arrow-up"}
+        %i{class: "arrow-up"}
+      %p{class: "all-results"}
+        %a{href: "#"}
+          All Results
+          %i{class: "arrow-right"}
+      .col
+        %h4 Experience
+        %ul
+          - Category.where(:deal_type => Category::EXPERIENCE).each do |cat|
+            %li
+              %input{type: "checkbox", name: cat.name, value: cat.name, id: cat.name}
+              %label{for: cat.name}
+                = cat.name
+                %em= "(#{cat.offer.count})"
+      .col
+        %h4 Cuisine
+        %ul
+          - Category.where(:deal_type => Category::CUISINE).each do |cat|
+            %li
+              %input{type: "checkbox", name: cat.name, value: cat.name, id: cat.name}
+              %label{for: cat.name}
+                = cat.name
+                %em= "(#{cat.offer.count})"
+      .dropdown-foot
+        %a{href: "#", class: "clear-all"} Clear All
+        %a{href: "#", class: "cancel"} Cancel
+        %a{href: "#", class: "btn-mini filter-btn"} Filter
+ 

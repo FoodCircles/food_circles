@@ -28,11 +28,14 @@
           %a.btn-standart.popup-link{href: app_popup_path} Get the app
           %a.btn-standart.popup-link{href: notify_signup_path}Get updates
           /Code for dropdown and search boxes needs to be added here.
+        
+        = render partial: "filters"
+
         %h6 
           let’s end hunger
         %i.arrow-down
-          %i.arrow-down 
-        
+          %i.arrow-down      
+      
       .products-tiles
         - @offers.each do |offer|
           %div{class: "tile blue" + ( offer.available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
