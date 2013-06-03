@@ -18,7 +18,16 @@ class HomeController < ApplicationController
     end
     @total_vouchers = @total_vouchers.round
     @adjusted_total = 3 * @total_vouchers / 4
-    
+
+    @cities = {}
+    Venue.all.collect do |venue|
+      if @cities[venue.city].nil?
+        @cities[venue.city] = 1
+      else
+        @cities[venue.city] += 1
+      end
+    end
+
     if params[:phone]
       app_popup(params[:phone], params[:type])
     end
