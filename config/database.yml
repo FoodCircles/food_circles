@@ -26,11 +26,11 @@
 development:
   adapter: postgis
   encoding: unicode
-  database: foodcircles
+  database: foodcircles_dev
   host: localhost
   pool: 5
   username: postgres
-  password: serenity
+  password: error#007
   port: 5432
 #  schema_search_path: "public,postgis"
 
@@ -49,8 +49,7 @@ staging:
   database: foodcircles_staging
   pool: 5
   username: postgres
-  #  password: error#007
-  password: postgres
+  password: error#007
   port: 5432
 
 #  template: template0
