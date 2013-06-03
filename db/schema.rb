@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521163939) do
+ActiveRecord::Schema.define(:version => 20130529211752) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "deal_type"
   end
 
   create_table "categories_offers", :id => false, :force => true do |t|
@@ -52,8 +53,6 @@ ActiveRecord::Schema.define(:version => 20130521163939) do
     t.datetime "updated_at",                :null => false
   end
 
-  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
-
   create_table "invoices", :force => true do |t|
     t.string   "group_name"
     t.integer  "group_size"
@@ -78,8 +77,12 @@ ActiveRecord::Schema.define(:version => 20130521163939) do
     t.string   "name"
     t.text     "details"
     t.integer  "min_diners"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.integer  "available"
     t.integer  "total"
     t.float    "price"
@@ -132,8 +135,6 @@ ActiveRecord::Schema.define(:version => 20130521163939) do
     t.integer  "offer_id"
   end
 
-  add_index "payments", ["user_id"], :name => "index_payments_on_user_id"
-
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
@@ -144,8 +145,6 @@ ActiveRecord::Schema.define(:version => 20130521163939) do
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
-
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "regions", :force => true do |t|
     t.string   "name"
@@ -196,8 +195,6 @@ ActiveRecord::Schema.define(:version => 20130521163939) do
     t.integer  "time"
   end
 
-  add_index "reviews", ["venue_id"], :name => "index_reviews_on_venue_id"
-
   create_table "socialbutterflies", :force => true do |t|
     t.string   "facebook"
     t.datetime "created_at", :null => false
@@ -235,9 +232,6 @@ ActiveRecord::Schema.define(:version => 20130521163939) do
     t.string   "provider"
     t.string   "uid"
   end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "venue_taggables", :force => true do |t|
     t.integer  "venue_tag_id"
@@ -282,8 +276,6 @@ ActiveRecord::Schema.define(:version => 20130521163939) do
     t.string   "slug"
   end
 
-  add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true
-
   create_table "vouchers", :force => true do |t|
     t.date     "start_date"
     t.date     "end_date"
@@ -293,7 +285,5 @@ ActiveRecord::Schema.define(:version => 20130521163939) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "vouchers", ["offer_id"], :name => "index_vouchers_on_offer_id"
 
 end
