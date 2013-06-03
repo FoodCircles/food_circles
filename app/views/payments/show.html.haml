@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @payment.user
+%p
+  %b Amount:
+  = @payment.amount
+%p
+  %b Stripe charge token:
+  = @payment.stripe_charge_token
+
+= link_to 'Edit', edit_payment_path(@payment)
+\|
+= link_to 'Back', payments_path

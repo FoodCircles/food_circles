@@ -44,6 +44,10 @@ Foodcircles::Application.routes.draw do
   resources :students
   resources :organizers
 
+  scope "mobi" do
+    resources :payments
+  end
+
   match '/app' => 'app#index'
   match '/getVenue' => 'app#getVenue'
   match '/getVenues' => 'app#getVenues'

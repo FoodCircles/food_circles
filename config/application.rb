@@ -82,5 +82,14 @@ module Foodcircles
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     config.middleware.use "PDFKit::Middleware", :print_media_type => true
+
+    # config.paperclip_defaults = {
+    #   :storage => :s3,
+    #   :s3_credentials => {
+    #     :bucket => 'foodcircles',
+    #     :access_key_id => '0BRVRK6FWACPYQ6BCSR2',
+    #     :secret_access_key => 'DXbUDzUdDIvyA9x3jajgDoM4/szI783MIujFp39E'
+    #   }
+    # }
   end
 end
