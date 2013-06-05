@@ -20,6 +20,18 @@
 
   .paging
 
+  .donation-progress
+    - percent = @adjusted_total == 0 ? 0 : @progress / @adjusted_total
+    .bar{style: "width:" + percent.to_s + "%"}
+      %span{class: "text"}
+        %strong
+          %span
+            = @progress
+            %em of
+          = @adjusted_total
+          meals
+        donated this week
+
 #home
   .container
     .products
@@ -27,7 +39,6 @@
         .head-btns
           %a.btn-standart.popup-link{href: app_popup_path} Get the app
           %a.btn-standart.popup-link{href: notify_signup_path}Get updates
-          /Code for dropdown and search boxes needs to be added here.
         
         = render partial: "filters"
 
