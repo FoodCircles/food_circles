@@ -69,7 +69,8 @@
                       %strong= offer.available.to_i
                       %small left
                   
-              %a{href: deal_popup_not_logged_path}
+              /%a{href: main_app.deal_popup_not_logged_path(offer)}
+              %a.deallink{href: '/deal_popup_not_logged/' + offer.id.to_s}
                 %span.price
                   %strong= number_to_currency(offer.price, :precision => 0)
                   %span{class: "old"}

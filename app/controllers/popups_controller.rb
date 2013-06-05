@@ -1,3 +1,7 @@
 class PopupsController < ApplicationController
-	layout "popup"
+  layout "popup"
+
+  def deal_popup_not_logged
+    @offer = Offer.find(params[:id])
+  end
 end
