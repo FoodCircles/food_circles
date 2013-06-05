@@ -43,7 +43,7 @@
                 <p>Keep our brains on fire with new restaurant options, field reports from the nonprofit, and by sharing the coolest and latest from our restaurants and local foodies on your Fan Page and Twitter.  We’ll also have special programs for new nonprofits that want to get involved and local companies looking to repurpose their dining. After all, who doesn’t eat out?</p>
             </div>
         </div>
-        
+
     <div id="crowd">
         <%= form_tag students_path, :id => 'students-form', method: :post do %>
             <h2>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h2>
@@ -60,7 +60,7 @@
         <h2>Like us on <a href="#">Facebook</a><br />
         Follow us on <a href="#">Twitter</a></h2>
         <h2><em>or</em></h2>
-        <h2><a href="#">View Restaurants</a></h2>
+        <h2><%= link_to "View Restaurants", restaurants_path %></h2>
     </div>   
 </div> 
 

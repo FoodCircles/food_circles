@@ -36,7 +36,7 @@
         /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
         #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
 
-        #cboxClose{ background:url(../img/cancel_button.png) no-repeat 0px 0px; 
+        #cboxClose{ background:url(/assets/cancel_button.png) no-repeat 0px 0px; 
             width:38px; 
             height:38px; 
             position:absolute; 
