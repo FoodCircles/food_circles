@@ -5,17 +5,17 @@ class StripePaymentsController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 500
+    @amount = params[:amount].to_f
 
     #tkxel_dev: create Customers and save them on stripe DB.
     customer = Stripe::Customer.create(
         :email => 'example@stripe.com',
-        :card  => params[:stripeToken]
+        :card  => params[:stripe_token]
     )
     #tkxel_dev: Charges to be deducted handle here , Credit card info. validation also complete in this phase.
     charge = Stripe::Charge.create(
         :customer    => customer.id,
-        :amount      => @amount,
+        :amount      => (@amount * 100).to_i,
         :description => 'Rails Stripe customer',
         :currency    => 'usd'
     )
