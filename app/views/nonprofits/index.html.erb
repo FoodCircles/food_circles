@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <script>
-        var _e = document.getElementsByTagName('html')[0];
-        _e.className = _e.className.replace(/no-js/, '');
-    </script>
-    <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-    <![endif]-->
-    <script type="text/javascript" src="//use.typekit.net/mqt8ffa.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -32,44 +7,48 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="about">
+<div class="container">
+    <h1>Capture funds through your community</h1>
+</div>
+
+<div id="nonprofits-featured">
     <div class="container">
-        <h2>Capture funds through your community</h2>
         <div id="iphone-image">
             <%= image_tag "nonprofits/nonprofits-iphone.png" %>
         </div>
         <div id="grtab">
-            <image_tag "nonprofits/nonprofits-grtab.png" %>
+            <a href="#"><%= image_tag "nonprofits/nonprofits-grtab.png" %> </a>
+        </div>
+    </div>
+</div>
+    
+
+<div id="nonprofits-steps">
+    <div class="container">
+        <div id="nonprofits-step1" class="steps-text">
+            <p><span class="bignumber">1</span></p>
+            <p class="steps-copy">We create a free mobile site and app for your supporters with integrated FoodCircles dining. Every purchase made on the site/app is 100% sent to you via check.</p>
         </div>
 
-        <div id="nonprofits-steps">
-
-            <div id="nonprofits-step1">
-                <p><span class="bignumber">1</span>We create a free mobile site and app for your supporters with integrated FoodCircles dining. Every purchase made on the site/app is 100% sent to you via check.</p>
+        <div id="nonprofits-step2">
+            <%= form_tag nonprofits_path, :id => 'nonprofit-form', method: :post do %>
+              <%= text_field_tag :organization, nil, :placeholder => "Organization" %><br />
+              <%= text_field_tag :name, nil, :placeholder => "Name" %><br />
+              <%= text_field_tag :email, nil, :placeholder => "Email" %><br />
+              <%= text_field_tag :website, nil, :placeholder => "Website" %><br />
+              <%= submit_tag nil, :class => "submit-image" %>
+            <% end %>
+            <div class="steps-text"> 
+                <p><span class="bignumber">2</span></p>
+                <p class="steps-copy">You talk to restaurants you know about joining your FoodCirles app. The partnership goes beyond your typical 1-time event and requires little upkeep post-signup.</p>
             </div>
+        </div>
 
-            <div id="nonprofits-step2">
-                <%= form_tag nonprofits_path, method: :post do %>
-		          <%= text_field_tag :organization, nil, :placeholder => "Organization" %><br />
-		          <%= text_field_tag :name, nil, :placeholder => "Name" %><br />
-		          <%= text_field_tag :email, nil, :placeholder => "Email" %><br />
-		          <%= text_field_tag :website, nil, :placeholder => "Website" %><br />
-		          <%= submit_tag nil, :class => "button" %>
-		        <% end %>
-                <p><span class="bignumber">2</span>You talk to restaurants you know about joining your FoodCirles app. The partnership goes beyond your typical 1-time event and requires little upkeep post-signup.</p>
-
-                
-            </div>
-
-            <div id="nonprofits-step3">
-                <p><span class="bignumber">3</span>People use your app whenever they eat out. Plus we launch FoodCircles in your area. Both bring funds and awareness 365 days/yr without taking up staff time or event bandwidth.</p>
-            </div>
             
-
+        <div id="nonprofits-step3" class="steps-text">
+            <p><span class="bignumber">3</span></p>
+            <p class="steps-copy">People use your app whenever they eat out. Plus we launch FoodCircles in your area. Both bring funds and awareness 365 days/yr without taking up staff time or event bandwidth.</p>
         </div>
-        
-        
-        
     </div>
 </div>
 
@@ -82,6 +61,47 @@
     <div class="container">
         <div class="fb-container">
             <div class="fb-comments" data-href="http://www.foodcircles.net/faq" data-width="784" data-num-posts="10"></div>
+        </div>
+    </div>
+</div>
+
+
+<div style="display:none;">
+    <div id="hidden">
+        <h1>Thank you for your request!</h1>
+        <h2>We will be contacting you shortly to get things started and distribute your custom url.</h2><br />
+        <h2>Take a second to <a href="#">browse our restaurants</a> while you're here.</h2>
+        <h2>Like us on <a href="#">Facebook</a><br />
+        Follow us on <a href="#">Twitter</a></h2>
+        
+    </div>
+</div>
+
+<div style="display:none;">
+    <div id="hidden2">
+        <h1>Since we're already in Grand Rapids...</h1>
+        <p>Local restaurants are already on board, so your involvement is slightly different.</p>
+        
+        <div class="grmodal-steps">
+            <img src="img/nonprofits-step1.png" alt="">
+            <h2>Tell us who you are.</h2>
+        </div>
+        <div class="grmodal-steps">
+            <img src="img/nonprofits-step2.png" alt="">
+            <h2>We'll give you a unique url for your organization</h2>
+        </div>
+        <div class="grmodal-steps">
+            <img src="img/nonprofits-step3.png" alt="">
+            <h2>Anyone that buys through your link, the funds will go directly to you</h2>
+        </div>
+        <div id="grmodal-form">
+        <form action="">
+            <input type="text"><br />
+            <input type="text"><br />
+            <input type="text"><br />
+            <input type="text"><br />
+            <input type="submit" value="Request Invite" class="submit-image">
+        </form>
         </div>
     </div>
 </div>
@@ -120,6 +140,17 @@ $('.teampick a').on('click', function(e) {
     
 });
 </script>
-</body>
-</html>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script>
+    $(document).ready(function(){
+        $("form").submit(function(){
+            $.colorbox({inline:true, href:"#hidden2"});
+        })
+    });
+</script>
+
+<script>
+    $("#grtab").colorbox({inline:true, href:"#hidden2"});
+</script>
