@@ -38,29 +38,28 @@
       
       .products-tiles
         - @offers.each do |offer|
-          %div{class: "tile blue" + ( offer.available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
+          %div{class: "tile " + ["red", "yellow", "green"].sample + ( offer.available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
             %h3= link_to offer.venue.name, offer.venue
             .thumb
+              %span.social
+                %a{href: "#", class: "btn-mini"}
+                  %i.icon-facebook
+                %a{href: "#", class: "btn-mini"}
+                  %i.icon-twitter
               .progress
                 - percent = (offer.available.to_f / offer.total.to_f) * 100
                 - if (offer.available.nil? or offer.available.to_i == 0)
-                  .bar{style: "height: 0"}
-                    %span#pbar
-                      %a.block{href: notify_signup_path}
-                        %small Notify me
+                  %span.pbar{style: "height: 0"}
+                    %a.block{href: notify_signup_path}
+                      %small Notify me
                 - else
-                  .bar{style: "height:" + percent.to_s + "%"}
-                    .block
+                  %span.pbar{style: "height:" + percent.to_s + "%"}
+                    %span.block
                       %strong= offer.available.to_i
                       %small left
                   
-                  
-                /  .bar{style: "height:" + percent.to_s + "%"}
-                /  .block
-                /    %strong= offer.available.to_i
-                /    %small left
               %a{href: deal_popup_not_logged_path}
-                .price
+                %span.price
                   %strong= number_to_currency(offer.price, :precision => 0)
                   %span{class: "old"}
                     = number_to_currency(offer.original_price, :precision => 0)
@@ -73,3 +72,4 @@
               - if not offer.category.empty?
                 tags:
                 = raw offer.category.collect { |cat| link_to cat.name, cat }.join(",")
+
