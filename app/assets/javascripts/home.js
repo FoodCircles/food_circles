@@ -113,6 +113,14 @@
 			}
 		})
 
+		.on('click', '.deallink', function(event){
+		    event.preventDefault();
+		    $.colorbox({
+			href: $(this).attr('href'),
+                        innerHeight: 1000
+		    });
+		})
+
 		.on('submit', '.postcard .edit-card form', function(event){
 			event.preventDefault();
 			populateCard($(this).serializeArray());
