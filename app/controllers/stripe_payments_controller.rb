@@ -19,6 +19,13 @@ class StripePaymentsController < ApplicationController
         :description => 'Rails Stripe customer',
         :currency    => 'usd'
     )
+
+    Payment.create(
+                   user: current_user,
+                   amount: @amount,
+                   stripe_charge_token: charge.id,
+                   offer_id: params[:offer_id]
+                   )
     #tkxel_dev: Error messages in case of incorrect Credentilas
   rescue Stripe::CardError => e
     flash[:error] = e.message

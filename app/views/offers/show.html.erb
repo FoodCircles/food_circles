@@ -2,6 +2,7 @@
   <div class="deal">
     <form method="post" action="/stripe_payments" id="dealform">
       <input type="hidden" name="stripe_token"/>
+      <input type="hidden" name="offer_id" value="<%= @offer.id %>"/>
       <div class="deal-main">
         <div class="deal-banner">
           <img src="css/images/brownies-big.jpg" alt="" width="670" height="313" />
