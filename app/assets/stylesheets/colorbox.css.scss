@@ -2,7 +2,7 @@
     Colorbox Core Style:
     The following CSS is consistent between example themes and should not be altered.
 */
-#colorbox, #cboxOverlay, #cboxWrapper { position:absolute; top:0; left:0; z-index:9999; }
+#colorbox, #cboxOverlay, #cboxWrapper { position:absolute; top:0; left:0; z-index:9999;  }
 #cboxOverlay { position:fixed; width:100%; height:100%; }
 #cboxMiddleLeft, #cboxBottomLeft { clear:left; }
 #cboxContent { position:relative; }
@@ -19,11 +19,14 @@
     Change the following styles to modify the appearance of Colorbox.  They are
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
-#cboxOverlay { background:#000; }
+#cboxOverlay { background:#c6c6c6; }
 #colorbox { outline:0; }
+    #cboxContent{ background:#f2ede4; box-shadow:0 2px 7px rgba(0,0,0,0.18); }
         .cboxIframe { background:#fff; }
         #cboxError { padding:50px; }
-        #cboxLoadingGraphic { background:url(images/loading.gif) no-repeat center center; }
+        #cboxLoadedContent { background:#f2ede4; padding: 40px; }
+        #cboxLoadingGraphic { background:url(img/loading.gif) no-repeat center center; }
+        #cboxLoadingOverlay { background:#fff; }
         #cboxTitle { position:absolute; top:-22px; left:0; color:#000; }
         #cboxCurrent { position:absolute; top:-22px; right:205px; text-indent:-9999px; }
 
@@ -33,12 +36,42 @@
         /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
         #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
 
-        #cboxClose { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); background:url(image_path('sprite.png')) no-repeat -228px -96px; width:38px; height:38px; position:absolute; top:12px; right:15px; z-index:9; border:none; font-size:0; line-height:0; text-indent:-4000px;
-            /*transition*/
-            -webkit-transition:opacity 100ms 600ms;
-               -moz-transition:opacity 100ms 600ms;
-                 -o-transition:opacity 100ms 600ms;
-                    transition:opacity 100ms 600ms;
+        #cboxClose{ background:url(../img/cancel_button.png) no-repeat 0px 0px; 
+            width:38px; 
+            height:38px; 
+            position:absolute; 
+            top:-18px; 
+            right:-15px; 
+            border:none; 
+            font-size:0; 
+            line-height:0; 
+            text-indent:-4000px; 
         }
-#cboxLoadedContent ~ #cboxClose { opacity:1; -moz-opacity:1; filter:alpha(opacity=100); }
-#cboxLoadedContent ~ #cboxClose.hidden { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); }
+
+        #cboxClose:hover {
+            opacity: .5;
+        }
+
+
+#cboxWrapper,
+#colorbox { overflow:visible !important;  }
+
+#hidden h1 {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: "museo-slab", serif;
+    color: #4e3e34;
+    text-align: center;
+}
+
+#hidden h2 {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "museo-slab", serif;
+    color: #4e3e34;
+    text-align: center;
+}
+
+#hidden a {
+    text-decoration: underline;
+}
