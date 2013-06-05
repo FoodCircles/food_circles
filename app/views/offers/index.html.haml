@@ -1,2 +1,3 @@
-%h1 Offers#index
-%p Find me in app/views/offers/index.html.haml
+%ul
+  - @offers.each do |offer|
+    %li= link_to offer.name, main_app.offer_path(offer)
