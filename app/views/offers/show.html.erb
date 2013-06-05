@@ -128,10 +128,10 @@
     <i class="arrow-down"><i class="arrow-down"></i></i>
     <img src="css/images/restaurant-thumb.jpg" alt="" class="thumb" />
     <h4>
-      <small>(616) 774-8272</small>
-      Georgios Pizza
+      <small><%= @offer.venue.phone %></small>
+      <%= @offer.venue.name %>
     </h4>
-    <p>One of the most unique dining venues in the Midwest, San Chez provides itself award winning service, diverse dishes, and a fun artful atmosphere. Proud member of local first.</p>
+    <p><%= @offer.venue.description %></p>
     <div class="foot">
       <a href="#" class="right">Get directions</a>
       <div class="social">
