@@ -27,6 +27,8 @@ class StripePaymentsController < ApplicationController
                    offer_id: params[:offer_id]
                    )
     #tkxel_dev: Error messages in case of incorrect Credentilas
+
+    redirect_to :controller => 'timeline', :action => 'index'
   rescue Stripe::CardError => e
     flash[:error] = e.message
     render :action => 'new'
