@@ -75,6 +75,7 @@ Foodcircles::Application.routes.draw do
   match '/notify_signup' => 'popups#notify_signup'
   match '/app_popup' => 'popups#app_popup'
   match '/deal_popup_not_logged/:id' => 'popups#deal_popup_not_logged'
+  match '/reciept/:id' => 'popups#reciept'
 
 
   match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'

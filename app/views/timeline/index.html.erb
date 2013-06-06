@@ -1,0 +1,177 @@
+<div id="main">
+  <div class="container">
+    <div class="account">
+      <div class="account-aside">
+        <div class="tabs-nav">
+          <h5>Your Account</h5>
+          <ul>
+            <li class="active"><a href="#timeline">Timeline <i class="arrow-right"></i></a></li>
+            <li><a href="#settings">Settings <i class="arrow-right"></i></a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div><!-- /.tabs-nav -->
+        <p class="meta">You have fed <strong>6 kids</strong> to date Your friends have fed <strong>30 kids</strong></p>
+        <div class="social">
+          <img src="css/images/fb-like.png" alt="" width="45" height="20" />
+          <img src="css/images/twitter-tweet.png" alt="" width="58" height="20" />
+        </div><!-- /.social -->
+      </div><!-- /.account-aside -->
+      <div class="account-cnt">
+        <div class="tab-cnt active" id="timeline">
+          <div class="user-invites">
+            <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Connect</a>
+            <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Connect</a>
+            <div class="balloon">
+              <i class="arrow-up"><i class="arrow-up"></i></i>
+              see where your friends are eating and who they are <strong>feeding</strong>
+              <a href="#" class="icon-x close"></a>
+            </div><!-- /.balloon -->								
+          </div><!-- /.user-invites -->
+          <div class="timeline">
+            <%- @payments.each_with_index do |payment, index| %>
+              <div class="block <%= index % 2 == 0 ? 'left' : 'right' %>">
+                <div class="cnt">
+                  <div class="head">
+                    <h5><%= payment.offer.venue.name %></h5>
+                    <p><%= payment.created_at.strftime("%m/%d/%y") %></p>
+                  </div><!-- /.head -->
+                  <a href="/reciept/<%= payment.id %>" class="body recieptlink">
+                    <span>View Reciept</span>
+                    <img src="css/images/brownies-med.jpg" alt="" width="205" height="155" />
+                  </a><!-- /.body -->
+                  <div class="foot">
+                    <div class="kids">
+                      <i class="icon-kid"></i>
+                      <%= payment.amount.to_i %>
+                    </div><!-- /.kids -->
+                    <div class="socials">
+                      <a href="#" class="icon-yellow-facebook"></a>
+                      <a href="#" class="icon-yellow-twitter"></a>
+                    </div><!-- /.socials -->
+                    <span class="divider"></span>
+                  </div><!-- /.foot -->
+                </div><!-- /.cnt -->
+                <%- if index % 2 == 0 %>
+                  <i class="arrow-right"><i class="arrow-right"></i></i>
+                <%- else %>
+                  <i class="arrow-left"><i class="arrow-left"></i></i>
+                <%- end %>
+                <i class="circle"></i>
+              </div><!-- /.block left -->
+            <%- end %>
+            <div class="block right highlight">
+              <div class="cnt">
+                <h5><a href="#">Jonathan Kumar</a></h5>
+                <div class="kids">
+                  <i class="icon-kid-small"></i> 2
+                </div><!-- /.kids -->
+                <p><a href="#">San Chez Bistro</a></p>
+                <img src="css/images/crack-fries-small.jpg" alt="" width="75" height="90" />
+              </div><!-- /.cnt -->
+              <i class="arrow-left"><i class="arrow-left"></i></i>
+              <i class="circle"></i>
+            </div><!-- /.block right -->
+            <span class="line"></span>
+          </div><!-- /.timeline -->
+        </div><!-- /#timeline.tab-cnt -->
+        <div class="tab-cnt" id="settings">
+          <div class="settings">
+            <fieldset>
+              <h5>
+                <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
+                General Information
+                <span class="line"></span>
+              </h5>
+              <div class="row">
+                <span class="label">Full name</span>
+                <span class="value">Adam Salois</span>
+                <input type="text" class="field" value="" />
+              </div><!-- /.row -->
+              <div class="row">
+                <span class="label">City</span>
+                <span class="value">Grand Rapids</span>
+                <input type="text" class="field" value="" />
+              </div><!-- /.row -->
+              <div class="row tight">
+                <span class="label">Zip</span>
+                <span class="value">49503</span>
+                <input type="text" class="field" value="" />
+              </div><!-- /.row -->
+              <div class="row tight">
+                <span class="label">Phone</span>
+                <span class="value">616.264.1893</span>
+                <input type="text" class="field" value="" />
+              </div><!-- /.row -->
+              <div class="row">
+                <span class="label">GENDER</span>
+                <span class="value">Male</span>
+                <input type="text" class="field" value="" />
+              </div><!-- /.row -->
+              <div class="row">
+                <span class="label">DOB</span>
+                <span class="value">08.28.1987</span>
+                <input type="text" class="field" value="" />
+              </div><!-- /.row -->
+              
+            </fieldset>
+            <fieldset>
+              <h5>
+                <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
+                Email
+                <span class="line"></span>
+              </h5>
+              <div class="row">
+                <span class="label">Email</span>
+                <span class="value">saloisa@gmail.com</span>
+                <input type="email" class="field" value="" />
+              </div><!-- /.row -->
+            </fieldset>
+            <fieldset>
+              <h5>
+                <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
+                Password
+                <span class="line"></span>
+              </h5>
+              <div class="row">
+                <span class="label">Password</span>
+                <span class="value">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
+                <input type="password" class="field" value="" />
+              </div><!-- /.row -->
+              <div class="row rpassword">
+                <span class="label">Repeat Password</span>
+                <input type="password" class="field" value="" />
+              </div><!-- /.row -->
+            </fieldset>
+            <fieldset>
+              <h5>
+                Saved Credit Cards
+                <span class="line"></span>
+              </h5>
+              <div class="row">
+                <span class="label">CREDIT CARD</span>
+                <span class="value">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 1234</span>
+                <a href="#" class="delete">delete</a>
+                <input type="text" class="field" value="" />
+              </div><!-- /.row -->
+            </fieldset>
+            <fieldset class="social-connections">
+              <h5>
+                Social Connections
+                <span class="line"></span>
+              </h5>
+              <div class="row tight">
+                <span class="label">Facebook</span>
+                <span class="value">Connected</span>
+                <a href="#" class="delete">Disconnect</a>
+              </div><!-- /.row -->
+              <div class="row">
+                <span class="label">Twitter</span>
+                <span class="value"><em>Not connected</em></span>
+              </div><!-- /.row -->
+            </fieldset>
+          </div><!-- /.settings -->
+        </div><!-- /#settings.tab-cnt -->
+      </div><!-- /.account-cnt -->
+    </div><!-- /.account -->
+  </div><!-- /.container -->
+</div><!-- /#main -->
