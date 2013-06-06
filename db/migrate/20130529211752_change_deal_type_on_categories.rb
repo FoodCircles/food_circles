@@ -1,4 +1,4 @@
-class AddDealTypeToCategories < ActiveRecord::Migration
+class ChangeDealTypeOnCategories < ActiveRecord::Migration
   def change
     rename_column :categories, :type, :deal_type
   end

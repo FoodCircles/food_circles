@@ -13,8 +13,8 @@ class StudentsController < ApplicationController
   def signup
     email = params[:students_email]
 
-    UserMailer.company_notify(email, name, company).deliver
-    UserMailer.company_signup(email, name, company).deliver
+    UserMailer.students_notify(email).deliver
+    UserMailer.students_signup(email).deliver
 
     @n = Notification.create
     @n.content = "Email: #{email}"

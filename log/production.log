@@ -195,3 +195,7 @@ Processing by HomeController#index as HTML
   Rendered partials/_header.html.haml (1.8ms)
   Rendered partials/_footer.html.haml (0.3ms)
 Completed 200 OK in 757ms (Views: 181.1ms | ActiveRecord: 548.7ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
