@@ -81,8 +81,8 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .field.standart:-ms-input-placeholder { font-style:normal; }
 
 .radio-holder { position:relative; overflow:hidden; }
-.radio-holder input { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); visibility:hidden; position:absolute; top:0; left:0; }
-.radio-holder label { float:left; font-size:16px; line-height:18px; background:url(images/radio.png) no-repeat 0 1px; padding-left:23px; cursor:pointer; }
+.radio-holder input { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); visibility: hidden; position:absolute; top:0; left:0; }
+.radio-holder label { float:left; font-size:16px; line-height:18px; background:url(radio.png) no-repeat 0 1px; padding-left:23px; cursor:pointer; }
 .radio-holder.checked label { background-position:0 -99px; }
 
 /*=== Helpers ===*/

@@ -1,0 +1,148 @@
+<div class="popup deal-popup">
+  <div class="deal">
+    <form method="post" action="/stripe_payments" id="dealform">
+      <input type="hidden" name="stripe_token"/>
+      <input type="hidden" name="offer_id" value="<%= @offer.id %>"/>
+      <div class="deal-main">
+        <div class="deal-banner">
+          <img src="css/images/brownies-big.jpg" alt="" width="670" height="313" />
+          <h2><%= @offer.venue.name %></h2>
+          <span class="price">
+            <strong><%= number_to_currency(@offer.original_price, :precision => 0) %></strong>
+            <small><%= number_to_currency(@offer.price, :precision => 0) %> <i class="icon-strike-big strike"></i></small>
+          </span>
+          <span class="count">
+            <%= @offer.available %>
+            <small>left</small>
+          </span>
+        </div><!-- /.deal-banner -->
+        <div class="deal-body">
+          <div class="description">
+            <h2><%= @offer.name %></h2>
+            <p>Good for 30 days. Please buy at least one entree. Please bring someone new to our business!</p>
+            
+            <ul class="qty">
+              <li class="radio-holder">
+                <label for="qty-1">1 appetizer</label>
+                <input type="radio" class="custom-input" checked="checked" name="qty-radio" value="1" id="qty-1" />
+              </li>
+              <li class="radio-holder">
+                <label for="qty-2">1 appetizer &amp; 1 dessert [add $1] </label>
+                <input type="radio" class="custom-input" name="qty-radio" value="2" id="qty-2" />
+              </li>
+              <li class="radio-holder">
+                <label for="qty-3">2 appetizers &amp; 2 desserts [add $2]</label>
+                <input type="radio" class="custom-input" name="qty-radio" value="3" id="qty-3" />
+              </li>
+            </ul><!-- /.qty -->
+          </div><!-- /.description -->
+          <div class="pay-box">
+            <h3>pay what you want</h3>
+            <span class="field-holder">
+              <span class="prefix">$</span>
+              <input name="amount" type="text" class="field" value="1" />
+            </span>
+            
+            <div class="slider-holder">
+              <span class="min">$1</span>
+              <span class="max">$18</span>
+              <span class="mid">$9</span>
+              <div class="slider-wrap">
+                <span class="bg-holder"></span>
+                <div class="slider"></div><!-- /.slider -->
+              </div><!-- /.slider-wrap -->
+            </div><!-- /.slider-holder -->
+            <div class="donation-info">
+              slide to give more <strong>1</strong> meal donated
+            </div><!-- /.donation-info -->
+            <a href="#" class="btn-large full-width light-shadow buy-btn">I want this!</a>
+            <div class="help">
+              <div class="balloon">
+                <h6>How to redeem</h6>
+                <ul>
+                  <li><strong>1</strong> Purchase Online</li>
+                  <li><strong>2</strong> Print or show receipt to server</li>
+                  <li><strong>3</strong> Enjoy with regular food purchase</li>
+                </ul>
+                <i class="arrow-down"><i class="arrow-down"></i></i>
+                <a href="#" class="balloon-close">Close</a>
+              </div><!-- /.balloon -->
+              <a href="#">How to redeem</a>
+            </div><!-- /.help -->
+          </div><!-- /.pay-box -->
+        </div><!-- /.deal-body -->
+      </div><!-- /.deal-main -->
+      <div class="deal-payment">
+        <div class="head">
+          <a href="#" class="back">&lt; back to restaurant profile</a>
+          <div class="profile">
+            <div class="row">
+              <a href="#" class="btn-facebook mid">Sign up <i class="icon-btn-facebook medium"></i></a>
+              <input type="text" class="field standart" placeholder="new email address" />
+            </div><!-- /.row -->
+            <div class="row">
+              <a href="#" class="btn-twitter mid">Sign up <i class="icon-btn-twitter medium"></i></a>
+              <input type="password" class="field standart" placeholder="new password" />
+            </div><!-- /.row -->
+            <em>Have an account? <a href="#">Sign in</a></em>
+          </div><!-- /.profile -->
+        </div><!-- /.head -->
+        <div class="body">
+          <fieldset>
+            <h5>Payment Details <span class="line"></span></h5>
+            <div class="card-number">
+              <label>Card number</label>
+              <span class="field-holder">
+                <input id="card-number" type="text" placeholder="4242 4242 4242 4242" class="field standart" />
+                <i class="suffix icon-lock"></i>
+              </span>
+            </div><!-- /.card-number -->
+            <div class="cv-code">
+              <label>CV Code</label>
+              <input id="cvc" type="text" class="field standart thin" placeholder="123" />
+            </div><!-- /.cv-code -->
+            <div class="valid-thru">
+              <label>EXPIRY DATE</label>
+              <input id="exp-month" type="text" class="field standart thin" placeholder="02" />
+              <input id="exp-year" type="text" class="field standart thin" placeholder="15" />
+            </div><!-- /.valid-thru -->
+          </fieldset>
+          <fieldset>
+            <h5>Give To <span class="line"></span></h5>
+            <div class="choose-organization">
+              <div class="radio-holder">
+                <label for="kids-food"><a href="#">Kids Food Basket</a> (Grand Rapids, MI)</label>
+                <input type="radio" name="organization" class="custom-input" value="" id="kids-food" />
+              </div><!-- /.radio-holder -->
+              <div class="radio-holder">
+                <label for="world-vision"><a href="#">World Vision</a> (Somalia, Africa)</label>
+                <input type="radio" name="organization" class="custom-input" value="" id="world-vision" />
+              </div><!-- /.radio-holder -->
+            </div><!-- /.choose-organization -->
+          </fieldset>
+          <div class="foot">
+            <a id="dealbuy" href="#" class="btn-standart full-width light-shadow large-font">Buy</a>
+            <p class="secured"><i class="icon-secure"></i> SECURE – PAYMENTS PROCESSED BY STRIPE</p><!-- /.secured -->
+          </div><!-- /.foot -->
+        </div><!-- /.body -->
+      </div><!-- /.deal-payment -->
+    </form>
+  </div><!-- /.deal -->
+  <div class="mini-profile">
+    <i class="arrow-down"><i class="arrow-down"></i></i>
+    <img src="css/images/restaurant-thumb.jpg" alt="" class="thumb" />
+    <h4>
+      <small><%= @offer.venue.phone %></small>
+      <%= @offer.venue.name %>
+    </h4>
+    <p><%= @offer.venue.description %></p>
+    <div class="foot">
+      <a href="#" class="right">Get directions</a>
+      <div class="social">
+        <a href="#" class="icon-facebook-med"></a>
+        <a href="#" class="icon-twitter-med"></a>
+        <a href="#" class="icon-yelp-med"></a>
+      </div><!-- /.social -->
+    </div><!-- /.foot -->
+  </div><!-- /.mini-profile -->
+</div><!-- /.popup -->
