@@ -1,7 +1,7 @@
 #about {
-	background: url(students-crowd.png) center bottom no-repeat;
+	background: url(image_path('students/students-crowd.png')) center bottom no-repeat;
 	background-size: 100%;
-	padding-bottom:210px;
+	padding-bottom:210px; 
 }
 
 #students {
@@ -42,7 +42,7 @@
 	color: white;
 }
 
-#students-form input {
+#students-input {
 	font-size: 14px;
 	line-height: 14px;
 	font-family: "pragmatica-web", sans-serif;
