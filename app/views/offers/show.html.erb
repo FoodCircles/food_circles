@@ -22,18 +22,12 @@
             <p>Good for 30 days. Please buy at least one entree. Please bring someone new to our business!</p>
             
             <ul class="qty">
-              <li class="radio-holder">
-                <label for="qty-1">1 appetizer</label>
-                <input type="radio" class="custom-input" checked="checked" name="qty-radio" value="1" id="qty-1" />
-              </li>
-              <li class="radio-holder">
-                <label for="qty-2">1 appetizer &amp; 1 dessert [add $1] </label>
-                <input type="radio" class="custom-input" name="qty-radio" value="2" id="qty-2" />
-              </li>
-              <li class="radio-holder">
-                <label for="qty-3">2 appetizers &amp; 2 desserts [add $2]</label>
-                <input type="radio" class="custom-input" name="qty-radio" value="3" id="qty-3" />
-              </li>
+              <%- @offer.venue.offers.each do |offer| %>
+                <li class="radio-holder">
+                  <label for="qty-1"><%= offer.name %></label>
+                  <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" />
+                </li>
+              <%- end %>
             </ul><!-- /.qty -->
           </div><!-- /.description -->
           <div class="pay-box">
