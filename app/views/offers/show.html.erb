@@ -70,15 +70,21 @@
         <div class="head">
           <a href="#" class="back">&lt; back to restaurant profile</a>
           <div class="profile">
-            <div class="row">
-              <a href="#" class="btn-facebook mid">Sign up <i class="icon-btn-facebook medium"></i></a>
-              <input type="text" class="field standart" placeholder="new email address" />
-            </div><!-- /.row -->
-            <div class="row">
-              <a href="#" class="btn-twitter mid">Sign up <i class="icon-btn-twitter medium"></i></a>
-              <input type="password" class="field standart" placeholder="new password" />
-            </div><!-- /.row -->
-            <em>Have an account? <a href="#">Sign in</a></em>
+            <%- if current_user %>
+              <div class="row">
+                <%= current_user.name %>
+              </div>
+            <%- else %>
+              <div class="row">
+                <a href="#" class="btn-facebook mid">Sign up <i class="icon-btn-facebook medium"></i></a>
+                <input type="text" class="field standart" placeholder="new email address" />
+              </div><!-- /.row -->
+              <div class="row">
+                <a href="#" class="btn-twitter mid">Sign up <i class="icon-btn-twitter medium"></i></a>
+                <input type="password" class="field standart" placeholder="new password" />
+              </div><!-- /.row -->
+              <em>Have an account? <a href="#">Sign in</a></em>
+            <%- end %>
           </div><!-- /.profile -->
         </div><!-- /.head -->
         <div class="body">
