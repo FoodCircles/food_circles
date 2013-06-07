@@ -39,6 +39,7 @@ class ApplicationController < ActionController::Base
     end
 
   end
+
   def genCoupon
     s = [('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
     (0..4).map{s[rand(s.length)]}.join.downcase
@@ -170,5 +171,23 @@ class ApplicationController < ActionController::Base
   #  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   #  email.present? && (email =~ VALID_EMAIL_REGEX)
   # end
+
+  def get_progress
+    @progress = 0
+    Stripe::Charge.all.each do |charge|
+      if Time.at(charge.created) > Time.now - 1.week
+        @progress += charge.amount
+      end
+    end
+    @progress /= 100
+
+    @total_vouchers = 0
+    Offer.all.each do |offer|
+      @total_vouchers += offer.price * offer.total
+    end
+    @total_vouchers = @total_vouchers.round
+    @adjusted_total = 3 * @total_vouchers / 4
+  end
+
 end
 

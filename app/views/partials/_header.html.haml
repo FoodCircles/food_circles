@@ -109,16 +109,18 @@
 
 
 
-  .mh-sub
-    .container
-      .current-goal
-        .current
-          %strong 37
-          %small meals
-        .progress
-          %span{class: "goal"} this week's goal
-          %span{class: "total"} 50 meals
-          %em{class: "bar", style: "width:74%"}
-      %p.getapp 
-        Arm yourself for the streets.
-        %a.popup-link{href: app_popup_path} Get the App
+  - unless @progress.nil?
+    .mh-sub
+      .container
+        .current-goal
+          - percent = @adjusted_total == 0 ? 0 : @progress.to_f / @adjusted_total * 100
+          .current
+            %strong= @progress
+            %small meals
+          .progress
+            %span.goal this week's goal
+            %span.total= "#{@adjusted_total} meals"
+            %em.bar{style: "width:" + percent.to_s + "%"}
+        %p.getapp 
+          Arm yourself for the streets.
+          %a.popup-link{href: app_popup_path} Get the App
