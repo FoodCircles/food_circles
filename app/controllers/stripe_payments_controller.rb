@@ -26,6 +26,9 @@ class StripePaymentsController < ApplicationController
                    stripe_charge_token: charge.id,
                    offer_id: params[:offer_id]
                    )
+
+    offer = Offer.find(params[:offer_id])
+    offer.venue.vouchers_available -= 1
     #tkxel_dev: Error messages in case of incorrect Credentilas
 
     redirect_to :controller => 'timeline', :action => 'index'
