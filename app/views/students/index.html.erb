@@ -7,7 +7,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="about">
+<div id="about" style="padding-bottom:210px">
     <div class="container">
         <h2>Kickstart Buy One, Feed One on Campus</h2>
         <div id="students-intro">
@@ -43,15 +43,17 @@
                 <p>Keep our brains on fire with new restaurant options, field reports from the nonprofit, and by sharing the coolest and latest from our restaurants and local foodies on your Fan Page and Twitter.  We’ll also have special programs for new nonprofits that want to get involved and local companies looking to repurpose their dining. After all, who doesn’t eat out?</p>
             </div>
         </div>
-
-    <div id="crowd">
-        <%= form_tag students_path, :id => 'students-form', method: :post do %>
-            <h2>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h2>
-             <%= text_field_tag :students_email, nil, :placeholder => "you@email.com", :style => "margin-bottom: 5px; width:400px"%><br />
-            <%= image_submit_tag "students/students-signup.png", :style => "width:400px" %>
-            <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
-        <% end %>
     </div>
+
+
+        <div id="crowd">
+            <%= form_tag "#", :id => 'students-form', method: :post do %>
+                <h3>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h3>
+                 <%= text_field_tag :students_email, nil, :placeholder => "you@email.com", :id => "students-input" %><br />
+                <%= image_submit_tag "students/students-signup.png", :style => "width:400px" %>
+                <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
+            <% end %>
+        </div>
 </div>
 
 <div style="display:none">  
@@ -102,6 +104,14 @@ $('.teampick a').on('click', function(e) {
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="/assets/jquery.colorbox.js?body=1"></script>
 <script>
-
-    $("form").colorbox({inline:true, href:"#hidden"});
+    $("#form").submit(function(){
+    var formData = $(this).serializeArray();
+    $.get("/students", formData, function(r){
+        $("body").append("<div id='hidden'></div>");
+        $("#hidden").hide().html(r).colorbox();
+    });
+        return false; // To override non-ajax submitting
+    });
+    //$("submit").colorbox({inline:true, href:"#hidden"});
 </script>
+
