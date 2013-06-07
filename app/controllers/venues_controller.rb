@@ -36,7 +36,8 @@ class VenuesController < ApplicationController
   end
 
   def show
-    @v = Venue.find(params[:id])
+    # @v = Venue.find(params[:id])
+    @offer = Venue.find(params[:id]).offers.first
     if ['json','jsonp'].include?(params[:format])
         render :json => @v, :callback => params[:callback]
     end

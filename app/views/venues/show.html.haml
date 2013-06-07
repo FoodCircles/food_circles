@@ -1,7 +1,2 @@
-= render :partial => 'partials/header'
-.content
-  #profile
-    = render :partial => 'app/venue_banner'
-    %img#venue_map{:src => "http://maps.google.com/maps/api/staticmap?zoom=14&size=450x320&maptype=roadmap&markers=color:red|#{@v.full_address}&sensor=false"}
-:javascript
-  var v = #{@v.id};
+= render :template => 'offers/show'
+/%img#venue_map{:src => "http://maps.google.com/maps/api/staticmap?zoom=14&size=450x320&maptype=roadmap&markers=color:red|#{@v.full_address}&sensor=false"}
