@@ -1,3 +1,254 @@
-// Place all the styles related to the Organizers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+	color: #4e3e34;
+}
+
+h2 {
+	font-size: 24px;
+	color: #4e3e34;text-align: center;
+	font-family: "museo-slab", "Neutraface Slab", serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	line-height: 24px;
+}
+
+.placard {
+	width: 100%;
+	background-color: white;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin-top: 40px;
+	-moz-box-shadow: 3px 3px 2px #d6cdbd;
+	-webkit-box-shadow: 3px 3px 2px #d6cdbd;
+	box-shadow: 3px 3px 2px #d6cdbd;
+	text-align: center;
+	display: block;
+	padding: 50px 0;
+	color: #4e3e34;
+	font-family: "museo-slab", serif;
+}
+
+.placard-body {
+	position: relative;
+	top: -70px;
+}
+
+.placard h1 {
+	font-size: 24px;
+	font-family: "museo-slab", serif;
+	font-weight: 700;
+	position: relative;
+	margin-bottom: 30px;
+	color: #999;
+}
+
+.placard h2 {
+	font-size: 20px;
+	color: #999;
+}
+
+.placard p {
+	font-family: "pragmatica-web", sans-serif;
+	color: #999;
+}
+
+.organizers-arrow {
+	position: relative;
+	
+	top: -50px;
+	left: 60px;
+}
+
+.image-alpha {
+	position: relative;
+	left: 30px;
+}
+
+.organizers-steps {
+	width: 150px;
+}
+
+.stringleft{
+	position: absolute;
+	top: 490px;
+	left: 100px;
+}
+
+.stringright{
+	position: absolute;
+	top: 490px;
+	left: 840px;
+}
+
+.stringleft-second{
+	position: absolute;
+	top: 890px;
+	left: 100px;
+}
+
+.stringright-second{
+	position: absolute;
+	top: 890px;
+	left: 840px;
+}
+
+.omega {
+	
+	margin-bottom: 100px;
+}
+
+.steps {
+	width: 90%;
+	margin: 10px auto;
+}
+
+.steps p {
+	width: 90%;
+	margin: 0 auto;
+	font-family: "pragmatica-web", sans-serif;
+}
+
+.steps h3 {
+	font-size: 20px;
+}
+
+.step1 {
+	width: 32%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.step2 {
+	width: 32%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.step3 {
+	width: 32%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#needtoknow {
+	width: 70%;
+	margin: 0 auto;
+}
+
+#jointhecause {
+	display: inline-block;
+}
+
+.alpha {
+	color: #999;
+}
+
+.beta {
+	color: #999;
+}
+
+.beta h1, .beta h2, .beta p {
+	color: #999;
+}
+
+.leadchar {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+
+#restaurant-invite {
+	margin-top: 30px;
+}
+
+#organizers {
+	text-align: left;
+	padding: 0 60px 0 60px;
+	margin-top: 40px;
+}
+
+#organizers h2 {
+	text-align: left;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-weight: 700;
+	margin-top: 10px;
+	font-family: "museo-slab", serif;
+}
+
+#organizers p {
+	font-size: 16px;
+	font-weight: 200;
+	font-family: "pragmatica-web", sans-serif;
+}
+
+label {
+	margin: 10px;
+}
+
+#organizers input {
+	font-size: 14px;
+	line-height: 18px;
+	font-family: "pragmatica-web", sans-serif;
+}
+
+#organizers .submit-image {
+	margin: 10px 0;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 15px 60px;
+	border-radius: 8px;
+	background-color: #b46c6d;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b46c6d), to(#a44b4c));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #b46c6d, #a44b4c);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #b46c6d, #a44b4c);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #b46c6d, #a44b4c);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #b46c6d, #a44b4c);
+	border: none;
+}
+
+#organizers .submit-image:hover {
+	background-color: #6c1b1b;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6c1b1b), to(#894242));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #6c1b1b, #894242);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #6c1b1b, #894242);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #6c1b1b, #894242);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #6c1b1b, #894242);
+
+}
+
+#organizers-submit-button {
+	text-align: center;
+}
+
+.responses {
+	text-align: left;
+	padding-left: 50px;
+}
+
+.responses p {
+	line-height: 30px;
+	color: #8a857f;
+}
+
+.answer {
+	font-weight: bold;
+}

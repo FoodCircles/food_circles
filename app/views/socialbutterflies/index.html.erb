@@ -1,29 +1,3 @@
-
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <script>
-        var _e = document.getElementsByTagName('html')[0];
-        _e.className = _e.className.replace(/no-js/, '');
-    </script>
-    <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-    <![endif]-->
-    <script type="text/javascript" src="//use.typekit.net/mqt8ffa.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -33,42 +7,50 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="about">
+<div id="banner">
+    <h1>We connect you to a new group of guys or gals in your city.</h1>
+</div>
+<div class="about">
     <div class="container">
         <div id="butterfly-title">
             <%= image_tag "butterflies/butterflies-logo.png" %>
-            <%= image_tag "butterflies/butterflies-sublogo.png" %>
         </div>
-        <div id="butterfly-step1">
+        <div id="butterfly-step1" class="butterfly-steps">
+            <h1>Apply via <span id="butterfly-facebook">Facebook</span></h1>
+            <p>You'll receive a Facebook request for our<br /> resident <strong>matchmaker.</strong></p>
            <%= image_tag "butterflies/butterflies-step1.png" %>
-           <div id="butterfly-path1">
+        </div>
+        <div id="butterfly-path1">
            <%= image_tag "butterflies/butterfly-path1.png" %>
            </div> 
-        </div>
-        <div id="butterfly-step2">
+        <div id="butterfly-step2" class="butterfly-steps">
+            <h1>We'll <span id="butterfly-match">match</span> you up.</h1>
+            <p>Don't worry, we'll let you stalk potential friends<br /> and get <strong>your approval</strong> before we proceed.</p>
             <%= image_tag "butterflies/butterflies-step2.png" %> 
-            <div id="butterfly-path2">
+        </div>
+        <div id="butterfly-path2">
             <%= image_tag "butterflies/butterfly-path2.png" %>
             </div> 
-        </div>
-        <div id="butterfly-step3">
+        <div id="butterfly-step3" class="butterfly-steps">
+            <h1>Grab <span id="butterfly-friends">1 <span id="superscript">or</span> 2 friends</span> and go.</h1>
+            <p>Prepay $3 (covers your first appetizer) and just<br /> show up at the time and place <strong>you pick</strong>.</p>
             <%= image_tag "butterflies/butterflies-step3.png" %> 
-            <div id="butterfly-path3">
+            
+        </div>
+        <div id="butterfly-path3">
             <%= image_tag "butterflies/butterfly-path3.png" %>
             </div> 
-        </div>
         <div id="butterfly-submit">
             <%= form_tag socialbutterflies_path, method: :post do %>
               <%= text_field_tag :facebook, nil, :placeholder => "http://www.facebook.com/yourprofile", :size => "65" %><br />
               <%= image_submit_tag "butterflies/butterfly-apply.png" %>
-
             <% end %>
             <div id="butterfly-circle">       
             <%= image_tag "butterflies/butterfly-circle.png" %>  
             </div>
         </div>
         <div id="butterfly-questions">
-            <h3>QUESTIONS YOU MIGHT HAVE:</h3>
+            <h3>Questions you might have</h3>
             <div id="butterfly-faq">
                 <%= image_tag "butterflies/butterfly-faq1.png" %>
                 <%= image_tag "butterflies/butterfly-faq2.png" %>
@@ -81,10 +63,7 @@
         </div>
         
     </div>
-</div>
-
-
-
+   
 <div id="fbcomments">
     <div class="container">
         <h4>Unanswered question? Email ut as <a href="mailto:hey@foodcircles.net" class="mailus">hey@foodcircles.net</a> or comment below.</h4>
@@ -130,5 +109,3 @@ $('.teampick a').on('click', function(e) {
     
 });
 </script>
-</body>
-</html>
