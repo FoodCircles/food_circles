@@ -84,32 +84,32 @@
               </h5>
               <div class="row">
                 <span class="label">Full name</span>
-                <span class="value">Adam Salois</span>
+                <span class="value"><%= current_user.name %></span>
                 <input type="text" class="field" value="" />
               </div><!-- /.row -->
               <div class="row">
                 <span class="label">City</span>
-                <span class="value">Grand Rapids</span>
+                <span class="value"><%= current_user.city %></span>
                 <input type="text" class="field" value="" />
               </div><!-- /.row -->
               <div class="row tight">
                 <span class="label">Zip</span>
-                <span class="value">49503</span>
+                <span class="value"><%= current_user.zip %></span>
                 <input type="text" class="field" value="" />
               </div><!-- /.row -->
               <div class="row tight">
                 <span class="label">Phone</span>
-                <span class="value">616.264.1893</span>
+                <span class="value"><%= current_user.phone %></span>
                 <input type="text" class="field" value="" />
               </div><!-- /.row -->
               <div class="row">
                 <span class="label">GENDER</span>
-                <span class="value">Male</span>
+                <span class="value"><%= current_user.gender %></span>
                 <input type="text" class="field" value="" />
               </div><!-- /.row -->
               <div class="row">
                 <span class="label">DOB</span>
-                <span class="value">08.28.1987</span>
+                <span class="value"><%= current_user.birthday %></span>
                 <input type="text" class="field" value="" />
               </div><!-- /.row -->
               
@@ -122,7 +122,7 @@
               </h5>
               <div class="row">
                 <span class="label">Email</span>
-                <span class="value">saloisa@gmail.com</span>
+                <span class="value"><%= current_user.email %></span>
                 <input type="email" class="field" value="" />
               </div><!-- /.row -->
             </fieldset>
