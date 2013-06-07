@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607174128) do
+ActiveRecord::Schema.define(:version => 20130607193555) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -262,23 +262,25 @@ ActiveRecord::Schema.define(:version => 20130607174128) do
     t.string   "neighborhood"
     t.string   "web"
     t.integer  "price"
-    t.datetime "created_at",                                                                                                    :null => false
-    t.datetime "updated_at",                                                                                                    :null => false
+    t.datetime "created_at",                                                                                                      :null => false
+    t.datetime "updated_at",                                                                                                      :null => false
     t.string   "image_uid"
     t.string   "phone"
     t.string   "circle_image_uid"
     t.integer  "time_zone_id"
     t.float    "rating"
     t.string   "reference"
-    t.boolean  "active",                                                                       :default => true
-    t.spatial  "latlon",           :limit => {:srid=>4326, :type=>"point", :geographic=>true}
-    t.string   "voucher",                                                                      :default => "5"
-    t.decimal  "multiplier",                                                                   :default => 1.5
-    t.string   "feemessage",                                                                   :default => "Enter fee mesage."
-    t.decimal  "feecharge",                                                                    :default => 0.0
-    t.boolean  "apply_able",                                                                   :default => false
-    t.string   "email",                                                                        :default => "venue@example.com"
+    t.boolean  "active",                                                                         :default => true
+    t.spatial  "latlon",             :limit => {:srid=>4326, :type=>"point", :geographic=>true}
+    t.string   "voucher",                                                                        :default => "5"
+    t.decimal  "multiplier",                                                                     :default => 1.5
+    t.string   "feemessage",                                                                     :default => "Enter fee mesage."
+    t.decimal  "feecharge",                                                                      :default => 0.0
+    t.boolean  "apply_able",                                                                     :default => false
+    t.string   "email",                                                                          :default => "venue@example.com"
     t.string   "slug"
+    t.integer  "vouchers_available"
+    t.integer  "vouchers_total"
   end
 
   create_table "vouchers", :force => true do |t|
