@@ -21,7 +21,7 @@
   .paging
 
   .donation-progress
-    - percent = @adjusted_total == 0 ? 0 : @progress / @adjusted_total
+    - percent = @adjusted_total == 0 ? 0 : @progress.to_f / @adjusted_total * 100
     .bar{style: "width:" + percent.to_s + "%"}
       %span{class: "text"}
         %strong
@@ -49,7 +49,7 @@
       
       .products-tiles
         - @offers.each do |offer|
-          %div{class: "tile " + ["red", "yellow", "green"].sample + ( offer.available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
+          %div{class: "tile " + ["red", "yellow", "green"].sample + ( offer.venue.vouchers_available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
             %h3= link_to offer.venue.name, offer.venue
             .thumb
               %span.social
@@ -58,15 +58,15 @@
                 %a{href: "#", class: "btn-mini"}
                   %i.icon-twitter
               .progress
-                - percent = (offer.available.to_f / offer.total.to_f) * 100
-                - if (offer.available.nil? or offer.available.to_i == 0)
+                - percent = (offer.venue.vouchers_available.to_f / offer.venue.vouchers_total.to_f) * 100
+                - if (offer.venue.vouchers_available.nil? or offer.venue.vouchers_available == 0)
                   %span.pbar{style: "height: 0"}
                     %a.block{href: notify_signup_path}
                       %small Notify me
                 - else
                   %span.pbar{style: "height:" + percent.to_s + "%"}
                     %span.block
-                      %strong= offer.available.to_i
+                      %strong= offer.venue.vouchers_available
                       %small left
                   
               /%a{href: main_app.deal_popup_not_logged_path(offer)}
