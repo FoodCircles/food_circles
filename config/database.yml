@@ -26,7 +26,7 @@
 development:
   adapter: postgis
   encoding: unicode
-  database: foodcircles_dev
+  database: foodcircles
   host: localhost
   pool: 5
   username: postgres
