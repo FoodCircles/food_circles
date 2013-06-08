@@ -29,6 +29,7 @@ class StripePaymentsController < ApplicationController
 
     offer = Offer.find(params[:offer_id])
     offer.venue.vouchers_available -= 1
+    offer.venue.save
     #tkxel_dev: Error messages in case of incorrect Credentilas
 
     redirect_to :controller => 'timeline', :action => 'index'
