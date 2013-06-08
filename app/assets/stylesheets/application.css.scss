@@ -1697,3 +1697,8 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .lt-ie9 .pay-box .help .balloon.expanded { display:block; }
 
 .lt-ie9 .deal-payment .body .field { border:1px solid #999; }
+
+
+/* Fixing footer overlap on subpages */
+.content { padding-bottom: 250px; }
+
