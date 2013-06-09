@@ -175,3 +175,10 @@
     </div><!-- /.account -->
   </div><!-- /.container -->
 </div><!-- /#main -->
+<%- if params[:reciept_id] %>
+  <script type="text/javascript">
+    $( function() {
+      showPopup('/reciept/<%= params[:reciept_id] %>')
+    } )
+  </script>
+<%- end %>

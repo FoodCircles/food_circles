@@ -20,19 +20,19 @@ class StripePaymentsController < ApplicationController
         :currency    => 'usd'
     )
 
-    Payment.create(
-                   user: current_user,
-                   amount: @amount,
-                   stripe_charge_token: charge.id,
-                   offer_id: params[:offer_id]
-                   )
+    payment = Payment.create(
+        user: current_user,
+        amount: @amount,
+        stripe_charge_token: charge.id,
+        offer_id: params[:offer_id]
+    )
 
     offer = Offer.find(params[:offer_id])
     offer.venue.vouchers_available -= 1
     offer.venue.save
     #tkxel_dev: Error messages in case of incorrect Credentilas
 
-    redirect_to :controller => 'timeline', :action => 'index'
+    redirect_to :controller => 'timeline', :action => 'index', :reciept_id => payment.id
   rescue Stripe::CardError => e
     flash[:error] = e.message
     render :action => 'new'
