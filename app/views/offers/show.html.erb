@@ -7,8 +7,8 @@
           <img src="css/images/brownies-big.jpg" alt="" width="670" height="313" />
           <h2><%= @offer.venue.name %></h2>
           <span class="price">
-            <strong><%= number_to_currency(@offer.original_price, :precision => 0) %></strong>
-            <small><%= number_to_currency(@offer.price, :precision => 0) %> <i class="icon-strike-big strike"></i></small>
+            <strong><%= number_to_currency(@offer.price, :precision => 0) %></strong>
+            <small><%= number_to_currency(@offer.original_price, :precision => 0) %> <i class="icon-strike-big strike"></i></small>
           </span>
           <span class="count">
             <%= @offer.available %>
