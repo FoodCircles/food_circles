@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607193555) do
+ActiveRecord::Schema.define(:version => 20130610204052) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -236,6 +236,7 @@ ActiveRecord::Schema.define(:version => 20130607193555) do
     t.integer  "zip"
     t.string   "gender"
     t.datetime "birthday"
+    t.string   "stripe_customer_token"
   end
 
   create_table "venue_taggables", :force => true do |t|
