@@ -4,7 +4,7 @@
       <input type="hidden" name="stripe_token"/>
       <div class="deal-main">
         <div class="deal-banner">
-          <img src="css/images/brownies-big.jpg" alt="" width="670" height="313" />
+          <%= image_tag @offer.image.url %>
           <h2><%= @offer.venue.name %></h2>
           <span class="price">
             <strong><%= number_to_currency(@offer.price, :precision => 0) %></strong>
