@@ -5759,3 +5759,9 @@ textarea.field.small {
 .lt-ie9 .deal-payment .body .field {
   border: 1px solid #999999;
 }
+
+/* Fixing footer overlap on subpages */
+/* line 1703, ../../app/assets/stylesheets/application.css.scss */
+.content {
+  padding-bottom: 250px;
+}

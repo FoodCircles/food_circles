@@ -42,6 +42,7 @@ faq/faq_shadow.png: faq/faq_shadow.png
 faq/faq_shadow_even.png: faq/faq_shadow_even.png
 faq/faq_shadow_short.png: faq/faq_shadow_short.png
 faq/faq_shadow_short_even.png: faq/faq_shadow_short_even.png
+fb-like.png: fb-like.png
 header/logo.png: header/logo.png
 home/2-channels.png: home/2-channels.png
 home/3-channels.png: home/3-channels.png
@@ -136,6 +137,7 @@ students/students-step2.png: students/students-step2.png
 students/students-step3.png: students/students-step3.png
 students/students-step4.png: students/students-step4.png
 students/students-step5.png: students/students-step5.png
+twitter-tweet.png: twitter-tweet.png
 x.png: x.png
 application.js: application.js
 application.css: application.css
