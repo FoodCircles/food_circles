@@ -5,6 +5,7 @@
 //= require jquery.infinitescroll.min
 //= require jquery.colorbox
 //= require jquery.payment
+//= require stripe_payment
 
 (function($){
 
@@ -44,6 +45,12 @@
 		};
 		$.colorbox.settings.onCleanup = function(){
 			$body.removeClass('active-popup');
+			if($('.send-text').length){
+				setTimeout(function() {
+
+					popupOpen($body.data('prev-popup'));
+				}, 500);
+			}
 		};
 
 
@@ -51,11 +58,13 @@
 		$doc
 
 		.on('click', function(event){
-			if($('.sign-form').css('visibility') == 'visible'){
-				if($(event.target).is('.sign-form') == false && $(event.target).closest('.sign-form').length == 0){
-					$('.sign-form').removeClass('expanded');
+			$('.sign-form').each(function(){
+				if($(this).css('visibility') == 'visible'){
+					if($(event.target).is('.sign-form') == false && $(event.target).closest('.sign-form').length == 0){
+						$(this).removeClass('expanded');
+					}
 				}
-			}
+			});
 			$('.filter.expanded').each(function(){
 				var $filter = $(this);
 				if($filter.find('.dropdown').css('visibility') == 'visible'){
@@ -107,38 +116,8 @@
 			if(isLogged){
 				$(this).closest('.tile').addClass('notified');
 			}else{
-				$.colorbox({
-					href: $(this).attr('href')
-				});
+				popupOpen($(this).attr('href'));
 			}
-		})
-
-		.on('click', '.deallink', function(event){
-		    event.preventDefault();
-		    $.colorbox({
-			href: $(this).attr('href'),
-		    });
-		})
-
-		.on('click', '#dealbuy', function(event){
-		    event.preventDefault();
-                    var card = {
-                        number:   $("#card-number").val(),
-                        expMonth: $("#exp-month").val(),
-                        expYear:  $("#exp-year").val(),
-                        cvc:      $("#cvc").val()
-                    }
-                    Stripe.createToken(card, function(status, response) {
-                        console.log(response)
-                        if (status === 200) {
-                            $("[name='stripe_token']").val(response.id)
-                            $("#dealform").submit()
-                        } else {
-                            $("#stripe-error-message").text(response.error.message)
-                            $("#credit-card-errors").show()
-                            $("#user_submit").attr("disabled", false)
-                        }
-                    });
 		})
 
 		.on('submit', '.postcard .edit-card form', function(event){
@@ -162,14 +141,55 @@
 			popupReszie();
 		})
 
-		.on('change keyup', '.pay-box .field', function(){
-			PayBox.setSum($(this).val());
+		.on('change keyup', '.pay-box .field', function(event){
+			var val = parseFloat($(this).val()),
+				kcode = event.keyCode ? event.keyCode : event.which;
+
+			if(!$.isNumeric(val)){
+				val = 0;
+			}
+			if(val < 0){
+				val = 0;
+			}
+			val = val.toString();
+			if(val.indexOf('.') > 0){
+				var whole = val.split('.')[0],
+					floats = val.split('.')[1];
+				if(floats.length > 2){
+					floats = floats.substring(0,2);
+				}else{
+					floats = floats + '0';
+				}
+				val = whole + '.' + floats
+			}else{
+				val = val + '.00';
+			}
+
+			$(this).data('val', val)
+			if(kcode == 13 || typeof(kcode) == 'undefined'){
+				$(this).val($(this).data('val'));
+				PayBox.setSum(val);
+			}
+
+		})
+
+		.on('focusout', '.pay-box .field', function(){	
+			$(this).val($(this).data('val'));
 		})
 
 
 		.on('change', '.qty input', function(){
 			if($(this).is(':checked')){
-				PayBox.setPrice($(this).val());
+				var valArray = $(this).val().split(',');
+				PayBox.setPrice(parseInt(valArray[0]));
+				$('.pay-box').find('.min').text('$' + parseInt(valArray[0]));
+				$('.pay-box').find('.mid').text('$' + parseInt(valArray[1]));
+				$('.pay-box').find('.max').text('$' + parseInt(valArray[2]));
+
+				$('.pay-box').find('.slider').slider('option', {
+					min: parseInt(valArray[0]),
+					max: parseInt(valArray[2]) 
+				});
 			}
 		})
 
@@ -198,13 +218,32 @@
 		.on('click', '.balloon-close', function(event){
 			event.preventDefault();
 			$(this).closest('.balloon').removeClass('expanded');
+		})
+
+		.on('click', '.deal-payment .different a', function(event){
+			event.preventDefault();
+			$(this).closest('.deal-payment').addClass('adding-card');
+		})
+
+		.on('click', '.popup-link', function(event){
+                    console.log('here')
+			event.preventDefault();
+			popupOpen($(this).attr('href'))
 		});
 
 		$('.welcome-line > a').on('click', function(event){
 			event.preventDefault();
 			//set little timeout to prevent item from close immidiatly after the open
 			setTimeout(function(){
-				$('.sign-form').toggleClass('expanded');
+				$('#sign-up-form').toggleClass('expanded');
+			}, 1);
+		});
+
+		$('#sign-up-form .form-caption a').on('click', function(event){
+			event.preventDefault();
+			//set little timeout to prevent item from close immidiatly after the open
+			setTimeout(function(){
+				$('#sign-in-form, #sign-up-form').toggleClass('expanded');
 			}, 1);
 		});
 
@@ -333,8 +372,6 @@
 			}
 		});
 
-		$('.popup-link').colorbox();
-
 		$('.balloon .close').on('click', function(event){
 			event.preventDefault();
 			$(this).closest('.balloon').addClass('disabled');
@@ -377,6 +414,28 @@
 
 	/*=== Helpers ===*/
 
+	function popupOpen(href){
+		$.colorbox({
+			href: href,
+			onComplete:function(){
+				$body.data('prev-popup', $body.data('cur-popup'));
+				$body.data('cur-popup', href);
+
+				refreshScripts($('#colorbox'));
+				if($('.popup-print').length){
+					$('#cboxClose').addClass('hidden');
+					$('.popup-print').addClass('animate');
+				}else{
+					$('#cboxClose').removeClass('hidden');
+				}
+				setTimeout(function() {
+					$.colorbox.resize();
+				}, 100);
+			}
+		});
+	}
+    $.popupOpen = popupOpen
+
 	function refreshScripts($cnt){
 		//check if cnt isn't assigned and assign it as doc
 		if(!$cnt){
@@ -409,18 +468,38 @@
 		$('.deal').height($('.deal').height());
 
 		$('.deal .card-number .field').payment('formatCardNumber').on('keyup', function(){
-			if($.payment.validateCardNumber($(this).val())){
+			var val_ = $(this).val()
+
+			if(val_.length > 0){
+				$('.deal-payment').addClass('has-value');
+			}else{
+				$('.deal-payment').removeClass('has-value');
+			}
+
+			console.log($.payment.cardType(val_))
+			switch($.payment.cardType(val_)){
+				case 'visa':
+					$('.cards').find('.visa').addClass('active').siblings().removeClass('active');
+					break;
+				case 'amex':
+					$('.cards').find('.amex').addClass('active').siblings().removeClass('active');
+					break;
+				case 'mastercard':
+					$('.cards').find('.mastercard').addClass('active').siblings().removeClass('active');
+					break;
+				default:
+					$('.cards').find('.generic').addClass('active').siblings().removeClass('active');
+			}
+			if($.payment.validateCardNumber(val_)){
 				$('.deal .card-number').addClass('valid');
 			}else{
 				$('.deal .card-number').removeClass('valid');	
 			}
 		});
 		$('.deal .cv-code .field').payment('formatCardCVC');
-		$('.popup-link', $cnt).each(function(){
-			if(!$(this).is('.cboxElement')){
-				$(this).colorbox();
-			}
-		})
+
+		$('.phone-module:visible', $cnt).find('.field').trigger('focus');
+		$('.subscribe:visible', $cnt).find('.field').trigger('focus');
 
 	}
 
@@ -463,6 +542,7 @@
 
 	}
 
+
 	var PayBox = {
 		price: 1,
 		sum: 1,
@@ -470,7 +550,7 @@
 			$('.donation-info strong').text(Math.floor(this.sum/this.price));
 		},
 		setSum: function(sum){
-			this.sum = sum;
+			this.sum = parseFloat(sum);
 			this.calc();
 		},
 		setPrice: function(price){
@@ -525,6 +605,7 @@
 		init: function(){
 			$ptiles = $('.products-tiles');
 			$ptiles.isotope({
+				transformsEnabled:false,
 				animationEngine:'css',
 				itemSelector:'.tile'
 			})
