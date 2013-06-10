@@ -12,8 +12,8 @@
         </div><!-- /.tabs-nav -->
         <p class="meta">You have fed <strong>6 kids</strong> to date Your friends have fed <strong>30 kids</strong></p>
         <div class="social">
-          <img src="css/images/fb-like.png" alt="" width="45" height="20" />
-          <img src="css/images/twitter-tweet.png" alt="" width="58" height="20" />
+          <img src="/assets/fb-like.png" alt="" width="45" height="20" />
+          <img src="/assets/twitter-tweet.png" alt="" width="58" height="20" />
         </div><!-- /.social -->
       </div><!-- /.account-aside -->
       <div class="account-cnt">
@@ -178,7 +178,7 @@
 <%- if params[:reciept_id] %>
   <script type="text/javascript">
     $( function() {
-      showPopup('/reciept/<%= params[:reciept_id] %>')
+      $.popupOpen('/reciept/<%= params[:reciept_id] %>')
     } )
   </script>
 <%- end %>
