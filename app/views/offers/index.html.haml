@@ -1,3 +1,5 @@
-%ul
+%ul.content
   - @offers.each do |offer|
-    %li= link_to offer.name, main_app.offer_path(offer)
+    %li
+      = link_to offer.name, main_app.offer_path(offer)
+      = link_to '[edit]', main_app.edit_offer_path(offer)
