@@ -36,7 +36,7 @@
           <div class="restaurant-location">
             <h5><%= @payment.offer.venue.name %></h5>
             <img src="css/images/map.jpg" alt="" width="260" height="160" />
-            <p><strong><%= @payment.offer.venue.phone %></strong> <%= @payment.offer.venue.address %> <%= @payment.offer.venue.city %>, <%= @payment.offer.venue.state %></p>
+            <p><strong><%= @payment.offer.venue.phone %></strong> <%= @payment.offer.venue.address %> <%= @payment.offer.venue.city %>, <%= @payment.offer.venue.state.name if @payment.offer.venue.state %></p>
           </div><!-- /.restaurant-location -->
           
           <div class="order-status">
