@@ -6,17 +6,18 @@ class StripePaymentsController < ApplicationController
   def create
     # Amount in cents
     @amount = params[:amount].to_f
+    offer = Offer.find(params[:offer_id])
 
     #tkxel_dev: create Customers and save them on stripe DB.
     customer = Stripe::Customer.create(
-        :email => 'example@stripe.com',
+        :email => current_user.email,
         :card  => params[:stripe_token]
     )
     #tkxel_dev: Charges to be deducted handle here , Credit card info. validation also complete in this phase.
     charge = Stripe::Charge.create(
         :customer    => customer.id,
         :amount      => (@amount * 100).to_i,
-        :description => 'Rails Stripe customer',
+        :description => offer.venue.name + ' - ' + offer.name,
         :currency    => 'usd'
     )
 
@@ -24,10 +25,9 @@ class StripePaymentsController < ApplicationController
         user: current_user,
         amount: @amount,
         stripe_charge_token: charge.id,
-        offer_id: params[:offer_id]
+        offer: offer
     )
 
-    offer = Offer.find(params[:offer_id])
     offer.venue.vouchers_available -= 1
     offer.venue.save
     #tkxel_dev: Error messages in case of incorrect Credentilas
