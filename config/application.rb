@@ -1,6 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require "active_record/railtie"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
+require "sprockets/railtie"
 require 'active_record/connection_adapters/postgis_adapter/railtie'
 
 if defined?(Bundler)
@@ -91,5 +95,13 @@ module Foodcircles
     #     :secret_access_key => 'DXbUDzUdDIvyA9x3jajgDoM4/szI783MIujFp39E'
     #   }
     # }
+
+    config.app_generators do |c|
+      c.test_framework :rspec, :fixture => true,
+                               :fixture_replacement => nil
+
+      c.integration_tool :rspec
+      c.performance_tool :rspec
+    end
   end
 end
