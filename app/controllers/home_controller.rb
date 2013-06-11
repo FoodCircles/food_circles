@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
   def index
-    #UserMailer.signupsuccess
-    #render :text=>'here2' and return
     @offers = Offer.limit(9)
 
     get_progress

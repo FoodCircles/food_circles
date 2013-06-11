@@ -9,7 +9,7 @@ namespace :vouchers do
       vouchers_total += venue.vouchers_total
     end
 
-    total_collected = Payment.where("created_at >= ?", Time.now - 1.week).collect{ |pay| pay.amount }.sum
+    total_collected = Payment.total_week_payments.collect{ |payment| payment.amount }.sum
 
     Venue.all.each do |venue|
       if total_collected < 3 * vouchers_total / 4 # missed meal goal

@@ -1,225 +1,139 @@
 1:
-  id: 1
-  owner_id: 1
+  user_id: 1
   name: Georgio's Gourmet Pizza
-  description: Georgio’s Pizza stands out from other pizza parlors with its affordability, ingredient ingenuity (58 flavors!), and its cool interiors.
-  address: "city: Grand Rapids, street_name: Ionia Avenue SW, state: MI, street_number: 15, zip_code: 49503"
+  description: "Georgio’s Pizza stands out from other pizza parlors with its affordability, ingredient ingenuity (58 flavors!), and its cool interiors."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Downtown
-  contact: "url: http://georgiosgourmetpizza.com/, phone_num: 616-356-4600"
-  image: venues/1_7
-  timezone: America/Detroit
+  web: "url: http://georgiosgourmetpizza.com/, phone_num: 616-356-4600"
+  image_uid: venues/1_7
   price: 1
-  inactive: 0
-  longitude: -85.670595
-  latitude: 42.962628
-  circle_image: venues/georgios.png
+  circle_image_uid: venues/georgios.png
+  vouchers_available: 10
+
 2:
-  id: 2
-  owner_id: 1
+  user_id: 1
   name: Olive's
-  description: Located in Gaslight Village, Olive's offers a distinct casual dining experience marked with fine ingredients, delicious combinations and a well-stocked bar.
-  address: "city: Grand Rapids, street_name: Wealthy St, state: MI, street_number: 2162, zip_code: 49506"
+  description: "Located in Gaslight Village, Olive's offers a distinct casual dining experience marked with fine ingredients, delicious combinations and a well-stocked bar."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Gaslight Village (EGR)
-  contact: "url: http://eatatolives.com/, phone_num: 616-451-8611"
-  image: venues/2_7
-  timezone: America/Detroit
+  web: "url: http://eatatolives.com/, phone_num: 616-451-8611"
+  image_uid: venues/2_7
   price: 2
-  inactive: 0
-  longitude: -85.615277
-  latitude: 42.950795
-  circle_image: venues/olivesa.png
+  circle_image_uid: venues/olivesa.png
+  vouchers_available: 10
+
 3:
-  id: 3
-  owner_id: 1
+  user_id: 1
   name: Queen's Pub
-  description: Queen's has different music themes &amp; drink specials each night to compliment traditional English-style and Indian-style food.
-  address: "city: Grand Rapids, street_name: Lake Drive, state: MI, street_number: 1420, zip_code: 49506"
+  description: "Queen's has different music themes &amp; drink specials each night to compliment traditional English-style and Indian-style food."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Eastown
-  contact: "url: http://www.facebook.com/pages/Bombay-Cuisine-and-The-Queens-Pub-Grand-Rapids-MI/170670282966831, phone_num: 616-456-7055"
-  image: venues/3_7
-  timezone: America/Detroit
+  web: "url: http://www.facebook.com/pages/Bombay-Cuisine-and-The-Queens-Pub-Grand-Rapids-MI/170670282966831, phone_num: 616-456-7055"
+  image_uid: venues/3_7
   price: 1
-  inactive: 0
-  longitude: -85.634471
-  latitude: 42.957022
-  circle_image: venues/queens_pub.png
+  circle_image_uid: venues/queens_pub.png
+  vouchers_available: 10
+
 4:
-  id: 4
-  owner_id: 1
+  user_id: 1
   name: Szechuan Garden
-  description: Another popular pick in Eastown, Szechuan Garden is best known for their well-prepared chicken and their excellent service.
-  address: "city: Grand Rapids, street_name: Wealthy St SE, state: MI, street_number: 1510, zip_code: 49506"
+  description: "Another popular pick in Eastown, Szechuan Garden is best known for their well-prepared chicken and their excellent service."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Eastown
-  contact: "url: http://www.yelp.com/biz/szechuan-garden-grand-rapids, phone_num: 616-456-9878"
-  image: venues/4_6
-  timezone: America/Detroit
+  web: "url: http://www.yelp.com/biz/szechuan-garden-grand-rapids, phone_num: 616-456-9878"
+  image_uid: venues/4_6
   price: 1
-  inactive: 0
-  longitude: -85.632603
-  latitude: 42.955038
-  circle_image: venues/Szechuan___Garden.png
+  circle_image_uid: venues/Szechuan___Garden.png
+  vouchers_available: 10
+
 5:
-  id: 19
-  owner_id: 1
+  user_id: 1
   name: Tre Cugini
-  description: Recipient of several dining awards, Tre Cugini is a stylish venue where many come to enjoy authentic Italian cuisine and a great wine list.
-  address: "city: Grand Rapids, street_name: Monroe Center NW, state: MI, street_number: 122, zip_code: 49503"
+  description: "Recipient of several dining awards, Tre Cugini is a stylish venue where many come to enjoy authentic Italian cuisine and a great wine list."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Downtown
-  contact: "url: http://www.trecugini.com/, phone_num: 616-235-9339"
-  image: venues/tre_cugini.png
-  timezone: America/Detroit
+  web: "url: http://www.trecugini.com/, phone_num: 616-235-9339"
+  image_uid: venues/tre_cugini.png
   price: 3
-  inactive: 0
-  longitude: -85.6710
-  latitude: 42.9656
-  circle_image: venues/tre_cugini_1.png
+  circle_image_uid: venues/tre_cugini_1.png
+  vouchers_available: 10
+
 6:
-  id: 6
-  owner_id: 1
+  user_id: 1
   name: Skywalk Deli
-  description: Hidden inside the Comerica building downtown, Skywalk Deli is off the beaten path. The taste of their sandwich stands out however, and so does their service.
-  address: "city: Grand Rapids, street_name: Monroe Ave NW, state: MI, street_number: 99, zip_code: 49503"
+  description: "Hidden inside the Comerica building downtown, Skywalk Deli is off the beaten path. The taste of their sandwich stands out however, and so does their service."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Downtown
-  contact: "url: http://www.skywalkdeli.com/, phone_num: 616-732-5388"
-  image: venues/6_6
-  timezone: America/Detroit
+  web: "url: http://www.skywalkdeli.com/, phone_num: 616-732-5388"
+  image_uid: venues/6_6
   price: 1
-  inactive: 0
-  longitude: -85.672889
-  latitude: 42.965028
-  circle_image: venues/skywalk_deli.png
+  circle_image_uid: venues/skywalk_deli.png
+  vouchers_available: 10
+
 7:
-  id: 9
-  owner_id: 1
+  user_id: 1
   name: GoJo Ethiopian
-  description: GoJo offers authentic, homemade Ethiopian meals within a traditional, group-centric environment.  GoJo proudly serves both vegetarian and non-veg. options.
-  address: "city: Grand Rapids, street_name: Norwood Ave SE, state: MI, street_number: 421, zip_code: 49506"
+  description: "GoJo offers authentic, homemade Ethiopian meals within a traditional, group-centric environment.  GoJo proudly serves both vegetarian and non-veg. options."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Eastown
-  contact: "url: http://www.gojoethiopiancuisine.com/, phone_num: 616-459-3383"
-  image: venues/9_1
-  timezone: America/Detroit
+  web: "url: http://www.gojoethiopiancuisine.com/, phone_num: 616-459-3383"
+  image_uid: venues/9_1
   price: 2
-  inactive: 0
-  longitude: -85.632179
-  latitude: 42.955115
-  circle_image: venues/gojo_etheopian.png
+  circle_image_uid: venues/gojo_etheopian.png
+  vouchers_available: 10
+
 8:
-  id: 10
-  owner_id: 1
+  user_id: 1
   name: San Chez Bistro
-  description: One of the most unique dining venues in the Midwest, SCB prides itself on award-winning service, diverse dishes, and a fun, artful atmosphere.
-  address: "city: Grand Rapids, street_name: Fulton St West, state: MI, street_number: 38, zip_code: 49503"
+  description: "One of the most unique dining venues in the Midwest, SCB prides itself on award-winning service, diverse dishes, and a fun, artful atmosphere."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Downtown
-  contact: "url: http://www.sanchezbistro.com/, phone_num: 616-774-8272"
-  image: venues/10_1
-  timezone: America/Detroit
+  web: "url: http://www.sanchezbistro.com/, phone_num: 616-774-8272"
+  image_uid: venues/10_1
   price: 3
-  inactive: 0
-  longitude: -85.669734
-  latitude: 42.963065
-  circle_image: venues/sanchez.png
+  circle_image_uid: venues/sanchez.png
+  vouchers_available: 10
+
 9:
-  id: 11
-  owner_id: 1
+  user_id: 1
   name: Parsley's
-  description: With conscientious staff, quick service, and great salads and soups, Parsley’s makes a safe bet from quick snacks to full meals.
-  address: "city: Grand Rapids, street_name: Ottawa Ave NW, state: MI, street_number: 80, zip_code: 49503"
+  description: "With conscientious staff, quick service, and great salads and soups, Parsley’s makes a safe bet from quick snacks to full meals."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Downtown
-  contact: "url: http://parsleymg.com/, phone_num: 616-776-2590"
-  image: venues/11_1
-  timezone: America/Detroit
+  web: "url: http://parsleymg.com/, phone_num: 616-776-2590"
+  image_uid: venues/11_1
   price: 1
-  inactive: 0
-  longitude: -85.670259
-  latitude: 42.964736
-  circle_image: venues/parsley.png
+  circle_image_uid: venues/parsley.png
+  vouchers_available: 10
+
 10:
-  id: 12
-  owner_id: 1
+  user_id: 1
   name: Eastown Cafe
-  description: A local pick especially for breakfast, EtC offers a deep, affordable, and tasty menu for all times of day.
-  address: "city: Grand Rapids, street_name: Ethel Ave SE, state: MI, street_number: 410, zip_code: 49506"
+  description: "A local pick especially for breakfast, EtC offers a deep, affordable, and tasty menu for all times of day."
+  address: Ionia Avenue SW
+  city: Grand Rapids  
+  zip: 49503
   neighborhood: Eastown
-  contact: "url: http://www.facebook.com/pages/The-Eastown-Cafe/113252522028522, phone_num: 616-233-0797"
-  image: venues/12_1
-  timezone: America/Detroit
+  web: "url: http://www.facebook.com/pages/The-Eastown-Cafe/113252522028522, phone_num: 616-233-0797"
+  image_uid: venues/12_1
   price: 1
-  inactive: 0
-  longitude: -85.632927
-  latitude: 42.955201
-  circle_image: venues/eastown_cafe.png
-11:
-  id: 13
-  owner_id: 1
-  name: Bar Divani
-  description: Bar Divani provides a diverse menu that's minimally processed, local grown, and gluten free whenever possible.  Sophisticated, and culturally unique.
-  address: "city: Grand Rapids, street_name: Ionia Ave SW, state: MI, street_number: 15, zip_code: 49503"
-  neighborhood: Downtown
-  contact: "url: http://www.bar-divani.com/, phone_num: 616-774-9463"
-  image: venues/bar_divani.png
-  timezone: America/Detroit
-  price: 2
-  inactive: 0
-  longitude: -85.670595
-  latitude: 42.962628
-  circle_image: venues/bardivani.png
-12:
-  id: 14
-  owner_id: 1
-  name: Eastown Sports Bar
-  description: A new spot in eastown that has built a theater-lounge on the second level to accompany affordable American food and good drinks.
-  address: "city: Grand Rapids, street_name: Wealthy St SE, state: MI, street_number: 1520, zip_code: 49506"
-  neighborhood: Eastown
-  contact: "url: http://www.facebook.com/pages/Eastown-Sports-Bar/146037898835003, phone_num: 616-356-4950"
-  image: venues/eastown.png
-  timezone: America/Detroit
-  price: 1
-  inactive: 0
-  longitude: -85.632175
-  latitude: 42.955305
-  circle_image: venues/Eastown_Sports_Bar.png
-13:
-  id: 15
-  owner_id: 1
-  name: Brann's Steakhouse
-  description: There's a reason Brann's has been around for 50 years; expect great sports atmosphere with legendary food &amp; steaks.
-  address: "city: Grand Rapids, street_name: Leonard St NW, state: MI, street_number: 401, zip_code: 49504"
-  neighborhood: West Grand
-  contact: "url: http://www.branns.com/, phone_num: 616-454-9368"
-  image: venues/branns.png
-  timezone: America/Detroit
-  price: 2
-  inactive: 0
-  longitude: -85.677706
-  latitude: 42.985036
-  circle_image: venues/branns_1.png
-14:
-  id: 18
-  owner_id: 1
-  name: Chez Olga
-  description: Check out the bold flair of Creole flavor at The Chez Olga in Eastown. Fresh, natural, &amp; colorful dishes help you find that special place, somewhere along the coast of the Caribbean.
-  address: "city: Grand Rapids, street_name: Wealthy St, state: MI, street_number: 1441, zip_code: 49506"
-  neighborhood: Eastown
-  contact: "url: http://www.chezolga.com/, phone_num: 616-233-4141"
-  image: venues/chez_olga_2.png
-  timezone: America/Detroit
-  price: 1
-  inactive: 0
-  longitude: -85.6344
-  latitude: 42.9556
-  circle_image: venues/chez_olga_3.png
-15:
-  id: 20
-  owner_id: 1
-  name: Subs N' More
-  description: Enjoy subs, salads, and fresh pizzas made in front of your eyes and toasted using signature homemade breads. Like no other sub shop in town.
-  address: "city: Grand Rapids, street_name: Monroe Center NW, state: MI, street_number: 122, zip_code: 49503"
-  neighborhood: Downtown
-  contact: "url: http://www.subsnmore.org/, phone_num: 616-719-3554"
-  image: venues/subs_1.png
-  timezone: America/Detroit
-  price: 1
-  inactive: 0
-  longitude: -85.6719
-  latitude: 42.96606
-  circle_image: venues/Untitled-1_1.png
+  circle_image_uid: venues/eastown_cafe.png
+  vouchers_available: 10
