@@ -3,7 +3,7 @@ class LongTasks < ActiveRecord::Base
     UserMailer.delay.voucher(current_user, r)
   end
 
-  def self.handle_text(r)
+  def handle_text(r)
     begin
       if current_user.phone
         code = (current_user.name ? "#{current_user.name.titleize} for #{r.offer.min_diners}" : r.coupon)
@@ -13,5 +13,5 @@ class LongTasks < ActiveRecord::Base
       #we tried
     end
   end
- handle_asynchronously :handle_text
+  handle_asynchronously :handle_text
 end

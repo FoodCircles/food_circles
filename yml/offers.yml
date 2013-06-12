@@ -1,301 +1,199 @@
 1:
-  id: 1
   venue_id: 1
-  title: 2 free desserts
-  details: With purchase of at least 2 slices of pizza per person
-  minimum_diners: 2
-  image: 
+  name: "2 free desserts"
+  details: "With purchase of at least 2 slices of pizza per person"
+  min_diners: 2
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 2:
-  id: 50
   venue_id: 6
-  title: 2 free soft drinks
-  details: 
-  minimum_diners: 2
-  image: 
+  name: 2 free soft drinks
+  details: "Must buy 1 7&quot; drink per person."
+  min_diners: 2
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 3:
-  id: 78
-  venue_id: 20
-  title: 2 free chips, 2 free soft drinks
-  details: Must buy 1 7&quot; sub per person.
-  minimum_diners: 4
-  image: 
+  venue_id: 10
+  name: "2 free chips, 2 free soft drinks"
+  details: "Must buy 1 7&quot; sub per person."
+  min_diners: 4
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 4:
-  id: 49
-  venue_id: 15
-  title: a donation on your behalf to feed a child in need.
-  details: 
-  minimum_diners: 2
-  image: 
+  venue_id: 9
+  name: "a donation on your behalf to feed a child in need."
+  details: "Must buy 1 7&quot; sub per person."
+  min_diners: 2
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 5:
-  id: 4
   venue_id: 2
-  title: 1 free non-alcoholic drink
+  name: "1 free non-alcoholic drink"
   details: 
-  minimum_diners: 2
-  image: 
+  min_diners: 2
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 6:
-  id: 69
-  venue_id: 14
-  title: 1 free appetizer &amp; premium appetizer
+  venue_id: 8
+  name: "1 free appetizer &amp; premium appetizer"
   details: 
-  minimum_diners: 4
-  image: 
+  min_diners: 4
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 7:
-  id: 68
-  venue_id: 14
-  title: 1 free appetizer &amp; 2 premium appetizers
+  venue_id: 7
+  name: "1 free appetizer &amp; 2 premium appetizers"
   details: 
-  minimum_diners: 6
-  image: 
+  min_diners: 6
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 8:
-  id: 7
   venue_id: 3
-  title: 1 free appetizer
+  name: "1 free appetizer"
   details: 
-  minimum_diners: 2
-  image: 
+  min_diners: 2
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 9:
-  id: 63
-  venue_id: 12
-  title: 6 free soups or salads
-  details: At least one entree purchased per person
-  minimum_diners: 6
-  image: 
+  venue_id: 6
+  name: "6 free soups or salads"
+  details: "At least one entree purchased per person"
+  min_diners: 6
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 10:
-  id: 61
   venue_id: 9
-  title: 6 free soup specials
+  name: 6 free soup specials
   details: 
-  minimum_diners: 6
-  image: 
+  min_diners: 6
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 11:
-  id: 10
   venue_id: 4
-  title: 1 free appetizer
-  details: Applies to any but the chicken wings or combo platter
-  minimum_diners: 2
-  image: 
+  name: "1 free appetizer"
+  details: "Applies to any but the chicken wings or combo platter"
+  min_diners: 2
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 12:
-  id: 58
   venue_id: 3
-  title: 1 free appetizer + pizza/burger
+  name: "1 free appetizer + pizza/burger"
   details: 
-  minimum_diners: 4
-  image: 
+  min_diners: 4
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 13:
-  id: 59
   venue_id: 3
-  title: 1 free appetizer + 2 pizzas
+  name: "1 free appetizer + 2 pizzas"
   details: 
-  minimum_diners: 6
-  image: 
+  min_diners: 6
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 14:
-  id: 57
   venue_id: 4
-  title: 3 free appetizers
-  details: Applies to any but the chicken wings or combo platter
-  minimum_diners: 6
-  image: 
+  name: "3 free appetizers"
+  details: "Applies to any but the chicken wings or combo platter"
+  min_diners: 6
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 15:
-  id: 56
   venue_id: 4
-  title: 2 free appetizers
-  details: Applies to any but the chicken wings or combo platter.
-  minimum_diners: 4
-  image: 
+  name: "2 free appetizers"
+  details: "Applies to any but the chicken wings or combo platter."
+  min_diners: 4
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 16:
-  id: 77
-  venue_id: 20
-  title: 2 free chips
-  details: Must buy 1 7&quot; sub per person.
-  minimum_diners: 2
-  image: 
+  venue_id: 1
+  name: "2 free chips"
+  details: "Must buy 1 7&quot; sub per person."
+  min_diners: 2
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 17:
-  id: 76
-  venue_id: 18
-  title: an Ask Olga special;
+  venue_id: 2
+  name: "an Ask Olga special"
   details: 
-  minimum_diners: 4
-  image: 
+  min_diners: 4
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 18:
-  id: 75
-  venue_id: 18
-  title: an Ask Olga special;
+  venue_id: 3
+  name: "an Ask Olga special"
   details: 
-  minimum_diners: 6
-  image: 
+  min_diners: 6
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 19:
-  id: 23
   venue_id: 9
-  title: 2 free spice teas (iced/hot)
+  name: "2 free spice teas (iced/hot)"
   details: 
-  minimum_diners: 2
-  image: 
+  min_diners: 2
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2
+
 20:
-  id: 62
-  venue_id: 12
-  title: 3 free soups or salads
-  details: At least one entree purchased per person
-  minimum_diners: 4
-  image: 
-21:
-  id: 26
-  venue_id: 10
-  title: $5 off
-  details: With group purchase of at least $25
-  minimum_diners: 2
-  image: 
-22:
-  id: 27
-  venue_id: 10
-  title: $10 off
-  details: With group purchase of at least $50
-  minimum_diners: 4
-  image: 
-23:
-  id: 28
-  venue_id: 10
-  title: $20 off
-  details: With group purchase of at least $100
-  minimum_diners: 6
-  image: 
-24:
-  id: 29
-  venue_id: 12
-  title: 1 free soup or salad
-  details: At least one entree purchased per person
-  minimum_diners: 2
-  image: 
-25:
-  id: 67
-  venue_id: 2
-  title: 2 free desserts
-  details: 
-  minimum_diners: 6
-  image: 
-26:
-  id: 64
-  venue_id: 11
-  title: 2 free soup/salads &amp; 2 baklava
-  details: 
-  minimum_diners: 4
-  image: 
-27:
-  id: 65
-  venue_id: 11
-  title: 6 free soup/salads &amp; 3 baklava
-  details: 
-  minimum_diners: 6
-  image: 
-28:
-  id: 32
-  venue_id: 11
-  title: 1 free soup/salad
-  details: 
-  minimum_diners: 2
-  image: 
-29:
-  id: 66
-  venue_id: 2
-  title: 1 free appetizer or dessert
-  details: 
-  minimum_diners: 4
-  image: 
-30:
-  id: 60
-  venue_id: 9
-  title: 3 free side dishes
-  details: 
-  minimum_diners: 4
-  image: 
-31:
-  id: 35
-  venue_id: 13
-  title: 1 free duck fat fry
-  details: 
-  minimum_diners: 2
-  image: 
-32:
-  id: 38
-  venue_id: 14
-  title: 1 free appetizer
-  details: 
-  minimum_diners: 2
-  image: 
-33:
-  id: 70
-  venue_id: 13
-  title: free duck fat fries &amp; focaccia
-  details: 
-  minimum_diners: 4
-  image: 
-34:
-  id: 48
-  venue_id: 1
-  title: 4 free desserts
-  details: With purchase of at least 2 slices of pizza per person
-  minimum_diners: 4
-  image: 
-35:
-  id: 47
-  venue_id: 1
-  title: 6 free desserts
-  details: With purchase of at least 2 slices of pizza per person
-  minimum_diners: 6
-  image: 
-36:
-  id: 52
-  venue_id: 6
-  title: 4 free soft drinks
-  details: With purchase of at least one sandwich per person
-  minimum_diners: 4
-  image: 
-37:
-  id: 53
-  venue_id: 6
-  title: 6 free soft drinks
-  details: With purchase of at least one sandwich per person
-  minimum_diners: 6
-  image: 
-38:
-  id: 71
-  venue_id: 13
-  title: free duck fat fries &amp; flatbread pizza
-  details: 
-  minimum_diners: 6
-  image: 
-39:
-  id: 74
-  venue_id: 18
-  title: an Ask Olga special
-  details: 
-  minimum_diners: 2
-  image: 
-40:
-  id: 79
-  venue_id: 20
-  title: 2 free chips, 2 free soft drinks, 2 free cookies
-  details: Must buy 1 7&quot; sub per person.
-  minimum_diners: 6
-  image: 
-41:
-  id: 80
-  venue_id: 19
-  title: half off all appetizers and select martinis
-  details: 
-  minimum_diners: 2
-  image: 
-42:
-  id: 81
-  venue_id: 19
-  title: half off all appetizers and select martinis
-  details: 
-  minimum_diners: 4
-  image: 
-43:
-  id: 82
-  venue_id: 19
-  title: half off all appetizers and select martinis
-  details: 
-  minimum_diners: 6
-  image: 
+  venue_id: 5
+  name: "3 free soups or salads"
+  details: "At least one entree purchased per person"
+  min_diners: 4
+  available: 10
+  total: 10
+  price: 1.5
+  original_price: 2

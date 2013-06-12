@@ -1,5 +1,9 @@
 Foodcircles::Application.routes.draw do
 
+  namespace :api do
+    get "/weekly_meals" => "weekly_meals#show", as: "weekly_meals"
+  end
+
   get "socialbutterflies/index"
 
   # match '/offers' => 'offers#index', :as => :offers

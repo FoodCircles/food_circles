@@ -174,9 +174,9 @@ class ApplicationController < ActionController::Base
 
   def get_progress
     @progress = 0
-    Stripe::Charge.all.each do |charge|
-      if Time.at(charge.created) > Time.now - 1.week
-        @progress += charge.amount
+    Payment.all.each do |payment|
+      if Time.at(payment.created_at) > Time.now - 1.week
+        @progress += payment.amount
       end
     end
     @progress /= 100
@@ -189,5 +189,18 @@ class ApplicationController < ActionController::Base
     @adjusted_total = 3 * @total_vouchers / 4
   end
 
+  def weekly_meal_goal
+    @_weekly_meal_goal ||= Calculate::WeeklyMeal.goal
+  end
+
+  def total_week_payments
+    @_total_week_payments ||= Payment.total_week_payments
+  end
+
+  def total_payments
+    @_total_payments ||= Payment.count
+  end
+
+  helper_method :weekly_meal_goal, :total_week_payments, :total_payments
 end
 

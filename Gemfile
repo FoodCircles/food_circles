@@ -31,6 +31,7 @@ gem 'omniauth'
 gem 'omniauth-facebook', '1.4.1'
 gem 'omniauth-twitter'
 gem "friendly_id"
+gem 'rack-mini-profiler'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -48,4 +49,5 @@ end
 group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
