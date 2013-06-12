@@ -76,7 +76,7 @@
     .container
       %a{class: "logo", href: root_path}
       .donation-count
-        %strong 493
+        %strong= total_payments
         meals donated to date
       .account
         %a{href: "#"}
@@ -113,13 +113,13 @@
     .mh-sub
       .container
         .current-goal
-          - percent = @adjusted_total == 0 ? 0 : @progress.to_f / @adjusted_total * 100
+          - percent = weekly_meal_goal == 0 ? 0 : @progress.to_f / weekly_meal_goal * 100
           .current
-            %strong= @progress
+            %strong= total_week_payments.count
             %small meals
           .progress
             %span.goal this week's goal
-            %span.total= "#{@adjusted_total} meals"
+            %span.total= "#{weekly_meal_goal} meals"
             %em.bar{style: "width:" + percent.to_s + "%"}
         %p.getapp 
           Arm yourself for the streets.

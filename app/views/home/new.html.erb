@@ -74,7 +74,7 @@
 				<div class="container">
 					<a class="logo" href="#">FoodCircles</a>
 					<div class="donation-count">
-						<strong>493</strong>
+						<strong><%= @total_payments %></strong>
 						meals donated to date
 					</div><!-- /.donation-count -->
 					<div class="account"><a href="#">My Account <i class="arrow-right white"></i></a></div><!-- /.account -->
@@ -100,12 +100,12 @@
 				<div class="container">
 					<div class="current-goal">
 						<div class="current">
-							<strong>37</strong>
+							<strong><%= @total_week_payments %></strong>
 							<small>meals</small>
 						</div><!-- /.current -->
 						<div class="progress">
 							<span class="goal">this weeks goal</span>
-							<span class="total">50 meals</span>
+							<span class="total"><%= @weekly_meal_goal %></span>
 							<em class="bar" style="width:74%"></em>
 						</div><!-- /.progress -->
 					</div><!-- /.current-goal -->
