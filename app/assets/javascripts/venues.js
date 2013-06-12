@@ -1,3 +1,5 @@
+//= require home
+
 $(function() {
     $('.bigButton').attr('data-active', 'false');
     $('tr').click(function() {
@@ -16,3 +18,7 @@ $(function() {
         $(this).attr('data-active', 'false');
     });
 });
+
+$( function() {
+    $.refreshScripts()
+} )

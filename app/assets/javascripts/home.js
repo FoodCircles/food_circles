@@ -226,7 +226,6 @@
 		})
 
 		.on('click', '.popup-link', function(event){
-                    console.log('here')
 			event.preventDefault();
 			popupOpen($(this).attr('href'))
 		});
@@ -434,7 +433,7 @@
 			}
 		});
 	}
-    $.popupOpen = popupOpen
+        $.popupOpen = popupOpen
 
 	function refreshScripts($cnt){
 		//check if cnt isn't assigned and assign it as doc
@@ -465,7 +464,7 @@
 			});
 		});
 
-		$('.deal').height($('.deal').height());
+		// $('.deal').height($('.deal').height());
 
 		$('.deal .card-number .field').payment('formatCardNumber').on('keyup', function(){
 			var val_ = $(this).val()
@@ -502,7 +501,7 @@
 		$('.subscribe:visible', $cnt).find('.field').trigger('focus');
 
 	}
-
+        $.refreshScripts = refreshScripts
 
 
 	function sectionScroll(){
