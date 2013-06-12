@@ -1,0 +1,38 @@
+development:
+  adapter: postgis
+  encoding: unicode
+  database: foodcircles
+  host: localhost
+  pool: 5
+  username: user
+  password: 
+  su_name: postgres
+  su_password: 
+  port: 5432
+  template: template_postgis
+
+test:
+  adapter: postgis
+  encoding: unicode
+  database: foodcircles_test
+  host: localhost
+  pool: 5
+  username: user
+  password: 
+  su_name: postgres
+  su_password: 
+  port: 5432
+  template: template_postgis
+
+production:
+  adapter: postgis
+  encoding: unicode
+  database: foodcircles_production
+  host: localhost
+  pool: 5
+  username: user
+  password: 
+  su_name: postgres
+  su_password: 
+  port: 5432
+  template: template_postgis
