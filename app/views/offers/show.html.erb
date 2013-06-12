@@ -129,7 +129,7 @@
   </div><!-- /.deal -->
   <div class="mini-profile">
     <i class="arrow-down"><i class="arrow-down"></i></i>
-    <%= image_tag @offer.venue.image.thumb('130x135').url, :class => 'thumb' %>    
+    <%= image_tag @offer.venue.image.thumb('130x135').url, :class => 'thumb' if @offer.venue.image %>    
     <h4>
       <small><%= @offer.venue.phone %></small>
       <%= @offer.venue.name %>
