@@ -107,20 +107,16 @@
             %li
               = link_to "Social Butterflies", main_app.socialbutterflies_path 
 
-
-
-  - unless @progress.nil?
-    .mh-sub
-      .container
-        .current-goal
-          - percent = weekly_meal_goal == 0 ? 0 : @progress.to_f / weekly_meal_goal * 100
-          .current
-            %strong= total_week_payments.count
-            %small meals
-          .progress
-            %span.goal this week's goal
-            %span.total= "#{weekly_meal_goal} meals"
-            %em.bar{style: "width:" + percent.to_s + "%"}
-        %p.getapp 
-          Arm yourself for the streets.
-          %a.popup-link{href: app_popup_path} Get the App
+  .mh-sub
+    .container
+      .current-goal
+        .current
+          %strong= total_week_payments.count
+          %small meals
+        .progress
+          %span.goal this week's goal
+          %span.total= "#{weekly_meal_goal} meals"
+          %em.bar{style: "width: #{percent}%"}
+      %p.getapp 
+        Arm yourself for the streets.
+        %a.popup-link{href: app_popup_path} Get the App
