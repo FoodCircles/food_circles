@@ -172,25 +172,8 @@ class ApplicationController < ActionController::Base
   #  email.present? && (email =~ VALID_EMAIL_REGEX)
   # end
 
-  def get_progress
-    @progress = 0
-    Payment.all.each do |payment|
-      if Time.at(payment.created_at) > Time.now - 1.week
-        @progress += payment.amount
-      end
-    end
-    @progress /= 100
-
-    @total_vouchers = 0
-    Offer.all.each do |offer|
-      @total_vouchers += offer.price * offer.total
-    end
-    @total_vouchers = @total_vouchers.round
-    @adjusted_total = 3 * @total_vouchers / 4
-  end
-
   def weekly_meal_goal
-    @_weekly_meal_goal ||= Calculate::WeeklyMeal.goal
+    @_weekly_meal_goal ||= Calculations::Weekly.meal_goal
   end
 
   def total_week_payments
@@ -201,6 +184,14 @@ class ApplicationController < ActionController::Base
     @_total_payments ||= Payment.count
   end
 
-  helper_method :weekly_meal_goal, :total_week_payments, :total_payments
+  def weekly_progress
+    @_weekly_progress ||= Calculations::Weekly.weekly_progress
+  end
+
+  def percent
+    @_percent ||= Calculations::Weekly.percent
+  end
+
+  helper_method :weekly_meal_goal, :total_week_payments, :total_payments, :weekly_progress, :percent
 end
 

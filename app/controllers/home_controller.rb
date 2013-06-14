@@ -1,10 +1,8 @@
 class HomeController < ApplicationController
   def index
     @offers = Offer.limit(9)
-
-    get_progress
-    
     @cities = {}
+    
     Venue.all.collect do |venue|
       if @cities[venue.city].nil?
         @cities[venue.city] = 1

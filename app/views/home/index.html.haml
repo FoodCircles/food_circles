@@ -22,14 +22,13 @@
   .paging
 
   .donation-progress
-    - percent = @adjusted_total == 0 ? 0 : @progress.to_f / @adjusted_total * 100
-    .bar{style: "width:" + percent.to_s + "%"}
+    .bar{style: "width: #{percent}%"}
       %span{class: "text"}
         %strong
           %span
-            = @progress
+            = weekly_progress[:current_progress]
             %em of
-          = @adjusted_total
+          = weekly_progress[:adjusted_total]
           meals
         donated this week
 

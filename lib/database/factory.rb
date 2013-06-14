@@ -1,20 +1,21 @@
 module Database
   class Factory
-    attr_reader :klass, :path
+    attr_reader :factory, :file_path
+    YML_PATH = "#{Rails.root}/yml/"
 
-    def self.create_records(factory, file_path)
-      new(factory, file_path).create_records
+    def self.create_records(factory_name, file_path)
+      new(factory_name, file_path).create_records
     end
 
-    def initialize(factory, file_path)
-      @klass = factory.to_s.singularize.classify.constantize
-      @path = file_path
+    def initialize(factory_name, file)
+      @factory = factory_name.constantize
+      @file_path = YML_PATH + file
     end
 
     def create_records
-      record_hash = YAML.load(File.read(path))
+      record_hash = YAML.load(File.read(file_path))
       record_hash.each_value do |record|
-        klass.create(record)
+        factory.create(record)
       end
     end
   end
