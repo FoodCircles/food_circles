@@ -11,6 +11,7 @@
   price: 1
   circle_image_uid: venues/georgios.png
   vouchers_available: 10
+  vouchers_total: 10
 
 2:
   user_id: 1
@@ -25,6 +26,7 @@
   price: 2
   circle_image_uid: venues/olivesa.png
   vouchers_available: 10
+  vouchers_total: 10
 
 3:
   user_id: 1
@@ -39,6 +41,7 @@
   price: 1
   circle_image_uid: venues/queens_pub.png
   vouchers_available: 10
+  vouchers_total: 10
 
 4:
   user_id: 1
@@ -53,6 +56,7 @@
   price: 1
   circle_image_uid: venues/Szechuan___Garden.png
   vouchers_available: 10
+  vouchers_total: 10
 
 5:
   user_id: 1
@@ -67,6 +71,7 @@
   price: 3
   circle_image_uid: venues/tre_cugini_1.png
   vouchers_available: 10
+  vouchers_total: 10
 
 6:
   user_id: 1
@@ -81,6 +86,7 @@
   price: 1
   circle_image_uid: venues/skywalk_deli.png
   vouchers_available: 10
+  vouchers_total: 10
 
 7:
   user_id: 1
@@ -95,6 +101,7 @@
   price: 2
   circle_image_uid: venues/gojo_etheopian.png
   vouchers_available: 10
+  vouchers_total: 10
 
 8:
   user_id: 1
@@ -109,6 +116,7 @@
   price: 3
   circle_image_uid: venues/sanchez.png
   vouchers_available: 10
+  vouchers_total: 10
 
 9:
   user_id: 1
@@ -123,6 +131,7 @@
   price: 1
   circle_image_uid: venues/parsley.png
   vouchers_available: 10
+  vouchers_total: 10
 
 10:
   user_id: 1
@@ -137,3 +146,4 @@
   price: 1
   circle_image_uid: venues/eastown_cafe.png
   vouchers_available: 10
+  vouchers_total: 10

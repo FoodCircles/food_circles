@@ -38,8 +38,6 @@ class VenuesController < ApplicationController
   def show
     # @v = Venue.find(params[:id])
     @offer = Venue.find(params[:id]).offers.first
-
-    get_progress
     
     if ['json','jsonp'].include?(params[:format])
         render :json => @v, :callback => params[:callback]
