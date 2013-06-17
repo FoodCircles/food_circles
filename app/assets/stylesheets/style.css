@@ -681,7 +681,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 
 
 /*=== Products - Tiles ===*/
-.products-tiles { position:relative; margin:0 -15px; *zoom:1; padding-bottom:80px; }
+.products-tiles { position:relative; margin:0 -15px; *zoom:1; padding-bottom:80px; height: auto; }
 .products-tiles:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 .products .tile { float:left; width:274px; height:237px; background:#fff; padding:0 13px; margin:0 15px 14px; -webkit-backface-visibility:hidden; }
 .products .tile h3 { font-size:14px; line-height:22px; text-transform:uppercase; color:#4c4c4c; }

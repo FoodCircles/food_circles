@@ -15,8 +15,19 @@
 
 	//document ready event
 	$doc.on('ready', function(){
-
 		sectionScroll();
+
+		//Endless Page
+		if($('.pagination').length){
+			$(window).scroll(function(){
+				var url = $('.pagination .next_page').attr('href')
+				if(url && $(window).scrollTop() > $(document).height() - $(window).height() - 50){
+					$('.pagination').html('<img src="assets/loader.png">');
+					$.getScript(url);
+				}
+			});
+			$(window).scroll();
+		}//Endless page end
 
 		$body = $('body');
 
@@ -614,7 +625,7 @@
 				itemSelector:'.tile',
 				bufferPx:-200,
 				loading: {
-					img: 'css/images/loader.png'
+					img: 'assets/loader.png'
 				}
 			}, function(newElements){
 				var $addNew = $ptiles.find('.add-new');
