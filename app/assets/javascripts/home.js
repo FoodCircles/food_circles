@@ -15,7 +15,6 @@
 
 	//document ready event
 	$doc.on('ready', function(){
-
 		sectionScroll();
 
 		$body = $('body');
@@ -328,7 +327,6 @@
 
 			//set little timeout to prevent item from close immidiatly after the open
 			setTimeout(function(){
-				
 				if($filter.is('.expanded')){
 					$filter.removeClass('expanded');
 				}else{
@@ -366,7 +364,7 @@
 			var $filter = $(this).closest('.filter');
 			if($filter.find('input:checked').length){
 				$filter.addClass('has-checked');
-			}else{	
+			}else{
 				$filter.removeClass('has-checked');
 			}
 		});
@@ -517,7 +515,7 @@
 			$fieldset.addClass('editing').find('.field').each(function(){
 				if($(this).is('[type="password"]')){
 					$(this).val('');
-				}else{	
+				}else{
 					$(this).val($(this).siblings('.value').text());
 				}
 			});
@@ -596,7 +594,6 @@
 					}
 				}
 			});
-			
 		}
 	}
 
@@ -609,15 +606,29 @@
 				itemSelector:'.tile'
 			})
 			.infinitescroll({
-				navSelector: '.tiles-nav',
-				nextSelector:'.next-page',
+				navSelector: '.pagination',
+				nextSelector:'.next_page',
 				itemSelector:'.tile',
 				bufferPx:-200,
+				errorCallback: function(){
+					$('.pagination').text('No more offers.')
+				},
 				loading: {
-					img: 'css/images/loader.png'
+					img: 'assets/loader.png'
 				}
 			}, function(newElements){
 				var $addNew = $ptiles.find('.add-new');
+
+				//Endless Page
+				if($('.pagination').length){
+					$(window).scroll(function(){
+						var url = $('.pagination .next_page').attr('href');
+						if(url && $(window).scrollTop() > $(document).height() - $(window).height() - 50){
+							var $newElements = $.getScript(url);
+						}
+					});
+				}//Endless page end
+
 				$ptiles.isotope('insert', $(newElements)).isotope('insert', $addNew);
 			});
 		},

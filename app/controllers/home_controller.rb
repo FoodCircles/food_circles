@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @offers = Offer.limit(9)
+    @offers = Offer.order("created_at DESC").page(params[:page]).per_page(9)
     @cities = {}
     
     Venue.all.collect do |venue|
