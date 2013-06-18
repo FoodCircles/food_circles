@@ -1,6 +1,1 @@
-$('.products-tiles').append('<%= j render(@offers) %>');
-<% if @offers.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate(@offers) %>');
-<% else %>
-  $('.pagination').remove();
-<% end %>
+var new_elements = '<%= j render(@offers) %>'
