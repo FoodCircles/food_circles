@@ -85,3 +85,5 @@
                 tags:
                 = raw offer.category.collect { |cat| link_to cat.name, cat }.join(",")
 
+      = will_paginate @offers
+
