@@ -27,8 +27,9 @@ gem 'omniauth'
 gem 'omniauth-facebook', '1.4.1'
 gem 'omniauth-twitter'
 gem 'friendly_id'
-gem 'rack-mini-profiler'
 gem 'will_paginate'
+
+gem 'rack-mini-profiler', group: [:development, :test]
 
 # Gems used only for assets and not required
 # in production environments by default.
