@@ -39,18 +39,18 @@
         .head-btns
           %a.btn-standart.popup-link{href: app_popup_path} Get the app
           %a.btn-standart.popup-link{href: notify_signup_path}Get updates
-        
+
         = render partial: "filters"
 
-        %h6 
+        %h6
           let’s end hunger
         %i.arrow-down
-          %i.arrow-down      
-      
+          %i.arrow-down
+
       .products-tiles
-        - @offers.each do |offer|
-          %div{class: "tile " + ["red", "yellow", "green"].sample + ( offer.venue.vouchers_available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
-            %h3= link_to offer.venue.name, offer.venue
+        - @venues.each do |venue|
+          %div{class: "tile " + ["red", "yellow", "green"].sample + ( venue.vouchers_available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
+            %h3= link_to venue.name, venue
             .thumb
               %span.social
                 %a{href: "#", class: "btn-mini"}
@@ -58,32 +58,32 @@
                 %a{href: "#", class: "btn-mini"}
                   %i.icon-twitter
               .progress
-                - percent = (offer.venue.vouchers_available.to_f / offer.venue.vouchers_total.to_f) * 100
-                - if (offer.venue.vouchers_available.nil? or offer.venue.vouchers_available == 0)
+                - percent = (venue.vouchers_available.to_f / venue.vouchers_total.to_f) * 100
+                - if (venue.vouchers_available.nil? || venue.vouchers_available == 0)
                   %span.pbar{style: "height: 0"}
                     %a.block{href: notify_signup_path}
                       %small Notify me
                 - else
                   %span.pbar{style: "height:" + percent.to_s + "%"}
                     %span.block
-                      %strong= offer.venue.vouchers_available
+                      %strong= venue.vouchers_available
                       %small left
-                  
+
               /%a{href: main_app.deal_popup_not_logged_path(offer)}
-              %a.deallink.popup-link{href: '/deal_popup_not_logged/' + offer.id.to_s}
+              %a.deallink.popup-link{href: '/deal_popup_not_logged/' + venue.offers.first.id.to_s}
                 %span.price
-                  %strong= number_to_currency(offer.price, :precision => 0)
+                  %strong= number_to_currency(venue.offers.first.price, :precision => 0)
                   %span{class: "old"}
-                    = number_to_currency(offer.original_price, :precision => 0)
+                    = number_to_currency(venue.offers.first.original_price, :precision => 0)
                     %i{class: "icon-strike strike"}
                   %span{class: "shadow"}
-                = image_tag offer.image.url(:deal)
+                = image_tag venue.offers.first.image.url(:deal)
                 / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
-                %span{class: "title"}= offer.name
+                %span{class: "title"}= venue.offers.first.name
             .tags
-              - if not offer.category.empty?
+              - if not venue.offers.first.category.empty?
                 tags:
-                = raw offer.category.collect { |cat| link_to cat.name, cat }.join(",")
+                = raw venue.offers.first.category.collect { |cat| link_to cat.name, cat }.join(",")
 
-      = will_paginate @offers
+      = will_paginate @venues
 

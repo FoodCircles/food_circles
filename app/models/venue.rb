@@ -18,13 +18,14 @@ class Venue < ActiveRecord::Base
 
   PLACES_KEY = "AIzaSyA3XZ8R5H4Q8xsnaMMJKIPYxiBadpAt_a4"
   SRID = 4326
+  MIN_DISPLAY_DINERS = 2
 
   set_rgeo_factory_for_column(:latlon,
                               RGeo::Geographic.spherical_factory(:srid => SRID))
 
   image_accessor :image
   image_accessor :circle_image
-  
+
   validates_presence_of :name
   validates :email, :on => :update, :'validators/email' => true
   validates :email, :on => :create, :allow_nil => true, :'validators/email' => true
@@ -105,7 +106,7 @@ class Venue < ActiveRecord::Base
 
   def close_at(t = Time.now)
     t = ((t - t.beginning_of_week) / 60) + 300
-    
+
     o = OpenTime
       .where("open_times.openable_type = 'Offer' AND :t BETWEEN open_times.start AND open_times.end", {:t => t})
     o.each do |e|
@@ -184,7 +185,7 @@ class Venue < ActiveRecord::Base
     return if !self.reference
     query = "https://maps.googleapis.com/maps/api/place/details/json?reference=#{self.reference}&sensor=true&key=#{PLACES_KEY}"
     j = JSON.parse(open(query).read)
-    
+
     j['result']['reviews'].each do |r|
       self.reviews.create(:author_name => r['author_name'], :content => r['text'], :rating => r['aspects'][0]['rating'], :time => r['time'])
     end
@@ -201,16 +202,16 @@ class Venue < ActiveRecord::Base
       return "#{sprintf '%02d', h-12}:#{sprintf '%02d', m}pm"
     else
       return "#{sprintf '%02d', h}:#{sprintf '%02d', m}am"
-    end    
+    end
   end
 
   def self.updateRatings
     Venue.all.each do |v|
       query = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{v.name} #{v.address} #{v.city} #{v.state.name}&sensor=true&key=#{PLACES_KEY}".gsub(/\s/,'+').gsub("'",'')
       j = JSON.parse(open(query).read)
-      
+
       next if j['status'] == "ZERO_RESULTS"
-      
+
       loc = j['results'][0]['geometry']['location']
       v.latlon = "SRID=#{SRID};POINT (#{loc['lat']} #{loc['lng']})"
       v.rating = j['results'][0]['rating'].to_f
@@ -219,5 +220,9 @@ class Venue < ActiveRecord::Base
       v.save
       v.getReviews
     end
+  end
+
+  def self.with_display_offers
+    joins(:offers).where("offers.min_diners = ?", MIN_DISPLAY_DINERS).uniq
   end
 end
