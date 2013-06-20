@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
   def index
-    @offers = Offer.order("created_at DESC").page(params[:page]).per_page(9)
+    @venues = Venue.with_display_offers.page(params[:page]).per_page(9)
     @cities = {}
-    
+
     Venue.all.collect do |venue|
       if @cities[venue.city].nil?
         @cities[venue.city] = 1
