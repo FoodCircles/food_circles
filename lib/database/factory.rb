@@ -9,7 +9,7 @@ module Database
 
     def initialize(factory_name, file)
       @factory = factory_name.constantize
-      @file_path = YML_PATH + file
+      @file_path = file
     end
 
     def create_records
