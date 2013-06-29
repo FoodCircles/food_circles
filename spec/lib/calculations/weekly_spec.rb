@@ -3,7 +3,7 @@ require "spec_helper"
 describe Calculations::Weekly do
   before(:each) do 
     build_user_data
-    Database::Factory.create_records("Venue", "venues.yml")
+    Database::Factory.create_records(Venue, "venues.yml")
   end
 
   it "returns a new instance of Weekly" do
