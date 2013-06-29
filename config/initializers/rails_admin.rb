@@ -37,7 +37,7 @@ RailsAdmin.config do |config|
 
   #  ==> Included models
   # Add all excluded models here:
-  # config.excluded_models = [Charity, Contact, ContactType, Offer, OfferTag, OfferTaggable, OpenTime, Reservation, State, User, Venue]
+  config.excluded_models << 'LongTasks'
 
   # Add models here if you want to go 'whitelist mode':
   # config.included_models = [Charity, Contact, ContactType, Offer, OfferTag, OfferTaggable, OpenTime, Reservation, State, User, Venue]
