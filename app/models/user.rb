@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :phone, :admin, :uid, :provider
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :phone, :admin, :uid, :provider, :stripe_customer_token
   validates :email, :on => :update, :'validators/email' => true
   validates :email, :on => :create, :allow_nil => true, :'validators/email' => true
   has_many :reservations
