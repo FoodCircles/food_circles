@@ -69,18 +69,18 @@
         <div class="head">
           <a href="#" class="back">&lt; back to restaurant profile</a>
           <div class="profile">
-            <%- if current_user %>
+            <%- if user_signed_in? %>
               <div class="row">
                 <%= current_user.name %>
               </div>
             <%- else %>
               <div class="row">
                 <a href="#" class="btn-facebook mid">Sign up <i class="icon-btn-facebook medium"></i></a>
-                <input type="text" class="field standart" placeholder="new email address" />
+                <input type="text" class="field standart" placeholder="new email address" name="user_email"/>
               </div><!-- /.row -->
               <div class="row">
                 <a href="#" class="btn-twitter mid">Sign up <i class="icon-btn-twitter medium"></i></a>
-                <input type="password" class="field standart" placeholder="new password" />
+                <input type="password" class="field standart" placeholder="new password" name="user_password"/>
               </div><!-- /.row -->
               <em>Have an account? <a href="#">Sign in</a></em>
             <%- end %>
@@ -120,11 +120,8 @@
             </div><!-- /.choose-organization -->
           </fieldset>
           <div class="foot">
-            <% if user_signed_in? %>
-              <a id="dealbuy" href="#" class="btn-standart full-width light-shadow large-font">Buy</a>
-            <% else %>
-              <a href="<%= new_user_session_path %>" class="btn-standart full-width light-shadow large-font">Login in order to buy</a>
-            <% end %>
+            <a id="dealbuy" href="#" class="btn-standart full-width light-shadow large-font">Buy</a>
+            
             <p class="secured"><i class="icon-secure"></i> SECURE – PAYMENTS PROCESSED BY STRIPE</p><!-- /.secured -->
           </div><!-- /.foot -->
         </div><!-- /.body -->

@@ -1,5 +1,5 @@
 class StripePaymentsController < ApplicationController
-  before_filter :authenticate_user!
+
   #Stripe Payments Controller for Test Envi.
   def new
   end
@@ -8,6 +8,23 @@ class StripePaymentsController < ApplicationController
     # Amount in cents
     @amount = params[:amount].to_f
     offer = Offer.find(params[:offer_id])
+
+    if !user_signed_in?
+      @user = User.find_by_email(params[:user_email])
+      if @user.nil?
+        @user = User.new(:email => params[:user_email], :password => params[:user_password], :password_confirmation => params[:user_password])
+        @user.save
+      else
+        if !@user.valid_password?(params[:user_password])
+
+          flash[:error] = "Wrong password!"
+          render :action => 'new' and return
+        else
+          sign_in(@user)
+        end
+      end
+      
+    end
 
     if !current_user.stripe_customer_token.nil?
       customer = Stripe::Customer.retrieve(current_user.stripe_customer_token)
