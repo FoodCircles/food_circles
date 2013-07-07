@@ -120,7 +120,11 @@
             </div><!-- /.choose-organization -->
           </fieldset>
           <div class="foot">
-            <a id="dealbuy" href="#" class="btn-standart full-width light-shadow large-font">Buy</a>
+            <% if user_signed_in? %>
+              <a id="dealbuy" href="#" class="btn-standart full-width light-shadow large-font">Buy</a>
+            <% else %>
+              <a href="<%= new_user_session_path %>" class="btn-standart full-width light-shadow large-font">Login in order to buy</a>
+            <% end %>
             <p class="secured"><i class="icon-secure"></i> SECURE – PAYMENTS PROCESSED BY STRIPE</p><!-- /.secured -->
           </div><!-- /.foot -->
         </div><!-- /.body -->

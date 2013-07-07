@@ -1,4 +1,5 @@
 class StripePaymentsController < ApplicationController
+  before_filter :authenticate_user!
   #Stripe Payments Controller for Test Envi.
   def new
   end
