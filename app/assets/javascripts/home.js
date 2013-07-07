@@ -1,9 +1,10 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+
+//= require jquery.colorbox
 //= require jquery.carouFredSel-6.2.1-packed
 //= require jquery.isotope.min
 //= require jquery.infinitescroll.min
-//= require jquery.colorbox
 //= require jquery.payment
 //= require stripe_payment
 
@@ -213,6 +214,11 @@
 				$self.siblings('.balloon').addClass('expanded');
 			}, 1);
 		})
+    
+    .on('click', '.view-account-btn', function(event) {
+      event.preventDefault();
+      $.colorbox.close();
+    })
 
 		.on('click', '.balloon-close', function(event){
 			event.preventDefault();
