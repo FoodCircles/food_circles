@@ -8,7 +8,7 @@ class StripePaymentsController < ApplicationController
     @amount = params[:amount].to_f
     offer = Offer.find(params[:offer_id])
 
-    if current_user.stripe_customer_token
+    if !current_user.stripe_customer_token.nil?
       customer = Stripe::Customer.retrieve(current_user.stripe_customer_token)
     else
       #tkxel_dev: create Customers and save them on stripe DB.
