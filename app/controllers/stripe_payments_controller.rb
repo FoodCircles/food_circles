@@ -19,10 +19,9 @@ class StripePaymentsController < ApplicationController
 
           flash[:error] = "Wrong password!"
           render :action => 'new' and return
-        else
-          sign_in(@user)
         end
       end
+      sign_in(@user)
       
     end
 
