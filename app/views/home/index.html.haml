@@ -70,7 +70,7 @@
                       %small left
 
               /%a{href: main_app.deal_popup_not_logged_path(offer)}
-              %a.deallink.popup-link{href: '/deal_popup_not_logged/' + venue.offers.first.id.to_s}
+              %a.deallink.popup-link{href: venue.offers.first.id.to_s, :"data-slug" => venue.slug}
                 %span.price
                   %strong= number_to_currency(venue.offers.first.price, :precision => 0)
                   %span{class: "old"}

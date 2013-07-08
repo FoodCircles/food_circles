@@ -78,6 +78,7 @@ Foodcircles::Application.routes.draw do
   #Popups
   match '/notify_signup' => 'popups#notify_signup'
   match '/app_popup' => 'popups#app_popup'
+  match '/:id' => 'home#index'
   match '/deal_popup_not_logged/:id' => 'popups#deal_popup_not_logged'
   match '/reciept/:id' => 'popups#reciept'
 
