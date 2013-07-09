@@ -491,7 +491,8 @@
 				step:1,
 				slide: function(event, ui){
 					if($slider.closest('.pay-box').length){
-						$slider.closest('.pay-box').find('.field').val(ui.value).trigger('change');
+            var no_zeroes = Math.floor(ui.value);
+            $('.pay-box').find('.field').val(no_zeroes);
 					}
 				}
 			});
