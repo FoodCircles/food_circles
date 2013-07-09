@@ -14,6 +14,10 @@ module ApplicationHelper
     @offer = @offer[0][:name] if @offer.present?
 
   end
+  
+  def prettify_float(float)
+    float.to_i == float ? float.to_i : float
+  end
 
 end
 

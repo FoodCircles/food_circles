@@ -23,8 +23,8 @@
             <ul class="qty">
               <%- @offer.venue.offers.each do |offer| %>
                 <li class="radio-holder">
-                  <label for="qty-1"><%= offer.name %> ($<%= offer.price %>)</label>
-                  <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= offer.price %>"/>
+                  <label for="qty-1"><%= offer.name %> ($<%= prettify_float(offer.price) %>)</label>
+                  <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>"/>
                 </li>
               <%- end %>
             </ul><!-- /.qty -->
