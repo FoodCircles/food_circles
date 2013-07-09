@@ -472,7 +472,7 @@
 			$slider.slider({
 				min: sliderMin,
 				max: sliderMax,
-				step:0.5,
+				step:1,
 				slide: function(event, ui){
 					if($slider.closest('.pay-box').length){
 						$slider.closest('.pay-box').find('.field').val(ui.value).trigger('change');
