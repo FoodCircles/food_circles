@@ -37,7 +37,7 @@
                   </div><!-- /.head -->
                   <a href="/reciept/<%= payment.id %>" class="body recieptlink popup-link">
                     <span>View Reciept</span>
-                    <%= image_tag payment.offer.image.url(:timeline) %>
+                    <%= image_tag payment.offer.venue.main_image.thumb("150x200").url %>
                   </a><!-- /.body -->
                   <div class="foot">
                     <div class="kids">

@@ -1529,6 +1529,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 	   -moz-transition:all 300ms;
 	     -o-transition:all 300ms;
 	        transition:all 300ms;
+
 }
 .timeline .block .body span { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); position:absolute; top:50%; left:0; right:0; z-index:3;  text-align:center; font:bold 18px 'pragmatica-web', sans-serif; color:#fff; margin-top:-12px;
 	/*transition*/
@@ -1577,8 +1578,6 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .timeline .block.highlight p { font:14px 'pragmatica-web', sans-serif; color:#fff; }
 .timeline .block.highlight p a { color:#fff; text-decoration:underline; }
 .timeline .block.highlight p a:hover { text-decoration:none; }
-
-
 
 /**** Isotope Filtering ****/
 

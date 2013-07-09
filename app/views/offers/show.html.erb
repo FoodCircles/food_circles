@@ -4,7 +4,7 @@
       <input type="hidden" name="stripe_token"/>
       <div class="deal-main">
         <div class="deal-banner">
-          <%= image_tag @offer.main_image.url %>
+          <%= image_tag @offer.venue.main_image.url %>
           <h2><%= @offer.venue.name %></h2>
           <span class="price">
             <strong><%= number_to_currency(@offer.price, :precision => 0) %></strong>
@@ -130,7 +130,7 @@
   </div><!-- /.deal -->
   <div class="mini-profile">
     <i class="arrow-down"><i class="arrow-down"></i></i>
-    <%= image_tag @offer.venue.thumbnail_image.url, :class => 'thumb' if @offer.venue.image %>    
+    <%= image_tag @offer.venue.thumbnail_image.url, :class => 'thumb' if @offer.venue.thumbnail_image %>    
     <h4>
       <small><%= @offer.venue.phone %></small>
       <%= @offer.venue.name %>
