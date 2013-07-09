@@ -181,15 +181,19 @@
 
 		.on('change', '.qty input', function(){
 			if($(this).is(':checked')){
-				var valArray = $(this).val().split(',');
-				PayBox.setPrice(parseInt(valArray[0]));
-				$('.pay-box').find('.min').text('$' + parseInt(valArray[0]));
-				$('.pay-box').find('.mid').text('$' + parseInt(valArray[1]));
-				$('.pay-box').find('.max').text('$' + parseInt(valArray[2]));
-
+				var origPrice = parseFloat($(this).data('price'));
+        
+				//PayBox.setPrice(origPrice);
+        
+        $('.pay-box').find('.field').val(origPrice);
+        
+				$('.pay-box').find('.min').text('$' + origPrice);
+				$('.pay-box').find('.mid').text('$' + (origPrice * 2));
+				$('.pay-box').find('.max').text('$' + (origPrice * 4));
+        
 				$('.pay-box').find('.slider').slider('option', {
-					min: parseInt(valArray[0]),
-					max: parseInt(valArray[2]) 
+					min: origPrice,
+					max: origPrice * 4
 				});
 			}
 		})
@@ -408,7 +412,8 @@
 		});
 
     $(document).bind('cbox_closed', function(){ 
-      history.back();
+      if($body.data('meta') === 'home#index')
+        history.back();
     });
 
 	});//document ready event
@@ -422,6 +427,7 @@
     {
       popupOpen('/deal_popup_not_logged'+location.pathname);
     }
+    
 	});
 
 	$win.on('resize', function(){
@@ -436,7 +442,7 @@
 			onComplete:function(){
 				$body.data('prev-popup', $body.data('cur-popup'));
 				$body.data('cur-popup', href);
-
+            
 				refreshScripts($('#colorbox'));
 				if($('.popup-print').length){
 					$('#cboxClose').addClass('hidden');
@@ -480,7 +486,18 @@
 				}
 			});
 		});
-
+		var origPrice = parseFloat($('input.custom-input:checked').data('price'));
+        
+    $('.pay-box').find('.field').val(origPrice);
+    
+		$('.pay-box').find('.min').text('$' + origPrice);
+		$('.pay-box').find('.mid').text('$' + (origPrice * 2));
+		$('.pay-box').find('.max').text('$' + (origPrice * 4));
+    
+		$('.pay-box').find('.slider').slider('option', {
+			min: origPrice,
+			max: origPrice * 4
+		});
 		// $('.deal').height($('.deal').height());
 
 		$('.deal .card-number .field').payment('formatCardNumber').on('keyup', function(){
