@@ -7,17 +7,17 @@
           <%= image_tag @offer.venue.main_image.url %>
           <h2><%= @offer.venue.name %></h2>
           <span class="price">
-            <strong><%= number_to_currency(@offer.price, :precision => 0) %></strong>
-            <small><%= number_to_currency(@offer.original_price, :precision => 0) %> <i class="icon-strike-big strike"></i></small>
+            <strong><%= number_to_currency(@min_offer.price, :precision => 0) %></strong>
+            <small><%= number_to_currency(@min_offer.original_price, :precision => 0) %> <i class="icon-strike-big strike"></i></small>
           </span>
           <span class="count">
-            <%= @offer.available %>
+            <%= @min_offer.available %>
             <small>left</small>
           </span>
         </div><!-- /.deal-banner -->
         <div class="deal-body">
           <div class="description">
-            <h2><%= @offer.name %></h2>
+            <h2><%= @min_offer.name %></h2>
             <p>Good for 30 days. Please buy at least one entree. Please bring someone new to our business!</p>
             
             <ul class="qty">

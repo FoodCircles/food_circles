@@ -70,20 +70,20 @@
                       %small left
 
               /%a{href: main_app.deal_popup_not_logged_path(offer)}
-              %a.deallink.popup-link{href: venue.offers.first.id.to_s, :"data-slug" => venue.slug}
+              %a.deallink.popup-link{href: venue.offers.order("min_diners ASC").first.id.to_s, :"data-slug" => venue.slug}
                 %span.price
-                  %strong= number_to_currency(venue.offers.first.price, :precision => 0)
+                  %strong= number_to_currency(venue.offers.order("min_diners ASC").first.price, :precision => 0)
                   %span{class: "old"}
-                    = number_to_currency(venue.offers.first.original_price, :precision => 0)
+                    = number_to_currency(venue.offers.order("min_diners ASC").first.original_price, :precision => 0)
                     %i{class: "icon-strike strike"}
                   %span{class: "shadow"}
-                = image_tag venue.offers.first.image.url(:deal)
+                = image_tag venue.offers.order("min_diners ASC").first.image.url(:deal)
                 / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
-                %span{class: "title"}= venue.offers.first.name
+                %span{class: "title"}= venue.offers.order("min_diners ASC").first.name
             .tags
-              - if not venue.offers.first.category.empty?
+              - if not venue.offers.order("min_diners ASC").first.category.empty?
                 tags:
-                = raw venue.offers.first.category.collect { |cat| link_to cat.name, cat }.join(",")
+                = raw venue.offers.order("min_diners ASC").first.category.collect { |cat| link_to cat.name, cat }.join(",")
 
       = will_paginate @venues
 

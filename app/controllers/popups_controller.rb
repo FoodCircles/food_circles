@@ -7,6 +7,7 @@ class PopupsController < ApplicationController
     rescue ActiveRecord::RecordNotFound => e
       @offer = Venue.find(params[:id]).offers.first
     end
+    @min_offer = @offer.venue.offers.order("min_diners ASC").first
   end
 
   def reciept
