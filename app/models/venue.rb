@@ -23,7 +23,8 @@ class Venue < ActiveRecord::Base
   set_rgeo_factory_for_column(:latlon,
                               RGeo::Geographic.spherical_factory(:srid => SRID))
 
-  image_accessor :image
+  image_accessor :main_image
+  image_accessor :thumbnail_image
   image_accessor :circle_image
 
   validates_presence_of :name
@@ -49,7 +50,8 @@ class Venue < ActiveRecord::Base
         :offers => self.offers.currently_available.order(:min_diners),
         :open_times => self.open_times,
         :reviews => self.reviews.first(3),
-        :image => (self.image ? self.image.url : ''),
+        :main_image => (self.main_image ? self.main_image.url : ''),
+        :thumbnail_image => (self.thumbnail_image ? self.thumbnail_image.url : ''),
         :start => (self.available? ? 'Later Tonight' : self.open_at),
         :end => self.close_at,
         :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
@@ -72,7 +74,8 @@ class Venue < ActiveRecord::Base
         :offers => self.offers.not_available.order(:min_diners),
         :open_times => self.open_times,
         :reviews => self.reviews.first(3),
-        :image => (self.image ? self.image.url : ''),
+        :main_image => (self.main_image ? self.main_image.url : ''),
+        :thumbnail_image => (self.thumbnail_image ? self.thumbnail_image.url : ''),
         :start => (self.available? ? 'Later Tonight' : self.open_at),
         :end => self.close_at,
         :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
