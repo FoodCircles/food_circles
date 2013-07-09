@@ -180,10 +180,16 @@
 
 
 		.on('change', '.qty input', function(){
-			if($(this).is(':checked')){
-				var origPrice = parseFloat($(this).data('price'));
-        
+			
+      if($(this).parent().is('.checked')){
+        $("input[name='offer_id']").attr("checked", false)
+        $(this).attr("checked","checked")
+				var origPrice = parseFloat($('input[name=offer_id]:checked').data('price'));
 				//PayBox.setPrice(origPrice);
+        
+        if(origPrice === 1.00) {
+          origPrice = 1;
+        }
         
         $('.pay-box').find('.field').val(origPrice);
         
@@ -413,7 +419,11 @@
 
     $(document).bind('cbox_closed', function(){ 
       if($body.data('meta') === 'home#index')
-        history.back();
+      {
+        var full = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+        history.pushState({food: "circles"}, "FoodCircles", full + '/');
+      }
+        
     });
 
 	});//document ready event
