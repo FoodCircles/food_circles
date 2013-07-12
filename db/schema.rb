@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709182010) do
+ActiveRecord::Schema.define(:version => 20130712170111) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -249,11 +249,6 @@ ActiveRecord::Schema.define(:version => 20130709182010) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
-  create_table "venue_main_images", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "venue_taggables", :force => true do |t|
     t.integer  "venue_tag_id"
     t.integer  "venue_id"
@@ -278,26 +273,27 @@ ActiveRecord::Schema.define(:version => 20130709182010) do
     t.string   "neighborhood"
     t.string   "web"
     t.integer  "price"
-    t.datetime "created_at",                                                                                                       :null => false
-    t.datetime "updated_at",                                                                                                       :null => false
+    t.datetime "created_at",                                                                                                             :null => false
+    t.datetime "updated_at",                                                                                                             :null => false
     t.string   "main_image_uid"
     t.string   "phone"
-    t.string   "circle_image_uid"
+    t.string   "restaurant_tile_image_uid"
     t.integer  "time_zone_id"
     t.float    "rating"
     t.string   "reference"
-    t.boolean  "active",                                                                          :default => true
-    t.spatial  "latlon",              :limit => {:srid=>4326, :type=>"point", :geographic=>true}
-    t.string   "voucher",                                                                         :default => "5"
-    t.decimal  "multiplier",                                                                      :default => 1.5
-    t.string   "feemessage",                                                                      :default => "Enter fee mesage."
-    t.decimal  "feecharge",                                                                       :default => 0.0
-    t.boolean  "apply_able",                                                                      :default => false
-    t.string   "email",                                                                           :default => "venue@example.com"
+    t.boolean  "active",                                                                                :default => true
+    t.spatial  "latlon",                    :limit => {:srid=>4326, :type=>"point", :geographic=>true}
+    t.string   "voucher",                                                                               :default => "5"
+    t.decimal  "multiplier",                                                                            :default => 1.5
+    t.string   "feemessage",                                                                            :default => "Enter fee mesage."
+    t.decimal  "feecharge",                                                                             :default => 0.0
+    t.boolean  "apply_able",                                                                            :default => false
+    t.string   "email",                                                                                 :default => "venue@example.com"
     t.string   "slug"
     t.integer  "vouchers_available"
     t.integer  "vouchers_total"
-    t.string   "thumbnail_image_uid"
+    t.string   "outside_image_uid"
+    t.string   "timeline_image_uid"
   end
 
   add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true

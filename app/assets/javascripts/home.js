@@ -433,9 +433,10 @@
 		sectionScroll();
     
     //var offer_id_if_present = location.pathname.match(/\/offer\/(\d+)/);
-    if(location.pathname != '/' && $body.data('meta') === 'home#index')
+    if(location.pathname != '/' && $body)
     {
-      popupOpen('/deal_popup_not_logged'+location.pathname);
+      if($body.data('meta') === 'home#index')
+        popupOpen('/deal_popup_not_logged'+location.pathname);
     }
     
 	});

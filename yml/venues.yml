@@ -7,9 +7,9 @@
   zip: 49503
   neighborhood: Downtown
   web: "url: http://georgiosgourmetpizza.com/, phone_num: 616-356-4600"
-  image_uid: venues/1_7
+  main_image_uid: venues/1_7
   price: 1
-  circle_image_uid: venues/georgios.png
+  restaurant_tile_image_uid: venues/georgios.png
   vouchers_available: 10
   vouchers_total: 10
 
@@ -22,9 +22,9 @@
   zip: 49503
   neighborhood: Gaslight Village (EGR)
   web: "url: http://eatatolives.com/, phone_num: 616-451-8611"
-  image_uid: venues/2_7
+  main_image_uid: venues/2_7
   price: 2
-  circle_image_uid: venues/olivesa.png
+  restaurant_tile_image_uid: venues/olivesa.png
   vouchers_available: 10
   vouchers_total: 10
 
@@ -37,9 +37,9 @@
   zip: 49503
   neighborhood: Eastown
   web: "url: http://www.facebook.com/pages/Bombay-Cuisine-and-The-Queens-Pub-Grand-Rapids-MI/170670282966831, phone_num: 616-456-7055"
-  image_uid: venues/3_7
+  main_image_uid: venues/3_7
   price: 1
-  circle_image_uid: venues/queens_pub.png
+  restaurant_tile_image_uid: venues/queens_pub.png
   vouchers_available: 10
   vouchers_total: 10
 
@@ -52,9 +52,9 @@
   zip: 49503
   neighborhood: Eastown
   web: "url: http://www.yelp.com/biz/szechuan-garden-grand-rapids, phone_num: 616-456-9878"
-  image_uid: venues/4_6
+  main_image_uid: venues/4_6
   price: 1
-  circle_image_uid: venues/Szechuan___Garden.png
+  restaurant_tile_image_uid: venues/Szechuan___Garden.png
   vouchers_available: 10
   vouchers_total: 10
 
@@ -67,9 +67,9 @@
   zip: 49503
   neighborhood: Downtown
   web: "url: http://www.trecugini.com/, phone_num: 616-235-9339"
-  image_uid: venues/tre_cugini.png
+  main_image_uid: venues/tre_cugini.png
   price: 3
-  circle_image_uid: venues/tre_cugini_1.png
+  restaurant_tile_image_uid: venues/tre_cugini_1.png
   vouchers_available: 10
   vouchers_total: 10
 
@@ -82,9 +82,9 @@
   zip: 49503
   neighborhood: Downtown
   web: "url: http://www.skywalkdeli.com/, phone_num: 616-732-5388"
-  image_uid: venues/6_6
+  main_image_uid: venues/6_6
   price: 1
-  circle_image_uid: venues/skywalk_deli.png
+  restaurant_tile_image_uid: venues/skywalk_deli.png
   vouchers_available: 10
   vouchers_total: 10
 
@@ -97,9 +97,9 @@
   zip: 49503
   neighborhood: Eastown
   web: "url: http://www.gojoethiopiancuisine.com/, phone_num: 616-459-3383"
-  image_uid: venues/9_1
+  main_image_uid: venues/9_1
   price: 2
-  circle_image_uid: venues/gojo_etheopian.png
+  restaurant_tile_image_uid: venues/gojo_etheopian.png
   vouchers_available: 10
   vouchers_total: 10
 
@@ -112,9 +112,9 @@
   zip: 49503
   neighborhood: Downtown
   web: "url: http://www.sanchezbistro.com/, phone_num: 616-774-8272"
-  image_uid: venues/10_1
+  main_image_uid: venues/10_1
   price: 3
-  circle_image_uid: venues/sanchez.png
+  restaurant_tile_image_uid: venues/sanchez.png
   vouchers_available: 10
   vouchers_total: 10
 
@@ -127,9 +127,9 @@
   zip: 49503
   neighborhood: Downtown
   web: "url: http://parsleymg.com/, phone_num: 616-776-2590"
-  image_uid: venues/11_1
+  main_image_uid: venues/11_1
   price: 1
-  circle_image_uid: venues/parsley.png
+  restaurant_tile_image_uid: venues/parsley.png
   vouchers_available: 10
   vouchers_total: 10
 
@@ -142,8 +142,8 @@
   zip: 49503
   neighborhood: Eastown
   web: "url: http://www.facebook.com/pages/The-Eastown-Cafe/113252522028522, phone_num: 616-233-0797"
-  image_uid: venues/12_1
+  main_image_uid: venues/12_1
   price: 1
-  circle_image_uid: venues/eastown_cafe.png
+  restaurant_tile_image_uid: venues/eastown_cafe.png
   vouchers_available: 10
   vouchers_total: 10

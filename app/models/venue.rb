@@ -24,8 +24,10 @@ class Venue < ActiveRecord::Base
                               RGeo::Geographic.spherical_factory(:srid => SRID))
 
   image_accessor :main_image
-  image_accessor :thumbnail_image
-  image_accessor :circle_image
+  image_accessor :outside_image
+  image_accessor :restaurant_tile_image
+  image_accessor :timeline_image
+  
 
   validates_presence_of :name
   validates :email, :on => :update, :'validators/email' => true
