@@ -25,7 +25,7 @@
     <%= tag :meta, :name => 'stripe-key', :content => Rails.configuration.stripe[:publishable_key] %>
     <%= render 'layouts/google-analytics' %>
   </head>
-  <body class="<%= current_user ? 'logged-in' : 'not-logged' %>" data-meta="<%="#{controller_name}"%>#<%="#{action_name}"%>">
+  <body class="<%= user_signed_in? ? 'logged-in' : 'not-logged' %>" data-meta="<%="#{controller_name}"%>#<%="#{action_name}"%>">
     <div id='wrapper' >
         <%= render :partial => 'partials/header' %>
         <%= yield %>

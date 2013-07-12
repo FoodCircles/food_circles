@@ -15,9 +15,14 @@
 
       .welcome-line
         Welcome Back!
-        %a{href: "#"}
-          Your Account
-          %i{class: "arrow-right"}
+        - if user_signed_in?
+          %a{href: "/timeline"}
+            Your Account
+            %i{class: "arrow-right"}
+        - else
+          %a{href: new_user_session_path}
+            Sign In
+            %i{class: "arrow-right"}
         / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
 
       %form{action: "", method: "post", class: "sign-form"}
@@ -39,7 +44,7 @@
 
           %p{class: "form-caption"}
             Have an account?
-            - if current_user
+            - if user_signed_in?
               = link_to('Logout', main_app.destroy_user_session_path, :method => :delete)
             - else
               = link_to('Sign in', main_app.new_user_session_path)
