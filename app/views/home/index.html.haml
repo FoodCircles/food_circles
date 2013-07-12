@@ -77,7 +77,7 @@
                     = number_to_currency(venue.offers.order("min_diners ASC").first.original_price, :precision => 0)
                     %i{class: "icon-strike strike"}
                   %span{class: "shadow"}
-                = image_tag venue.offers.order("min_diners ASC").first.image.url(:deal)
+                = image_tag venue.main_image.url
                 / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
                 %span{class: "title"}= venue.offers.order("min_diners ASC").first.name
             .tags
