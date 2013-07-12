@@ -26,7 +26,7 @@
                   <%-if i == 0%>
                     <label for="qty-1"><%= offer.name %></label>
                     <%-else%>
-                    <label for="qty-1"><%= offer.name %> (add $<%= i %>)</label> 
+                    <label for="qty-1"><%= offer.name %> <%= min_deals(offer.min_diners) %></label> 
                     <%-end%>
                   <%- if i == 0 %>
                     <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>"/>
