@@ -18,7 +18,7 @@
         <div class="deal-body">
           <div class="description">
             <h2><%= @min_offer.name %></h2>
-            <p>Good for 30 days. Please buy at least one entree. Please bring someone new to our business!</p>
+            <p><%= @min_offer.details %></p>
             
             <ul class="qty">
               <%- @offer.venue.offers.order("min_diners ASC").each_with_index do |offer, i| %>
@@ -29,9 +29,9 @@
                     <label for="qty-1"><%= offer.name %> <%= min_deals(offer.min_diners) %></label> 
                     <%-end%>
                   <%- if i == 0 %>
-                    <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>"/>
+                    <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
                     <%- else %>
-                    <input type="radio" class="custom-input" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>"/>
+                    <input type="radio" class="custom-input" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
                     <%-end%>
                 </li>
               <%- end %>

@@ -185,6 +185,19 @@
         $("input[name='offer_id']").attr("checked", false)
         $(this).attr("checked","checked")
 				var origPrice = parseFloat($('input[name=offer_id]:checked').data('price'));
+        var offerName = $(this).data('name');
+        var offerDetails = $(this).data('details');
+        var decodedOfferDetails = $("<div/>").html(offerDetails).text();
+        
+        
+        $('div.deal-body .description h2').fadeOut(function() {
+          $(this).text(offerName).fadeIn();
+        });
+        $('div.deal-body .description p').fadeOut(function() {
+          $(this).text(decodedOfferDetails).fadeIn();
+        });
+        
+        
 				//PayBox.setPrice(origPrice);
         
         if(origPrice === 1.00) {
