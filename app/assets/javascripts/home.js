@@ -261,14 +261,6 @@
 
 		});
 
-		$('.welcome-line > a').on('click', function(event){
-			event.preventDefault();
-			//set little timeout to prevent item from close immidiatly after the open
-			setTimeout(function(){
-				$('#sign-up-form').toggleClass('expanded');
-			}, 1);
-		});
-
 		$('#sign-up-form .form-caption a').on('click', function(event){
 			event.preventDefault();
 			//set little timeout to prevent item from close immidiatly after the open
