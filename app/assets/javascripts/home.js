@@ -206,9 +206,13 @@
         
         $('.pay-box').find('.field').val(origPrice);
         
-				$('.pay-box').find('.min').text('$' + origPrice);
-				$('.pay-box').find('.mid').text('$' + (origPrice * 2));
-				$('.pay-box').find('.max').text('$' + (origPrice * 4));
+        var min = origPrice;
+        var max = (origPrice * 4);
+        var mid = ((min + max) / 2);
+        
+				$('.pay-box').find('.min').text('$' + min);
+				$('.pay-box').find('.mid').text('$' + mid);
+				$('.pay-box').find('.max').text('$' + max);
         
 				$('.pay-box').find('.slider').slider('option', {
 					min: origPrice,
@@ -517,9 +521,14 @@
         
     $('.pay-box').find('.field').val(origPrice);
     
-		$('.pay-box').find('.min').text('$' + origPrice);
-		$('.pay-box').find('.mid').text('$' + (origPrice * 2));
-		$('.pay-box').find('.max').text('$' + (origPrice * 4));
+    var min = origPrice;
+    var max = (origPrice * 4);
+    var mid = ((min + max) / 2);
+        
+		$('.pay-box').find('.min').text('$' + min);
+		$('.pay-box').find('.mid').text('$' + mid);
+		$('.pay-box').find('.max').text('$' + max);
+		
     
 		$('.pay-box').find('.slider').slider('option', {
 			min: origPrice,
