@@ -190,11 +190,11 @@
         var decodedOfferDetails = $("<div/>").html(offerDetails).text();
         
         
-        $('div.deal-body .description h2').fadeOut(function() {
-          $(this).text(offerName).fadeIn();
+        $('div.deal-body .description h2').fadeOut(200, function() {
+          $(this).text(offerName).fadeIn(200);
         });
-        $('div.deal-body .description p').fadeOut(function() {
-          $(this).text(decodedOfferDetails).fadeIn();
+        $('div.deal-body .description p').fadeOut(200, function() {
+          $(this).text(decodedOfferDetails).fadeIn(200);
         });
         
         
