@@ -231,6 +231,17 @@
       $.colorbox.close();
     })
 
+    .on('click', '.sign-form-link', function(event) {
+      event.preventDefault();
+      if($('.sign-form').hasClass('expanded'))
+      {
+        $('.sign-form').removeClass('expanded')
+      } else {
+        $('.sign-form').addClass('expanded')
+      }
+        
+    })
+
 		.on('click', '.balloon-close', function(event){
 			event.preventDefault();
 			$(this).closest('.balloon').removeClass('expanded');

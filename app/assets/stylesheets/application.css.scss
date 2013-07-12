@@ -334,7 +334,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .header-utils .welcome-line { float:left; padding:3px 0 0 12px; font:14px 'pragmatica-web', sans-serif; color:#8a857f; position:relative; }
 .header-utils .welcome-line > a { font-weight:bold; }
 
-.sign-form { visibility:hidden; opacity:0; -moz-opacity:0; filter:alpha(opacity=0); position:absolute; right:-10px; top:100%; z-index:2; padding:14px; background:#f5f2ec; width:220px; margin-top:10px; box-shadow:0 2px 7px rgba(0,0,0,0.18);
+.sign-form { visibility:hidden; opacity:0; -moz-opacity:0; filter:alpha(opacity=0); position:absolute; top:40%; z-index:2; padding:14px; background:#f5f2ec; width:220px; margin-top:10px; box-shadow:0 2px 7px rgba(0,0,0,0.18);
 	/*transform*/
 	-webkit-transform:translateY(-20px);
 	   -moz-transform:translateY(-20px);

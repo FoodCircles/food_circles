@@ -14,33 +14,35 @@
           %a{class: "icon-soc-foodcircles", href: "http://blog.foodcircles.net"}
 
       .welcome-line
-        Welcome Back!
         - if user_signed_in?
+
+          Welcome Back!
           %a{href: "/timeline"}
             Your Account
             %i{class: "arrow-right"}
         - else
-          %a{href: new_user_session_path}
+          Hey! you new here?
+          %a{href: '#', class:'sign-form-link'}
             Sign In
-            %i{class: "arrow-right"}
+            %i{class: "arrow-down"}
         / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
-
-      %form{action: "", method: "post", class: "sign-form"}
-        / <i class="arrow-top"><i class="arrow-top"></i></i>
+        
+      = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{class:"sign-form"}) do |f|
+        /<i class="arrow-top"><i class="arrow-top"></i></i>
         .row
           %a{href: "/users/auth/facebook", class: "btn-facebook"}
             Sign up
             %i{class: "icon-btn-facebook"}
-          %input{type: "text", class: "field medium", value: "new email address", title: "new email address"}
+          = f.email_field :email, class: 'field medium'
         .row
           %a{href: "/users/auth/twitter", class: "btn-twitter"}
             Sign up
             %i{class: "icon-btn-twitter"}
-          %input{type: "text", class: "field medium", value: "new password", title: "new password"}
+          = f.password_field :password, class: 'field medium'
         .form-foot
           %span{class: "btn-small submit"}
             Sign up
-            %input{type: "submit", value: ""}
+            = f.submit
 
           %p{class: "form-caption"}
             Have an account?
