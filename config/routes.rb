@@ -1,9 +1,5 @@
 Foodcircles::Application.routes.draw do
 
-  namespace :api do
-    get "/weekly_meals" => "weekly_meals#show", as: "weekly_meals"
-  end
-
   get "socialbutterflies/index"
 
   # match '/offers' => 'offers#index', :as => :offers
@@ -62,12 +58,23 @@ Foodcircles::Application.routes.draw do
   match '/create_voucher' => 'app#create_voucher'
   match '/voucher' => 'app#voucher'
 
+  # API
 
-  match '/api/venues/:id' => 'venues#show'
-  match '/api/venues' => 'venues#index'
-  match '/api/offers/:id' => 'offers#show'
-  match '/api/charities/:id' => 'charities#show'
-  match '/api/notification' => 'mobile#notification'
+  namespace :api do
+    post '/sessions/sign_in' => 'sessions#sign_in'
+    post '/sessions/sign_up' => 'sessions#sign_up'
+    put '/sessions/update' => 'sessions#update_profile'
+    
+    get '/news' => 'news#show'
+    
+    get '/venues/:lat/:lon' => 'venues#show', :constraints => { :lat => /[^\/]*/, :lon => /[^\/]*/ }
+    get '/charities' => 'charities#show'
+    
+    get '/timeline' => 'timeline#show'
+    post '/timeline/voucher/:id' => 'timeline#use_voucher'
+    put '/timeline/verify_payment' => 'timeline#verify_payment_and_show_voucher'
+  end
+  
   match '/mobi/reservation-login' => 'mobile#login'
   match '/mobi/reservation' => 'mobile#signup'
   match '/mobi/reservation_confirm' => 'mobile#callahead'

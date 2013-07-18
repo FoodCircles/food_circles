@@ -44,7 +44,7 @@ class Venue < ActiveRecord::Base
         :description => self.description,
         :neighborhood => self.neighborhood,
         :phone => self.phone,
-        :state => self.state.name,
+        :state => self.state.nil? ? "" : self.state.name,
         :web => self.web,
         :zip => self.zip,
         :rating => self.rating,
@@ -53,7 +53,7 @@ class Venue < ActiveRecord::Base
         :open_times => self.open_times,
         :reviews => self.reviews.first(3),
         :main_image => (self.main_image ? self.main_image.url : ''),
-        :thumbnail_image => (self.thumbnail_image ? self.thumbnail_image.url : ''),
+        :timeline_image => (self.timeline_image ? self.timeline_image.url : ''),
         :start => (self.available? ? 'Later Tonight' : self.open_at),
         :end => self.close_at,
         :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
@@ -77,7 +77,7 @@ class Venue < ActiveRecord::Base
         :open_times => self.open_times,
         :reviews => self.reviews.first(3),
         :main_image => (self.main_image ? self.main_image.url : ''),
-        :thumbnail_image => (self.thumbnail_image ? self.thumbnail_image.url : ''),
+        :timeline_image => (self.timeline_image ? self.timeline_image.url : ''),
         :start => (self.available? ? 'Later Tonight' : self.open_at),
         :end => self.close_at,
         :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')

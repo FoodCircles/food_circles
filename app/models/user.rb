@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
+         :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
   # Setup accessible (or protected) attributes for your model
@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :venues
 
   before_save :format
+  
+  before_save :ensure_authentication_token
+  
 
   def is_admin?
     self.admin
