@@ -21,7 +21,7 @@ class Api::SessionsController < ApplicationController
     begin
       @user = User.new(email: params[:user_email], password: params[:user_password])
       if @user.save
-        render :json => {:error => false, :description => "User saved."}
+        render :json => {:error => false, :description => "User saved.", :auth_token => @user.authentication_token}
       else
         if !@user.errors.messages.empty?
           render :json => {:error => true, :description => "Error saving user.", :errors => @user.errors.messages}, status: 500 and return
