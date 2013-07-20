@@ -1,5 +1,6 @@
 Foodcircles::Application.routes.draw do
 
+  match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
   get "socialbutterflies/index"
 
   # match '/offers' => 'offers#index', :as => :offers
@@ -88,9 +89,6 @@ Foodcircles::Application.routes.draw do
   match '/:id' => 'home#index'
   match '/deal_popup_not_logged/:id' => 'popups#deal_popup_not_logged'
   match '/reciept/:id' => 'popups#reciept'
-
-
-  match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
 
   match '/download' => 'application#download', :as => :download
 

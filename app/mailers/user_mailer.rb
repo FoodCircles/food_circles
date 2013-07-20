@@ -19,23 +19,20 @@ class UserMailer < ActionMailer::Base
 
   end
   #tkxel_dev: Email Content creation is handled in the following method.
-  def setup_email(user,r)
-
-     user_reservation = Reservation.find_by_offer_id(r.offer_id.to_i)
-     deal = Offer.find(user_reservation.offer_id)
-      mail = Mail.deliver do
-     to user.email
+  def setup_email(user,payment)
+    mail = Mail.deliver do
+      to user.email
       from 'FoodCircles <hey@foodcircles.net>'
-      subject "Got your coupon code for #{r.venue.name.capitalize.gsub(/\'/,"\\\'") }"
+      subject "Got your coupon code for #{payment.offer.venue.name}"
       reply_to 'support@foodcircles.net'
       html_part do
         content_type 'text/html; charset=UTF-8'
         body "<table width = '550px'><tr><td style = font-size:12pt; font-family:Arial><p style= text-align: justify;>Print this email or just show it off on a fancy electronic device.</p>
               <p style= text-align: justify>
-              <b>confirmation code:</b> #{r.coupon}<br>
-              <b>good for:</b> #{deal.name}<br>
-              <b>only at:</b> #{r.venue.name}<br>
-              <b>with a minimum of:</b> #{user_reservation.num_diners} diners<br>
+              <b>confirmation code:</b> #{payment.code}<br>
+              <b>good for:</b> #{payment.offer.name}<br>
+              <b>only at:</b> #{payment.offer.venue.name}<br>
+              <b>with a minimum of:</b> #{payment.offer.min_diners} diners<br>
               <b>expiring:</b> #{7.days.from_now.to_date}</p><br>
               <b>3 steps to redeem:</b>
               <p>
