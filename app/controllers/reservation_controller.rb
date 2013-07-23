@@ -1,5 +1,5 @@
 class ReservationController < ApplicationController
-  def used
+  def used_email
     from = params["from_email"]
     subject = params["subject"]
     text = params["text"]
@@ -8,11 +8,23 @@ class ReservationController < ApplicationController
     return if !reservation
     
     if (subject == "used")
-      mark_used(text)
+      used(text)
     end
   end
   
-  def mark_used(coupon)
+  def active(coupon)
+    reservation = Reservation.find_by_coupon(coupon)
+    reservation.state = "Active";
+    reservation.save;
+  end
+  
+  def expired(coupon)
+    reservation = Reservation.find_by_coupon(coupon)
+    reservation.state = "Expired";
+    reservation.save;
+  end
+  
+  def used(coupon)
     reservation = Reservation.find_by_coupon(coupon)
     reservation.state = "Used";
     reservation.save;

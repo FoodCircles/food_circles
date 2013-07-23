@@ -1,6 +1,8 @@
 Foodcircles::Application.routes.draw do
 
   get "reservation/used"
+  get "reservation/active"
+  get "reservation/expired"
 
   namespace :api do
     get "/weekly_meals" => "weekly_meals#show", as: "weekly_meals"
