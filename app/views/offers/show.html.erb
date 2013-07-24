@@ -11,7 +11,7 @@
             <small><%= number_to_currency(@min_offer.original_price, :precision => 0) %> <i class="icon-strike-big strike"></i></small>
           </span>
           <span class="count">
-            <%= @min_offer.available %>
+            <%= @min_offer.venue.vouchers_available %>
             <small>left</small>
           </span>
         </div><!-- /.deal-banner -->
@@ -29,9 +29,9 @@
                     <label for="qty-1"><%= offer.name %> <%= min_deals(offer.min_diners) %></label> 
                     <%-end%>
                   <%- if i == 0 %>
-                    <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
+                    <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-originalprice="<%= prettify_float(offer.original_price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
                     <%- else %>
-                    <input type="radio" class="custom-input" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
+                    <input type="radio" class="custom-input" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-originalprice="<%= prettify_float(offer.original_price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
                     <%-end%>
                 </li>
               <%- end %>

@@ -74,6 +74,10 @@ Foodcircles::Application.routes.draw do
     get '/timeline' => 'timeline#show'
     post '/timeline/voucher/:id' => 'timeline#use_voucher'
     put '/timeline/verify_payment' => 'timeline#verify_payment_and_show_voucher'
+    
+    scope 'general' do
+      get '/users' => 'general#get_mailchimp_users'
+    end
   end
   
   match '/mobi/reservation-login' => 'mobile#login'

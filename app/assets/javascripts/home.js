@@ -184,8 +184,11 @@
       if($(this).parent().is('.checked')){
         $("input[name='offer_id']").attr("checked", false)
         $(this).attr("checked","checked")
-				var origPrice = parseFloat($('input[name=offer_id]:checked').data('price'));
-        var offerName = $(this).data('name');
+		//var origPrice = parseFloat($('input[name=offer_id]:checked').data('price'));
+		var currPrice = parseFloat($('input.custom-input:checked').data('price'));
+        var origPrice = parseFloat($('input.custom-input:checked').data('originalprice'));
+    	
+		var offerName = $(this).data('name');
         var offerDetails = $(this).data('details');
         var decodedOfferDetails = $("<div/>").html(offerDetails).text();
         
@@ -198,28 +201,24 @@
         });
         
         
-				//PayBox.setPrice(origPrice);
+		$('.pay-box').find('.field').val(origPrice);
+    
+    	var min = currPrice;
+		var mid = origPrice;
+    	var max = origPrice * 2;
         
-        if(origPrice === 1.00) {
-          origPrice = 1;
-        }
+		$('.pay-box').find('.min').text('$' + min);
+		$('.pay-box').find('.mid').text('$' + mid);
+		$('.pay-box').find('.max').text('$' + max);
+		
+    
+		$('.pay-box').find('.slider').slider('option', {
+			min: currPrice,
+			max: origPrice * 2
+		});
         
-        $('.pay-box').find('.field').val(origPrice);
-        
-        var min = origPrice;
-        var max = (origPrice * 4);
-        var mid = ((min + max) / 2);
-        
-				$('.pay-box').find('.min').text('$' + min);
-				$('.pay-box').find('.mid').text('$' + mid);
-				$('.pay-box').find('.max').text('$' + max);
-        
-				$('.pay-box').find('.slider').slider('option', {
-					min: origPrice,
-					max: origPrice * 4
-				});
-			}
-		})
+		}
+	})
 
 		.on('click', '.buy-btn', function(event){
 			event.preventDefault();
@@ -517,13 +516,14 @@
 				}
 			});
 		});
-		var origPrice = parseFloat($('input.custom-input:checked').data('price'));
-        
-    $('.pay-box').find('.field').val(origPrice);
+		var currPrice = parseFloat($('input.custom-input:checked').data('price'));
+        var origPrice = parseFloat($('input.custom-input:checked').data('originalprice'));
+    	
+		$('.pay-box').find('.field').val(currPrice);
     
-    var min = origPrice;
-    var max = (origPrice * 4);
-    var mid = ((min + max) / 2);
+    	var min = currPrice;
+		var mid = origPrice;
+    	var max = origPrice * 2;
         
 		$('.pay-box').find('.min').text('$' + min);
 		$('.pay-box').find('.mid').text('$' + mid);
@@ -531,8 +531,8 @@
 		
     
 		$('.pay-box').find('.slider').slider('option', {
-			min: origPrice,
-			max: origPrice * 4
+			min: currPrice,
+			max: origPrice * 2
 		});
 		// $('.deal').height($('.deal').height());
 

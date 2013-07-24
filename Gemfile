@@ -26,6 +26,8 @@ gem 'rb-readline', '~> 0.4.2'
 
 gem 'twilio-ruby'
 
+gem 'gibbon'
+
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
