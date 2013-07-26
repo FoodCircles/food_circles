@@ -49,7 +49,7 @@
 
       .products-tiles
         - @venues.each do |venue|
-          %div{class: "tile " + ["red", "yellow", "green"].sample + ( venue.vouchers_available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
+          %div{class: "tile #{["red", "yellow", "green"].sample} #{( venue.vouchers_available == 0 ? "sold-out" : "" )} #{venue.offers.first.category.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
             %h3= link_to venue.name, venue
             .thumb
               %span.social
@@ -76,7 +76,7 @@
                   %span{class: "old"}
                     = number_to_currency(venue.offers.order("min_diners ASC").first.original_price, :precision => 0)
                     %i{class: "icon-strike strike"}
-                  %span{class: "shadow"}
+                %span{class: "shadow"}
                 = image_tag venue.restaurant_tile_image.thumb("274x163").url
                 / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
                 %span{class: "title"}= venue.offers.order("min_diners ASC").first.name

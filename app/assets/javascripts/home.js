@@ -270,12 +270,17 @@
 		})
 
 		.on('click', '.popup-link', function(event){
-      var full = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
-      history.pushState({food: "circles"}, "FoodCircles", full + '/'+$(this).data('slug'));
-      
 			event.preventDefault();
-			popupOpen('/deal_popup_not_logged/'+$(this).data('slug'));
-
+			if($(this).data('slug')) {
+		        var full = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+		        history.pushState({food: "circles"}, "FoodCircles", full + '/'+$(this).data('slug'));
+		  		popupOpen('/deal_popup_not_logged/'+$(this).data('slug'));
+					
+			} else {
+				console.log($(this));
+				popupOpen($(this).attr('href'));
+			}
+      
 		});
 
 		$('#sign-up-form .form-caption a').on('click', function(event){
@@ -453,7 +458,7 @@
 		sectionScroll();
     
     //var offer_id_if_present = location.pathname.match(/\/offer\/(\d+)/);
-    if(location.pathname != '/' && $body)
+    if(location.pathname != '/' && location.pathname != '/app_popup' && $body)
     {
       if($body.data('meta') === 'home#index')
         popupOpen('/deal_popup_not_logged'+location.pathname);
@@ -718,7 +723,7 @@
 
 			if($filters.find('input:checked').length){
 				$filters.find('input:checked').each(function(){
-					aFilter.push('.' + $(this).val());
+					aFilter.push('.' + $(this).val().toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
 				});
 				selector = aFilter.join(', ') + ', .add-new';
 			}else{
