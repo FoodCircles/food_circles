@@ -217,7 +217,6 @@
 			min: currPrice,
 			max: origPrice * 2
 		});
-		$('.donation-info strong').text(Math.floor($('.pay-box').find('.field').val()));			  
         
 		}
 	})
@@ -513,7 +512,9 @@
 				step:1,
 				slide: function(event, ui){
 					if($slider.closest('.pay-box').length){
-            $('.pay-box').find('.field').val(ui.value);
+            			$('.pay-box').find('.field').val(ui.value);
+			  			$('.donation-info strong').text(Math.floor($('.pay-box').find('.field').val()));
+						
 					}
 				}
 			});
@@ -538,11 +539,7 @@
 		});
 		// $('.deal').height($('.deal').height());
 
-		$('.pay-box').find('.slider').slider({
-		  change: function( event, ui ) {
-  			$('.donation-info strong').text(Math.floor($('.pay-box').find('.field').val()));			  
-		  }
-		});
+
 
 		$('.deal .card-number .field').payment('formatCardNumber').on('keyup', function(){
 			var val_ = $(this).val()
