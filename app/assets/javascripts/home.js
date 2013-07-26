@@ -201,7 +201,7 @@
         });
         
         
-		$('.pay-box').find('.field').val(origPrice);
+		$('.pay-box').find('.field').val(currPrice);
     
     	var min = currPrice;
 		var mid = origPrice;
@@ -211,7 +211,8 @@
 		$('.pay-box').find('.mid').text('$' + mid);
 		$('.pay-box').find('.max').text('$' + max);
 		
-    
+		$('.pay-box').find('.slider').slider({ value: 1 });
+	
 		$('.pay-box').find('.slider').slider('option', {
 			min: currPrice,
 			max: origPrice * 2

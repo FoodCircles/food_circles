@@ -18,7 +18,9 @@
         <div class="deal-body">
           <div class="description">
             <h2><%= @min_offer.name %></h2>
-            <p><%= @min_offer.details.html_safe %></p>
+			<%- unless @min_offer.details.nil? %>
+            	<p><%= @min_offer.details.html_safe %></p>
+			<%- end%>
             
             <ul class="qty">
               <%- @offer.venue.offers.order("min_diners ASC").each_with_index do |offer, i| %>
