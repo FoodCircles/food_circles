@@ -1,5 +1,6 @@
 Foodcircles::Application.routes.draw do
 
+<<<<<<< HEAD
   get "reservation/used"
   get "reservation/active"
   get "reservation/expired"
@@ -8,6 +9,9 @@ Foodcircles::Application.routes.draw do
     get "/weekly_meals" => "weekly_meals#show", as: "weekly_meals"
   end
 
+=======
+  match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
+>>>>>>> pablos-changes
   get "socialbutterflies/index"
 
   # match '/offers' => 'offers#index', :as => :offers
@@ -66,18 +70,36 @@ Foodcircles::Application.routes.draw do
   match '/create_voucher' => 'app#create_voucher'
   match '/voucher' => 'app#voucher'
 
+  # API
 
-  match '/api/venues/:id' => 'venues#show'
-  match '/api/venues' => 'venues#index'
-  match '/api/offers/:id' => 'offers#show'
-  match '/api/charities/:id' => 'charities#show'
-  match '/api/notification' => 'mobile#notification'
+  namespace :api do
+    post '/sessions/sign_in' => 'sessions#sign_in'
+    post '/sessions/sign_up' => 'sessions#sign_up'
+    put '/sessions/update' => 'sessions#update_profile'
+    
+    get '/news' => 'news#show'
+    
+    get '/venues/:lat/:lon' => 'venues#show', :constraints => { :lat => /[^\/]*/, :lon => /[^\/]*/ }
+    get '/charities' => 'charities#show'
+    
+    get '/timeline' => 'timeline#show'
+    post '/timeline/voucher/:id' => 'timeline#use_voucher'
+    put '/timeline/verify_payment' => 'timeline#verify_payment_and_show_voucher'
+    
+    scope 'general' do
+      get '/users' => 'general#get_mailchimp_users'
+    end
+  end
+  
   match '/mobi/reservation-login' => 'mobile#login'
   match '/mobi/reservation' => 'mobile#signup'
   match '/mobi/reservation_confirm' => 'mobile#callahead'
   match '/mobi/num_users' => 'mobile#num_users'
   match '/notification' => 'application#notification'
 
+  # HighVoltage
+  get '/faq/:id' => 'faq#show', :as => 'faq'
+  get '/faq'     => 'faq#show', :as => 'faq', :id => 'faq'
 
   #Popups
   match '/notify_signup' => 'popups#notify_signup'
@@ -85,9 +107,6 @@ Foodcircles::Application.routes.draw do
   match '/:id' => 'home#index'
   match '/deal_popup_not_logged/:id' => 'popups#deal_popup_not_logged'
   match '/reciept/:id' => 'popups#reciept'
-
-
-  match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
 
   match '/download' => 'application#download', :as => :download
 
@@ -98,10 +117,6 @@ Foodcircles::Application.routes.draw do
   match '/race' => 'race#index'
   match '/cater' => 'home#cater', :as => :notgr
   match '/thanks' => 'home#thanks', :as => :notgr
-
-  #HighVoltage
-  get '/faq/:id' => 'faq#show', :as => 'faq'
-  get '/faq'     => 'faq#show', :as => 'faq', :id => 'faq'
 
   root :to => 'home#index'
 end

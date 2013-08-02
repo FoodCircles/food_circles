@@ -11,27 +11,29 @@
             <small><%= number_to_currency(@min_offer.original_price, :precision => 0) %> <i class="icon-strike-big strike"></i></small>
           </span>
           <span class="count">
-            <%= @min_offer.available %>
+            <%= @min_offer.venue.vouchers_available %>
             <small>left</small>
           </span>
         </div><!-- /.deal-banner -->
         <div class="deal-body">
           <div class="description">
             <h2><%= @min_offer.name %></h2>
-            <p><%= @min_offer.details.html_safe %></p>
+			<%- unless @min_offer.details.nil? %>
+            	<p><%= @min_offer.details.html_safe %></p>
+			<%- end%>
             
             <ul class="qty">
               <%- @offer.venue.offers.order("min_diners ASC").each_with_index do |offer, i| %>
                 <li class="radio-holder">
                   <%-if i == 0%>
                     <label for="qty-1"><%= offer.name %></label>
-                    <%-else%>
+                  <%-else%>
                     <label for="qty-1"><%= offer.name %> <%= min_deals(offer.min_diners) %></label> 
-                    <%-end%>
+                  <%-end%>
                   <%- if i == 0 %>
-                    <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
+                    <input type="radio" class="custom-input" checked="checked" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-originalprice="<%= prettify_float(offer.original_price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
                     <%- else %>
-                    <input type="radio" class="custom-input" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
+                    <input type="radio" class="custom-input" name="offer_id" value="<%= offer.id %>" id="qty-1" data-price="<%= prettify_float(offer.price) %>" data-originalprice="<%= prettify_float(offer.original_price) %>" data-name="<%= offer.name %>" data-details="<%= offer.details %>"/>
                     <%-end%>
                 </li>
               <%- end %>
@@ -54,7 +56,7 @@
               </div><!-- /.slider-wrap -->
             </div><!-- /.slider-holder -->
             <div class="donation-info">
-              slide to give more <strong>1</strong> meal donated
+              slide to give more <br/><strong>1</strong> meal donated
             </div><!-- /.donation-info -->
             <a href="#" class="btn-large full-width light-shadow buy-btn">I want this!</a>
             <div class="help">
@@ -95,8 +97,17 @@
           </div><!-- /.profile -->
         </div><!-- /.head -->
         <div class="body">
-          <fieldset>
-            <h5>Payment Details <span class="line"></span></h5>
+          <fieldset class="new-card">
+            <div class="cards-head">
+              <div class="cards">
+                <span class="amex"/>
+                <span class="visa"/>
+  	            <span class="mastercard"/>
+                <span class="generic"/>
+              </div>
+              <h5>Payment Details <span class="line"></span></h5>
+              
+            </div>
             <div class="card-number">
               <label>Card number</label>
               <span class="field-holder">
@@ -117,7 +128,7 @@
           <fieldset>
             <h5>Give To <span class="line"></span></h5>
             <div class="choose-organization">
-              <div class="radio-holder">
+              <div class="radio-holder checked">
                 <label for="kids-food"><a href="#">Kids Food Basket</a> (Grand Rapids, MI)</label>
                 <input type="radio" name="organization" class="custom-input" value="" id="kids-food" />
               </div><!-- /.radio-holder -->

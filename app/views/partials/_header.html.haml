@@ -1,7 +1,6 @@
 #header
   .container
-    #logo
-      = link_to "FoodCircles", main_app.root_path
+    = link_to "FoodCircles", root_path, :id => "logo"
 
     %h3.tagline
       Buy One, Feed One.
@@ -28,7 +27,6 @@
         / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
         
       = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{class:"sign-form"}) do |f|
-        /<i class="arrow-top"><i class="arrow-top"></i></i>
         .row
           %a{href: "/users/auth/facebook", class: "btn-facebook"}
             Sign up
