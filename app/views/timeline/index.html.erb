@@ -19,8 +19,17 @@
       <div class="account-cnt">
         <div class="tab-cnt active" id="timeline">
           <div class="user-invites">
-            <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Connect</a>
-            <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Connect</a>
+            <%- if !current_user.has_facebook? %>
+              <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Connect</a>
+            <%-else%>
+              <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Invite friends</a>
+            
+            <%-end%>
+            <%- if !current_user.has_twitter? %>
+              <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Connect</a>
+            <%-else%>
+              <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Invite friends</a>
+            <%-end%>
             <div class="balloon">
               <i class="arrow-up"><i class="arrow-up"></i></i>
               see where your friends are eating and who they are <strong>feeding</strong>

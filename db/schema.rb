@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715221923) do
+ActiveRecord::Schema.define(:version => 20130728221106) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -222,8 +222,8 @@ ActiveRecord::Schema.define(:version => 20130715221923) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "encrypted_password",     :default => "",    :null => false
+    t.string   "email",                  :default => "",         :null => false
+    t.string   "encrypted_password",     :default => "",         :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -232,19 +232,27 @@ ActiveRecord::Schema.define(:version => 20130715221923) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "name"
     t.string   "phone"
     t.boolean  "admin",                  :default => false
     t.string   "provider"
-    t.string   "uid"
+    t.string   "twitter_uid"
     t.string   "city"
     t.integer  "zip"
     t.string   "gender"
     t.datetime "birthday"
     t.string   "stripe_customer_token"
     t.string   "authentication_token"
+    t.string   "twitter_secret"
+    t.string   "twitter_token"
+    t.string   "facebook_secret"
+    t.string   "facebook_token"
+    t.boolean  "has_twitter",            :default => false,      :null => false
+    t.boolean  "has_facebook",           :default => false,      :null => false
+    t.text     "friends",                :default => "--- []\n", :null => false
+    t.string   "facebook_uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

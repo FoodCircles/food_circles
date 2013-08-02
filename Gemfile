@@ -36,6 +36,7 @@ gem 'will_paginate'
 
 gem 'rack-mini-profiler', group: [:development, :test]
 
+gem 'twitter'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
