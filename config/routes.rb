@@ -1,5 +1,6 @@
 Foodcircles::Application.routes.draw do
 
+  get "reservation/used_email"
   get "reservation/used"
   get "reservation/active"
   get "reservation/expired"
