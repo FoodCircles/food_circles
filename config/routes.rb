@@ -1,6 +1,5 @@
 Foodcircles::Application.routes.draw do
 
-<<<<<<< HEAD
   get "reservation/used"
   get "reservation/active"
   get "reservation/expired"
@@ -8,10 +7,9 @@ Foodcircles::Application.routes.draw do
   namespace :api do
     get "/weekly_meals" => "weekly_meals#show", as: "weekly_meals"
   end
-
-=======
+  
   match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
->>>>>>> pablos-changes
+
   get "socialbutterflies/index"
 
   # match '/offers' => 'offers#index', :as => :offers
