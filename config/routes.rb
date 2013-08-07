@@ -1,5 +1,8 @@
 Foodcircles::Application.routes.draw do
 
+  get '/sessions/omniauth_email' => "omniauth_ask_for_email#index", :as => 'omniauth_email'
+  put '/sessions/omniauth_email' => "omniauth_ask_for_email#submit", :as => 'omniauth_email_submit'
+
   match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
   get "socialbutterflies/index"
 

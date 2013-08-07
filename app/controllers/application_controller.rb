@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :email_server
   before_filter :prepare_for_mobile
+  before_filter :detect_email_omniauth
 
   ACCOUNT_SID = "AC085df9dc6444a3588933ae0ddd9d95e7"
   ACCOUNT_TOKEN = "95cc7f360064ab606017dad6d2eb38a5"
@@ -192,6 +193,14 @@ class ApplicationController < ActionController::Base
     @_percent ||= Calculations::Weekly.percent
   end
 
+  def detect_email_omniauth
+    if !current_user.nil?
+      if current_user.email.blank? and controller_name != "omniauth_ask_for_email"
+        redirect_to omniauth_email_path
+
+      end
+    end
+  end
   helper_method :weekly_meal_goal, :total_week_payments, :total_payments, :weekly_progress, :percent
 end
 

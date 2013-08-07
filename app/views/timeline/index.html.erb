@@ -7,7 +7,7 @@
           <ul>
             <li class="active"><a href="#timeline">Timeline <i class="arrow-right"></i></a></li>
             <li><a href="#settings">Settings <i class="arrow-right"></i></a></li>
-            <li><a href="#">Logout</a></li>
+            <li>  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
           </ul>
         </div><!-- /.tabs-nav -->
         <p class="meta">You have fed <strong><%=@payments.map(&:amount).inject(0, &:+).floor%> kids</strong> to date</p>
