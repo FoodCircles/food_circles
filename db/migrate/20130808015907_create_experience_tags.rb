@@ -1,4 +1,4 @@
-class AddExperienceTags < ActiveRecord::Migration
+class CreateExperienceTags < ActiveRecord::Migration
   def change
     create_table "experience_tags", :force => true do |t|
       t.string   "name"
