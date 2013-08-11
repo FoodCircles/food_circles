@@ -3,13 +3,13 @@ class UserMailer < ActionMailer::Base
   default from:"\"FoodCircles\" <voucher@foodcircles.net>"
   require 'mail'
   Mail.defaults do
-    delivery_method :smtp, { :address   => "smtp.sendgrid.net",
+    delivery_method :smtp, { :address   => "smtp.mandrillapp.com",
                              :port      => 587,
                              :domain    => "foodcircles.net",
-                             :user_name => "Haseeb Khan",
-                             :password  => "password1",
+                             :user_name => "jonathan@foodcircles.net",
+                             :password  => "uQjfYEZZxNUpGq0oeoVjmw",
                              :authentication => 'plain',
-                             :enable_starttls_auto => true }
+                             :enable_starttls_auto => true } 
   end
   #tkxel_dev: Send email upon voucher creation
   def food_mail(email)
@@ -33,7 +33,7 @@ class UserMailer < ActionMailer::Base
               <b>good for:</b> #{payment.offer.name}<br>
               <b>only at:</b> #{payment.offer.venue.name}<br>
               <b>with a minimum of:</b> #{payment.offer.min_diners} diners<br>
-              <b>expiring:</b> #{7.days.from_now.to_date}</p><br>
+              <b>expiring:</b> #{30.days.from_now.to_date}</p><br>
               <b>3 steps to redeem:</b>
               <p>
               <b>1)</b> Show server this message before you order.  They should jot your code down and confirm.<br>
