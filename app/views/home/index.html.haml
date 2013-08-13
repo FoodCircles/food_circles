@@ -61,7 +61,7 @@
                 - percent = (venue.vouchers_available.to_f / venue.vouchers_total.to_f) * 100
                 - if (venue.vouchers_available.nil? || venue.vouchers_available == 0)
                   %span.pbar{style: "height: 0"}
-                    %a.block{href: notify_signup_path}
+                    %a.block{href: notify_signup_path, class: "popup-link"}
                       %small Notify me
                 - else
                   %span.pbar{style: "height:" + percent.to_s + "%"}
