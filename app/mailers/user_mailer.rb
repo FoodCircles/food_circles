@@ -16,7 +16,6 @@ class UserMailer < ActionMailer::Base
 
     @url = 'http://foodcircles.net/?app=mobile_email'
     mail(:to => email,:reply_to => 'jonathan@foodcircles.net', :subject => "Do good. Eat well.")
-
   end
   #tkxel_dev: Email Content creation is handled in the following method.
   def setup_email(user,payment)
@@ -119,5 +118,12 @@ class UserMailer < ActionMailer::Base
 
   def organizers_notify(email, location, address, date, num_diners, occassion, budget, food_preferences, donation, feedback)
     mail(:to => 'jonathan@foodcircles.net', :subject => "New Organizers Request", :body => "An organizer would like to join Food Circles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
+  end
+
+  def notification_about_available_vouchers(user, venue)
+    @name = user.name || "Hey"
+    @restaurant_name = venue.name
+    @restaurant_url  = venue_popup_url(venue)
+    mail(:to => user.email, :subject => "Pending")
   end
 end

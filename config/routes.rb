@@ -41,7 +41,12 @@ Foodcircles::Application.routes.draw do
   end
 
   resources :remind_list, :only => [:create]
-  resources :venues, :only => [:show]
+  resources :venues, :only => [:show] do
+    member do
+      post "subscribe"
+    end
+  end
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :payment_notifications
@@ -103,7 +108,7 @@ Foodcircles::Application.routes.draw do
   #Popups
   match '/notify_signup' => 'popups#notify_signup'
   match '/app_popup' => 'popups#app_popup'
-  match '/:id' => 'home#index'
+  match '/:id' => 'home#index', :as => :venue_popup
   match '/deal_popup_not_logged/:id' => 'popups#deal_popup_not_logged'
   match '/reciept/:id' => 'popups#reciept'
 

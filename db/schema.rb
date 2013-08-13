@@ -101,6 +101,13 @@ ActiveRecord::Schema.define(:version => 20130718181645) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "notification_requests", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "venue_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "payment_notifications", :force => true do |t|
     t.string   "status"
     t.string   "address_city"

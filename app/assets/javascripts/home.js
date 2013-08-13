@@ -291,6 +291,13 @@
 			}, 1);
 		});
 
+		$('.notification_request').bind('ajax:success', function(event, data) {
+			if(data.status == "success"){
+				var tile = $(this).parents('.tile');
+				var title_span = tile.find('.title');
+				title_span.text("Availability Notification scheduled");
+			}
+		});
 
 		//banner slideshow
 		$('.banner .slides').carouFredSel({

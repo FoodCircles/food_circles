@@ -44,6 +44,22 @@ class VenuesController < ApplicationController
     end
   end
 
+  def subscribe
+    venue = Venue.find(params[:id])
+    user = current_user
+    notification_request = NotificationRequest.new(:venue => venue, :user => current_user)
+
+    result = if notification_request.save
+      {:status => "success"}
+    else
+      {:status => "error", :message => notification_request.errors.full_messages.to_sentence}
+    end
+
+    respond_to do |format|
+      format.json { render json: result }
+    end
+  end
+
   private
 
   def lat(l)

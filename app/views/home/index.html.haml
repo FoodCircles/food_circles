@@ -61,8 +61,12 @@
                 - percent = (venue.vouchers_available.to_f / venue.vouchers_total.to_f) * 100
                 - if (venue.vouchers_available.nil? || venue.vouchers_available == 0)
                   %span.pbar{style: "height: 0"}
-                    %a.block{href: notify_signup_path, class: "popup-link"}
-                      %small Notify me
+                    - unless @watched_venues.include? venue
+                      - if current_user
+                        = link_to content_tag(:small, "Notify me"), subscribe_venue_path(venue, :format => :json), :remote => true, :method => :post, :class => [:block, :notification_request]
+                      - else
+                        %a.block{href: notify_signup_path, class: "popup-link"}
+                          %small Notify me
                 - else
                   %span.pbar{style: "height:" + percent.to_s + "%"}
                     %span.block

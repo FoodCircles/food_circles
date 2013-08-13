@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   validates :email, :on => :create, :allow_nil => true, :'validators/email' => true
   has_many :reservations
   has_many :venues
+  has_many :notification_requests
+  has_many :watched_venues, :through => :notification_requests, :source => :venue
 
   before_save :format
   

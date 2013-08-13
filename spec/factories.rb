@@ -16,9 +16,7 @@ FactoryGirl.define do
     zip "49503"
     neighborhood "Downtown"
     web "url: http://georgiosgourmetpizza.com/, phone_num: 616-356-4600"
-    image_uid "venues/1_7"
     price 1
-    circle_image_uid "venues/georgios.png"
     vouchers_available 10
     vouchers_total 10
   end
