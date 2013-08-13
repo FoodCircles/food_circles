@@ -64,6 +64,12 @@ Foodcircles::Application.routes.draw do
     resources :payments
   end
 
+  resource :newsletter, :only => [] do
+    member do
+      post "subscribe"
+    end
+  end
+
   match '/app' => 'app#index'
   match '/getVenue' => 'app#getVenue'
   match '/getVenues' => 'app#getVenues'
