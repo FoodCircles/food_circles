@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130718181645) do
+ActiveRecord::Schema.define(:version => 20130814184433) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -28,15 +28,15 @@ ActiveRecord::Schema.define(:version => 20130718181645) do
   create_table "charities", :force => true do |t|
     t.string   "name"
     t.string   "web"
-    t.integer  "region_id"
     t.string   "address"
     t.string   "city"
-    t.integer  "state_id"
     t.string   "zip"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image_uid"
+    t.integer  "region_id"
+    t.integer  "state_id"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -55,6 +55,19 @@ ActiveRecord::Schema.define(:version => 20130718181645) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "experience_taggables", :force => true do |t|
+    t.integer  "experience_tag_id"
+    t.integer  "venue_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "experience_tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "invoices", :force => true do |t|
     t.string   "group_name"
     t.integer  "group_size"
@@ -68,6 +81,13 @@ ActiveRecord::Schema.define(:version => 20130718181645) do
   end
 
   create_table "long_tasks", :force => true do |t|
+  end
+
+  create_table "notification_requests", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "venue_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "notifications", :force => true do |t|
@@ -99,13 +119,6 @@ ActiveRecord::Schema.define(:version => 20130718181645) do
     t.date     "end_date"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "notification_requests", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "venue_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "payment_notifications", :force => true do |t|
@@ -142,6 +155,7 @@ ActiveRecord::Schema.define(:version => 20130718181645) do
     t.datetime "updated_at",          :null => false
     t.integer  "offer_id"
     t.string   "code"
+    t.string   "state"
   end
 
   add_index "payments", ["user_id"], :name => "index_payments_on_user_id"
@@ -211,6 +225,13 @@ ActiveRecord::Schema.define(:version => 20130718181645) do
 
   add_index "reviews", ["venue_id"], :name => "index_reviews_on_venue_id"
 
+  create_table "social_links", :force => true do |t|
+    t.integer  "venue_id"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "socialbutterflies", :force => true do |t|
     t.string   "facebook"
     t.datetime "created_at", :null => false
@@ -219,6 +240,12 @@ ActiveRecord::Schema.define(:version => 20130718181645) do
 
   create_table "states", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "status", :force => true do |t|
+    t.string   "status"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
