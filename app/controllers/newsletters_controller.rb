@@ -19,8 +19,6 @@ class NewslettersController < ApplicationController
       render :json => result
     rescue Timeout::Error => e
       render :json => {:error => true, :description => "Couldn't reach MailChimp in a timely fashion."}
-    rescue Exception => e
-      render :json => {:error => true, :description => "An unexpected error happened"}
     end
   end
 end
