@@ -1,4 +1,20 @@
 module ApplicationHelper
+  def google_maps_search(venue)
+    return venue.google_maps_url if venue.google_maps_url
+
+    maps_base_uri = URI.parse "http://maps.google.com"
+    search_terms = []
+    search_terms << venue.name if venue.name
+    search_terms << venue.address if venue.address
+    search_terms << venue.city if venue.city
+    search_terms << venue.state.name if venue.state && venue.state.name
+
+    query = {
+      :q => search_terms.join(", ")
+    }
+    maps_base_uri.query = query.to_query
+    maps_base_uri.to_s
+  end
 
   def get_name(user_id)
 
