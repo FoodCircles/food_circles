@@ -12,6 +12,7 @@ class Venue < ActiveRecord::Base
   has_many :reviews
   has_many :notification_requests
   has_many :watching_users, :through => :notification_requests, :source => :user
+  has_many :social_links
 
   friendly_id :name, use: :slugged
 
