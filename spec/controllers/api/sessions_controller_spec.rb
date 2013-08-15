@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe Api::SessionsController do
-  describe "POST 'social_sign_in'" do
+  describe "POST 'sign_in'" do
     let(:user){ FactoryGirl.create :user }
 
     context "no params" do
       before(:each) do
-        post 'social_sign_in'
+        post 'sign_in'
       end
 
       it "fails without" do
@@ -19,30 +19,30 @@ describe Api::SessionsController do
     end
     context "assigning an uid to a new user" do
       it "returns success" do
-        post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
         expect(response.status).to eq(200)
       end
 
       it "returns success body" do
-        post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
         u = User.last
         expect(response.body).to match(%r{{\"error\":false,\"description\":\"User saved\.\",\"auth_token\":\"#{u.authentication_token}\"}})
       end
 
       it "creates a new user" do
         expect{
-          post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+          post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
         }.to change{User.count}.by(1)
       end
 
       it "creates a new external uid" do
         expect{
-          post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+          post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
         }.to change{ExternalUID.count}.by(1)
       end
 
       it "the external uid belongs to the created user" do
-        post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
         u = User.last
         expect(u.external_uids.map(&:uid)).to include("123456")
       end
@@ -50,65 +50,65 @@ describe Api::SessionsController do
 
     context "assigning to a new user an uid already belonging to another user" do
       before(:each) do
-        post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
       end
 
       it "fails" do
-        post 'social_sign_in', :user_email => "carlos@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "carlos@perez.com", :uid => "123456"
         expect(response.status).to eq(500)
       end
 
       it "returns error body" do
-        post 'social_sign_in', :user_email => "carlos@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "carlos@perez.com", :uid => "123456"
         expect(response.body).to eq("{\"error\":true,\"description\":\"Error saving user\",\"errors\":{\"uid\":{\"uid\":[\"has already been taken\"]}}}")
       end
 
       it "does not create the new user" do
         expect{
-          post 'social_sign_in', :user_email => "carlos@perez.com", :uid => "123456"
+          post 'sign_in', :user_email => "carlos@perez.com", :uid => "123456"
         }.to_not change{User.count}
       end
 
       it "does not create an external uid" do
         expect{
-          post 'social_sign_in', :user_email => "carlos@perez.com", :uid => "123456"
+          post 'sign_in', :user_email => "carlos@perez.com", :uid => "123456"
         }.to_not change{ExternalUID.count}
       end
     end
 
     context "assigning an uid to an existing user" do
       it "returns success" do
-        post 'social_sign_in', :user_email => user.email, :uid => "123456"
+        post 'sign_in', :user_email => user.email, :uid => "123456"
         expect(response.status).to eq(200)
       end
 
       it "returns success body" do
-        post 'social_sign_in', :user_email => user.email, :uid => "123456"
+        post 'sign_in', :user_email => user.email, :uid => "123456"
         expect(response.body).to match(%r{{\"error\":false,\"description\":\"User retrieved\.\",\"auth_token\":\"#{user.authentication_token}\"}})
       end
 
       it "does not create a new user" do
         user
         expect{
-          post 'social_sign_in', :user_email => user.email, :uid => "123456"
+          post 'sign_in', :user_email => user.email, :uid => "123456"
         }.to_not change{User.count}
       end
 
       it "creates a new external uid" do
         expect{
-          post 'social_sign_in', :user_email => user.email, :uid => "123456"
+          post 'sign_in', :user_email => user.email, :uid => "123456"
         }.to change{ExternalUID.count}.by(1)
       end
 
       it "the external uid belongs to the user" do
-        post 'social_sign_in', :user_email => user.email, :uid => "123456"
+        post 'sign_in', :user_email => user.email, :uid => "123456"
         user.reload
         expect(user.external_uids.map(&:uid)).to include("123456")
       end
 
       it "user can have many external uids" do
-        post 'social_sign_in', :user_email => user.email, :uid => "123456"
-        post 'social_sign_in', :user_email => user.email, :uid => "7891011"
+        post 'sign_in', :user_email => user.email, :uid => "123456"
+        post 'sign_in', :user_email => user.email, :uid => "7891011"
         user.reload
         expect(user.external_uids.map(&:uid)).to include("123456")
         expect(user.external_uids.map(&:uid)).to include("7891011")
@@ -117,58 +117,58 @@ describe Api::SessionsController do
 
     context "assigning to an existing user an uid already belonging to another user" do
       before(:each) do
-        post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
       end
 
       it "fails" do
-        post 'social_sign_in', :user_email => user.email, :uid => "123456"
+        post 'sign_in', :user_email => user.email, :uid => "123456"
         expect(response.status).to eq(500)
       end
 
       it "returns error body" do
-        post 'social_sign_in', :user_email => user.email, :uid => "123456"
+        post 'sign_in', :user_email => user.email, :uid => "123456"
         expect(response.body).to eq("{\"error\":true,\"description\":\"Error saving user\",\"errors\":{\"uid\":{\"uid\":[\"has already been taken\"]}}}")
       end
 
       it "does not create the new user" do
         user
         expect{
-          post 'social_sign_in', :user_email => user.email, :uid => "123456"
+          post 'sign_in', :user_email => user.email, :uid => "123456"
         }.to_not change{User.count}
       end
 
       it "does not create an external uid" do
         expect{
-          post 'social_sign_in', :user_email => user.email, :uid => "123456"
+          post 'sign_in', :user_email => user.email, :uid => "123456"
         }.to_not change{ExternalUID.count}
       end
     end
 
     context "uid owned by the provided user" do
       before(:each) do
-        post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
       end
 
       it "success" do
-        post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
         expect(response.status).to eq(200)
       end
 
       it "returns success body" do
-        post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+        post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
         u = User.last
         expect(response.body).to match(%r{{\"error\":false,\"description\":\"User retrieved.\",\"auth_token\":\"#{u.authentication_token}\"}})
       end
 
       it "does not create the new user" do
         expect{
-          post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+          post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
         }.to_not change{User.count}
       end
 
       it "does not create an external uid" do
         expect{
-          post 'social_sign_in', :user_email => "pepe@perez.com", :uid => "123456"
+          post 'sign_in', :user_email => "pepe@perez.com", :uid => "123456"
         }.to_not change{ExternalUID.count}
       end
     end

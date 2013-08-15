@@ -86,7 +86,6 @@ Foodcircles::Application.routes.draw do
   namespace :api do
     post '/sessions/sign_in' => 'sessions#sign_in'
     post '/sessions/sign_up' => 'sessions#sign_up'
-    post '/sessions/social_sign_in' => 'sessions#social_sign_in'
 
     put '/sessions/update' => 'sessions#update_profile'
     

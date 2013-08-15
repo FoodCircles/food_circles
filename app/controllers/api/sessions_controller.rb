@@ -1,19 +1,12 @@
 class Api::SessionsController < ApplicationController
   before_filter :authenticate_user!, :only => [:update_profile]
   def sign_in
-    begin
-      @user = User.find_by_email(params[:user_email])
-      if @user.nil?
-        render :json => {:error => true, :description => "No params provided"}, status: 401 and return
-      end
-      if @user.valid_password?(params[:user_password])
-        @auth_code = @user.authentication_token
-      else
-        render :json => {:error => true, :description => "Wrong password."}, status: 401 and return
-      end
-      render :json => {:error => false, :auth_token => "#{@auth_code}"}
-    rescue Exception => e
-      render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return
+    if params[:user_email] && params[:user_password]
+      password_email_sign_in
+    elsif params[:user_email] && params[:uid]
+      social_sign_in
+    else
+      render :json => {:error => true, :description => "No params provided"}, status: 401 and return
     end
   end
 
@@ -34,12 +27,28 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+
+  private
+  def password_email_sign_in
+    begin
+      @user = User.find_by_email(params[:user_email])
+      if @user.nil?
+        render :json => {:error => true, :description => "No params provided"}, status: 401 and return
+      end
+      if @user.valid_password?(params[:user_password])
+        @auth_code = @user.authentication_token
+      else
+        render :json => {:error => true, :description => "Wrong password."}, status: 401 and return
+      end
+      render :json => {:error => false, :auth_token => "#{@auth_code}"}
+    rescue Exception => e
+      render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return
+    end
+  end
+
   # NOTE: this needs access control. Some way to make sure the requests are coming from the mobile app.
   # A hardcoded sha might be enough (api keys for the apps?)
   def social_sign_in
-    unless params[:user_email] && params[:uid]
-      render :json => {:error => true, :description => "No params provided"}, status: 401 and return
-    end
     user = nil
     external_uid = nil
     success_message = nil
