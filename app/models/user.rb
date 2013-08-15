@@ -15,11 +15,18 @@ class User < ActiveRecord::Base
   has_many :venues
   has_many :notification_requests
   has_many :watched_venues, :through => :notification_requests, :source => :venue
+  has_many :external_uids, :class_name => "ExternalUID"
 
   before_save :format
   
   before_save :ensure_authentication_token
   
+  attr_accessor :do_password_validation
+  def do_password_validation
+    return @do_password_validation unless @do_password_validation.nil?
+    true
+  end
+  alias :password_required? :do_password_validation
 
   def is_admin?
     self.admin
@@ -67,5 +74,4 @@ class User < ActiveRecord::Base
     end
     user
   end
-
 end

@@ -34,6 +34,40 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  # NOTE: this needs access control. Some way to make sure the requests are coming from the mobile app.
+  # A hardcoded sha might be enough (api keys for the apps?)
+  def social_sign_in
+    unless params[:user_email] && params[:uid]
+      render :json => {:error => true, :description => "No params provided"}, status: 401 and return
+    end
+    user = nil
+    external_uid = nil
+    success_message = nil
+    ActiveRecord::Base.transaction do
+      user = User.where(email: params[:user_email]).first_or_initialize
+      success_message = "User retrieved."
+      if user.new_record?
+        success_message = "User saved."
+        user.do_password_validation = false
+        return unless user.save
+      end
+      external_uid = ExternalUID.where(uid: params[:uid], user_id: user.id).first_or_initialize
+      if external_uid.new_record?
+        raise ActiveRecord::Rollback unless external_uid.save
+      end
+    end
+    if user.persisted? && external_uid.persisted?
+      render :json => {:error => false, :description => success_message, :auth_token => user.authentication_token}
+    else
+      errors = {}
+      errors[:user] = user.errors.messages if user.errors.any?
+      errors[:uid] = external_uid.errors.messages if external_uid.errors.any?
+      render :json => {:error => true, :description => "Error saving user", :errors => errors}, status: 500
+    end
+  rescue Exception => e
+    render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return
+  end
+
   def update_profile
     begin
       @user = User.find_by_authentication_token(params[:auth_token])

@@ -27,6 +27,7 @@ Foodcircles::Application.routes.draw do
   match '/payment/stripe' => 'payment#stripe', :as => :stripe
 
   get "user_signup/create"
+
   resources :stripe_payments, :only =>[:new, :create]
 
   get "monthly_invoice/monthly_invoice"
@@ -85,6 +86,8 @@ Foodcircles::Application.routes.draw do
   namespace :api do
     post '/sessions/sign_in' => 'sessions#sign_in'
     post '/sessions/sign_up' => 'sessions#sign_up'
+    post '/sessions/social_sign_in' => 'sessions#social_sign_in'
+
     put '/sessions/update' => 'sessions#update_profile'
     
     get '/news' => 'news#show'
