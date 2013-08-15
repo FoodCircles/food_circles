@@ -65,6 +65,8 @@ Foodcircles::Application.routes.draw do
     resources :payments
   end
 
+  resource :settings, :only => [:show]
+
   resource :newsletter, :only => [] do
     member do
       post "subscribe"

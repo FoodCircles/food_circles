@@ -1,0 +1,30 @@
+<div id="main">
+  <div class="container">
+    <div class="account">
+      <div class="account-aside">
+        <div class="tabs-nav">
+          <h5>Your Account</h5>
+          <ul>
+            <% [["timeline", timeline_path], ["settings", settings_path]].each do |tabname, link| %>
+              <li class="<%= tabname == active_tab ? 'active' : '' %>">
+                <a href="<%= link %>"> <%= tabname.titleize %> <i class="arrow-right"></i></a>
+              </li>
+            <% end %>
+            <li></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div><!-- /.tabs-nav -->
+        <p class="meta">You have fed <strong>6 kids</strong> to date Your friends have fed <strong>30 kids</strong></p>
+        <div class="social">
+          <img src="/assets/fb-like.png" alt="" width="45" height="20" />
+          <img src="/assets/twitter-tweet.png" alt="" width="58" height="20" />
+        </div><!-- /.social -->
+      </div><!-- /.account-aside -->
+      <div class="account-cnt">
+        <div class="tab-cnt active" id="<%= active_tab %>">
+          <%= yield(:active_tab) %>
+        </div><!-- /#settings.tab-cnt -->
+      </div><!-- /.account-cnt -->
+    </div><!-- /.account -->
+  </div><!-- /.container -->
+</div><!-- /#main -->
