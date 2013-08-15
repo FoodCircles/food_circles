@@ -26,7 +26,10 @@ class User < ActiveRecord::Base
     return @do_password_validation unless @do_password_validation.nil?
     true
   end
-  alias :password_required? :do_password_validation
+
+  def password_required?
+    super && do_password_validation
+  end
 
   def is_admin?
     self.admin
