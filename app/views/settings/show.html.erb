@@ -65,18 +65,20 @@
       <input type="password" class="field" value="" />
     </div><!-- /.row -->
   </fieldset>
-  <fieldset>
-    <h5>
-      Saved Credit Cards
-      <span class="line"></span>
-    </h5>
-    <div class="row">
-      <span class="label">CREDIT CARD</span>
-      <span class="value">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 1234</span>
-      <a href="#" class="delete">delete</a>
-      <input type="text" class="field" value="" />
-    </div><!-- /.row -->
-  </fieldset>
+  <% if @card_last_4_digits  %>
+    <fieldset>
+      <h5>
+        Saved Credit Cards
+        <span class="line"></span>
+      </h5>
+      <div class="row">
+        <span class="label">CREDIT CARD</span>
+        <span class="value">**** **** **** **** <%= @card_last_4_digits %></span>
+        <%= link_to "delete", credit_card_settings_path , :remote => true, :method => :delete, :confirm => "Are you sure?", :class => ["delete"] %>
+        <input type="text" class="field" value="" />
+      </div><!-- /.row -->
+    </fieldset>
+  <% end %>
   <fieldset class="social-connections">
     <h5>
       Social Connections

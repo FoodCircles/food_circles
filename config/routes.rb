@@ -65,7 +65,11 @@ Foodcircles::Application.routes.draw do
     resources :payments
   end
 
-  resource :settings, :only => [:show]
+  resource :settings, :only => [:show] do
+    member do
+      delete "credit_card"
+    end
+  end
 
   resource :newsletter, :only => [] do
     member do

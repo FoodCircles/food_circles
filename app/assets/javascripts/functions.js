@@ -316,17 +316,12 @@
 
 		});
 
-
-		$('.settings .delete').on('click', function(event){
+		$('.settings .delete[data-remote=true]').bind('ajax:success', function(event, data) {
 			event.preventDefault();
-			if($(this).closest('fieldset').is('.social-connections')){
-				$(this).hide().siblings('.value').html('<em>Not connected</em>');
-			}else{
+			if(data.success){
 				$(this).hide().closest('.row').hide();
 			}
 		});
-
-
 
 	});//document ready event
 
