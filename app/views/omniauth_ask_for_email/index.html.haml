@@ -1,0 +1,11 @@
+#forgot
+  .container
+    %h2{:style=>"text-align:center"} We need your E-mail!
+    %h5 Since Twitter doesn't give us your e-mail, in order to give you a personalized experience, we need your e-mail
+    .box
+      = form_for current_user, :url => omniauth_email_submit_path, :method => :put do |f|
+        = f.text_field :email, :class => "email placeholder", :placeholder => 'email address', :value => ''
+        = f.submit 'Send', :class => 'button'
+    - if alert
+      .still
+        ="#{alert}"

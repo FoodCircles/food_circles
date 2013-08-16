@@ -1,27 +1,55 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
-
-    @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
-
-    if @user.persisted?
-      sign_in_and_redirect @user, :event => :authentication
-      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
+    if current_user.nil?
+      @user = User.find_by_facebook_uid(request.env["omniauth.auth"].uid)
+      if @user.nil?
+        @user = User.create(name:request.env["omniauth.auth"].info.name, 
+          provider:request.env["omniauth.auth"].provider,
+          email:request.env["omniauth.auth"].info.email,
+          facebook_uid:request.env["omniauth.auth"].uid,
+          password:Devise.friendly_token[0,20],
+          facebook_secret:request.env["omniauth.auth"]["credentials"].secret,
+          facebook_token:request.env["omniauth.auth"]["credentials"].token,
+          has_facebook:true
+        )
+      end
+      @user.save
+      sign_in_and_redirect @user
     else
-      session["devise.facebook_data"] = request.env["omniauth.auth"]
-      redirect_to new_user_registration_url
+      current_user.facebook_secret = request.env["omniauth.auth"]["credentials"].secret
+      current_user.facebook_token = request.env["omniauth.auth"]["credentials"].token
+      current_user.has_facebook = true
+      current_user.save
+      redirect_to root_path
     end
   end
 
   def twitter
-    user = User.find_for_twitter_oauth(request.env["omniauth.auth"])
-
-    if user.persisted?
-      flash.notice = "Signed in via Twitter! Please edit your account to update your E-Mail address"
-      sign_in_and_redirect user
+    if current_user.nil?
+      
+      @user = User.find_by_twitter_uid(request.env["omniauth.auth"].uid)
+      if @user.nil?
+        @user = User.create(name:request.env["omniauth.auth"].info.name, 
+          provider:request.env["omniauth.auth"].provider,
+          email:"",
+          twitter_uid:request.env["omniauth.auth"].uid,
+          password:Devise.friendly_token[0,20],
+          twitter_secret:request.env["omniauth.auth"]["credentials"].secret,
+          twitter_token:request.env["omniauth.auth"]["credentials"].token,
+          has_twitter:true
+        )
+      end
+      @user.save
+      
+      sign_in_and_redirect @user
+      
     else
-      session["devise.user_attributes"] = user.attributes
-      redirect_to new_user_registration_url
+      current_user.twitter_secret = request.env["omniauth.auth"]["credentials"].secret
+      current_user.twitter_token = request.env["omniauth.auth"]["credentials"].token
+      current_user.has_twitter = true
+      current_user.save
+      redirect_to root_path
     end
   end
 

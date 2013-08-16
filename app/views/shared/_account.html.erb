@@ -11,10 +11,10 @@
               </li>
             <% end %>
             <li></li>
-            <li><a href="#">Logout</a></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
           </ul>
         </div><!-- /.tabs-nav -->
-        <p class="meta">You have fed <strong>6 kids</strong> to date Your friends have fed <strong>30 kids</strong></p>
+        <p class="meta">You have fed <strong><%=@payments.map(&:amount).inject(0, &:+).floor%> kids</strong> to date</p>
         <div class="social">
           <img src="/assets/fb-like.png" alt="" width="45" height="20" />
           <img src="/assets/twitter-tweet.png" alt="" width="58" height="20" />
