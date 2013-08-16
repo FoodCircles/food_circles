@@ -152,16 +152,18 @@
     <%= image_tag @offer.venue.outside_image.thumb("130x135").url, :class => 'thumb' if @offer.venue.outside_image %>    
     <h4>
       <small><%= @offer.venue.phone %></small>
-      <%= @offer.venue.name %>
+      <%= link_to @offer.venue.name, @offer.venue.web, :target => "_blank" %>
     </h4>
     <p><%= @offer.venue.description %></p>
     <div class="foot">
-      <a href="#" class="right">Get directions</a>
-      <div class="social">
-        <a href="#" class="icon-facebook-med"></a>
-        <a href="#" class="icon-twitter-med"></a>
-        <a href="#" class="icon-yelp-med"></a>
-      </div><!-- /.social -->
+      <%= link_to "Get directions", google_maps_search(@offer.venue), :class => "right", :target => "_blank" %>
+      <%- if @offer.venue.social_links.any? %>
+        <div class="social">
+          <% @offer.venue.social_links.each do |social_link| %>
+            <%= link_to '', social_link.url, :class => "icon-#{social_link.source}-med", :target => "_blank" %>
+          <% end %>
+        </div><!-- /.social -->
+      <% end %>
     </div><!-- /.foot -->
   </div><!-- /.mini-profile -->
 </div><!-- /.popup -->

@@ -1,278 +1,160 @@
-<div id="main">
-  <div class="container">
-    <div class="account">
-      <div class="account-aside">
-        <div class="tabs-nav">
-          <h5>Your Account</h5>
-          <ul>
-            <li class="active"><a href="#timeline">Timeline <i class="arrow-right"></i></a></li>
-            <li><a href="#settings">Settings <i class="arrow-right"></i></a></li>
-            <li>  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-          </ul>
-        </div><!-- /.tabs-nav -->
-        <p class="meta">You have fed <strong><%=@payments.map(&:amount).inject(0, &:+).floor%> kids</strong> to date</p>
-        <div class="social">
-          <img src="/assets/fb-like.png" alt="" width="45" height="20" />
-          <img src="/assets/twitter-tweet.png" alt="" width="58" height="20" />
-        </div><!-- /.social -->
-      </div><!-- /.account-aside -->
-      <div class="account-cnt">
-        <div class="tab-cnt active" id="timeline">
-          <div class="user-invites">
-            <%- if !current_user.has_facebook? %>
-              <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Connect</a>
-            <%-else%>
-              <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Invite friends</a>
-            
-            <%-end%>
-            <%- if !current_user.has_twitter? %>
-              <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Connect</a>
-            <%-else%>
-              <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Invite friends</a>
-            <%-end%>
-            <div class="balloon">
-              <i class="arrow-up"><i class="arrow-up"></i></i>
-              see where your friends are eating and who they are <strong>feeding</strong>
-              <a href="#" class="icon-x close"></a>
-            </div><!-- /.balloon -->								
-          </div><!-- /.user-invites -->
-          <div class="timeline">
-            <%-if @payments.empty? %>
-            <div class="tab-cnt active" id="timeline">
+<% content_for(:active_tab) do %>
+<div class="user-invites">
+  <%- if !current_user.has_facebook? %>
+    <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Connect</a>
+  <%-else%>
+    <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Invite friends</a>
+  
+  <%-end%>
+  <%- if !current_user.has_twitter? %>
+    <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Connect</a>
+  <%-else%>
+    <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Invite friends</a>
+  <%-end%>
+  <div class="balloon">
+    <i class="arrow-up"><i class="arrow-up"></i></i>
+    see where your friends are eating and who they are <strong>feeding</strong>
+    <a href="#" class="icon-x close"></a>
+  </div><!-- /.balloon -->
+</div><!-- /.user-invites -->
 
-  						<div class="no-activity-message">
-  							<p>I see you haven’t used FoodCircles yet.<br> Let’s get started on our journey to end hunger.</p>
-  							<a href="#">View Restaurants</a>
-  						</div><!-- /.no-activity-message -->
-  						<div class="timeline">
-  							<div class="block left">
-  								<div class="cnt">
-  									<div class="head">
-  										<h5>Georgio’s Pizza</h5>
-  										<p>3/12/13</p>
-  									</div><!-- /.head -->
-  									<a href="#" class="body">
-  										<span>View Reciept</span>
-  										<img src="css/images/brownies-med.jpg" alt="" width="205" height="155" />
-  									</a><!-- /.body -->
-  									<div class="foot">
-  										<div class="kids">
-  											<i class="icon-kid"></i>
-  											2
-  										</div><!-- /.kids -->
-  										<div class="socials">
-  											<a href="#" class="icon-yellow-facebook"></a>
-  											<a href="#" class="icon-yellow-twitter"></a>
-  										</div><!-- /.socials -->
-  										<span class="divider"></span>
-  									</div><!-- /.foot -->
-  								</div><!-- /.cnt -->
-  								<i class="arrow-right"><i class="arrow-right"></i></i>
-  								<i class="circle"></i>
-  							</div><!-- /.block left -->
-  							<div class="block right">
-  								<div class="cnt">
-  									<div class="head">
-  										<h5>Stella’s Lounge</h5>
-  										<p>3/03/13</p>
-  									</div><!-- /.head -->
-  									<a href="#" class="body">
-  										<span>View Reciept</span>
-  										<img src="css/images/crack-fries-med.jpg" alt="" width="205" height="155" />
-  									</a><!-- /.body -->
-  									<div class="foot">
-  										<div class="kids">
-  											<i class="icon-kid"></i>
-  											2
-  										</div><!-- /.kids -->
-  										<div class="socials">
-  											<a href="#" class="icon-yellow-facebook"></a>
-  											<a href="#" class="icon-yellow-twitter"></a>
-  										</div><!-- /.socials -->
-  										<span class="divider"></span>
-  									</div><!-- /.foot -->
-  								</div><!-- /.cnt -->
-  								<i class="arrow-left"><i class="arrow-left"></i></i>
-  								<i class="circle"></i>
-  							</div><!-- /.block right -->
-  							<div class="block left">
-  								<div class="cnt">
-  									<div class="head">
-  										<h5>Two Beards Deli</h5>
-  										<p>3/01/13</p>
-  									</div><!-- /.head -->
-  									<a href="#" class="body">
-  										<span>View Reciept</span>
-  										<img src="css/images/fountain-drinks-med.jpg" alt="" width="205" height="155" />
-  									</a><!-- /.body -->
-  									<div class="foot">
-  										<div class="kids">
-  											<i class="icon-kid"></i>
-  											2
-  										</div><!-- /.kids -->
-  										<div class="socials">
-  											<a href="#" class="icon-yellow-facebook"></a>
-  											<a href="#" class="icon-yellow-twitter"></a>
-  										</div><!-- /.socials -->
-  										<span class="divider"></span>
-  									</div><!-- /.foot -->
-  								</div><!-- /.cnt -->
-  								<i class="arrow-right"><i class="arrow-right"></i></i>
-  								<i class="circle"></i>
-  							</div><!-- /.block left -->
-  							<div class="block right highlight">
-  								<div class="cnt">
-  									<h5><a href="#">Jonathan Kumar</a></h5>
-  									<div class="kids">
-  										<i class="icon-kid-small"></i> 2
-  									</div><!-- /.kids -->
-  									<p><a href="#">San Chez Bistro</a></p>
-  									<img src="css/images/crack-fries-small.jpg" alt="" width="75" height="90" />
-  								</div><!-- /.cnt -->
-  								<i class="arrow-left"><i class="arrow-left"></i></i>
-  								<i class="circle"></i>
-  							</div><!-- /.block right -->
-  							<span class="line"></span>
-  						</div><!-- /.timeline -->
-            <%-else%>
-              <%- @payments.each_with_index do |payment, index| %>
-                <div class="block <%= index % 2 == 0 ? 'left' : 'right' %>">
-                  <div class="cnt">
-                    <div class="head">
-                      <h5><%= payment.offer.venue.name %></h5>
-                      <p><%= payment.created_at.strftime("%m/%d/%y") %></p>
-                    </div><!-- /.head -->
-                    <a href="/reciept/<%= payment.id %>" class="body recieptlink popup-link">
-                      <span>View Reciept</span>
-                      <%= image_tag payment.offer.venue.timeline_image.thumb("205x155").url if payment.offer.venue.timeline_image %>
-                    </a><!-- /.body -->
-                    <div class="foot">
-                      <div class="kids">
-                        <i class="icon-kid"></i>
-                        <%= payment.amount.to_i %>
-                      </div><!-- /.kids -->
-                      <div class="socials">
-                        <a href="#" class="icon-yellow-facebook"></a>
-                        <a href="#" class="icon-yellow-twitter"></a>
-                      </div><!-- /.socials -->
-                      <span class="divider"></span>
-                    </div><!-- /.foot -->
-                  </div><!-- /.cnt -->
-                  <%- if index % 2 == 0 %>
-                    <i class="arrow-right"><i class="arrow-right"></i></i>
-                  <%- else %>
-                    <i class="arrow-left"><i class="arrow-left"></i></i>
-                  <%- end %>
-                  <i class="circle"></i>
-                </div><!-- /.block left -->
-              <%- end %>
-              
-              <span class="line"></span>
-            </div><!-- /.timeline -->
-            <%-end%>
-            
-        </div><!-- /#timeline.tab-cnt -->
-        <div class="tab-cnt" id="settings">
-          <div class="settings">
-            <fieldset>
-              <h5>
-                <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
-                General Information
-                <span class="line"></span>
-              </h5>
-              <div class="row">
-                <span class="label">Full name</span>
-                <span class="value"><%= current_user.name %></span>
-                <input type="text" class="field" value="" />
-              </div><!-- /.row -->
-              <div class="row">
-                <span class="label">City</span>
-                <span class="value"><%= current_user.city %></span>
-                <input type="text" class="field" value="" />
-              </div><!-- /.row -->
-              <div class="row tight">
-                <span class="label">Zip</span>
-                <span class="value"><%= current_user.zip %></span>
-                <input type="text" class="field" value="" />
-              </div><!-- /.row -->
-              <div class="row tight">
-                <span class="label">Phone</span>
-                <span class="value"><%= current_user.phone %></span>
-                <input type="text" class="field" value="" />
-              </div><!-- /.row -->
-              <div class="row">
-                <span class="label">GENDER</span>
-                <span class="value"><%= current_user.gender %></span>
-                <input type="text" class="field" value="" />
-              </div><!-- /.row -->
-              <div class="row">
-                <span class="label">DOB</span>
-                <span class="value"><%= current_user.birthday %></span>
-                <input type="text" class="field" value="" />
-              </div><!-- /.row -->
-              
-            </fieldset>
-            <fieldset>
-              <h5>
-                <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
-                Email
-                <span class="line"></span>
-              </h5>
-              <div class="row">
-                <span class="label">Email</span>
-                <span class="value"><%= current_user.email %></span>
-                <input type="email" class="field" value="" />
-              </div><!-- /.row -->
-            </fieldset>
-            <fieldset>
-              <h5>
-                <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
-                Password
-                <span class="line"></span>
-              </h5>
-              <div class="row">
-                <span class="label">Password</span>
-                <span class="value">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
-                <input type="password" class="field" value="" />
-              </div><!-- /.row -->
-              <div class="row rpassword">
-                <span class="label">Repeat Password</span>
-                <input type="password" class="field" value="" />
-              </div><!-- /.row -->
-            </fieldset>
-            <fieldset>
-              <h5>
-                Saved Credit Cards
-                <span class="line"></span>
-              </h5>
-              <div class="row">
-                <span class="label">CREDIT CARD</span>
-                <span class="value">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 1234</span>
-                <a href="#" class="delete">delete</a>
-                <input type="text" class="field" value="" />
-              </div><!-- /.row -->
-            </fieldset>
-            <fieldset class="social-connections">
-              <h5>
-                Social Connections
-                <span class="line"></span>
-              </h5>
-              <div class="row tight">
-                <span class="label">Facebook</span>
-                <span class="value">Connected</span>
-                <a href="#" class="delete">Disconnect</a>
-              </div><!-- /.row -->
-              <div class="row">
-                <span class="label">Twitter</span>
-                <span class="value"><em>Not connected</em></span>
-              </div><!-- /.row -->
-            </fieldset>
-          </div><!-- /.settings -->
-        </div><!-- /#settings.tab-cnt -->
-      </div><!-- /.account-cnt -->
-    </div><!-- /.account -->
-  </div><!-- /.container -->
-</div><!-- /#main -->
+<div class="timeline">
+  <%-if @payments.empty? %>
+  <div class="tab-cnt active" id="timeline">
+
+    <div class="no-activity-message">
+      <p>I see you haven’t used FoodCircles yet.<br> Let’s get started on our journey to end hunger.</p>
+      <a href="#">View Restaurants</a>
+    </div><!-- /.no-activity-message -->
+    <div class="timeline">
+      <div class="block left">
+        <div class="cnt">
+          <div class="head">
+            <h5>Georgio’s Pizza</h5>
+            <p>3/12/13</p>
+          </div><!-- /.head -->
+          <a href="#" class="body">
+            <span>View Reciept</span>
+            <img src="css/images/brownies-med.jpg" alt="" width="205" height="155" />
+          </a><!-- /.body -->
+          <div class="foot">
+            <div class="kids">
+              <i class="icon-kid"></i>
+              2
+            </div><!-- /.kids -->
+            <div class="socials">
+              <a href="#" class="icon-yellow-facebook"></a>
+              <a href="#" class="icon-yellow-twitter"></a>
+            </div><!-- /.socials -->
+            <span class="divider"></span>
+          </div><!-- /.foot -->
+        </div><!-- /.cnt -->
+        <i class="arrow-right"><i class="arrow-right"></i></i>
+        <i class="circle"></i>
+      </div><!-- /.block left -->
+      <div class="block right">
+        <div class="cnt">
+          <div class="head">
+            <h5>Stella’s Lounge</h5>
+            <p>3/03/13</p>
+          </div><!-- /.head -->
+          <a href="#" class="body">
+            <span>View Reciept</span>
+            <img src="css/images/crack-fries-med.jpg" alt="" width="205" height="155" />
+          </a><!-- /.body -->
+          <div class="foot">
+            <div class="kids">
+              <i class="icon-kid"></i>
+              2
+            </div><!-- /.kids -->
+            <div class="socials">
+              <a href="#" class="icon-yellow-facebook"></a>
+              <a href="#" class="icon-yellow-twitter"></a>
+            </div><!-- /.socials -->
+            <span class="divider"></span>
+          </div><!-- /.foot -->
+        </div><!-- /.cnt -->
+        <i class="arrow-left"><i class="arrow-left"></i></i>
+        <i class="circle"></i>
+      </div><!-- /.block right -->
+      <div class="block left">
+        <div class="cnt">
+          <div class="head">
+            <h5>Two Beards Deli</h5>
+            <p>3/01/13</p>
+          </div><!-- /.head -->
+          <a href="#" class="body">
+            <span>View Reciept</span>
+            <img src="css/images/fountain-drinks-med.jpg" alt="" width="205" height="155" />
+          </a><!-- /.body -->
+          <div class="foot">
+            <div class="kids">
+              <i class="icon-kid"></i>
+              2
+            </div><!-- /.kids -->
+            <div class="socials">
+              <a href="#" class="icon-yellow-facebook"></a>
+              <a href="#" class="icon-yellow-twitter"></a>
+            </div><!-- /.socials -->
+            <span class="divider"></span>
+          </div><!-- /.foot -->
+        </div><!-- /.cnt -->
+        <i class="arrow-right"><i class="arrow-right"></i></i>
+        <i class="circle"></i>
+      </div><!-- /.block left -->
+      <div class="block right highlight">
+        <div class="cnt">
+          <h5><a href="#">Jonathan Kumar</a></h5>
+          <div class="kids">
+            <i class="icon-kid-small"></i> 2
+          </div><!-- /.kids -->
+          <p><a href="#">San Chez Bistro</a></p>
+          <img src="css/images/crack-fries-small.jpg" alt="" width="75" height="90" />
+        </div><!-- /.cnt -->
+        <i class="arrow-left"><i class="arrow-left"></i></i>
+        <i class="circle"></i>
+      </div><!-- /.block right -->
+      <span class="line"></span>
+    </div><!-- /.timeline -->
+  <%-else%>
+    <%- @payments.each_with_index do |payment, index| %>
+      <div class="block <%= index % 2 == 0 ? 'left' : 'right' %>">
+        <div class="cnt">
+          <div class="head">
+            <h5><%= payment.offer.venue.name %></h5>
+            <p><%= payment.created_at.strftime("%m/%d/%y") %></p>
+          </div><!-- /.head -->
+          <a href="/reciept/<%= payment.id %>" class="body recieptlink popup-link">
+            <span>View Reciept</span>
+            <%= image_tag payment.offer.venue.timeline_image.thumb("205x155").url if payment.offer.venue.timeline_image %>
+          </a><!-- /.body -->
+          <div class="foot">
+            <div class="kids">
+              <i class="icon-kid"></i>
+              <%= payment.amount.to_i %>
+            </div><!-- /.kids -->
+            <div class="socials">
+              <a href="#" class="icon-yellow-facebook"></a>
+              <a href="#" class="icon-yellow-twitter"></a>
+            </div><!-- /.socials -->
+            <span class="divider"></span>
+          </div><!-- /.foot -->
+        </div><!-- /.cnt -->
+        <%- if index % 2 == 0 %>
+          <i class="arrow-right"><i class="arrow-right"></i></i>
+        <%- else %>
+          <i class="arrow-left"><i class="arrow-left"></i></i>
+        <%- end %>
+        <i class="circle"></i>
+      </div><!-- /.block left -->
+    <%- end %>
+    
+    <span class="line"></span>
+  </div><!-- /.timeline -->
+  <%-end%>
+</div><!-- /#timeline.tab-cnt -->
+<% end %>
+<%= render :partial => "shared/account", :locals => {:active_tab => "timeline" }%>
 <%- if params[:reciept_id] %>
   <script type="text/javascript">
     $( function() {

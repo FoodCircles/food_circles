@@ -10,6 +10,9 @@ class Venue < ActiveRecord::Base
   has_many :venue_taggables, :dependent => :destroy
   has_many :venue_tags, :through => :venue_taggables
   has_many :reviews
+  has_many :notification_requests
+  has_many :watching_users, :through => :notification_requests, :source => :user
+  has_many :social_links
 
   friendly_id :name, use: :slugged
 
@@ -33,14 +36,29 @@ class Venue < ActiveRecord::Base
   validates :email, :on => :update, :'validators/email' => true
   validates :email, :on => :create, :allow_nil => true, :'validators/email' => true
 
+
+  after_save :notify_watching_users_about_new_vouchers, :if => :has_new_vouchers?
+
+  def has_new_vouchers?
+    vouchers_available_changed? &&
+    vouchers_available_change.first &&
+    vouchers_available_change.first < vouchers_available_change.last
+  end
+
+  def notify_watching_users_about_new_vouchers
+    watching_users.each do |watching_user|
+      UserMailer.notification_about_available_vouchers(watching_user, self).deliver
+    end
+  end
+
   def as_json(options={})
     if !options[:not_available]
       { :id => self.id,
         :name => self.name,
         :address => self.address,
         :city => self.city,
-        :lat => self.latlon.lat,
-        :lon => self.latlon.lon,
+        :lat => self.latlon.x,
+        :lon => self.latlon.y,
         :description => self.description,
         :neighborhood => self.neighborhood,
         :phone => self.phone,
@@ -63,8 +81,8 @@ class Venue < ActiveRecord::Base
         :name => self.name,
         :address => self.address,
         :city => self.city,
-        :lat => self.latlon.lat,
-        :lon => self.latlon.lon,
+        :lat => self.latlon.x,
+        :lon => self.latlon.y,
         :description => self.description,
         :neighborhood => self.neighborhood,
         :phone => self.phone,
@@ -197,7 +215,6 @@ class Venue < ActiveRecord::Base
   end
 
   private
-
   def to_read(m)
     h, m = (m-300).divmod 60
     d, h = h.divmod 24

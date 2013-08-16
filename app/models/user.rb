@@ -8,19 +8,34 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :phone, :admin, :twitter_uid, :facebook_uid, :provider, :stripe_customer_token, :twitter_secret, :twitter_token, :has_twitter, :facebook_secret, :facebook_token, :has_facebook
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :phone, :admin, :twitter_uid, :facebook_uid, :provider
+  attr_accessible :stripe_customer_token, :twitter_secret, :twitter_token, :has_twitter, :facebook_secret, :facebook_token, :has_facebook
+  attr_accessible :city, :zip, :gender, :birthday
+
   validates :email, :on => :update, :'validators/email' => true
   validates :email, :on => :create, :allow_nil => true, :'validators/email' => true
   has_many :reservations
   has_many :venues
   has_many :payments
   has_many :vouchers
+  has_many :notification_requests
+  has_many :watched_venues, :through => :notification_requests, :source => :venue
+  has_many :external_uids, :class_name => "ExternalUID"
 
   before_save :format
   
   before_save :ensure_authentication_token
   
   serialize :friends
+  attr_accessor :do_password_validation
+  def do_password_validation
+    return @do_password_validation unless @do_password_validation.nil?
+    true
+  end
+
+  def password_required?
+    super && do_password_validation
+  end
 
   def is_admin?
     self.admin
@@ -69,5 +84,4 @@ class User < ActiveRecord::Base
     end
     user
   end
-
 end
