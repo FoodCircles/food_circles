@@ -609,18 +609,25 @@
 			$fieldset.find('.field:first').trigger('focus');
 		},
 		saveGroup: function($fieldset){
+			var object = this;
+			$.post($fieldset.data().url, $fieldset.serialize(), function(data) {
+				if(data.success == true){
+					object._refreshGroup($fieldset);
+				}
+			});
+		},
+		closeEdit: function($fieldset){
+			$fieldset.removeClass('editing').find('.edit span').text('edit');
+		},
+		_refreshGroup: function($fieldset){
 			$fieldset.find('.field').each(function(){
 				var $self = $(this);
-				$self.siblings('.value').text($self.val());
+				$self.siblings(".value:not([data-keep='yes'])").text($self.val());
 				if($self.val().length){
 					$self.siblings('.delete').show();
 				}
 			});
 			this.closeEdit($fieldset);
-
-		},
-		closeEdit: function($fieldset){
-			$fieldset.removeClass('editing').find('.edit span').text('edit');
 		}
 
 	}

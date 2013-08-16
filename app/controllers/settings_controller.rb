@@ -7,6 +7,23 @@ class SettingsController < ApplicationController
     end
   end
 
+  def update
+    if current_user.update_attributes(params[:user])
+      render :json => {:success => true, :description => "User Settings were updated"}
+    else
+      render :json => {:error => true, :description => "There was an error", :errors => current_user.errors.full_messages.to_sentence}
+    end
+  end
+
+  def update_password
+    if current_user.update_with_password(params[:user])
+      sign_in current_user, :bypass => true
+      render :json => {:success => true, :description => "User Settings were updated"}
+    else
+      render :json => {:error => true, :description => "There was an error", :errors => current_user.errors.full_messages.to_sentence}
+    end
+  end
+
   # DELETE /settings/credit_card
   def credit_card
     customer = stripe_customer

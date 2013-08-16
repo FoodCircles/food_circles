@@ -1,68 +1,76 @@
 <% content_for(:active_tab) do %>
 <div class="settings">
-  <fieldset>
+  <fieldset  data-url="<%= settings_path %>">
     <h5>
       <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
       General Information
       <span class="line"></span>
     </h5>
+    <input type="hidden" value="put" name="_method">
     <div class="row">
       <span class="label">Full name</span>
       <span class="value"><%= current_user.name %></span>
-      <input type="text" class="field" value="" />
+      <input type="text" class="field" value="" name="user[name]" />
     </div><!-- /.row -->
     <div class="row">
       <span class="label">City</span>
       <span class="value"><%= current_user.city %></span>
-      <input type="text" class="field" value="" />
+      <input type="text" class="field" value="" name="user[city]"/>
     </div><!-- /.row -->
     <div class="row tight">
       <span class="label">Zip</span>
       <span class="value"><%= current_user.zip %></span>
-      <input type="text" class="field" value="" />
+      <input type="text" class="field" value="" name="user[zip]" />
     </div><!-- /.row -->
     <div class="row tight">
       <span class="label">Phone</span>
       <span class="value"><%= current_user.phone %></span>
-      <input type="text" class="field" value="" />
+      <input type="text" class="field" value="" name="user[phone]" />
     </div><!-- /.row -->
     <div class="row">
       <span class="label">GENDER</span>
       <span class="value"><%= current_user.gender %></span>
-      <input type="text" class="field" value="" />
+      <input type="text" class="field" value="" name="user[gender]" />
     </div><!-- /.row -->
     <div class="row">
       <span class="label">DOB</span>
       <span class="value"><%= current_user.birthday %></span>
-      <input type="text" class="field" value="" />
+      <input type="text" class="field" value="" name="user[birthday]"/>
     </div><!-- /.row -->
   </fieldset>
-  <fieldset>
+  <fieldset  data-url="<%= settings_path %>">
     <h5>
       <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
       Email
       <span class="line"></span>
     </h5>
+    <input type="hidden" value="put" name="_method">
     <div class="row">
       <span class="label">Email</span>
       <span class="value"><%= current_user.email %></span>
-      <input type="email" class="field" value="" />
+      <input type="email" class="field" value="" name="user[email]" />
     </div><!-- /.row -->
   </fieldset>
-  <fieldset>
+  <fieldset  data-url="<%= update_password_settings_path %>">
     <h5>
       <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
       Password
       <span class="line"></span>
     </h5>
+    <input type="hidden" value="put" name="_method">
+    <div class="row rpassword">
+      <span class="label">Current Password</span>
+      <span class="value" data-keep='yes'>********</span>
+      <input type="password" class="field" value="" name="user[current_password]"/>
+    </div><!-- /.row -->
     <div class="row">
       <span class="label">Password</span>
-      <span class="value">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
-      <input type="password" class="field" value="" />
+      <span class="value" data-keep='yes'>********</span>
+      <input type="password" class="field" value="" name="user[password]"/>
     </div><!-- /.row -->
     <div class="row rpassword">
-      <span class="label">Repeat Password</span>
-      <input type="password" class="field" value="" />
+      <span class="label">Confirm New Password</span>
+      <input type="password" class="field" value="" name="user[password_confirmation]"/>
     </div><!-- /.row -->
   </fieldset>
   <% if @card_last_4_digits  %>
