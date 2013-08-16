@@ -4,16 +4,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if current_user.nil?
       @user = User.find_by_facebook_uid(request.env["omniauth.auth"].uid)
       if @user.nil?
-        @user = User.create(name:request.env["omniauth.auth"].info.name, 
+        @user = User.new(name:request.env["omniauth.auth"].info.name,
           provider:request.env["omniauth.auth"].provider,
           email:request.env["omniauth.auth"].info.email,
           facebook_uid:request.env["omniauth.auth"].uid,
-          password:Devise.friendly_token[0,20],
           facebook_secret:request.env["omniauth.auth"]["credentials"].secret,
           facebook_token:request.env["omniauth.auth"]["credentials"].token,
           has_facebook:true
         )
       end
+      @user.do_password_validation = false
       @user.save
       sign_in_and_redirect @user
     else
@@ -23,6 +23,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       current_user.save
       redirect_to root_path
     end
+
   end
 
   def twitter
@@ -30,16 +31,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       
       @user = User.find_by_twitter_uid(request.env["omniauth.auth"].uid)
       if @user.nil?
-        @user = User.create(name:request.env["omniauth.auth"].info.name, 
+        @user = User.new(name:request.env["omniauth.auth"].info.name,
           provider:request.env["omniauth.auth"].provider,
           email:"",
           twitter_uid:request.env["omniauth.auth"].uid,
-          password:Devise.friendly_token[0,20],
           twitter_secret:request.env["omniauth.auth"]["credentials"].secret,
           twitter_token:request.env["omniauth.auth"]["credentials"].token,
           has_twitter:true
         )
       end
+      @user.do_password_validation = false
       @user.save
       
       sign_in_and_redirect @user

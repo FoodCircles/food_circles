@@ -51,28 +51,48 @@
       <input type="email" class="field" value="" name="user[email]" />
     </div><!-- /.row -->
   </fieldset>
-  <fieldset  data-url="<%= update_password_settings_path %>">
-    <h5>
-      <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
-      Password
-      <span class="line"></span>
-    </h5>
-    <input type="hidden" value="put" name="_method">
-    <div class="row rpassword">
-      <span class="label">Current Password</span>
-      <span class="value" data-keep='yes'>********</span>
-      <input type="password" class="field" value="" name="user[current_password]"/>
-    </div><!-- /.row -->
-    <div class="row">
-      <span class="label">Password</span>
-      <span class="value" data-keep='yes'>********</span>
-      <input type="password" class="field" value="" name="user[password]"/>
-    </div><!-- /.row -->
-    <div class="row rpassword">
-      <span class="label">Confirm New Password</span>
-      <input type="password" class="field" value="" name="user[password_confirmation]"/>
-    </div><!-- /.row -->
-  </fieldset>
+  <% if current_user.encrypted_password.present? %>
+    <fieldset  data-url="<%= update_password_settings_path %>">
+      <h5>
+        <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
+        Password
+        <span class="line"></span>
+      </h5>
+      <input type="hidden" value="put" name="_method">
+      <div class="row rpassword">
+        <span class="label">Current Password</span>
+        <span class="value" data-keep='yes'>********</span>
+        <input type="password" class="field" value="" name="user[current_password]"/>
+      </div><!-- /.row -->
+      <div class="row">
+        <span class="label">Password</span>
+        <span class="value" data-keep='yes'>********</span>
+        <input type="password" class="field" value="" name="user[password]"/>
+      </div><!-- /.row -->
+      <div class="row rpassword">
+        <span class="label">Confirm New Password</span>
+        <input type="password" class="field" value="" name="user[password_confirmation]"/>
+      </div><!-- /.row -->
+    </fieldset>
+  <% else %>
+    <fieldset  data-url="<%= settings_path %>">
+      <h5>
+        <a href="#" class="edit"><i class="icon-circle-arrow"></i> <span>edit</span></a>
+        Password
+        <span class="line"></span>
+      </h5>
+      <input type="hidden" value="put" name="_method">
+      <div class="row">
+        <span class="label">Password</span>
+        <span class="value" data-keep='yes'>********</span>
+        <input type="password" class="field" value="" name="user[password]"/>
+      </div><!-- /.row -->
+      <div class="row rpassword">
+        <span class="label">Confirm New Password</span>
+        <input type="password" class="field" value="" name="user[password_confirmation]"/>
+      </div><!-- /.row -->
+    </fieldset>
+  <% end %>
   <% if @card_last_4_digits  %>
     <fieldset>
       <h5>

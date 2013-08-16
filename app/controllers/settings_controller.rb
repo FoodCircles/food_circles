@@ -14,6 +14,9 @@ class SettingsController < ApplicationController
 
   def update
     if current_user.update_attributes(params[:user])
+      if params[:user][:password] && params[:user][:password_confirmation]
+        sign_in current_user, :bypass => true
+      end
       render :json => {:success => true, :description => "User Settings were updated"}
     else
       render :json => {:error => true, :description => "There was an error", :errors => current_user.errors.full_messages.to_sentence}
