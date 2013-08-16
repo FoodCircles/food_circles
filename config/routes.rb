@@ -71,6 +71,8 @@ Foodcircles::Application.routes.draw do
     member do
       delete "credit_card"
       put "update_password"
+      delete "facebook_connection"
+      delete "twitter_connection"
     end
   end
 

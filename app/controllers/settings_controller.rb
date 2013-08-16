@@ -41,6 +41,24 @@ class SettingsController < ApplicationController
     render :json => {:success => true, :description => "The Credit Card was deleted"}
   end
 
+  # DELETE /settings/facebook_connection
+  def facebook_connection
+    if current_user.update_attributes({:facebook_uid => nil, :facebook_secret => nil, :facebook_secret => nil, :has_facebook => false})
+      render :json => {:success => true, :description => "Disconnected from facebook"}
+    else
+      render :json => {:error => true, :description => "There was an error", :errors => current_user.errors.full_messages.to_sentence}
+    end
+  end
+
+  # DELETE /settings/twitter_connection
+  def twitter_connection
+    if current_user.update_attributes({:twitter_uid => nil, :twitter_secret => nil, :twitter_token => nil, :has_twitter => false})
+      render :json => {:success => true, :description => "Disconnected from twitter"}
+    else
+      render :json => {:error => true, :description => "There was an error", :errors => current_user.errors.full_messages.to_sentence}
+    end
+  end
+
   private
   def stripe_customer
     Stripe::Customer.retrieve current_user.stripe_customer_token

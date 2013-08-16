@@ -114,12 +114,21 @@
     </h5>
     <div class="row tight">
       <span class="label">Facebook</span>
-      <span class="value">Connected</span>
-      <a href="#" class="delete">Disconnect</a>
+      <% if current_user.has_facebook %>
+        <span class="value">Connected</span>
+        <%= link_to "Disconnect", facebook_connection_settings_path , :remote => true, :method => :delete, :confirm => "Are you sure?", :class => ["delete"] %>
+      <% else %>
+        <span class="value"><em>Not connected</em></span>
+      <% end %>
     </div><!-- /.row -->
     <div class="row">
       <span class="label">Twitter</span>
-      <span class="value"><em>Not connected</em></span>
+      <% if current_user.has_twitter %>
+        <span class="value">Connected</span>
+        <%= link_to "Disconnect", twitter_connection_settings_path , :remote => true, :method => :delete, :confirm => "Are you sure?", :class => ["delete"] %>
+      <% else %>
+        <span class="value"><em>Not connected</em></span>
+      <% end %>
     </div><!-- /.row -->
   </fieldset>
 </div><!-- /.settings -->
