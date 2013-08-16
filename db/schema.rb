@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130815161813) do
+ActiveRecord::Schema.define(:version => 20130816185704) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -359,8 +359,8 @@ ActiveRecord::Schema.define(:version => 20130815161813) do
     t.boolean  "apply_able",                                                                            :default => false
     t.string   "email",                                                                                 :default => "venue@example.com"
     t.string   "slug"
-    t.integer  "vouchers_available"
-    t.integer  "vouchers_total"
+    t.integer  "vouchers_available",                                                                    :default => 0
+    t.integer  "vouchers_total",                                                                        :default => 0
     t.string   "outside_image_uid"
     t.string   "timeline_image_uid"
     t.string   "google_maps_url"
