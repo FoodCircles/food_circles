@@ -1,7 +1,12 @@
 class SettingsController < ApplicationController
+  include PaymentCommons
+
   before_filter :authenticate_user!
 
   def show
+    get_friends_purchases
+    load_payments
+
     @card_last_4_digits = if current_user.stripe_customer_token && customer = stripe_customer
       customer.active_card.last4
     end
