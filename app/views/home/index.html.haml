@@ -53,7 +53,7 @@
 
       .products-tiles
         - @venues.each do |venue|
-          %div{class: "tile #{["red", "yellow", "green"].sample} #{( venue.vouchers_available == 0 ? "sold-out" : "" )} #{venue.offers.first.category.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
+          %div{class: "tile #{ venue.vouchers_available > 4 ? "green" : (venue.vouchers_available == 1 ? "red" : "yellow")} #{( venue.vouchers_available == 0 ? "sold-out" : "" )} #{venue.offers.first.category.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
             %h3= link_to venue.name, venue
             .thumb
               %span.social

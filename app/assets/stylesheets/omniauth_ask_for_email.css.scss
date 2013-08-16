@@ -1,0 +1,79 @@
+// Place all the styles related to the omniauth_ask_for_email controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* ================================== */
+/*    forgot password                 */
+/* ================================== */
+#forgot {
+  min-height: 500px; }
+  #forgot h2 {
+    color: #4e3e34;
+    font-size: 30px;
+    margin-bottom: 10px; }
+  #forgot h5 {
+    color: #8a857f;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px; }
+  #forgot .box {
+    width: 240px;
+    background: #fff;
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 23px 30px;
+    background-color: #ffffff;
+    background-image: linear-gradient(left top, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.03) 100%);
+    background-image: -o-linear-gradient(left top, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.03) 100%);
+    background-image: -moz-linear-gradient(left top, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.03) 100%);
+    background-image: -webkit-linear-gradient(left top, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.03) 100%);
+    background-image: -ms-linear-gradient(left top, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.03) 100%);
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0.03)), color-stop(1, rgba(0, 0, 0, 0.03)));
+    box-shadow: 0 2px 3px #d3c9b9; }
+    #forgot .box .email, #forgot .box .button, #forgot .box #nav {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 100%; }
+    #forgot .box .email {
+      margin-bottom: 22px;
+      background: white url(email_field_icon.png) 14px 50% no-repeat;
+      padding-left: 60px;
+      font-size: 20px;
+      color: #111; }
+    #forgot .box .email.placeholder {
+      color: #999; }
+  #forgot .still {
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #8a857f;
+    padding-top: 18px; }
+    
+    .button, #nav {
+    background-color: #b56e6f;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#b56e6f), to(#a34b4c));
+    background-image: -webkit-linear-gradient(top, #b56e6f, #a34b4c);
+    background-image: -moz-linear-gradient(top, #b56e6f, #a34b4c);
+    background-image: -o-linear-gradient(top, #b56e6f, #a34b4c);
+    background-image: linear-gradient(to bottom, #b56e6f, #a34b4c);
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: 0 1px 1px #701a1a;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 40px;
+    height: 40px;
+    border: 0;
+    display: inline-block;
+    zoom: 1;
+    padding: 0 15px;
+    text-align: center;
+    vertical-align: middle;
+  }

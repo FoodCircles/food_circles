@@ -61,6 +61,8 @@ class StripePaymentsController < ApplicationController
     unless current_user.phone.nil?
       send_text_message(current_user, payment)
     end
+    
+    current_user.payments << payment
 
     redirect_to :controller => 'timeline', :action => 'index', :reciept_id => payment.id
   rescue Stripe::CardError => e
