@@ -162,6 +162,7 @@ ActiveRecord::Schema.define(:version => 20130815161813) do
     t.datetime "updated_at",          :null => false
     t.integer  "offer_id"
     t.string   "code"
+    t.string   "state"
     t.integer  "num_diners"
     t.string   "occasion"
     t.boolean  "confirmed"
@@ -170,7 +171,6 @@ ActiveRecord::Schema.define(:version => 20130815161813) do
     t.string   "name"
     t.string   "phone"
     t.boolean  "called"
-    t.string   "state"
   end
 
   add_index "payments", ["user_id"], :name => "index_payments_on_user_id"
@@ -247,15 +247,15 @@ ActiveRecord::Schema.define(:version => 20130815161813) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
   create_table "social_links", :force => true do |t|
     t.integer  "venue_id"
     t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "socialbutterflies", :force => true do |t|
     t.string   "facebook"
