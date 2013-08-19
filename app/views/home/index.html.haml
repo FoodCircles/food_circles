@@ -7,15 +7,9 @@
         %p
           By our powers combined,<br />I am captain planet.
   %ul{class: "slides"}
-    %li
-      %img{src: "/assets/slide-01.jpg", alt: "", width: "1280", height: "360"}
-    %li
-      %img{src: "/assets/slide-02.jpg", alt: "", width: "1280", height: "360"}
-    %li
-      %img{src: "/assets/slide-03.jpg", alt: "", width: "1280", height: "360"}
-    %li
-      %img{src: "/assets/slide-04.jpg", alt: "", width: "1280", height: "360"}
-
+    - @news.each do |news|
+      %li
+        %img{src: news.website_image.url, alt: "", width: "1280", height: "360"}
   %a{href: "#", class: "slide-prev icon-arrow-prev"}
   %a{href: "#", class: "slide-next icon-arrow-next"}
 
