@@ -7,7 +7,8 @@ class Api::TimelineController < ApplicationController
       @total_vouchers = current_vouchers.collect{ |v| v.total }.sum
       @available_vouchers = current_vouchers.collect{ |v| v.available }.sum
       @payments = Payment.order("created_at DESC").limit(3)
-    
+      @reservations = Reservation.order("created_at DESC").limit(3)
+
       hash = {
         :weekly_total => @weekly_total,
         :total_vouchers => @total_vouchers,
@@ -35,9 +36,27 @@ class Api::TimelineController < ApplicationController
               }
             }
           }
+        },
+        :reservations => @reservations.map{ |r|
+          {
+            :id => r.id,
+            :user => r.user.name,
+            :venue => r.venue.as_json.slice(:id, :name, :city, :state, :zip, :lat, :lon, :description, :phone, :web, :tags).merge({
+              :offers => r.venue.offers.map(&:name),
+              :open_times => r.venue.open_times.map{|ot| "#{ot.start} - #{ot.end}"},
+              :image => r.venue.timeline_image.present? ? r.venue.timeline_image.url : ''
+            }),
+            :offer => r.offer.as_json.slice(:id, :title, :details, :minimum_diners).merge({
+              :discount_price => r.offer.price,
+              :full_price => r.offer.original_price,
+              :image_url => r.offer.image.present? ? r.offer.image.url : ''
+            }),
+            :charity => r.charity.as_json.slice(:id, :name, :description),
+            :date_purchased => r.created_at
+          }
         }
       }
-    
+
       render :json => {:error => false, :content => hash}
     rescue Exception => e
       render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return
