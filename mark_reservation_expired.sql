@@ -11,6 +11,10 @@ UPDATE reservations
 SET state = 'Expired'
 WHERE created_at < current_date - interval '30' day;
 
+UPDATE payments
+SET state = 'Expired'
+WHERE created_at < current_date - interval '30' day;
+
 END;
 $BODY$
   LANGUAGE plpgsql VOLATILE
