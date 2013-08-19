@@ -14,24 +14,24 @@ class ReservationController < ApplicationController
     render :nothing => true
   end
   
-  def active(coupon)
-    reservation = Reservation.find_by_coupon(coupon)
+  def active
+    reservation = Reservation.find_by_coupon(params[:coupon])
     reservation.state = "Active";
     reservation.save;
     
     render :nothing => true
   end
   
-  def expired(coupon)
-    reservation = Reservation.find_by_coupon(coupon)
+  def expired
+    reservation = Reservation.find_by_coupon(params[:coupon])
     reservation.state = "Expired";
     reservation.save;
     
     render :nothing => true
   end
   
-  def used(coupon)
-    reservation = Reservation.find_by_coupon(coupon)
+  def used
+    reservation = Reservation.find_by_coupon(params[:coupon])
     reservation.state = "Used";
     reservation.save;
     

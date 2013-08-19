@@ -2,10 +2,14 @@ Foodcircles::Application.routes.draw do
   get '/sessions/omniauth_email' => "omniauth_ask_for_email#index", :as => 'omniauth_email'
   put '/sessions/omniauth_email' => "omniauth_ask_for_email#submit", :as => 'omniauth_email_submit'
 
-  get "reservation/used_email"
-  get "reservation/used"
-  get "reservation/active"
-  get "reservation/expired"
+  get 'reservation/used_email' => 'reservation#used_email'
+  get 'reservation/used' => 'reservation#used'
+  get 'reservation/active' => 'reservation#active'
+  get 'reservation/expired' => 'reservation#expired'
+  
+  get 'payment/used' => 'payment#used'
+  get 'payment/active' => 'payment#active'
+  get 'payment/expired' => 'payment#expired'
 
   namespace :api do
     get "/weekly_meals" => "weekly_meals#show", as: "weekly_meals"
