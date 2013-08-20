@@ -1,4 +1,7 @@
 class PaymentsController < ApplicationController
+  # NOTE: used by current mobile app
+  # delete when the new apps are released
+
   # GET /payments
   # GET /payments.json
   def index

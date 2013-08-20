@@ -11,10 +11,6 @@ Foodcircles::Application.routes.draw do
   get 'payment/active' => 'payment#active'
   get 'payment/expired' => 'payment#expired'
 
-  namespace :api do
-    get "/weekly_meals" => "weekly_meals#show", as: "weekly_meals"
-  end
-
   match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
 
   get "socialbutterflies/index"
@@ -99,6 +95,8 @@ Foodcircles::Application.routes.draw do
   # API
 
   namespace :api do
+    get "/weekly_meals" => "weekly_meals#show", as: "weekly_meals"
+
     post '/sessions/sign_in' => 'sessions#sign_in'
     post '/sessions/sign_up' => 'sessions#sign_up'
 
@@ -112,7 +110,9 @@ Foodcircles::Application.routes.draw do
     get '/timeline' => 'timeline#show'
     post '/timeline/voucher/:id' => 'timeline#use_voucher'
     put '/timeline/verify_payment' => 'timeline#verify_payment_and_show_voucher'
-    
+
+    resource :payments, :only => [:create]
+
     scope 'general' do
       get '/users' => 'general#get_mailchimp_users'
     end
