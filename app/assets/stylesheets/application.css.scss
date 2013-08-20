@@ -309,6 +309,11 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .valid .icon-lock { background-position:-251px -164px; }
 
 /*=== Main CSS ===*/
+
+body.active-popup {
+	overflow: hidden;
+}
+
 #wrapper { position:relative; min-height:100%; }
 .active-popup #wrapper { 
 	-webkit-filter:blur(2px);
