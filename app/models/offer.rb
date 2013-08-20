@@ -19,7 +19,9 @@ class Offer < ActiveRecord::Base
       :title => self.name,
       :details => self.details,
       :minimum_diners => self.min_diners,
-      :times => self.open_times
+      :times => self.open_times,
+      :original_price => self.original_price,
+      :price => self.price
     }
   end
 
