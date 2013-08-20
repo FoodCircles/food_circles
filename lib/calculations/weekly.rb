@@ -24,23 +24,12 @@ module Calculations
       weekly_meal_goal = (3.0/4.0) * offers_count
       weekly_meal_goal.floor
     end
-=begin
+
     def weekly_progress
       current_progress = progress / 100
 
       vouchers = total_vouchers.round
       adjusted_total = 3 * total_vouchers / 4
-      {current_progress: current_progress, adjusted_total: adjusted_total}
-    end
-=end
-
-    def weekly_progress
-      # current_progress = progress / 100
-      # 
-      # vouchers = total_vouchers.round
-      # adjusted_total = 3 * total_vouchers / 4
-      current_progress = 100
-      adjusted_total = 75
       {current_progress: current_progress, adjusted_total: adjusted_total}
     end
 
@@ -71,7 +60,7 @@ module Calculations
     def total_vouchers
       total_vouchers = 0
       offers.each do |offer|
-        total_vouchers += offer.price * offer.total
+        total_vouchers += offer.price.to_i * offer.total.to_i
       end
       total_vouchers
     end
