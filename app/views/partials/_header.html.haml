@@ -12,6 +12,9 @@
           %a{class: "icon-soc-twitter", href: "https://twitter.com/#!/FoodCircles"}
           %a{class: "icon-soc-foodcircles", href: "http://blog.foodcircles.net"}
 
+
+
+
       .welcome-line
         - if user_signed_in?
 
@@ -22,33 +25,49 @@
         - else
           Hey! you new here?
           %a{href: '#', class:'sign-form-link'}
-            Sign In
+            Sign Up
             %i{class: "arrow-down"}
         / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
         
-      = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{class:"sign-form"}) do |f|
-        .row
-          %a{href: "/users/auth/facebook", class: "btn-facebook"}
-            Sign up
-            %i{class: "icon-btn-facebook"}
-          = f.email_field :email, class: 'field medium'
-        .row
-          %a{href: "/users/auth/twitter", class: "btn-twitter"}
-            Sign up
-            %i{class: "icon-btn-twitter"}
-          = f.password_field :password, class: 'field medium'
-        .form-foot
-          %span{class: "btn-small submit"}
-            Sign up
-            = f.submit
+        = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{class:"sign-form", id: "sign-up-form"}) do |f|
+          .row
+            %a{href: "/users/auth/facebook", class: "btn-facebook"}
+              Sign up
+              %i{class: "icon-btn-facebook"}
+            = f.email_field :email, class: 'field medium', placeholder: "New email"
+          .row
+            %a{href: "/users/auth/twitter", class: "btn-twitter"}
+              Sign up
+              %i{class: "icon-btn-twitter"}
+            = f.password_field :password, class: 'field medium', placeholder: "New password"
+          .form-foot
+            %span{class: "btn-small submit"}
+              Sign up
+              = f.submit
 
-          %p{class: "form-caption"}
-            Have an account?
-            - if user_signed_in?
-              = link_to('Logout', main_app.destroy_user_session_path, :method => :delete)
-            - else
-              = link_to('Sign in', main_app.new_user_session_path)
+            %p{class: "form-caption"}
+              Have an account?
+              %a{href: "#"} Sign in
 
+        = form_for(resource, :as => resource_name, :url => user_session_path, html:{class:"sign-form", id: "sign-in-form"}) do |f|
+          .row
+            %a{href: "/users/auth/facebook", class: "btn-facebook"}
+              Sign up
+              %i{class: "icon-btn-facebook"}
+            = f.email_field :email, class: 'field medium', placeholder: "Your email"
+          .row
+            %a{href: "/users/auth/twitter", class: "btn-twitter"}
+              Sign up
+              %i{class: "icon-btn-twitter"}
+            = f.password_field :password, class: 'field medium', placeholder: "Your password"
+          .form-foot
+            %span{class: "btn-small submit"}
+              Sign in
+              = f.submit
+
+            %p{class: "form-caption"}
+              Need an account?
+              %a{href: "#"} Sign up
     #nav
       %ul
         %li{class: "active"}

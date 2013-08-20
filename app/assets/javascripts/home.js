@@ -248,16 +248,15 @@
       $.colorbox.close();
     })
 
-    .on('click', '.sign-form-link', function(event) {
-      event.preventDefault();
-      if($('.sign-form').hasClass('expanded'))
-      {
-        $('.sign-form').removeClass('expanded')
-      } else {
-        $('.sign-form').addClass('expanded')
-      }
-        
-    })
+		.on('click', '.welcome-line > .sign-form-link', function(event){
+			event.preventDefault();
+			$('#sign-up-form').toggleClass('expanded');
+		})
+
+		.on('click', '#sign-up-form .form-caption a, #sign-in-form .form-caption a', function(event){
+			event.preventDefault();
+			$('#sign-in-form, #sign-up-form').toggleClass('expanded');
+		})
 
 		.on('click', '.balloon-close', function(event){
 			event.preventDefault();
@@ -283,13 +282,7 @@
       
 		});
 
-		$('#sign-up-form .form-caption a').on('click', function(event){
-			event.preventDefault();
-			//set little timeout to prevent item from close immidiatly after the open
-			setTimeout(function(){
-				$('#sign-in-form, #sign-up-form').toggleClass('expanded');
-			}, 1);
-		});
+
 
 		$('.notification_request').bind('ajax:success', function(event, data) {
 			if(data.status == "success"){
