@@ -578,7 +578,9 @@ body.active-popup {
 	background-image:-o-linear-gradient(left, #d18103, #d19a03); 
 	background-image:linear-gradient(left, #d18103, #d19a03); 
 }
-.donation-progress .text { position:absolute; bottom:100%; right:-55px; width:110px; font:10px 'pragmatica-web', sans-serif; color:#acacac; text-transform:uppercase; padding-bottom:7px; text-align:center; }
+
+.donation-progress .text-pusher{ position:relative; min-width:5%; max-width: 89%; display: inline-block; }
+.donation-progress .text { display: inline-block; position:relative; top: -40px; right:55px; max-width:10%; font:10px 'pragmatica-web', sans-serif; color:#acacac; text-transform:uppercase; padding-bottom:7px; text-align:center; }
 .donation-progress .text strong { text-transform:none; font-weight:normal; font-size:14px; }
 .donation-progress .text strong span { color:#fff; }
 

@@ -17,15 +17,15 @@
 
   .donation-progress
     .bar{style: "width: #{percent}%"}
-      %span{class: "text"}
-        %strong
-          %span
-            = weekly_progress[:current_progress]
-            %em of
-          = weekly_progress[:adjusted_total]
-          meals
-        donated this week
-
+    .text-pusher{style: "width: #{percent}%"}
+    %span.text
+      %strong
+        %span
+          = weekly_progress[:current_progress]
+          %em of
+        = weekly_progress[:adjusted_total]
+        meals
+      donated this week
 #home
   .container
     .products
