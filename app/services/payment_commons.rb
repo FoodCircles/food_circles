@@ -31,7 +31,15 @@ module PaymentCommons
     end
   end
 
+  def load_reservations
+    @reservations = current_user.reservations.order("created_at DESC").limit(3)
+  end
+
   def load_payments
     @payments = current_user.payments.order("created_at DESC").limit(3)
+  end
+
+  def load_weekly_total
+    @weekly_total = current_user.payments.where("created_at > ?", Time.now - 1.week).collect{ |p| p.amount }.sum
   end
 end
