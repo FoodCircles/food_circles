@@ -172,6 +172,60 @@ describe Api::SessionsController do
         }.to_not change{ExternalUID.count}
       end
     end
+
+    context "sign in with valid uid" do
+      before(:each) do
+        post 'sign_in', :user_email => user.email, :uid => "123456"
+      end
+
+      it "returns success" do
+        post 'sign_in', :uid => "123456"
+        expect(response.status).to eq(200)
+      end
+
+      it "returns success body" do
+        post 'sign_in', :uid => "123456"
+        expect(response.body).to match(%r{{\"error\":false,\"description\":\"User retrieved\.\",\"auth_token\":\"#{user.authentication_token}\"}})
+      end
+
+      it "does not create a new user" do
+        user
+        expect{
+          post 'sign_in', :uid => "123456"
+        }.to_not change{User.count}
+      end
+
+      it "does not create a new external uid" do
+        expect{
+          post 'sign_in', :uid => "123456"
+        }.to_not change{ExternalUID.count}.by(1)
+      end
+    end
+
+    context "sign in with invalid uid" do
+      it "returns failure" do
+        post 'sign_in', :uid => "123456"
+        expect(response.status).to eq(401)
+      end
+
+      it "returns success body" do
+        post 'sign_in', :uid => "123456"
+        expect(response.body).to match("{\"error\":true,\"description\":\"Wrong uid\.\"}")
+      end
+
+      it "does not create a new user" do
+        user
+        expect{
+          post 'sign_in', :uid => "123456"
+        }.to_not change{User.count}
+      end
+
+      it "does not create a new external uid" do
+        expect{
+          post 'sign_in', :uid => "123456"
+        }.to_not change{ExternalUID.count}.by(1)
+      end
+    end
   end
 
   describe "GET 'sign_in'" do

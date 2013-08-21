@@ -1,9 +1,13 @@
 class Api::SessionsController < ApplicationController
   before_filter :authenticate_user!, :only => [:update_profile]
+  skip_before_filter :detect_email_omniauth
+
   def sign_in
     if params[:user_email] && params[:user_password]
       password_email_sign_in
     elsif params[:user_email] && params[:uid]
+      social_sign_up
+    elsif params[:uid]
       social_sign_in
     else
       render :json => {:error => true, :description => "No params provided"}, status: 401 and return
@@ -27,6 +31,22 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  def update_profile
+    begin
+      @user = User.find_by_authentication_token(params[:auth_token])
+      if @user.update_attributes(params[:session])
+        render :json => {:error => false, :description => "User saved."} and return
+      else
+        if !@user.errors.messages.empty?
+          render :json => {:error => true, :description => "Error saving user.", :errors => @user.errors.messages}, status: 500 and return
+        else
+          render :json => {:error => true, :description => "Error saving user."}, status: 500 and return
+        end
+      end
+    rescue Exception => e
+      render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return
+    end
+  end
 
   private
   def password_email_sign_in
@@ -48,7 +68,7 @@ class Api::SessionsController < ApplicationController
 
   # NOTE: this needs access control. Some way to make sure the requests are coming from the mobile app.
   # A hardcoded sha might be enough (api keys for the apps?)
-  def social_sign_in
+  def social_sign_up
     user = nil
     external_uid = nil
     success_message = nil
@@ -77,20 +97,12 @@ class Api::SessionsController < ApplicationController
     render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return
   end
 
-  def update_profile
-    begin
-      @user = User.find_by_authentication_token(params[:auth_token])
-      if @user.update_attributes(params[:session])
-        render :json => {:error => false, :description => "User saved."} and return
-      else
-        if !@user.errors.messages.empty?
-          render :json => {:error => true, :description => "Error saving user.", :errors => @user.errors.messages}, status: 500 and return
-        else
-          render :json => {:error => true, :description => "Error saving user."}, status: 500 and return
-        end
-      end
-    rescue Exception => e
-      render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return
+  def social_sign_in
+    if external_uid = ExternalUID.where(uid: params[:uid]).first
+      @auth_code = external_uid.user.authentication_token
+      render :json => {:error => false, :description => "User retrieved.", :auth_token => "#{@auth_code}"}
+    else
+      render :json => {:error => true, :description => "Wrong uid."}, status: 401
     end
   end
 end
