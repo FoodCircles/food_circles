@@ -1548,6 +1548,8 @@ body.active-popup {
 }
 .timeline .block .body:hover img { opacity:0.4; -moz-opacity:0.4; filter:alpha(opacity=40); }
 .timeline .block .body:hover span { opacity:1; -moz-opacity:1; filter:alpha(opacity=100); }
+.timeline .block .body.used span { color: #9FEE00 }
+.timeline .block .body.expired span { color: #FB3F51 }
 .timeline .block .foot { padding:7px 9px; *zoom:1; }
 .timeline .block .foot:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 .timeline .block .foot .kids { float:left; font:bold 18px/28px 'pragmatica-web', sans-serif; padding-right:7px; }
