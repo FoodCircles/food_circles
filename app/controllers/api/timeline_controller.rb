@@ -19,6 +19,7 @@ class Api::TimelineController < ApplicationController
         :payments => @payments.map { |p| 
           {
             :id => p.id,
+            :state => p.state,
             :user_id => p.user_id,
             :amount => p.amount,
             :offer => [Offer.find(p.offer_id)].map { |o|
@@ -43,6 +44,7 @@ class Api::TimelineController < ApplicationController
         :reservations => @reservations.map{ |r|
           {
             :id => r.id,
+            :state => r.state,
             :user => r.user.name,
             :venue => r.venue.as_json.slice(:id, :name, :city, :state, :zip, :lat, :lon, :description, :phone, :web, :tags).merge({
               :offers => r.venue.offers.map(&:name),
