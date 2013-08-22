@@ -32,11 +32,11 @@ module PaymentCommons
   end
 
   def load_reservations
-    @reservations = current_user.reservations.order("created_at DESC").limit(3)
+    @reservations = current_user.reservations.order("created_at DESC")
   end
 
   def load_payments
-    @payments = current_user.payments.order("created_at DESC").limit(3)
+    @payments = current_user.payments.order("created_at DESC")
   end
 
   def load_weekly_total
