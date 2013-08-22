@@ -46,8 +46,7 @@ class Api::TimelineController < ApplicationController
             :id => r.id,
             :state => r.state,
             :user => r.user.name,
-            :venue => r.venue.as_json.slice(:id, :name, :city, :state, :zip, :lat, :lon, :description, :phone, :web, :tags).merge({
-              :offers => r.venue.offers.map(&:name),
+            :venue => r.venue.as_json.slice(:id, :name, :city, :state, :zip, :lat, :lon, :description, :phone, :web, :tags, :offers).merge({
               :open_times => r.venue.open_times.map{|ot| "#{ot.start} - #{ot.end}"},
               :image => r.venue.timeline_image.present? ? r.venue.timeline_image.url : ''
             }),
