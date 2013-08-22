@@ -86,6 +86,10 @@
               - if not venue.offers.order("min_diners ASC").first.category.empty?
                 tags:
                 = raw venue.offers.order("min_diners ASC").first.category.collect { |cat| link_to cat.name, cat }.join(",")
+        %a.tile.add-new.popup-link{href: postcard_popup_path }
+          %div.add-new-inner
+            %strong Add a
+            %small restaurant
+            %i.icon-plus
 
       = will_paginate @venues
-

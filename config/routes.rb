@@ -81,6 +81,7 @@ Foodcircles::Application.routes.draw do
       post "subscribe"
     end
   end
+  resources :postcards, :only => [:create]
 
   match '/app' => 'app#index'
   match '/getVenue' => 'app#getVenue'
@@ -129,6 +130,7 @@ Foodcircles::Application.routes.draw do
   get '/faq'     => 'faq#show', :as => 'faq', :id => 'faq'
 
   #Popups
+  match '/postcard_popup' => 'popups#postcard', :as => :postcard_popup
   match '/notify_signup' => 'popups#notify_signup'
   match '/app_popup' => 'popups#app_popup'
   match '/:id' => 'home#index', :as => :venue_popup

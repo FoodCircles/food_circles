@@ -123,7 +123,7 @@
 
 		.on('submit', '.postcard .edit-card form', function(event){
 			event.preventDefault();
-			populateCard($(this).serializeArray());
+			populateCard($(this).find("*[data-mirror]"));
 			$('.postcard').addClass('completed');
 			popupReszie();
 
@@ -138,8 +138,15 @@
 
 		.on('click', '.send-message', function(event){
 			event.preventDefault();
-			$('.postcard').removeClass('completed').addClass('sent');
-			popupReszie();
+			var form = $('.postcard .edit-card form');
+			$.post(form.attr('action'), form.serialize(), function(data) {
+				if(data.success == true){
+					$('.postcard').removeClass('completed').addClass('sent');
+					$('.postcard .thank .message').text(data.description);
+					popupReszie();
+				}
+			});
+
 		})
 
 		.on('change keyup', '.pay-box .field', function(event){
@@ -695,7 +702,7 @@
 			.infinitescroll({
 				navSelector: '.pagination',
 				nextSelector:'.next_page',
-				itemSelector:'.tile',
+				itemSelector:'.tile:not(.add-new)',
 				bufferPx:-200,
 				errorCallback: function(){
 					$('.pagination').text('No more offers.')
@@ -814,7 +821,7 @@
 
 	function populateCard(arr){
 		for (var i = 0; i < arr.length; i++){
-			$('.postcard .' + arr[i].name).text(arr[i].value);
+			$('.postcard .' + arr[i].getAttribute('data-mirror')).text(arr[i].value);
 		};
 	}
 

@@ -977,7 +977,7 @@ body.active-popup {
 .postcard:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 .postcard h5 { color:#3d3d3d; padding-bottom:3px; }
 .postcard h6 { font:bold 15px 'pragmatica-web', sans-serif; color:#3d3d3d; padding-bottom:2px; }
-.postcard .content { width:260px; float:left; }
+.postcard .content { width:260px; float:left; padding-bottom: 0; }
 
 .postcard .steps { list-style:none outside none; padding-bottom:9px; font:12px 'pragmatica-web', sans-serif; color:#3d3d3d; }
 .postcard .steps li { padding-bottom:6px; }
