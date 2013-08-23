@@ -52,55 +52,37 @@ class Venue < ActiveRecord::Base
   end
 
   def as_json(options={})
-    if !options[:not_available]
-      { :id => self.id,
-        :name => self.name,
-        :address => self.address,
-        :city => self.city,
-        :lat => self.latlon.x,
-        :lon => self.latlon.y,
-        :description => self.description,
-        :neighborhood => self.neighborhood,
-        :phone => self.phone,
-        :state => self.state.nil? ? "" : self.state.name,
-        :web => self.web,
-        :zip => self.zip,
-        :rating => self.rating,
-        :tags => self.venue_tags,
-        :offers => self.offers.currently_available.order(:min_diners),
-        :open_times => self.open_times,
-        :reviews => self.reviews.first(3),
-        :main_image => (self.main_image ? self.main_image.url : ''),
-        :timeline_image => (self.timeline_image ? self.timeline_image.url : ''),
-        :start => (self.available? ? 'Later Tonight' : self.open_at),
-        :end => self.close_at,
-        :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
-      }
-      else
-      { :id => self.id,
-        :name => self.name,
-        :address => self.address,
-        :city => self.city,
-        :lat => self.latlon.x,
-        :lon => self.latlon.y,
-        :description => self.description,
-        :neighborhood => self.neighborhood,
-        :phone => self.phone,
-        :state => self.state.name,
-        :web => self.web,
-        :zip => self.zip,
-        :rating => self.rating,
-        :tags => self.venue_tags,
-        :offers => self.offers.not_available.order(:min_diners),
-        :open_times => self.open_times,
-        :reviews => self.reviews.first(3),
-        :main_image => (self.main_image ? self.main_image.url : ''),
-        :timeline_image => (self.timeline_image ? self.timeline_image.url : ''),
-        :start => (self.available? ? 'Later Tonight' : self.open_at),
-        :end => self.close_at,
-        :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
-      }
+    data = {
+              :id => self.id,
+              :name => self.name,
+              :address => self.address,
+              :city => self.city,
+              :lat => self.latlon.x,
+              :lon => self.latlon.y,
+              :description => self.description,
+              :neighborhood => self.neighborhood,
+              :phone => self.phone,
+              :state => self.state.nil? ? "" : self.state.name,
+              :web => self.web,
+              :zip => self.zip,
+              :rating => self.rating,
+              :tags => self.venue_tags,
+              :open_times => self.open_times,
+              :reviews => self.reviews.first(3),
+              :main_image => (self.main_image ? self.main_image.url : ''),
+              :timeline_image => (self.timeline_image ? self.timeline_image.url : ''),
+              :outside_image => (self.outside_image ? self.outside_image.url : ''),
+              :restaurant_tile_image => (self.restaurant_tile_image ? self.restaurant_tile_image.url : ''),
+              :start => (self.available? ? 'Later Tonight' : self.open_at),
+              :end => self.close_at,
+              :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
+          }
+    data[:offers] = if !options[:not_available]
+      self.offers.currently_available.order(:min_diners)
+    else
+      self.offers.not_available.order(:min_diners)
     end
+    data
   end
 
   def self.active
