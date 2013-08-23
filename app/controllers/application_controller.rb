@@ -136,31 +136,21 @@ class ApplicationController < ActionController::Base
   end
 
   #tkxel_dev: Following method collect data for monthly invoice reports in PDF formats.
-
   def generate_invoice
-
     @vid = params[:vid].to_i
     months_before = params[:months_before].to_i
     @months_before = months_before
-    sql = "select date_trunc('month', current_date - INTERVAL '#{months_before} month') as start_date, date_trunc('month', current_date - INTERVAL '#{months_before} month')+'1month'::interval-'1day'::interval as end_date;"
-    @previous_month_dates = Reservation.find_by_sql(sql)
-    start_date = @previous_month_dates[0][:start_date]
-    end_date = @previous_month_dates[0][:end_date]
-    @s = start_date
-    @e = end_date
+    calculations = Calculations::Monthly.new(@vid, months_before)
+
+    @s = calculations.start_date
+    @e = calculations.end_date
 
     #@reserve_venues have all data remember it.
-    @reserve_venues = Reservation.where("created_at >= :start_date AND created_at <= :end_date AND venue_id = :vid",
-                                        {:start_date => start_date, :end_date => end_date,:vid => params[:vid].to_i })
-    find_venue = "select name,id,address,multiplier from venues where id IN(#{params[:vid].to_i})"
-    @venue_names = Venue.find_by_sql(find_venue)
+    @reserve_venues = calculations.reserve_venues
+    @venue_names = calculations.venue_names
 
-    gr_kids ="select count(charity_id) as gr_kids from reservations where charity_id ='1' AND venue_id = #{params[:vid].to_i} AND created_at >= '#{@s}' AND created_at <= '#{@e}'"
-    world_kids ="select count(charity_id) as world_kids from reservations where charity_id ='2' AND venue_id = #{params[:vid].to_i} AND created_at >= '#{@s}' AND created_at <= '#{@e}' "
-
-    @gr_kids = Reservation.find_by_sql(gr_kids)
-    @world_kids=Reservation.find_by_sql(world_kids)
-
+    @gr_kids = calculations.gr_kids
+    @world_kids = calculations.world_kids
   end
 
   def mobile_app(p)
