@@ -42,14 +42,10 @@ class Api::TimelineController < ApplicationController
           }
         },
         :reservations => @reservations.map{ |r|
-          {
+          data = {
             :id => r.id,
             :state => r.state,
             :user => r.user.name,
-            :venue => r.venue.as_json.slice(:id, :name, :city, :state, :zip, :lat, :lon, :description, :phone, :web, :tags, :offers).merge({
-              :open_times => r.venue.open_times.map{|ot| "#{ot.start} - #{ot.end}"},
-              :image => r.venue.timeline_image.present? ? r.venue.timeline_image.url : ''
-            }),
             :offer => r.offer.as_json.slice(:id, :title, :details, :minimum_diners).merge({
               :discount_price => r.offer.price,
               :full_price => r.offer.original_price,
@@ -58,6 +54,18 @@ class Api::TimelineController < ApplicationController
             :charity => r.charity.as_json.slice(:id, :name, :description),
             :date_purchased => r.created_at
           }
+          data[:venue] = if r.venue.present?
+            r.venue.as_json.slice(:id, :name, :city, :state, :zip, :lat, :lon, :description, :phone, :web, :tags, :offers).merge({
+              :open_times => r.venue.open_times.map{|ot| "#{ot.start} - #{ot.end}"},
+              :image => r.venue.timeline_image.present? ? r.venue.timeline_image.url : ''
+            })
+          else
+            {
+              :id => "Not Available",
+              :name => "Past FC Restaurant"
+            }
+          end
+          data
         }
       }
 
