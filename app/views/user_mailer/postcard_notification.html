@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+  <p style="text-align: justify;">
+    Someone wants a new restaurant.  Here's the info:
+  </p>
+  <p style="text-align: justify;">Requested by <%= @postcard.user_name %></p>
+  <p style="text-align: justify;">Restaurant name <%= @postcard.restaurant_name %></p>
+  <p style="text-align: justify;">Click <%= link_to "here", rails_admin.show_url(@postcard, :model_name => :postcard) %> to see it on the admin console</p>
+</body>
+</html>

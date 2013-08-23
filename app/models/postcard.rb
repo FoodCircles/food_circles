@@ -1,3 +1,7 @@
 class Postcard < ActiveRecord::Base
-  # attr_accessible :title, :body
+  after_create :notify_support
+
+  def notify_support
+    UserMailer.postcard_notification(self).deliver
+  end
 end

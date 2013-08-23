@@ -137,4 +137,9 @@ class UserMailer < ActionMailer::Base
 
     mail(:to => venue.email, :subject => "Monthly Report from FoodCircles.net")
   end
+
+  def postcard_notification(postcard)
+    @postcard = postcard
+    mail(:to => "support@foodcircles.net", :subject => "Postcard alert")
+  end
 end
