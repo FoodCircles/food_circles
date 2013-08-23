@@ -46,14 +46,21 @@ class Api::TimelineController < ApplicationController
             :id => r.id,
             :state => r.state,
             :user => r.user.name,
-            :offer => r.offer.as_json.slice(:id, :title, :details, :minimum_diners).merge({
-              :discount_price => r.offer.price,
-              :full_price => r.offer.original_price,
-              :image_url => r.offer.image.present? ? r.offer.image.url : ''
-            }),
             :charity => r.charity.as_json.slice(:id, :name, :description),
             :date_purchased => r.created_at
           }
+          data[:offer] = if r.offer.present?
+            r.offer.as_json.slice(:id, :title, :details, :minimum_diners).merge({
+              :discount_price => r.offer.price,
+              :full_price => r.offer.original_price,
+              :image_url => r.offer.image.present? ? r.offer.image.url : ''
+            })
+          else
+            {
+              :id => "Not Available",
+              :title => "Past FC Offer"
+            }
+          end
           data[:venue] = if r.venue.present?
             r.venue.as_json.slice(:id, :name, :city, :state, :zip, :lat, :lon, :description, :phone, :web, :tags, :offers).merge({
               :open_times => r.venue.open_times.map{|ot| "#{ot.start} - #{ot.end}"},
