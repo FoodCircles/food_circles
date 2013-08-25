@@ -56,7 +56,7 @@ input[type="text"] {
 form .row { *zoom:1; }
 form .row:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 form .row + .row { padding-top:4px; }
-.field { font:14px 'pragmatica-web', sans-serif; color:#4e3e34; height:19px; line-height:19px; border:none; background:#fff; padding:6px 7px 6px; border-radius:4px; box-shadow:inset 0 2px 3px #d3c9b9; }
+input.field, .field { font:14px 'pragmatica-web', sans-serif; color:#4e3e34; height:19px; line-height:19px; border:none; background:#fff; padding:6px 7px 6px; border-radius:4px; box-shadow:inset 0 2px 3px #d3c9b9; }
 .field.small { font-size:10px; line-height:14px; height:14px; border:1px solid #d3d3d3; padding:4px 10px 5px; width:114px; }
 .field.medium { width:142px; }
 .field.tall { font-size:15px; line-height:20px; height:20px; padding:10px; }
@@ -607,8 +607,8 @@ body.active-popup {
 .products-head .head-btns { float:left; }
 .products-head .head-btns a { width:113px; padding:0; float:left; margin-right:7px; }
 
-.products-head .filters { float:right; display:inline; padding-top:16px; }
-.products-head .search { min-width:20px; position:relative; float:right; display:inline; padding-left:10px; margin-left:26px; }
+.products-head .filters { float:right; display:inline; padding-top:16px; width: 500px; overflow: hidden; margin-left: -120px;}
+.products-head .search { min-width:20px; position:relative; float:right; display:inline; padding-left:10px;}
 .products-head .search .search-btn { position:absolute; top:6px; right:6px; z-index:3; }
 .products-head .search .field-holder { float:left; display:inline; }
 .products-head .search .field-holder > .acomplete-lnk { display:none; }
@@ -640,7 +640,7 @@ body.active-popup {
 
 .products-head .filter { float:right; display:inline; padding-top:4px; position:relative; z-index:3;  }
 .products-head .filter { margin-right:22px; }
-.products-head .filter.location { margin-right:34px; }
+.products-head .filter.location { margin-right: 0; }
 .products-head .filter h5 { float:left; font-size:14px; font-weight:normal; color:#8a857f;}
 .products-head .filter h5 a { font-weight:bold; }
 .products-head .filter h5 a:hover { text-decoration:none; }
@@ -704,7 +704,7 @@ body.active-popup {
 .products-head .filter.location .dropdown .add-city { clear:both; text-align:center; padding:8px 0 0; }
 .products-head .filter.location .dropdown .add-city a { font:bold 12px 'pragmatica-web', sans-serif; }*/
 
-.products-head h6 { text-align:center; text-transform:uppercase; padding:16px 270px 0; font-size:18px; }
+.products-head h6 { text-align:center; text-transform:uppercase; margin: 0 auto; padding: 16px 10px 0; font-size:18px; background-color: #f7f4ee; position: relative; z-index: 8; width: 200px; box-shadow: 73px 0px 53px -1px #f7f4ee;}
 
 
 /*=== Products - Tiles ===*/
