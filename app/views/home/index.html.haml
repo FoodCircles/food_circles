@@ -33,7 +33,7 @@
         .head-btns
           %a.btn-standart.popup-link{href: app_popup_path} Get the app
           - if current_user
-            -if show_newsletter_subscription_button?
+            - if show_newsletter_subscription_button?
               = link_to "Get updates", subscribe_newsletter_path, :remote => true, :method => :post, :class => ["btn-standart"]
           - else
             %a.btn-standart.popup-link{href: notify_signup_path}Get updates

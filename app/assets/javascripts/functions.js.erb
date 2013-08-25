@@ -17,7 +17,7 @@
 		}
 
 		$.colorbox.settings.opacity = 0.3;
-		$.colorbox.settings.scrolling = false;
+		$.colorbox.settings.scrolling = true;
 
 		$.colorbox.settings.onOpen = function(){
 			$body.addClass('active-popup');
@@ -88,7 +88,7 @@
 			}
 		})
 
-		.on('click', '.app-request .cancel, .close-popup', function(event){
+		.on('click', '.app-request .cancel, .close-popup, #cboxOverlay', function(event){
 			event.preventDefault();
 			$.colorbox.close()
 		})
