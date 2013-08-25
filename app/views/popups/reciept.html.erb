@@ -17,9 +17,9 @@
           <div class="order-share">
             <h5>Share with friends</h5>
             <div class="socials">
-              <a href="#" class="icon-facebook-mega"></a>
-              <a href="#" class="icon-twitter-mega"></a>
-              <a href="#" class="icon-mail-mega"></a>
+              <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<%=@facebook_status[:url]%>&p[images][0]=<%=@facebook_status[:image]%>&p[title]=<%=@facebook_status[:title]%>&p[summary]=<%=@facebook_status[:summary]%>" target="_blank" class="icon-facebook-mega"></a>
+              <a href="https://twitter.com/intent/tweet?status=<%=@twitter_status%>" target="_blank" class="icon-twitter-mega"></a>
+              <a href="mailto:friend@email.com?subject=<%=@email[:subject]%>&body=<%=@email[:body]%>" class="icon-mail-mega"></a>
             </div><!-- /.socials -->
           </div><!-- /.order-share -->
           

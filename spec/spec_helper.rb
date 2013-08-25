@@ -39,6 +39,9 @@ RSpec.configure do |config|
   #include Custom Helper methods
   config.include TestHelper
 
+  #include FactoryGirl Helper methods
+  config.include FactoryGirl::Syntax::Methods
+
   #configuration for database_cleaner
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)

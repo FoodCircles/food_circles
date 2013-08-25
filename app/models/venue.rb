@@ -10,6 +10,9 @@ class Venue < ActiveRecord::Base
   has_many :venue_taggables, :dependent => :destroy
   has_many :venue_tags, :through => :venue_taggables
   has_many :reviews
+  has_many :notification_requests
+  has_many :watching_users, :through => :notification_requests, :source => :user
+  has_many :social_links
 
   friendly_id :name, use: :slugged
 
@@ -23,61 +26,63 @@ class Venue < ActiveRecord::Base
   set_rgeo_factory_for_column(:latlon,
                               RGeo::Geographic.spherical_factory(:srid => SRID))
 
-  image_accessor :image
-  image_accessor :circle_image
+  image_accessor :main_image
+  image_accessor :outside_image
+  image_accessor :restaurant_tile_image
+  image_accessor :timeline_image
+  
 
   validates_presence_of :name
   validates :email, :on => :update, :'validators/email' => true
   validates :email, :on => :create, :allow_nil => true, :'validators/email' => true
 
-  def as_json(options={})
-    if !options[:not_available]
-      { :id => self.id,
-        :name => self.name,
-        :address => self.address,
-        :city => self.city,
-        :lat => self.latlon.lat,
-        :lon => self.latlon.lon,
-        :description => self.description,
-        :neighborhood => self.neighborhood,
-        :phone => self.phone,
-        :state => self.state.name,
-        :web => self.web,
-        :zip => self.zip,
-        :rating => self.rating,
-        :tags => self.venue_tags,
-        :offers => self.offers.currently_available.order(:min_diners),
-        :open_times => self.open_times,
-        :reviews => self.reviews.first(3),
-        :image => (self.image ? self.image.url : ''),
-        :start => (self.available? ? 'Later Tonight' : self.open_at),
-        :end => self.close_at,
-        :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
-      }
-      else
-      { :id => self.id,
-        :name => self.name,
-        :address => self.address,
-        :city => self.city,
-        :lat => self.latlon.lat,
-        :lon => self.latlon.lon,
-        :description => self.description,
-        :neighborhood => self.neighborhood,
-        :phone => self.phone,
-        :state => self.state.name,
-        :web => self.web,
-        :zip => self.zip,
-        :rating => self.rating,
-        :tags => self.venue_tags,
-        :offers => self.offers.not_available.order(:min_diners),
-        :open_times => self.open_times,
-        :reviews => self.reviews.first(3),
-        :image => (self.image ? self.image.url : ''),
-        :start => (self.available? ? 'Later Tonight' : self.open_at),
-        :end => self.close_at,
-        :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
-      }
+
+  after_save :notify_watching_users_about_new_vouchers, :if => :has_new_vouchers?
+
+  def has_new_vouchers?
+    vouchers_available_changed? &&
+    vouchers_available_change.first &&
+    vouchers_available_change.first < vouchers_available_change.last
+  end
+
+  def notify_watching_users_about_new_vouchers
+    watching_users.each do |watching_user|
+      UserMailer.notification_about_available_vouchers(watching_user, self).deliver
     end
+  end
+
+  def as_json(options={})
+    data = {
+              :id => self.id,
+              :name => self.name,
+              :address => self.address,
+              :city => self.city,
+              :lat => self.latlon.x,
+              :lon => self.latlon.y,
+              :description => self.description,
+              :neighborhood => self.neighborhood,
+              :phone => self.phone,
+              :state => self.state.nil? ? "" : self.state.name,
+              :web => self.web,
+              :zip => self.zip,
+              :rating => self.rating,
+              :tags => self.venue_tags,
+              :open_times => self.open_times,
+              :reviews => self.reviews.first(3),
+              :main_image => (self.main_image ? self.main_image.url : ''),
+              :timeline_image => (self.timeline_image ? self.timeline_image.url : ''),
+              :outside_image => (self.outside_image ? self.outside_image.url : ''),
+              :restaurant_tile_image => (self.restaurant_tile_image ? self.restaurant_tile_image.url : ''),
+              :start => (self.available? ? 'Later Tonight' : self.open_at),
+              :end => self.close_at,
+              :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
+          }
+    data[:offers] = if !options[:not_available]
+      self.offers.currently_available.order(:min_diners)
+    else
+      self.offers.not_available.order(:min_diners)
+    end
+    data
   end
 
   def self.active
@@ -192,7 +197,6 @@ class Venue < ActiveRecord::Base
   end
 
   private
-
   def to_read(m)
     h, m = (m-300).divmod 60
     d, h = h.divmod 24

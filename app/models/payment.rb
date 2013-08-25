@@ -12,4 +12,16 @@ class Payment < ActiveRecord::Base
       self.code = (0...6).map{ chars[rand(chars.length)] }.join
     end
   end
+
+  def active?
+    state.nil? || state == "Active"
+  end
+
+  def expired?
+    state == "Expired"
+  end
+
+  def used?
+    state == "Used"
+  end
 end

@@ -1,0 +1,30 @@
+<div id="main">
+  <div class="container">
+    <div class="account">
+      <div class="account-aside">
+        <div class="tabs-nav">
+          <h5>Your Account</h5>
+          <ul>
+            <% [["timeline", timeline_path], ["settings", settings_path]].each do |tabname, link| %>
+              <li class="<%= tabname == active_tab ? 'active' : '' %>">
+                <a href="<%= link %>"> <%= tabname.titleize %> <i class="arrow-right"></i></a>
+              </li>
+            <% end %>
+            <li></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+          </ul>
+        </div><!-- /.tabs-nav -->
+        <p class="meta">You have fed <strong><%=@payments.map(&:amount).inject(0, &:+).floor%> kids</strong> to date</p>
+        <div class="social">
+          <img src="/assets/fb-like.png" alt="" width="45" height="20" />
+          <img src="/assets/twitter-tweet.png" alt="" width="58" height="20" />
+        </div><!-- /.social -->
+      </div><!-- /.account-aside -->
+      <div class="account-cnt">
+        <div class="tab-cnt active" id="<%= active_tab %>">
+          <%= yield(:active_tab) %>
+        </div><!-- /#settings.tab-cnt -->
+      </div><!-- /.account-cnt -->
+    </div><!-- /.account -->
+  </div><!-- /.container -->
+</div><!-- /#main -->

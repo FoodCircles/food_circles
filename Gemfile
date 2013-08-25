@@ -23,14 +23,20 @@ gem 'stripe'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'rb-readline', '~> 0.4.2'
-gem 'omniauth'
-gem 'omniauth-facebook', '1.4.1'
+
+gem 'twilio-ruby'
+
+gem 'gibbon'
+
+gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+
 gem 'friendly_id'
 gem 'will_paginate'
 
 gem 'rack-mini-profiler', group: [:development, :test]
 
+gem 'twitter'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

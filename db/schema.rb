@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610204052) do
+ActiveRecord::Schema.define(:version => 20130822221336) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -28,15 +28,15 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
   create_table "charities", :force => true do |t|
     t.string   "name"
     t.string   "web"
-    t.integer  "region_id"
     t.string   "address"
     t.string   "city"
-    t.integer  "state_id"
     t.string   "zip"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image_uid"
+    t.integer  "region_id"
+    t.integer  "state_id"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -55,6 +55,26 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "experience_taggables", :force => true do |t|
+    t.integer  "experience_tag_id"
+    t.integer  "venue_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "experience_tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "external_uids", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "uid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "invoices", :force => true do |t|
     t.string   "group_name"
     t.integer  "group_size"
@@ -63,6 +83,26 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
     t.string   "perk"
     t.decimal  "amount"
     t.string   "venue"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "long_tasks", :force => true do |t|
+  end
+
+  create_table "news", :force => true do |t|
+    t.string   "title"
+    t.string   "mobile_image_uid"
+    t.string   "website_image_uid"
+    t.string   "mobile_url"
+    t.string   "website_url"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "notification_requests", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "venue_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -132,9 +172,29 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
     t.datetime "updated_at",          :null => false
     t.integer  "offer_id"
     t.string   "code"
+    t.string   "state"
+    t.integer  "num_diners"
+    t.string   "occasion"
+    t.boolean  "confirmed"
+    t.datetime "time_confirmed"
+    t.string   "coupon"
+    t.string   "name"
+    t.string   "phone"
+    t.boolean  "called"
   end
 
   add_index "payments", ["user_id"], :name => "index_payments_on_user_id"
+
+  create_table "postcards", :force => true do |t|
+    t.string   "city",                               :null => false
+    t.string   "state",                              :null => false
+    t.string   "user_name",                          :null => false
+    t.string   "restaurant_name",                    :null => false
+    t.text     "message",                            :null => false
+    t.boolean  "sent",            :default => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -179,6 +239,7 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
     t.boolean  "called",         :default => false
+    t.string   "state"
   end
 
   create_table "restaurants", :force => true do |t|
@@ -200,6 +261,23 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
 
   add_index "reviews", ["venue_id"], :name => "index_reviews_on_venue_id"
 
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "social_links", :force => true do |t|
+    t.integer  "venue_id"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "socialbutterflies", :force => true do |t|
     t.string   "facebook"
     t.datetime "created_at", :null => false
@@ -212,6 +290,12 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "statuses", :force => true do |t|
+    t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "time_zones", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -219,8 +303,8 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "encrypted_password",     :default => "",    :null => false
+    t.string   "email",                  :default => "",         :null => false
+    t.string   "encrypted_password",     :default => "",         :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -229,18 +313,27 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "name"
     t.string   "phone"
     t.boolean  "admin",                  :default => false
     t.string   "provider"
-    t.string   "uid"
+    t.string   "twitter_uid"
     t.string   "city"
     t.integer  "zip"
     t.string   "gender"
     t.datetime "birthday"
     t.string   "stripe_customer_token"
+    t.string   "authentication_token"
+    t.string   "twitter_secret"
+    t.string   "twitter_token"
+    t.string   "facebook_secret"
+    t.string   "facebook_token"
+    t.boolean  "has_twitter",            :default => false,      :null => false
+    t.boolean  "has_facebook",           :default => false,      :null => false
+    t.text     "friends",                :default => "--- []\n", :null => false
+    t.string   "facebook_uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -270,25 +363,28 @@ ActiveRecord::Schema.define(:version => 20130610204052) do
     t.string   "neighborhood"
     t.string   "web"
     t.integer  "price"
-    t.datetime "created_at",                                                                                                      :null => false
-    t.datetime "updated_at",                                                                                                      :null => false
-    t.string   "image_uid"
+    t.datetime "created_at",                                                                                                             :null => false
+    t.datetime "updated_at",                                                                                                             :null => false
+    t.string   "main_image_uid"
     t.string   "phone"
-    t.string   "circle_image_uid"
+    t.string   "restaurant_tile_image_uid"
     t.integer  "time_zone_id"
     t.float    "rating"
     t.string   "reference"
-    t.boolean  "active",                                                                         :default => true
-    t.spatial  "latlon",             :limit => {:srid=>4326, :type=>"point", :geographic=>true}
-    t.string   "voucher",                                                                        :default => "5"
-    t.decimal  "multiplier",                                                                     :default => 1.5
-    t.string   "feemessage",                                                                     :default => "Enter fee mesage."
-    t.decimal  "feecharge",                                                                      :default => 0.0
-    t.boolean  "apply_able",                                                                     :default => false
-    t.string   "email",                                                                          :default => "venue@example.com"
+    t.boolean  "active",                                                                                :default => true
+    t.spatial  "latlon",                    :limit => {:srid=>4326, :type=>"point", :geographic=>true}
+    t.string   "voucher",                                                                               :default => "5"
+    t.decimal  "multiplier",                                                                            :default => 1.5
+    t.string   "feemessage",                                                                            :default => "Enter fee mesage."
+    t.decimal  "feecharge",                                                                             :default => 0.0
+    t.boolean  "apply_able",                                                                            :default => false
+    t.string   "email",                                                                                 :default => "venue@example.com"
     t.string   "slug"
-    t.integer  "vouchers_available"
-    t.integer  "vouchers_total"
+    t.integer  "vouchers_available",                                                                    :default => 0
+    t.integer  "vouchers_total",                                                                        :default => 0
+    t.string   "outside_image_uid"
+    t.string   "timeline_image_uid"
+    t.string   "google_maps_url"
   end
 
   add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true

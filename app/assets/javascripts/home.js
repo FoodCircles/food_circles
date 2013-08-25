@@ -1,20 +1,22 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+
+//= require jquery.colorbox
 //= require jquery.carouFredSel-6.2.1-packed
 //= require jquery.isotope.min
 //= require jquery.infinitescroll.min
-//= require jquery.colorbox
 //= require jquery.payment
 //= require stripe_payment
 
 (function($){
 
 	var $doc = $(document),
-		$win = $(window),
-		$body = null;
+	    $win = $(window),
+	    $body = null;
 
 	//document ready event
 	$doc.on('ready', function(){
+    
 		sectionScroll();
 
 		$body = $('body');
@@ -121,7 +123,7 @@
 
 		.on('submit', '.postcard .edit-card form', function(event){
 			event.preventDefault();
-			populateCard($(this).serializeArray());
+			populateCard($(this).find("*[data-mirror]"));
 			$('.postcard').addClass('completed');
 			popupReszie();
 
@@ -136,8 +138,18 @@
 
 		.on('click', '.send-message', function(event){
 			event.preventDefault();
-			$('.postcard').removeClass('completed').addClass('sent');
-			popupReszie();
+			var form = $('.postcard .edit-card form');
+			$.post(form.attr('action'), form.serialize(), function(data) {
+				if(data.success == true){
+					$('.postcard').removeClass('completed').addClass('sent');
+					$('.postcard .thank .message').text(data.description);
+					if(data.facebook_sharing_uri){
+						$('.postcard .thank .icon-facebook-big').attr("href", data.facebook_sharing_uri);
+					}
+					popupReszie();
+				}
+			});
+
 		})
 
 		.on('change keyup', '.pay-box .field', function(event){
@@ -178,19 +190,46 @@
 
 
 		.on('change', '.qty input', function(){
-			if($(this).is(':checked')){
-				var valArray = $(this).val().split(',');
-				PayBox.setPrice(parseInt(valArray[0]));
-				$('.pay-box').find('.min').text('$' + parseInt(valArray[0]));
-				$('.pay-box').find('.mid').text('$' + parseInt(valArray[1]));
-				$('.pay-box').find('.max').text('$' + parseInt(valArray[2]));
-
-				$('.pay-box').find('.slider').slider('option', {
-					min: parseInt(valArray[0]),
-					max: parseInt(valArray[2]) 
-				});
-			}
-		})
+			
+      if($(this).parent().is('.checked')){
+        $("input[name='offer_id']").attr("checked", false)
+        $(this).attr("checked","checked")
+		//var origPrice = parseFloat($('input[name=offer_id]:checked').data('price'));
+		var currPrice = parseFloat($('input.custom-input:checked').data('price'));
+        var origPrice = parseFloat($('input.custom-input:checked').data('originalprice'));
+    	
+		var offerName = $(this).data('name');
+        var offerDetails = $(this).data('details');
+        var decodedOfferDetails = $("<div/>").html(offerDetails).text();
+        
+        
+        $('div.deal-body .description h2').fadeOut(200, function() {
+          $(this).text(offerName).fadeIn(200);
+        });
+        $('div.deal-body .description p').fadeOut(200, function() {
+          $(this).text(decodedOfferDetails).fadeIn(200);
+        });
+        
+        
+		$('.pay-box').find('.field').val(currPrice);
+    
+    	var min = currPrice;
+		var mid = origPrice;
+    	var max = origPrice * 2;
+        
+		$('.pay-box').find('.min').text('$' + min);
+		$('.pay-box').find('.mid').text('$' + mid);
+		$('.pay-box').find('.max').text('$' + max);
+		
+		$('.pay-box').find('.slider').slider({ value: 1 });
+	
+		$('.pay-box').find('.slider').slider('option', {
+			min: currPrice,
+			max: origPrice * 2
+		});
+        
+		}
+	})
 
 		.on('click', '.buy-btn', function(event){
 			event.preventDefault();
@@ -213,6 +252,21 @@
 				$self.siblings('.balloon').addClass('expanded');
 			}, 1);
 		})
+    
+    .on('click', '.view-account-btn', function(event) {
+      event.preventDefault();
+      $.colorbox.close();
+    })
+
+		.on('click', '.welcome-line > .sign-form-link', function(event){
+			event.preventDefault();
+			$('#sign-up-form').toggleClass('expanded');
+		})
+
+		.on('click', '#sign-up-form .form-caption a, #sign-in-form .form-caption a', function(event){
+			event.preventDefault();
+			$('#sign-in-form, #sign-up-form').toggleClass('expanded');
+		})
 
 		.on('click', '.balloon-close', function(event){
 			event.preventDefault();
@@ -226,25 +280,27 @@
 
 		.on('click', '.popup-link', function(event){
 			event.preventDefault();
-			popupOpen($(this).attr('href'))
+			if($(this).data('slug')) {
+		        var full = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+		        history.pushState({food: "circles"}, "FoodCircles", full + '/'+$(this).data('slug'));
+		  		popupOpen('/deal_popup_not_logged/'+$(this).data('slug'));
+					
+			} else {
+				console.log($(this));
+				popupOpen($(this).attr('href'));
+			}
+      
 		});
 
-		$('.welcome-line > a').on('click', function(event){
-			event.preventDefault();
-			//set little timeout to prevent item from close immidiatly after the open
-			setTimeout(function(){
-				$('#sign-up-form').toggleClass('expanded');
-			}, 1);
-		});
 
-		$('#sign-up-form .form-caption a').on('click', function(event){
-			event.preventDefault();
-			//set little timeout to prevent item from close immidiatly after the open
-			setTimeout(function(){
-				$('#sign-in-form, #sign-up-form').toggleClass('expanded');
-			}, 1);
-		});
 
+		$('.notification_request').bind('ajax:success', function(event, data) {
+			if(data.status == "success"){
+				var tile = $(this).parents('.tile');
+				var title_span = tile.find('.title');
+				title_span.text("Availability Notification scheduled");
+			}
+		});
 
 		//banner slideshow
 		$('.banner .slides').carouFredSel({
@@ -386,23 +442,35 @@
 
 		});
 
-
-		$('.settings .delete').on('click', function(event){
+		$('.settings .delete[data-remote=true]').bind('ajax:success', function(event, data) {
 			event.preventDefault();
-			if($(this).closest('fieldset').is('.social-connections')){
-				$(this).hide().siblings('.value').html('<em>Not connected</em>');
-			}else{
+			if(data.success){
 				$(this).hide().closest('.row').hide();
 			}
 		});
 
-
+    $(document).bind('cbox_closed', function(){ 
+      if($body.data('meta') === 'home#index')
+      {
+        var full = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+        history.pushState({food: "circles"}, "FoodCircles", full + '/');
+      }
+        
+    });
 
 	});//document ready event
 
 	$win.on('load', function(){
 		Header.pos();
 		sectionScroll();
+    
+    //var offer_id_if_present = location.pathname.match(/\/offer\/(\d+)/);
+    if(location.pathname != '/' && location.pathname != '/app_popup' && $body)
+    {
+      if($body.data('meta') === 'home#index')
+        popupOpen('/deal_popup_not_logged'+location.pathname);
+    }
+    
 	});
 
 	$win.on('resize', function(){
@@ -417,7 +485,7 @@
 			onComplete:function(){
 				$body.data('prev-popup', $body.data('cur-popup'));
 				$body.data('cur-popup', href);
-
+            
 				refreshScripts($('#colorbox'));
 				if($('.popup-print').length){
 					$('#cboxClose').addClass('hidden');
@@ -453,16 +521,37 @@
 			$slider.slider({
 				min: sliderMin,
 				max: sliderMax,
-				step:0.5,
+				step:1,
 				slide: function(event, ui){
 					if($slider.closest('.pay-box').length){
-						$slider.closest('.pay-box').find('.field').val(ui.value).trigger('change');
+            			$('.pay-box').find('.field').val(ui.value);
+			  			$('.donation-info strong').text(Math.floor($('.pay-box').find('.field').val()));
+						
 					}
 				}
 			});
 		});
-
+		var currPrice = parseFloat($('input.custom-input:checked').data('price'));
+        var origPrice = parseFloat($('input.custom-input:checked').data('originalprice'));
+    	
+		$('.pay-box').find('.field').val(currPrice);
+    
+    	var min = currPrice;
+		var mid = origPrice;
+    	var max = origPrice * 2;
+        
+		$('.pay-box').find('.min').text('$' + min);
+		$('.pay-box').find('.mid').text('$' + mid);
+		$('.pay-box').find('.max').text('$' + max);
+		
+    
+		$('.pay-box').find('.slider').slider('option', {
+			min: currPrice,
+			max: origPrice * 2
+		});
 		// $('.deal').height($('.deal').height());
+
+
 
 		$('.deal .card-number .field').payment('formatCardNumber').on('keyup', function(){
 			var val_ = $(this).val()
@@ -523,18 +612,25 @@
 			$fieldset.find('.field:first').trigger('focus');
 		},
 		saveGroup: function($fieldset){
+			var object = this;
+			$.post($fieldset.data().url, $fieldset.serialize(), function(data) {
+				if(data.success == true){
+					object._refreshGroup($fieldset);
+				}
+			});
+		},
+		closeEdit: function($fieldset){
+			$fieldset.removeClass('editing').find('.edit span').text('edit');
+		},
+		_refreshGroup: function($fieldset){
 			$fieldset.find('.field').each(function(){
 				var $self = $(this);
-				$self.siblings('.value').text($self.val());
+				$self.siblings(".value:not([data-keep='yes'])").text($self.val());
 				if($self.val().length){
 					$self.siblings('.delete').show();
 				}
 			});
 			this.closeEdit($fieldset);
-
-		},
-		closeEdit: function($fieldset){
-			$fieldset.removeClass('editing').find('.edit span').text('edit');
 		}
 
 	}
@@ -553,6 +649,7 @@
 		setPrice: function(price){
 			this.price = price;
 			this.calc();
+			
 		}
 	}
 
@@ -608,7 +705,7 @@
 			.infinitescroll({
 				navSelector: '.pagination',
 				nextSelector:'.next_page',
-				itemSelector:'.tile',
+				itemSelector:'.tile:not(.add-new)',
 				bufferPx:-200,
 				errorCallback: function(){
 					$('.pagination').text('No more offers.')
@@ -640,7 +737,7 @@
 
 			if($filters.find('input:checked').length){
 				$filters.find('input:checked').each(function(){
-					aFilter.push('.' + $(this).val());
+					aFilter.push('.' + $(this).val().toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
 				});
 				selector = aFilter.join(', ') + ', .add-new';
 			}else{
@@ -727,7 +824,7 @@
 
 	function populateCard(arr){
 		for (var i = 0; i < arr.length; i++){
-			$('.postcard .' + arr[i].name).text(arr[i].value);
+			$('.postcard .' + arr[i].getAttribute('data-mirror')).text(arr[i].value);
 		};
 	}
 

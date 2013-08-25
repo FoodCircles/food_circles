@@ -19,20 +19,20 @@
 					<li>2. Do that then this</li>
 					<li>3. Send a postcard</li>
 				</ul><!-- /.steps -->
-				<form action="" method="post">
+				<form action="<%= postcards_path %>" method="post" class="postcard_form">
 					<h6>Fill out your info</h6>
 					<div class="row">
-						<input type="text" class="field small" value="" placeholder="Restaurant Name" name="rname" />
+						<input type="text" class="field small" value="" placeholder="Restaurant Name" name="postcard[restaurant_name]" data-mirror="rname"/>
 					</div>
 					<div class="row">
-						<textarea class="field small" placeholder="Message" name="message-text" >Diners we talk to say that a "Buy One, Feed One" philosophy at certain restaurants affects where they decide to eat out.  It turns out that when we spend money, we love to know that it's going to good people and a good place. the average cost to you of a donated appetizer or dessert.  The worth? Meeting a customer with beliefs</textarea>
+						<textarea class="field small" placeholder="Message" name="postcard[message]" data-mirror="message-text" >Diners we talk to say that a "Buy One, Feed One" philosophy at certain restaurants affects where they decide to eat out.  It turns out that when we spend money, we love to know that it's going to good people and a good place. the average cost to you of a donated appetizer or dessert.  The worth? Meeting a customer with beliefs</textarea>
 					</div>
 					<div class="row">
-						<input type="text" class="field small" value="" placeholder="Your Name" name="username" />
+						<input type="text" class="field small" value="" placeholder="Your Name" name="postcard[user_name]" data-mirror="username"/>
 					</div>
 					<div class="row location">
-						<input type="text" class="field small" value="" placeholder="City" name="city" />
-						<input type="text" class="field small" value="" placeholder="State" name="state" />
+						<input type="text" class="field small" value="" placeholder="City" name="postcard[city]" data-mirror="city"/>
+						<input type="text" class="field small" value="" placeholder="State" name="postcard[state]" data-mirror="state"/>
 					</div>
 					<span class="btn-mini-med submit light-shadow">
 						Done
@@ -41,19 +41,18 @@
 				</form>
 			</div><!-- /.edit-card -->
 			<div class="complete-card">
-				<h4>Hey <span class="rname">Marie Catribs</span>!</h4>
+				<h4>Hey <span class="rname"></span>!</h4>
 				<div class="message-body">
 					<div class="note">
 						<div class="n-inner">
 							<div class="n-i-inner message-text">
-								Diners we talk to say that a "Buy One, Feed One" philosophy at certain restaurants affects where they decide to eat out.  It turns out that when we spend money, we love to know that it's going to good people and a good place. the average cost to you of a donated appetizer or dessert.  The worth? Meeting a customer with beliefs
 							</div><!-- /.n-i-inner -->
 						</div><!-- /.n-inner -->
 					</div><!-- /.note -->
 					<a href="#" class="edit">edit</a>
 					<div class="sign">
-						<h4 class="username">Jonathan Kumar</h4>
-						<small><span class="city">Grand Rapids</span>, <span class="state">MI</span></small>
+						<h4 class="username"></h4>
+						<small><span class="city"></span>, <span class="state"></span></small>
 					</div><!-- /.sign -->
 				</div><!-- /.message-body -->
 			</div><!-- /.complete-card -->
@@ -62,7 +61,7 @@
 			
 		<div class="thank">
 			<h2>Thanks for your submission!</h2>
-			<p>We’ll be sending a snail mail postcard to Marie Catribs shortly</p>
+			<p class="message"></p>
 			<div class="share-card">
 				<small>Share your postcard</small>
 				<a href="#" class="icon-facebook-big"></a>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+  <p style="text-align: justify;">
+    Hi there
+  </p>
+  <p style="text-align: justify;">
+    <%= link_to "Click here", url_for(controller: :monthly_invoice, action: :new_layout, vid: @venue_id, months_before: 1, only_path: false) %>
+    to get a detailed invoice
+  </p>
+  <p style="text-align: justify;">
+    Summary:
+  </p>
+  <ul style="text-align: justify;">
+    <li>You provided <%= link_to "plumpy'nut" , "http://blog.worldvision.org/disaster-relief/one-small-cry-hassanes-fight-against-malnutrition/" %> to <%= @world_kids %> impoverished children via World Vision.</li>
+    <li>You provided <%= link_to "sack suppers", "http://www.kidsfoodbasket.org/about-us/sack-suppers" %> to <%= @foodbasket_kids %> living in poverty thru Kids Food Basket.</li>
+    <li>You met <%= @total_vouchers %> tables of customers who dined at your restaurant to feed those in need.</li>
+  </ul>
+  <p style="text-align: justify;">
+"Buy One, Feed One" comes alive to your customers when you make it real that they are doing something 
+special by eating at your restaurant. These customers aren't coming in based on a deal, but based on the 
+fact that you share a belief with them – that no one should go to bed hungry. Accordingly, the little things 
+you can do (placards, "thank you's", etc) matter, and drive returns. 
+  </p>
+  <p style="text-align: justify;">We'd also love to hear your input on how the movement is taking hold in your restaurant. Our promise is 
+this; anything we can do to help you, your staff, or to promote the fact you are a "Buy One, Feed One" 
+restaurant, we will. Call us 24/7 at (616) 61-FOOD-6 or email us at support@foodcircles.net. </p>
+  <p style="text-align: justify;">
+  - The FoodCircles team
+  </p>
+</body>
+</html>

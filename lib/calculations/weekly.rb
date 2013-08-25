@@ -60,7 +60,7 @@ module Calculations
     def total_vouchers
       total_vouchers = 0
       offers.each do |offer|
-        total_vouchers += offer.price * offer.total
+        total_vouchers += offer.price.to_i * offer.total.to_i
       end
       total_vouchers
     end

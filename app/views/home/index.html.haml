@@ -7,15 +7,9 @@
         %p
           By our powers combined,<br />I am captain planet.
   %ul{class: "slides"}
-    %li
-      %img{src: "/assets/slide-01.jpg", alt: "", width: "1280", height: "360"}
-    %li
-      %img{src: "/assets/slide-02.jpg", alt: "", width: "1280", height: "360"}
-    %li
-      %img{src: "/assets/slide-03.jpg", alt: "", width: "1280", height: "360"}
-    %li
-      %img{src: "/assets/slide-04.jpg", alt: "", width: "1280", height: "360"}
-
+    - @news.each do |news|
+      %li
+        %img{src: news.website_image.url, alt: "", width: "1280", height: "360"}
   %a{href: "#", class: "slide-prev icon-arrow-prev"}
   %a{href: "#", class: "slide-next icon-arrow-next"}
 
@@ -23,22 +17,26 @@
 
   .donation-progress
     .bar{style: "width: #{percent}%"}
-      %span{class: "text"}
-        %strong
-          %span
-            = weekly_progress[:current_progress]
-            %em of
-          = weekly_progress[:adjusted_total]
-          meals
-        donated this week
-
+    .text-pusher{style: "width: #{percent}%"}
+    %span.text
+      %strong
+        %span
+          = weekly_progress[:current_progress]
+          %em of
+        = weekly_progress[:adjusted_total]
+        meals
+      donated this week
 #home
   .container
     .products
       .products-head
         .head-btns
           %a.btn-standart.popup-link{href: app_popup_path} Get the app
-          %a.btn-standart.popup-link{href: notify_signup_path}Get updates
+          - if current_user
+            -if show_newsletter_subscription_button?
+              = link_to "Get updates", subscribe_newsletter_path, :remote => true, :method => :post, :class => ["btn-standart"]
+          - else
+            %a.btn-standart.popup-link{href: notify_signup_path}Get updates
 
         = render partial: "filters"
 
@@ -49,8 +47,8 @@
 
       .products-tiles
         - @venues.each do |venue|
-          %div{class: "tile " + ["red", "yellow", "green"].sample + ( venue.vouchers_available == 0 ? " sold-out" : "" ), :"data-city" => "chicago", :"data-cat" => "italian"}
-            %h3= link_to venue.name, venue
+          %div{class: "tile #{ venue.vouchers_available > 4 ? "green" : (venue.vouchers_available == 1 ? "red" : "yellow")} #{( venue.vouchers_available == 0 ? "sold-out" : "" )} #{venue.offers.first.category.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
+            %h3= venue.name
             .thumb
               %span.social
                 %a{href: "#", class: "btn-mini"}
@@ -61,8 +59,12 @@
                 - percent = (venue.vouchers_available.to_f / venue.vouchers_total.to_f) * 100
                 - if (venue.vouchers_available.nil? || venue.vouchers_available == 0)
                   %span.pbar{style: "height: 0"}
-                    %a.block{href: notify_signup_path}
-                      %small Notify me
+                    - unless @watched_venues.include? venue
+                      - if current_user
+                        = link_to content_tag(:small, "Notify me"), subscribe_venue_path(venue, :format => :json), :remote => true, :method => :post, :class => [:block, :notification_request]
+                      - else
+                        %a.block{href: notify_signup_path, class: "popup-link"}
+                          %small Notify me
                 - else
                   %span.pbar{style: "height:" + percent.to_s + "%"}
                     %span.block
@@ -70,20 +72,24 @@
                       %small left
 
               /%a{href: main_app.deal_popup_not_logged_path(offer)}
-              %a.deallink.popup-link{href: '/deal_popup_not_logged/' + venue.offers.first.id.to_s}
+              %a.deallink.popup-link{href: venue.offers.order("min_diners ASC").first.id.to_s, :"data-slug" => venue.slug}
                 %span.price
-                  %strong= number_to_currency(venue.offers.first.price, :precision => 0)
+                  %strong= number_to_currency(venue.offers.order("min_diners ASC").first.price, :precision => 0)
                   %span{class: "old"}
-                    = number_to_currency(venue.offers.first.original_price, :precision => 0)
+                    = number_to_currency(venue.offers.order("min_diners ASC").first.original_price, :precision => 0)
                     %i{class: "icon-strike strike"}
-                  %span{class: "shadow"}
-                = image_tag venue.offers.first.image.url(:deal)
+                %span{class: "shadow"}
+                = image_tag venue.restaurant_tile_image.thumb("274x163").url
                 / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
-                %span{class: "title"}= venue.offers.first.name
+                %span{class: "title"}= venue.offers.order("min_diners ASC").first.name
             .tags
-              - if not venue.offers.first.category.empty?
+              - if not venue.offers.order("min_diners ASC").first.category.empty?
                 tags:
-                = raw venue.offers.first.category.collect { |cat| link_to cat.name, cat }.join(",")
+                = raw venue.offers.order("min_diners ASC").first.category.collect { |cat| link_to cat.name, cat }.join(",")
+        %a.tile.add-new.popup-link{href: postcard_popup_path }
+          %div.add-new-inner
+            %strong Add a
+            %small restaurant
+            %i.icon-plus
 
       = will_paginate @venues
-

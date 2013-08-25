@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 if !Rails.env.production? || !Rails.env.staging?
-  Database::Factory.create_records(User, "users.yml")
-  Database::Factory.create_records(Venue, "venues.yml")
-  Database::Factory.create_records(Offer, "offers.yml")
+  Database::Factory.create_records("User", "#{Rails.root}/yml/users.yml")
+  Database::Factory.create_records("Venue", "#{Rails.root}/yml/venues.yml")
+  Database::Factory.create_records("Offer", "#{Rails.root}/yml/offers.yml")
 end

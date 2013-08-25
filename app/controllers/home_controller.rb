@@ -2,6 +2,13 @@ class HomeController < ApplicationController
   def index
     @venues = Venue.with_display_offers.page(params[:page]).per_page(9)
     @cities = {}
+    @news = News.website
+
+    @watched_venues = if current_user
+      current_user.watched_venues
+    else
+      []
+    end
 
     Venue.all.collect do |venue|
       if @cities[venue.city].nil?

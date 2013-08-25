@@ -13,11 +13,11 @@
     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
     <%= stylesheet_link_tag "colorbox", :media => "all" %>
     <%= stylesheet_link_tag "fonts", :media => "all" %>
-    <script type="text/javascript" src="//use.typekit.net/mqt8ffa.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <%= javascript_include_tag "//use.typekit.net/mqt8ffa.js" %>
+    <%= javascript_tag  "try{Typekit.load();}catch(e){}" %>
     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
     <%= javascript_tag "Stripe.publishableKey = '#{Rails.configuration.stripe[:publishable_key]}';" %>
-    <%= javascript_include_tag "#{controller_name}" %>
+    <%= javascript_include_tag  'home', "#{controller_name}" %>
 
 
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -25,7 +25,7 @@
     <%= tag :meta, :name => 'stripe-key', :content => Rails.configuration.stripe[:publishable_key] %>
     <%= render 'layouts/google-analytics' %>
   </head>
-  <body class="<%= current_user ? 'logged-in' : 'not-logged' %>">
+  <body class="<%= user_signed_in? ? 'logged-in' : 'not-logged' %>" data-meta="<%="#{controller_name}"%>#<%="#{action_name}"%>">
     <div id='wrapper' >
         <%= render :partial => 'partials/header' %>
         <%= yield %>

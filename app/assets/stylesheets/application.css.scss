@@ -309,6 +309,11 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .valid .icon-lock { background-position:-251px -164px; }
 
 /*=== Main CSS ===*/
+
+body.active-popup {
+	overflow: hidden;
+}
+
 #wrapper { position:relative; min-height:100%; }
 .active-popup #wrapper { 
 	-webkit-filter:blur(2px);
@@ -334,7 +339,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .header-utils .welcome-line { float:left; padding:3px 0 0 12px; font:14px 'pragmatica-web', sans-serif; color:#8a857f; position:relative; }
 .header-utils .welcome-line > a { font-weight:bold; }
 
-.sign-form { visibility:hidden; opacity:0; -moz-opacity:0; filter:alpha(opacity=0); position:absolute; right:-10px; top:100%; z-index:2; padding:14px; background:#f5f2ec; width:220px; margin-top:10px; box-shadow:0 2px 7px rgba(0,0,0,0.18);
+.sign-form { visibility:hidden; opacity:0; -moz-opacity:0; filter:alpha(opacity=0); position:absolute; left:65%; top:26%; z-index:2; padding:14px; background:#f5f2ec; width:220px; margin-top:10px; box-shadow:0 2px 7px rgba(0,0,0,0.18);
 	/*transform*/
 	-webkit-transform:translateY(-20px);
 	   -moz-transform:translateY(-20px);
@@ -573,7 +578,9 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 	background-image:-o-linear-gradient(left, #d18103, #d19a03); 
 	background-image:linear-gradient(left, #d18103, #d19a03); 
 }
-.donation-progress .text { position:absolute; bottom:100%; right:-55px; width:110px; font:10px 'pragmatica-web', sans-serif; color:#acacac; text-transform:uppercase; padding-bottom:7px; text-align:center; }
+
+.donation-progress .text-pusher{ position:relative; min-width:5%; max-width: 89%; display: inline-block; }
+.donation-progress .text { display: inline-block; position:relative; top: -40px; right:55px; max-width:10%; font:10px 'pragmatica-web', sans-serif; color:#acacac; text-transform:uppercase; padding-bottom:7px; text-align:center; }
 .donation-progress .text strong { text-transform:none; font-weight:normal; font-size:14px; }
 .donation-progress .text strong span { color:#fff; }
 
@@ -601,7 +608,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .products-head .head-btns a { width:113px; padding:0; float:left; margin-right:7px; }
 
 .products-head .filters { float:right; display:inline; padding-top:16px; }
-.products-head .search { min-width:20px; position:relative; float:right; display:inline; padding-left:10px; }
+.products-head .search { min-width:20px; position:relative; float:right; display:inline; padding-left:10px; margin-left:26px; }
 .products-head .search .search-btn { position:absolute; top:6px; right:6px; z-index:3; }
 .products-head .search .field-holder { float:left; display:inline; }
 .products-head .search .field-holder > .acomplete-lnk { display:none; }
@@ -632,7 +639,8 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 
 
 .products-head .filter { float:right; display:inline; padding-top:4px; position:relative; z-index:3;  }
-.products-head .filter ~ .filter { margin-right:22px; }
+.products-head .filter { margin-right:22px; }
+.products-head .filter.location { margin-right:34px; }
 .products-head .filter h5 { float:left; font-size:14px; font-weight:normal; color:#8a857f;}
 .products-head .filter h5 a { font-weight:bold; }
 .products-head .filter h5 a:hover { text-decoration:none; }
@@ -969,7 +977,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .postcard:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 .postcard h5 { color:#3d3d3d; padding-bottom:3px; }
 .postcard h6 { font:bold 15px 'pragmatica-web', sans-serif; color:#3d3d3d; padding-bottom:2px; }
-.postcard .content { width:260px; float:left; }
+.postcard .content { width:260px; float:left; padding-bottom: 0; }
 
 .postcard .steps { list-style:none outside none; padding-bottom:9px; font:12px 'pragmatica-web', sans-serif; color:#3d3d3d; }
 .postcard .steps li { padding-bottom:6px; }
@@ -1529,6 +1537,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 	   -moz-transition:all 300ms;
 	     -o-transition:all 300ms;
 	        transition:all 300ms;
+
 }
 .timeline .block .body span { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); position:absolute; top:50%; left:0; right:0; z-index:3;  text-align:center; font:bold 18px 'pragmatica-web', sans-serif; color:#fff; margin-top:-12px;
 	/*transition*/
@@ -1539,6 +1548,8 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 }
 .timeline .block .body:hover img { opacity:0.4; -moz-opacity:0.4; filter:alpha(opacity=40); }
 .timeline .block .body:hover span { opacity:1; -moz-opacity:1; filter:alpha(opacity=100); }
+.timeline .block .body.used span { color: #9FEE00 }
+.timeline .block .body.expired span { color: #FB3F51 }
 .timeline .block .foot { padding:7px 9px; *zoom:1; }
 .timeline .block .foot:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 .timeline .block .foot .kids { float:left; font:bold 18px/28px 'pragmatica-web', sans-serif; padding-right:7px; }
@@ -1577,8 +1588,6 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .timeline .block.highlight p { font:14px 'pragmatica-web', sans-serif; color:#fff; }
 .timeline .block.highlight p a { color:#fff; text-decoration:underline; }
 .timeline .block.highlight p a:hover { text-decoration:none; }
-
-
 
 /**** Isotope Filtering ****/
 
@@ -1655,6 +1664,10 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 	animation-duration:1.5s;
 	animation-iteration-count:infinite;
 	animation-timing-function:linear;
+	width: 50px;
+	position: relative;
+	top: -20px;
+	left: 20px;
 }
 
 
@@ -1702,3 +1715,16 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 /* Fixing footer overlap on subpages */
 .content { padding-bottom: 250px; }
 
+
+/* === New CSS 24.07.2013 === */
+
+.no-activity-message { display:none; position:absolute; z-index:9999; top:135px; left:50px; width:430px; font-size:18px; line-height:24px; color:#4e3e34; font-family:'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-weight:normal; text-align:center; }
+.no-activity-message p { padding-bottom:10px; }
+.no-activity-message a { font-weight:bold; text-decoration:underline; }
+.no-activity-message a:hover { text-decoration:none; }
+
+
+.no-activity .account-cnt { position:relative; }
+.no-activity .timeline { opacity:.13; filter:alpha(opacity=13); }
+.no-activity .timeline:before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; z-index:999; }
+.no-activity .no-activity-message { display:block; }

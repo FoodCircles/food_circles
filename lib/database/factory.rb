@@ -7,15 +7,14 @@ module Database
       new(factory_name, file_path).create_records
     end
 
-    def initialize(klass, file)
-      @factory = klass
-      @file_path = YML_PATH + file
+    def initialize(factory_name, file)
+      @factory = factory_name.constantize
+      @file_path = file
     end
 
     def create_records
       record_hash = YAML.load(File.read(file_path))
       record_hash.each_value do |record|
-        puts("#{factory}.create#{record}")
         factory.create(record)
       end
     end
