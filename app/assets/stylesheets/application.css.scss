@@ -323,7 +323,7 @@ body.active-popup {
 }
 
 /*=== Header ===*/
-#header { padding:14px 0 22px; position:relative; z-index:9; background:#f1ebe0; }
+#header { padding:14px 0 22px; position:relative; z-index:25; background:#f1ebe0; }
 #header .container { *zoom:1; }
 #header .container:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 
@@ -536,8 +536,8 @@ body.active-popup {
 }
 
 /*=== Banner ===*/
-.banner { position:relative; z-index:2; overflow:hidden; box-shadow:0 2px 6px #d3c9b9; *zoom:1; }
-.banner:after { content:''; position:absolute; left:0; top:-40px; right:0; height:40px; box-shadow:0 2px 6px rgba(0,0,0,0.4); }
+.banner { position:relative; z-index:20; overflow:hidden; box-shadow: 0 0px 20px 1px rgba(0,0,0,0.3); *zoom:1; }
+.banner:after { content:''; position:absolute; left:0; top:-40px; right:0; height:40px; box-shadow:0 0px 20px 1px rgba(0,0,0,0.2); z-index: 21;}
 
 /*=== Banner - Slides ===*/
 .banner .slides { list-style:none outside none; padding:0; position:relative; z-index:1; }
@@ -580,7 +580,7 @@ body.active-popup {
 }
 
 .donation-progress .text-pusher{ position:relative; min-width:5%; max-width: 89%; display: inline-block; }
-.donation-progress .text { display: inline-block; position:relative; top: -40px; right:55px; max-width:10%; font:10px 'pragmatica-web', sans-serif; color:#acacac; text-transform:uppercase; padding-bottom:7px; text-align:center; }
+.donation-progress .text { display: inline-block; position:relative; top: -40px; right:55px; max-width:10%; font:10px 'pragmatica-web', sans-serif; color:#acacac; text-transform:uppercase; padding-bottom:7px; text-align:center; text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black;}
 .donation-progress .text strong { text-transform:none; font-weight:normal; font-size:14px; }
 .donation-progress .text strong span { color:#fff; }
 
