@@ -70,10 +70,10 @@ form .row + .row { padding-top:4px; }
 textarea.field { resize:none; }
 textarea.field.small { padding:10px; width:240px; height:73px; }
 
-.field::-webkit-input-placeholder { color:#999; opacity:1; font-style:italic; }
-.field:-moz-placeholder { color:#999; opacity:1; font-style:italic; }
-.field::-moz-placeholder { color:#999; opacity:1; font-style:italic; }
-.field:-ms-input-placeholder { color:#999; opacity:1; font-style:italic; }
+.field::-webkit-input-placeholder { color:#ccc; opacity:1; font-style:italic; }
+.field:-moz-placeholder { color:#ccc; opacity:1; font-style:italic; }
+.field::-moz-placeholder { color:#ccc; opacity:1; font-style:italic; }
+.field:-ms-input-placeholder { color:#ccc; opacity:1; font-style:italic; }
 
 .field.standart::-webkit-input-placeholder { font-style:normal; }
 .field.standart:-moz-placeholder { font-style:normal; }

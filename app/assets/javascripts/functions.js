@@ -297,7 +297,7 @@
 			}
 		});
 
-		$('.popup-link').colorbox();
+		$('.popup-link').colorbox({closeButton: true});
 
 		$('.balloon .close').on('click', function(event){
 			event.preventDefault();
