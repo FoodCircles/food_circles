@@ -12,6 +12,7 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20130826192336) do
+
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -27,15 +28,15 @@ ActiveRecord::Schema.define(:version => 20130826192336) do
   create_table "charities", :force => true do |t|
     t.string   "name"
     t.string   "web"
-    t.integer  "region_id"
     t.string   "address"
     t.string   "city"
-    t.integer  "state_id"
     t.string   "zip"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image_uid"
+    t.integer  "region_id"
+    t.integer  "state_id"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -180,6 +181,7 @@ ActiveRecord::Schema.define(:version => 20130826192336) do
     t.string   "name"
     t.string   "phone"
     t.boolean  "called"
+    t.string   "paypal_charge_token"
   end
 
   add_index "payments", ["user_id"], :name => "index_payments_on_user_id"
@@ -386,7 +388,6 @@ ActiveRecord::Schema.define(:version => 20130826192336) do
     t.string   "outside_image_uid"
     t.string   "timeline_image_uid"
     t.string   "google_maps_url"
-    t.string   "paypal_charge_token"
   end
 
   add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true
