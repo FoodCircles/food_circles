@@ -9,7 +9,7 @@ class Payment < ActiveRecord::Base
   def add_code
     unless self.code
       chars = [('a'..'z'),('0'..'9')].map{|i| i.to_a}.flatten
-      self.code = (0...6).map{ chars[rand(chars.length)] }.join
+      self.code = (0...5).map{ chars[rand(chars.length)] }.join.upcase
     end
   end
 
