@@ -22,6 +22,7 @@ class Api::TimelineController < ApplicationController
             :state => p.state,
             :user_id => p.user_id,
             :amount => p.amount,
+            :date_purchased => p.created_at,
             :offer => [Offer.find(p.offer_id)].map { |o|
               {
                 :id => o.id,
