@@ -5,7 +5,7 @@ class PostcardsController < ApplicationController
 
     # NOTE: If we ever host the assets somewhere else, this is going to break.
     # At that time, generate the url based on the asset host.
-    image_path = ActionController::Base.helpers.asset_path("slide-01.jpg")
+    image_path = ActionController::Base.helpers.asset_path("stamp.png")
     image_url =  URI.join "http://staging.foodcicles.net", image_path
     
     query = {
