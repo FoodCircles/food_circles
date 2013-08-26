@@ -1,15 +1,15 @@
 class PostcardsController < ApplicationController
   def create
-    postcard = Postcard.create(params[:postcard])
+    postcard = Postcard.new(params[:postcard])
     facebook_sharing_uri = URI.parse "http://www.facebook.com/sharer/sharer.php"
 
-    image_url =  URI.join "http://#{request.host}", "assets", "logo_old.png"
+    image_url =  URI.join "http://#{request.host}", "assets/", "logo_old.png"
     
     query = {
       :s => 100,
       :p => {
         :url => restaurants_url,
-        :images => [image_url.to_s],
+        :images => {0 => image_url.to_s},
         :title => "I want #{postcard.restaurant_name} to be a Buy One, Feed One restaurant",
         :summary => "Who's with me?"
       }
