@@ -3,10 +3,7 @@ class PostcardsController < ApplicationController
     postcard = Postcard.create(params[:postcard])
     facebook_sharing_uri = URI.parse "http://www.facebook.com/sharer/sharer.php"
 
-    # NOTE: If we ever host the assets somewhere else, this is going to break.
-    # At that time, generate the url based on the asset host.
-    image_path = ActionController::Base.helpers.asset_path("stamp.png")
-    image_url =  URI.join "http://staging.foodcicles.net", image_path
+    image_url =  URI.join "http://#{request.host}", "assets", "logo_old.png"
     
     query = {
       :s => 100,
