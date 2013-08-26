@@ -1,6 +1,6 @@
 class PostcardsController < ApplicationController
   def create
-    postcard = Postcard.new(params[:postcard])
+    postcard = Postcard.create(params[:postcard])
     facebook_sharing_uri = URI.parse "http://www.facebook.com/sharer/sharer.php"
 
     image_url =  URI.join "http://#{request.host}", "assets/", "logo_old.png"
