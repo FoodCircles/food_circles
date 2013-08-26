@@ -143,9 +143,9 @@
 				if(data.success == true){
 					$('.postcard').removeClass('completed').addClass('sent');
 					$('.postcard .thank .message').text(data.description);
-					if(data.facebook_sharing_uri){
-						$('.postcard .thank .icon-facebook-big').attr("href", data.facebook_sharing_uri);
-					}
+					$('.postcard .thank .icon-facebook-big').attr("href", data.facebook_sharing_uri);
+					$('.postcard .thank .icon-twitter-big').attr("href", data.twitter_sharing_uri);
+
 					popupReszie();
 				}
 			});
