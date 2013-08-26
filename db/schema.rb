@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130826180026) do
-
+ActiveRecord::Schema.define(:version => 20130826192336) do
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -387,6 +386,7 @@ ActiveRecord::Schema.define(:version => 20130826180026) do
     t.string   "outside_image_uid"
     t.string   "timeline_image_uid"
     t.string   "google_maps_url"
+    t.string   "paypal_charge_token"
   end
 
   add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true
