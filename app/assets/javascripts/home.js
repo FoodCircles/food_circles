@@ -31,7 +31,7 @@
 		$.colorbox.settings.scrolling = false;
 
 		$.colorbox.settings.onOpen = function(){
-      position = $document.scrollTop();
+      position = $doc.scrollTop();
       $('#wrapper').css({top: - position});
 			$body.addClass('active-popup');
 		};
