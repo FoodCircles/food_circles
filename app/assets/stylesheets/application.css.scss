@@ -311,7 +311,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 /*=== Main CSS ===*/
 
 body.active-popup {
-	overflow: hidden;
+	overflow: scroll;
 }
 
 #wrapper { position:relative; min-height:100%; }
@@ -320,6 +320,7 @@ body.active-popup {
 	   -moz-filter:blur(2px);
 		 -o-filter:blur(2px);
 			filter:blur(2px);
+      position: fixed;
 }
 
 /*=== Header ===*/
