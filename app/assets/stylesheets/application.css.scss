@@ -1140,6 +1140,9 @@ body.active-popup {
 	        transform:translateY(20px);
 }
 
+.mini-profile h4 > a { font-size: 18px; }
+.mini-profile p { font-size: 12px; }
+
 .deal-payment { position:absolute; top:100%; left:0; right:0; z-index:3; background:#fff;
 	/*transition*/
 	-webkit-transition:top 300ms linear;
