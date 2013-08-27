@@ -75,6 +75,7 @@ class Venue < ActiveRecord::Base
               :restaurant_tile_image => (self.restaurant_tile_image ? self.restaurant_tile_image.url : ''),
               :start => (self.available? ? 'Later Tonight' : self.open_at),
               :end => self.close_at,
+              :vouchers_available => self.vouchers_available.to_i,
               :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
           }
     data[:offers] = if !options[:not_available]
