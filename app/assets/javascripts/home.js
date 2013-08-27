@@ -49,7 +49,8 @@
 		};
 		$.colorbox.settings.onCleanup = function(){
       $('#wrapper').css({top: 0})
-			$body.removeClass('active-popup').scrollTop(position);
+			$body.removeClass('active-popup');
+      $doc.scrollTop(position);
       $
 			if($('.send-text').length){
 				setTimeout(function() {
