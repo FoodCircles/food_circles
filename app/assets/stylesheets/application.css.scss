@@ -82,7 +82,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 
 .radio-holder { position:relative; overflow:hidden; }
 .radio-holder input { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); visibility: hidden; position:absolute; top:0; left:0; }
-.radio-holder label { float:left; font-size:15px; line-height:28px; background:url(radio.png) no-repeat 0 1px; padding-left:23px; cursor:pointer; }
+.radio-holder label { float:left; font-size:15px; line-height:20px; background:url(radio.png) no-repeat 0 1px; padding-left:23px; cursor:pointer; }
 .radio-holder.checked label { background-position:0 -99px; }
 
 /*=== Helpers ===*/
@@ -1071,7 +1071,7 @@ body.active-popup {
 .deal-body .description h2 { padding-bottom:7px; font-size: 30px; }
 .deal-body .description p { line-height:22px; border-bottom:1px solid #c9c9c9; padding-bottom:10px; margin-bottom:18px; font-size:15px; }
 .deal-body .description .qty { list-style:none outside none; padding:0 0 13px }
-.deal-body .description .qty li + li { margin-top:22px; }
+.deal-body .description .qty li + li { margin-top:30px; }
 
 .deal-body .pay-box { float:right; width:281px; padding:23px 15px 5px 18px; }
 .deal-body .pay-box .buy-btn { width: 250px; margin: 0 auto; }
