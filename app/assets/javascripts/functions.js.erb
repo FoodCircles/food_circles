@@ -2,7 +2,8 @@
 
 	var $doc = $(document),
 		$win = $(window),
-		$body = null;
+    $body = null,
+    position;
 
 	//document ready event
 	$doc.on('ready', function(){
@@ -20,7 +21,8 @@
 		$.colorbox.settings.scrolling = true;
 
 		$.colorbox.settings.onOpen = function(){
-			$body.addClass('active-popup');
+      $body.css({top: '-10px'});
+      $body.addClass('active-popup');
 		};
 		$.colorbox.settings.onComplete = function(){
 			refreshScripts($('#colorbox'));
@@ -41,6 +43,16 @@
 
 		//blink fields
 		$doc
+
+    <%#.bind('cbox_open', function() {%>
+      <%#position = $("body").scrollTop();%>
+      <%#alert(position);%>
+      <%#$('body').css({%>
+        <%#top: -position%>
+      <%#});%>
+    <%#}).bind('cbox_closed', function() {%>
+      <%#$("body").scrollTop(position);%>
+    <%#})%>
 
 		.on('click', function(event){
 			if($('.sign-form').css('visibility') == 'visible'){

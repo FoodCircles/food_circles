@@ -57,7 +57,7 @@
 		slideshowStop: "stop slideshow",
 		photoRegex: /\.(gif|png|jp(e|g|eg)|bmp|ico|webp)((#|\?).*)?$/i,
 
-		onOpen: false,
+		onOpen: true,
 		onLoad: false,
 		onComplete: false,
 		onCleanup: false,

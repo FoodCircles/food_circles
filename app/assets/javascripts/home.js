@@ -12,7 +12,8 @@
 
 	var $doc = $(document),
 	    $win = $(window),
-	    $body = null;
+	    $body = null,
+      position;
 
 	//document ready event
 	$doc.on('ready', function(){
@@ -30,6 +31,8 @@
 		$.colorbox.settings.scrolling = false;
 
 		$.colorbox.settings.onOpen = function(){
+      position = $body.scrollTop();
+      $('#wrapper').css({top: - position});
 			$body.addClass('active-popup');
 		};
 		$.colorbox.settings.onComplete = function(){
@@ -45,7 +48,9 @@
 			}, 100);
 		};
 		$.colorbox.settings.onCleanup = function(){
-			$body.removeClass('active-popup');
+      $('#wrapper').css({top: 0})
+			$body.removeClass('active-popup').scrollTop(position);
+      $
 			if($('.send-text').length){
 				setTimeout(function() {
 
