@@ -20,6 +20,7 @@ class Api::TimelineController < ApplicationController
           {
             :id => p.id,
             :state => p.state,
+            :code => p.code,
             :user_id => p.user_id,
             :amount => p.amount,
             :date_purchased => p.created_at,
