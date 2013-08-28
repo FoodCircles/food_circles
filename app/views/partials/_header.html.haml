@@ -70,29 +70,28 @@
               %a{href: "#"} Sign up
     #nav
       %ul
-        %li{class: "active"}
+        %li{class: current_page?(main_app.root_path) ? "active" : ''}
           = link_to "Home", main_app.root_path
-        %li
+        %li{class: current_page?(main_app.faq_path) ? "active" : ''}
           = link_to "FAQ", main_app.faq_path
-          %li
-            %a{href: "#"}
-              About Us
-          %li
-            %a{href: "#"}
-              Get Involved ▾             
-            %ul
-              %li
-                = link_to "For Restaurants", main_app.restaurants_path
-              %li
-                = link_to "For Students", main_app.students_path
-              %li
-                = link_to "For Events", main_app.organizers_path
-              %li
-                = link_to "For Companies", main_app.companies_path
-              %li
-                = link_to "For Non-Profits", main_app.nonprofits_path
-              %li
-                = link_to "Social Butterflies", main_app.socialbutterflies_path
+        %li{class: params[:id] == 'about_we' ? 'active' : ''}
+          = link_to "About We", "/faq/about_we"
+        %li
+          %a{href: "#"}
+            Get Involved ▾             
+          %ul
+            %li
+              = link_to "For Restaurants", main_app.restaurants_path
+            %li
+              = link_to "For Students", main_app.students_path
+            %li
+              = link_to "For Events", main_app.organizers_path
+            %li
+              = link_to "For Companies", main_app.companies_path
+            %li
+              = link_to "For Non-Profits", main_app.nonprofits_path
+            %li
+              = link_to "Social Butterflies", main_app.socialbutterflies_path
   / %li{:class => "#{ 'active' if controller_name == 'home' }"}
 
 .mini-header
