@@ -85,9 +85,6 @@ class Venue < ActiveRecord::Base
     else
       self.offers.not_available.order(:min_diners)
     end
-    if point = options[:include_distance_to]
-      self.distance(point.x, point.y)
-    end
 
     data
   end
