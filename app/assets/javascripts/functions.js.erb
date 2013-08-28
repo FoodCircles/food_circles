@@ -44,16 +44,6 @@
 		//blink fields
 		$doc
 
-    <%#.bind('cbox_open', function() {%>
-      <%#position = $("body").scrollTop();%>
-      <%#alert(position);%>
-      <%#$('body').css({%>
-        <%#top: -position%>
-      <%#});%>
-    <%#}).bind('cbox_closed', function() {%>
-      <%#$("body").scrollTop(position);%>
-    <%#})%>
-
 		.on('click', function(event){
 			if($('.sign-form').css('visibility') == 'visible'){
 				if($(event.target).is('.sign-form') == false && $(event.target).closest('.sign-form').length == 0){

@@ -47,7 +47,7 @@
 
       .products-tiles
         - @venues.each do |venue|
-          %div{class: "tile #{ venue.vouchers_available > 4 ? "green" : (venue.vouchers_available == 1 ? "red" : "yellow")} #{( venue.vouchers_available == 0 ? "sold-out" : "" )} #{venue.offers.first.category.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
+          %div{class: "tile #{ venue.vouchers_available > 4 ? "green" : (venue.vouchers_available == 1 ? "red" : "yellow")} #{( venue.vouchers_available == 0 ? "sold-out" : "" )} #{venue.venue_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.experience_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
             %h3= venue.name
             .thumb
               %span.social
@@ -83,9 +83,16 @@
                 / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
                 %span{class: "title"}= venue.offers.order("min_diners ASC").first.name
             .tags
-              - if not venue.offers.order("min_diners ASC").first.category.empty?
-                tags:
-                = raw venue.offers.order("min_diners ASC").first.category.collect { |cat| link_to cat.name, cat }.join(",")
+              - tags = []
+              - if not venue.experience_tags.empty?
+                - venue.experience_tags.each do |t|
+                  - tags << t.name
+              - if not venue.venue_tags.empty?
+                - venue.venue_tags.each do |t|
+                  - tags << t.name
+              - if not tags.empty?
+                tags: 
+                = raw tags.collect { |tag| link_to tag, '#', class: 'filter-tag' }.join(", ")
         %a.tile.add-new.popup-link{href: postcard_popup_path }
           %div.add-new-inner
             %strong Add a

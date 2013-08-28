@@ -51,21 +51,21 @@
       .col
         %h4 Experience
         %ul
-          - Category.where(:deal_type => Category::EXPERIENCE).each do |cat|
+          - ExperienceTag.all.each do |tag|
             %li
-              %input{type: "checkbox", name: cat.name, value: cat.name, id: cat.name}
-              %label{for: cat.name}
-                = cat.name
-                %em= "(#{cat.offer.count})"
+              %input{type: "checkbox", name: tag.name, value: tag.name, id: tag.name}
+              %label{for: tag.name}
+                = tag.name
+                -#%em= "(#{tag.offer.count})"
       .col
         %h4 Cuisine
         %ul
-          - Category.where(:deal_type => Category::CUISINE).each do |cat|
+          - VenueTag.all.each do |cat|
             %li
               %input{type: "checkbox", name: cat.name, value: cat.name, id: cat.name}
               %label{for: cat.name}
                 = cat.name
-                %em= "(#{cat.offer.count})"
+                -#%em= "(#{cat.offer.count})"
       .dropdown-foot
         %a{href: "#", class: "clear-all"} Clear All
         %a{href: "#", class: "cancel"} Cancel

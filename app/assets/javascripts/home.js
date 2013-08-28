@@ -406,6 +406,11 @@
 			Tiles.filter();
 		});
 
+    $('.filter-tag').on('click', function(event){
+      event.preventDefault();
+      $('.products-tiles').isotope({filter:'.' + $(this).text().toLowerCase().replace(/[^\w-]+/g,' ').trim().replace(/ /g,'-') + ', .add-new'});
+    });
+
 		$('.filter .cancel').on('click', function(event){
 			event.preventDefault();
 			$(this).closest('.filter').removeClass('expanded');
@@ -743,7 +748,7 @@
 
 			if($filters.find('input:checked').length){
 				$filters.find('input:checked').each(function(){
-					aFilter.push('.' + $(this).val().toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
+					aFilter.push('.' + $(this).val().toLowerCase().replace(/[^\w-]+/g,' ').trim().replace(/ /g,'-'));
 				});
 				selector = aFilter.join(', ') + ', .add-new';
 			}else{

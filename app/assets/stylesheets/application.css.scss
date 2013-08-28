@@ -1,5 +1,7 @@
 * { margin:0; padding:0; outline:0; }
 
+.clear { clear: both; }
+
 body, html { height:100%; }
 
 body {
@@ -586,7 +588,7 @@ body.active-popup {
 .donation-progress .text strong span { color:#fff; }
 
 /*=== Main ===*/
-#main, #home { padding-bottom:210px; }
+/*#main, #home { padding-bottom:210px; }*/
 #main { padding-top:50px; padding-bottom:270px; }
 
 /*=== Products  ===*/
@@ -849,7 +851,7 @@ body.active-popup {
 
 
 /*=== Footer ===*/
-#footer { position:absolute; bottom:0; left:0; right:0; z-index:3; height:210px; }
+#footer { position:relative; bottom:0; left:0; right:0; z-index:3; height:210px; }
 .footer-nav { list-style:none outside none; text-align:center; position:relative; color:#333; text-transform:uppercase; padding:35px 0; font-size:0; line-height:0;
 	background:#f3f0ea;
 	background:-moz-linear-gradient(left,  #f0e9de 0%, #f0e9de 4%, #f3f0ea 10%, #f3f0ea 90%, #f0e9de 96%, #f0e9de 100%);
