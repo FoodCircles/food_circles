@@ -30,6 +30,8 @@
         / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
         
         = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{class:"sign-form", id: "sign-up-form"}) do |f|
+          %i.arrow-up
+            %i.arrow-up
           .row
             %a{href: "/users/auth/facebook", class: "btn-facebook"}
               Sign up
@@ -50,6 +52,8 @@
               %a{href: "#"} Sign in
 
         = form_for(resource, :as => resource_name, :url => user_session_path, html:{class:"sign-form", id: "sign-in-form"}) do |f|
+          %i.arrow-up
+            %i.arrow-up
           .row
             %a{href: "/users/auth/facebook", class: "btn-facebook"}
               Sign up
