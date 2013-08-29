@@ -15,7 +15,7 @@ class Api::SessionsController < ApplicationController
   def sign_up
     if params[:user_email] && params[:user_password]
       password_email_sign_up
-    elsif params[:user_email] && params[:id]
+    elsif params[:user_email] && params[:uid]
       social_sign_up
     else
       render :json => {:error => true, :description => "No params provided"}, status: 401 and return
