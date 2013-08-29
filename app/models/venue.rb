@@ -7,7 +7,11 @@ class Venue < ActiveRecord::Base
   belongs_to :time_zone
   belongs_to :user
   has_many :offers, :dependent => :destroy
+
+  # DEPRECATED, SOON TO BE DELETED
   has_many :open_times, :as => :openable, :dependent => :destroy
+
+
   has_many :venue_taggables, :dependent => :destroy
   has_many :venue_tags, :through => :venue_taggables
   has_many :reviews
@@ -71,7 +75,7 @@ class Venue < ActiveRecord::Base
               :zip => self.zip,
               :rating => self.rating,
               :tags => self.venue_tags,
-              :open_times => self.open_times,
+              :open_times => self.times || "Not Available",
               :reviews => self.reviews.first(3),
               :main_image => (self.main_image ? self.main_image.url : ''),
               :timeline_image => (self.timeline_image ? self.timeline_image.url : ''),
