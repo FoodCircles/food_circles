@@ -5,8 +5,6 @@ class Api::SessionsController < ApplicationController
   def sign_in
     if params[:user_email] && params[:user_password]
       password_email_sign_in
-    elsif params[:user_email] && params[:uid]
-      social_sign_up
     elsif params[:uid]
       social_sign_in
     else
@@ -15,19 +13,12 @@ class Api::SessionsController < ApplicationController
   end
 
   def sign_up
-    begin
-      @user = User.new(email: params[:user_email], password: params[:user_password])
-      if @user.save
-        render :json => {:error => false, :description => "User saved.", :auth_token => @user.authentication_token}
-      else
-        if !@user.errors.messages.empty?
-          render :json => {:error => true, :description => "Error saving user.", :errors => @user.errors.messages}, status: 500 and return
-        else
-          render :json => {:error => true, :description => "Error saving user."}, status: 500 and return
-        end
-      end
-    rescue Exception => e
-      render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return
+    if params[:user_email] && params[:user_password]
+      password_email_sign_up
+    elsif params[:user_email] && params[:id]
+      social_sign_up
+    else
+      render :json => {:error => true, :description => "No params provided"}, status: 401 and return
     end
   end
 
@@ -49,6 +40,23 @@ class Api::SessionsController < ApplicationController
   end
 
   private
+  def password_email_sign_up
+    begin
+      @user = User.new(email: params[:user_email], password: params[:user_password])
+      if @user.save
+        render :json => {:error => false, :description => "User saved.", :auth_token => @user.authentication_token}
+      else
+        if !@user.errors.messages.empty?
+          render :json => {:error => true, :description => "Error saving user.", :errors => @user.errors.messages}, status: 500 and return
+        else
+          render :json => {:error => true, :description => "Error saving user."}, status: 500 and return
+        end
+      end
+    rescue Exception => e
+      render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return
+    end
+  end
+
   def password_email_sign_in
     begin
       @user = User.find_by_email(params[:user_email])
