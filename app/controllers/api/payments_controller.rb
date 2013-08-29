@@ -8,6 +8,10 @@ class Api::PaymentsController < ApplicationController
 
     @payment = Payment.new(create_params)
     if @payment.save
+      venue = @payment.offer.venue
+      venue.vouchers_available -= 1
+      venue.save
+
       render :json => {:error => false, :content => @payment.as_json }
     else
       render :json => {:error => true, :description => "Error saving the payment", :errors => @payment.errors.full_messages}
