@@ -30,6 +30,8 @@
         / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
         
         = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{class:"sign-form", id: "sign-up-form"}) do |f|
+          %i.arrow-up
+            %i.arrow-up
           .row
             %a{href: "/users/auth/facebook", class: "btn-facebook"}
               Sign up
@@ -50,6 +52,8 @@
               %a{href: "#"} Sign in
 
         = form_for(resource, :as => resource_name, :url => user_session_path, html:{class:"sign-form", id: "sign-in-form"}) do |f|
+          %i.arrow-up
+            %i.arrow-up
           .row
             %a{href: "/users/auth/facebook", class: "btn-facebook"}
               Sign up
@@ -93,53 +97,53 @@
             %li
               = link_to "Social Butterflies", main_app.socialbutterflies_path
   / %li{:class => "#{ 'active' if controller_name == 'home' }"}
-
-.mini-header
-  .mh-main
-    .container
-      %a{class: "logo", href: root_path}
-      .donation-count
-        %strong= total_payments
-        meals donated to date
-      .account
-        %a{href: "#"}
-          My Account 
-          %i{class: "arrow-right white"}
-      %ul{class: "nav"}
-        %li
-          = link_to "Home", root_path
-        %li
-          = link_to "FAQ", faq_path
-        %li
-          = link_to "About Us", root_path
-        %li
+- if controller_name == "home" && action_name = "index"
+  .mini-header
+    .mh-main
+      .container
+        %a{class: "logo", href: root_path}
+        .donation-count
+          %strong= total_payments
+          meals donated to date
+        .account
           %a{href: "#"}
-            Get Involved
-            %i{class: "arrow-down white"}
-          %ul
-            %li
-              = link_to "For Restaurants", main_app.restaurants_path
-            %li
-              = link_to "For Students", main_app.students_path
-            %li
-              = link_to "For Events", main_app.organizers_path
-            %li
-              = link_to "For Companies", main_app.companies_path
-            %li
-              = link_to "For Non-Profits", main_app.nonprofits_path
-            %li
-              = link_to "Social Butterflies", main_app.socialbutterflies_path 
+            My Account
+            %i{class: "arrow-right white"}
+        %ul{class: "nav"}
+          %li
+            = link_to "Home", root_path
+          %li
+            = link_to "FAQ", faq_path
+          %li
+            = link_to "About Us", root_path
+          %li
+            %a{href: "#"}
+              Get Involved
+              %i{class: "arrow-down white"}
+            %ul
+              %li
+                = link_to "For Restaurants", main_app.restaurants_path
+              %li
+                = link_to "For Students", main_app.students_path
+              %li
+                = link_to "For Events", main_app.organizers_path
+              %li
+                = link_to "For Companies", main_app.companies_path
+              %li
+                = link_to "For Non-Profits", main_app.nonprofits_path
+              %li
+                = link_to "Social Butterflies", main_app.socialbutterflies_path
 
-  .mh-sub
-    .container
-      .current-goal
-        .current
-          %strong= total_week_payments.count
-          %small meals
-        .progress
-          %span.goal this week's goal
-          %span.total= "#{weekly_meal_goal} meals"
-          %em.bar{style: "width: #{percent}%"}
-      %p.getapp 
-        Arm yourself for the streets.
-        %a.popup-link{href: app_popup_path} Get the App
+    .mh-sub
+      .container
+        .current-goal
+          .current
+            %strong= total_week_payments.count
+            %small meals
+          .progress
+            %span.goal this week's goal
+            %span.total= "#{weekly_meal_goal} meals"
+            %em.bar{style: "width: #{percent}%"}
+        %p.getapp
+          Arm yourself for the streets.
+          %a.popup-link{href: app_popup_path} Get the App

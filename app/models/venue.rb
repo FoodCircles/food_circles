@@ -85,6 +85,7 @@ class Venue < ActiveRecord::Base
     else
       self.offers.not_available.order(:min_diners)
     end
+
     data
   end
 
