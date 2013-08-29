@@ -1037,7 +1037,7 @@ body.active-popup {
 
 
 /*=== Deal Popup ===*/
-.deal-popup { width:670px; border-radius:0 0 12px 12px; }
+.deal-popup { border-radius:0 0 12px 12px; }
 
 .deal { position:relative; overflow:hidden; height:100%; -webkit-transform: translate3d(0, 0, 0); 
 	/*transition*/
@@ -1052,11 +1052,11 @@ body.active-popup {
 .deal-banner:after { content:''; position:absolute; top:0; left:0; z-index:2; width:100%; height:100%; box-shadow:inset 0 -1px 3px rgba(0,0,0,0.4); }
 .deal-banner img { display:block; position:relative; z-index:1; }
 .deal-banner h2 { position:absolute; top:13px; left:26px; color:#fff; text-transform:uppercase; z-index:3; font-size: 36px; width: 510px;}
-.deal-banner .price { position:absolute; top:13px; right:42px; z-index:3; color:#fff; text-shadow:0 0 24px rgba(0,0,0,0.65); }
+.deal-banner .price { position:absolute; top:13px; right:25px; z-index:3; color:#fff; text-shadow:0 0 24px rgba(0,0,0,0.65); }
 .deal-banner .price strong { float:left; font:bold 36px/1 'museo-slab', sans-serif; }
 .deal-banner .price small { float:left; font:24px/1 'pragmatica-web', sans-serif; position:relative; margin:7px 0 0 7px; }
 .deal-banner .price small .strike { position:absolute; bottom:0; left:50%; margin-left:-21px; }
-.deal-banner .count { position:absolute; bottom:20px; right:15px; z-index:3; width:60px; text-align:center; font:bold 36px/1 'pragmatica-web', sans-serif; color:#fff; text-transform:uppercase; text-shadow:0 0 16px rgba(0,0,0,0.5); }
+.deal-banner .count { position:absolute; bottom:20px; right:25px; z-index:3; text-align:center; font:bold 36px/1 'pragmatica-web', sans-serif; color:#fff; text-transform:uppercase; text-shadow:0 0 16px rgba(0,0,0,0.5); }
 .deal-banner .count small { display:block; font-size:12px; }
 
 .deal-body { *zoom:1;
@@ -1069,14 +1069,14 @@ body.active-popup {
 }
 .deal-body:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 
-.deal-body .description { float:left; width:315px; padding:6px 10px 10px 30px; border-right:1px solid #c9c9c9; }
+.deal-body .description { float:left; width:286px; padding:6px 10px 10px 30px; border-right:1px solid #c9c9c9; }
 .deal-body .description h2 { padding-bottom:7px; font-size: 30px; }
 .deal-body .description p { line-height:22px; border-bottom:1px solid #c9c9c9; padding-bottom:10px; margin-bottom:18px; font-size:15px; }
 .deal-body .description .qty { list-style:none outside none; padding:0 0 13px }
 .deal-body .description .qty li + li { margin-top:30px; }
 
-.deal-body .pay-box { float:right; width:281px; padding:23px 15px 5px 18px; }
-.deal-body .pay-box .buy-btn { width: 250px; margin: 0 auto; }
+.deal-body .pay-box { float:right; width:240px; padding:23px 15px 5px 18px; }
+.deal-body .pay-box .buy-btn { width: 240px; margin: 0 auto; }
 
 .pay-box h3 { text-align:center; padding-bottom:5px; font-size:24px; }
 .pay-box .field-holder { display:block; position:relative; width:110px; margin:0 auto; background:#fff; text-align:center; margin-bottom:5px; }
