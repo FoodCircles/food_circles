@@ -84,7 +84,8 @@ class Venue < ActiveRecord::Base
               :start => (self.available? ? 'Later Tonight' : self.open_at),
               :end => self.close_at,
               :vouchers_available => self.vouchers_available.to_i,
-              :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
+              :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : ''),
+              :social_links => self.social_links
           }
     data[:offers] = if !options[:not_available]
       self.offers.currently_available.order(:min_diners)
