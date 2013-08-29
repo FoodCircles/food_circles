@@ -1,4 +1,6 @@
 class Offer < ActiveRecord::Base
+  include AlwaysOpen
+
   belongs_to :venue
   
   has_many :open_times, :as => :openable, :dependent => :destroy
@@ -13,6 +15,9 @@ class Offer < ActiveRecord::Base
     timeline: '205x155#',
     medium: '300x300>'
   }
+
+  after_create :ensure_always_open
+
 
   def as_json(options={})
     { :id => self.id,

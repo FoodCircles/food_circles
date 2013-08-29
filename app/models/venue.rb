@@ -1,6 +1,7 @@
 class Venue < ActiveRecord::Base
   extend FriendlyId
   include Validators
+  include AlwaysOpen
 
   belongs_to :state
   belongs_to :time_zone
@@ -40,6 +41,7 @@ class Venue < ActiveRecord::Base
 
 
   after_save :notify_watching_users_about_new_vouchers, :if => :has_new_vouchers?
+  after_create :ensure_always_open
 
   def has_new_vouchers?
     vouchers_available_changed? &&
