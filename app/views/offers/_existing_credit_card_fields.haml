@@ -1,0 +1,16 @@
+.cards
+  %span{:class => credit_card_class_map}
+%h5
+  Payment Details
+  %span.line
+.card-number
+  %label Card number
+  %span.field-holder
+    %input#card-number.field.standart{:type => "text", :disabled => true, :value => "**** **** **** #{current_user_credit_card_data.last4}"}/
+    %i.suffix.icon-lock
+/ /.card-number
+.valid-thru
+  %label EXPIRY DATE
+  %input#exp-month.field.standart.thin{:type => "text", :disabled => true, :value => current_user_credit_card_data.exp_month}/
+  %input#exp-year.field.standart.thin{:type => "text", :disabled => true, :value => current_user_credit_card_data.exp_year.to_s.last(2)}/
+/ /.valid-thru

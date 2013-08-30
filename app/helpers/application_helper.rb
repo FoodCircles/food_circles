@@ -47,5 +47,12 @@ module ApplicationHelper
       @devise_mapping ||= Devise.mappings[:user]
     end
 
+  def credit_card_class_map
+    {
+      "American Express" => "amex",
+      "MasterCard" => "mastercard",
+      "Visa" => "visa"
+    }[current_user_credit_card_data.type] || "generic"
+  end
 end
 

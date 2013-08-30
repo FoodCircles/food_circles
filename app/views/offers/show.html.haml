@@ -152,29 +152,10 @@
         .body
           %fieldset.new-card
             .cards-head
-              .cards
-                %span.amex
-                %span.visa
-                %span.mastercard
-                %span.generic
-              %h5
-                Payment Details
-                %span.line
-            .card-number
-              %label Card number
-              %span.field-holder
-                %input#card-number.field.standart{:placeholder => "4242 4242 4242 4242", :type => "text"}/
-                %i.suffix.icon-lock
-            / /.card-number
-            .cv-code
-              %label CV Code
-              %input#cvc.field.standart.thin{:placeholder => "123", :type => "text"}/
-            / /.cv-code
-            .valid-thru
-              %label EXPIRY DATE
-              %input#exp-month.field.standart.thin{:placeholder => "02", :type => "text"}/
-              %input#exp-year.field.standart.thin{:placeholder => "15", :type => "text"}/
-            / /.valid-thru
+              - if stripe_customer?
+                = render :partial => "offers/existing_credit_card_fields"
+              - else
+                = render :partial => "offers/new_credit_card_fields"
           %fieldset
             %h5
               Give To
@@ -194,7 +175,7 @@
               / /.radio-holder
             / /.choose-organization
           .foot
-            %a#dealbuy.btn-standart.full-width.light-shadow.large-font{:href => "#"} Buy
+            %a#dealbuy.btn-standart.full-width.light-shadow.large-font{:href => "#", "data-submit-to-stripe" => "#{!stripe_customer?}"} Buy
             %p.secured
               %i.icon-secure
               SECURE – PAYMENTS PROCESSED BY STRIPE
