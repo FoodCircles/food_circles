@@ -9,4 +9,12 @@ module HomeHelper
   rescue Timeout::Error => e
     false
   end
+
+  def venue_tag_count(tag)
+    Offer.all(:include => { venue: :venue_tags}, conditions: { venue_tags: { name: tag.name}}).count
+  end
+
+  def experience_tag_count(tag)
+    Offer.all(:include => { venue: :experience_tags}, conditions: { experience_tags: { name: tag.name}}).count
+  end
 end
