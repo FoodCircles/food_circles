@@ -583,7 +583,7 @@ body.active-popup {
 }
 
 .donation-progress .text-pusher{ position:relative; min-width:5%; max-width: 89%; display: inline-block; }
-.donation-progress .text { display: inline-block; position:relative; top: -40px; right:55px; max-width:10%; font:10px 'pragmatica-web', sans-serif; color:#acacac; text-transform:uppercase; padding-bottom:7px; text-align:center; text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black;}
+.donation-progress .text { display: inline-block; position:relative; top: -40px; right:55px; max-width:10%; font:10px 'pragmatica-web', sans-serif; color:#acacac; text-transform:uppercase; padding-bottom:7px; text-align:center; text-shadow: 0 0 16px rgba(0, 0, 0, 0.5);}
 .donation-progress .text strong { text-transform:none; font-weight:normal; font-size:14px; }
 .donation-progress .text strong span { color:#fff; }
 
@@ -1051,7 +1051,7 @@ body.active-popup {
 .deal-banner { position:relative; height: 280px; }
 .deal-banner:after { content:''; position:absolute; top:0; left:0; z-index:2; width:100%; height:100%; box-shadow:inset 0 -1px 3px rgba(0,0,0,0.4); }
 .deal-banner img { display:block; position:relative; z-index:1; width: 100%; }
-.deal-banner h2 { position:absolute; top:13px; left:26px; color:#fff; text-transform:uppercase; z-index:3; font-size: 20px; width: 510px;}
+.deal-banner h2 { position:absolute; top:13px; left:26px; color:#fff; text-transform:uppercase; z-index:3; font-size: 20px; width: 510px; text-shadow: 0 0 16px rgba(0, 0, 0, 0.5);}
 .deal-banner .price { position:absolute; top:13px; right:25px; z-index:3; color:#fff; text-shadow:0 0 24px rgba(0,0,0,0.65); }
 .deal-banner .price strong { float:left; font:bold 36px/1 'museo-slab', sans-serif; }
 .deal-banner .price small { float:left; font:24px/1 'pragmatica-web', sans-serif; position:relative; margin:7px 0 0 7px; }
@@ -1165,7 +1165,7 @@ body.active-popup {
 .deal-payment .head .profile { font:18px 'pragmatica-web', sans-serif; }
 .deal-payment .head .profile em { color:#a7a299; display:block; font-size:15px; padding-top:3px; }
 .deal-payment .head .profile em a { font-weight:bold; }
-.deal-payment .body { padding:20px 185px 9px;
+.deal-payment .body { padding:20px 155px 9px;
 	background:#fff;
 	background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#fafafa)); 
 	background:-webkit-linear-gradient(#fff, #fafafa); 
@@ -1198,7 +1198,7 @@ body.active-popup {
 .deal-payment .foot .secured { font:bold 12px 'pragmatica-web', sans-serif; color:#626262; text-transform:uppercase; text-align:center; padding-top:19px; }
 
 .not-logged .deal-payment .head { padding-top:23px; padding-bottom:12px; }
-.not-logged .deal-payment .head .profile { padding:0 188px; }
+.not-logged .deal-payment .head .profile { padding:0 158px; }
 .not-logged .deal-payment .head .profile .row { height:40px; }
 .not-logged .deal-payment .head .profile .row ~ .row { padding-top:6px; }
 .not-logged .deal-payment .head .profile .row .field { float:right; margin-top:1px; }
@@ -1215,7 +1215,7 @@ body.active-popup {
 .deal-payment .body .new-card .cv-code .field { padding-left:6px; padding-right:6px; width:41px; }
 
 .cards-head { position:relative; }
-.cards-head .cards { position:absolute; top:0; right:0; z-index:4; display:none; background:#fff; }
+.cards-head .cards { position:absolute; top:0; right:0; z-index:4; display:block; background:#fff; }
 .cards-head .cards:after { content:''; position:absolute; right:100%; top:0; height:100%; width:20px;
 	background-image:-webkit-gradient(linear, 100% 0, 0 0, from(#fff), to(rgba(255,255,255,0))); 
 	background-image:-webkit-linear-gradient(right, #fff, rgba(255,255,255,0)); 
