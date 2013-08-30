@@ -1,0 +1,223 @@
+.popup.deal-popup
+  .deal
+    = form_tag("/stripe_payments", :method => "post", :id => "dealform") do
+      %input{:name => "stripe_token", :type => "hidden"}/
+      .deal-main
+        .deal-banner
+          = image_tag @offer.venue.main_image.thumb("670x313").url
+          %h2= @offer.venue.name
+          %span.price
+            %strong= number_to_currency(@min_offer.price, :precision => 0)
+            %small
+              = number_to_currency(@min_offer.original_price, :precision => 0)
+              %i.icon-strike-big.strike
+          %span.count
+            = @min_offer.venue.vouchers_available
+            %small left
+        / /.deal-banner
+        .deal-body
+          .description
+            %h2= @min_offer.name
+            - unless @min_offer.details.nil?
+              %p= @min_offer.details.html_safe
+            %ul.qty
+              - @offer.venue.offers.order("min_diners ASC").each_with_index do |offer, i|
+                %li.radio-holder
+                  - if i == 0
+                    %label{:for => "qty-1"}= offer.name
+                  - else
+                    %label{:for => "qty-1"}
+                      = offer.name
+                      = min_deals(offer.min_diners)
+                  - if i == 0
+                    %input#qty-1.custom-input{:checked => "checked", "data-details" => offer.details, "data-name" => offer.name, "data-originalprice" => prettify_float(offer.original_price), "data-price" => prettify_float(offer.price), :name => "offer_id", :type => "radio", :value => offer.id}/
+                  - else
+                    %input#qty-1.custom-input{"data-details" => offer.details, "data-name" => offer.name, "data-originalprice" => prettify_float(offer.original_price), "data-price" => prettify_float(offer.price), :name => "offer_id", :type => "radio", :value => offer.id}/
+            / /.qty
+          / /.description
+          .pay-box
+            %h3 pay what you want
+            %span.field-holder
+              %span.prefix $
+              %input.field{:name => "amount", :type => "text", :value => "1"}/
+            .slider-holder
+              %span.min $1
+              %span.max $18
+              %span.mid $9
+              .slider-wrap
+                %span.bg-holder
+                .slider
+                / /.slider
+              / /.slider-wrap
+            / /.slider-holder
+            .donation-info
+              slide to give more
+              %br/
+              %strong 1
+              meal donated
+            / /.donation-info
+            %a.btn-large.full-width.light-shadow.buy-btn{:href => "#"} I want this!
+            .help
+              .balloon
+                %h6 How to redeem
+                %ul
+                  %li
+                    %strong 1
+                    Purchase Online
+                  %li
+                    %strong 2
+                    Print or show receipt to server
+                  %li
+                    %strong 3
+                    Enjoy with regular food purchase
+                %i.arrow-down
+                  %i.arrow-down
+                %a.balloon-close{:href => "#"} Close
+              / /.balloon
+              %a{:href => "#"} How to redeem
+            / /.help
+          / /.pay-box
+        / /.deal-body
+      / /.deal-main
+      .deal-payment
+        .head
+          %a.back{:href => "#"} &lt; back to restaurant profile
+          .profile
+            - if user_signed_in?
+              .row
+                = current_user.name
+            - else
+              -#= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{class:"sign-form", id: "sign-up-form"}) do |f|
+                -#%i.arrow-up
+                  -#%i.arrow-up
+                -#.row
+                  -#%a{href: "/users/auth/facebook", class: "btn-facebook"}
+                    -#Sign up
+                    -#%i{class: "icon-btn-facebook"}
+                  -#= f.email_field :email, class: 'field medium', placeholder: "New email", tabindex: '1'
+                -#.row
+                  -#%a{href: "/users/auth/twitter", class: "btn-twitter"}
+                    -#Sign up
+                    -#%i{class: "icon-btn-twitter"}
+                  -#= f.password_field :password, class: 'field medium', placeholder: "New password", tabindex: '2'
+                -#.form-foot
+                  -#%span{class: "btn-small submit"}
+                    -#Sign Up
+                    -#= f.submit 'Sign Up', tabindex: '3'
+
+                  -#%p{class: "form-caption"}
+                    -#Have an account?
+                    -#%a{href: "#"} Sign in
+
+              -#= form_for(resource, :as => resource_name, :url => user_session_path, html:{class:"sign-form", id: "sign-in-form"}) do |f|
+                -#%i.arrow-up
+                  -#%i.arrow-up
+                -#.row
+                  -#%a{href: "/users/auth/facebook", class: "btn-facebook"}
+                    -#Sign In
+                    -#%i{class: "icon-btn-facebook"}
+                  -#= f.email_field :email, class: 'field medium', placeholder: "Your email", tabindex: '1'
+                -#.row
+                  -#%a{href: "/users/auth/twitter", class: "btn-twitter"}
+                    -#Sign In
+                    -#%i{class: "icon-btn-twitter"}
+                  -#= f.password_field :password, class: 'field medium', placeholder: "Your password", tabindex: '2'
+                -#.form-foot
+                  -#%span{class: "btn-small submit"}
+                    -#Sign in
+                    -#= f.submit 'Sign In', tabindex: '3'
+
+
+
+
+              .row
+                %a.btn-facebook.mid{:href => "#"}
+                  Sign up
+                  %i.icon-btn-facebook.medium
+                %input.field.standart{:name => "user_email", :placeholder => "new email address", :type => "text"}/
+              / /.row
+              .row
+                %a.btn-twitter.mid{:href => "#"}
+                  Sign up
+                  %i.icon-btn-twitter.medium
+                %input.field.standart{:name => "user_password", :placeholder => "new password", :type => "password"}/
+              / /.row
+              %em
+                Have an account?
+                %a{:href => "#"} Sign in
+              %span.btn-small.submit
+                Sign Up
+          / /.profile
+        / /.head
+        .body
+          %fieldset.new-card
+            .cards-head
+              .cards
+                %span.amex
+                %span.visa
+                %span.mastercard
+                %span.generic
+              %h5
+                Payment Details
+                %span.line
+            .card-number
+              %label Card number
+              %span.field-holder
+                %input#card-number.field.standart{:placeholder => "4242 4242 4242 4242", :type => "text"}/
+                %i.suffix.icon-lock
+            / /.card-number
+            .cv-code
+              %label CV Code
+              %input#cvc.field.standart.thin{:placeholder => "123", :type => "text"}/
+            / /.cv-code
+            .valid-thru
+              %label EXPIRY DATE
+              %input#exp-month.field.standart.thin{:placeholder => "02", :type => "text"}/
+              %input#exp-year.field.standart.thin{:placeholder => "15", :type => "text"}/
+            / /.valid-thru
+          %fieldset
+            %h5
+              Give To
+              %span.line
+            .choose-organization
+              .radio-holder.checked
+                %label{:for => "kids-food"}
+                  %a{:href => "#"} Kids Food Basket
+                  (Grand Rapids, MI)
+                %input#kids-food.custom-input{:name => "organization", :type => "radio", :value => ""}/
+              / /.radio-holder
+              .radio-holder
+                %label{:for => "world-vision"}
+                  %a{:href => "#"} World Vision
+                  (Somalia, Africa)
+                %input#world-vision.custom-input{:name => "organization", :type => "radio", :value => ""}/
+              / /.radio-holder
+            / /.choose-organization
+          .foot
+            %a#dealbuy.btn-standart.full-width.light-shadow.large-font{:href => "#"} Buy
+            %p.secured
+              %i.icon-secure
+              SECURE – PAYMENTS PROCESSED BY STRIPE
+            / /.secured
+          / /.foot
+        / /.body
+      / /.deal-payment
+  / /.deal
+  .mini-profile
+    %i.arrow-down
+      %i.arrow-down
+    = image_tag @offer.venue.outside_image.thumb("130x135").url, :class => 'thumb' if @offer.venue.outside_image
+    %h4
+      %small= @offer.venue.phone
+      = link_to @offer.venue.name, @offer.venue.web, :target => "_blank"
+    %p= @offer.venue.description
+    .foot
+      = link_to "Get directions", google_maps_search(@offer.venue), :class => "right", :target => "_blank"
+      - if @offer.venue.social_links.any?
+        .social
+          - @offer.venue.social_links.each do |social_link|
+            = link_to '', social_link.url, :class => "icon-#{social_link.source}-med", :target => "_blank"
+        / /.social
+    / /.foot
+  / /.mini-profile
+/ /.popup
