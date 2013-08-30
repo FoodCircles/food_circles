@@ -17,16 +17,15 @@
     <a href="#" class="icon-x close"></a>
   </div><!-- /.balloon -->
 </div><!-- /.user-invites -->
-
+<%-if @payments.empty? %>
+  <div class="no-activity-message">
+    <p>I see you haven’t used FoodCircles yet.<br> Let’s get started on our journey to end hunger.</p>
+    <a href="#">View Restaurants</a>
+  </div><!-- /.no-activity-message -->
+<%- end %>
 <div class="timeline">
   <%-if @payments.empty? %>
   <div class="tab-cnt active" id="timeline">
-
-    <div class="no-activity-message">
-      <p>I see you haven’t used FoodCircles yet.<br> Let’s get started on our journey to end hunger.</p>
-      <a href="#">View Restaurants</a>
-    </div><!-- /.no-activity-message -->
-    <div class="timeline">
       <div class="block left">
         <div class="cnt">
           <div class="head">
@@ -115,7 +114,7 @@
         <i class="circle"></i>
       </div><!-- /.block right -->
       <span class="line"></span>
-    </div><!-- /.timeline -->
+
   <%-else%>
     <%- @payments.each_with_index do |payment, index| %>
       <div class="block <%= index % 2 == 0 ? 'left' : 'right' %>">
