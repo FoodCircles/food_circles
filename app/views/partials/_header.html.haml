@@ -36,16 +36,16 @@
             %a{href: "/users/auth/facebook", class: "btn-facebook"}
               Sign up
               %i{class: "icon-btn-facebook"}
-            = f.email_field :email, class: 'field medium', placeholder: "New email"
+            = f.email_field :email, class: 'field medium', placeholder: "New email", tabindex: '1'
           .row
             %a{href: "/users/auth/twitter", class: "btn-twitter"}
               Sign up
               %i{class: "icon-btn-twitter"}
-            = f.password_field :password, class: 'field medium', placeholder: "New password"
+            = f.password_field :password, class: 'field medium', placeholder: "New password", tabindex: '2'
           .form-foot
             %span{class: "btn-small submit"}
-              Sign up
-              = f.submit
+              Sign Up
+              = f.submit 'Sign Up', tabindex: '3'
 
             %p{class: "form-caption"}
               Have an account?
@@ -56,18 +56,18 @@
             %i.arrow-up
           .row
             %a{href: "/users/auth/facebook", class: "btn-facebook"}
-              Sign up
+              Sign In
               %i{class: "icon-btn-facebook"}
-            = f.email_field :email, class: 'field medium', placeholder: "Your email"
+            = f.email_field :email, class: 'field medium', placeholder: "Your email", tabindex: '1'
           .row
             %a{href: "/users/auth/twitter", class: "btn-twitter"}
-              Sign up
+              Sign In
               %i{class: "icon-btn-twitter"}
-            = f.password_field :password, class: 'field medium', placeholder: "Your password"
+            = f.password_field :password, class: 'field medium', placeholder: "Your password", tabindex: '2'
           .form-foot
             %span{class: "btn-small submit"}
               Sign in
-              = f.submit
+              = f.submit 'Sign In', tabindex: '3'
 
             %p{class: "form-caption"}
               Need an account?
