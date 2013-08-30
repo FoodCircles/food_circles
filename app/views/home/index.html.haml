@@ -86,13 +86,13 @@
               - tags = []
               - if not venue.experience_tags.empty?
                 - venue.experience_tags.each do |t|
-                  - tags << t.name
+                  - tags << {name: t.name, type: 'experience_tag'}
               - if not venue.venue_tags.empty?
                 - venue.venue_tags.each do |t|
-                  - tags << t.name
+                  - tags << {name: t.name, type: 'venue_tag'}
               - if not tags.empty?
                 tags: 
-                = raw tags.collect { |tag| link_to tag, '#', class: 'filter-tag' }.join(", ")
+                = raw tags.collect { |tag| link_to tag[:name], '#', class: 'filter-tag', data: { type: tag[:type] }}.join(", ")
         %a.tile.add-new.popup-link{href: postcard_popup_path }
           %div.add-new-inner
             %strong Add a

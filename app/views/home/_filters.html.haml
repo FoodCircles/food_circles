@@ -48,7 +48,7 @@
         %a{href: "#"}
           All Results
           %i{class: "arrow-right"}
-      .col
+      .col.experience_tag
         %h4 Experience
         %ul
           - ExperienceTag.all.each do |tag|
@@ -57,7 +57,7 @@
               %label{for: tag.name}
                 = tag.name
                 %em= "(#{experience_tag_count(tag)})"
-      .col
+      .col.venue_tag
         %h4 Cuisine
         %ul
           - VenueTag.all.each do |cat|

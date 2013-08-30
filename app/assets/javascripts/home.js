@@ -408,6 +408,10 @@
 
     $('.filter-tag').on('click', function(event){
       event.preventDefault();
+
+      var $filt = $('.filters .category');
+      $filt.find('input:checked').prop('checked', false);
+      $filt.find('.' + $(this).attr('data-type') + ' #' + $(this).text()).prop('checked', true).trigger('change');
       $('.products-tiles').isotope({filter:'.' + $(this).text().toLowerCase().replace(/[^\w-]+/g,' ').trim().replace(/ /g,'-') + ', .add-new'});
     });
 
