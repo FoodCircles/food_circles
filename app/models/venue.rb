@@ -1,12 +1,17 @@
 class Venue < ActiveRecord::Base
   extend FriendlyId
   include Validators
+  include AlwaysOpen
 
   belongs_to :state
   belongs_to :time_zone
   belongs_to :user
   has_many :offers, :dependent => :destroy
+
+  # DEPRECATED, SOON TO BE DELETED
   has_many :open_times, :as => :openable, :dependent => :destroy
+
+
   has_many :venue_taggables, :dependent => :destroy
   has_many :venue_tags, :through => :venue_taggables
   has_many :reviews
@@ -40,6 +45,7 @@ class Venue < ActiveRecord::Base
 
 
   after_save :notify_watching_users_about_new_vouchers, :if => :has_new_vouchers?
+  after_create :ensure_always_open
 
   def has_new_vouchers?
     vouchers_available_changed? &&
@@ -69,7 +75,7 @@ class Venue < ActiveRecord::Base
               :zip => self.zip,
               :rating => self.rating,
               :tags => self.venue_tags,
-              :open_times => self.open_times,
+              :open_times => self.times || "Not Available",
               :reviews => self.reviews.first(3),
               :main_image => (self.main_image ? self.main_image.url : ''),
               :timeline_image => (self.timeline_image ? self.timeline_image.url : ''),
@@ -78,7 +84,8 @@ class Venue < ActiveRecord::Base
               :start => (self.available? ? 'Later Tonight' : self.open_at),
               :end => self.close_at,
               :vouchers_available => self.vouchers_available.to_i,
-              :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : '')
+              :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : ''),
+              :social_links => self.social_links
           }
     data[:offers] = if !options[:not_available]
       self.offers.currently_available.order(:min_diners)

@@ -1,4 +1,6 @@
 class OpenTime < ActiveRecord::Base
+  # DEPRECATED, SOON TO BE DELETED
+
   belongs_to :openable, :polymorphic => true
 
   validates_presence_of :start,:end

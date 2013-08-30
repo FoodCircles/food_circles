@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130826192336) do
+ActiveRecord::Schema.define(:version => 20130829193835) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(:version => 20130826192336) do
     t.integer  "total"
     t.float    "price"
     t.float    "original_price"
+    t.string   "times"
   end
 
   create_table "open_times", :force => true do |t|
@@ -388,6 +389,7 @@ ActiveRecord::Schema.define(:version => 20130826192336) do
     t.string   "outside_image_uid"
     t.string   "timeline_image_uid"
     t.string   "google_maps_url"
+    t.string   "times"
   end
 
   add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true
