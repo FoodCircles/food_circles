@@ -25,7 +25,10 @@
     <%= tag :meta, :name => 'stripe-key', :content => Rails.configuration.stripe[:publishable_key] %>
     <%= render 'layouts/google-analytics' %>
   </head>
-  <body class="<%= user_signed_in? ? 'logged-in' : 'not-logged' %>" data-meta="<%="#{controller_name}"%>#<%="#{action_name}"%>">
+
+  <%- custom_body_classes << (user_signed_in? ? 'logged-in' : 'not-logged') %>
+
+  <body class="<%= custom_body_classes.join ' ' %>" data-meta="<%="#{controller_name}"%>#<%="#{action_name}"%>">
     <div id='wrapper' >
         <%= render :partial => 'partials/header' %>
         <%= yield %>

@@ -191,6 +191,11 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-  helper_method :weekly_meal_goal, :total_week_payments, :total_payments, :weekly_progress, :percent
+
+  def custom_body_classes
+    @custom_body_classes ||= []
+  end
+
+  helper_method :weekly_meal_goal, :total_week_payments, :total_payments, :weekly_progress, :percent, :custom_body_classes
 end
 
