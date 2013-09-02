@@ -117,12 +117,17 @@
   -#.deal
   .deal-payment
     .head
-      %a.back{:href => "#"} &lt; back to restaurant profile
+      %a.back{:href => "#"} &#8592; back to restaurant
       .profile
         - if user_signed_in?
           .row
             .user
               = current_user.name || current_user.email
+          .form-foot
+            %em
+              Not you?
+              = link_to('Logout', destroy_user_session_path, :method => :delete)
+
         - else
           = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{ id: "sign-up-form"}) do |f|
             .row
@@ -139,7 +144,7 @@
               %em
                 Have an account?
                 %a{:href => "#"} Sign in
-              %span.btn-small.submit
+              %span.btn-small.submit.right
                 Sign Up
                 = f.submit 'Sign Up', tabindex: '3'
               .clear
@@ -158,7 +163,7 @@
               %em
                 Need an account?
                 %a{href: "#"} Sign up
-              %span{class: "btn-small submit right"}
+              %span.btn-small.submit.right
                 Sign in
                 = f.submit 'Sign In', tabindex: '3'
               .clear
