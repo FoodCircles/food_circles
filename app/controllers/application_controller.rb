@@ -196,6 +196,15 @@ class ApplicationController < ActionController::Base
     @custom_body_classes ||= []
   end
 
+  def stripe_customer?
+    user_signed_in? && current_user.stripe_customer_token.present?
+  end
+
+  def current_user_credit_card_data
+    @current_user_credit_card_data ||= Stripe::Customer.retrieve(current_user.stripe_customer_token).active_card
+  end
+
   helper_method :weekly_meal_goal, :total_week_payments, :total_payments, :weekly_progress, :percent, :custom_body_classes
+  helper_method :stripe_customer?, :current_user_credit_card_data
 end
 
