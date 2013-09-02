@@ -79,130 +79,112 @@
           / /.pay-box
         / /.deal-body
       / /.deal-main
-      .deal-payment
-        .head
-          %a.back{:href => "#"} &lt; back to restaurant profile
-          .profile
-            - if user_signed_in?
-              .row
-                = current_user.name
-            - else
-              -#= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{class:"sign-form", id: "sign-up-form"}) do |f|
-                -#%i.arrow-up
-                  -#%i.arrow-up
-                -#.row
-                  -#%a{href: "/users/auth/facebook", class: "btn-facebook"}
-                    -#Sign up
-                    -#%i{class: "icon-btn-facebook"}
-                  -#= f.email_field :email, class: 'field medium', placeholder: "New email", tabindex: '1'
-                -#.row
-                  -#%a{href: "/users/auth/twitter", class: "btn-twitter"}
-                    -#Sign up
-                    -#%i{class: "icon-btn-twitter"}
-                  -#= f.password_field :password, class: 'field medium', placeholder: "New password", tabindex: '2'
-                -#.form-foot
-                  -#%span{class: "btn-small submit"}
-                    -#Sign Up
-                    -#= f.submit 'Sign Up', tabindex: '3'
-
-                  -#%p{class: "form-caption"}
-                    -#Have an account?
-                    -#%a{href: "#"} Sign in
-
-              -#= form_for(resource, :as => resource_name, :url => user_session_path, html:{class:"sign-form", id: "sign-in-form"}) do |f|
-                -#%i.arrow-up
-                  -#%i.arrow-up
-                -#.row
-                  -#%a{href: "/users/auth/facebook", class: "btn-facebook"}
-                    -#Sign In
-                    -#%i{class: "icon-btn-facebook"}
-                  -#= f.email_field :email, class: 'field medium', placeholder: "Your email", tabindex: '1'
-                -#.row
-                  -#%a{href: "/users/auth/twitter", class: "btn-twitter"}
-                    -#Sign In
-                    -#%i{class: "icon-btn-twitter"}
-                  -#= f.password_field :password, class: 'field medium', placeholder: "Your password", tabindex: '2'
-                -#.form-foot
-                  -#%span{class: "btn-small submit"}
-                    -#Sign in
-                    -#= f.submit 'Sign In', tabindex: '3'
-
-
-
-
-              .row
-                %a.btn-facebook.mid{:href => "#"}
-                  Sign up
-                  %i.icon-btn-facebook.medium
-                %input.field.standart{:name => "user_email", :placeholder => "new email address", :type => "text"}/
-              / /.row
-              .row
-                %a.btn-twitter.mid{:href => "#"}
-                  Sign up
-                  %i.icon-btn-twitter.medium
-                %input.field.standart{:name => "user_password", :placeholder => "new password", :type => "password"}/
-              / /.row
+    .deal-payment
+      .body
+        %fieldset.new-card
+          .cards-head
+            .cards
+              %span.amex
+              %span.visa
+              %span.mastercard
+              %span.generic
+            %h5
+              Payment Details
+              %span.line
+          .card-number
+            %label Card number
+            %span.field-holder
+              %input#card-number.field.standart{:placeholder => "4242 4242 4242 4242", :type => "text"}/
+              %i.suffix.icon-lock
+          / /.card-number
+          .cv-code
+            %label CV Code
+            %input#cvc.field.standart.thin{:placeholder => "123", :type => "text"}/
+          / /.cv-code
+          .valid-thru
+            %label EXPIRY DATE
+            %input#exp-month.field.standart.thin{:placeholder => "02", :type => "text"}/
+            %input#exp-year.field.standart.thin{:placeholder => "15", :type => "text"}/
+          / /.valid-thru
+        %fieldset
+          %h5
+            Give To
+            %span.line
+          .choose-organization
+            .radio-holder.checked
+              %label{:for => "kids-food"}
+                %a{:href => "#"} Kids Food Basket
+                (Grand Rapids, MI)
+              %input#kids-food.custom-input{:name => "organization", :type => "radio", :value => ""}/
+            / /.radio-holder
+            .radio-holder
+              %label{:for => "world-vision"}
+                %a{:href => "#"} World Vision
+                (Somalia, Africa)
+              %input#world-vision.custom-input{:name => "organization", :type => "radio", :value => ""}/
+            / /.radio-holder
+          / /.choose-organization
+        .foot
+          %a#dealbuy.btn-standart.full-width.light-shadow.large-font{:href => "#"} Buy
+          %p.secured
+            %i.icon-secure
+            SECURE – PAYMENTS PROCESSED BY STRIPE
+          / /.secured
+        / /.foot
+      / /.body
+    / /.deal-payment
+  / /.deal
+  .deal-payment
+    .head
+      %a.back{:href => "#"} &lt; back to restaurant profile
+      .profile
+        - if user_signed_in?
+          .row
+            = current_user.name
+        - else
+          = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{ id: "sign-up-form"}) do |f|
+            .row
+              %a{href: "/users/auth/facebook", class: "btn-facebook mid"}
+                Sign up
+                %i{class: "icon-btn-facebook medium"}
+              = f.email_field :email, class: 'field standart', placeholder: "New email", tabindex: '1'
+            .row
+              %a{href: "/users/auth/twitter", class: "btn-twitter mid"}
+                Sign up
+                %i{class: "icon-btn-twitter medium"}
+              = f.password_field :password, class: 'field standart', placeholder: "New password", tabindex: '2'
+            .form-foot
               %em
                 Have an account?
-                %a{:href => "#"} Sign in
-              %span.btn-small.submit
+                %a{href: "#"} Sign in
+              %span{class: "btn-small submit right"}
                 Sign Up
-          / /.profile
-        / /.head
-        .body
-          %fieldset.new-card
-            .cards-head
-              .cards
-                %span.amex
-                %span.visa
-                %span.mastercard
-                %span.generic
-              %h5
-                Payment Details
-                %span.line
-            .card-number
-              %label Card number
-              %span.field-holder
-                %input#card-number.field.standart{:placeholder => "4242 4242 4242 4242", :type => "text"}/
-                %i.suffix.icon-lock
-            / /.card-number
-            .cv-code
-              %label CV Code
-              %input#cvc.field.standart.thin{:placeholder => "123", :type => "text"}/
-            / /.cv-code
-            .valid-thru
-              %label EXPIRY DATE
-              %input#exp-month.field.standart.thin{:placeholder => "02", :type => "text"}/
-              %input#exp-year.field.standart.thin{:placeholder => "15", :type => "text"}/
-            / /.valid-thru
-          %fieldset
-            %h5
-              Give To
-              %span.line
-            .choose-organization
-              .radio-holder.checked
-                %label{:for => "kids-food"}
-                  %a{:href => "#"} Kids Food Basket
-                  (Grand Rapids, MI)
-                %input#kids-food.custom-input{:name => "organization", :type => "radio", :value => ""}/
-              / /.radio-holder
-              .radio-holder
-                %label{:for => "world-vision"}
-                  %a{:href => "#"} World Vision
-                  (Somalia, Africa)
-                %input#world-vision.custom-input{:name => "organization", :type => "radio", :value => ""}/
-              / /.radio-holder
-            / /.choose-organization
-          .foot
-            %a#dealbuy.btn-standart.full-width.light-shadow.large-font{:href => "#"} Buy
-            %p.secured
-              %i.icon-secure
-              SECURE – PAYMENTS PROCESSED BY STRIPE
-            / /.secured
-          / /.foot
-        / /.body
-      / /.deal-payment
-  / /.deal
+                = f.submit 'Sign Up', tabindex: '3'
+              .clear
+          = form_for(resource, :as => resource_name, :url => user_session_path, html:{class: 'hidden', id: "sign-in-form"}) do |f|
+            .row
+              %a{href: "/users/auth/facebook", class: "btn-facebook mid"}
+                Sign In
+                %i{class: "icon-btn-facebook medium"}
+              = f.email_field :email, class: 'field standart', placeholder: "Your email", tabindex: '1'
+            .row
+              %a{href: "/users/auth/twitter", class: "btn-twitter mid"}
+                Sign In
+                %i{class: "icon-btn-twitter medium"}
+              = f.password_field :password, class: 'field standart', placeholder: "Your password", tabindex: '2'
+            .form-foot
+              %em
+                Need an account?
+                %a{href: "#"} Sign up
+              %span{class: "btn-small submit right"}
+                Sign in
+                = f.submit 'Sign In', tabindex: '3'
+              .clear
+
+
+        / /.profile
+      / /.head
+    
   .mini-profile
     %i.arrow-down
       %i.arrow-down

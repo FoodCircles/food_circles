@@ -37,6 +37,7 @@
 		};
 		$.colorbox.settings.onComplete = function(){
 			refreshScripts($('#colorbox'));
+      $('#cboxContent, #cboxLoadedContent').css('height', '');
 			if($('.popup-print').length){
 				$('#cboxClose').addClass('hidden');
 				$('.popup-print').addClass('animate');
@@ -59,7 +60,6 @@
 				}, 500);
 			}
 		};
-
 
 		//blink fields
 		$doc
@@ -239,14 +239,21 @@
 
 		.on('click', '.buy-btn', function(event){
 			event.preventDefault();
-			var $deal = $(this).closest('.deal');
-			$deal.height($deal.find('.deal-payment').height()).addClass('payment-active');
+			var $deal = $(this).closest('.deal'),
+          $dealHeight = $deal.find('.deal-payment').height();
+			$deal.height($dealHeight);
+      $('#cboxLoadedContent').height($dealHeight + 130);
+      $('#cboxContent').css('height', $dealHeight + 190);
+      $('.deal-popup .deal-payment').addClass('payment-active');
 		})
 
 		.on('click', '.deal-payment .back', function(event){
 			event.preventDefault();
-			var $deal = $(this).closest('.deal');
-			$deal.height($deal.find('.deal-main').height()).removeClass('payment-active');
+			var $deal = $(this).closest('.deal-payment').siblings('.deal');
+      $deal.css('height', '');
+      //$('.deal-popup').height($('.deal-popup').height()).find
+      $('.deal-payment').removeClass('payment-active');
+			$deal.height($dealHeight).closest('#cboxLoadedContent').height($dealHeight + $('.mini-profile').height());
 		})
 
 		.on('click', '.pay-box .help > a', function(event){
@@ -269,7 +276,12 @@
 			$('#sign-up-form').toggleClass('expanded');
 		})
 
-		.on('click', '#sign-up-form .form-caption a, #sign-in-form .form-caption a', function(event){
+		.on('click', '.deal-payment .form-foot a, .deal-payment .form-foot a', function(event){
+			event.preventDefault();
+			$('.profile #sign-in-form, .profile #sign-up-form').toggleClass('hidden');
+		})
+
+    .on('click', '#sign-up-form .form-caption a, #sign-in-form .form-caption a', function(event){
 			event.preventDefault();
 			$('#sign-in-form, #sign-up-form').toggleClass('expanded');
 		})

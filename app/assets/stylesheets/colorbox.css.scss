@@ -1,7 +1,7 @@
 
 #cboxMiddleLeft, #cboxBottomLeft { clear:left; }
 #cboxContent { position:relative; }
-#cboxLoadedContent { overflow:auto; -webkit-overflow-scrolling: touch; }
+#cboxLoadedContent { overflow:auto; -webkit-overflow-scrolling: touch; margin: 30px;}
 #cboxTitle { margin:0; }
 #cboxLoadingOverlay, #cboxLoadingGraphic { position:absolute; top:0; left:0; width:100%; height:100%; }
 #cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow { cursor:pointer; }
@@ -28,7 +28,7 @@
         /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
         #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
 
-        #cboxClose { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); background:image-url('sprite.png') no-repeat -228px -96px; width:38px; height:38px; position:absolute; top:12px; right:15px; z-index:9; border:none; font-size:0; line-height:0; text-indent:-4000px;
+        #cboxClose { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); background:image-url('sprite.png') no-repeat -228px -96px; width:38px; height:38px; position:absolute; top:11px; right:11px; z-index:9; border:none; font-size:0; line-height:0; text-indent:-4000px;
             /*transition*/
             -webkit-transition:opacity 100ms 600ms;
                -moz-transition:opacity 100ms 600ms;

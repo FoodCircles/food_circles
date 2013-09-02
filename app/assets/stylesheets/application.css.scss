@@ -899,7 +899,7 @@ body.active-popup {
 
 
 /*=== Popups ===*/
-.popup { margin:30px; box-shadow:0 2px 7px rgba(0,0,0,0.18); position:relative;
+.popup { margin:0px; box-shadow:0 2px 7px rgba(0,0,0,0.18); position:relative;
 	background:#f2ede4;
 	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f2ede4), to(#f5f2ec)); 
 	background-image:-webkit-linear-gradient(#f2ede4, #f5f2ec); 
@@ -1037,7 +1037,7 @@ body.active-popup {
 
 
 /*=== Deal Popup ===*/
-.deal-popup { border-radius:0 0 12px 12px; }
+.deal-popup { border-radius:0 0 12px 12px; overflow: hidden;}
 
 .deal { position:relative; overflow:hidden; height:100%; -webkit-transform: translate3d(0, 0, 0); 
 	/*transition*/
@@ -1146,13 +1146,14 @@ body.active-popup {
 .mini-profile h4 > a { font-size: 18px; }
 .mini-profile p { font-size: 12px; }
 
-.deal-payment { position:absolute; top:100%; left:0; right:0; z-index:3; background:#fff;
+.deal-payment { position:absolute; top:900px; left:0; right:0; z-index:3; background:#fff;
 	/*transition*/
 	-webkit-transition:top 300ms linear;
 	   -moz-transition:top 300ms linear;
 	     -o-transition:top 300ms linear;
 	        transition:top 300ms linear;
 }
+.deal-payment.payment-active {top: 0;}
 .deal-payment .head { position:relative; text-align:center; padding:29px 0 24px; box-shadow:inset 0 -1px 5px rgba(0,0,0,0.16);
 	background:#ebe4da;
 	background:-webkit-gradient(linear, 0 0, 0 100%, from(#ebe4da), to(#f0e9de)); 
@@ -1165,7 +1166,7 @@ body.active-popup {
 .deal-payment .head .profile { font:18px 'pragmatica-web', sans-serif; }
 .deal-payment .head .profile em { color:#a7a299; display:block; font-size:15px; padding-top:3px; }
 .deal-payment .head .profile em a { font-weight:bold; }
-.deal-payment .body { padding:20px 155px 9px;
+.deal-payment .body { padding:20px 155px 9px; margin-top: 162px;
 	background:#fff;
 	background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#fafafa)); 
 	background:-webkit-linear-gradient(#fff, #fafafa); 
@@ -1199,10 +1200,13 @@ body.active-popup {
 
 .not-logged .deal-payment .head { padding-top:23px; padding-bottom:12px; }
 .not-logged .deal-payment .head .profile { padding:0 158px; }
+.not-logged .deal-payment .head .profile .hidden { display:none; }
 .not-logged .deal-payment .head .profile .row { height:40px; }
+.not-logged .deal-payment .head .profile .form-foot { padding-top: 6px; }
 .not-logged .deal-payment .head .profile .row ~ .row { padding-top:6px; }
 .not-logged .deal-payment .head .profile .row .field { float:right; margin-top:1px; }
-.not-logged .deal-payment .head .profile em { display:block; text-align:right; }
+.not-logged .deal-payment .head .profile em { display:block; text-align:left; padding-top: 9px; width: 180px; float: left; }
+.not-logged .deal-payment .head .profile span { width: 55px; text-align: center; }
 .deal-payment .body .new-card .field { display:block; }
 .deal-payment .body .new-card .card-number .field-holder { display:block; position:relative; height:38px; }
 .deal-payment .body .new-card .card-number .suffix { position:absolute; top:9px; right:10px; }
@@ -1281,7 +1285,7 @@ body.active-popup {
 
 .deal.payment-active .deal-payment { top:0; }
 
-.mini-profile { position:relative; z-index:1; overflow:hidden; border-radius:0 0 12px 12px; padding:7px 43px 0 162px; height:123px;
+.mini-profile { position:relative; z-index:10; overflow:hidden; border-radius:0 0 12px 12px; padding:0px 43px 0 162px; height:123px;
 	background:#eee8dd;
 	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#eee8dd), to(#e9e2d7)); 
 	background-image:-webkit-linear-gradient(#eee8dd, #e9e2d7); 
@@ -1294,7 +1298,7 @@ body.active-popup {
 .mini-profile > .arrow-down { position:absolute; top:0; left:65px; border-width:15px; color:transparent; color:rgba(44,44,44,0.15);  }
 .mini-profile > .arrow-down i { position:absolute; bottom:2px; left:-13px; border-width:13px; color:#fafafa; }
 .mini-profile .thumb { position:absolute; top:0; left:0; z-index:-2; border-radius:0 0 0 12px; width: 125px; }
-.mini-profile h4 { padding-bottom:2px; }
+.mini-profile h4 { padding-bottom:2px; padding-top: 7px; }
 .mini-profile h4 small { float:right; font-size:13px; padding-top:4px; }
 .mini-profile p { font:13px/1.3 'pragmatica-web', sans-serif; padding:0 0 8px; }
 .mini-profile .foot { position: absolute; width: 396px; bottom: 10px; }
