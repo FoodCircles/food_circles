@@ -1,7 +1,7 @@
 .popup.deal-popup
   .deal
     = form_tag("/stripe_payments", :method => "post", :id => "dealform") do
-      %input{:name => "stripe_token", :type => "hidden"}/
+      %input{:name => "stripe_token", :type => "hidden"}
       .deal-main
         .deal-banner
           = image_tag @offer.venue.main_image.thumb("670x313").url
@@ -14,7 +14,7 @@
           %span.count
             = @min_offer.venue.vouchers_available
             %small left
-        / /.deal-banner
+        -#.deal-banner
         .deal-body
           .description
             %h2= @min_offer.name
@@ -33,8 +33,8 @@
                     %input#qty-1.custom-input{:checked => "checked", "data-details" => offer.details, "data-name" => offer.name, "data-originalprice" => prettify_float(offer.original_price), "data-price" => prettify_float(offer.price), :name => "offer_id", :type => "radio", :value => offer.id}/
                   - else
                     %input#qty-1.custom-input{"data-details" => offer.details, "data-name" => offer.name, "data-originalprice" => prettify_float(offer.original_price), "data-price" => prettify_float(offer.price), :name => "offer_id", :type => "radio", :value => offer.id}/
-            / /.qty
-          / /.description
+            -#.qty
+          -#.description
           .pay-box
             %h3 pay what you want
             %span.field-holder
@@ -47,15 +47,15 @@
               .slider-wrap
                 %span.bg-holder
                 .slider
-                / /.slider
-              / /.slider-wrap
-            / /.slider-holder
+                -#.slider
+              -#.slider-wrap
+            -#.slider-holder
             .donation-info
               slide to give more
               %br/
               %strong 1
               meal donated
-            / /.donation-info
+            -#.donation-info
             %a.btn-large.full-width.light-shadow.buy-btn{:href => "#"} I want this!
             .help
               .balloon
@@ -73,48 +73,48 @@
                 %i.arrow-down
                   %i.arrow-down
                 %a.balloon-close{:href => "#"} Close
-              / /.balloon
+              -#.balloon
               %a{:href => "#"} How to redeem
-            / /.help
-          / /.pay-box
-        / /.deal-body
-      / /.deal-main
-    .deal-payment
-      .body
-        %fieldset.new-card
-          .cards-head
-            - if stripe_customer?
-              = render :partial => "offers/existing_credit_card_fields"
-            - else
-              = render :partial => "offers/new_credit_card_fields"
-        %fieldset
-          %h5
-            Give To
-            %span.line
-          .choose-organization
-            .radio-holder.checked
-              %label{:for => "kids-food"}
-                %a{:href => "#"} Kids Food Basket
-                (Grand Rapids, MI)
-              %input#kids-food.custom-input{:name => "organization", :type => "radio", :value => ""}/
-            / /.radio-holder
-            .radio-holder
-              %label{:for => "world-vision"}
-                %a{:href => "#"} World Vision
-                (Somalia, Africa)
-              %input#world-vision.custom-input{:name => "organization", :type => "radio", :value => ""}/
-            / /.radio-holder
-          / /.choose-organization
-        .foot
-          %a#dealbuy.btn-standart.full-width.light-shadow.large-font{:href => "#", "data-submit-to-stripe" => "#{!stripe_customer?}"} Buy
-          %p.secured
-            %i.icon-secure
-            SECURE – PAYMENTS PROCESSED BY STRIPE
-          / /.secured
-        / /.foot
-      / /.body
-          / /.deal-payment
-  / /.deal
+            -#.help
+          -#.pay-box
+        -#.deal-body
+      -#.deal-main
+      .deal-payment
+        .body
+          %fieldset.new-card
+            .cards-head
+              - if stripe_customer?
+                = render :partial => "offers/existing_credit_card_fields"
+              - else
+                = render :partial => "offers/new_credit_card_fields"
+          %fieldset
+            %h5
+              Give To
+              %span.line
+            .choose-organization
+              .radio-holder.checked
+                %label{:for => "kids-food"}
+                  %a{:href => "#"} Kids Food Basket
+                  (Grand Rapids, MI)
+                %input#kids-food.custom-input{:name => "organization", :type => "radio", :value => ""}/
+              -#.radio-holder
+              .radio-holder
+                %label{:for => "world-vision"}
+                  %a{:href => "#"} World Vision
+                  (Somalia, Africa)
+                %input#world-vision.custom-input{:name => "organization", :type => "radio", :value => ""}/
+              -#.radio-holder
+            -#.choose-organization
+            .foot
+              %a#dealbuy.btn-standart.full-width.light-shadow.large-font{:href => "#", "data-submit-to-stripe" => "#{!stripe_customer?}"} Buy
+              %p.secured
+                %i.icon-secure
+                SECURE – PAYMENTS PROCESSED BY STRIPE
+              -#.secured
+            -#.foot
+        -#.body
+      -#.deal-payment
+  -#.deal
   .deal-payment
     .head
       %a.back{:href => "#"} &lt; back to restaurant profile

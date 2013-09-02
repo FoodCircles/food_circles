@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :email_server
   before_filter :prepare_for_mobile
   before_filter :detect_email_omniauth
+  
 
   ACCOUNT_SID = "AC085df9dc6444a3588933ae0ddd9d95e7"
   ACCOUNT_TOKEN = "95cc7f360064ab606017dad6d2eb38a5"
@@ -91,6 +92,14 @@ class ApplicationController < ActionController::Base
       redirect_to "http://itunes.apple.com/us/app/foodcircles/id526107767"
       return
     end
+  end
+
+  def after_sign_in_path_for(resource_or_scope)
+    request.env['omniauth.origin'] || request.referer || request.original_url || root_path 
+  end
+
+  def after_sign_up_path_for(resource)
+    after_sign_in_path_for(resource)
   end
   
   private
