@@ -121,7 +121,8 @@
       .profile
         - if user_signed_in?
           .row
-            = current_user.name
+            .user
+              = current_user.name || current_user.email
         - else
           = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{ id: "sign-up-form"}) do |f|
             .row
