@@ -80,7 +80,7 @@
         -#.deal-body
       -#.deal-main
       .deal-payment
-        .body
+        .body{ class: user_signed_in? ? 'logged-in' : 'not-logged-in'}
           %fieldset.new-card
             .cards-head
               - if stripe_customer?
@@ -134,7 +134,7 @@
               %a{href: "/users/auth/facebook", class: "btn-facebook mid"}
                 Sign up
                 %i{class: "icon-btn-facebook medium"}
-              = f.email_field :email, class: 'field standart', placeholder: "New email", tabindex: '1'
+              = f.email_field :email, class: 'field standart focus', placeholder: "New email", tabindex: '1'
             .row
               %a{href: "/users/auth/twitter", class: "btn-twitter mid"}
                 Sign up
@@ -153,7 +153,7 @@
               %a{href: "/users/auth/facebook", class: "btn-facebook mid"}
                 Sign In
                 %i{class: "icon-btn-facebook medium"}
-              = f.email_field :email, class: 'field standart', placeholder: "Your email", tabindex: '1'
+              = f.email_field :email, class: 'field standart focus', placeholder: "Your email", tabindex: '1'
             .row
               %a{href: "/users/auth/twitter", class: "btn-twitter mid"}
                 Sign In

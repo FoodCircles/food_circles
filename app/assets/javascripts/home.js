@@ -239,17 +239,26 @@
 
 		.on('click', '.buy-btn', function(event){
 			event.preventDefault();
-			var $deal = $(this).closest('.deal'),
+      $('.deal-popup .deal-payment').addClass('payment-active');
+      var $deal = $(this).closest('.deal'),
           $dealHeight = $deal.find('.deal-payment').height();
 			$deal.height($dealHeight);
       $('#cboxLoadedContent').height($dealHeight + 130);
       $('#cboxContent').css('height', $dealHeight + 190);
-      $('.deal-popup .deal-payment').addClass('payment-active');
+      $doc.bind('webkitTransitionEnd oTransitionEnd transitionend msTransitionEnd', function(){
+        if($('.deal-popup .profile .focus').length){
+          $('.deal-popup .profile .focus').focus();
+        } else if($('.deal-popup .deal-payment .focus').length) {
+          $('.deal-popup .deal-payment .focus').focus();
+        }
+        $doc.unbind('webkitTransitionEnd oTransitionEnd transitionend msTransitionEnd');
+      });
 		})
 
 		.on('click', '.deal-payment .back', function(event){
 			event.preventDefault();
-			var $deal = $(this).closest('.deal-payment').siblings('.deal');
+			var $deal = $(this).closest('.deal-payment').siblings('.deal'),
+          $dealHeight = $deal.find('.deal-main').height();
       $deal.css('height', '');
       //$('.deal-popup').height($('.deal-popup').height()).find
       $('.deal-payment').removeClass('payment-active');
@@ -279,6 +288,7 @@
 		.on('click', '.deal-payment .form-foot a, .deal-payment .form-foot a', function(event){
 			event.preventDefault();
 			$('.profile #sign-in-form, .profile #sign-up-form').toggleClass('hidden');
+      $('.profile .focus').focus();
 		})
 
     .on('click', '#sign-up-form .form-caption a, #sign-in-form .form-caption a', function(event){

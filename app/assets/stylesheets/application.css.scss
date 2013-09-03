@@ -1164,10 +1164,10 @@ body.active-popup {
 }
 .deal-payment .head .back { position:absolute; left:9px; top:8px; font:12px 'pragmatica-web', sans-serif; }
 .deal-payment .head .profile { font:18px 'pragmatica-web', sans-serif; }
-.deal-payment .head .profile .user { padding: 45px 0 25px; }
+/*.deal-payment .head .profile .user { padding: 20px 0 10px; }*/
 .deal-payment .head .profile em { color:#a7a299; display:block; font-size:15px; padding-top:3px; }
 .deal-payment .head .profile em a { font-weight:bold; }
-.deal-payment .body { padding:20px 155px 9px; margin-top: 162px;
+.deal-payment .body { 
 	background:#fff;
 	background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#fafafa)); 
 	background:-webkit-linear-gradient(#fff, #fafafa); 
@@ -1175,6 +1175,8 @@ body.active-popup {
 	background:-o-linear-gradient(#fff, #fafafa); 
 	background:linear-gradient(#fff, #fafafa); 
 }
+.deal-payment .not-logged-in { padding: 182px 155px 9px; }
+.deal-payment .logged-in { padding: 114px 155px 9px; }
 .deal-payment .body fieldset { border:none; padding-bottom:23px; }
 .deal-payment .body h5 { position:relative; padding-bottom:8px; }
 .deal-payment .body h5 .line { position:absolute; bottom:0; left:-90px; right:-90px; height:2px;

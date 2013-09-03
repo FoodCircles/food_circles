@@ -9,15 +9,15 @@
 .card-number
   %label Card number
   %span.field-holder
-    %input#card-number.field.standart{:placeholder => "4242 4242 4242 4242", :type => "text"}/
+    %input#card-number.field.standart.focus{ :tabindex => '4', :placeholder => "4242 4242 4242 4242", :type => "text"}/
     %i.suffix.icon-lock
 / /.card-number
 .cv-code
   %label CV Code
-  %input#cvc.field.standart.thin{:placeholder => "123", :type => "text"}/
+  %input#cvc.field.standart.thin{ :tabindex => '5', :placeholder => "123", :type => "text"}/
 / /.cv-code
 .valid-thru
   %label EXPIRY DATE
-  %input#exp-month.field.standart.thin{:placeholder => "02", :type => "text"}/
-  %input#exp-year.field.standart.thin{:placeholder => "15", :type => "text"}/
+  %input#exp-month.field.standart.thin{ :tabindex => '6', :placeholder => "02", :type => "text"}/
+  %input#exp-year.field.standart.thin{ :tabindex => '7', :placeholder => "15", :type => "text"}/
 / /.valid-thru
