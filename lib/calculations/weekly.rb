@@ -41,7 +41,7 @@ module Calculations
     end
 
     def progress
-      current_weekly_payments.sum(&:amount)
+      current_weekly_payments.sum("amount")
     end
   end
 end

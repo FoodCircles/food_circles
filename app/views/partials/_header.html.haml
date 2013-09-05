@@ -103,7 +103,7 @@
       .container
         %a{class: "logo", href: root_path}
         .donation-count
-          %strong= total_payments
+          %strong= total_meals
           meals donated to date
         .account
           %a{href: "#"}
@@ -138,12 +138,12 @@
       .container
         .current-goal
           .current
-            %strong= total_week_payments.count
+            %strong= weekly_progress[:current_progress]
             %small meals
           .progress
             %span.goal this week's goal
-            %span.total= "#{weekly_meal_goal} meals"
-            %em.bar{style: "width: #{percent}%"}
+            %span.total= "#{weekly_progress[:adjusted_total]} meals"
+            %em.bar{style: "width: #{[percent, 100].min}%"}
         %p.getapp
           Arm yourself for the streets.
           %a.popup-link{href: app_popup_path} Get the App

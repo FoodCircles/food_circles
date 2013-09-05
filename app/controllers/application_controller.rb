@@ -184,6 +184,14 @@ class ApplicationController < ActionController::Base
     @_total_week_payments ||= Payment.total_week_payments
   end
 
+  def total_meals_adjustment
+    10
+  end
+
+  def total_meals
+    @_total_meals ||= Payment.sum("amount").floor + Reservation.sum("amount").floor + total_meals_adjustment
+  end
+
   def total_payments
     @_total_payments ||= Payment.count
   end
@@ -218,6 +226,6 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :weekly_meal_goal, :total_week_payments, :total_payments, :weekly_progress, :percent, :custom_body_classes
-  helper_method :stripe_customer?, :current_user_credit_card_data
+  helper_method :stripe_customer?, :current_user_credit_card_data, :total_meals
 end
 
