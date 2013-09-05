@@ -26,11 +26,7 @@ module Calculations
     end
 
     def weekly_progress
-      current_progress = progress / 100
-
-      vouchers = total_vouchers.round
-      adjusted_total = 3 * total_vouchers / 4
-      {current_progress: current_progress, adjusted_total: adjusted_total}
+      {current_progress: progress, adjusted_total: meal_goal}
     end
 
     def percent
@@ -41,28 +37,11 @@ module Calculations
     private
 
     def offers_count
-      offers = 0
-      venues.each do |restaurant|
-        offers += restaurant.vouchers_total unless restaurant.vouchers_total.nil?
-      end
-      offers
+      venues.sum{|v| v.vouchers_total.to_i}
     end
 
     def progress
-      progress = 0
-      current_weekly_payments.all.each do |payment|
-        progress += payment.amount
-      end
-
-      progress
-    end
-
-    def total_vouchers
-      total_vouchers = 0
-      offers.each do |offer|
-        total_vouchers += offer.price.to_i * offer.total.to_i
-      end
-      total_vouchers
+      current_weekly_payments.sum(&:amount)
     end
   end
 end
