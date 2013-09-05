@@ -26,7 +26,7 @@ module Calculations
     end
 
     def weekly_progress
-      {current_progress: progress, adjusted_total: meal_goal}
+      {current_progress: progress.floor, adjusted_total: meal_goal}
     end
 
     def percent
