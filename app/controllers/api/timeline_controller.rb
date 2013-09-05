@@ -32,6 +32,7 @@ class Api::TimelineController < ApplicationController
                 :available => o.available,
                 :total => o.total,
                 :price => o.price,
+                :minimum_diners => o.min_diners,
                 :venue => [Venue.find(o.venue_id)].map { |v|
                   {
                     :id => v.id,
