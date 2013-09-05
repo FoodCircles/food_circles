@@ -22,7 +22,7 @@ module Calculations
 
     def meal_goal
       weekly_meal_goal = (3.0/4.0) * offers_count
-      weekly_meal_goal.floor
+      roundup(weekly_meal_goal.floor)
     end
 
     def weekly_progress
@@ -35,6 +35,9 @@ module Calculations
     end
 
     private
+    def roundup(value, nearest=5)
+      (value % nearest).zero? ? value : value + nearest - (value % nearest)
+    end
 
     def offers_count
       venues.sum{|v| v.vouchers_total.to_i}
