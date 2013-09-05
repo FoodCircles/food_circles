@@ -66,7 +66,7 @@ class Api::TimelineController < ApplicationController
           end
           data[:venue] = if r.venue.present?
             r.venue.as_json.slice(:id, :name, :city, :state, :zip, :lat, :lon, :description, :phone, :web, :tags, :offers).merge({
-              :open_times => r.times || "Not Available",
+              :open_times => r.venue.times || "Not Available",
               :image => r.venue.timeline_image.present? ? r.venue.timeline_image.url : ''
             })
           else
