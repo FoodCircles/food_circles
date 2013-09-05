@@ -7,26 +7,44 @@ class PaymentController < ApplicationController
   end
   
   def active
-    payment = Payment.find_by_coupon(params[:coupon])
-    payment.state = "Active"
-    payment.save
-    
+    if params[:coupon].blank?
+      payment = Payment.find_by_code(params[:code])      
+      payment.state = "Active"
+      payment.save
+    else 
+      payment = Payment.find_by_coupon(params[:coupon])
+      payment.state = "Active"
+      payment.save
+    end
+      
     render :nothing => true
   end
   
   def expired
-    payment = Payment.find_by_coupon(params[:coupon])
-    payment.state = "Expired"
-    payment.save
-    
+    if params[:coupon].blank?
+      payment = Payment.find_by_code(params[:code])      
+      payment.state = "Expired"
+      payment.save
+    else 
+      payment = Payment.find_by_coupon(params[:coupon])
+      payment.state = "Expired"
+      payment.save
+    end
+      
     render :nothing => true
   end
   
   def used  
-    payment = Payment.find_by_coupon(params[:coupon])
-    payment.state = "Used"
-    payment.save
-    
+    if params[:coupon].blank?
+      payment = Payment.find_by_code(params[:code])      
+      payment.state = "Used"
+      payment.save
+    else 
+      payment = Payment.find_by_coupon(params[:coupon])
+      payment.state = "Used"
+      payment.save
+    end
+      
     render :nothing => true
   end
 end
