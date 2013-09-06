@@ -17,14 +17,14 @@
     <a href="#" class="icon-x close"></a>
   </div><!-- /.balloon -->
 </div><!-- /.user-invites -->
-<%-if @payments.empty? %>
+<%-if @payments.empty? && @reservations.empty? %>
   <div class="no-activity-message">
     <p>I see you haven’t used FoodCircles yet.<br> Let’s get started on our journey to end hunger.</p>
     <a href="#">View Restaurants</a>
   </div><!-- /.no-activity-message -->
 <%- end %>
 <div class="timeline">
-  <%-if @payments.empty? %>
+  <%-if @payments.empty? && @reservations.empty? %>
   <div class="tab-cnt active" id="timeline">
       <div class="block left">
         <div class="cnt">
@@ -116,45 +116,9 @@
       <span class="line"></span>
 
   <%-else%>
-    <%- @payments.each_with_index do |payment, index| %>
-      <div class="block <%= index % 2 == 0 ? 'left' : 'right' %>">
-        <div class="cnt">
-          <div class="head">
-            <h5><%= payment.offer.venue.name %></h5>
-            <p><%= payment.created_at.strftime("%m/%d/%y") %></p>
-          </div><!-- /.head -->
-          <% if payment.active? %>
-            <a href="/reciept/<%= payment.id %>" class="body recieptlink popup-link">
-              <span>View Reciept</span>
-              <%= image_tag payment.offer.venue.timeline_image.thumb("205x155").url if payment.offer.venue.timeline_image %>
-            </a><!-- /.body -->
-          <% else %>
-            <div class="body <%= payment.state.downcase %>">
-              <span> <%= payment.state %> </span>
-              <%= image_tag payment.offer.venue.timeline_image.thumb("205x155").url if payment.offer.venue.timeline_image %>
-            </div>
-          <% end %>
-          <div class="foot">
-            <div class="kids">
-              <i class="icon-kid"></i>
-              <%= payment.amount.to_i %>
-            </div><!-- /.kids -->
-            <div class="socials">
-              <a href="#" class="icon-yellow-facebook"></a>
-              <a href="#" class="icon-yellow-twitter"></a>
-            </div><!-- /.socials -->
-            <span class="divider"></span>
-          </div><!-- /.foot -->
-        </div><!-- /.cnt -->
-        <%- if index % 2 == 0 %>
-          <i class="arrow-right"><i class="arrow-right"></i></i>
-        <%- else %>
-          <i class="arrow-left"><i class="arrow-left"></i></i>
-        <%- end %>
-        <i class="circle"></i>
-      </div><!-- /.block left -->
-    <%- end %>
-    
+    <%= render :partial => "payment", :collection => @payments %>
+    <%= render :partial => "reservation", :collection => @reservations, :locals => {:total_payments => @payments.count } %>
+
     <span class="line"></span>
   </div><!-- /.timeline -->
   <%-end%>
