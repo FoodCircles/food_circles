@@ -95,7 +95,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    request.env['omniauth.origin'] || request.referer || request.original_url || root_path 
+    request.env['omniauth.origin'] || request.referer || root_path 
   end
 
   def after_sign_up_path_for(resource)
@@ -103,7 +103,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource_or_scope)
-    after_sign_in_path_for(resource_or_scope)
+    root_path
   end
   
   private
