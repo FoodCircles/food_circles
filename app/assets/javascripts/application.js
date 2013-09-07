@@ -12,5 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap/bootstrap-alert
 //= require jquery-ui-1.10.3.custom.min
