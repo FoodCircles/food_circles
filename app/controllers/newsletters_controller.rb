@@ -2,7 +2,6 @@ class NewslettersController < ApplicationController
 
   # TODO: display the errors and messages somewhere on the page
   def subscribe
-    Rails.logger.debug("debug:: subscribing" + params[:email] || 'no email')
     begin
       result = if current_user || params[:email].present?
         gb = Gibbon::API.new
