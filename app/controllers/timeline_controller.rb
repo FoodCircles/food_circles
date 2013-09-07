@@ -5,9 +5,10 @@ class TimelineController < ApplicationController
   def index
     get_friends_purchases
     load_payments
+    load_reservations
     load_weekly_total
 
-    custom_body_classes << "no-activity" if @payments.empty?
+    custom_body_classes << "no-activity" if @payments.empty? && @reservations.empty?
 
     current_vouchers = Voucher.where("start_date <= ? and end_date >= ?", Time.now, Time.now)
     @total_vouchers = current_vouchers.collect{ |v| v.total }.sum
