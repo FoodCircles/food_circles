@@ -1,18 +1,4 @@
 class ReservationController < ApplicationController
-  def used_email
-    from = params["from_email"]
-    subject = params["subject"]
-    text = params["text"]
-    
-    reservation = Reservation.find_by_coupon(text)
-    return if !reservation
-    
-    if (subject == "used")
-      used(text)
-    end
-    
-    render :nothing => true
-  end
   
   def active
     reservation = Reservation.find_by_coupon(params[:coupon])
