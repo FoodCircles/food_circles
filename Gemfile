@@ -23,6 +23,7 @@ gem 'stripe'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'rb-readline', '~> 0.4.2'
+gem 'mandrill-rails'
 
 gem 'twilio-ruby'
 
