@@ -11,7 +11,8 @@ Foodcircles::Application.routes.draw do
   get 'payment/active' => 'payment#active'
   get 'payment/expired' => 'payment#expired'
   get 'payment/inbound_mark_used' => 'payment#inbound_mark_used'
-  get 'payment/handle_inbound' => 'payment#handle_inbound'
+  
+  resource :inbox, :controller => 'payment', :only => [:show,:create]
 
   match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
 
