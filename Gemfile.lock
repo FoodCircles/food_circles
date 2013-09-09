@@ -133,6 +133,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mandrill-rails (0.0.4)
+      activesupport (>= 3.0.3)
     method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.3)
@@ -309,6 +311,7 @@ DEPENDENCIES
   high_voltage
   jquery-rails
   mail
+  mandrill-rails
   omniauth-facebook
   omniauth-twitter
   paperclip
