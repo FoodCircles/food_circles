@@ -23,7 +23,7 @@ class UserMailer < ActionMailer::Base
       to user.email
       from 'FoodCircles <hey@foodcircles.net>'
       subject "Got your coupon code for #{payment.offer.venue.name}"
-      reply_to 'support@foodcircles.net'
+      reply_to 'used@inbound.foodcircles.net'
       html_part do
         content_type 'text/html; charset=UTF-8'
         body "<table width = '550px'><tr><td style = font-size:12pt; font-family:Arial><p style= text-align: justify;>Print this email or just show it off on a fancy electronic device.</p>
