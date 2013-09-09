@@ -316,7 +316,7 @@ body.active-popup {
 	overflow: scroll;
 }
 
-#wrapper { position:relative; min-height:100%; }
+#wrapper { position:relative; min-height:100%; width: 100%;}
 .active-popup #wrapper { 
 	-webkit-filter:blur(2px);
 	   -moz-filter:blur(2px);
