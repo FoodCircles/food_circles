@@ -138,9 +138,9 @@ class Venue < ActiveRecord::Base
   end
 
   def distance(lat, lon)
-    ((Venue.rgeo_factory_for_column(:latlon).
-      point(lat, lon).
-      distance(self.latlon) / 1000) * 0.621371192).round(2).to_s + ' miles'
+    point_a = Venue.rgeo_factory_for_column(:latlon).point(lon, lat)
+    point_b = Venue.rgeo_factory_for_column(:latlon).point(latlon.y, latlon.x) # to workaroud the fact that the db has switched lon, lat
+    ((point_a.distance(point_b) / 1000) * 0.621371192).round(2).to_s + "mi"
   end
 
   def full_address
