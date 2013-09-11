@@ -9,7 +9,8 @@
   %ul{class: "slides"}
     - @news.each do |news|
       %li
-        %img{src: news.website_image.url, alt: "", width: "1280", height: "360"}
+        %a{href: news.website_url || "#"}
+          %img{src: news.website_image.url, alt: "", width: "1280", height: "360"}
   %a{href: "#", class: "slide-prev icon-arrow-prev"}
   %a{href: "#", class: "slide-next icon-arrow-next"}
 
