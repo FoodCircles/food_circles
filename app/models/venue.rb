@@ -1,4 +1,18 @@
 class Venue < ActiveRecord::Base
+  rails_admin do
+    show do
+      include_all_fields
+      field :lat
+      field :lon
+    end
+
+    edit do
+      include_all_fields
+      field :lat
+      field :lon
+    end
+  end
+
   extend FriendlyId
   include Validators
   include AlwaysOpen
@@ -44,8 +58,25 @@ class Venue < ActiveRecord::Base
   validates :email, :on => :create, :allow_nil => true, :'validators/email' => true
 
 
+  before_save :update_latlon, :if => :dirty_latlon?
   after_save :notify_watching_users_about_new_vouchers, :if => :has_new_vouchers?
   after_create :ensure_always_open
+
+  def lat
+    @lat ||= latlon.lat
+  end
+
+  def lat=(value)
+    @lat = value
+  end
+
+  def lon
+    @lon ||= latlon.lon
+  end
+
+  def lon=(value)
+    @lon = value
+  end
 
   def has_new_vouchers?
     vouchers_available_changed? &&
@@ -208,6 +239,15 @@ class Venue < ActiveRecord::Base
   end
 
   private
+  def dirty_latlon?
+    lat != latlon.lat || lon != latlon.lon
+  end
+
+  def update_latlon
+    new_latlon = Venue.rgeo_factory_for_column(:latlon).point(lon, lat)
+    self.latlon = new_latlon
+  end
+
   def to_read(m)
     h, m = (m-300).divmod 60
     d, h = h.divmod 24
