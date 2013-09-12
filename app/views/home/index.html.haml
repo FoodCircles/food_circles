@@ -51,11 +51,12 @@
           %div{class: "tile #{ venue.vouchers_available > 4 ? "green" : (venue.vouchers_available == 1 ? "red" : "yellow")} #{( venue.vouchers_available == 0 ? "sold-out" : "" )} #{venue.venue_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.experience_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
             %h3= venue.name
             .thumb
-              %span.social
-                %a{href: "#", class: "btn-mini"}
-                  %i.icon-facebook
-                %a{href: "#", class: "btn-mini"}
-                  %i.icon-twitter
+              - if venue.has_vouchers?
+                %span.social
+                  %a{href: "#", class: "btn-mini"}
+                    %i.icon-facebook
+                  %a{href: "#", class: "btn-mini"}
+                    %i.icon-twitter
               .progress
                 - percent = (venue.vouchers_available.to_f / venue.vouchers_total.to_f) * 100
                 - if venue.sold_out?
