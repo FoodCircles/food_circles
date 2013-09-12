@@ -96,6 +96,7 @@ class Venue < ActiveRecord::Base
     watching_users.each do |watching_user|
       UserMailer.notification_about_available_vouchers(watching_user, self).deliver
     end
+    notification_requests.destroy_all
   end
 
   def as_json(options={})
