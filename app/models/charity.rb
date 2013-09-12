@@ -12,7 +12,7 @@ class Charity < ActiveRecord::Base
       :city => self.city,
       :description => self.description,
       :state => self.state.name,
-      :image => self.image.url
+      :image => self.image.present? ? self.image.url : ''
     }
   end
 
