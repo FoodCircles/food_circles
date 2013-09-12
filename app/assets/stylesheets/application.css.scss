@@ -1114,7 +1114,7 @@ body.active-popup {
 
 .pay-box .donation-info { font:italic 12px/14px 'pragmatica-web', sans-serif; color:#4e3e34; text-align:center; padding-bottom:28px; }
 .pay-box .help { padding:8px 0 0; position:relative; z-index:9; text-align:center; }
-.pay-box .help > a { font-size:12px; text-transform:uppercase; font-weight:bold; }
+.pay-box .help > span { font-size:11px; text-transform:uppercase; font-weight:bold; }
 .pay-box .help .balloon { visibility:hidden; opacity:0; -moz-opacity:0; filter:alpha(opacity=0); position:absolute; right:50%; bottom:66px; z-index:20; margin-right:-20px; background:#ede7df; box-shadow:0 2px 7px rgba(0,0,0,0.18); padding:5px 15px 15px; width:345px;
 	/*transform*/
 	-webkit-transform:translateY(20px);

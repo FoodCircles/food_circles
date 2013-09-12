@@ -265,13 +265,12 @@
 			$deal.height($dealHeight).closest('#cboxLoadedContent').height($dealHeight + $('.mini-profile').height());
 		})
 
-		.on('click', '.pay-box .help > a', function(event){
+		.on('click', '.pay-box .help .ballon-expander', function(event){
 			event.preventDefault();
 
-			var $self = $(this);
 			//set little timeout to prevent item from close immidiatly after the open
 			setTimeout(function(){
-				$self.siblings('.balloon').addClass('expanded');
+				$('.help .balloon').addClass('expanded');
 			}, 1);
 		})
     
