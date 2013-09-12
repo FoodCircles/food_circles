@@ -82,7 +82,7 @@
                 %span{class: "shadow"}
                 = image_tag venue.restaurant_tile_image.thumb("274x163").url
                 / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
-                %span{class: "title"}= venue.offers.order("min_diners ASC").first.name
+                %span{class: "title"}= venue.sold_out? ? "Sold Out" : venue.offers.order("min_diners ASC").first.name
             .tags
               - tags = []
               - if not venue.experience_tags.empty?
