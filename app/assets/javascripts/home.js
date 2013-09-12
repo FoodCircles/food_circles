@@ -307,7 +307,12 @@
 
 		.on('click', '.popup-link', function(event){
 			event.preventDefault();
-			if($(this).data('slug')) {
+			var data = $(this).data();
+			if(data.disabled){
+				return
+			}
+
+			if(data.slug) {
 		        var full = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
 		        history.pushState({food: "circles"}, "FoodCircles", full + '/'+$(this).data('slug'));
 		  		popupOpen('/deal_popup_not_logged/'+$(this).data('slug'));

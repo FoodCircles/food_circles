@@ -84,6 +84,14 @@ class Venue < ActiveRecord::Base
     vouchers_available_change.first < vouchers_available_change.last
   end
 
+  def has_vouchers?
+    vouchers_available.to_i > 0
+  end
+
+  def sold_out?
+    !has_vouchers?
+  end
+
   def notify_watching_users_about_new_vouchers
     watching_users.each do |watching_user|
       UserMailer.notification_about_available_vouchers(watching_user, self).deliver

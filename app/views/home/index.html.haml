@@ -58,7 +58,7 @@
                   %i.icon-twitter
               .progress
                 - percent = (venue.vouchers_available.to_f / venue.vouchers_total.to_f) * 100
-                - if (venue.vouchers_available.nil? || venue.vouchers_available == 0)
+                - if venue.sold_out?
                   %span.pbar{style: "height: 0"}
                     - unless @watched_venues.include? venue
                       - if current_user
@@ -73,7 +73,7 @@
                       %small left
 
               /%a{href: main_app.deal_popup_not_logged_path(offer)}
-              %a.deallink.popup-link{href: venue.offers.order("min_diners ASC").first.id.to_s, :"data-slug" => venue.slug}
+              %a.deallink.popup-link{href: venue.offers.order("min_diners ASC").first.id.to_s, :"data-slug" => venue.slug, :"data-disabled" => "#{venue.sold_out?}"}
                 %span.price
                   %strong= number_to_currency(venue.offers.order("min_diners ASC").first.price, :precision => 0)
                   %span{class: "old"}
