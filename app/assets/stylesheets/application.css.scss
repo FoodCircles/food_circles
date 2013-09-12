@@ -759,7 +759,7 @@ body.active-popup {
 .products .tile.sold-out .notify-text { display:none; position:absolute; top:50%; left:50%; z-index:10; width:160px; margin:-24px 0 0 -80px; font:bold 13px/16px 'pragmatica-web', sans-serif; color:#fff; text-transform:uppercase; text-align:center; }
 .products .tile.sold-out .progress .block { cursor:pointer; }
 .products .tile.sold-out .progress .block small { padding-top:7px; }
-.products .tile.notified .title { display:none; }
+.products .tile.notified .title:not(.message) { display:none; }
 .products .tile.notified .notify-text { display:block; }
 .products .tile.notified .progress { display:none; }
 .products .tile.notified .thumb > a { width:100%; }

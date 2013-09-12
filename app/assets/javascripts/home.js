@@ -326,6 +326,7 @@
 				var tile = $(this).parents('.tile');
 				var title_span = tile.find('.title');
 				title_span.text("Availability Notification scheduled");
+				title_span.addClass('message');
 			}
 		});
 
