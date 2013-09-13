@@ -38,7 +38,7 @@ class UserMailer < ActionMailer::Base
               <b>1)</b> Show server this message before you order.  They should jot your code down and confirm.<br>
               <b>2)</b> Order regular food or drink for each person in party.<br>
               <b>3)</b> Your \"Buy One, Feed One\"  item(s) will be taken off your final receipt.<br>
-              <b>4)</b> Mark your coupon used by following this link! <a href="http://staging.foodcircles.net/payment/used?code=#{payment.code}">Mark Coupon Used</a></br>
+              <b>4)</b> Mark your coupon used by following this link! <a href=\"http://staging.foodcircles.net/payment/used?code=#{payment.code}\">Mark Coupon Used</a></br>
               </p><br><br>
               Enjoy!<br><br>
               Contact support at <b>support@foodcircles.net</b> if you have any concerns or questions whatsoever.<br><br><br>
