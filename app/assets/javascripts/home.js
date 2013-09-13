@@ -253,6 +253,13 @@
         }
         $doc.unbind('webkitTransitionEnd oTransitionEnd transitionend msTransitionEnd');
       });
+      var $amount = $('.pay-box input[name=amount]').val();
+      var $give_to = $('.deal-payment .give-to');
+      if($amount > 1){
+        $give_to.text("Give " + $amount + " Meals To")
+      } else {
+        $give_to.text("Give " + $amount + " Meal To")
+      }
 		})
 
 		.on('click', '.deal-payment .back', function(event){
