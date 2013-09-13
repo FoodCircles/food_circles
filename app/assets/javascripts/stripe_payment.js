@@ -1,5 +1,6 @@
 $(function() {
-  $(document).on('click', '#dealbuy', function(event){
+  $(document)
+  .on('click', '#dealbuy', function(event){
   	event.preventDefault();
     var link = $(this);
     if(link.data().submitToStripe){
@@ -31,4 +32,19 @@ $(function() {
       $("#dealform").submit();
     }
   })
+  .on('ajax:beforeSend', "#dealform", function(e, xhr, settings) {
+    var signup_fields = $('.deal-payment #sign-up-form');
+    if(signup_fields.is(":visible")){
+      settings.data += "&" + $('.deal-payment #sign-up-form input').serialize();
+    }
+  })
+
+  .on('ajax:complete', "#dealform", function(e, data, status, xhr) {
+    var parsed_data = JSON.parse(data.responseText);
+    if(parsed_data.error){
+      $("a#dealbuy").text("Error!");
+    }else if (parsed_data.redirect_to){
+      window.location = parsed_data.redirect_to;
+    }
+  });
 })

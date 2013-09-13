@@ -1,6 +1,6 @@
 .popup.deal-popup
   .deal
-    = form_tag("/stripe_payments", :method => "post", :id => "dealform") do
+    = form_tag("/stripe_payments.json", :method => "post", :id => "dealform", :remote => true) do
       %input{:name => "stripe_token", :type => "hidden"}
       .deal-main
         .deal-banner
@@ -132,24 +132,21 @@
               = link_to('Logout', destroy_user_session_path, :method => :delete)
 
         - else
-          = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html:{ id: "sign-up-form"}) do |f|
+          #sign-up-form
             .row
               %a{href: "/users/auth/facebook", class: "btn-facebook mid"}
                 Sign up
                 %i{class: "icon-btn-facebook medium"}
-              = f.email_field :email, class: 'field standart focus', placeholder: "New email", tabindex: '1'
+              %input.field.standart.focus#user_email{:name=>"user_email", :placeholder=>"New email", :size=>"30", :tabindex=>"2", :type=>"email"}
             .row
               %a{href: "/users/auth/twitter", class: "btn-twitter mid"}
                 Sign up
                 %i{class: "icon-btn-twitter medium"}
-              = f.password_field :password, class: 'field standart', placeholder: "New password", tabindex: '2'
+              %input.field.standart.focus#user_password{:name=>"user_password", :placeholder=>"New password", :size=>"30", :tabindex=>"2", :type=>"password"}
             .form-foot
               %em
                 Have an account?
                 %a{:href => "#"} Sign in
-              %span.btn-small.submit.right
-                Sign Up
-                = f.submit 'Sign Up', tabindex: '3'
               .clear
           = form_for(resource, :as => resource_name, :url => user_session_path, html:{class: 'hidden', id: "sign-in-form"}) do |f|
             .row

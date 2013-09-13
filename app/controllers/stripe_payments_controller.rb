@@ -10,19 +10,8 @@ class StripePaymentsController < ApplicationController
     offer = Offer.find(params[:offer_id])
 
     if !user_signed_in?
-      @user = User.find_by_email(params[:user_email])
-      if @user.nil?
-        @user = User.new(:email => params[:user_email], :password => params[:user_password], :password_confirmation => params[:user_password])
-        @user.save
-      else
-        if !@user.valid_password?(params[:user_password])
-
-          flash[:error] = "Wrong password!"
-          render :action => 'new' and return
-        end
-      end
+      @user = User.create!(:email => params[:user_email], :password => params[:user_password], :password_confirmation => params[:user_password])
       sign_in(@user)
-      
     end
 
     if !current_user.stripe_customer_token.nil?
@@ -64,10 +53,24 @@ class StripePaymentsController < ApplicationController
     
     current_user.payments << payment
 
-    redirect_to :controller => 'timeline', :action => 'index', :reciept_id => payment.id
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    render :action => 'new'
+    respond_to do |format|
+      format.html do
+        redirect_to :controller => 'timeline', :action => 'index', :reciept_id => payment.id
+      end
+      format.json do
+        render :json => {:redirect_to => url_for(:controller => 'timeline', :action => 'index', :reciept_id => payment.id)}
+      end
+    end
+  rescue Stripe::CardError, ActiveRecord::RecordInvalid => e
+    respond_to do |format|
+      format.html do
+        flash[:error] = e.message
+        render :action => 'new'
+      end
+      format.json do
+        render :json => {:error => e.message}
+      end
+    end
   end
   
   private
