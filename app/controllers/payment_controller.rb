@@ -46,7 +46,7 @@ class PaymentController < ApplicationController
       payment.save
     end
     
-    if params[:source] = "email"
+    if params[:source] == "email"
       respond_to do |format|
           format.html { render :text => 'Voucher confirmed as used.  Thanks for your purchase and for feeding children in need through your dining.' }
       end
