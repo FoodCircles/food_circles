@@ -45,7 +45,9 @@ class PaymentController < ApplicationController
       payment.state = "Used"
       payment.save
     end
-      
-    render :nothing => true
+    
+    respond_to do |format|
+        format.html { render :text => 'Voucher confirmed as used.  Thanks for your purchase and for feeding children in need through your dining.' }
+    end  
   end
 end
