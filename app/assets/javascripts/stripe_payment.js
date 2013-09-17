@@ -3,8 +3,9 @@ $(function() {
   .on('click', '#dealbuy', function(event){
   	event.preventDefault();
     var link = $(this);
+    link.text("Processing...");
+
     if(link.data().submitToStripe){
-      link.text("Loading...");
       var card = {
         number:   $("#card-number").val(),
         expMonth: $("#exp-month").val(),
