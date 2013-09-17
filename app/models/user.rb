@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
   has_many :reservations
   has_many :venues
   has_many :payments
-  has_many :vouchers
   has_many :notification_requests
   has_many :watched_venues, :through => :notification_requests, :source => :venue
   has_many :external_uids, :class_name => "ExternalUID"
