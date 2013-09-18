@@ -14,8 +14,9 @@ class NonprofitsController < ApplicationController
     email = params[:email]
     organization = params[:organization]
     website = params[:website]
+    from_grand_rapids = params[:from_grand_rapids].present?
 
-    UserMailer.nonprofits_notify(email, name, organization, website).deliver
+    UserMailer.nonprofits_notify(email, name, organization, website, from_grand_rapids).deliver
     UserMailer.nonprofits_signup(email, name).deliver
 
     @n = Notification.create

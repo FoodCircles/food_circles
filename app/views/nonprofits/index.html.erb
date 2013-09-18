@@ -17,7 +17,7 @@
             <%= image_tag "nonprofits/nonprofits-iphone.png" %>
         </div>
         <div id="grtab">
-            <a href="#"><%= image_tag "nonprofits/nonprofits-grtab.png" %> </a>
+            <%= link_to image_tag("nonprofits/nonprofits-grtab.png"), non_profit_on_grand_rapids_popup_path, class: "popup-link" %>
         </div>
     </div>
 </div>
@@ -77,37 +77,6 @@
     </div>
 </div>
 
-<div style="display:none;">
-    <div id="hidden2">
-        <h1>Since we're already in Grand Rapids...</h1>
-        <p>Local restaurants are already on board, so your involvement is slightly different.</p>
-        
-        <div class="grmodal-steps">
-            <img src="img/nonprofits-step1.png" alt="">
-            <h2>Tell us who you are.</h2>
-        </div>
-        <div class="grmodal-steps">
-            <img src="img/nonprofits-step2.png" alt="">
-            <h2>We'll give you a unique url for your organization</h2>
-        </div>
-        <div class="grmodal-steps">
-            <img src="img/nonprofits-step3.png" alt="">
-            <h2>Anyone that buys through your link, the funds will go directly to you</h2>
-        </div>
-        <div id="grmodal-form">
-        <form action="">
-            <input type="text"><br />
-            <input type="text"><br />
-            <input type="text"><br />
-            <input type="text"><br />
-            <input type="submit" value="Request Invite" class="submit-image">
-        </form>
-        </div>
-    </div>
-</div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 <script>
 $('.teampick a').on('click', function(e) {
     e.preventDefault();
@@ -139,18 +108,4 @@ $('.teampick a').on('click', function(e) {
     });
     
 });
-</script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/jquery.colorbox.js"></script>
-<script>
-    $(document).ready(function(){
-        $("form").submit(function(){
-            $.colorbox({inline:true, href:"#hidden2"});
-        })
-    });
-</script>
-
-<script>
-    $("#grtab").colorbox({inline:true, href:"#hidden2"});
 </script>

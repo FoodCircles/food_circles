@@ -133,12 +133,14 @@ Foodcircles::Application.routes.draw do
   get '/faq'     => 'faq#show', :as => 'faq', :id => 'faq'
 
   #Popups
+  match '/non_profit_on_grand_rapids' => 'popups#non_profit_on_grand_rapids', :as => :non_profit_on_grand_rapids_popup
   match '/postcard_popup' => 'popups#postcard', :as => :postcard_popup
   match '/notify_signup' => 'popups#notify_signup'
   match '/app_popup' => 'popups#app_popup'
   match '/:id' => 'home#index', :as => :venue_popup
   match '/deal_popup_not_logged/:id' => 'popups#deal_popup_not_logged'
   match '/reciept/:id' => 'popups#reciept'
+
 
   match '/download' => 'application#download', :as => :download
 

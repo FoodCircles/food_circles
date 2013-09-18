@@ -101,8 +101,10 @@ class UserMailer < ActionMailer::Base
     mail(:to => email, :subject => "Thanks for your interest.", :body => "Someone will get back with you soon, #{name}." )
   end
 
-  def nonprofits_notify(email, name, organization, website)
-    mail(:to => 'jonathan@foodcircles.net', :subject => "New Buy One, Feed One Request", :body => "#{name} from #{organization} would like to join Food Circles. Their website is  #{website}. Please contact them at #{email}." )
+  def nonprofits_notify(email, name, organization, website, from_grand_rapids = false)
+    subject = "New Buy One, Feed One Request"
+    subject += " from Grand Rapids" if from_grand_rapids
+    mail(:to => 'jonathan@foodcircles.net', :subject => subject, :body => "#{name} from #{organization} would like to join Food Circles. Their website is  #{website}. Please contact them at #{email}." )
   end
 
   def students_signup(email)
