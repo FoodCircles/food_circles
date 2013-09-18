@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="placard alpha">
+    <h1>Thanks for your event request!</h1>
+    <h2>We got your submission and we will be contacting you shortly for event specifics</h2>
+    <h2>Stay tuned!</h2>
+  </div>
+  <div class="placard omega">
+    <%= image_tag 'stringleft.png', class: "stringleft-confirm" %>
+    <%= image_tag 'stringright.png', class: "stringright-confirm" %>
+    <div class="responses">
+      <p>Delivery Address: <span class="answer"><%= @event.address %></span></p>
+      <p>Date and time: <span class="answer"><%= @event.date %></span></p>
+      <p>How many people? <span class="answer"><%= @event.num_people %></span></p>
+      <p>Occassion: <span class="answer"><%= @event.occassion %></span></p>
+      <p>Budget: <span class="answer"><%= @event.budget %></span></p>
+      <p>Food types: <span class="answer"><%= @event.food_preferences %></span></p>
+      <p>Contact: <span class="answer"><%= @event.email %></span></p>
+      <p>Charity: <span class="answer"><%= @event.donation %></span></p>
+    </div>
+  </div>
+</div>

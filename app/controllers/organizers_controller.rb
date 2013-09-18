@@ -3,6 +3,7 @@ class OrganizersController < ApplicationController
   	if(params[:email])
       if valid_email?(params[:email])
         signup
+        render 'confirm'
       else
         flash[:error] = 'Invalid email address.'
       end
@@ -17,6 +18,8 @@ class OrganizersController < ApplicationController
     @n.content = "Email: #{params[:email]}, Location: #{params[:location]}, Address: #{params[:address]}, Date: #{params[:date]}, Number of People: #{params[:num_people]}, Occassion: #{params[:occassion]}, Budget: #{params[:budget]}, Food Preferences: #{params[:food_preferences]}, Donation: #{params[:donation]}, Feedback: #{params[:feedback]}"
     @n.ticker = "An organizers signup"
     @n.save
+
+    @event = OpenStruct.new(params.except(:utf8, :authenticity_token))
   end
 
   def valid_email?(email)
