@@ -1,4 +1,7 @@
 class UserMailer < ActionMailer::Base
+  ADMIN_EMAIL = 'jonathan@foodcircles.net'
+  SUPPORT_EMAIL = 'support@foodcircles.net'
+
   #tkxel_dev: SendGrid credentilas for email.
   default from:"\"FoodCircles\" <voucher@foodcircles.net>"
   require 'mail'
@@ -78,7 +81,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def social_butterfly(fb)
-    mail(:to => 'jonathan@foodcircles.net', :subject => "Social Butterfly Matchmaking", :body => "Someone would like to apply for Social Butterflies! Their profile is #{fb}" )
+    mail(:to => ADMIN_EMAIL, :subject => "Social Butterfly Matchmaking", :body => "Someone would like to apply for Social Butterflies! Their profile is #{fb}" )
   end
 
   def restaurant_signup(email, name)
@@ -86,7 +89,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def restaurant_notify(email, name)
-   mail(:to => 'jonathan@foodcircles.net', :subject => "New Restaurant Request", :body => "#{name} would like to join Food Circles. Please contact them at #{email}.") 
+   mail(:to => ADMIN_EMAIL, :subject => "New Restaurant Request", :body => "#{name} would like to join Food Circles. Please contact them at #{email}.")
   end
 
   def company_signup(email, name, company)
@@ -94,7 +97,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def company_notify(email, name, company)
-    mail(:to => 'jonathan@foodcircles.net', :subject => "New Company Request", :body => "#{name} from #{company} would like to join Food Circles. Please contact them at #{email}." )
+    mail(:to => ADMIN_EMAIL, :subject => "New Company Request", :body => "#{name} from #{company} would like to join Food Circles. Please contact them at #{email}." )
   end
 
   def nonprofits_signup(email, name)
@@ -104,7 +107,7 @@ class UserMailer < ActionMailer::Base
   def nonprofits_notify(email, name, organization, website, from_grand_rapids = false)
     subject = "New Buy One, Feed One Request"
     subject += " from Grand Rapids" if from_grand_rapids
-    mail(:to => 'jonathan@foodcircles.net', :subject => subject, :body => "#{name} from #{organization} would like to join Food Circles. Their website is  #{website}. Please contact them at #{email}." )
+    mail(:to => ADMIN_EMAIL, :subject => subject, :body => "#{name} from #{organization} would like to join Food Circles. Their website is  #{website}. Please contact them at #{email}." )
   end
 
   def students_signup(email)
@@ -112,7 +115,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def students_notify(email)
-    mail(:to => 'jonathan@foodcircles.net', :subject => "New Student Request", :body => "A student would like to join Food Circles. Please contact them at #{email}." )    
+    mail(:to => ADMIN_EMAIL, :subject => "New Student Request", :body => "A student would like to join Food Circles. Please contact them at #{email}." )
   end
 
   def organizers_signup(email)
@@ -120,7 +123,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def organizers_notify(email, location, address, date, num_diners, occassion, budget, food_preferences, donation, feedback)
-    mail(:to => 'jonathan@foodcircles.net', :subject => "New Organizers Request", :body => "An organizer would like to join Food Circles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
+    mail(:to => ADMIN_EMAIL, :subject => "New Organizers Request", :body => "An organizer would like to join Food Circles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
   end
 
   def notification_about_available_vouchers(user, venue)
@@ -143,6 +146,6 @@ class UserMailer < ActionMailer::Base
 
   def postcard_notification(postcard)
     @postcard = postcard
-    mail(:to => "support@foodcircles.net", :subject => "Postcard alert")
+    mail(:to => SUPPORT_EMAIL, :subject => "Postcard alert")
   end
 end
