@@ -1,11 +1,12 @@
 class OrganizersController < ApplicationController
-  def index
+  def create
   	if(params[:email])
       if valid_email?(params[:email])
         signup
         render 'confirm'
       else
         flash[:error] = 'Invalid email address.'
+        render 'index'
       end
     end
   end
