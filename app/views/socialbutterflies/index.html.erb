@@ -41,7 +41,7 @@
             <%= image_tag "butterflies/butterfly-path3.png" %>
             </div> 
         <div id="butterfly-submit">
-            <%= form_tag socialbutterflies_path, method: :post do %>
+            <%= form_tag socialbutterflies_path, method: :post, remote: true do %>
               <%= text_field_tag :facebook, nil, :placeholder => "http://www.facebook.com/yourprofile", :size => "65" %><br />
               <%= image_submit_tag "butterflies/butterfly-apply.png" %>
             <% end %>
@@ -59,9 +59,7 @@
             <div id="butterfly-texting">
                 <%= image_tag "butterflies/butterfly-texting.png" %>
             </div>
-            
         </div>
-        
     </div>
    
 <div id="fbcomments">
@@ -75,37 +73,3 @@
     </div>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-<script>
-$('.teampick a').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    if ($this.parent().is('.active')) return;
-    $('.teampick .active').removeClass('active');
-    $this.parent().addClass('active');
-    
-    var $current = $('.teammember.active'),
-        $dest    = $($this.attr('href')),
-        offset   = $current.position();
-    
-    $current.css({
-        top: offset.top,
-        left: offset.left,
-        position: 'absolute'
-    }).animate({
-        opacity: 0
-    }, function(){
-        $(this).removeClass('active').css({
-            position: 'static',
-            opacity: 1
-        });
-    });
-    $dest.css({
-        opacity: 0
-    }).addClass('active').animate({
-        opacity: 1
-    });
-    
-});
-</script>
