@@ -22,7 +22,6 @@ Foodcircles::Application.routes.draw do
   resources :offers
   resources :categories
   match '/organizers' => 'organizers#index', :as => :organizers
-  match '/restaurants' => 'restaurants#index', :as => :restaurants
   match '/timeline' => 'timeline#index', :as => :timeline
   #match '/payment' => 'payment#index', :as => :payment
   match '/payment/stripe' => 'payment#stripe', :as => :stripe

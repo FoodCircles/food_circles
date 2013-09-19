@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  def index
+  def create
     if(params[:email])
       if valid_email?(params[:email])
         signup
@@ -10,21 +10,19 @@ class RestaurantsController < ApplicationController
   end
 
   def signup
-  	email = params[:email]
-  	name = params[:name]
-  	UserMailer.restaurant_notify(email, name).deliver
-  	UserMailer.restaurant_signup(email, name).deliver
+    email = params[:email]
+    name = params[:name]
+    UserMailer.restaurant_notify(email, name).deliver
+    UserMailer.restaurant_signup(email, name).deliver
 
-  	@n = Notification.create
-  	@n.content = "Name: #{name}, Email: #{email}"
-  	@n.ticker = "A restaurant signup"
-  	@n.save
+    @notification = Notification.create
+    @notification.content = "Name: #{name}, Email: #{email}"
+    @notification.ticker = "A restaurant signup"
+    @notification.save
   end
 
   def valid_email?(email)
     valid = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     email.present? && (email =~ valid)
   end
-
 end
-
