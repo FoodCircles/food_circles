@@ -1,5 +1,5 @@
 class NonprofitsController < ApplicationController
-  def index
+  def create
   	if(params[:email])
       if valid_email?(params[:email])
         signup
@@ -19,10 +19,10 @@ class NonprofitsController < ApplicationController
     UserMailer.nonprofits_notify(email, name, organization, website, from_grand_rapids).deliver
     UserMailer.nonprofits_signup(email, name).deliver
 
-    @n = Notification.create
-    @n.content = "Name: #{name}, Organization: #{organization}, Email: #{email}, Website: #{website}"
-    @n.ticker = "A nonprofits signup"
-    @n.save
+    @notification = Notification.create
+    @notification.content = "Name: #{name}, Organization: #{organization}, Email: #{email}, Website: #{website}"
+    @notification.ticker = "A nonprofits signup"
+    @notification.save
   end
 
   def valid_email?(email)

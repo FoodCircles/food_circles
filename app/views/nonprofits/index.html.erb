@@ -31,7 +31,7 @@
         </div>
 
         <div id="nonprofits-step2">
-            <%= form_tag nonprofits_path, :id => 'nonprofit-form', method: :post do %>
+            <%= form_tag nonprofits_path, :id => 'nonprofit-form', method: :post, remote: true do %>
               <%= text_field_tag :organization, nil, :placeholder => "Organization" %><br />
               <%= text_field_tag :name, nil, :placeholder => "Name" %><br />
               <%= text_field_tag :email, nil, :placeholder => "Email" %><br />
@@ -64,48 +64,3 @@
         </div>
     </div>
 </div>
-
-
-<div style="display:none;">
-    <div id="hidden">
-        <h1>Thank you for your request!</h1>
-        <h2>We will be contacting you shortly to get things started and distribute your custom url.</h2><br />
-        <h2>Take a second to <a href="#">browse our restaurants</a> while you're here.</h2>
-        <h2>Like us on <a href="#">Facebook</a><br />
-        Follow us on <a href="#">Twitter</a></h2>
-        
-    </div>
-</div>
-
-<script>
-$('.teampick a').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    if ($this.parent().is('.active')) return;
-    $('.teampick .active').removeClass('active');
-    $this.parent().addClass('active');
-    
-    var $current = $('.teammember.active'),
-        $dest    = $($this.attr('href')),
-        offset   = $current.position();
-    
-    $current.css({
-        top: offset.top,
-        left: offset.left,
-        position: 'absolute'
-    }).animate({
-        opacity: 0
-    }, function(){
-        $(this).removeClass('active').css({
-            position: 'static',
-            opacity: 1
-        });
-    });
-    $dest.css({
-        opacity: 0
-    }).addClass('active').animate({
-        opacity: 1
-    });
-    
-});
-</script>

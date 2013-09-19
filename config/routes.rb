@@ -22,11 +22,9 @@ Foodcircles::Application.routes.draw do
   resources :offers
   resources :categories
   match '/companies' => 'companies#index', :as => :companies
-  match '/nonprofits' => 'nonprofits#index', :as => :nonprofits
   match '/students' => 'students#index', :as => :students
   match '/organizers' => 'organizers#index', :as => :organizers
   match '/restaurants' => 'restaurants#index', :as => :restaurants
-  match '/socialbutterflies' => 'socialbutterflies#index', :as => :butterflies
   match '/timeline' => 'timeline#index', :as => :timeline
   #match '/payment' => 'payment#index', :as => :payment
   match '/payment/stripe' => 'payment#stripe', :as => :stripe
