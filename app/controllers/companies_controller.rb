@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  def index
+  def create
   	if(params[:email])
       if valid_email?(params[:email])
         signup
@@ -17,15 +17,14 @@ class CompaniesController < ApplicationController
     UserMailer.company_notify(email, name, company).deliver
     UserMailer.company_signup(email, name, company).deliver
 
-    @n = Notification.create
-    @n.content = "Name: #{name}, Company: #{company} Email: #{email}"
-    @n.ticker = "A company signup"
-    @n.save
+    @notification = Notification.create
+    @notification.content = "Name: #{name}, Company: #{company} Email: #{email}"
+    @notification.ticker = "A company signup"
+    @notification.save
   end
 
   def valid_email?(email)
     valid = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     email.present? && (email =~ valid)
   end
-
 end
