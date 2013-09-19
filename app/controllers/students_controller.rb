@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
-
-  def index
+  def create
    	if(params[:students_email])
       if valid_email?(params[:students_email])
         signup
@@ -16,10 +15,10 @@ class StudentsController < ApplicationController
     UserMailer.students_notify(email).deliver
     UserMailer.students_signup(email).deliver
 
-    @n = Notification.create
-    @n.content = "Email: #{email}"
-    @n.ticker = "A student leader signup"
-    @n.save
+    @notification = Notification.create
+    @notification.content = "Email: #{email}"
+    @notification.ticker = "A student leader signup"
+    @notification.save
   end
 
   def valid_email?(email)
