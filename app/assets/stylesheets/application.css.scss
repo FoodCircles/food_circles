@@ -549,6 +549,7 @@ body.active-popup {
 .banner .slides img { float:left; width:100%; height:auto; position:relative; z-index:-1; }
 
 .banner .cnt { position:absolute; top:0; left:50%; z-index:3; width:400px; height:100%; margin-left:-200px; text-align:center; color:#fff; letter-spacing:.1em; }
+.banner .cnt:after { content:''; position:absolute; top:0; left:-230px; height:100%; background:url(image_path('darken.png')) no-repeat center center; width:860px;  pointer-events:none; }
 .banner .cnt h3 { font:19px 'museo-slab', serif; color:#fffefe; padding-bottom:7px; }
 .banner .cnt p { padding-bottom:0; color:#fffefe; font-size:19px; line-height:1; }
 
