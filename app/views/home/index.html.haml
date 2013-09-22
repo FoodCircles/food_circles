@@ -55,7 +55,7 @@
             .thumb
               - if venue.has_vouchers?
                 %span.social
-                  %a{href: "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://www.joinfoodcircles.org/restaurant&p[images][0]="+venue.restaurant_tile_image.thumb("274x163").url+"&p[title]=At%20"+venue.name+":%20"+venue.offers.order("min_diners ASC").first.name+"%20for%20$1+.%20100%25%20of%20purchase%20goes%20to%20buy%20dinner%20for%20a%20child%20in%20need%20@foodcircles.%20http://joinfoodcircles.org/restaurant%20#bofo", class: "btn-mini"}
+                  %a{href: "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://www.joinfoodcircles.org/restaurant&p[images][0]="+image_tag(venue.restaurant_tile_image.thumb("274x163").url)+"&p[title]=At%20"+venue.name+":%20"+venue.offers.order("min_diners ASC").first.name+"%20for%20$1+.%20100%25%20of%20purchase%20goes%20to%20buy%20dinner%20for%20a%20child%20in%20need%20@foodcircles.%20http://joinfoodcircles.org/restaurant%20#bofo", class: "btn-mini"}
                     %i.icon-facebook
                   %a{href: "https://twitter.com/intent/tweet?status=At%20"+venue.name+":%20"+venue.offers.order("min_diners ASC").first.name+"%20for%20$1+.%20100%25%20of%20purchase%20goes%20to%20buy%20dinner%20for%20a%20child%20in%20need%20@foodcircles.%20http://joinfoodcircles.org/restaurant%20#bofo", class: "btn-mini"}
                     %i.icon-twitter
