@@ -14,4 +14,14 @@ class ReceiveTextController < ApplicationController
       makeCall(r.venue, r)
     end
   end
+  
+  def used
+    body = params[:Body]
+    from = params[:From]
+    
+    # body.gsub!(/[^0-9]/,"")
+    # number.gsub!(/[^0-9]/,"")
+    
+    sendText(from, body)
+  end
 end

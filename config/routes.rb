@@ -139,6 +139,8 @@ Foodcircles::Application.routes.draw do
   match '/download' => 'application#download', :as => :download
 
   match '/sms' => 'receive_texts#index', :via => :post
+  
+  match '/receive_text/used' => 'receive_text#used'
 
   match '/editor/:id' => 'editor#show'
 
