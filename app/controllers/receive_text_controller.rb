@@ -19,9 +19,22 @@ class ReceiveTextController < ApplicationController
     body = params[:Body]
     from = params[:From]
     
-    # body.gsub!(/[^0-9]/,"")
-    # number.gsub!(/[^0-9]/,"")
+    if body.blank?
+      body.gsub!(/[^0-9]/,"")
+    end
     
-    sendText(from, body)
+    if from.blank?
+      number.gsub!(/[^0-9]/,"")
+    end
+    
+    if body.blank?
+      payment = Payment.find_by_code(body)      
+      payment.state = "Used"
+      payment.save
+    end
+    
+    response = "Voucher confirmed as used. Thanks for your purchase and for feeding children in need through your dining."
+    
+    sendText(from, response)
   end
 end
