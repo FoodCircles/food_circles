@@ -28,6 +28,7 @@ class ReceiveTextController < ApplicationController
     end
     
     if body.blank?
+      body.upcase!
       payment = Payment.find_by_code(body)      
       payment.state = "Used"
       payment.save
@@ -36,5 +37,7 @@ class ReceiveTextController < ApplicationController
     response = "Voucher #{body} confirmed as used. Thanks for your purchase and for feeding children in need through your dining."
     
     sendText(from, response)
+    
+    render :nothing => true
   end
 end
