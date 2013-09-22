@@ -33,7 +33,7 @@ class ReceiveTextController < ApplicationController
       payment.save
     end
     
-    response = "Voucher confirmed as used. Thanks for your purchase and for feeding children in need through your dining."
+    response = "Voucher #{body} confirmed as used. Thanks for your purchase and for feeding children in need through your dining."
     
     sendText(from, response)
   end
