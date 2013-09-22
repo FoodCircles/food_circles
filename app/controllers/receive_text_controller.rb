@@ -19,15 +19,15 @@ class ReceiveTextController < ApplicationController
     body = params[:Body]
     from = params[:From]
     
-    if body.blank?
+    if !body.blank?
       body.gsub!(/[^0-9]/,"")
     end
     
-    if from.blank?
+    if !from.blank?
       number.gsub!(/[^0-9]/,"")
     end
     
-    if body.blank?
+    if !body.blank?
       body.upcase!
       payment = Payment.find_by_code(body)      
       payment.state = "Used"
