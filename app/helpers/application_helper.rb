@@ -1,6 +1,6 @@
 module ApplicationHelper
   def google_maps_search(venue)
-    return venue.google_maps_url if venue.google_maps_url
+    return venue.google_maps_url if venue.google_maps_url.present?
 
     maps_base_uri = URI.parse "http://maps.google.com"
     search_terms = []
