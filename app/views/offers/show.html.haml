@@ -1,6 +1,6 @@
 .popup.deal-popup
   .deal
-    = form_tag("/stripe_payments.json", :method => "post", :id => "dealform", :remote => true) do
+    = form_tag("/stripe_payments.json", :method => "post", :id => "dealform", :remote => true, :"data-show-ajax-status-on" => "#dealbuy") do
       %input{:name => "stripe_token", :type => "hidden"}
       .deal-main
         .deal-banner

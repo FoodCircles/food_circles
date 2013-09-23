@@ -329,9 +329,25 @@
 				popupOpen($(this).attr('href'));
 			}
       
+		})
+
+		.on('ajax:beforeSend', 'form[data-show-ajax-status-on]', function(e){
+			var form = $(this);
+			var selector = form.data('show-ajax-status-on');
+			$(selector).text("Processing ...");
+		})
+
+		.on('ajax:error', "form[data-show-ajax-status-on]", function(e, data, status, xhr) {
+			var form = $(this);
+			var selector = form.data('show-ajax-status-on');
+			$(selector).text("Error");
+		})
+
+		.on('ajax:success', "form[data-show-ajax-status-on]", function(e, data, status, xhr) {
+			var form = $(this);
+			var selector = form.data('show-ajax-status-on');
+			$(selector).text("Success");
 		});
-
-
 
 		$('.notification_request').bind('ajax:success', function(event, data) {
 			if(data.status == "success"){

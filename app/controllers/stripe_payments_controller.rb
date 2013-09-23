@@ -68,7 +68,7 @@ class StripePaymentsController < ApplicationController
         render :action => 'new'
       end
       format.json do
-        render :json => {:error => e.message}
+        render :json => {:error => e.message}, status: 500
       end
     end
   end

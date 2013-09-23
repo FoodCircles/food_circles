@@ -3,7 +3,6 @@ $(function() {
   .on('click', '#dealbuy', function(event){
   	event.preventDefault();
     var link = $(this);
-    link.text("Processing...");
 
     if(link.data().submitToStripe){
       var card = {
@@ -42,9 +41,7 @@ $(function() {
 
   .on('ajax:complete', "#dealform", function(e, data, status, xhr) {
     var parsed_data = JSON.parse(data.responseText);
-    if(parsed_data.error){
-      $("a#dealbuy").text("Error!");
-    }else if (parsed_data.redirect_to){
+    if (parsed_data.redirect_to){
       window.location = parsed_data.redirect_to;
     }
   });
