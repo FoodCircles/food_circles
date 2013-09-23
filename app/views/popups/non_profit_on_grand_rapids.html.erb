@@ -26,7 +26,7 @@
     </div>
   </div>
   <div id="grmodal-form">
-    <%= form_tag nonprofits_path, method: :post do %>
+    <%= form_tag nonprofits_path, method: :post, remote: true, :"data-show-ajax-status-on" => "input[type=submit]" do %>
       <%= text_field_tag :organization, nil, :placeholder => "Organization" %><br />
       <%= text_field_tag :name, nil, :placeholder => "Name" %><br />
       <%= text_field_tag :email, nil, :placeholder => "Email" %><br />

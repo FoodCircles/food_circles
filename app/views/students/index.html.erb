@@ -47,10 +47,10 @@
 
 
         <div id="crowd">
-            <%= form_tag "#", :id => 'students-form', method: :post, remote: true do %>
+            <%= form_tag "#", :id => 'students-form', method: :post, remote: true, :"data-show-ajax-status-on" => "input[type=submit]" do %>
                 <h3>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h3>
                  <%= text_field_tag :students_email, nil, :placeholder => "you@email.com", :id => "students-input" %><br />
-                <%= image_submit_tag "students/students-signup.png", :style => "width:400px" %>
+                <%= submit_tag "Sign Up", class: "btn-standart", style: "width: 400px" %>
                 <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
             <% end %>
         </div>

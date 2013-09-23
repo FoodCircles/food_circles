@@ -334,19 +334,34 @@
 		.on('ajax:beforeSend', 'form[data-show-ajax-status-on]', function(e){
 			var form = $(this);
 			var selector = form.data('show-ajax-status-on');
-			$(selector).text("Processing ...");
+			var input = form.find(selector);
+			if(input.is("input")){
+				input.val("Processing ...");
+			}else{
+				input.text("Processing ...");
+			}
 		})
 
-		.on('ajax:error', "form[data-show-ajax-status-on]", function(e, data, status, xhr) {
+		.on('ajax:error', 'form[data-show-ajax-status-on]', function(e) {
 			var form = $(this);
 			var selector = form.data('show-ajax-status-on');
-			$(selector).text("Error");
+			var input = form.find(selector);
+			if(input.is("input")){
+				input.val("Error");
+			}else{
+				input.text("Error");
+			}
 		})
 
-		.on('ajax:success', "form[data-show-ajax-status-on]", function(e, data, status, xhr) {
+		.on('ajax:success', 'form[data-show-ajax-status-on]', function(e) {
 			var form = $(this);
 			var selector = form.data('show-ajax-status-on');
-			$(selector).text("Success");
+			var input = form.find(selector);
+			if(input.is("input")){
+				input.val("Success");
+			}else{
+				input.text("Success");
+			}
 		});
 
 		$('.notification_request').bind('ajax:success', function(event, data) {

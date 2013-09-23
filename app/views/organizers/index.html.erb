@@ -80,7 +80,7 @@
                 <%= radio_button_tag :donation, 'globally', value: 'globally' %><br />
                 <h2>Bear with us as we grow. Is there any feedback you have about this form or about this process?</h2>
                 <%= text_area_tag :feedback, nil, rows: "10", cols: "60" %><br />
-                <%= image_submit_tag "organizers/organizers-submit.png" %>
+                <%= submit_tag "Submit", :class => "btn-standart" %>
             <% end %>
             </div>
         </div>

@@ -31,7 +31,7 @@
         </div>
 
         <div id="nonprofits-step2">
-            <%= form_tag nonprofits_path, :id => 'nonprofit-form', method: :post, remote: true do %>
+            <%= form_tag nonprofits_path, :id => 'nonprofit-form', method: :post, remote: true, :"data-show-ajax-status-on" => "input[type=submit]" do %>
               <%= text_field_tag :organization, nil, :placeholder => "Organization" %><br />
               <%= text_field_tag :name, nil, :placeholder => "Name" %><br />
               <%= text_field_tag :email, nil, :placeholder => "Email" %><br />

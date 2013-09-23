@@ -62,11 +62,11 @@
             
             <div id="companies-form">
 
-            <%= form_tag companies_path, method: :post, remote: true do %>
+            <%= form_tag companies_path, method: :post, remote: true, :"data-show-ajax-status-on" => "input[type=submit]" do %>
                 <%= text_field_tag :company, nil, :placeholder => "company"%>
                 <%= text_field_tag :name, nil, :placeholder => "name"%>
                 <%= text_field_tag :email, nil, :placeholder => "email"%>
-                <%= image_submit_tag "companies/companies-invite.png", id: "submit-image" %>
+                <%= submit_tag "Request Invite", :class => "btn-standart", style: "width: 320px" %>
             <% end %>
             <p><strong>Get Signed Up</strong></p>
             <p>Currently open to companies only. Sign up to get more info.</p>
