@@ -335,10 +335,11 @@
 			var form = $(this);
 			var selector = form.data('show-ajax-status-on');
 			var input = form.find(selector);
+			var text = form.data("processing-text") || "Submitting ..."
 			if(input.is("input")){
-				input.val("Processing ...");
+				input.val(text);
 			}else{
-				input.text("Processing ...");
+				input.text(text);
 			}
 		})
 
@@ -346,10 +347,11 @@
 			var form = $(this);
 			var selector = form.data('show-ajax-status-on');
 			var input = form.find(selector);
+			var text = form.data("error-text") || "Error"
 			if(input.is("input")){
-				input.val("Error");
+				input.val(text);
 			}else{
-				input.text("Error");
+				input.text(text);
 			}
 		})
 
@@ -357,10 +359,11 @@
 			var form = $(this);
 			var selector = form.data('show-ajax-status-on');
 			var input = form.find(selector);
+			var text = form.data("success-text") || "Done"
 			if(input.is("input")){
-				input.val("Success");
+				input.val(text);
 			}else{
-				input.text("Success");
+				input.text(text);
 			}
 		});
 
