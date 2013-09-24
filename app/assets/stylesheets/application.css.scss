@@ -1544,7 +1544,15 @@ body.active-popup {
 .timeline .block.right .circle { right:100%; margin-right:30px; }
 
 .timeline .block .head { text-align:center; padding:5px 0 9px; }
-.timeline .block .head h5 { text-transform:uppercase; line-height:1; }
+.timeline .block .head h5 {
+	text-transform:uppercase;
+	line-height:1;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+
 .timeline .block .head p { font-family:'pragmatica-web', sans-serif; font-weight:normal; line-height:1; padding:0; }
 .timeline .block .body { position:relative; display:block; z-index:3; background:#000; }
 .timeline .block .body img { display:block;
