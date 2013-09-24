@@ -1,16 +1,13 @@
 <% content_for(:active_tab) do %>
 <div class="user-invites">
-  <%- if !current_user.has_facebook? %>
-    <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Connect</a>
-  <%-else%>
-    <a href="#" class="btn-facebook grad full-width"><i class="icon-btn-facebook medium"></i>Invite friends</a>
-  
-  <%-end%>
-  <%- if !current_user.has_twitter? %>
-    <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Connect</a>
-  <%-else%>
-    <a href="#" class="btn-twitter grad full-width"><i class="icon-btn-twitter medium"></i>Invite friends</a>
-  <%-end%>
+  <%= link_to facebook_share_url("Buy One, Feed One", "Local restaurants, $1 appetizers, 100% donated to feed hungry children.", root_url), class: "btn-facebook grad full-width" do %>
+    <i class="icon-btn-facebook medium"></i>Connect
+  <% end %>
+
+  <%= link_to twitter_share_url("Your appetite is powerful. Local restaurants, $1 dishes, 100% donated to feed hungry children. #{root_url} @foodcircles"), class: "btn-twitter grad full-width" do %>
+    <i class="icon-btn-twitter medium"></i>Connect
+  <% end %>
+
   <div class="balloon">
     <i class="arrow-up"><i class="arrow-up"></i></i>
     see where your friends are eating and who they are <strong>feeding</strong>
