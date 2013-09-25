@@ -105,7 +105,16 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
     root_path
   end
-  
+
+  def enqueue_mix_panel_event(event)
+    queued_mixpanel_events.push event
+  end
+
+  def queued_mixpanel_events
+    # Uses a session so it persists between redirects
+    session[:queued_mixpanel_events] ||= []
+  end
+
   private
 
   def mobile_device?
@@ -227,5 +236,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :weekly_meal_goal, :total_week_payments, :total_payments, :weekly_progress, :percent, :custom_body_classes
   helper_method :stripe_customer?, :current_user_credit_card_data, :total_meals
+  helper_method :enqueue_mix_panel_event, :queued_mixpanel_events
 end
 

@@ -1,5 +1,4 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
   def facebook
     if current_user.nil?
       @user = User.find_by_facebook_uid(request.env["omniauth.auth"].uid)
@@ -12,7 +11,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           facebook_token:request.env["omniauth.auth"]["credentials"].token,
           has_facebook:true
         )
+        enqueue_mix_panel_event "Facebook Sign Up"
+      else
+        enqueue_mix_panel_event "Facebook Sign In"
       end
+
       @user.do_password_validation = false
       @user.save
       sign_in_and_redirect @user
@@ -23,7 +26,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       current_user.save
       redirect_to root_path
     end
-
   end
 
   def twitter
@@ -39,12 +41,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           twitter_token:request.env["omniauth.auth"]["credentials"].token,
           has_twitter:true
         )
+        enqueue_mix_panel_event "Twitter Sign Up"
+      else
+        enqueue_mix_panel_event "Twitter Sign In"
       end
+
       @user.do_password_validation = false
       @user.save
       
       sign_in_and_redirect @user
-      
     else
       current_user.twitter_secret = request.env["omniauth.auth"]["credentials"].secret
       current_user.twitter_token = request.env["omniauth.auth"]["credentials"].token
