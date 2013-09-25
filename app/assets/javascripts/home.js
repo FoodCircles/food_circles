@@ -365,6 +365,11 @@
 			}else{
 				input.text(text);
 			}
+		})
+
+		.on('click', '*[data-mixpanel-event]', function(e) {
+			var eventName = $(this).data('mixpanel-event');
+			mixpanel.track(eventName);
 		});
 
 		$('.notification_request').bind('ajax:success', function(event, data) {
