@@ -24,7 +24,7 @@
             %i{class: "arrow-right"}
         - else
           Hey! you new here?
-          %a{href: '#', class:'sign-form-link'}
+          %a{href: '#', class:'sign-form-link', :"data-mixpanel-event" => "Open Sign Up PopUp"}
             Sign Up
             %i{class: "arrow-down"}
         / = link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user
