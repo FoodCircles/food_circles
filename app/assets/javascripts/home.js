@@ -368,8 +368,10 @@
 		})
 
 		.on('click', '*[data-mixpanel-event]', function(e) {
-			var eventName = $(this).data('mixpanel-event');
-			mixpanel.track(eventName);
+			var element = $(this);
+			var eventName = element.data('mixpanel-event');
+			var eventOptions = element.data('mixpanel-options');
+			mixpanel.track(eventName, eventOptions);
 		});
 
 		$('.notification_request').bind('ajax:success', function(event, data) {

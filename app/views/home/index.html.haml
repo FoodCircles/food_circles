@@ -76,7 +76,7 @@
                       %small left
 
               /%a{href: main_app.deal_popup_not_logged_path(offer)}
-              %a.deallink.popup-link{href: venue.offers.order("min_diners ASC").first.id.to_s, :"data-slug" => venue.slug, :"data-disabled" => "#{venue.sold_out?}"}
+              %a.deallink.popup-link{href: venue.offers.order("min_diners ASC").first.id.to_s, :"data-slug" => venue.slug, :"data-disabled" => "#{venue.sold_out?}", :"data-mixpanel-event" => "Clicked on a Restaurant", :"data-mixpanel-options" => {restaurant: venue.name}.to_json }
                 %span.price
                   %strong= number_to_currency(venue.offers.order("min_diners ASC").first.price, :precision => 0)
                   %span{class: "old"}
