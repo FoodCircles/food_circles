@@ -49,4 +49,6 @@ Foodcircles::Application.configure do
       :authentication       => 'plain',
       :enable_starttls_auto => true
   }
+
+  config.mix_panel_api_key = "2388ab76edc8d1dafc869aabfbaf8338"
 end

@@ -24,6 +24,7 @@
     <%= csrf_meta_tags %>
     <%= tag :meta, :name => 'stripe-key', :content => Rails.configuration.stripe[:publishable_key] %>
     <%= render 'layouts/google-analytics' %>
+    <%= render 'layouts/mix-panel' %>
   </head>
 
   <%- custom_body_classes << (user_signed_in? ? 'logged-in' : 'not-logged') %>
