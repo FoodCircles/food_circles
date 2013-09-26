@@ -30,9 +30,9 @@
                       = offer.name
                       = min_deals(offer.min_diners)
                   - if i == 0
-                    %input#qty-1.custom-input{:checked => "checked", "data-details" => offer.details, "data-name" => offer.name, "data-originalprice" => prettify_float(offer.original_price), "data-price" => prettify_float(offer.price), :name => "offer_id", :type => "radio", :value => offer.id}/
+                    %input#qty-1.custom-input{:checked => "checked", "data-details" => offer.details, "data-name" => offer.name, "data-originalprice" => prettify_float(offer.original_price), "data-price" => prettify_float(offer.price), :name => "offer_id", :type => "radio", :value => offer.id, :"data-mixpanel-event" => "Selected a different deal", :"data-mixpanel-trigger-on" => "change", :"data-mixpanel-options" => {:restaurant => offer.venue.name, :offer => offer.name}.to_json}/
                   - else
-                    %input#qty-1.custom-input{"data-details" => offer.details, "data-name" => offer.name, "data-originalprice" => prettify_float(offer.original_price), "data-price" => prettify_float(offer.price), :name => "offer_id", :type => "radio", :value => offer.id}/
+                    %input#qty-1.custom-input{"data-details" => offer.details, "data-name" => offer.name, "data-originalprice" => prettify_float(offer.original_price), "data-price" => prettify_float(offer.price), :name => "offer_id", :type => "radio", :value => offer.id, :"data-mixpanel-event" => "Selected a different deal", :"data-mixpanel-trigger-on" => "change", :"data-mixpanel-options" => {:restaurant => offer.venue.name, :offer => offer.name}.to_json}/
             -#.qty
           -#.description
           .pay-box

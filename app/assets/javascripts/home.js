@@ -367,8 +367,18 @@
 			}
 		})
 
-		.on('click', '*[data-mixpanel-event]', function(e) {
+		.on('click', '*[data-mixpanel-event]:not([data-mixpanel-trigger-on]), *[data-mixpanel-event][data-mixpanel-trigger-on=click]', function(e) {
 			var element = $(this);
+			var eventName = element.data('mixpanel-event');
+			var eventOptions = element.data('mixpanel-options');
+			mixpanel.track(eventName, eventOptions);
+		})
+
+		.on('change', '*[data-mixpanel-event][data-mixpanel-trigger-on=change]', function(e) {
+			var element = $(this);
+			if(!element.is(':checked')){
+				return true;
+			}
 			var eventName = element.data('mixpanel-event');
 			var eventOptions = element.data('mixpanel-options');
 			mixpanel.track(eventName, eventOptions);
