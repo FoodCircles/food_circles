@@ -46,7 +46,7 @@
               %span.mid $9
               .slider-wrap
                 %span.bg-holder
-                .slider
+                .slider{:"data-mixpanel-options" => {:restaurant => @offer.venue.name}.to_json }
                 -#.slider
               -#.slider-wrap
             -#.slider-holder

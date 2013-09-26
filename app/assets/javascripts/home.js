@@ -626,7 +626,9 @@
 					if($slider.closest('.pay-box').length){
             			$('.pay-box').find('.field').val(ui.value);
 			  			$('.donation-info strong').text(Math.floor($('.pay-box').find('.field').val()));
-						mixpanel.track("Touched slider handle", {value: ui.value});
+						var mixPanelOptions = $slider.data('mixpanel-options')
+						mixPanelOptions.value = ui.value;
+						mixpanel.track("Touched slider handle", mixPanelOptions);
 					}
 				}
 			});
