@@ -1,5 +1,11 @@
 class OrganizersController < ApplicationController
+  def index
+    enqueue_mix_panel_event "Visits Events Get Involved Sub Page"
+  end
+
   def create
+    enqueue_mix_panel_event "Submits Restaurants Get Involved Form"
+
     UserMailer.organizers_notify(params[:email], params[:location], params[:address], params[:date], params[:num_people], params[:occassion], params[:budget], params[:food_preferences], params[:donation], params[:feedback]).deliver
     if valid_email?(params[:email])
       UserMailer.organizers_signup(params[:email]).deliver
