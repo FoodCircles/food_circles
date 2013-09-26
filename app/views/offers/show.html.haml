@@ -181,7 +181,8 @@
       = link_to @offer.venue.name, @offer.venue.web, :target => "_blank"
     %p= @offer.venue.description
     .foot
-      = link_to "Get directions", google_maps_search(@offer.venue), :class => "right", :target => "_blank"
+      = link_to "Get directions", google_maps_search(@offer.venue), :class => "right", :target => "_blank", :"data-mixpanel-event" => "Clicked on get directions", :"data-mixpanel-options" => {restaurant: @offer.venue.name}.to_json
+
       - if @offer.venue.social_links.any?
         .social
           - @offer.venue.social_links.each do |social_link|
