@@ -5,8 +5,8 @@ mixpanel.init("<%= Rails.configuration.mix_panel_api_key %>");</script><!-- end 
 
 <%- if queued_mixpanel_events.any? -%>
   <script type="text/javascript">
-    <%- while queued_mixpanel_events.any? do %>
-      mixpanel.track("<%= queued_mixpanel_events.pop %>")
+    <%- while next_event = queued_mixpanel_events.pop do %>
+      mixpanel.track("<%= next_event.name %>", <%= next_event.params.to_json.html_safe %>)
     <%- end %>
   </script>
 <%- end -%>

@@ -53,6 +53,8 @@ class StripePaymentsController < ApplicationController
     
     current_user.payments << payment
 
+    enqueue_mix_panel_event("Made a purchase", {restaurant: offer.venue.name, offer: offer.name })
+
     respond_to do |format|
       format.html do
         redirect_to :controller => 'timeline', :action => 'index', :reciept_id => payment.id

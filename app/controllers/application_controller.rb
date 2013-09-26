@@ -106,8 +106,8 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
-  def enqueue_mix_panel_event(event)
-    queued_mixpanel_events.push event
+  def enqueue_mix_panel_event(event_name, event_params = {})
+    queued_mixpanel_events.push OpenStruct.new(name: event_name, params: event_params)
   end
 
   def queued_mixpanel_events
