@@ -99,13 +99,13 @@
                 %label{:for => "kids-food"}
                   %a{:href => "http://www.kidsfoodbasket.org/"} Kids Food Basket
                   (Grand Rapids, MI)
-                %input#kids-food.custom-input{:name => "organization", :type => "radio", :value => ""}/
+                %input#kids-food.custom-input{:name => "organization", :type => "radio", :value => "", :"data-mixpanel-event" => "Picked a different charity", :"data-mixpanel-trigger-on" => "change", :"data-mixpanel-options" => {:restaurant => @offer.venue.name, :charity => "Kids Food Basket"}.to_json}/
               -#.radio-holder
               .radio-holder
                 %label{:for => "world-vision"}
                   %a{:href => "http://donate.worldvision.org/OA_HTML/xxwv2ibeCCtpItmDspRte.jsp?funnel=dn&item=1753174&go=item&section=10366&"} World Vision
                   (Somalia, Africa)
-                %input#world-vision.custom-input{:name => "organization", :type => "radio", :value => ""}/
+                %input#world-vision.custom-input{:name => "organization", :type => "radio", :value => "", :"data-mixpanel-event" => "Picked a different charity", :"data-mixpanel-trigger-on" => "change", :"data-mixpanel-options" => {:restaurant => @offer.venue.name, :charity => "World Vision"}.to_json}/
               -#.radio-holder
             -#.choose-organization
             .foot
