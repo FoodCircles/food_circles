@@ -186,7 +186,7 @@
       - if @offer.venue.social_links.any?
         .social
           - @offer.venue.social_links.each do |social_link|
-            = link_to '', social_link.url, :class => "icon-#{social_link.source}-med", :target => "_blank"
+            = link_to '', social_link.url, :class => "icon-#{social_link.source}-med", :target => "_blank", :"data-mixpanel-event" => "Clicked on social link", :"data-mixpanel-options" => {restaurant: @offer.venue.name, social_source: social_link.source}.to_json
         / /.social
     / /.foot
   / /.mini-profile
