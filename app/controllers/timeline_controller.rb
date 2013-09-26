@@ -3,6 +3,8 @@ class TimelineController < ApplicationController
 
   before_filter :authenticate_user!
   def index
+    enqueue_mix_panel_event "Visits Timeline"
+
     get_friends_purchases
     load_payments
     load_reservations

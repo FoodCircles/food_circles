@@ -4,6 +4,8 @@ class SettingsController < ApplicationController
   before_filter :authenticate_user!
 
   def show
+    enqueue_mix_panel_event "Visits Settings Page"
+
     get_friends_purchases
     load_payments
 
