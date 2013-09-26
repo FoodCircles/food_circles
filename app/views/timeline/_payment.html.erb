@@ -22,7 +22,7 @@
       </div><!-- /.kids -->
       <div class="socials">
         <a href= "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://staging.foodcircles.net/<%=payment.offer.venue.slug%>&p[images][0]=http://staging.foodcircles.net<%= payment.offer.venue.restaurant_tile_image.thumb("274x163").url%>.png&p[title]=At%20<%=payment.offer.venue.name%>:%20<%=payment.offer.venue.offers.order("min_diners ASC").first.name%>%20for%20$1.&p[summary]=Fed <%=payment.amount.to_i%> <%=payment.amount.to_i > 1 ? "children" : "child"%> simply by eating out. Picked out <%=payment.offer.venue.name%> via FoodCircles." target="_blank" class="icon-yellow-facebook"></a>
-        <a href="Fed <%=payment.amount.to_i%> <%=payment.amount.to_i > 1 ? "children" : "child"%> in need simply by eating out. Picked out <%=payment.offer.venue.name%> via @foodcircles. #bofo http://joinfoodcircles.org/<%=payment.offer.venue.slug%>" target="_blank" class="icon-yellow-twitter"></a>
+        <a href=https://twitter.com/intent/tweet?status="Fed <%=payment.amount.to_i%> <%=payment.amount.to_i > 1 ? "children" : "child"%> in need simply by eating out. Picked out <%=payment.offer.venue.name%> via @foodcircles. #bofo http://joinfoodcircles.org/<%=payment.offer.venue.slug%>" target="_blank" class="icon-yellow-twitter"></a>
       </div><!-- /.socials -->
       <span class="divider"></span>
     </div><!-- /.foot -->
