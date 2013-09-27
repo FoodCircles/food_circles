@@ -31,188 +31,182 @@ h1 {
 	top: 240px;
 }
 
-#nonprofits-steps {
-	position: relative;
-	z-index: 2;
-	width: 100%;
-	background-color: #f0e9de;
-	padding: 30px 20px 50px 20px;
-	margin: 0 auto;
-	margin-bottom: 20px;
+#white-section {
+	background-color: #f7f7f7;
+	text-align: left;
+  margin-bottom: -49px;
+  padding-bottom: 50px;
 }
 
-#nonprofits-step1 {
-	display: inline-block;
-	vertical-align: top;
-	width: 290px;
-}
-
-.steps-text {
-	padding-right: 20px;
+#white-section h1 {
+	font-weight: 700;
+	margin-bottom: 5px;
 	color: #4e3e34;
+  text-align: left;
+	font-family: "Museo Slab", sans-serif;
 }
 
-.steps-text p {
-	display: inline-block;
-	vertical-align: top;
-}
-
-.steps-copy {
-	width: 200px;
-}
-
-#nonprofits-step2 {
-	display: inline-block;
-	vertical-align: top;
-	width: 290px;
-}
-
-#nonprofits-step3 {
-	display: inline-block;
-	vertical-align: top;
-	width: 290px;
-}
-
-.bignumber {
-	float:left;
-	width:0.7em;
-	font-size:400%;
-	line-height:80%;
-}
-
-#nonprofit-form input {
-	width: 250px;
-	font-size: 14px;
+#white-section p {
 	line-height: 18px;
-	font-family: "pragmatica-web", sans-serif;
+	color: #999;
+	font-family: "Pragmatica Web", sans-serif;
 }
 
-#nonprofit-form .submit-image {
-	margin: 10px 0 10px 0;
-	width: 270px;
-	color: white;
-	font-size: 24px;
-	font-weight: 500;
-	padding: 15px 0;
-	border-radius: 8px;
-	background-color: #b46c6d;
-	/* Safari 4-5, Chrome 1-9 */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b46c6d), to(#a44b4c));
-
-	/* Safari 5.1, Chrome 10+ */
-	background: -webkit-linear-gradient(top, #b46c6d, #a44b4c);
-
-	/* Firefox 3.6+ */
-	background: -moz-linear-gradient(top, #b46c6d, #a44b4c);
-
-	/* IE 10 */
-	background: -ms-linear-gradient(top, #b46c6d, #a44b4c);
-
-	/* Opera 11.10+ */
-	background: -o-linear-gradient(top, #b46c6d, #a44b4c);
-	border: none;
+#chatapp-image {
+	height: 321px;
 }
 
-#nonprofit-form .submit-image:hover {
-	background-color: #6c1b1b;
-	/* Safari 4-5, Chrome 1-9 */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6c1b1b), to(#894242));
-
-	/* Safari 5.1, Chrome 10+ */
-	background: -webkit-linear-gradient(top, #6c1b1b, #894242);
-
-	/* Firefox 3.6+ */
-	background: -moz-linear-gradient(top, #6c1b1b, #894242);
-
-	/* IE 10 */
-	background: -ms-linear-gradient(top, #6c1b1b, #894242);
-
-	/* Opera 11.10+ */
-	background: -o-linear-gradient(top, #6c1b1b, #894242);
-
-}
-#grmodal-form {
-	text-align: center;
-	input {
-		width: 280px;
-		font-size: 14px;
-		line-height: 18px;
-		font-family: "pragmatica-web", sans-serif;
-	}
-
-	.submit-image {
-		margin: 10px 0 10px 0;
-		width: 300px;
-		color: white;
-		font-size: 24px;
-		font-weight: 500;
-		padding: 15px 0;
-		border-radius: 8px;
-		background-color: #b46c6d;
-		/* Safari 4-5, Chrome 1-9 */
-		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b46c6d), to(#a44b4c));
-
-		/* Safari 5.1, Chrome 10+ */
-		background: -webkit-linear-gradient(top, #b46c6d, #a44b4c);
-
-		/* Firefox 3.6+ */
-		background: -moz-linear-gradient(top, #b46c6d, #a44b4c);
-
-		/* IE 10 */
-		background: -ms-linear-gradient(top, #b46c6d, #a44b4c);
-
-		/* Opera 11.10+ */
-		background: -o-linear-gradient(top, #b46c6d, #a44b4c);
-	}
-
-	.submit-image:hover {
-		background-color: #6c1b1b;
-		/* Safari 4-5, Chrome 1-9 */
-		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6c1b1b), to(#894242));
-
-		/* Safari 5.1, Chrome 10+ */
-		background: -webkit-linear-gradient(top, #6c1b1b, #894242);
-
-		/* Firefox 3.6+ */
-		background: -moz-linear-gradient(top, #6c1b1b, #894242);
-
-		/* IE 10 */
-		background: -ms-linear-gradient(top, #6c1b1b, #894242);
-
-		/* Opera 11.10+ */
-		background: -o-linear-gradient(top, #6c1b1b, #894242);
-
-	}
+#chatapp-image img {
+-moz-box-shadow: 0 0 100px 15px #fff;
+	-webkit-box-shadow: 0 0 100px 15px #fff;
+	box-shadow: 0 0 100px 15px #fff;
 }
 
-.input-text {
-	font-family: 14px;
-	line-height: 18px;
-}
-
-.grmodal-steps img, .grmodal-steps h2 {
-	display: inline-block;
-}
-
-.grmodal-steps h2 {
-	font-size: 18px;
-}
-
-.grmodal-steps {
+.grid {
+	border-bottom: 2px solid #C3C3C3;
 	clear: both;
-	height: 90px;
-
-	.grmodal-num {
-		float: left;
-		width: 80px;
-	}
-
-	.grmodal-des {
-		float: left;
-		width: 400px;
-		text-align: left;
-		vertical-align: middle;
-		height: 90px;
-		margin-top: 35px;
-	}
+	height: 200px;
+	padding-top: 50px;
 }
+
+.left-section {
+	float: left;
+	width:403px;
+}
+
+.right-section {
+	float: right;
+	width: 403px;
+}
+
+.right-section img {
+	position: relative;
+	right: 0;
+}
+
+#nonprofits-form {
+	text-align: center;
+	width: 300px;
+	margin: 50px auto;
+}
+
+#headline a:hover {
+	text-decoration: none;
+}
+
+#nonprofits-form p {
+	font-size: 14px;
+	line-height: 14px;
+	color: #999;
+  width: 320px;
+	font-family: "Pragmatica Web", sans-serif;
+}
+
+form input {
+	width: 100%;
+	font-size: 16px;
+	margin: 5px 0;
+}
+
+#nonprofits-form form input {
+	font-family: "pragmatica-web", sans-serif;
+  margin-left: -10px;
+}
+
+.top-button {
+	margin: 25px auto;
+	z-index: 4;
+	font-family: helvetica, sans-serif;
+	margin: 5px 0;
+}
+
+.btn-standart {
+	width: 320px;
+  height: 40px;
+}
+
+#quicklinks ul li {
+	display: inline-block;
+}
+
+#menu-footer {
+	background: url("../img/footer-menu-background.png") no-repeat center;
+	height: 70px;
+	box-shadow: 
+        
+    0px -11px 18px -10px #CCC;
+
+}
+
+#menu-footer ul li {
+	list-style: none;
+	display: inline;
+	position: relative;
+	top: 25px;
+}
+
+.active {
+	text-decoration: underline;
+}
+
+#footer p {
+	padding-top: 20px;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+#footer ul li {
+	list-style: none;
+	display: inline;
+}
+
+.footer-summary {
+	float: left;
+	text-align: left;
+	width: 300px;
+	padding: 0 10px;
+}
+
+.copyright {
+	display: inline-block;
+	float: left;
+	width: 300px;
+	text-align: center;
+	padding: 0 10px;
+}
+
+.copyright p {
+	vertical-align: middle;
+	line-height: 45px;
+	font-family: "Pragmatica Web", sans-serif;
+}
+
+.copyright img {
+	position: relative;
+	top: 3px;
+}
+
+.quicklinks {
+	float: left;
+	width: 300px;
+	padding: 0 10px;
+}
+
+.quicklinks a {
+	color: #999;
+}
+
+.quicklinks ul {
+	height: 40px;
+	line-height: 45px;
+}
+
+#quicklinks-social {
+	margin-bottom: 50px;
+
+}
+
+#quicklinks-links a {
+	font-size: 12px;
+}
+

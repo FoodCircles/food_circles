@@ -1818,3 +1818,19 @@ body.active-popup {
 .submit-thank-you {
 	padding: 40px;
 }
+
+.fb-comments {
+  width: 100% !important;
+  
+  iframe[style], > span {
+    width: 100% !important;
+  }
+}
+
+.organizers-field {
+  width: 500px !important;
+}
+
+textarea.organizers-field {
+  height: auto !important;
+}

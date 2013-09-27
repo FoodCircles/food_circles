@@ -24,6 +24,7 @@ h2 {
 	display: block;
 	padding: 50px 0;
 	color: #4e3e34;
+  position: relative;
 	font-family: "museo-slab", serif;
 }
 
@@ -69,26 +70,14 @@ h2 {
 
 .stringleft{
 	position: absolute;
-	top: 490px;
-	left: 100px;
+  top: -80px;
+  left: 100px;
 }
 
 .stringright{
 	position: absolute;
-	top: 490px;
-	left: 840px;
-}
-
-.stringleft-second{
-	position: absolute;
-	top: 890px;
-	left: 100px;
-}
-
-.stringright-second{
-	position: absolute;
-	top: 890px;
-	left: 840px;
+  top: -80px;
+  right: 100px;
 }
 
 .omega {
@@ -176,6 +165,13 @@ h2 {
 }
 
 #organizers p {
+	font-size: 16px;
+	font-weight: 200;
+	font-family: "pragmatica-web", sans-serif;
+  font-style: italic;
+}
+
+#organizers label {
 	font-size: 16px;
 	font-weight: 200;
 	font-family: "pragmatica-web", sans-serif;
