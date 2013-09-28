@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'NeutrafaceSlabTextBookItalic';
+    src: url('neutrafaceslabtext-bookitalic.eot');
+    src: url('neutrafaceslabtext-bookitalic.eot') format('embedded-opentype'),
+         url('neutrafaceslabtext-bookitalic.woff') format('woff'),
+         url('neutrafaceslabtext-bookitalic.ttf') format('truetype'),
+         url('neutrafaceslabtext-bookitalic.svg#NeutrafaceSlabTextBookItalic') format('svg');
+}
