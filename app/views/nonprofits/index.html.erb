@@ -22,45 +22,57 @@
     </div>
 </div>
     
+    <div id="white-section">
 
-<div id="nonprofits-steps">
-    <div class="container">
-        <div id="nonprofits-step1" class="steps-text">
-            <p><span class="bignumber">1</span></p>
-            <p class="steps-copy">We create a free mobile site and app for your supporters with integrated FoodCircles dining. Every purchase made on the site/app is 100% sent to you via check.</p>
-        </div>
-
-        <div id="nonprofits-step2">
-            <%= form_tag nonprofits_path, :id => 'nonprofit-form', method: :post, remote: true, :"data-show-ajax-status-on" => "input[type=submit]" do %>
-              <%= text_field_tag :organization, nil, :placeholder => "Organization" %><br />
-              <%= text_field_tag :name, nil, :placeholder => "Name" %><br />
-              <%= text_field_tag :email, nil, :placeholder => "Email" %><br />
-              <%= text_field_tag :website, nil, :placeholder => "Website" %><br />
-              <%= submit_tag nil, :class => "submit-image" %>
-            <% end %>
-            <div class="steps-text"> 
-                <p><span class="bignumber">2</span></p>
-                <p class="steps-copy">You talk to restaurants you know about joining your FoodCirles app. The partnership goes beyond your typical 1-time event and requires little upkeep post-signup.</p>
+        <div class="container">
+            <div id="nonprofits-app" class="grid">
+                <div class="left-section">
+                    <h1>Free Mobile App</h1>
+                    <p>We create a <strong>free</strong> mobile site and app for your supporters with integrated FoodCircles dining. Every purchase made on the site/app is <strong>100%</strong> sent to you via check.</p>
+                </div>
+                <div class="right-section">
+                    <%= image_tag "companies/companies-chat.png" %>
+                </div>
+                
             </div>
-        </div>
 
+            <div id="nonprofits-partnerships" class="grid">
+
+                 <div class="left-section">
+                    <%= image_tag "companies/companies-tracking.png" %>
+                </div>
+                <div class="right-section">
+                    <h1>Restaurant Partnership</h1>
+                    <p>You talk to restaurants you know about joining your FoodCirles app. The partnership goes beyond your typical 1-time event and requires little upkeep post-signup.</p>
+                </div>
+               
+            </div>
+
+            <div id="nonprofits-funds" class="grid">
+
+                 <div class="left-section">
+                    <h1>Bringing in Funds</h1>
+                    <p>People use your app whenever they eat out. Plus we launch FoodCircles in your area. Both bring funds and awareness <strong>365 days/yr</strong> without taking up staff time or event bandwidth.</p>
+                </div>
+                <div class="right-section">
+                    <%= image_tag "companies/companies-coordinate.png" %>
+                </div>
+                
+            </div>
             
-        <div id="nonprofits-step3" class="steps-text">
-            <p><span class="bignumber">3</span></p>
-            <p class="steps-copy">People use your app whenever they eat out. Plus we launch FoodCircles in your area. Both bring funds and awareness 365 days/yr without taking up staff time or event bandwidth.</p>
-        </div>
-    </div>
-</div>
+            <div id="nonprofits-form">
+
+              <%= form_tag nonprofits_path, :id => 'nonprofit-form', method: :post, remote: true, :"data-show-ajax-status-on" => "input[type=submit]" do %>
+                <%= text_field_tag :organization, nil, :placeholder => "Organization" %><br />
+                <%= text_field_tag :name, nil, :placeholder => "Name" %><br />
+                <%= text_field_tag :email, nil, :placeholder => "Email" %><br />
+                <%= text_field_tag :website, nil, :placeholder => "Website" %><br />
+                <%= submit_tag 'Request Invite', :class => "btn-standart" %>
+              <% end %>
+
+            </div>
 
 
+        </div> <!-- container -->
 
-<div id="fbcomments">
-    <div class="container">
-        <h4>Unanswered question? Email ut as <a href="mailto:hey@foodcircles.net" class="mailus">hey@foodcircles.net</a> or comment below.</h4>
-    </div>
-    <div class="container">
-        <div class="fb-container">
-            <div class="fb-comments" data-href="http://www.foodcircles.net/faq" data-width="784" data-num-posts="10"></div>
-        </div>
-    </div>
-</div>
+       </div> <!-- white section -->

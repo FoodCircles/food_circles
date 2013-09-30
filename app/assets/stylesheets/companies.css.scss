@@ -29,6 +29,7 @@
 #white-section {
 	background-color: #f7f7f7;
 	text-align: left;
+  margin-bottom: -49px;
 }
 
 #white-section h1 {
@@ -90,7 +91,9 @@
 	font-size: 14px;
 	line-height: 14px;
 	color: #999;
+  width: 320px;
 	font-family: "Pragmatica Web", sans-serif;
+  margin-left: -10px;
 }
 
 form input {
@@ -101,6 +104,7 @@ form input {
 
 #companies-form form input {
 	font-family: "pragmatica-web", sans-serif;
+  margin-left: -10px;
 }
 
 .submit-image {
@@ -154,8 +158,9 @@ form input {
 	margin: 5px 0;
 }
 
-#submit-image {
+.btn-standart {
 	width: 320px;
+  height: 40px;
 }
 
 #quicklinks ul li {

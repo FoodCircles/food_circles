@@ -5,7 +5,7 @@ h1 {
 h2 {
 	font-size: 24px;
 	color: #4e3e34;text-align: center;
-	font-family: "museo-slab", "Neutraface Slab", serif;
+	font-family: "NeutrafaceSlab", "Neutraface Slab", serif;
 	font-weight: 700;
 	letter-spacing: 1px;
 	line-height: 24px;
@@ -24,7 +24,8 @@ h2 {
 	display: block;
 	padding: 50px 0;
 	color: #4e3e34;
-	font-family: "museo-slab", serif;
+  position: relative;
+	font-family: "NeutrafaceSlab", serif;
 }
 
 .placard-body {
@@ -34,7 +35,7 @@ h2 {
 
 .placard h1 {
 	font-size: 24px;
-	font-family: "museo-slab", serif;
+	font-family: "NeutrafaceSlab", serif;
 	font-weight: 700;
 	position: relative;
 	margin-bottom: 30px;
@@ -69,26 +70,14 @@ h2 {
 
 .stringleft{
 	position: absolute;
-	top: 490px;
-	left: 100px;
+  top: -80px;
+  left: 100px;
 }
 
 .stringright{
 	position: absolute;
-	top: 490px;
-	left: 840px;
-}
-
-.stringleft-second{
-	position: absolute;
-	top: 890px;
-	left: 100px;
-}
-
-.stringright-second{
-	position: absolute;
-	top: 890px;
-	left: 840px;
+  top: -80px;
+  right: 100px;
 }
 
 .omega {
@@ -172,10 +161,17 @@ h2 {
 	font-size: 18px;
 	font-weight: 700;
 	margin-top: 10px;
-	font-family: "museo-slab", serif;
+	font-family: "NeutrafaceSlab", serif;
 }
 
 #organizers p {
+	font-size: 16px;
+	font-weight: 200;
+	font-family: "pragmatica-web", sans-serif;
+  font-style: italic;
+}
+
+#organizers label {
 	font-size: 16px;
 	font-weight: 200;
 	font-family: "pragmatica-web", sans-serif;

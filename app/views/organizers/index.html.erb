@@ -35,51 +35,59 @@
             </div>
         </div>
 
-        <%= image_tag "stringleft.png", class:"stringleft" %>
-        <%= image_tag "stringright.png", class:"stringright" %>
-
         <div class="placard beta">
-            <h1>what you need to know</h1>
-            <div id="needtoknow">
-            <p><strong>Complete this form to receive bids from several restaurants for your event.</strong> Our priority is to curate "safe bets" -- options highly likely to succeed based on your preferences. For every person ordered for, one meal will be given to a child in need, locally or abroad. (Buy One, Feed One.)</p><br />
-            <p>We work quick, with bids returned within 24hrs. However, please give notice well in advance for restaurants, when possible.<br /><strong>Thanks for using our service for your event.</strong></p>
-            </div>     
+          <%= image_tag "stringleft.png", class:"stringleft" %>
+          <%= image_tag "stringright.png", class:"stringright" %>
+
+          <h1>what you need to know</h1>
+          <div id="needtoknow">
+          <p><strong>Complete this form to receive bids from several restaurants for your event.</strong> Our priority is to curate "safe bets" -- options highly likely to succeed based on your preferences. For every person ordered for, one meal will be given to a child in need, locally or abroad. (Buy One, Feed One.)</p><br />
+          <p>We work quick, with bids returned within 24hrs. However, please give notice well in advance for restaurants, when possible.<br /><strong>Thanks for using our service for your event.</strong></p>
+          </div>     
         </div>
 
-        <%= image_tag "stringleft.png", class:"stringleft-second" %>
-        <%= image_tag "stringright.png", class:"stringright-second" %>
-
         <div class="placard omega">
+          <%= image_tag "stringleft.png", class:"stringleft" %>
+          <%= image_tag "stringright.png", class:"stringright" %>
+
             <h1>Sign up</h1>
             <%= form_tag organizers_path, :id => "organizers", method: :post do %>
                 <h2>Will this be for dine-in or dine-out?</h2>
-                <%= label_tag 'at the restaurant', 'Dining at Restaurant' %>
-                <%= radio_button_tag :location, 'at the restaurant', value: "1" %><br />
-                <%= label_tag 'different location', 'Dining at a different location' %>
-                <%= radio_button_tag :location, 'different location', value: "2" %><br />
-                <%= text_field_tag :address, nil, placeholder: "Delivery address", size: "60" %>
+                <div class="radio-holder">
+                  <%= label_tag 'at the restaurant', 'Dining at Restaurant' %>
+                  <%= radio_button_tag :location, 'at the restaurant', value: "1", class: "custom-input" %><br />
+                </div>
+                <div class="radio-holder">
+                  <%= label_tag 'different location', 'Dining at a different location' %>
+                  <%= radio_button_tag :location, 'different location', value: "2", class: "custom-input" %><br />
+                </div>
+                <%= text_field_tag :address, nil, placeholder: "Delivery address", size: "60", class: 'field standart organizers-field' %>
                 <h2>What date and time will this event be?</h2>
-                <%= text_field_tag :date, nil, size: "60" %>
+                <%= text_field_tag :date, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>How many people would you like to order food for?</h2>
-                <%= text_field_tag :num_people, nil, size: "60" %>
+                <%= text_field_tag :num_people, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>Is there an occassion? (i.e. family party, work celebration, etc)</h2>
-                <%= text_field_tag :occassion, nil, size: "60" %>
+                <%= text_field_tag :occassion, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>What is the specified budget</h2>
                 <p>add a desired per head or total cost here</p>
-                <%= text_field_tag :budget, nil, size: "60" %>
+                <%= text_field_tag :budget, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>We will send you some great recommendations, but are there any preferences right off-the-bat?</h2>
                 <p>(food types, spicy/non-spicy, allergies, etc.)</p>
-                <%= text_field_tag :food_preferences, nil, size: "60" %>
+                <%= text_field_tag :food_preferences, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>Who is the ringleader?</h2>
                 <p>Please enter a valid email address for us to follow up with.</p>
-                <%= text_field_tag :email, nil, size: "60" %>
+                <%= text_field_tag :email, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>To Where Should We Donate Meals?</h2>
-                <%= label_tag 'locally', 'Locally - www.kidsfoodbasket.org' %>
-                <%= radio_button_tag :donation, 'locally', value: 'locally' %><br />
-                <%= label_tag 'globally', 'Globally - www.worldvision.org' %>
-                <%= radio_button_tag :donation, 'globally', value: 'globally' %><br />
+                <div class="radio-holder">
+                  <%= label_tag 'locally', 'Locally - www.kidsfoodbasket.org', for: 'donation_locally' %>
+                  <%= radio_button_tag :donation, 'locally', value: 'locally', class: "custom-input", id: 'donation_locally', checked: 'checked' %><br />
+                </div>
+                <div class="radio-holder">
+                  <%= label_tag 'globally', 'Globally - www.worldvision.org', for: 'donation_globally' %>
+                  <%= radio_button_tag :donation, 'globally', value: 'globally', class: "custom-input"%><br />
+                </div>
                 <h2>Bear with us as we grow. Is there any feedback you have about this form or about this process?</h2>
-                <%= text_area_tag :feedback, nil, rows: "10", cols: "60" %><br />
+                <%= text_area_tag :feedback, nil, rows: "10", cols: "60", class: 'field standart organizers-field' %><br />
                 <%= submit_tag "Submit", :class => "btn-standart" %>
             <% end %>
             </div>

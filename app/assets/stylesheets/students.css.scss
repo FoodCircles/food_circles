@@ -2,6 +2,7 @@
 	background: url(image_path('students/students-crowd.png')) center bottom no-repeat;
 	background-size: 100%;
 	padding-bottom:210px; 
+	margin-bottom:-235px; 
 }
 
 #students {
@@ -38,7 +39,7 @@
 
 #students-form {
 	width: 600px;
-	margin: 200px auto;
+	margin: 50px auto 100px;
 	color: white;
 }
 
@@ -47,6 +48,8 @@
 	line-height: 14px;
 	font-family: "pragmatica-web", sans-serif;
 	width: 380px;
+  height: 36px; 
+  margin-bottom: 10px;
 }
 
 #students-form h2 {
@@ -144,10 +147,57 @@ h2 {
   font-size: 24px;
   color: #7e7e7e;
   text-align: center;
-  font-family: "museo-slab", "Neutraface Slab", serif;
+  font-family: "NeutrafaceSlab", "Neutraface Slab", serif;
   font-weight: 700;
   margin-bottom: 30px;
   letter-spacing: 1px;
   line-height: 24px; }
 
+.students {
+  .footer-nav {
+    background: none;
+    -moz-box-shadow: 0 0 0 rgba(0,0,0,0);
+    -webkit-box-shadow: 0 0 0 transparent;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
 
+    &:after {
+      -moz-box-shadow: 0 0 0 transparent;
+      -webkit-box-shadow: 0 0 0 transparent;
+      box-shadow: 0 0 0 transparent;
+    }
+
+    li {
+      &:after {
+        color: #fff;
+      }
+
+      a:hover, &.active a {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+      }
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .footer-main {
+    background: none;
+    -moz-box-shadow: 0 0 0 transparent;
+    -webkit-box-shadow: 0 0 0 transparent;
+    box-shadow: 0 0 0 transparent;
+
+    .description, .footer-social, .quicklinks {
+      display: none;
+    }
+
+    .col{
+      min-height: 50px;
+    }
+
+    .copyright, .secured {
+      color: #fff;
+    }      
+  }
+}
