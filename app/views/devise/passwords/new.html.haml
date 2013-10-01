@@ -1,10 +1,10 @@
-= render :partial => 'partials/header'
-#basicContainer
-  .tightWrapper
+.container
+  .tight-wrapper
     %h2 Forgot your password?
+    %p Enter your email address and we'll send you an email so that you can reset it.
     = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
       = devise_error_messages!
       %div
         = f.label :email
-        %br= f.email_field :email
-      %div= f.submit "Reset password"
+        %br= f.email_field :email, class: 'field standart'
+      %div= f.submit "Reset password", class: 'btn-standart full-width'

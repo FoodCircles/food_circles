@@ -1,20 +1,20 @@
 / = render :partial => 'partials/header'
-#basicContainer.content
-  .tightWrapper
+.container
+  .tight-wrapper
     %h2 Sign in
     = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       = devise_error_messages!
       %div
         = f.label :email
-        %br= f.email_field :email
+        %br= f.email_field :email, class: 'field standart'
       %div
         = f.label :password
-        %br= f.password_field :password
+        %br= f.password_field :password, class: 'field standart'
       %div
         - if devise_mapping.rememberable?
-          = f.check_box :remember_me
-          = f.label :remember_me
+          = f.check_box :remember_me, class: 'checkbox'
+          = f.label :remember_me, class: 'checkbox'
       %div
-        = f.submit "Sign in"
+        = f.submit "Sign in", class: 'btn-standart full-width'
     = render 'links'
 
