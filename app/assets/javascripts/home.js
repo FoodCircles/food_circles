@@ -105,9 +105,9 @@
 				event.preventDefault();
 				$self.closest('li').addClass('active').siblings().removeClass('active');
 				$target.addClass('active').siblings().removeClass('active');
-
+        setTimeout(function(){$('.tab-cnt.active #phone').focus()}, 300);
 				if($('#colorbox:visible').length){
-					popupReszie();
+					popupResize();
 				}
 			}
 		})
