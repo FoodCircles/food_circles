@@ -802,7 +802,7 @@ body.active-popup {
 /*=== Products - Tiles ===*/
 .products-tiles { position:relative; margin:0 -15px; *zoom:1; padding-bottom:80px; }
 .products-tiles:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
-.products .tile { float:left; width:274px; height:237px; background:#fff; padding:0 13px; margin:0 15px 14px; z-index:2; }
+.products .tile { float:left; width:274px; height:237px; background:#fff; padding:0 13px; margin:0 15px 14px; z-index:2; -moz-box-shadow: 0px 2px 3px 0px#d3c9b9; -webkit-box-shadow: 0px 2px 3px 0px#d3c9b9; box-shadow: 0px 2px 3px 0px#d3c9b9;}
 .products .tile h3 { font-size:14px; line-height:22px; text-transform:uppercase; color: #4e3e34; }
 .products .tile .thumb { position:relative; height:163px; z-index:2; -webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,0.6); -moz-box-shadow:inset 0 1px 4px rgba(0,0,0,0.6); box-shadow:inset 0 1px 4px rgba(0,0,0,0.6); background:url(pattern.png) repeat 0 0; margin-bottom:14px; }
 .products .tile .thumb > a { overflow:hidden; float:right; width:253px; height:163px; position:relative; z-index:-3; }
