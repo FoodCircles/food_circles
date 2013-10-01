@@ -173,7 +173,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 
 .radio-holder { position:relative; overflow:hidden; }
 .radio-holder input { opacity:0; -moz-opacity:0; filter:alpha(opacity=0); visibility: hidden; position:absolute; top:0; left:0; }
-.radio-holder label { float:left; font-size:14px; line-height:20px; background:url(radio.png) no-repeat 0 1px; padding-left:23px; cursor:pointer; }
+.radio-holder label { float:left; font-size:14px; line-height:20px; background:url(radio.png) no-repeat 0 1px; padding-left:23px; cursor:pointer; font-family: 'Helvetica Neue'; font-weight: normal;}
 .radio-holder.checked label { background-position:0 -99px; }
 
 /*=== Helpers ===*/
@@ -424,7 +424,7 @@ body.active-popup {
 #logo { float:left; background:url(image_path('sprite.png')) no-repeat 0 0; width:132px; height:116px; font-size:0; line-height:0; text-indent:-4000px; margin-right:31px; }
 
 /*=== Tagline ===*/
-.tagline { float:left; font:italic 20px 'NeutrafaceSlab', serif; color:#7e7e7e; padding:48px 0 0; }
+.tagline { float:left; font:italic 20px 'NeutrafaceSlab', serif; color:#8a857f; padding:48px 0 0; }
 
 /*=== Header Utils ===*/
 .header-utils { float:right; padding:6px 28px 10px 0; }
@@ -640,7 +640,7 @@ body.active-popup {
 .banner .cnt { position:absolute; top:0; left:50%; z-index:3; width:400px; height:100%; margin-left:-200px; text-align:center; color:#fff; letter-spacing:.1em; }
 .banner .cnt:after { content:''; position:absolute; top:0; left:-230px; height:100%; background:url(image_path('darken.png')) no-repeat center center; width:860px;  pointer-events:none; }
 .banner .cnt h3 { font:19px 'NeutrafaceSlab', serif; color:#fffefe; padding-bottom:7px; }
-.banner .cnt p { padding-bottom:0; color:#fffefe; font-size:19px; line-height:1; }
+.banner .cnt p { padding-bottom:0; color:#fffefe; font-size:19px; line-height:1; font-style: italic; }
 
 .banner .centerer { display:table; position:absolute; top:0; left:50%; z-index:3; margin-left:-200px; width:400px; height:100%; }
 .banner .centerer-inner { display:table-cell; vertical-align:middle; }
@@ -803,7 +803,7 @@ body.active-popup {
 .products-tiles { position:relative; margin:0 -15px; *zoom:1; padding-bottom:80px; }
 .products-tiles:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 .products .tile { float:left; width:274px; height:237px; background:#fff; padding:0 13px; margin:0 15px 14px; z-index:2; }
-.products .tile h3 { font-size:14px; line-height:22px; text-transform:uppercase; color:#4c4c4c; }
+.products .tile h3 { font-size:14px; line-height:22px; text-transform:uppercase; color: #4e3e34; }
 .products .tile .thumb { position:relative; height:163px; z-index:2; -webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,0.6); -moz-box-shadow:inset 0 1px 4px rgba(0,0,0,0.6); box-shadow:inset 0 1px 4px rgba(0,0,0,0.6); background:url(pattern.png) repeat 0 0; margin-bottom:14px; }
 .products .tile .thumb > a { overflow:hidden; float:right; width:253px; height:163px; position:relative; z-index:-3; }
 .products .tile .thumb > a:after { content:''; position:absolute; bottom:0; left:0; right:0; height:0; background:url(shine.png) no-repeat 0 0;
@@ -1141,10 +1141,10 @@ body.active-popup {
 .deal-banner { position:relative; height: 280px; }
 .deal-banner:after { content:''; position:absolute; top:0; left:0; z-index:2; width:100%; height:100%; box-shadow:inset 0 -1px 3px rgba(0,0,0,0.4); }
 .deal-banner img { display:block; position:relative; z-index:1; width: 100%; }
-.deal-banner h2 { position:absolute; top:13px; left:26px; color:#fff; text-transform:uppercase; z-index:3; font-size: 20px; width: 510px; text-shadow: 0 0 16px rgba(0, 0, 0, 0.5);}
+.deal-banner h2 { position:absolute; top:13px; left:26px; color:#fff; text-transform:uppercase; z-index:3; font-size: 30px; width: 510px; text-shadow: 0 0 16px rgba(0, 0, 0, 0.5);}
 .deal-banner .price { position:absolute; top:13px; right:25px; z-index:3; color:#fff; text-shadow:0 0 24px rgba(0,0,0,0.65); }
 .deal-banner .price strong { float:left; font:bold 36px/1 'NeutrafaceSlab', sans-serif; }
-.deal-banner .price small { float:left; font:24px/1 'pragmatica-web', sans-serif; position:relative; margin:7px 0 0 7px; }
+.deal-banner .price small { float:left; font:24px/1 'pragmatica-web', sans-serif; position:relative; margin:7px 0 0 7px; font-weight: bold;}
 .deal-banner .price small .strike { position:absolute; bottom:0; left:50%; margin-left:-21px; }
 .deal-banner .count { position:absolute; bottom:20px; right:25px; z-index:3; text-align:center; font:bold 36px/1 'pragmatica-web', sans-serif; color:#fff; text-transform:uppercase; text-shadow:0 0 16px rgba(0,0,0,0.5); }
 .deal-banner .count small { display:block; font-size:12px; }
@@ -1203,7 +1203,8 @@ body.active-popup {
 
 .pay-box .donation-info { font:italic 12px/14px 'pragmatica-web', sans-serif; color:#4e3e34; text-align:center; padding-bottom:28px; }
 .pay-box .help { padding:8px 0 0; position:relative; z-index:9; text-align:center; }
-.pay-box .help > span { font-size:11px; text-transform:uppercase; font-weight:bold; }
+.pay-box .help > span { font-size:11px; text-transform:uppercase; font-weight:normal; font-family: 'Helvetica Neue'; color: #8a857f; }
+.pay-box .help > span a { font-weight: bold; font-family: 'Helvetica Neue';}
 .pay-box .help .balloon { visibility:hidden; opacity:0; -moz-opacity:0; filter:alpha(opacity=0); position:absolute; right:50%; bottom:66px; z-index:20; margin-right:-20px; background:#ede7df; box-shadow:0 2px 7px rgba(0,0,0,0.18); padding:5px 15px 15px; width:345px;
 	/*transform*/
 	-webkit-transform:translateY(20px);

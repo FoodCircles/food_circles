@@ -289,6 +289,7 @@
 		.on('click', '.welcome-line > .sign-form-link', function(event){
 			event.preventDefault();
 			$('#sign-up-form').toggleClass('expanded');
+      setTimeout(function(){$('.expanded').find('input[tabindex=1]').focus()}, 300);
 		})
 
 		.on('click', '.deal-payment .form-foot a, .deal-payment .form-foot a', function(event){
@@ -300,6 +301,7 @@
     .on('click', '#sign-up-form .form-caption a, #sign-in-form .form-caption a', function(event){
 			event.preventDefault();
 			$('#sign-in-form, #sign-up-form').toggleClass('expanded');
+      setTimeout(function(){$('.expanded').find('input[tabindex=1]').focus()}, 300);
 		})
 
 		.on('click', '.balloon-close', function(event){
