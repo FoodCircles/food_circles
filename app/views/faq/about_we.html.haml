@@ -1,3 +1,12 @@
+<div id="fb-root"></div>
+%script 
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=148554958654775";
+  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+
 #about
   .container
     %h2 About We
@@ -6,6 +15,7 @@
       .question
         %h3 Can we leverage our dining intentions to feed the hungry?
         %p At first, we focused on ourselves as the hungry; driving extra boneless wings, chips & salsa, discounts, etc. in Ann Arbor, MI.  But we learned that true impact is created by solving needs, not wants.  We wanted extra food with our meals, but many others needed food, period!  But when introduced to Buy One, Feed One, restaurants were so enthused by the idea that they let us keep the deals, serving them as "thank you's" to participants.  Wow!
+      = image_tag 'about_we_diagram.png', alt: '', class: 'about-we-diagram'
       .question
         %h3 Together, we can provide food to those in need.
         %p The food we provide to children are always nutrient-filled, life-sustaining meals, organic when possible.  If you choose Grand Rapids as your area of impact, we work with an agency called Kids Food Basket to provide a turkey/ham sandwich (or pb&amp;j), a fruit, a serving of veggies, two snacks and a drink for every $1 spent.  Check out reviews of this meal from people who tried it! (here, here, and HERE)
@@ -110,3 +120,11 @@
     .fb-container
       .fb-comments{"data-href" => "http://www.foodcircles.net/faq", "data-num-posts" => "10", "data-width" => "784"}
 .clear
+:javascript
+  $('.teampick a').click(function(e){
+    e.preventDefault();
+    $('.teampick li').removeClass('active');
+    $(this).parent('li').addClass('active');
+    $('.teammember').removeClass('active');
+    $($(this).attr('href')).addClass('active');
+  });

@@ -1,38 +1,48 @@
 <div class="popup non-profit-in-grand-rapids">
   <h1>Since we're already in Grand Rapids...</h1>
-  <p>Local restaurants are already on board, so your involvement is slightly different.</p>
+  <h3>Local restaurants are already on board, so your involvement is slightly different.</h3>
   <div class="grmodal-steps">
     <div class="grmodal-num">
       <%= image_tag("nonprofits/nonprofits-step1.png") %>
     </div>
     <div class="grmodal-des">
-      <h2>Tell us who you are.</h2>
+      <div class="grmodal-desin">
+        <h2>Tell us who you are.</h2>
+      </div>
     </div>
+    <div class="clear"></div>
   </div>
   <div class="grmodal-steps">
     <div class="grmodal-num">
       <%= image_tag("nonprofits/nonprofits-step2.png") %>
     </div>
     <div class="grmodal-des">
-      <h2>We'll give you a unique url for your organization.</h2>
+      <div class="grmodal-desin">
+        <h2>We'll give you a unique url for your organization.</h2>
+      </div>
     </div>
+    <div class="clear"></div>
   </div>
   <div class="grmodal-steps">
     <div class="grmodal-num">
       <%= image_tag("nonprofits/nonprofits-step3.png") %>
     </div>
     <div class="grmodal-des">
-      <h2>Anyone that buys through your link, the funds will go directly to you.</h2>
+      <div class="grmodal-desin">
+        <h2>Anyone that buys through your link, the funds will go directly to you.</h2>
+      </div>
     </div>
+    <div class="clear"></div>
   </div>
+  <div class="clear"></div>
   <div id="grmodal-form">
     <%= form_tag nonprofits_path, method: :post, remote: true, :"data-show-ajax-status-on" => "input[type=submit]" do %>
       <%= text_field_tag :organization, nil, :placeholder => "Organization" %><br />
       <%= text_field_tag :name, nil, :placeholder => "Name" %><br />
       <%= text_field_tag :email, nil, :placeholder => "Email" %><br />
-      <%= text_field_tag :website, nil, :placeholder => "Website" %><br />
+      <%= text_field_tag :website, nil, :placeholder => "We solve... for..." %><br />
       <%= hidden_field_tag :from_grand_rapids, true %>
-      <%= submit_tag nil, :class => "submit-image" %>
+      <%= submit_tag 'Request Invite', :class => "btn-standart" %>
     <% end %>
   </div>
 </div>

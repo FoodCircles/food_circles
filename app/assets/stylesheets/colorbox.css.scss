@@ -14,7 +14,7 @@
     Change the following styles to modify the appearance of Colorbox.  They are
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
-.active-popup #cboxOverlay { height: 100%; width: 100%;position: fixed; top: 0; background-color: black; z-index:9;}
+.active-popup #cboxOverlay { height: 100%; width: 100%;position: fixed; top: 0; background-color: black; z-index:99;}
 #colorbox { outline:0; z-index: 9999; }
         .cboxIframe { background:#fff; }
         #cboxError { padding:50px; }

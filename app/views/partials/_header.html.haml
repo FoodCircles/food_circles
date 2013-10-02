@@ -76,10 +76,10 @@
       %ul
         %li{class: current_page?(main_app.root_path) ? "active" : ''}
           = link_to "Home", main_app.root_path
-        %li{class: current_page?(main_app.faq_path) ? "active" : ''}
-          = link_to "FAQ", main_app.faq_path
+        %li{class: params[:id] == 'faq' ? 'active' : ''}
+          = link_to "FAQ", '/faq'
         %li{class: params[:id] == 'about_we' ? 'active' : ''}
-          = link_to "About We", "/faq/about_we"
+          = link_to "About We", "/about_we"
         %li
           %a{href: "#"}
             Get Involved ▾             

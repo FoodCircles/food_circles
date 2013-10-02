@@ -84,21 +84,44 @@
 	margin: 10px auto;
 	height: 220px;
 	width: 330px;
+
+  .btn-standart {
+    text-decoration: none;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-family: "pragmatica-web", Helvetica, Arial, Sans-serif;
+    font-weight: 400;
+    font-size: 20pt;
+    color: #ffffff;
+    text-align: center;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -border-radius: 8px;
+    height: 66px;
+    width: 330px;
+    text-shadow: 0px 1px 1px rgb(112,26,26);
+  }
 }
 
 #butterfly-submit input {
-	width: 100%;
+	width: 310px;
+  margin-top: 10px;
+  font-family: "pragmatica-web", helvetica;
+  font-size: 16px;
+  color: #423f37;
 }
 
 #butterfly-questions {
 	display: block;
 	text-align: center;
-	margin: 20px 0 100px 0;
+	margin: 120px 0 100px 0;
 }
 
 #butterfly-faq {
 	position: relative;
-	top: 75px;
+	top: 5px;
 }
 
 #butterfly-texting {
@@ -112,7 +135,7 @@
 
 #butterfly-path2 {
 	position: absolute;	
-	top: 680px;
+	top: 754px;
 	left: 225px;
 }
 
@@ -125,8 +148,8 @@
 	display: inline-block;
 	position: relative;
 	top: -180px;
-	left: -80px;
-	z-index: -1;
+	left: -94px;
+	z-index: 0;
 }
 
 #butterfly-apply {
@@ -201,4 +224,8 @@
 
 #superscript {
 	vertical-align: super;
+}
+
+.container {
+  position: relative;
 }

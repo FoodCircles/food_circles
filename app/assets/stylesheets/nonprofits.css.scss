@@ -5,14 +5,107 @@ h1 {
 	font-family: 'NeutrafaceSlab', serif;
 }
 
+.container h1 {
+  padding-bottom: 20px;
+}
 #nonprofits-featured {
-	box-shadow: 
-        
-        inset 0px -11px 18px -10px #CCC;
+	box-shadow: inset 0px -11px 18px -10px #CCC;
+  
+  .container {
+    position: relative;
+  }
 }
 
 .non-profit-in-grand-rapids {
 	padding: 40px;
+  width: 520px;
+
+  h1 {
+    font-size: 30px; 
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .grmodal-num {
+    float: left;
+    margin-right: 30px;
+  }
+
+  .grmodal-des {
+    float: left;
+    width: 430px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    margin-top: -15px;
+
+    &[class] {
+      display: table;
+      position: static;
+    }
+
+    .grmodal-desin {
+      position: absolute;
+      top: 50%;
+
+      &[class] {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        position: static;
+      }
+
+      h2 {
+        position: relative;
+        top: -50%;
+        font-size: 26px;
+      }
+    }
+  }
+
+  .grmodal-steps {
+    margin-bottom: 35px;
+  }
+
+  #grmodal-form {
+    width: 300px;
+    margin: 0 auto;
+
+    input {
+      width: 280px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 18px;
+      font-family: "pragmatica-web", sans-serif;
+    }
+
+    .btn-standart {
+      text-decoration: none;
+      padding-top: 13px;
+      padding-bottom: 13px;
+      padding-left: 24px;
+      padding-right: 24px;
+      font-family: "pragmatica-web", Helvetica, Arial, Sans-serif;
+      font-weight: bold;
+      font-size: 18pt;
+      color: #ffffff;
+      text-align: center;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -border-radius: 8px;
+      text-shadow: 0px 1px 1px rgb(112,26,26);
+      width: 300px;
+      margin-top: 10px;
+    }
+  }
 }
 
 #iphone-image {
@@ -36,6 +129,7 @@ h1 {
 	text-align: left;
   margin-bottom: -49px;
   padding-bottom: 50px;
+  position: relative;
 }
 
 #white-section h1 {
@@ -43,7 +137,7 @@ h1 {
 	margin-bottom: 5px;
 	color: #4e3e34;
   text-align: left;
-	font-family: "Museo Slab", sans-serif;
+	font-family: "NeutrafaceSlab";
 }
 
 #white-section p {
@@ -98,19 +192,18 @@ h1 {
 	font-size: 14px;
 	line-height: 14px;
 	color: #999;
-  width: 320px;
+  width: 300px;
 	font-family: "Pragmatica Web", sans-serif;
 }
 
 form input {
-	width: 100%;
+	width: 280px;
 	font-size: 16px;
 	margin: 5px 0;
 }
 
 #nonprofits-form form input {
 	font-family: "pragmatica-web", sans-serif;
-  margin-left: -10px;
 }
 
 .top-button {
@@ -121,8 +214,8 @@ form input {
 }
 
 .btn-standart {
-	width: 320px;
-  height: 40px;
+	width: 300px;
+  height: 54px;
 }
 
 #quicklinks ul li {

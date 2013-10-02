@@ -1,18 +1,18 @@
 #sidebar
   %ul
     %li{:class => "#{ 'active' if params[:id] == 'about_we' }"}
-      = link_to "About We", "/faq/about_we"
+      = link_to "About We", "/about_we"
     %li{:class => "#{ 'active' if params[:id] == 'faq' }"}
-      = link_to "FAQ", faq_path
+      = link_to "FAQ", '/faq'
     %li
-      %a{:href => "#"} For Restaurants
+      = link_to 'For Restaurants', '/restaurants'
     %li
-      %a{:href => "#"} For Students
+      = link_to 'For Students', '/students'
     %li
-      %a{:href => "#"} For Companies
+      = link_to 'For Companies', '/companies'
     %li
-      %a{:href => "#"} For Non-Profits
+      = link_to 'For Non-Profits', '/nonprofits'
     %li
-      %a{:href => "#"} For Events
+      = link_to 'For Events', '/organizers'
     %li
-      %a{:href => "#"} For Social Butteflies
+      = link_to 'For Social Butterflies', '/socialbutterflies'
