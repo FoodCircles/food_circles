@@ -1,6 +1,6 @@
 / = render :partial => 'partials/header'
-#basicContainer.content
-  .tightWrapper
+.container
+  .tight-wrapper
     %h2 Sign up
     = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
       = devise_error_messages!
