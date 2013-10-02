@@ -6,9 +6,9 @@
       <%= devise_error_messages! %>
 
       <div><%= f.label :email %><br />
-      <%= f.email_field :email %></div>
+      <%= f.email_field :email, class: 'field standart' %></div>
 
-      <div><%= f.submit "Resend confirmation instructions" %></div>
+      <div><%= f.submit "Resend confirmation instructions", class: 'btn-standart full-width' %></div>
     <% end %>
 
     <%= render "links" %>
