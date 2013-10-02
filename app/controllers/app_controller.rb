@@ -88,7 +88,7 @@ class AppController < ApplicationController
       if user.phone
         #code = (user.name ? "#{user.name.titleize} for #{r.offer.min_diners}" : r.coupon)
         code = r.coupon
-        sendText(user.phone,"Thank you for using Foodcircles! Your code is \"#{code}\" for #{r.offer.name} at #{r.venue.name}.")
+        sendText(user.phone,"Thank you for using Foodcircles! Your code is \"#{code}\" for #{r.offer.name} at #{r.venue.name}.  Please visit http://staging.foodcircles.net/payment/used?code=#{code} to mark your code used.")
       end
     rescue
       #we tried
