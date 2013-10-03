@@ -87,8 +87,7 @@ class StripePaymentsController < ApplicationController
     @twilio_client.account.sms.messages.create(
       :from => "+1#{twilio_phone_number}",
       :to => user.phone,
-      :body => "Thank you for using Foodcircles! Your code is \"#{payment.code}\" for #{payment.offer.name} at #{payment.offer.venue.name}.\nAmount donated: $#{payment.amount}\nPlease visit http://staging.foodcircles.net/payment/used?code=#{payment.code} to mark your code used."
-      
+      :body => "Thank you for using Foodcircles! Your code is #{payment.code} for #{payment.offer.name} at #{payment.offer.venue.name}.\nAmount donated: $#{payment.amount}\nPlease visit http://staging.foodcircles.net/payment/used?code=#{payment.code} to mark your code used."   
     )
   end
 
