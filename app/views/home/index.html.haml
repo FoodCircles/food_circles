@@ -64,11 +64,7 @@
                 - if venue.sold_out?
                   %span.pbar{style: "height: 0"}
                     - unless @watched_venues.include? venue
-                      - if current_user
-                        = link_to content_tag(:small, "Notify me"), subscribe_venue_path(venue, :format => :json), :remote => true, :method => :post, :class => [:block, :notification_request]
-                      - else
-                        %a.block{href: notify_signup_path, class: "popup-link"}
-                          %small Notify me
+                      = link_to content_tag(:small, "Notify me"), subscribe_venue_path(venue), :remote => true, :method => :post, :class => [:block, :notification_request]
                 - else
                   %span.pbar{style: "height:" + percent.to_s + "%"}
                     %span.block

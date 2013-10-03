@@ -45,18 +45,21 @@ class VenuesController < ApplicationController
   end
 
   def subscribe
-    venue = Venue.find(params[:id])
-    user = current_user
-    notification_request = NotificationRequest.new(:venue => venue, :user => current_user)
-
-    result = if notification_request.save
-      {:status => "success"}
+    partial, message = if current_user
+      venue = Venue.find(params[:id])
+      user = current_user
+      notification_request = NotificationRequest.new(:venue => venue, :user => current_user)
+      if notification_request.save
+        ['subscribe_success', 'Availability Notification scheduled']
+      else
+        ['subscribe_error', notification_request.errors.full_messages.to_sentence]
+      end
     else
-      {:status => "error", :message => notification_request.errors.full_messages.to_sentence}
+      ['subscribe_error', 'You need to sign up before subcribing for email notifications']
     end
 
     respond_to do |format|
-      format.json { render json: result }
+      format.js{ render partial, locals: {message: message} }
     end
   end
 
@@ -65,5 +68,4 @@ class VenuesController < ApplicationController
   def lat(l)
     l && l != 'undefined'
   end
-
 end

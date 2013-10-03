@@ -117,16 +117,6 @@
 			$.colorbox.close()
 		})
 
-
-		.on('click', '.tile.sold-out .progress .block', function(event){
-			event.preventDefault();
-			if(isLogged){
-				$(this).closest('.tile').addClass('notified');
-			}else{
-				popupOpen($(this).attr('href'));
-			}
-		})
-
 		.on('submit', '.postcard .edit-card form', function(event){
 			event.preventDefault();
 			populateCard($(this).find("*[data-mirror]"));
@@ -384,15 +374,6 @@
 			var eventName = element.data('mixpanel-event');
 			var eventOptions = element.data('mixpanel-options');
 			mixpanel.track(eventName, eventOptions);
-		});
-
-		$('.notification_request').bind('ajax:success', function(event, data) {
-			if(data.status == "success"){
-				var tile = $(this).parents('.tile');
-				var title_span = tile.find('.title');
-				title_span.text("Availability Notification scheduled");
-				title_span.addClass('message');
-			}
 		});
 
 		//banner slideshow
