@@ -1,18 +1,4 @@
 class Venue < ActiveRecord::Base
-  rails_admin do
-    show do
-      include_all_fields
-      field :lat
-      field :lon
-    end
-
-    edit do
-      include_all_fields
-      field :lat
-      field :lon
-    end
-  end
-
   extend FriendlyId
   include Validators
   include AlwaysOpen
@@ -61,6 +47,20 @@ class Venue < ActiveRecord::Base
   before_save :update_latlon, :if => :dirty_latlon?
   after_save :notify_watching_users_about_new_vouchers, :if => :has_new_vouchers?
   after_create :ensure_always_open
+
+  rails_admin do
+    show do
+      include_all_fields
+      field :lat
+      field :lon
+    end
+
+    edit do
+      include_all_fields
+      field :lat
+      field :lon
+    end
+  end
 
   def lat
     @lat ||= latlon.lat
