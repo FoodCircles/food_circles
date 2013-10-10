@@ -4,7 +4,7 @@ class Payment < ActiveRecord::Base
 
   before_save :add_code
 
-  scope :total_week_payments, where("created_at >= ?", Time.now - 1.week)
+  scope :total_week_payments, where("created_at >= ?", Date.today.beginning_of_week(:saturday))
 
   def add_code
     unless self.code
