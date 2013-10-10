@@ -1,11 +1,9 @@
 # Use this file to easily define all of your cron jobs.
 #
 
-every 1.days do
-
-  runner "Reservation.weekly_update", :environment => 'development', :output => 'log/cron.log'
+every :friday, :at => '00:01am' do
+  rake "vouchers:reset", :output => 'log/cron.log'
 end
-
 
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
