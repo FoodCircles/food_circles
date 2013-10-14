@@ -141,7 +141,8 @@ Foodcircles::Application.routes.draw do
 
   match '/sms' => 'receive_texts#index', :via => :post
   
-  match '/receive_text/used' => 'receive_text#used'
+  match '/receive_text/used_code' => 'receive_text#used_code'
+  match '/receive_text/used_last' => 'receive_text#used_last'
 
   match '/editor/:id' => 'editor#show'
 

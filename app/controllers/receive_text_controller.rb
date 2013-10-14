@@ -15,7 +15,39 @@ class ReceiveTextController < ApplicationController
     end
   end
   
-  def used
+  def used_last
+    body = params[:Body]
+    from = params[:From]
+    
+    if !from.blank?
+      from.gsub!(/[^0-9]/, "")
+    end
+    
+    if !body.blank?
+      body.downcase!
+      
+    if body = "used"
+      user = User.find_by_phone(from)
+      if !user.blank?
+        payment = Payment.where(:user_id => user.id).limit(1).order('created_at desc').first
+      end
+      if !payment.blank?
+        payment.state = "Used"
+        payment.save
+        
+        response = "Voucher confirmed as used. Thanks for your purchase and for feeding children in need through your dining."
+      else
+        response = "Unable to find an active voucher for telephone number #{from}."
+      end
+    end    
+      sendText(from, response)
+    end
+
+      render :nothing => true
+      
+  end
+  
+  def used_code
     body = params[:Body]
     from = params[:From]
     
