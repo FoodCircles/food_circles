@@ -13,7 +13,7 @@ namespace :vouchers do
     total_collected = Payment.total_week_payments.collect{ |payment| payment.amount }.sum
 
     Venue.all.each do |venue|
-      result = venue.name
+      result = venue.name.dup
       if total_collected < 3 * vouchers_total / 4 # missed meal goal
         result << " missed meal goal"
         if venue.vouchers_available > 0 and venue.vouchers_total > 1
