@@ -1,4 +1,5 @@
-window.scrollTo(0,0)
-$('.welcome-line > .sign-form-link').click();
-$('body').append('<div class="stack-bar-top alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><%= message %></div>');
-setTimeout(function(){$('.alert').alert('close');}, 10000);
+$('body').animate({scrollTop:0}, '500', 'swing', function() {
+  $('.welcome-line > .sign-form-link').click();
+  $(this).append('<div class="stack-bar-top alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><%= message %></div>');
+  setTimeout(function(){$('.alert').alert('close');}, 10000);
+});
