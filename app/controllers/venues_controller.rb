@@ -50,12 +50,12 @@ class VenuesController < ApplicationController
       user = current_user
       notification_request = NotificationRequest.new(:venue => venue, :user => current_user)
       if notification_request.save
-        ['subscribe_success', 'Availability Notification scheduled']
+        ['subscribe_success', 'Got it. Look for an email next week.']
       else
-        ['subscribe_error', notification_request.errors.full_messages.to_sentence]
+        ['subscribe_success', "Hang tight- we'll email you, promise."]
       end
     else
-      ['subscribe_error', 'You need to sign up before subcribing for email notifications']
+      ['subscribe_error', 'Sign up to get notified.']
     end
 
     respond_to do |format|
