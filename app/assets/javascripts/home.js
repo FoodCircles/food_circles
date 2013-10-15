@@ -550,8 +550,9 @@
     //var offer_id_if_present = location.pathname.match(/\/offer\/(\d+)/);
     if(location.pathname != '/' && location.pathname != '/app_popup' && $body)
     {
-      if($body.data('meta') === 'home#index')
+      if($body.data('meta') === 'home#index' && !$body.hasClass("sold-out")){
         popupOpen('/deal_popup_not_logged'+location.pathname);
+      }
     }
     
 	});

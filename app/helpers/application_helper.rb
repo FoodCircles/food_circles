@@ -82,5 +82,24 @@ module ApplicationHelper
     twitter_sharing_uri.query = twitter_query.to_query
     twitter_sharing_uri.to_s
   end
-end
 
+  def flash_messages
+    flash_messages = []
+    flash.each do |type, message|
+      next if message.blank?
+
+      type = :success if type == :notice
+      type = :error if type == :alert
+
+      next unless [:error, :info, :success, :warning].include?(type)
+
+      Array(message).each do |msg|
+        text = content_tag(:div,
+                           content_tag(:button, "x", :class => "close", "data-dismiss" => "alert") +
+                           msg.html_safe, :class => "stack-bar-top main alert alert-#{type}")
+        flash_messages << text if msg
+      end
+    end
+    flash_messages.join("\n").html_safe
+  end
+end

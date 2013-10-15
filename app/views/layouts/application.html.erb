@@ -29,6 +29,7 @@
 
   <body class="<%= custom_body_classes.join ' ' %>" data-meta="<%="#{controller_name}"%>#<%="#{action_name}"%>">
     <div id='wrapper' >
+        <%= flash_messages %>
         <%= render :partial => 'partials/header' %>
         <%= yield %>
         <%= render :partial => "partials/footer" %>
