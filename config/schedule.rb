@@ -1,7 +1,7 @@
 # Use this file to easily define all of your cron jobs.
 #
 
-every :friday, :at => '00:01am' do
+every :friday, :at => '11:59pm' do
   rake "vouchers:reset", :output => 'log/cron.log'
 end
 
