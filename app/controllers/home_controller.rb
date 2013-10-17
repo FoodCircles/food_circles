@@ -16,7 +16,7 @@ class HomeController < ApplicationController
       venue = Venue.where(slug: id).first || Venue.joins(:offers).where(offers: {id: id}).first
       if venue.sold_out?
         custom_body_classes << "sold-out"
-        flash[:notice] = "#{venue.name} is sold out this week. Get first dibs when they're back by subscribing below."
+        flash.now[:notice] = "#{venue.name} is sold out this week. Get first dibs when they're back by subscribing below."
       end
     end
 
