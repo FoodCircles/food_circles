@@ -4,7 +4,7 @@
 	text-align: center;
 	position: relative;
 	top: 180px;
-	 /* fallback */
+	  /* fallback */
 	  background-color: #4969ac;
 
 	  /* Safari 4-5, Chrome 1-9 */
@@ -21,7 +21,6 @@
 
 	  /* Opera 11.10+ */
 	  background: -o-linear-gradient(top, #4969ac, #344b7b);
-
 }
 
 #banner h1 {
@@ -84,6 +83,7 @@
 	margin: 10px auto;
 	height: 220px;
 	width: 330px;
+	padding-bottom: 50px;
 
   .btn-standart {
     text-decoration: none;

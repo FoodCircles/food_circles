@@ -58,22 +58,24 @@
   font-family: "NeutrafaceSlab", "Neutraface Slab", serif;
   font-weight: bold; }
 #about .question:nth-of-type(even) h3, #faqmain .question:nth-of-type(even) h3, #faq .question:nth-of-type(odd) h3 {
-  color: #701a1a; }
+  color: #701a1a; 
+  }
 #about .question p, #faqmain .question p, #faq .question p {
   color: #666;
   font-size: 16px;
-  font-family: "NeutrafaceSlab", "Neutraface Slab", serif; }
+  font-family: "NeutrafaceSlab", "Neutraface Slab", serif;
+  }
 
 #about #sidebar {
   float: right;
-  padding-left: 88px;
+  padding-left: 168px;
   padding-right: 8px;
   width: 304px; }
 #about .questions {
   float: left;
   padding-left: 8px;
   padding-right: 8px;
-  width: 544px; }
+  width: 464px; }
 
 #faqmain #sidebar {
   float: right;
@@ -94,9 +96,10 @@
     padding: 10px 0 15px;
     background: image-url("faq/faq_shadow_short.png") center bottom no-repeat; }
     #about .question:nth-of-type(even), #faqmain .question:nth-of-type(even) {
-      background: image-url("faq/faq_shadow_short_even.png") center bottom no-repeat; }
+      background: image-url("faq/faq_shadow_short.png") center bottom no-repeat; }
     #about .question:last-child, #faqmain .question:last-child {
-      background: none; }
+      background: none; 
+      }
     #about .question h3, #faqmain .question h3 {
       font-size: 20px;
       line-height: 30px;
@@ -111,7 +114,7 @@
 
 #faq .question {
   zoom: 1;
-  padding: 30px 0 25px;
+  padding: 30px 8px 25px 8px;
   background: image-url("faq/faq_shadow.png") center bottom no-repeat; }
   #faq .question:after {
     clear: both;
@@ -129,7 +132,7 @@
     float: left;
     padding-left: 8px;
     padding-right: 8px;
-    width: 624px; }
+    width: 608px; }
   #faq .question:nth-of-type(even) p {
     color: #4e4e4e; }
 
