@@ -692,9 +692,9 @@ body.active-popup {
 	background:-ms-linear-gradient(left,  #f0e9de 0%,#f4eee6 3%,#f4efe7 6%,#f7f4ee 50%,#f4efe7 94%,#f4eee6 97%,#f0e9de 100%);
 	background:linear-gradient(to right,  #f0e9de 0%,#f4eee6 3%,#f4efe7 6%,#f7f4ee 50%,#f4efe7 94%,#f4eee6 97%,#f0e9de 100%);
 }
-.products-head:after { content:''; position:absolute; left:5px; bottom:0; right:5px; height:10px; box-shadow:0 2px 3px #d3c9b9; border-radius:7px; z-index:-1; }
+.products-head:after { content:''; position:absolute; left:5px; bottom:0; right:5px; height:10px; box-shadow:0 2px 3px #d3c9b9; border-radius:7px; z-index:0; }
 .products-head > .arrow-down { position:absolute; top:100%; left:50%; margin-left:-17px; color:#d3c9b9; border-width:17px; }
-.products-head > .arrow-down i { color:#f8f5f0; position:absolute; bottom:2px; left:-17px; border-width:17px; }
+.products-head > .arrow-down i { color:#f8f5f0; position:absolute; bottom:2px; left:-17px; border-width:17px; z-index: 1;}
 
 .products-head .head-btns { float:left; }
 .products-head .head-btns a { width:113px; padding:0; float:left; margin-right:7px; }
