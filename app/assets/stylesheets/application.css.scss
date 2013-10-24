@@ -957,6 +957,7 @@ body.active-popup {
 .footer-nav li { display:inline; padding:0 13px; position:relative; }
 .footer-nav li a,
 .footer-nav li:after { font:14px 'pragmatica-web', sans-serif; }
+.footer-nav li:after { content:'/'; position:absolute; right:-3px; }
 .footer-nav li:last-child:after { display:none; }
 .footer-nav li a:hover,
 .footer-nav li.active a { color:#571414; border-bottom:2px solid #571414; text-decoration:none; }
