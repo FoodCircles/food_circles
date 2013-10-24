@@ -1,0 +1,66 @@
+0.0.6
+
+Index blueprint by full name instead of just association name. 
+This was a design flaw: 
+A -> B
+A -> C
+B -> D
+C -> D
+When editing A, adding a D in C, B's D would show up instead, with name pointing to B.
+
+0.0.5
+
+JS update (id generation)
+
+0.0.4
+
+Vendor added in gemspec (0.2.0 in Ryanb's)
+
+0.0.3
+
+Added id (generated from name) to top-level wrapper for cleaner JS manipulation
+
+0.0.2
+
+Added a class on blueprint div so that it is possible for javascript to know if a form field is part of a blueprint or for real in the form.
+
+0.0.1
+
+Initial release of the @fxposter version
+
+
+Below is Ryanb's changelog
+
+0.2.0 (February 7, 2012)
+
+* Integration tests (thanks fxposter) - issue #58
+
+* Improved simple_form and 3.1 support (thanks fxposter)
+
+* nested:fieldAdded event includes the newly added field (thanks harrigan)
+
+* other minor bug fixes
+
+0.1.1 (April 23, 2011)
+
+* Support HTML options and block in add/remove link - issue #31
+
+* Added new RegEx to generate new objects IDs correctly - issue #26 and issue #30
+
+
+0.1.0 (March 26, 2011)
+
+* Prefix new records with "new_" so there's no possible conflict with existing records - issue #21
+
+* Add support for _fields partial if no block is passed in to fields_for
+
+* Use the $-jquery-function only inside the jQuery scope (thanks nhocki)
+
+* Triggers nested:fieldAdded and nested:fieldRemoved events (thanks pirelenito)
+
+* Fixed JavaScript bug for nested attributes in has_one association (thanks pirelenito)
+
+
+0.0.0 (February 17, 2011)
+
+* Initial release
