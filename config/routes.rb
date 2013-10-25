@@ -125,7 +125,7 @@ Foodcircles::Application.routes.draw do
   # HighVoltage
   get '/faq/:id' => 'faq#show', :as => 'faq'
   get '/faq'     => 'faq#show', :as => 'faq', :id => 'faq'
-  get '/about_we'     => 'faq#show', :as => 'faq', :id => 'about_we'
+  get '/about_we'     => 'faq#show', :as => 'about_we', :id => 'about_we'
 
   #Popups
   match '/non_profit_on_grand_rapids' => 'popups#non_profit_on_grand_rapids', :as => :non_profit_on_grand_rapids_popup
