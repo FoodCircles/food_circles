@@ -954,7 +954,7 @@ body.active-popup {
 }
 .footer-nav:after { content:''; position:absolute; bottom:0; height:100%; left:50px; right:50px; z-index:-1; box-shadow:0 0 24px rgba(0,0,0,0.14); } 
 
-.footer-nav li { display:inline; padding:0 13px; position:relative; }
+.footer-nav li { display:inline; padding:0 6.5px; position:relative; }
 .footer-nav li a,
 .footer-nav li:after { font:14px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; }
 .footer-nav li:last-child:after { display:none; }
