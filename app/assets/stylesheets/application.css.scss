@@ -941,7 +941,7 @@ body.active-popup {
 
 /*=== Footer ===*/
 #footer { position:relative; bottom:0; left:0; right:0; z-index:3; height:210px; }
-.footer-nav { list-style:none outside none; text-align:center; position:relative; color:#333; text-transform:uppercase; padding:35px 0; font-size:0; line-height:0;
+.footer-nav { list-style:none outside none; text-align:center; position:relative; color:#333; text-transform:uppercase; padding:35px 0; font-size:13px; line-height:0;
 	background:#f3f0ea;
 	background:-moz-linear-gradient(left,  #f0e9de 0%, #f0e9de 4%, #f3f0ea 10%, #f3f0ea 90%, #f0e9de 96%, #f0e9de 100%);
 	background:-webkit-gradient(linear, left top, right top, color-stop(0%,#f0e9de), color-stop(4%,#f0e9de), color-stop(10%,#f3f0ea), color-stop(90%,#f3f0ea), color-stop(96%,#f0e9de), color-stop(100%,#f0e9de));
