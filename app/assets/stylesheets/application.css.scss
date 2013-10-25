@@ -956,7 +956,7 @@ body.active-popup {
 
 .footer-nav li { display:inline; padding:0 13px; position:relative; }
 .footer-nav li a,
-.footer-nav li:after { font:14px 'pragmatica-web', sans-serif; }
+.footer-nav li:after { font:14px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; }
 .footer-nav li:last-child:after { display:none; }
 .footer-nav li a:hover,
 .footer-nav li.active a { color:#571414; border-bottom:2px solid #571414; text-decoration:none; }
@@ -970,7 +970,7 @@ body.active-popup {
 }
 
 .footer-main .container { *zoom:1; }
-.footer-main .container:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
+.footer-main .container:after { width:100%; content:''; font-size:13; line-height:0; text-indent:-4000px; clear:both; display:block; }
 .footer-main .col { float:left; width:320px; }
 
 .footer-main .description { font:11px/15px 'pragmatica-web', sans-serif; color:#8a857f; }
