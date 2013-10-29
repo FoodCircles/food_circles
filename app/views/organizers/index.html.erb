@@ -2,25 +2,25 @@
         <h2>Need <span id="meal">lunch</span> for <span id="number">80</span> on <span id="day">Friday</span>? Done.</h2>
         
         <div class="placard alpha">
-                <h1>a simple 3 step guide to creating an event</h1>
+                <h1>Create An Event in 3 Steps</h1>
 
             <div class="steps">
                 <div class="step1">
                     <h2>Tell us about your event</h2>
                    <%= image_tag "organizers/organizers-tellus.png", class:"organizers-steps image-alpha" %>
                    <%= image_tag "organizers/organizers-arrow.png", class:"organizers-arrow" %>
-                   <p>Fill out the form below will as much detail as you know so that we are fully informed on what you need.</p>
+                   <p>Fill out the form below to let us know the Who, Where, When, and budget.</p>
                 </div>
                 <div class="step2">
                     <h2>We'll collect bids</h2>
                     <%= image_tag "organizers/organizers-bids.png", class:"organizers-steps image-alpha" %>
                     <%= image_tag "organizers/organizers-arrow.png", class:"organizers-arrow" %>
-                    <p>Restaurants are dying to host your event. We’ll make sure you get the best deal possible.</p>
+                    <p>Many places would LOVE to host/serve your event. We'll make sure you get the best deal possible.</p>
                 </div>
                 <div class="step3">
                     <h2>Pick a vendor</h2>
                     <%= image_tag "organizers/organizers-vendor.png", class:"organizers-steps" %>
-                    <p>You’ll get to choose from a couple of different options. Pick a vendor and pay them directly.</p>
+                    <p>You get to choose from a couple of different options. Pick a vendor and pay them directly.</p>
                 </div>
                 
             </div>
@@ -30,10 +30,11 @@
           <%= image_tag "stringleft.png", class:"stringleft" %>
           <%= image_tag "stringright.png", class:"stringright" %>
 
-          <h1>what you need to know</h1>
+          <h1>For Every Head You Feed, We Fed One Too.</h1>
           <div id="needtoknow">
-          <p><strong>Complete this form to receive bids from several restaurants for your event.</strong> Our priority is to curate "safe bets" -- options highly likely to succeed based on your preferences. For every person ordered for, one meal will be given to a child in need, locally or abroad. (Buy One, Feed One.)</p><br />
-          <p>We work quick, with bids returned within 24hrs. However, please give notice well in advance for restaurants, when possible.<br /><strong>Thanks for using our service for your event.</strong></p>
+          <p><strong>Our goal is to save you time, money, and feed many hungry children in the process.</strong> 10% of what you spend will go directly to putting dinner on the table for those in need, and all we ask is that you pass along the word about our apps and site.</p>
+          <br></br>
+          <p>Attractive bids will be returned within 24-48 hours, but give notice well in advance for the restaurants when possible. Thanks!</p>
           </div>     
         </div>
 
@@ -43,37 +44,37 @@
 
             <h1>Sign up</h1>
             <%= form_tag organizers_path, :id => "organizers", method: :post do %>
-                <h2>Will this be for dine-in or dine-out?</h2>
+                <h2>Are you looking for a venue or do you have the space set?</h2>
                 <%= radio_button_tag :location, 'at the restaurant', value: "1", class: "custom-input" %>
-                <%= label_tag 'at the restaurant', 'Dining at Restaurant' %>
+                <%= label_tag 'at the restaurant', 'I want a venue' %>
                 <br />
                 <%= radio_button_tag :location, 'different location', value: "2", class: "custom-input" %>
-                <%= label_tag 'different location', 'Dining at a different location' %>
+                <%= label_tag 'different location', 'We&#x27;ve got a venue' %>
                 <br />
                 <%= text_field_tag :address, nil, placeholder: "Delivery address", size: "60", class: 'field standart organizers-field' %>
                 <h2>What date and time will this event be?</h2>
                 <%= text_field_tag :date, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>How many people would you like to order food for?</h2>
                 <%= text_field_tag :num_people, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>Is there an occassion? (i.e. family party, work celebration, etc)</h2>
+                <h2>Is there an occasion? (i.e. a wedding, meetup, or work celebration?)</h2>
                 <%= text_field_tag :occassion, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>What is the specified budget</h2>
+                <h2>Is there a specified budget?</h2>
                 <p>add a desired per head or total cost here</p>
                 <%= text_field_tag :budget, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>We will send you some great recommendations, but are there any preferences right off-the-bat?</h2>
                 <p>(food types, spicy/non-spicy, allergies, etc.)</p>
                 <%= text_field_tag :food_preferences, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>Who is the ringleader?</h2>
-                <p>Please enter a valid email address for us to follow up with.</p>
+                <h2>Who's the ringleader?</h2>
+                <p>Please enter an email or phone number for us to follow up with.</p>
                 <%= text_field_tag :email, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>To Where Should We Donate Meals?</h2>
                 <%= radio_button_tag :donation, 'locally', value: 'locally', class: "custom-input", id: 'donation_locally', checked: 'checked' %>
                 <%= label_tag 'locally', 'Locally - <a href="www.kidsfoodbasket.org">www.kidsfoodbasket.org</a>'.html_safe, for: 'donation_locally' %>
                 <br />
                 <%= radio_button_tag :donation, 'globally', value: 'globally', class: "custom-input"%>
-                <%= label_tag 'globally', 'Globally - <a href="www.worldvision.org">www.worldvision.org</a>'.html_safe, for: 'donation_globally' %>
+                <%= label_tag 'globally', 'West Africa - <a href="http://donate.worldvision.org/OA_HTML/xxwv2ibeCCtpItmDspRte.jsp?funnel=dn&item=1753174&go=item&section=10366&">www.worldvision.org</a>'.html_safe, for: 'donation_globally' %>
                 <br />
-                <h2>Bear with us as we grow. Is there any feedback you have about this form or about this process?</h2>
+                <h2>Any feedback you have about this form or about this process?</h2>
                 <%= text_area_tag :feedback, nil, rows: "10", cols: "60", class: 'field standart organizers-field' %><br />
                 <%= submit_tag "Submit", :class => "btn-standart" %>
             <% end %>
@@ -120,16 +121,16 @@ $('.teampick a').on('click', function(e) {
 <script type="text/javascript">
     (function(){
     var words = [
-        'breakfast',
+        'omelets',
         "hors d'oeuvres",
         'lunch',
-        'dessert'
+        'desserts'
         ], i = 0;
     setInterval(function(){
         $('#meal').fadeOut(function(){
             $(this).html(words[i=(i+1)%words.length]).fadeIn();
         });
-    }, 4000);
+    }, 5000);
         
 })();
     </script>
@@ -137,7 +138,7 @@ $('.teampick a').on('click', function(e) {
     <script type="text/javascript">
     (function(){
     var words = [
-        '5',
+        '8',
         '100',
         '25',
         '67'
@@ -163,7 +164,7 @@ $('.teampick a').on('click', function(e) {
         $('#day').fadeOut(function(){
             $(this).html(words[i=(i+1)%words.length]).fadeIn();
         });
-    }, 6000);
+    }, 5000);
         
 })();
     </script>
