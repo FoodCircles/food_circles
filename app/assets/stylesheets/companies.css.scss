@@ -15,9 +15,9 @@
 #headline p {
 	color: #a39e97;
 	font-size: 16px;
-  padding: 0;
-  font-weight: 400;
-	font-family: "Pragmatica Web", sans-serif;
+  	padding: 0;
+  	font-weight: 400;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
 }
 
 #invite {
@@ -30,20 +30,21 @@
 #white-section {
 	background-color: #f7f7f7;
 	text-align: left;
-  margin-bottom: -49px;
+  	margin-bottom: -49px;
 }
 
 #white-section h1 {
 	font-weight: 700;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	color: #4e3e34;
 	font-family: "NeutrafaceSlab";
+	line-height: 38px;
 }
 
 #white-section p {
-	line-height: 18px;
+	line-height: 22px;
 	color: #999;
-	font-family: "Pragmatica Web", sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
 }
 
 #chatapp-image {
@@ -91,10 +92,10 @@
 
 #companies-form p {
 	font-size: 14px;
-	line-height: 16px;
+	line-height: 17px;
 	color: #4e3e34;
   width: 320px;
-	font-family: "Pragmatica Web", sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif;
   margin-left: -10px;
   padding: 10px 0px 0px;
   font-weight: 300;
@@ -123,7 +124,7 @@ form input {
 }
 
 #companies-form form input {
-	font-family: "pragmatica-web", sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif;
 }
 
 .submit-image {
@@ -179,7 +180,7 @@ form input {
 
 .btn-standart {
 	width: 320px;
-  height: 40px;
+  	height: 40px;
 }
 
 .company-submit {
@@ -255,7 +256,7 @@ form input {
 .copyright p {
 	vertical-align: middle;
 	line-height: 45px;
-	font-family: "Pragmatica Web", sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
 }
 
 .copyright img {
@@ -288,7 +289,7 @@ form input {
 }
 
 .top-btn {
-  font-size: 14pt;
+  font-size: 12pt;
   padding: 0px 25px;
   position: relative;
   margin: 20px auto;
