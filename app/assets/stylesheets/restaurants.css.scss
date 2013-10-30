@@ -84,7 +84,7 @@ background-image: -webkit-gradient(
 
 .steps p {
 	width: 80%;
-	margin: 0 auto;
+	margin: 15px auto;
 	font-family: "NeutrafaceSlab", serif;
 }
 
@@ -138,7 +138,7 @@ background-image: -webkit-gradient(
 	margin-left: 10px;
 	font-size: 16px;
 	line-height: 18px;
-	font-family: "pragmatica-web", sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
 	display: inline-block;
 	color: #423f37;
 
@@ -163,7 +163,7 @@ background-image: -webkit-gradient(
 
 /*------------------*/
 
-[class^="btn-"], [class*=" btn-"] { display:inline-block; background:transparent; border:none; text-align:center; cursor:pointer; font:bold 16px/40px 'pragmatica-web', sans-serif; color:#fff; text-shadow:0 1px 1px #701a1a; box-shadow:0 2px 3px rgba(70,18,18,0.8); padding:0 16px; border-radius:6px; *display:inline; *zoom:1;  
+[class^="btn-"], [class*=" btn-"] { display:inline-block; background:transparent; border:none; text-align:center; cursor:pointer; font:bold 16px/40px "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; color:#fff; text-shadow:0 1px 1px #701a1a; box-shadow:0 2px 3px rgba(70,18,18,0.8); padding:0 16px; border-radius:6px; *display:inline; *zoom:1;  
 	background-repeat:no-repeat;
 	background-color:#b56e6f;
 	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#b56e6f), to(#a34b4c)); 
@@ -199,7 +199,7 @@ background-image: -webkit-gradient(
 	padding-bottom:15px;
 	padding-left:24px;
 	padding-right:24px;
-	font-family: "pragmatica-web", Helvetica, Arial, Sans-serif;
+	font-family: "Helvetica-Neue", Helvetica, Arial, Sans-serif;
 	font-weight: 400;
 	font-size:18pt;
 	height: 40px;
