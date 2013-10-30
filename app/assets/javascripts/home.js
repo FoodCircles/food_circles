@@ -548,8 +548,10 @@
 		sectionScroll();
     
     //var offer_id_if_present = location.pathname.match(/\/offer\/(\d+)/);
-    if(location.pathname != '/' && location.pathname != '/app_popup' && $body)
-    {
+    if(location.pathname == '/apps' && $body){
+      popupOpen('app_popup')
+    }
+    else if(location.pathname != '/' && location.pathname != '/app_popup' && $body){
       if($body.data('meta') === 'home#index' && !$body.hasClass("sold-out")){
         popupOpen('/deal_popup_not_logged'+location.pathname);
       }

@@ -14,7 +14,7 @@ class HomeController < ApplicationController
 
     if id = params[:id]
       venue = Venue.where(slug: id).first || Venue.joins(:offers).where(offers: {id: id}).first
-      if venue.sold_out?
+      if venue && venue.sold_out?
         custom_body_classes << "sold-out"
         flash.now[:notice] = "#{venue.name} is sold out this week. Get first dibs when they're back by subscribing below."
       end
