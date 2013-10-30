@@ -11,8 +11,8 @@
     <div class="container">
         <h2>Kickstart Buy One, Feed One on Campus</h2>
         <div id="students-intro">
-            <p>FoodCircles is a website and mobile app that lets you feed a child in need by just eating out. We offer drinks, desserts, and appetizers at restaurants starting at $1. Every dollar spent is donated to feed hungry children.</p>
-            <p>Starting Foodcircles in your area isn't paid, but with the good you'll be doing, the free swag you'll be getting, and the fun you'll be having it might feel like it! Check out the steps to starting FoodCircles and apply below.</p>
+            <p>FoodCircles is a website and app that lets you leverage your dining to feed children in need. You can grab a dish at a local restaurant for $1 or more, and see 100% of that be used to give inpoverished children a chance.
+            <br><br>We're often asked when "Buy One, Feed One" will exist in to so-and-so area. <strong>You are the answer to that question.</strong> Without a big team, we rely on you to be the solution to ending hunger in your community. And so we've put together a 5-step guide to getting your start.  Check 'em out and request an application if you and your friends think you've got what it takes.</p>
         </div>
 
         <div id="students">
@@ -32,7 +32,7 @@
 
             <div id="students-steps">
                 <%= image_tag "students/students-step1.png" %>
-                <p>So it turns out, we can’t do a lot of things ourselves.  We need a team.  Far and away, this’ll be the most important decision you make, Commander.  Think of 2-4 individuals you know who are disciplined, wise, and passionate, and start a student organization with them, dedicated to helping people eat powerfully.  Sweet spot for teams are 3-5, including you.</p>
+                <p>So it turns out, we can’t do a lot of things ourselves.  We need teams.  Far and away, this’ll be the most important decision you make, Commander.  Think of 2-4 individuals you know who are disciplined, wise, and passionate, and start a student organization with them, dedicated to helping people eat powerfully.  Sweet spot for teams are 3-5, including you.</p>
                 <%= image_tag "students/students-step2.png" %>
                 <p>When we do good for others, it’s rewarding to feel connected to them. That’s why it’s important to find a local nonprofit that your community trusts and can get behind.  You’ll want to seek and partner with a hunger-fighting organization in your area that can provide at least one nutrious meal to a child in need for every $1 received.</p>
                 <%= image_tag "students/students-step3.png" %>
@@ -48,9 +48,9 @@
 
         <div id="crowd">
             <%= form_tag "#", :id => 'students-form', method: :post, remote: true, :"data-show-ajax-status-on" => "input[type=submit]" do %>
-                <h2>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h2>
+                <h2></h2>
                  <%= text_field_tag :students_email, nil, :placeholder => "you@email.com", :id => "students-input" %><br />
-                <%= submit_tag "Sign Up", class: "btn-standart", style: "width: 320px; height: 54px;" %>
+                <%= submit_tag "Request Application", class: "btn-standart", style: "width: 320px; height: 54px;" %>
                 <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
             <% end %>
         </div>
