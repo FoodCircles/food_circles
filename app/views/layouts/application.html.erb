@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FoodCircles</title>
+    <title><%= content_for?(:title) ? content_for(:title) : 'FoodCircles' %></title>
     <meta property="og:title" content="FoodCircles - Buy One, Feed One." />
     <meta property="og:type" content="company" />
     <meta property="og:site_name" content="FoodCircles" />
