@@ -1126,7 +1126,7 @@ body.active-popup {
 
 
 /*=== Deal Popup ===*/
-.deal-popup { border-radius:0 0 12px 12px; overflow: hidden;}
+.deal-popup { border-radius:0 0 12px 12px; overflow: hidden; width: 600px}
 
 .deal { position:relative; overflow:hidden; height:100%; -webkit-transform: translate3d(0, 0, 0); 
 	/*transition*/

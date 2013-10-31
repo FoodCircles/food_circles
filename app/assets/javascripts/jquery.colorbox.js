@@ -13,7 +13,7 @@
 		fadeOut: 300,
 		width: false,
 		initialWidth: "600",
-		innerWidth: '600',
+		innerWidth: false,
 		maxWidth: false,
 		height: false,
 		initialHeight: false,
