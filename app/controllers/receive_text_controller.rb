@@ -30,6 +30,8 @@ class ReceiveTextController < ApplicationController
       user = User.find_by_phone(from)
       if !user.blank?
         payment = Payment.where(:user_id => user.id).limit(1).order('created_at desc').first
+      else
+        response = "Uknown user - is this phone number registered with your FoodCircles profile?"
       end
       if !payment.blank?
         payment.state = "Used"
