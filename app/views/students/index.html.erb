@@ -52,7 +52,7 @@
             <%= form_tag "#", :id => 'students-form', method: :post, remote: true, :"data-show-ajax-status-on" => "input[type=submit]" do %>
                 <h2>There's a PDF with more details &amp; an online app.<br />Sign up to get both.</h2>
                  <%= text_field_tag :students_email, nil, :placeholder => "you@email.com", :id => "students-input" %><br />
-                <%= submit_tag "Request Application", class: "btn-standart", style: "width: 320px; height: 54px;" %>
+                <%= submit_tag "Send me the deets.", class: "btn-standart", style: "width: 320px; height: 54px;" %>
                 <p><em>open to high schoolers, college students, and those with a high school or college spirit.</em></p>
             <% end %>
         </div>

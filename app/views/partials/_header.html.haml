@@ -23,7 +23,7 @@
             Your Account
             %i{class: "arrow-right"}
         - else
-          Hey! you new here?
+          Hey! You new here?
           %a{href: '#', class:'sign-form-link', :"data-mixpanel-event" => "Open Sign Up PopUp"}
             Sign Up
             %i{class: "arrow-down"}
@@ -39,7 +39,7 @@
             = f.email_field :email, class: 'field medium', placeholder: "New email", tabindex: '1'
           .row
             %a{href: "/users/auth/twitter", class: "btn-twitter"}
-              Sign up
+              Sign Up
               %i{class: "icon-btn-twitter"}
             = f.password_field :password, class: 'field medium', placeholder: "New password", tabindex: '2'
           .form-foot
@@ -49,7 +49,7 @@
 
             %p{class: "form-caption"}
               Have an account?
-              %a{href: "#"} Sign in
+              %a{href: "#"} Sign In
 
         = form_for(resource, :as => resource_name, :url => user_session_path, html:{class:"sign-form", id: "sign-in-form"}) do |f|
           %i.arrow-up
@@ -66,12 +66,12 @@
             = f.password_field :password, class: 'field medium', placeholder: "Your password", tabindex: '2'
           .form-foot
             %span{class: "btn-small submit"}
-              Sign in
+              Sign In
               = f.submit 'Sign In', tabindex: '3'
 
             %p{class: "form-caption"}
               Need an account?
-              %a{href: "#"} Sign up
+              %a{href: "#"} Sign Up
     #nav
       %ul
         %li{class: current_page?(main_app.root_path) ? "active" : ''}
@@ -89,13 +89,13 @@
             %li
               = link_to "For Students", main_app.students_path
             %li
-              = link_to "For Events", main_app.organizers_path
+              = link_to "For Organizers", main_app.organizers_path
             %li
               = link_to "For Companies", main_app.companies_path
             %li
-              = link_to "For Non-Profits", main_app.nonprofits_path
+              = link_to "For Nonprofits", main_app.nonprofits_path
             %li
-              = link_to "Social Butterflies", main_app.socialbutterflies_path
+              = link_to "For Social Butterflies", main_app.socialbutterflies_path
   / %li{:class => "#{ 'active' if controller_name == 'home' }"}
 - if controller_name == "home" && action_name = "index"
   .mini-header
@@ -115,7 +115,7 @@
           %li
             = link_to "FAQ", faq_path
           %li
-            = link_to "About Us", root_path
+            = link_to "About We", root_path
           %li
             %a{href: "#"}
               Get Involved
@@ -126,13 +126,13 @@
               %li
                 = link_to "For Students", main_app.students_path
               %li
-                = link_to "For Events", main_app.organizers_path
+                = link_to "For Organizers", main_app.organizers_path
               %li
                 = link_to "For Companies", main_app.companies_path
               %li
-                = link_to "For Non-Profits", main_app.nonprofits_path
+                = link_to "For Nonprofits", main_app.nonprofits_path
               %li
-                = link_to "Social Butterflies", main_app.socialbutterflies_path
+                = link_to "For Social Butterflies", main_app.socialbutterflies_path
 
     .mh-sub
       .container
