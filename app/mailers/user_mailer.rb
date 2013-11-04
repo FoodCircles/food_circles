@@ -1,4 +1,4 @@
-class UserMailer < ActionMailer::Base
+﻿class UserMailer < ActionMailer::Base
   ADMIN_EMAIL = 'jonathan@foodcircles.net'
   SUPPORT_EMAIL = 'support@foodcircles.net'
 
@@ -50,7 +50,25 @@ class UserMailer < ActionMailer::Base
         end
     end
   end
-
+  
+  def signupsuccess(user)
+    mail = Mail.deliver do
+      to user.email
+      from 'FoodCircles <hey@foodcircles.net>'
+      subject "Welcome to FoodCircles."
+      reply_to 'hey@foodcircles.net'
+      html_part do
+        content_type 'text/html; charset=UTF-8'
+        body "<p>You did it. You signed up for FoodCircles. But why? ...well, maybe you can relate to this situation.<br>
+              If you're like me, you love to dine out. But the thing is, I can't ever decide on where to go. \"You pick.\" \"Hahaha, no, you pick.\" Geez.....<br>
+              There's also certain beliefs I have about the world. That no one should go hungry, that I'm fortunate to be in the position I'm in, and that any kid should be able to choose to study or play when they want to -- not just when their stomach allows it.<br>
+              FoodCircles lets you buy an appetizer, drink, or dessert at top local restaurants for only $1, and directs 100% of your purchase to get dinner to a child who needs it. Buy one, feed one. A simple way to know where to eat and feed a hungry child in the process.<br>
+              <a href=\"http://www.joinfoodcircles.org\">Grab A $1 Dish Here</a><br><br>
+              Buen provecho,<br>
+              Jonathan 312 945 8627</p>"
+        end
+    end
+  end
 
   def voucher(user, r)
     @user = user
@@ -58,11 +76,7 @@ class UserMailer < ActionMailer::Base
     mail(:to => @user.email, :subject => "Your voucher for #{r.venue.name.capitalize}")
   end
 
-  def signupsuccess(user)
-  #@user = user
-  #mail_for_signupsuccess(:to => user.email, :subject => "An email for test")
-  #mail(:to => 'jinnahrae@gmail.com', :subject => "An email for test")
-  end
+
 
   def create_voucher(user,r)
 
