@@ -41,7 +41,7 @@ class HomeController < ApplicationController
 
   def app_popup(phone, type)
     if type == 'iphone'
-      sendText(phone, "Download the FoodCircles app! https://itunes.apple.com/us/app/foodcircles/id526107767?mt=8")
+      sendText(phone, "Download the FoodCircles app! https://itunes.apple.com/us/app/foodcircles-for-iphone/id710592600?ls=1&mt=8e")
     elsif type == 'android'
       sendText(phone, "Download the FoodCircles app! https://play.google.com/store/apps/details?id=co.foodcircles")
     end
