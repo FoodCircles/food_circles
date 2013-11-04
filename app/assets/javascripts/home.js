@@ -378,7 +378,7 @@
 
 		//banner slideshow
 		$('.banner .slides').carouFredSel({
-			auto:4000,
+			auto:4500,
 			responsive:true,
 			items:{
 				visible:1,
@@ -386,7 +386,8 @@
 			},
 			pagination:'.banner .paging',
 			prev:'.banner .slide-prev',
-			next:'.banner .slide-next'
+			next:'.banner .slide-next',
+			scroll: { fx: 'crossfade', duration: 1000 }
 		});
 
 		Header.init();

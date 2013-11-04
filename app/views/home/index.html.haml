@@ -34,17 +34,17 @@
     .products
       .products-head
         .head-btns
-          %a.btn-standart.popup-link{href: app_popup_path} Get the app
+          %a.btn-standart.popup-link{href: app_popup_path} Get the App
           - if current_user
             - if show_newsletter_subscription_button?
               = link_to "Get updates", subscribe_newsletter_path, :remote => true, :method => :post, :class => ["btn-standart"], id: 'get_updates_link'
           - else
-            %a#get_updates_link.btn-standart.popup-link{href: notify_signup_path}Get updates
+            %a#get_updates_link.btn-standart.popup-link{href: notify_signup_path}Get Briefs
 
         = render partial: "filters"
 
         %h6
-          Dinner plans in 60 seconds
+          Dinner Plans in 60 Seconds
         %i.arrow-down
           %i.arrow-down
 
@@ -95,8 +95,8 @@
                 = raw tags.collect { |tag| link_to tag[:name], '#', class: 'filter-tag', data: { type: tag[:type] }}.join(", ")
         %a.tile.add-new.popup-link{href: postcard_popup_path }
           %div.add-new-inner
-            %strong Add a
-            %small restaurant
+            %strong Request
+            %small Restaurant
             %i.icon-plus
 
       = will_paginate @venues
