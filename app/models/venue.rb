@@ -127,11 +127,13 @@ class Venue < ActiveRecord::Base
               :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : ''),
               :social_links => self.social_links
           }
-    data[:offers] = if !options[:not_available]
-      self.offers.currently_available.order(:min_diners)
+    data[:offers] = if options[:all]
+      self.offers
+    elsif options[:not_available]
+      self.offers.not_available
     else
-      self.offers.not_available.order(:min_diners)
-    end
+      self.offers.currently_available
+    end.order(:min_diners)
 
     data
   end
