@@ -1,10 +1,12 @@
+<% content_for(:title, "FoodCircles – About We | Yeah, we know it doesn't sound right.") %>
+
 <div id="fb-root"></div>
 %script 
   (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=148554958654775";
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=526839707387980";
   fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
 
 #about
@@ -13,15 +15,15 @@
     = render :partial => 'partials/faq_sidebar' 
     .questions
       .question
-        %h3 Can we leverage our dining intentions to feed the hungry?
-        %p At first, we focused on ourselves as the hungry; driving extra boneless wings, chips & salsa, discounts, etc. in Ann Arbor, MI.  But we learned that true impact is created by solving needs, not wants.  We wanted extra food with our meals, but many others needed food, period!  But when introduced to Buy One, Feed One, restaurants were so enthused by the idea that they let us keep the deals, serving them as "thank you's" to participants.  Wow!
+        %h3 Yeah, we know it doesn't sound right.
+        %p Thing is, this is not about four or seven people making a website.  This is about <strong>we together</strong> putting dinner on the table for a hungry child by doing something we're already doing. We could wax poetic about how/when FoodCircles started, but our company <strong>is</strong> the stories you tell about us, not the story we tell about us.  So you tell us - what do our apps and site do for you?  How has hunger played a role in your life or in someone you know's life?  We look forward to seeing and keeping your response below.
       = image_tag 'about_we_diagram.png', alt: '', class: 'about-we-diagram'
       .question
-        %h3 Together, we can provide food to those in need.
-        %p The food we provide to children are always nutrient-filled, life-sustaining meals, organic when possible.  If you choose Grand Rapids as your area of impact, we work with an agency called Kids Food Basket to provide a turkey/ham sandwich (or pb&amp;j), a fruit, a serving of veggies, two snacks and a drink for every $1 spent.  Check out reviews of this meal from people who tried it! (here, here, and HERE)
+        %h3 Many will never know what it’s like
+        %p to not eat for days or go to bed on an empty stomach -- so we exist to create a easy, everyday way to help one person who does.  Use the site or apps to get dinner plans, buy a dish for $1 or more, and give 100% of that purchase to feed hungry children. The site can help you make a decision and purchase <strong>within 60 seconds.</strong> Each $1 you spend provides <a href="http://blog.foodcircles.net/2012/12/10/life-of-a-sack-supper-kids-food-basket/">mind-sustaining dinner</a> to a child locally, or a miraculous food called <a href="http://blog.foodcircles.net/2013/02/04/plumpynut/">Plumpy'Nut</a> for a full day to a child abroad.  Especially in the latter, you can literally save a life by empowering your dining decisions.  The site will never take a cut of your purchase and works with great distributors such as Kids Food Basket, World Vision, and Feeding America WMI.  Heck, we even challenged you to <a href="http://blog.foodcircles.net/2012/11/01/the-first-dollar-lunch-day-of-grand-rapids/">taste</a> the meals kids were getting.  Read reviews <a href="https://twitter.com/ScottHillGR/status/258210608548306944" target="_blank">here</a>, <a href="https://twitter.com/DianeTeall/status/258012856455413761" target="_blank">here</a>, and <a href="https://twitter.com/The_Love_Hate/status/259049895942553600" target="_blank">HERE</a>!
       .question
-        %h3 Where we are now.
-        %p Today, FoodCircles helps folks in Grand Rapids, MI feel good about their dining.  We help them decide where to eat, save money, and help get food to the poor.  You pay-what-you-want for drinks, desserts, and appetizers, we give 100% to get food to children who need it.  $1 given, 1 child fed.  Thank you for joining us.
+        %h3 Basics on redeeming
+        %p Once you make a purchase, you get a text on any cellphone, a smartphone voucher, or an email to print, and all you have to do is show it to the staff of the restaurant.  They'll thank you, place a special placard on your table, and bring you your dish with the rest of your regularly purchased meal.  Your appetites is powerful. Do something simple, and yet truly extraordinary with it.
   .clear
 #team
   .container
@@ -31,91 +33,91 @@
           %a{:href => "#jonathan"} Jonathan Kumar
         %li.adam
           %a{:href => "#adam"} Adam Salois
-        %li.carly
-          %a{:href => "#carly"} Carly Roach
+        %li.mike
+          %a{:href => "#mike"} Mike King
         %li.kerri
-          %a{:href => "#kerri"} Kerri
+          %a{:href => "#lacides"} Lacides Barros
     #jonathan.teammember.active
-      %h3 Director of FoodCircles
+      %h3 Managing Director
       %h4
-        Currently on
+        Currently in
         %strong Grand Rapids, MI
-      %p Jonathan Kumar is studying Economics & Informatics at U of M.  His dream, the last 20 months, has been to attend the National Buffalo Wing Festival.    Jonathan has almost drowned, been eaten alive, and gotten lost in on mountain railway system in past Indian experiences.  Here's his claim to fame: a crude YouTube video selected to air on "MTV's Pranked!".
+      %p I started FoodCircles because I thought we could do powerful things with our hunger.  A ton of "housekeeping" duties fall to me, and I love leading development of tech that can help people do good.  My degree from UofM sounds made up but is called "<a href="http://informatics.umich.edu/">"Informatics"</a>, and old projects include a <a href="https://vimeo.com/talim">doc in India</a>, an Ann Arbor sports club, and a ton of music videos.
       %p
-        %b Text or call
-        him at
-        %strong 312.363.8734
-        to drink chai tea, play ultimate frisbee, or talk about internet startups.
+        %b Text/call
+        me at
+        %strong 312-94-KUMAR
+        to play pickup sports, talk about poverty, or to get into trouble.
       %ul.contact
         %li
-          %a.fb{:href => "#"} Facebook
+          %a.fb{:href => "https://www.facebook.com/jkooms"} Facebook
         %li
-          %a.tw{:href => "#"} Twitter
+          %a.tw{:href => "https://www.twitter.com/jkooms"} Twitter
         %li
-          %a.sk{:href => "#"} Skype
+          %a.sk{:href => "skype:jtkumario?chat"} Skype
         %li
-          %a.em{:href => "#"} Email
+          %a.em{:href => "mailto:jonathan@foodcircles.net"} Email
         %li
-          %a.li{:href => "#"} LinkedIn
+          %a.li{:href => "linkd.in/JonKumar"} LinkedIn
     #adam.teammember
-      %h3 Director of FoodCircles 2
+      %h3 Lead Designer
       %h4
-        Currently on
+        Currently in
         %strong Grand Rapids, MI
-      %p Jonathan Kumar is studying Economics & Informatics at U of M.  His dream, the last 20 months, has been to attend the National Buffalo Wing Festival.    Jonathan has almost drowned, been eaten alive, and gotten lost in on mountain railway system in past Indian experiences.  Here's his claim to fame: a crude YouTube video selected to air on "MTV's Pranked!".
+      %p Late 2012, I sought a design internship while at Kendall College of Art and Design and here I am today!  Turns out, Craigslist isn’t just for creeps...maybe. As Lead Designer, it’s my responsibility to properly communicate our mission by means of visual flow, iconography, and typography. I relocated to GR from MSU as a transfer student, where I was able to pursue being a prestigious member of the Spartan Marching Band Drumline.
       %p
         %b Text or call
-        him at
-        %strong 312.363.8734
-        to drink chai tea, play ultimate frisbee, or talk about internet startups.
+        me at
+        %strong 616.262.1893
+        to hang out on porches, grab a brew, or any and all beach related activities (even winter).
       %ul.contact
         %li
-          %a.fb{:href => "#"} Facebook
+          %a.fb{:href => "fb.com/saloisa"} Facebook
         %li
-          %a.tw{:href => "#"} Twitter
-    #carly.teammember
-      %h3 Director of FoodCircles 3
+          %a.tw{:href => "twitter.com/SLICEosaurus"} Twitter
+        %li
+          %a.sk{:href => "skype:adam.salois?chat"} Skype
+        %li
+          %a.em{:href => "mailto:a@foodcircles.net"} Email
+        %li
+    #mike.teammember
+      %h3 Web Engineer
       %h4
-        Currently on
+        Currently in
         %strong Grand Rapids, MI
-      %p Jonathan Kumar is studying Economics & Informatics at U of M.  His dream, the last 20 months, has been to attend the National Buffalo Wing Festival.    Jonathan has almost drowned, been eaten alive, and gotten lost in on mountain railway system in past Indian experiences.  Here's his claim to fame: a crude YouTube video selected to air on "MTV's Pranked!".
+      %p I don't have a photo yet, so I'm using one of our old interns.  Sue me.  Anyway, I decided to take on FoodCircles because it's a cool site with a cool purpose and because Jon and Adam are some cool dudes.  Originally met them when my company, <a href="http://ostusa.com">OST</a> graciously sponsored them with a grant. I handle much of what happens when you sign up, make a purchase, share stuff with your friends, etc.  I'm a nerd that likes to drive fast cars, with a background in travel and computer science.
       %p
-        %b Text or call
-        him at
-        %strong 312.363.8734
-        to drink chai tea, play ultimate frisbee, or talk about internet startups.
+        %b Email
+        me at
+        %strong <a href="mailto:mike@joinfoodcircles.org">mike@joinfoodcircles.org</a>
+        to debate Pokemon, race BMW's, or hit up a ska concert.
       %ul.contact
         %li
-          %a.fb{:href => "#"} Facebook
+          %a.li{:href => "http://www.linkedin.com/profile/view?id=175476844"} LinkedIn
         %li
-          %a.tw{:href => "#"} Twitter
-        %li
-          %a.sk{:href => "#"} Skype
-    #kerri.teammember
-      %h3 Director of FoodCircles 4
+          %a.em{:href => "mailto:mikejoinfoodcircles.org"} Email
+
+    #Lacides.teammember
+      %h3 API Engineer 
       %h4
-        Currently on
-        %strong Grand Rapids, MI
-      %p Jonathan Kumar is studying Economics & Informatics at U of M.  His dream, the last 20 months, has been to attend the National Buffalo Wing Festival.    Jonathan has almost drowned, been eaten alive, and gotten lost in on mountain railway system in past Indian experiences.  Here's his claim to fame: a crude YouTube video selected to air on "MTV's Pranked!".
+        Currently in
+        %strong Barranquilla, Columbia
+      %p Looks like I don't have a picture yet either.  So I have no idea why I continue to work on FoodCircles.  I completed a short contract for them, and kind of have just been sticking around since.  Maybe it's because it's the first time my code is being used by awesome folks like you instead of locked in a vault. I help the apps and the site talk to each other.  So when you buy something on the website, then fire up the Android app on the way to the restaurant, the voucher shows up. 
       %p
-        %b Text or call
-        him at
-        %strong 312.363.8734
-        to drink chai tea, play ultimate frisbee, or talk about internet startups.
+        %b Email
+        me at
+        %strong <a href="mailto:lcharris89@gmail.com">lcharris89@gmail.com</a>
+        to visit Columbia, start coding with us, or report any bugs.
       %ul.contact
         %li
-          %a.fb{:href => "#"} Facebook
+          %a.li{:href => "http://www.linkedin.com/profile/view?id=175476844"} LinkedIn
         %li
-          %a.tw{:href => "#"} Twitter
-        %li
-          %a.li{:href => "#"} LinkedIn
+          %a.em{:href => "mailto:co.linkedin.com/pub/lacides-charris-barros/"} Email
   .clear
 #fbcomments
   .container
     %h4
-      Unanswered question? Email ut as
-      %a.mailus{:href => "mailto:hey@foodcircles.net"} hey@foodcircles.net
-      or comment below.
+      What the site or app mean for you?  How has hunger affected you personally?  Tell OUR story below.
   .container
     .fb-container
       .fb-comments{"data-href" => "http://www.foodcircles.net/faq", "data-num-posts" => "10", "data-width" => "784"}

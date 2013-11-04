@@ -1,10 +1,12 @@
+<% content_for(:title, "FoodCircles – FAQ | Get Your Questions Answered or Pose New Ones.") %>
+
 <div id="fb-root"></div>
 %script 
   (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=148554958654775";
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=526839707387980";
   fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
 
 #faqmain
@@ -13,34 +15,62 @@
     = render :partial => 'partials/faq_sidebar' 
     .questions
       .question
-        %h3 Where in specialty gopher parade boarding six mighty Minnesotan snuggletrains?
-        %p Amet ac porta elementum risus dis aenean diam, aliquet amet dictumst turpis pulvinar non in odio, aliquam risus et, cras tincidunt nisi ac massa! Turpis mid aenean nec ut!
+        %h3 How do I feed a child in need by eating out?
+        %p Easy.  Whenever you need a place to eat at, breakfast, lunch or dinner, choose from our website or app and buy a voucher, which covers an item at that respective restaurant.  100% of that purchase is donated to provide food to children who need it in your area of choice.
       .question
-        %h3 Why is justice bear of all shining pants running for double-backflip hipsters?
-        %p Amet ac porta elementum risus dis aenean diam, aliquet amet dictumst turpis pulvinar non in odio, aliquam risus et, cras tincidunt nisi ac massa! Turpis mid aenean nec ut!
+        %h3 Ok. Bought a voucher. Now what?
+        %p Simply display or print the email receipt, request a free text message, or bring up the voucher on your app. Then visit the restaurant within 30 days.  Show the 5-digit code to your server then hit Mark As Used to redeem.  
       .question
-        %h3 How can carpet academy alumni survive torrential hustle of swagger jacks?
-        %p Amet ac porta elementum risus dis aenean diam, aliquet amet dictumst turpis pulvinar non in odio, aliquam risus et, cras tincidunt nisi ac massa! Turpis mid aenean nec ut!
+        %h3 Are there any rules/requirements to redeem?  I don't like surprises.
+        %p Vouchers are to be redeemed with purchased food and/or drink for each guest.  All "Buy One, Feed One" restaurants are local-owned and are the ones making the decision to give 100% of your voucher purchase to end hunger.  Let's support 'em as we can.
       .clear
     .clear
 #faq
   .container
     .question
-      %h3 How does you designer an internets without coding the gigapixels?
-      %p Amet ac porta elementum risus dis aenean diam, aliquet amet dictumst turpis pulvinar non in odio, aliquam risus et, cras tincidunt nisi ac massa! Turpis mid aeneany nec ut!
+      %h3 What?  Why are some places out of stock?  
+      %p Restaurants only give us a limited amount of "Buy One, Feed One" vouchers per week.  So if you see one, grab one!  We'll gradually add vouchers each week.  If you miss the one you wanted, join the waitlist and you'll have first dibs as soon as the next ones arrive.
     .question
-      %h3 How does you designer an internets without coding the gigapixels?
-      %p Amet ac porta elementum risus dis aenean diam, aliquet amet dictumst turpis pulvinar non in odio, aliquam risus et, cras tincidunt nisi ac massa! Turpis mid aeneany nec ut!
+      %h3 Can I use this in a group?
+      %p Yup, you can even buy dish "upgrades" if you dine in a group of four or more (see item for details).  You may only redeem one voucher per every two guests and dish "upgrades" require four or six guests each.
     .question
-      %h3 How does you designer an internets without coding the gigapixels?
-      %p Amet ac porta elementum risus dis aenean diam, aliquet amet dictumst turpis pulvinar non in odio, aliquam risus et, cras tincidunt nisi ac massa! Turpis mid aeneany nec ut!
+      %h3 Can I buy a voucher for someone else?
+      %p Glad you asked!  Simply buy the voucher for yourself, and reply to the confirmation email with whom you want to gift it to instead.  We'll pass on the good news. <br><br> Or want to double-down on doing good?  Simply mention it to your server and she/he will pass on your $1 purchase to the customer behind you, to the cute table of girls/guys across the restaurant, etc.
     .question
-      %h3 How does you designer an internets without coding the gigapixels?
-      %p Amet ac porta elementum risus dis aenean diam, aliquet amet dictumst turpis pulvinar non in odio, aliquam risus et, cras tincidunt nisi ac massa! Turpis mid aeneany nec ut!
+      %h3 How do I see past vouchers I've bought or how many kids I've fed so far?
+      %p Access purchased vouchers on <a href="http://www.joinfoodcircles.org/timeline"> your Timeline</a>.  And there are definitely little things that you'll do to cause us to ask your mailing address so we can mail you something special.
+    .question
+      %h3 What happens to my donation if my voucher expires?
+      %p Don't worry.  While you will not be able to redeem the voucher at a restaurant, the money you paid for it still ends up feeding hungry children.  So someone gets fed, even if it's not you. :)
+    .question
+      %h3 So, how are kids fed exactly?
+      %p When you're making a purchase, you choose either a local or food-crisis destination for your meals. Each $1 you spend gets dinner to a child locally, or an entire day's worth of food to a child in West Africa.  All distributing organizations are registered as 501 (c) 3, and are reviewed on Charity Navigator.
+    .question
+      %h3 How do I see past vouchers I've bought or how many kids I've fed so far?
+      %p Access purchased vouchers on <a href="http://www.joinfoodcircles.org/timeline"> your Timeline</a>.  And there are definitely little things that you'll do to cause us to ask your mailing address so we can mail you something special. ;)
+    .question
+      %h3 How do I know the funds are going to be used to feed kids?  Are my purchases tax-deductible?
+      %p We follow up with you sometime after your purchase with a confirmation that the specific number of kids will be fed in your selected area, along with an organizational contact.  Purchases are not currently tax-deductible.
+    .question
+      %h3 Do you give my information to the charity that distributes the meals?
+      %p No.  We require follow up reports from the charities involved and pass their gratitude on to you, but will not share your contact information with them for any reason.
+    .question
+      %h3 If you guys donate 100%, how do you pay bills?
+      %p Since we're able to send traffic to restaurants, they pay us a monthly commission which pays for the roof over our heads.  As a result, the restaurant gets to meet passionate, impact-driven people, like you!
+    .question
+      %h3 Is this just throwing food at a problem or is there an actual solution to ending hunger?
+      %p We absolutely believe in ending the immediate suffering of children who aren't able to play or learn because they are hungry.  The consequences can be permanent.  We believe the ultimate solution to hunger lies with parent education, but until that problem can be solved, we will help the children who are suffering as the result.
+    .question
+      %h3 The charity I wanted to send my funds to isn't here!
+      %p Have them check out <a href="http://www.joinfoodcircles.org/nonprofits"></a>. :)
+    .question
+      %h3 Where's the jobs page?
+      %p Want to work with us?  Come find us, we're around, or contact us off the <a href="http://www.joinfoodcircles.org/about_we">About We page</a>.
+
 #fbcomments
   .container
     %h4
-      Unanswered question? Email ut as
+      Unanswered question? Email us at
       %a.mailus{:href => "mailto:hey@foodcircles.net"} hey@foodcircles.net
       or comment below.
   .container
