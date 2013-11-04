@@ -1,7 +1,7 @@
 #about {
 	background: url(image_path('students/students-crowd.png')) center bottom no-repeat;
 	background-size: 100%;
-	padding-bottom:210px; 
+	padding-bottom: 340px; 
 	margin-bottom:-235px; 
 }
 
@@ -77,10 +77,19 @@
 
 #crowd h2 {
 	text-align: center;
+	font-weight: 500;
+	font-size: 24px;
+  color: #fff;
+  text-align: center;
+  font-family: "NeutrafaceSlab", "Neutraface Slab", serif;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  line-height: 24px;
 }
 
 #crowd p {
 	text-align: center;
+	font-size: 15px;
 }
 
 .menu-footer li {
