@@ -151,7 +151,7 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
-    omniauth-facebook (1.4.1)
+    omniauth-facebook (1.4.0)
       omniauth-oauth2 (~> 1.1.0)
     omniauth-oauth (1.0.1)
       oauth
@@ -312,7 +312,7 @@ DEPENDENCIES
   jquery-rails
   mail
   mandrill-rails
-  omniauth-facebook
+  omniauth-facebook (~> 1.4.0)
   omniauth-twitter
   paperclip
   pdfkit

@@ -29,7 +29,7 @@ gem 'twilio-ruby'
 
 gem 'gibbon'
 
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '~> 1.4.0'
 gem 'omniauth-twitter'
 
 gem 'friendly_id'
