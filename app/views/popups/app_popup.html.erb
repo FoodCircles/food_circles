@@ -8,28 +8,28 @@
 			<div class="tab-cnt active" id="tab-iphone">
 				<div class="phone-module">
 					<h2>Arm yourself for the streets</h2>
-					<p>Enter your 10-digit US mobile number and we’ll send a download link directly to your phone</p>
+					<p><a href="https://itunes.apple.com/us/app/foodcircles-for-iphone/id710592600">Visit the App Store here</a> or enter your number to get a single text with the download link.</p>
           <%= form_tag "/", method: :post do %>
             <fieldset>
 	  					<%= text_field_tag :phone, nil, :placeholder => "(xxx) xxx-xxxx", :class => "field extra-big" %>
 		  				<%= hidden_field_tag :type, 'iphone' %>
               <%= submit_tag "Send link", :class => "btn-medium submit" %>
             </fieldset>
-				    <small class="form-caption">Message and data rates may apply.</small>
+				    <small class="form-caption">You won't be added to any lists nor will your info be shared.</small>
           <% end %>
 				</div><!-- /.phone-module -->
 			</div><!-- /#tab-iphone.tab-cnt -->
 			<div class="tab-cnt" id="tab-android">
 				<div class="phone-module">
 					<h2>Arm yourself for the streets</h2>
-					<p>Enter your 10-digit US mobile number and we’ll send a download link directly to your phone</p>
+					<p><a href="https://play.google.com/store/apps/details?id=co.foodcircles">Visit Google Play here</a> or enter your number to get a single text with the download link.</p>
           <%= form_tag "/", method: :post do %>
             <fieldset>
   						<%= text_field_tag :phone, nil, :placeholder => "(xxx) xxx-xxxx", :class => "field extra-big" %>
 	  					<%= hidden_field_tag :type, 'android' %>
               <%= submit_tag "Send link", :class => "btn-medium submit" %>
             </fieldset>
-						<small class="form-caption">Message and data rates may apply.</small>
+						<small class="form-caption">You won't be added to any lists nor will your info be shared.</small>
 					<% end %>
 				</div><!-- /.phone-module -->
 			</div><!-- /#tab-android.tab-cnt -->
