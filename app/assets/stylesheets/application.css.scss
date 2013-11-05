@@ -192,7 +192,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .container { margin:0 auto; width:960px; }
 
 /*=== Buttons ===*/
-[class^="btn-"], [class*=" btn-"] { display:inline-block; background:transparent; border:none; text-align:center; cursor:pointer; font:bold 14px/40px 'pragmatica-web', sans-serif; color:#fff; text-shadow:0 1px 1px #701a1a; box-shadow:0 2px 3px rgba(70,18,18,0.8); padding:0 16px; border-radius:6px; *display:inline; *zoom:1;  
+[class^="btn-"], [class*=" btn-"] { height: 40px; display:inline-block; background:transparent; border:none; text-align:center; cursor:pointer; font:bold 14px/40px 'pragmatica-web', sans-serif; color:#fff; text-shadow:0 1px 1px #701a1a; box-shadow:0 2px 3px rgba(70,18,18,0.8); padding:0 16px; border-radius:6px; *display:inline; *zoom:1;  
 	background-repeat:no-repeat;
 	background-color:#b56e6f;
 	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#b56e6f), to(#a34b4c)); 
