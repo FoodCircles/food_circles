@@ -162,28 +162,7 @@ background-image: -webkit-gradient(
 
 /*------------------*/
 
-[class^="btn-"], [class*=" btn-"] { display:inline-block; background:transparent; border:none; text-align:center; cursor:pointer; font:bold 16px/40px "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; color:#fff; text-shadow:0 1px 1px #701a1a; box-shadow:0 2px 3px rgba(70,18,18,0.8); padding:0 16px; border-radius:6px; *display:inline; *zoom:1;  
-	background-repeat:no-repeat;
-	background-color:#b56e6f;
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#b56e6f), to(#a34b4c)); 
-	background-image:-webkit-linear-gradient(#b56e6f 0%, #a34b4c 100%); 
-	background-image:-moz-linear-gradient(#b56e6f 0%, #a34b4c 100%); 
-	background-image:-o-linear-gradient(#b56e6f 0%, #a34b4c 100%); 
-	background-image:linear-gradient(#b56e6f 0%, #a34b4c 100%);
-	
-	/*transition*/
-	-webkit-transition:background-position 350ms, background-color 0 350ms;
-	   -moz-transition:background-position 350ms, background-color 0 350ms;
-	     -o-transition:background-position 350ms, background-color 0 350ms;
-	        transition:background-position 350ms, background-color 0 350ms;
-}
-[class^="btn-"]:hover, [class*=" btn-"]:hover { text-decoration:none; background-position:0 -40px; background-color:#a34b4c;
-	/*transition*/
-	-webkit-transition:background-position 350ms;
-	   -moz-transition:background-position 350ms;
-	     -o-transition:background-position 350ms;
-	        transition:background-position 350ms;
-}
+
 
 .btn-large { line-height:54px; font-size:18px; }
 
