@@ -18,14 +18,14 @@
   def food_mail(email)
 
     @url = 'http://foodcircles.net/?app=mobile_email'
-    mail(:to => email,:reply_to => 'jonathan@foodcircles.net', :subject => "Do good. Eat well.")
+    mail(:to => email,:reply_to => 'jonathan@foodcircles.net', :subject => "Your appetite is powerful.")
   end
   #tkxel_dev: Email Content creation is handled in the following method.
   def setup_email(user,payment)
     mail = Mail.deliver do
       to user.email
       from 'FoodCircles <hey@foodcircles.net>'
-      subject "Got your coupon code for #{payment.offer.venue.name}"
+      subject "Got your Voucher for #{payment.offer.venue.name}"
       reply_to 'used@inbound.foodcircles.net'
       html_part do
         content_type 'text/html; charset=UTF-8'
@@ -36,12 +36,11 @@
               <b>only at:</b> #{payment.offer.venue.name}<br>
               <b>with a minimum of:</b> #{payment.offer.min_diners} diners<br>
               <b>expiring:</b> #{30.days.from_now.to_date}</p><br>
-              <b>4 steps to redeem:</b>
+              <b>3 steps to redeem:</b>
               <p>
               <b>1)</b> Show server this message before you order.  They should jot your code down and confirm.<br>
               <b>2)</b> Order regular food or drink for each person in party.<br>
-              <b>3)</b> Your \"Buy One, Feed One\"  item(s) will be taken off your final receipt.<br>
-              <b>4)</b> Mark your coupon used by following this link! <a href=\"http://staging.foodcircles.net/payment/used?code=#{payment.code}&source=email\">Mark Coupon Used</a></br>
+              <b>3)</b> Mark Voucher used by following this link! <a href=\"http://staging.foodcircles.net/payment/used?code=#{payment.code}&source=email\">Mark Voucher Used</a></br>
               </p><br><br>
               Enjoy!<br><br>
               Contact support at <b>support@foodcircles.net</b> if you have any concerns or questions whatsoever.<br><br><br>
@@ -55,17 +54,17 @@
     mail = Mail.deliver do
       to user.email
       from 'FoodCircles <hey@foodcircles.net>'
-      subject "Welcome to FoodCircles."
+      subject "Your Hunger is Powerful."
       reply_to 'hey@foodcircles.net'
       html_part do
         content_type 'text/html; charset=UTF-8'
         body "<p>You did it. You signed up for FoodCircles. But why? ...well, maybe you can relate to this situation.<br>
               If you're like me, you love to dine out. But the thing is, I can't ever decide on where to go. \"You pick.\" \"Hahaha, no, you pick.\" Geez.....<br>
               There's also certain beliefs I have about the world. That no one should go hungry, that I'm fortunate to be in the position I'm in, and that any kid should be able to choose to study or play when they want to -- not just when their stomach allows it.<br>
-              FoodCircles lets you buy an appetizer, drink, or dessert at top local restaurants for only $1, and directs 100% of your purchase to get dinner to a child who needs it. Buy one, feed one. A simple way to know where to eat and feed a hungry child in the process.<br>
+              Our new site lets you try a dish at top local restaurants for just $1, and directs 100% of that purchase to get dinner to a child who needs it. Thank you so much for joining us.<br>
               <a href=\"http://www.joinfoodcircles.org\">Grab A $1 Dish Here</a><br><br>
               Buen provecho,<br>
-              Jonathan 312 945 8627</p>"
+              Jonathan  312 945 8627</p>"
         end
     end
   end
@@ -91,7 +90,7 @@
   end
 
   def remind_mail(to)
-    mail_for_remind(:to=>to, :subject=>"Newsletter mail")
+    mail_for_remind(:to=>to, :subject=>"Newsletter Mail")
   end
 
   def social_butterfly(fb)
@@ -103,7 +102,7 @@
   end
 
   def restaurant_notify(email, name)
-   mail(:to => ADMIN_EMAIL, :subject => "New Restaurant Request", :body => "#{name} would like to join Food Circles. Please contact them at #{email}.")
+   mail(:to => ADMIN_EMAIL, :subject => "New Restaurant Request", :body => "#{name} would like to join FoodCircles. Please contact them at #{email}.")
   end
 
   def company_signup(email, name, company)
@@ -111,7 +110,7 @@
   end
 
   def company_notify(email, name, company)
-    mail(:to => ADMIN_EMAIL, :subject => "New Company Request", :body => "#{name} from #{company} would like to join Food Circles. Please contact them at #{email}." )
+    mail(:to => ADMIN_EMAIL, :subject => "New Company Request", :body => "#{name} from #{company} would like to join FoodCircles. Please contact them at #{email}." )
   end
 
   def nonprofits_signup(email, name)
@@ -121,7 +120,7 @@
   def nonprofits_notify(email, name, organization, website, from_grand_rapids = false)
     subject = "New Buy One, Feed One Request"
     subject += " from Grand Rapids" if from_grand_rapids
-    mail(:to => ADMIN_EMAIL, :subject => subject, :body => "#{name} from #{organization} would like to join Food Circles. Their website is  #{website}. Please contact them at #{email}." )
+    mail(:to => ADMIN_EMAIL, :subject => subject, :body => "#{name} from #{organization} would like to join FoodCircles. Their website is  #{website}. Please contact them at #{email}." )
   end
 
   def students_signup(email)
@@ -129,7 +128,7 @@
   end
 
   def students_notify(email)
-    mail(:to => ADMIN_EMAIL, :subject => "New Student Request", :body => "A student would like to join Food Circles. Please contact them at #{email}." )
+    mail(:to => ADMIN_EMAIL, :subject => "New Student Request", :body => "A student would like to join FoodCircles. Please contact them at #{email}." )
   end
 
   def organizers_signup(email)
@@ -137,7 +136,7 @@
   end
 
   def organizers_notify(email, location, address, date, num_diners, occassion, budget, food_preferences, donation, feedback)
-    mail(:to => ADMIN_EMAIL, :subject => "New Organizers Request", :body => "An organizer would like to join Food Circles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
+    mail(:to => ADMIN_EMAIL, :subject => "New Organizers Request", :body => "An organizer would like to join FoodCircles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
   end
 
   def notification_about_available_vouchers(user, venue)
@@ -155,11 +154,11 @@
     @world_kids = calculations.world_kids[0][:world_kids]
     @total_vouchers = calculations.reserve_venues.count
 
-    mail(:to => venue.email, :subject => "Monthly Report from FoodCircles.net")
+    mail(:to => venue.email, :subject => "Monthly Report from FoodCircles")
   end
 
   def postcard_notification(postcard)
     @postcard = postcard
-    mail(:to => SUPPORT_EMAIL, :subject => "Postcard alert")
+    mail(:to => SUPPORT_EMAIL, :subject => "Postcard Alert")
   end
 end
