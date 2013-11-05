@@ -617,6 +617,9 @@
 						mixPanelOptions.value = ui.value;
 						mixpanel.track("Touched slider handle", mixPanelOptions);
 					}
+					if(Math.floor($('.pay-box').find('.field').val()) = 1){
+	  			  $('.donation-info .meal-text').text('meal donated');
+	  			}
 					if(Math.floor($('.pay-box').find('.field').val()) > 1){
 	  			  $('.donation-info .meal-text').text('meals donated');
 	  			}
