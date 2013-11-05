@@ -124,7 +124,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .btn-arrow { height:30px; width:30px; line-height:0; font-size:0; padding:0; position:relative; box-shadow:0 1px 3px rgba(70,18,18,1); }
 .btn-arrow i { position:absolute; top:50%; left:50%; margin:-6px 0 0 -3px; color:#fff; border-width:6px; }
 
-.btn-facebook, .btn-twitter { border-radius:4px; line-height:30px; text-shadow:none; font-weight:normal; font-size:10px; width:57px; padding:0; box-shadow:none; letter-spacing:-0.1em; 
+.btn-facebook, .btn-twitter { border-radius:4px; line-height:30px; text-shadow:none; font-weight:normal; font-size:10px; width:57px; height:32px; padding:0; box-shadow:none; letter-spacing:-0.1em; 
 	/*transition*/
 	-webkit-transition:none;
 	   -moz-transition:none;
