@@ -226,7 +226,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .light-shadow[class^="btn-"], .light-shadow[class*=" btn-"] { box-shadow:0 2px 3px #d3c9b9; }
 .full-width[class^="btn-"], .full-width[class*=" btn-"] { display:block; width:100%; padding:0; }
 .large-font[class^="btn-"], .large-font[class*=" btn-"] { font-size:18px; }
-.submit[class^="btn-"], .submit[class*=" btn-"] { position:relative; line-height:30px; height:30px; }
+.submit[class^="btn-"], .submit[class*=" btn-"] { position:relative; }
 .submit[class^="btn-"] input, .submit[class*=" btn-"] input { position:absolute; top:0; left:0; right:0; bottom:0; opacity:0; -moz-opacity:0; filter:alpha(opacity=0); cursor:pointer; }
 
 [class^="btn-"] i, [class*=" btn-"] i { vertical-align:middle; margin-left:2px; }
@@ -234,7 +234,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .btn-arrow { height:30px; width:30px; line-height:0; font-size:0; padding:0; position:relative; box-shadow:0 1px 3px rgba(70,18,18,1); }
 .btn-arrow i { position:absolute; top:50%; left:50%; margin:-6px 0 0 -3px; color:#fff; border-width:6px; }
 
-.btn-facebook, .btn-twitter { border-radius:4px; line-height:30px; text-shadow:none; font-weight:normal; font-size:10px; width:57px; height:30px; padding:0; box-shadow:none; letter-spacing:-0.1em; 
+.btn-facebook, .btn-twitter { border-radius:4px; line-height:30px; text-shadow:none; font-weight:normal; font-size:10px; width:57px; padding:0; box-shadow:none; letter-spacing:-0.1em; 
 	/*transition*/
 	-webkit-transition:none;
 	   -moz-transition:none;
@@ -258,7 +258,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .btn-facebook.mid, .btn-twitter.mid { line-height:40px; font-size:12px; width:72px; } 
 
 .btn-facebook.grad,
-.btn-twitter.grad { border-radius:8px; font-size:12px; font-weight:bold; letter-spacing:0; position:relative; line-height:32px; height:32px; }
+.btn-twitter.grad { border-radius:8px; font-size:12px; font-weight:bold; letter-spacing:0; position:relative; line-height:32px; }
 .btn-facebook.grad i,
 .btn-twitter.grad i { position:absolute; top:6px; left:2px; }
 
