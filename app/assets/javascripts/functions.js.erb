@@ -363,6 +363,9 @@
 				slide: function(event, ui){
 					if($slider.closest('.pay-box').length){
 						$slider.closest('.pay-box').find('.field').val(ui.value).trigger('change');
+		  			if($('.pay-box').find('.field').val() > 1){
+		  			  $('.donation-info .meal-text').text('meals donated');
+		  			}
 					}
 				}
 			});
