@@ -56,6 +56,7 @@
               %strong 1
               .meal-text
                 meal donated
+              .clear-fix{ :style => "clear: both" }
             -#.donation-info
             %a.btn-large.full-width.light-shadow.buy-btn{:href => "#", :"data-mixpanel-options" => {:restaurant => @offer.venue.name}.to_json, :"data-mixpanel-event" => "Clicked 'I want this'" } I want this!
             .help
