@@ -28,7 +28,7 @@
                   - else
                     %label{:for => "qty-1"}
                       = offer.name
-                      = min_deals(offer.min_diners)
+                      -#.testing no "add $1" = min_deals(offer.min_diners)
                   - if i == 0
                     %input#qty-1.custom-input{:checked => "checked", "data-details" => offer.details, "data-name" => offer.name, "data-originalprice" => prettify_float(offer.original_price), "data-price" => prettify_float(offer.price), :name => "offer_id", :type => "radio", :value => offer.id, :"data-mixpanel-event" => "Selected a different deal", :"data-mixpanel-trigger-on" => "change", :"data-mixpanel-options" => {:restaurant => offer.venue.name, :offer => offer.name}.to_json}/
                   - else
@@ -36,7 +36,7 @@
             -#.qty
           -#.description
           .pay-box
-            %h3 pay what you want
+            %h3 Pay What You Want
             %span.field-holder
               %span.prefix $
               %input.field{:name => "amount", :type => "text", :value => "1"}/
@@ -60,14 +60,14 @@
             %a.btn-large.full-width.light-shadow.buy-btn{:href => "#", :"data-mixpanel-options" => {:restaurant => @offer.venue.name}.to_json, :"data-mixpanel-event" => "Clicked 'I want this'" } I want this!
             .help
               .balloon
-                %h6 How to redeem
+                %h6 HOW TO REDEEM
                 %ul
                   %li
                     %strong 1
-                    Purchase Online
+                    Purchase online
                   %li
                     %strong 2
-                    Print or show receipt to server
+                    Display receipt on arrival
                   %li
                     %strong 3
                     Enjoy with regular food purchase
