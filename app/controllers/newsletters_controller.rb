@@ -12,7 +12,7 @@ class NewslettersController < ApplicationController
           {:error => true, :description => api_result["errors"].map{|error| error["error"]}.to_sentence}
         else
           partial = current_user ? 'user_subscription_success' : 'subscription_success'
-          {:success => true, :description => "You've subscribed to our list. You'll soon receive an email to confirm your subscription."}
+          {:success => true, :description => "You've subscribed to our briefs list. You'll occasionally receive project updates by email."}
         end
       else
         partial = 'subscription_error'
