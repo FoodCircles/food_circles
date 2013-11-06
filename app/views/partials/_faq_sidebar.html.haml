@@ -1,12 +1,3 @@
-<div id="fb-root"></div>
-%script 
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=526839707387980";
-  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
-
 #sidebar
   %ul
     %li{:class => "#{ 'active' if params[:id] == 'about_we' }"}
@@ -25,5 +16,3 @@
       = link_to 'For Events', '/organizers'
     %li
       = link_to 'For Social Butterflies', '/socialbutterflies'
-
-#fb data-href="http://www.joinfoodcircles.org/faq" data-colorscheme="light" data-layout="standard" data-action="recommend" data-show-faces="true"
