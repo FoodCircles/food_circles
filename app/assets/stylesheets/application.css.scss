@@ -217,7 +217,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 .btn-mini,
 .btn-mini-med,
 .btn-small { font-size:12px; box-shadow:0 1px 3px rgba(70,18,18,1); }
-.btn-mini { line-height:22px; padding:0 8px; border-radius:4px; }
+.btn-mini { line-height:22px; padding:0 8px; border-radius:4px;  height: auto; }
 .btn-mini-med { line-height:27px; padding:0 10px; border-radius:3px; }
 .btn-small { line-height:35px; padding:0 5px; }
 .btn-medium { line-height:47px; font-size:16px; height: 47px; }
@@ -775,7 +775,7 @@ body.active-popup {
 .products-head .filter .dropdown .col li input,
 .products-head .filter .dropdown .col li input { position:absolute; top:0; left:0; }
 .products-head .filter .dropdown .col li label { float:left; cursor:pointer; }
-.products-head .filter .dropdown .col li label { text-indent:18px; }
+.products-head .filter .dropdown .col li label { text-indent:18px; font-size: 10px;}
 .products-head .filter .dropdown .col h4 { font:bold 12px/1 'pragmatica-web', sans-serif; color:#7e7e7e; }
 .products-head .filter .dropdown-foot { text-align:right; clear:both; font:11px 'pragmatica-web', sans-serif; }
 .products-head .filter .dropdown-foot .left { margin-top:4px; }

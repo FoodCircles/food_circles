@@ -1,12 +1,12 @@
 .popup
 	= form_tag(subscribe_newsletter_path, remote: true) do
 		.subscribe
-			%h2 Arm yourself for the streets
-			%p Enter your 10-digit US mobile number and we'll send you a download link to your phone
+			%h2 THE "BRIEFS" LIST
+			%p For folks who want the big updates (expansion, child-focused, etc.) and not much else.
 			.get-updates
-				%label{for: 'email'}Get updates
+				%label{for: 'email'}Get Briefs
 				%fieldset
-					= email_field_tag('email', '', class: 'field tall', id: 'email', placeholder: 'you@email.com')
+					= email_field_tag('email', '', class: 'field tall', id: 'email', placeholder: 'email address')
 					%span.btn-arrow.submit
 						= submit_tag ''
 						%i.arrow-right
