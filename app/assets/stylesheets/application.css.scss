@@ -1049,12 +1049,12 @@ body.active-popup {
 .popup .subscribe { padding:30px 50px 50px; text-align:center; *zoom:1; }
 .popup .subscribe:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 .popup .subscribe h2 { text-transform:uppercase; color:#4e3e34; padding-bottom:13px; letter-spacing:1px; }
-.popup .subscribe p { font:16px 'Helvetica Neue', Helvetica, Arial, 'Dejavu Sans', Verdana, sans-serif; color:#4e3e34; padding-bottom:25px; }
+.popup .subscribe p { font:16px 'Helvetica Neue', Helvetica, Arial, 'Dejavu Sans', Verdana, sans-serif; color:#4e3e34; padding-bottom:30px; }
 .popup .subscribe .get-updates { width: 420px; margin: 0 auto;}
-.popup .subscribe label { float:left; font:bold 25px/40px 'NeutrafaceSlab', sans-serif; letter-spacing:1px; color:#4e3e34; text-transform:uppercase; }
+.popup .subscribe label { float:left; font:bold 25px/40px 'NeutrafaceSlab', sans-serif; letter-spacing:1px; color:#4e3e34; text-transform:uppercase; padding-left: 25px; padding-top: 2px;}
 .popup .subscribe fieldset { float:right; width:208px; position:relative; border:none; }
-.popup .subscribe .field { float:left; width:188px; }
-.popup .subscribe .submit { position:absolute; top:6px; right:5px; z-index:2; }
+.popup .subscribe .field { float:left; width:188px; margin-right: 25px;}
+.popup .subscribe .submit { position:absolute; top:6px; right:5px; z-index:2; margin-right: 25px;}
 
 
 /*=== Postcard ===*/
