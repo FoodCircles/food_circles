@@ -4,6 +4,7 @@ class Charity < ActiveRecord::Base
   belongs_to :charity
   belongs_to :region
   belongs_to :state
+  has_many :payments
 
   def as_json(options={})
     { :id => self.id,

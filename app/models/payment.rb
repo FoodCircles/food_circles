@@ -1,6 +1,7 @@
 class Payment < ActiveRecord::Base
   belongs_to :user
   belongs_to :offer
+  belongs_to :charity
 
   before_save :add_code
 
