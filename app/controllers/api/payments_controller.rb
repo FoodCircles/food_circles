@@ -3,7 +3,7 @@ class Api::PaymentsController < ApplicationController
 
   # POST /api/payments
   def create
-    create_params = params[:payment].slice(:offer_id, :amount, :paypal_charge_token)
+    create_params = params[:payment].slice(:offer_id, :amount, :paypal_charge_token, :charity_id)
     create_params[:user_id] = current_user.id
 
     @payment = Payment.new(create_params)
