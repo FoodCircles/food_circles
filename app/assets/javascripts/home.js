@@ -802,7 +802,7 @@
 				navSelector: '.pagination',
 				nextSelector:'.next_page',
 				itemSelector:'.tile:not(.add-new)',
-				bufferPx:-200,
+				bufferPx:-50,
 				errorCallback: function(){
 					$('.pagination').text('No more offers.')
 				},
