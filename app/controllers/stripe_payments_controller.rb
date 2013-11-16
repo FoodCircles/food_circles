@@ -38,7 +38,8 @@ class StripePaymentsController < ApplicationController
         user: current_user,
         amount: @amount,
         stripe_charge_token: charge.id,
-        offer: offer
+        offer: offer,
+        charity_id: params[:charity_id]
     )
 
     offer.venue.vouchers_available -= 1
