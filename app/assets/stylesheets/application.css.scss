@@ -148,6 +148,7 @@ form .row { *zoom:1; }
 form .row:after { width:100%; content:''; font-size:0; line-height:0; text-indent:-4000px; clear:both; display:block; }
 form .row + .row { padding-top:4px; }
 input.field, .field { font:14px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; color:#4e3e34; height:19px; line-height:19px; border:none; background:#fff; padding:6px 7px 6px; border-radius:4px; box-shadow:inset 0 2px 3px #d3c9b9; }
+input.field:focus, .field:focus {box-shadow: inset 0 2px 3px #D3C9B9, 0 0 2px 2px #FDFBE2 }
 .field.small { font-size:10px; line-height:14px; height:14px; border:1px solid #d3d3d3; padding:4px 10px 5px; width:114px; }
 .field.medium { width:142px; }
 .field.tall { font-size:15px; line-height:20px; height:20px; padding:10px; }
@@ -256,7 +257,8 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 
 .btn-facebook.big, .btn-twitter.big { height:47px; width:89px; line-height:47px; font-size:16px; letter-spacing:0; } 
 .btn-facebook.mid, .btn-twitter.mid { line-height:30px; font-size:12px; width:72px; } 
-.btn-facebook.fatter, .btn-twitter.fatter {height: 38px; line-height: 38px; margin-top: 1px; font-size:12px; width:38px;border-radius:20px;float:right;}
+.btn-facebook.fatter, .btn-twitter.fatter {height: 38px; line-height: 38px; margin-top: 1px; font-size:12px; width:38px;border-radius:20px;float:right; box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);}
+.btn-facebook.fatter i, .btn-twitter.fatter i { margin: -2px 0 0 !important }
 .btn-facebook.grad,
 .btn-twitter.grad { height:32px; border-radius:8px; font-size:12px; font-weight:bold; letter-spacing:0; position:relative; line-height:32px; }
 .btn-facebook.grad i,
