@@ -256,7 +256,7 @@ textarea.field.small { padding:10px; width:240px; height:73px; }
 
 .btn-facebook.big, .btn-twitter.big { height:47px; width:89px; line-height:47px; font-size:16px; letter-spacing:0; } 
 .btn-facebook.mid, .btn-twitter.mid { line-height:30px; font-size:12px; width:72px; } 
-.btn-facebook.fatter, .btn-twitter.fatter {height: 38px; line-height: 38px; margin-top: 1px; font-size:12px; width:72px;}
+.btn-facebook.fatter, .btn-twitter.fatter {height: 38px; line-height: 38px; margin-top: 1px; font-size:12px; width:38px;border-radius:20px;float:right;}
 .btn-facebook.grad,
 .btn-twitter.grad { height:32px; border-radius:8px; font-size:12px; font-weight:bold; letter-spacing:0; position:relative; line-height:32px; }
 .btn-facebook.grad i,
@@ -1245,13 +1245,7 @@ body.active-popup {
 	        transition:top 300ms linear;
 }
 .deal-payment.payment-active {top: 0;}
-.deal-payment .head { position:relative; text-align:center; padding:29px 0 24px; box-shadow:inset 0 -1px 5px rgba(0,0,0,0.16);
-	background:#ebe4da;
-	background:-webkit-gradient(linear, 0 0, 0 100%, from(#ebe4da), to(#f0e9de)); 
-	background:-webkit-linear-gradient(#ebe4da, #f0e9de); 
-	background:-moz-linear-gradient(#ebe4da, #f0e9de); 
-	background:-o-linear-gradient(#ebe4da, #f0e9de); 
-	background:linear-gradient(#ebe4da, #f0e9de); 
+.deal-payment .head { position:relative; padding:29px 0 24px; 
 }
 .deal-payment .head .back { position:absolute; left:9px; top:8px; font:12px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; }
 .deal-payment .head .profile { font:18px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; }
@@ -1292,13 +1286,13 @@ body.active-popup {
 .deal-payment .foot { position:relative; margin:10px -10px 0; }
 .deal-payment .foot .secured { font:bold 12px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; color:#626262; text-transform:uppercase; text-align:center; padding-top:19px; }
 
-.not-logged .deal-payment .head { padding-top:23px; padding-bottom:12px; }
-.not-logged .deal-payment .head .profile { padding:0 158px; }
+.not-logged .deal-payment .head { padding-top:5px; padding-bottom:12px; }
+.not-logged .deal-payment .head .profile { padding:0 148px; }
 .not-logged .deal-payment .head .profile .hidden { display:none; }
 .not-logged .deal-payment .head .profile .row { height:40px; }
 .not-logged .deal-payment .head .profile .form-foot { padding-top: 6px; }
 .not-logged .deal-payment .head .profile .row ~ .row { padding-top:6px; }
-.not-logged .deal-payment .head .profile .row .field { float:right; margin-top:1px; }
+.not-logged .deal-payment .head .profile .row .field { margin-top:1px; }
 .not-logged .deal-payment .head .profile em { display:block; text-align:left; padding-top: 9px; width: 210px; float: left; }
 .not-logged .deal-payment .head .profile span { width: 55px; text-align: center; }
 .deal-payment .body .new-card .field { display:block; }
