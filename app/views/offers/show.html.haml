@@ -110,10 +110,14 @@
   -#.deal
   .deal-payment
     .head
+      %span.or
+        %i
+        or
+        %i
       %a.back{:href => "#"} &#8592; back to restaurant
       .profile
-        %h5 Create Account
         - if user_signed_in?
+          %h5 Create Account
           .row
             .user
               = current_user.name || current_user.email

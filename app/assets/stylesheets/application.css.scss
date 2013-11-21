@@ -1250,7 +1250,9 @@ body.active-popup {
 .deal-payment .head { position:relative; padding:29px 0 24px; 
 }
 .deal-payment .head .back { position:absolute; left:9px; top:8px; font:12px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; }
-.deal-payment .head .profile { font:18px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; }
+.deal-popup .head .or { font-size: 16px; left: 375px; line-height: 30px; position: absolute; text-align: center; top: 40px; width: 21px; }
+.deal-popup .head .or i { border-right: 1px solid #CCC; display: block; height: 16px; width: 10px; }
+.deal-payment .head .profile { font:18px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif; padding: 0 148px;}
 /*.deal-payment .head .profile .user { padding: 20px 0 10px; }*/
 .deal-payment .head .profile em { color:#a7a299; display:block; font-size:15px; padding-top:3px; }
 .deal-payment .head .profile em a { font-weight:bold; }
