@@ -110,14 +110,9 @@
   -#.deal
   .deal-payment
     .head
-      %span.or
-        %i
-        or
-        %i
       %a.back{:href => "#"} &#8592; back to restaurant
       .profile
         - if user_signed_in?
-          %h5 Create Account
           .row
             .user
               = current_user.name || current_user.email
@@ -127,6 +122,11 @@
               = link_to('Logout', destroy_user_session_path, :method => :delete)
 
         - else
+          %span.or
+              %i
+              or
+              %i
+          %h5 Create Account
           #sign-up-form
             .row
               %a{href: "/users/auth/facebook", class: "btn-facebook fatter"}
