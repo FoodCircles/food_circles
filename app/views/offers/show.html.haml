@@ -140,24 +140,22 @@
               %input.field.standart#user_password{:name=>"user_password", :placeholder=>"New password", :size=>"30", :tabindex=>"2", :type=>"password"}
             .form-foot
               %em
-                Have an account?
-                %a{:href => "#"} Sign in
+                %a{:href => "#"} Use existing account instead.
               .clear
           = form_for(resource, :as => resource_name, :url => user_session_path, html:{class: 'hidden', id: "sign-in-form"}) do |f|
             .row
-              %a{href: "/users/auth/facebook", class: "btn-facebook mid"}
-                Sign In
+              %a{href: "/users/auth/facebook", class: "btn-facebook fatter"}
+
                 %i{class: "icon-btn-facebook medium"}
               = f.email_field :email, class: 'field standart focus', placeholder: "Your email", tabindex: '1'
             .row
-              %a{href: "/users/auth/twitter", class: "btn-twitter mid"}
-                Sign In
+              %a{href: "/users/auth/twitter", class: "btn-twitter fatter"}
+
                 %i{class: "icon-btn-twitter medium"}
               = f.password_field :password, class: 'field standart', placeholder: "Your password", tabindex: '2'
             .form-foot
               %em
-                Need an account?
-                %a{href: "#"} Sign up
+                %a{href: "#"} Create an account instead.
               %span.btn-small.submit.right
                 Sign in
                 = f.submit 'Sign In', tabindex: '3'
