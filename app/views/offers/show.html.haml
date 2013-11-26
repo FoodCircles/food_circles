@@ -124,10 +124,12 @@
         - else
           %span.or
             %i
-            or
+            <i>or</i>
             %i
-          %h5 Create Account
           #sign-up-form
+            %h5
+              Create Account
+              %span.line
             .row
               %a{href: "/users/auth/facebook", class: "btn-facebook fatter"}
 
@@ -140,9 +142,10 @@
               %input.field.standart#user_password{:name=>"user_password", :placeholder=>"New password", :size=>"30", :tabindex=>"2", :type=>"password"}
             .form-foot
               %em
-                %a{:href => "#"} Use existing account instead.
+                %a{:href => "#"} Use existing account
               .clear
           = form_for(resource, :as => resource_name, :url => user_session_path, html:{class: 'hidden', id: "sign-in-form"}) do |f|
+            %h5 Use Existing Account
             .row
               %a{href: "/users/auth/facebook", class: "btn-facebook fatter"}
 
@@ -155,7 +158,7 @@
               = f.password_field :password, class: 'field standart', placeholder: "Your password", tabindex: '2'
             .form-foot
               %em
-                %a{href: "#"} Create an account instead.
+                %a{href: "#"} Create account
               %span.btn-small.submit.right
                 Sign in
                 = f.submit 'Sign In', tabindex: '3'
