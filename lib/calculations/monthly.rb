@@ -28,11 +28,11 @@ module Calculations
     end
 
     def start_date
-      months_before.ago.beginning_of_month
+      months_before.month.ago.beginning_of_month
     end
 
     def end_date
-      months_before.ago.end_of_month
+      months_before.month.ago.end_of_month
     end
 
     private
