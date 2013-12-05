@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131110230504) do
+ActiveRecord::Schema.define(:version => 20131115235634) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(:version => 20131110230504) do
   end
 
   create_table "notifications", :force => true do |t|
-    t.string   "content"
+    t.text     "content"
     t.string   "ticker"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(:version => 20131110230504) do
     t.integer  "total"
     t.float    "price"
     t.float    "original_price"
+    t.string   "times"
   end
 
   create_table "open_times", :force => true do |t|
@@ -172,7 +173,6 @@ ActiveRecord::Schema.define(:version => 20131110230504) do
     t.datetime "updated_at",          :null => false
     t.integer  "offer_id"
     t.string   "code"
-    t.string   "state"
     t.integer  "num_diners"
     t.string   "occasion"
     t.boolean  "confirmed"
@@ -181,8 +181,9 @@ ActiveRecord::Schema.define(:version => 20131110230504) do
     t.string   "name"
     t.string   "phone"
     t.boolean  "called"
+    t.string   "state"
     t.string   "paypal_charge_token"
-    t.integer  "charity"
+    t.integer  "charity_id"
   end
 
   add_index "payments", ["user_id"], :name => "index_payments_on_user_id"
@@ -389,6 +390,7 @@ ActiveRecord::Schema.define(:version => 20131110230504) do
     t.string   "outside_image_uid"
     t.string   "timeline_image_uid"
     t.string   "google_maps_url"
+    t.string   "times"
   end
 
   add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true
