@@ -3,7 +3,7 @@
     %a{:href => charity.web}= charity.name
     = charity.full_address
   - if charity_counter == 0
-    %input.custom-input{:checked => 'checked', :id => "charity-#{charity.id}", :name => "charity_id", :type => "radio", :value => "#{charity.id}", :"data-mixpanel-event" => "Picked different charity", :"data-mixpanel-trigger-on" => "change", :"data-mixpanel-options" => {:restaurant => venue.name, :charity => "#{charity.name}"}.to_json}/
+    %input.custom-input{:checked => 'checked', :id => "charity-#{charity.id}", :name => "charity_id", :type => "radio", :value => "#{charity.id}", :"data-mixpanel-event" => "Picked a different charity", :"data-mixpanel-trigger-on" => "change", :"data-mixpanel-options" => {:restaurant => venue.name, :charity => "#{charity.name}"}.to_json}/
   - else
     %input.custom-input{:id => "charity-#{charity.id}", :name => "charity_id", :type => "radio", :value => "#{charity.id}", :"data-mixpanel-event" => "Picked a different charity", :"data-mixpanel-trigger-on" => "change", :"data-mixpanel-options" => {:restaurant => venue.name, :charity => "#{charity.name}"}.to_json}/
 -#.radio-holder
