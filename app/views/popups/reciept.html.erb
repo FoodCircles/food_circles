@@ -13,7 +13,7 @@
             <li><i class="icon-item"></i> <%= @payment.offer.name %></li>
             <li><i class="icon-kid-dark"></i> <%= number_to_currency(@payment.amount) %> donated</li>
           </ul><!-- /.order-details -->
-          
+
           <div class="order-share">
             <h5>Share with friends</h5>
             <div class="socials">
@@ -22,7 +22,7 @@
               <a href="mailto:friend@email.com?subject=<%=@email[:subject]%>&body=<%=@email[:body]%>" class="icon-mail-mega"></a>
             </div><!-- /.socials -->
           </div><!-- /.order-share -->
-          
+
           <div class="order-how-to">
             <h5>How To Redeem</h5>
             <ul>
@@ -35,10 +35,12 @@
         <div class="col">
           <div class="restaurant-location">
             <h5><%= @payment.offer.venue.name %></h5>
-            <img id="venue_map" src="http://maps.google.com/maps/api/staticmap?zoom=14&size=260x160&maptype=roadmap&markers=color:red|<%= @payment.offer.venue.full_address %>&sensor=false"/>
+            <%= link_to google_maps_search(payment.offer.venue), :target => "_blank" do %>
+              <img id="venue_map" src="http://maps.google.com/maps/api/staticmap?zoom=14&size=260x160&maptype=roadmap&markers=color:red|<%= @payment.offer.venue.full_address %>&sensor=false"/>
+            <% end %>
             <p><strong><%= @payment.offer.venue.phone %></strong> <%= @payment.offer.venue.address %> <%= @payment.offer.venue.city %>, <%= @payment.offer.venue.state.name if @payment.offer.venue.state %></p>
           </div><!-- /.restaurant-location -->
-          
+
           <div class="order-status">
             If you don't have a smartphone, text "voucher" to 616-61-FOOD-6 to get a text message version! &nbsp;<strong>Valid for the next 30 days.</strong>
           </div><!-- /.order-status -->
@@ -46,6 +48,6 @@
       </div><!-- /.body -->
     </div><!-- /.print-page -->
   </div><!-- /.print-page-holder -->
-  
+
   <a href="#" class="btn-standart large-font view-account-btn">View Account</a>
 </div><!-- /.popup popup-print -->

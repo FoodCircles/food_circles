@@ -11,7 +11,7 @@
   %ul{class: "slides"}
     - @news.each do |news|
       %li
-        %a{href: news.website_url || "#", target: "_blank", :"data-mixpanel-event" => "Clicked a news link", :"data-mixpanel-options" => {news_link: news.website_url}.to_json}
+        %a{href: news.website_url || "#",  :"data-mixpanel-event" => "Clicked a news link", :"data-mixpanel-options" => {news_link: news.website_url}.to_json}
           %img{src: news.website_image.url, alt: "", width: "1280", height: "360"}
   %a{href: "#", class: "slide-prev icon-arrow-prev"}
   %a{href: "#", class: "slide-next icon-arrow-next"}
