@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title><%= content_for?(:title) ? content_for(:title) : 'FoodCircles – Try a Local Dish for $1 or More. 100% of Your Purchase is Given to End Hunger for Starving Children.' %></title>
     <meta name="p:domain_verify" content="569802fdc2acbfc3742a1204724a08f2"/>
-    <meta property="og:title" content="FoodCircles — Buy One, Feed One." />
-    <meta property="og:type" content="product" />
-    <meta property="og:site_name" content="FoodCircles" />
-    <meta property="og:url" content="http://www.joinfoodcircles.org" />
-    <meta property="og:image" content="http://1-ps.googleusercontent.com/h/www.joinfoodcircles.org/media/xBAhbB1sHOgZmSSIqMjAxMy8wOC8xOS8xNF8zMV8wNl82NzBfcF9jbF9tYWluLnBuZwY6BkVUWwg6BnA6CnRodW1iSSIMNjcweDMxMwY7BlQ.pagespeed.ic.1af83aWD8u.jpg" />
-    <meta property="og:description" content="Try a local restaurant dish for $1. Your $1 gives a hungry child dinner. Available on Android, iOS, and Web." />
+
+    <% set_meta_tags :og => {
+            :title    => 'FoodCircles — Buy One, Feed One.',
+            :description    => 'FoodCircles — Buy One, Feed One.',
+            :type     => 'product',
+            :url      => url_for(:only_path => false),
+            :site_name => "FoodCircles"
+    } %>
+
+    <%= display_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
@@ -17,7 +22,6 @@
     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
     <%= javascript_tag "Stripe.publishableKey = '#{Rails.configuration.stripe[:publishable_key]}';" %>
     <%= javascript_include_tag  'home', "#{controller_name}" %>
-
 
     <link rel="icon" type="image/png" href="/favicon.png">
     <%= csrf_meta_tags %>
