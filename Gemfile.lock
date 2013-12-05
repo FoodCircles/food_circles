@@ -135,6 +135,8 @@ GEM
       treetop (~> 1.4.8)
     mandrill-rails (0.0.4)
       activesupport (>= 3.0.3)
+    meta-tags (1.5.0)
+      actionpack
     method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.3)
@@ -312,6 +314,7 @@ DEPENDENCIES
   jquery-rails
   mail
   mandrill-rails
+  meta-tags
   omniauth-facebook (= 1.4.0)
   omniauth-twitter
   paperclip

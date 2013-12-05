@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui-1.10.3.custom.min
+
+
+$(function(){
+   // Adjust Alert box size
+    $("#alerts_container").width($(".alert").width()+90);
+});

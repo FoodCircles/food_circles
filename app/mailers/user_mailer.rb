@@ -161,4 +161,9 @@
     @postcard = postcard
     mail(:to => SUPPORT_EMAIL, :subject => "Postcard Alert")
   end
+
+  def voucher_expiring_soon(user, reservation)
+
+  end
+
 end

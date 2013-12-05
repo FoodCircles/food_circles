@@ -25,3 +25,6 @@ doc/
 
 config/database.yml
 .DS_Store
+
+# RubyMine project files
+.idea
