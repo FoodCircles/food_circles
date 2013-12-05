@@ -11,8 +11,12 @@ spec/reports
 test/tmp
 test/version_tmp
 /tmp/*
-/log/*.log
+/log/*
 tmp/
+vendor/bundle/
+
+public/assets
+public/system/dragonfly/*
 
 # YARD artifacts
 .yardoc
