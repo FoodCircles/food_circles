@@ -1,4 +1,6 @@
 ﻿class UserMailer < ActionMailer::Base
+  add_template_helper(ApplicationHelper)
+
   ADMIN_EMAIL = 'jonathan@foodcircles.net'
   SUPPORT_EMAIL = 'support@foodcircles.net'
 
@@ -163,10 +165,9 @@
   end
 
   def voucher_expiring_soon(payment)
-    @user = @payment.user
     @payment = payment.decorate
 
-    mail(:to => @user.email, :subject => "FoodCircles Voucher Expiring Soon")
+    mail(:to => payment.user.email, :subject => "FoodCircles Voucher Expiring Soon")
   end
 
 end

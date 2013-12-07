@@ -24,3 +24,7 @@ config/database.yml
 
 # RubyMine project files
 .idea
+
+.zeus.sock
+
+private_docs/
