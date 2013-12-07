@@ -6,7 +6,7 @@ class PaymentDecorator < Draper::Decorator
   end
 
   def long_expiration_date
-    expiring_at.strftime("%B %e, %Y")
+    expiring_at.strftime("%B %e, %Y ")
   end
 
 end

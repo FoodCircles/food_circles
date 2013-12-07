@@ -1,6 +1,7 @@
 class ExpiringSoonChecker
 
-  def initialize
+  def initialize date
+    @date = date
   end
 
   def check
