@@ -17,14 +17,13 @@ end
 module Foodcircles
 
 
-
   class Engine < Rails::Engine
-    
+
     def self.activate
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.env.production? ? require(c) : load(c)
       end
-      
+
       # Register image overlays
       # removing this temporarily, as it works only on Spree 0.70.x
       # [ImageOverlay::Overlays::Image,
@@ -97,11 +96,10 @@ module Foodcircles
     # }
 
     config.app_generators do |c|
-      c.test_framework :rspec, :fixture => true,
-                               :fixture_replacement => nil
-
+      c.test_framework :rspec
       c.integration_tool :rspec
       c.performance_tool :rspec
     end
+
   end
 end
