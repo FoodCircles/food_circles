@@ -3,25 +3,26 @@
   SUPPORT_EMAIL = 'support@foodcircles.net'
 
   #tkxel_dev: SendGrid credentilas for email.
-  default from:"\"FoodCircles\" <voucher@foodcircles.net>"
+  default from: "\"FoodCircles\" <voucher@foodcircles.net>"
   require 'mail'
   Mail.defaults do
-    delivery_method :smtp, { :address   => "smtp.mandrillapp.com",
-                             :port      => 587,
-                             :domain    => "foodcircles.net",
-                             :user_name => "jonathan@foodcircles.net",
-                             :password  => "uQjfYEZZxNUpGq0oeoVjmw",
-                             :authentication => 'plain',
-                             :enable_starttls_auto => true } 
+    delivery_method :smtp, {:address => "smtp.mandrillapp.com",
+                            :port => 587,
+                            :domain => "foodcircles.net",
+                            :user_name => "jonathan@foodcircles.net",
+                            :password => "uQjfYEZZxNUpGq0oeoVjmw",
+                            :authentication => 'plain',
+                            :enable_starttls_auto => true}
   end
   #tkxel_dev: Send email upon voucher creation
   def food_mail(email)
 
     @url = 'http://foodcircles.net/?app=mobile_email'
-    mail(:to => email,:reply_to => 'jonathan@foodcircles.net', :subject => "Your appetite is powerful.")
+    mail(:to => email, :reply_to => 'jonathan@foodcircles.net', :subject => "Your appetite is powerful.")
   end
+
   #tkxel_dev: Email Content creation is handled in the following method.
-  def setup_email(user,payment)
+  def setup_email(user, payment)
     mail = Mail.deliver do
       to user.email
       from 'FoodCircles <hey@foodcircles.net>'
@@ -46,10 +47,10 @@
               Contact support at <b>support@foodcircles.net</b> if you have any concerns or questions whatsoever.<br><br><br>
               <h3><u>FOR SERVERS:</u></h3>
               <p style= text-align: justify;><b>Write down the confirmation code on the table's receipt or your POS system</b>.  Place a  \"Buy One, Feed One\"  placard on the guest's table, and mark a tally on your chalkboard (if available).  Call us at 312 945 8627 with any questions!</p></td></tr></table>"
-        end
+      end
     end
   end
-  
+
   def signupsuccess(user)
     mail = Mail.deliver do
       to user.email
@@ -65,7 +66,7 @@
               <a href=\"http://www.joinfoodcircles.org\">Grab A $1 Dish Here</a><br><br>
               Buen provecho,<br>
               Jonathan  312 945 8627</p>"
-        end
+      end
     end
   end
 
@@ -76,13 +77,12 @@
   end
 
 
-
-  def create_voucher(user,r)
+  def create_voucher(user, r)
 
     #tkxel_dev: send Emails to users.
     @user = user
     @r = r
-    setup_email(@user,@r)
+    setup_email(@user, @r)
     #mail_for_voucher(:to => @user.email,
     #  :subject => "Your voucher for #{r.venue.name.capitalize.gsub(/\'/,"\\\'") }",
     #  :reservation => r )
@@ -90,45 +90,45 @@
   end
 
   def remind_mail(to)
-    mail_for_remind(:to=>to, :subject=>"Newsletter Mail")
+    mail_for_remind(:to => to, :subject => "Newsletter Mail")
   end
 
   def social_butterfly(fb)
-    mail(:to => ADMIN_EMAIL, :subject => "Social Butterfly Matchmaking", :body => "Someone would like to apply for Social Butterflies! Their profile is #{fb}" )
+    mail(:to => ADMIN_EMAIL, :subject => "Social Butterfly Matchmaking", :body => "Someone would like to apply for Social Butterflies! Their profile is #{fb}")
   end
 
   def restaurant_signup(email, name)
-    mail(:to => email, :subject => "Thanks for signing up.", :body => "Someone will get back with you soon, #{name}." )
+    mail(:to => email, :subject => "Thanks for signing up.", :body => "Someone will get back with you soon, #{name}.")
   end
 
   def restaurant_notify(email, name)
-   mail(:to => ADMIN_EMAIL, :subject => "New Restaurant Request", :body => "#{name} would like to join FoodCircles. Please contact them at #{email}.")
+    mail(:to => ADMIN_EMAIL, :subject => "New Restaurant Request", :body => "#{name} would like to join FoodCircles. Please contact them at #{email}.")
   end
 
   def company_signup(email, name, company)
-    mail(:to => email, :subject => "Thanks for signing up.", :body => "Someone will get back with you soon, #{name}." )
+    mail(:to => email, :subject => "Thanks for signing up.", :body => "Someone will get back with you soon, #{name}.")
   end
 
   def company_notify(email, name, company)
-    mail(:to => ADMIN_EMAIL, :subject => "New Company Request", :body => "#{name} from #{company} would like to join FoodCircles. Please contact them at #{email}." )
+    mail(:to => ADMIN_EMAIL, :subject => "New Company Request", :body => "#{name} from #{company} would like to join FoodCircles. Please contact them at #{email}.")
   end
 
   def nonprofits_signup(email, name)
-    mail(:to => email, :subject => "Thanks for your interest.", :body => "Someone will get back with you soon, #{name}." )
+    mail(:to => email, :subject => "Thanks for your interest.", :body => "Someone will get back with you soon, #{name}.")
   end
 
   def nonprofits_notify(email, name, organization, website, from_grand_rapids = false)
     subject = "New Buy One, Feed One Request"
     subject += " from Grand Rapids" if from_grand_rapids
-    mail(:to => ADMIN_EMAIL, :subject => subject, :body => "#{name} from #{organization} would like to join FoodCircles. Their website is  #{website}. Please contact them at #{email}." )
+    mail(:to => ADMIN_EMAIL, :subject => subject, :body => "#{name} from #{organization} would like to join FoodCircles. Their website is  #{website}. Please contact them at #{email}.")
   end
 
   def students_signup(email)
-    mail(:to => email, :subject => "Thanks for your interest.", :body => "Someone will get back with you soon." )
+    mail(:to => email, :subject => "Thanks for your interest.", :body => "Someone will get back with you soon.")
   end
 
   def students_notify(email)
-    mail(:to => ADMIN_EMAIL, :subject => "New Student Request", :body => "A student would like to join FoodCircles. Please contact them at #{email}." )
+    mail(:to => ADMIN_EMAIL, :subject => "New Student Request", :body => "A student would like to join FoodCircles. Please contact them at #{email}.")
   end
 
   def organizers_signup(email)
@@ -142,7 +142,7 @@
   def notification_about_available_vouchers(user, venue)
     @name = user.name || "Hey"
     @restaurant_name = venue.name
-    @restaurant_url  = venue_popup_url(venue)
+    @restaurant_url = venue_popup_url(venue)
     mail(:to => user.email, :subject => "Pending")
   end
 
@@ -162,8 +162,11 @@
     mail(:to => SUPPORT_EMAIL, :subject => "Postcard Alert")
   end
 
-  def voucher_expiring_soon(user, reservation)
+  def voucher_expiring_soon(payment)
+    @user = @payment.user
+    @payment = payment.decorate
 
+    mail(:to => @user.email, :subject => "FoodCircles Voucher Expiring Soon")
   end
 
 end

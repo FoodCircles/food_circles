@@ -35,7 +35,7 @@
         <div class="col">
           <div class="restaurant-location">
             <h5><%= @payment.offer.venue.name %></h5>
-            <%= link_to google_maps_search(payment.offer.venue), :target => "_blank" do %>
+            <%= link_to google_maps_search(@payment.offer.venue), :target => "_blank" do %>
               <img id="venue_map" src="http://maps.google.com/maps/api/staticmap?zoom=14&size=260x160&maptype=roadmap&markers=color:red|<%= @payment.offer.venue.full_address %>&sensor=false"/>
             <% end %>
             <p><strong><%= @payment.offer.venue.phone %></strong> <%= @payment.offer.venue.address %> <%= @payment.offer.venue.city %>, <%= @payment.offer.venue.state.name if @payment.offer.venue.state %></p>

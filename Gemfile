@@ -38,8 +38,9 @@ gem 'will_paginate'
 gem 'rack-mini-profiler', group: [:development, :test]
 
 gem 'twitter'
-gem 'meta-tags', :require => 'meta_tags'
 
+gem 'meta-tags', :require => 'meta_tags'
+gem "draper"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -54,10 +55,12 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
+  gem 'factory_girl_rails'
+  gem 'zeus'
 end
 
 group :test do
   gem 'capybara'
-  gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem "timecop"
 end
