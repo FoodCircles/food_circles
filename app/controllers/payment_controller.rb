@@ -58,7 +58,12 @@ class PaymentController < ApplicationController
   def send_text
     payment = Payment.find_by_code(params[:code])
     if payment
-      SmsVoucherSender.new(params[:phone], payment).send
+      begin
+        SmsVoucherSender.new(params[:phone], payment).send
+        flash.now[:notice] = "Text Voucher Sent Successfully"
+      rescue StandardError => ex
+        flash.now[:alert] = "Couldn't send Text voucher: #{ex.message}"
+      end
     end
   end
 

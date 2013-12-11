@@ -1,8 +1,8 @@
 class SmsVoucherSender
 
-  TWILIO_SID = "AC085df9dc6444a3588933ae0ddd9d95e7"
-  TWILIO_TOKEN = "95cc7f360064ab606017dad6d2eb38a5"
-  TWILIO_PHONE_NUMBER = "4422223663"
+  TWILIO_SID = "ACc27c9d89875eabb1ab973353bf6c10f4"
+  TWILIO_TOKEN = "38b05af540d55b26e856a2301cb2d943"
+  TWILIO_PHONE_NUMBER = "4848213426"
 
   def initialize(phone, payment)
     @phone = phone

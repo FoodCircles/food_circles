@@ -17,5 +17,9 @@
 
 $(function(){
    // Adjust Alert box size
-    $("#alerts_container").width($(".alert").width()+90);
+    adjust_alert_box_size();
 });
+
+function adjust_alert_box_size(){
+    $("#alerts_container").width($(".alert").width()+90);
+}
