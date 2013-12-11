@@ -42,7 +42,20 @@
           </div><!-- /.restaurant-location -->
 
           <div class="order-status">
-            If you don't have a smartphone, text "voucher" to 616-61-FOOD-6 to get a text message version! &nbsp;<strong>Valid for the next 30 days.</strong>
+            Get this voucher in a text.
+
+            <%= form_tag(payment_send_text_path, method: "get" , :remote => true) do %>
+                <fieldset>
+                  <%= text_field_tag('phone', '', class: 'field tall', id: 'phone', placeholder: '616-616-6161') %>
+                  <%= hidden_field_tag(:code, @payment.code) %>
+                  <span class="btn-arrow submit">
+                    <%= submit_tag '' %>
+                    <i class="arrow-right"></i>
+                  </span>
+                </fieldset>
+            <% end %>
+
+            <i class="phone_fees">standard rates & fees apply</i>
           </div><!-- /.order-status -->
         </div><!-- /.col -->
       </div><!-- /.body -->

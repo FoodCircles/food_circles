@@ -6,13 +6,15 @@ Foodcircles::Application.routes.draw do
   get 'reservation/used' => 'reservation#used'
   get 'reservation/active' => 'reservation#active'
   get 'reservation/expired' => 'reservation#expired'
-  
+
   get 'payment/used' => 'payment#used'
   get 'payment/active' => 'payment#active'
   get 'payment/expired' => 'payment#expired'
   get 'payment/inbound_mark_used' => 'payment#inbound_mark_used'
-  
-  resource :inbox, :controller => 'inbox', :only => [:show,:create]
+  get 'payment/send_text' => 'payment#send_text' , :as => "payment_send_text"
+
+
+  resource :inbox, :controller => 'inbox', :only => [:show, :create]
 
   match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
 
@@ -27,7 +29,7 @@ Foodcircles::Application.routes.draw do
 
   get "user_signup/create"
 
-  resources :stripe_payments, :only =>[:new, :create]
+  resources :stripe_payments, :only => [:new, :create]
 
   get "monthly_invoice/monthly_invoice"
   match '/monthly_invoice' => 'monthly_invoice#monthly_invoice', :as => :invoice
@@ -47,7 +49,7 @@ Foodcircles::Application.routes.draw do
     end
   end
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
 
   resources :payment_notifications
 
@@ -99,12 +101,12 @@ Foodcircles::Application.routes.draw do
     post '/sessions/sign_up' => 'sessions#sign_up'
 
     put '/sessions/update' => 'sessions#update_profile'
-    
+
     get '/news' => 'news#show'
-    
-    get '/venues/:lat/:lon' => 'venues#show', :constraints => { :lat => /[^\/]*/, :lon => /[^\/]*/ }
+
+    get '/venues/:lat/:lon' => 'venues#show', :constraints => {:lat => /[^\/]*/, :lon => /[^\/]*/}
     get '/charities' => 'charities#show'
-    
+
     get '/timeline' => 'timeline#show'
     post '/timeline/voucher/:id' => 'timeline#use_voucher'
     put '/timeline/verify_payment' => 'timeline#verify_payment_and_show_voucher'
@@ -115,7 +117,7 @@ Foodcircles::Application.routes.draw do
       get '/users' => 'general#get_mailchimp_users'
     end
   end
-  
+
   match '/mobi/reservation-login' => 'mobile#login'
   match '/mobi/reservation' => 'mobile#signup'
   match '/mobi/reservation_confirm' => 'mobile#callahead'
@@ -124,8 +126,8 @@ Foodcircles::Application.routes.draw do
 
   # HighVoltage
   get '/faq/:id' => 'faq#show', :as => 'faq'
-  get '/faq'     => 'faq#show', :as => 'faq', :id => 'faq'
-  get '/about_we'     => 'faq#show', :as => 'about_we', :id => 'about_we'
+  get '/faq' => 'faq#show', :as => 'faq', :id => 'faq'
+  get '/about_we' => 'faq#show', :as => 'about_we', :id => 'about_we'
 
   #Popups
   match '/non_profit_on_grand_rapids' => 'popups#non_profit_on_grand_rapids', :as => :non_profit_on_grand_rapids_popup
@@ -140,7 +142,7 @@ Foodcircles::Application.routes.draw do
   match '/download' => 'application#download', :as => :download
 
   match '/sms' => 'receive_texts#index', :via => :post
-  
+
   match '/receive_text/used_code' => 'receive_text#used_code'
   match '/receive_text/used_last' => 'receive_text#used_last'
 

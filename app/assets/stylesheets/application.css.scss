@@ -4470,6 +4470,32 @@ body.active-popup {
   text-decoration: none;
 }
 
+.print-page {
+  .order-status {
+    margin-top: 35px;
+    margin-left: 10px;
+
+    fieldset {
+      border: none;
+      position: relative;
+      width: 208px;
+
+      .submit{
+        margin-right: 20px;
+        position: absolute;
+        right: 0px;
+        top: 6px;
+        z-index: 2;
+      }
+    }
+
+    .phone_fees{
+      color: #8A857F;
+      font-size: 13px;
+    }
+  }
+}
+
 .send-text {
   padding: 35px 30px 27px;
   width: 508px;
@@ -5404,10 +5430,10 @@ body.active-popup {
   }
 }
 
-#alerts_container{
+#alerts_container {
   text-align: center;
 
-  .alert{
+  .alert {
     display: inline-block;
   }
 
@@ -5460,8 +5486,6 @@ body.active-popup {
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
-
-
 
 .submit-thank-you {
   padding: 40px;

@@ -49,7 +49,7 @@ class StripePaymentsController < ApplicationController
     UserMailer.setup_email(current_user, payment)
     
     unless current_user.phone.nil?
-      send_text_message(current_user, payment)
+      SmsVoucherSender.new(current_user.phone, payment).send
     end
     
     current_user.payments << payment
@@ -74,22 +74,6 @@ class StripePaymentsController < ApplicationController
         render :json => {:error => e.message}, status: 500
       end
     end
-  end
-  
-  private
-  def send_text_message(user, payment)
- 
-    twilio_sid = "AC085df9dc6444a3588933ae0ddd9d95e7"
-    twilio_token = "95cc7f360064ab606017dad6d2eb38a5"
-    twilio_phone_number = "4422223663"
-
-    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
-
-    @twilio_client.account.sms.messages.create(
-      :from => "+1#{twilio_phone_number}",
-      :to => user.phone,
-      :body => "FoodCircles offer\nCode: #{payment.code}\nItem:#{payment.offer.name}\nAmount donated: $#{payment.amount}\nVenue: #{payment.offer.venue.name}"
-    )
   end
 
 end
