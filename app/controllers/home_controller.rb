@@ -18,6 +18,9 @@ class HomeController < ApplicationController
         custom_body_classes << "sold-out"
         flash.now[:notice] = "#{venue.name} is sold out this week. Get first dibs when they're back by subscribing below."
       end
+      set_meta_tags  :og => { :image => venue.main_image.thumb("670x313").url  }
+    else
+      set_meta_tags  :og => { :image => "http://1-ps.googleusercontent.com/h/www.joinfoodcircles.org/media/xBAhbB1sHOgZmSSIqMjAxMy8wOC8xOS8xNF8zMV8wNl82NzBfcF9jbF9tYWluLnBuZwY6BkVUWwg6BnA6CnRodW1iSSIMNjcweDMxMwY7BlQ.pagespeed.ic.1af83aWD8u.jpg" }
     end
 
     Venue.all.collect do |venue|
