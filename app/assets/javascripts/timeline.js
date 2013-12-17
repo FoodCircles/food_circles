@@ -2,3 +2,10 @@
 // All this logic will automatically be available in application.js.
 //= require jquery.colorbox
 //= require home
+
+$(function () {
+    $("body").on("submit", "#send_text_form", function (event) {
+        $("#send_text_arrow").hide();
+        $("#send_text_loader").show();
+    });
+});

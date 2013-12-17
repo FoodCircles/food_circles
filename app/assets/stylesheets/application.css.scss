@@ -4482,11 +4482,15 @@ body.active-popup {
       margin-top: 5px;
       margin-top: -6px;
 
-      #phone{
+      #phone {
         width: 160px;
       }
 
-      .submit{
+      #send_text_loader {
+        width: 20px;
+      }
+
+      .submit {
         margin-right: 32px;
         position: absolute;
         right: 0px;
@@ -4495,7 +4499,7 @@ body.active-popup {
       }
     }
 
-    .phone_fees{
+    .phone_fees {
       color: #8A857F;
       font-size: 11px;
       margin-left: 25px;
@@ -5446,8 +5450,8 @@ body.active-popup {
 
 }
 
-.popup-flash{
-  #alerts_container{
+.popup-flash {
+  #alerts_container {
     width: 642px;
   }
 }

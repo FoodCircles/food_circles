@@ -1,5 +1,6 @@
 <div class="popup popup-print">
   <span class="print-slot"></span>
+
   <div class="print-page-holder">
     <div class="print-page">
       <div class="popup-flash">
@@ -8,23 +9,28 @@
       <div class="head">
         <span class="right">Thank You!</span>
         <span>Your FoodCircles Voucher</span>
-      </div><!-- /.head -->
+      </div>
+      <!-- /.head -->
       <div class="body">
         <div class="col">
           <ul class="order-details">
             <li><i class="icon-barcode"></i> Your code is: <strong><%= @payment.code %></strong></li>
             <li><i class="icon-item"></i> <%= @payment.offer.name %></li>
             <li><i class="icon-kid-dark"></i> <%= number_to_currency(@payment.amount) %> donated</li>
-          </ul><!-- /.order-details -->
+          </ul>
+          <!-- /.order-details -->
 
           <div class="order-share">
             <h5>Share with friends</h5>
+
             <div class="socials">
-              <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<%=@facebook_status[:url]%>&p[images][0]=<%=@facebook_status[:image]%>&p[title]=<%=@facebook_status[:title]%>&p[summary]=<%=@facebook_status[:summary]%>" target="_blank" class="icon-facebook-mega"></a>
-              <a href="https://twitter.com/intent/tweet?status=<%=@twitter_status%>" target="_blank" class="icon-twitter-mega"></a>
-              <a href="mailto:friend@email.com?subject=<%=@email[:subject]%>&body=<%=@email[:body]%>" class="icon-mail-mega"></a>
-            </div><!-- /.socials -->
-          </div><!-- /.order-share -->
+              <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<%= @facebook_status[:url] %>&p[images][0]=<%= @facebook_status[:image] %>&p[title]=<%= @facebook_status[:title] %>&p[summary]=<%= @facebook_status[:summary] %>" target="_blank" class="icon-facebook-mega"></a>
+              <a href="https://twitter.com/intent/tweet?status=<%= @twitter_status %>" target="_blank" class="icon-twitter-mega"></a>
+              <a href="mailto:friend@email.com?subject=<%= @email[:subject] %>&body=<%= @email[:body] %>" class="icon-mail-mega"></a>
+            </div>
+            <!-- /.socials -->
+          </div>
+          <!-- /.order-share -->
 
           <div class="order-how-to">
             <h5>How To Redeem</h5>
@@ -33,37 +39,48 @@
               <li>2. Display your <strong>confirmation email</strong></li>
               <li>3. Enjoy with regular food purchase</li>
             </ul>
-          </div><!-- /.order-how-to -->
-        </div><!-- /.col -->
+          </div>
+          <!-- /.order-how-to -->
+        </div>
+        <!-- /.col -->
         <div class="col">
           <div class="restaurant-location">
             <h5><%= @payment.offer.venue.name %></h5>
             <%= link_to google_maps_search(@payment.offer.venue), :target => "_blank" do %>
-              <img id="venue_map" src="http://maps.google.com/maps/api/staticmap?zoom=14&size=260x160&maptype=roadmap&markers=color:red|<%= @payment.offer.venue.full_address %>&sensor=false"/>
+                <img id="venue_map" src="http://maps.google.com/maps/api/staticmap?zoom=14&size=260x160&maptype=roadmap&markers=color:red|<%= @payment.offer.venue.full_address %>&sensor=false"/>
             <% end %>
-            <p><strong><%= @payment.offer.venue.phone %></strong> <%= @payment.offer.venue.address %> <%= @payment.offer.venue.city %>, <%= @payment.offer.venue.state.name if @payment.offer.venue.state %></p>
-          </div><!-- /.restaurant-location -->
+            <p>
+              <strong><%= @payment.offer.venue.phone %></strong> <%= @payment.offer.venue.address %> <%= @payment.offer.venue.city %>
+              , <%= @payment.offer.venue.state.name if @payment.offer.venue.state %></p>
+          </div>
+          <!-- /.restaurant-location -->
 
           <div class="order-status">
             Get this voucher in a text.
 
-            <%= form_tag(payment_send_text_path, method: "get" , :remote => true , :id => "send_text_form") do %>
+            <%= form_tag(payment_send_text_path, method: "get", :remote => true, :id => "send_text_form") do %>
                 <fieldset>
                   <%= text_field_tag('phone', '', class: 'field tall', id: 'phone', placeholder: '616-616-6161') %>
                   <%= hidden_field_tag(:code, @payment.code) %>
                   <span class="btn-arrow submit">
                     <%= submit_tag '' %>
-                    <i class="arrow-right"></i>
+                    <i class="arrow-right" id="send_text_arrow"></i>
+                    <%= image_tag "button-loader.gif", :id => "send_text_loader", :class => "loader", :hidden => true %>
                   </span>
                 </fieldset>
             <% end %>
 
             <i class="phone_fees">standard rates & fees apply</i>
-          </div><!-- /.order-status -->
-        </div><!-- /.col -->
-      </div><!-- /.body -->
-    </div><!-- /.print-page -->
-  </div><!-- /.print-page-holder -->
+          </div>
+          <!-- /.order-status -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.body -->
+    </div>
+    <!-- /.print-page -->
+  </div>
+  <!-- /.print-page-holder -->
 
   <a href="#" class="btn-standart large-font view-account-btn">View Account</a>
 </div><!-- /.popup popup-print -->
