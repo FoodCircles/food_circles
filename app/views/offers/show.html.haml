@@ -145,9 +145,7 @@
                 %a{:href => "#"} Use existing account
               .clear
           = form_for(resource, :as => resource_name, :url => user_session_path, html:{class: 'hidden', id: "sign-in-form"}) do |f|
-            %h5
-              Use Existing Account
-              %span.line
+            %h5 Use Existing Account
             .row
               %a{href: "/users/auth/facebook", class: "btn-facebook fatter"}
 
