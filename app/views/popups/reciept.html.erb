@@ -47,7 +47,7 @@
           <div class="order-status">
             Get this voucher in a text.
 
-            <%= form_tag(payment_send_text_path, method: "get" , :remote => true) do %>
+            <%= form_tag(payment_send_text_path, method: "get" , :remote => true , :id => "send_text_form") do %>
                 <fieldset>
                   <%= text_field_tag('phone', '', class: 'field tall', id: 'phone', placeholder: '616-616-6161') %>
                   <%= hidden_field_tag(:code, @payment.code) %>

@@ -4479,9 +4479,15 @@ body.active-popup {
       border: none;
       position: relative;
       width: 208px;
+      margin-top: 5px;
+      margin-top: -6px;
+
+      #phone{
+        width: 160px;
+      }
 
       .submit{
-        margin-right: 20px;
+        margin-right: 32px;
         position: absolute;
         right: 0px;
         top: 6px;
@@ -4491,7 +4497,8 @@ body.active-popup {
 
     .phone_fees{
       color: #8A857F;
-      font-size: 13px;
+      font-size: 11px;
+      margin-left: 25px;
     }
   }
 }
