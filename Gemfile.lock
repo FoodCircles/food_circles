@@ -45,6 +45,11 @@ GEM
       uuidtools (~> 2.1)
     bbenezech-nested_form (0.0.6)
     bcrypt-ruby (3.0.1)
+    better_errors (1.0.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     builder (3.0.4)
@@ -76,6 +81,7 @@ GEM
       compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
     database_cleaner (1.0.1)
+    debug_inspector (0.0.2)
     delayed_job (3.0.4)
       activesupport (~> 3.0)
     devise (2.1.2)
@@ -305,6 +311,8 @@ PLATFORMS
 DEPENDENCIES
   activerecord-postgis-adapter
   aws-sdk
+  better_errors
+  binding_of_caller
   capybara
   coffee-rails
   compass-rails
