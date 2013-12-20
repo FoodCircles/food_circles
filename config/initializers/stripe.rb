@@ -1,5 +1,5 @@
-stripe_publishable_key =  'pk_test_tAV2hmhGG7SZlSrft4JGEFKU'
-stripe_secret_key = 'sk_test_DvrCPEOC0PSt5NV1US7cYmce'
+stripe_publishable_key =  'pk_live_REo0N70jby0jLnBJtkxLidIY'
+stripe_secret_key = 'sk_live_u41ebuHziVeZbpgmIeAhqb9A'
 #PUBLISHABLE_KEY =  'pk_test_lx08ICojucE57BHxppeWEBV0'
 #SECRET_KEY = 'sk_test_EEbbjQT23ZpQcmZIlu4BTEBi'
 Rails.configuration.stripe = {
