@@ -8,17 +8,13 @@
     Hi there
   </p>
   <p style="text-align: justify;">
-    <%= link_to "Click here", url_for(controller: :monthly_invoice, action: :new_layout, vid: @venue_id, months_before: 1, only_path: false) %>
+    <%= link_to "Click here", invoice_url(vid: @calculations.venue.id, months_before: 1) %>
     to get a detailed invoice
   </p>
   <p style="text-align: justify;">
-    Summary:
+    Summary: <%= @calculations.human_readable_summary %>
+    You met <%= @calculations.payments.count %> tables of customers who dined at your restaurant to feed those in need.
   </p>
-  <ul style="text-align: justify;">
-    <li>You provided <%= link_to "plumpy'nut" , "http://blog.worldvision.org/disaster-relief/one-small-cry-hassanes-fight-against-malnutrition/" %> to <%= @world_kids %> impoverished children via World Vision.</li>
-    <li>You provided <%= link_to "sack suppers", "http://www.kidsfoodbasket.org/about-us/sack-suppers" %> to <%= @foodbasket_kids %> living in poverty thru Kids Food Basket.</li>
-    <li>You met <%= @total_vouchers %> tables of customers who dined at your restaurant to feed those in need.</li>
-  </ul>
   <p style="text-align: justify;">
 "Buy One, Feed One" comes alive to your customers when you make it real that they are doing something 
 special by eating at your restaurant. These customers aren't coming in based on a deal, but based on the 

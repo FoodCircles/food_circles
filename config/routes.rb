@@ -31,10 +31,7 @@ Foodcircles::Application.routes.draw do
 
   resources :stripe_payments, :only => [:new, :create]
 
-  get "monthly_invoice/monthly_invoice"
   match '/monthly_invoice' => 'monthly_invoice#monthly_invoice', :as => :invoice
-  match '/monthly_invoice/new_layout' => 'monthly_invoice#new_layout', :as => :new_layout
-  match '/monthly_invoice/custom_invoice' => 'monthly_invoice#custom_invoice', :as => :custom_invoice
 
   resources :chat, :only => [:index, :show] do
     collection do

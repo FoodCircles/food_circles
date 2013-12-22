@@ -157,24 +157,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  #tkxel_dev: Following method collect data for monthly invoice reports in PDF formats.
-  def generate_invoice
-    @vid = params[:vid].to_i
-    months_before = params[:months_before].to_i
-    @months_before = months_before
-    calculations = Calculations::Monthly.new(@vid, months_before)
-
-    @s = calculations.start_date
-    @e = calculations.end_date
-
-    #@reserve_venues have all data remember it.
-    @reserve_venues = calculations.reserve_venues
-    @venue_names = calculations.venue_names
-
-    @gr_kids = calculations.gr_kids
-    @world_kids = calculations.world_kids
-  end
-
   def mobile_app(p)
     b = "Download the Apple app: https://itunes.apple.com/us/app/foodcircles/id526107767?mt=8 Or, download the Android app: https://play.google.com/store/apps/details?id=co.foodcircles"
     sendText(p, b)

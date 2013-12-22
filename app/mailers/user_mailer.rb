@@ -149,14 +149,8 @@
   end
 
   def monthly_invoice(venue)
-    calculations = Calculations::Monthly.new(venue.id)
-    @venue_id = venue.id
-    @month = calculations.start_date.strftime "%B"
-    @foodbasket_kids = calculations.gr_kids[0][:gr_kids]
-    @world_kids = calculations.world_kids[0][:world_kids]
-    @total_vouchers = calculations.reserve_venues.count
-
-    mail(:to => venue.email, :subject => "Monthly Report from FoodCircles")
+    @calculations = Calculations::Monthly.new(venue)
+    mail(:to => venue.email, cc: ADMIN_EMAIL, :subject => "Monthly Report from FoodCircles")
   end
 
   def postcard_notification(postcard)
