@@ -35,17 +35,23 @@ module Calculations
       (get_reservations + get_payments).map do |reservation_or_payment|
         data = {
           :group_name => reservation_or_payment.user.name,
-          :num_diners => reservation_or_payment.num_diners.to_i,
           :date => reservation_or_payment.created_at,
-          :offer_name => reservation_or_payment.offer.name,
-          :price => reservation_or_payment.num_diners.to_i * venue.multiplier.to_f
+          :offer_name => reservation_or_payment.offer.name
         }
-        data[:coupon] = if reservation_or_payment.is_a? Reservation
-          reservation_or_payment.coupon
+        if reservation_or_payment.is_a? Reservation
+          data.merge!({
+            :coupon => reservation_or_payment.coupon,
+            :num_diners => reservation_or_payment.num_diners.to_i
+          })
         else
-          reservation_or_payment.code
+          data.merge!({
+            :coupon => reservation_or_payment.code,
+            :num_diners => reservation_or_payment.offer.min_diners.to_i
+          })
         end
-        OpenStruct.new(data)
+        payment = OpenStruct.new(data)
+        payment.price = payment.num_diners * venue.multiplier.to_f
+        payment
       end
     end
 
