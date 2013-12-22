@@ -65,13 +65,28 @@ module Calculations
     end
 
     def get_total_purchases_by_charities
-      total_purchases = Reservation.where(venue_id: venue.id).
+      total_purchases = get_total_payments_by_charitites.merge(get_total_reservations_by_charities) do |charity_name,total_payments,total_reservations|
+        total_payments + total_reservations
+      end
+      total_purchases.default = 0
+      total_purchases
+    end
+
+    def get_total_payments_by_charitites
+      Payment.joins(:offer).
+              joins(:charity).
+              where("offers.venue_id = ?", venue.id).
+              where(created_at: start_date..end_date).
+              group("charities.name").
+              count
+    end
+
+    def get_total_reservations_by_charities
+      Reservation.where(venue_id: venue.id).
                   where(created_at: start_date..end_date).
                   joins(:charity).
                   group("charities.name").
                   count
-      total_purchases.default = 0
-      total_purchases
     end
 
     def start_date
