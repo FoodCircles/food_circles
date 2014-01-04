@@ -5,27 +5,28 @@
 </head>
 <body>
   <p style="text-align: justify;">
-    Hi there
+    Hey there!
   </p>
   <p style="text-align: justify;">
     <%= link_to "Click here", invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>
-    to get a detailed invoice
+    to get our report on traffic at your restaurant during [REPORT'S MONTH].
   </p>
   <p style="text-align: justify;">
     Summary: <%= @calculations.human_readable_summary %>
-    You met <%= @calculations.payments.count %> tables of customers who dined at your restaurant to feed those in need.
+    <br>
+    – <b><%= @calculations.payments.count %></b> “Buy One, Feed One” tables came in
   </p>
-  <p style="text-align: justify;">
-"Buy One, Feed One" comes alive to your customers when you make it real that they are doing something 
-special by eating at your restaurant. These customers aren't coming in based on a deal, but based on the 
-fact that you share a belief with them – that no one should go to bed hungry. Accordingly, the little things 
-you can do (placards, "thank you's", etc) matter, and drive returns. 
+  <p style="text-align: justify;">You can find corresponding group names, sizes, confirmation codes, and dates in the link above.</p>
+  <p style="text-align: justify;"><i>
+"#bofo" comes alive to guests when you make it real they're doing something 
+special by eating at your restaurant. These guests aren't coming in based on a deal, but based on the 
+fact that you share a belief with them – that <b>no one</b> should go to bed hungry. The little things 
+you can do (table tents, conversation, etc) matter.</i>
   </p>
-  <p style="text-align: justify;">We'd also love to hear your input on how the movement is taking hold in your restaurant. Our promise is 
-this; anything we can do to help you, your staff, or to promote the fact you are a "Buy One, Feed One" 
-restaurant, we will. Call us 24/7 at (616) 61-FOOD-6 or email us at support@foodcircles.net. </p>
+  <p style="text-align: justify;"><i>We'd love to hear how the movement is taking hold in your restaurant. Our promise is this: anything we can do to help you, your staff, or to promote the fact you <b>are</b> a "Buy One, Feed One" 
+establishment, we will. Call us 24/7 at (616) 61-FOOD-6 or email us at support@joinfoodcircles.org.</i></p>
   <p style="text-align: justify;">
-  - The FoodCircles team
+  – FoodCircles
   </p>
 </body>
 </html>

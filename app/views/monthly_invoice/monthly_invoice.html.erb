@@ -181,7 +181,7 @@
         text-align:left;
         padding-top:5px;
         padding-bottom:4px;
-        background-color:#A7C942;
+        background-color:#a34a4b;
         color:#ffffff;
     }
     #summary th
@@ -273,7 +273,7 @@
           <table border="0" style="margin-left: 0px; margin-top: 0px;width: 100%;">
             <tr>
               <td valign ="top" style="border:none; width:30%;">
-                <div id="foodcircles_address"><b>FoodCircles<br>
+                <div id="foodcircles_address"><br><b>FoodCircles<br>
                   516 College SE
                   Grand Rapids MI, 49503<br>
                   ph: 616 61-FOOD-6<br>
@@ -289,9 +289,7 @@
                 <div id="venue_address"><b>Report Range:<strong><%= "#{@calculations.pretty_start_date} To #{@calculations.pretty_end_date}" %></strong><br>
                    <%= @calculations.venue.name %>
                   <br>
-                  Address:<br>
                   <%=  @calculations.venue.address  %>
-
                 </b>
                 </div>
               </td>
