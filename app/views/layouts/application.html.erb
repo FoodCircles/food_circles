@@ -2,18 +2,19 @@
 <html>
   <head>
 
-    <title><%= content_for?(:title) ? content_for(:title) : 'FoodCircles – Try a Local Dish for $1 or More. 100% of Your Purchase is Given to End Hunger for Starving Children.' %></title>
+    <title><%= content_for?(:title) ? content_for(:title) : 'FoodCircles – Try a Local Dish for $1 or More. 100% of Purchases Fund Meals for Malnourished Children.' %></title>
     <meta name="p:domain_verify" content="569802fdc2acbfc3742a1204724a08f2"/>
 
     <% set_meta_tags :og => {
             :title    => 'FoodCircles — Buy One, Feed One.',
-            :description    => 'FoodCircles — Buy One, Feed One.',
+            :description    => 'Try a Dish at a Local Restaurant for Just $1. 100% of Your Purchase is Donated to Give One Dinner to a Child In Need.',
             :type     => 'product',
             :url      => url_for(:only_path => false),
             :site_name => "FoodCircles"
     } %>
 
     <%= display_meta_tags %>
+    <meta name="apple-itunes-app" content="app-id=710592600">
 
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
