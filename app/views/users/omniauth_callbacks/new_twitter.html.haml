@@ -1,0 +1,7 @@
+.container#twitter-email
+  %h2 Sign Up with Twitter
+  %h5 Please enter your twitter email
+  .box
+    = form_tag(twitter_signup_path, method: "POST") do
+      = text_field_tag :email ,  nil, :class => "email placeholder" , :placeholder => "email address"
+      = submit_tag "Sign Up" , :class => "button"

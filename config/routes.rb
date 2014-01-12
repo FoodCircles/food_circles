@@ -46,6 +46,11 @@ Foodcircles::Application.routes.draw do
     end
   end
 
+  devise_scope :user do
+    get '/registrations/new_twitter' => 'users/omniauth_callbacks#new_twitter', :as => 'new_twitter'
+    post '/registrations/twitter_signup' => 'users/omniauth_callbacks#twitter_signup', :as => 'twitter_signup'
+  end
+
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
 
   resources :payment_notifications
