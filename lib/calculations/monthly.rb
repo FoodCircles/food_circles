@@ -34,7 +34,7 @@ module Calculations
     def payments
       (get_reservations + get_payments).map do |reservation_or_payment|
         data = {
-          :group_name => reservation_or_payment.user.name,
+          :group_name => reservation_or_payment.user.email,
           :date => reservation_or_payment.created_at,
           :offer_name => reservation_or_payment.offer.name
         }

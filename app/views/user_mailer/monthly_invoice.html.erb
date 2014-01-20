@@ -9,7 +9,7 @@
   </p>
   <p style="text-align: justify;">
     <%= link_to "Click here", invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>
-    to get our report on traffic at your restaurant during <%=(Date.today - 1.month).strftime('%B')%>.
+    to get our report on traffic at your restaurant during <%= @calculations.month %>.
   </p>
   <p style="text-align: justify;">
     Summary: <%= @calculations.human_readable_summary %>
