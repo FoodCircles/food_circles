@@ -9,12 +9,14 @@
   </p>
   <p style="text-align: justify;">
     <%= link_to "Click here", invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>
-    to get our report on traffic at your restaurant during [REPORT'S MONTH].
+    to get our report on traffic at your restaurant during <%=(Date.today - 1.month).strftime('%B')%>.
   </p>
   <p style="text-align: justify;">
     Summary: <%= @calculations.human_readable_summary %>
     <br>
-    – <b><%= @calculations.payments.count %></b> “Buy One, Feed One” tables came in
+    - <b> You provided plumpy'nut to <b><%= @calculations.total_purchases_by_charities['World Vision'] %></b> impoverished children via World Vision.<br>
+    - <b> You provided sack suppers to <b><%= @calculations.total_purchases_by_charities['Local Orgs'] %></b> living in poverty through Kids Food Basket. <br>
+    – <b><%= @calculations.payments.count %></b> “Buy One, Feed One” tables came in.
   </p>
   <p style="text-align: justify;">You can find corresponding group names, sizes, confirmation codes, and dates in the link above.</p>
   <p style="text-align: justify;"><i>

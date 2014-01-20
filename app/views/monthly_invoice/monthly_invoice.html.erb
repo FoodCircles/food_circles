@@ -314,7 +314,7 @@
 
       <%- @calculations.payments.each_with_index do |payment,index| %>
           <tr>
-            <td><%= payment.group_name %></td>
+            <td><%= payment.user.emai %></td>
             <td><%= payment.num_diners %></td>
             <td><%= payment.coupon %></td>
             <td><%= payment.date %></td>
@@ -331,11 +331,7 @@
         <td colspan="4" class="amount"></td>
 
         <td style="text-align:right;"><b>Children Fed</b></td>
-        <%- if total_amount.to_s[total_amount.to_s.length-2] == "." %>
-            <td><%= "$" + total_amount.to_s+ "0" %></td>
-        <% else %>
-            <td><%= "$" + total_amount.to_s %></td>
-        <% end %>
+            <td><%= @calculations.human_readable_summary %></td>
       </tr>
       <tr>
         <td colspan="3" class="amount"></td>
