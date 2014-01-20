@@ -314,7 +314,7 @@
 
       <%- @calculations.payments.each_with_index do |payment,index| %>
           <tr>
-            <td><%= unless payment.user.email.nil? or "" %></td>
+            <td><%= payment.user.email unless payment.user.email.nil? %></td>
             <td><%= payment.num_diners %></td>
             <td><%= payment.coupon %></td>
             <td><%= payment.date %></td>
