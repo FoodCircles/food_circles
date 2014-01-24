@@ -4,7 +4,7 @@
         <h2>Need <span id="meal">lunch</span> for <span id="number">80</span> on <span id="day">Friday</span>? Done.</h2>
         
         <div class="placard alpha">
-                <h1>Get Food in 3 Steps</h1>
+                <h1>Get Fed in 3 Steps</h1>
 
             <div class="steps">
                 <div class="step1">
@@ -58,18 +58,18 @@
                 <%= text_field_tag :date, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>How many people would you like to order food for?</h2>
                 <%= text_field_tag :num_people, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>Is there an occasion? (i.e. a wedding, meetup, or work celebration?)</h2>
+                <h2>Is there an occasion? (e.g., a wedding, meetup, or work celebration?)</h2>
                 <%= text_field_tag :occassion, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>Is there a specified budget?</h2>
-                <p>add a desired per head or total cost here</p>
+                <p>Add a desired per head or total cost here</p>
                 <%= text_field_tag :budget, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>We will send you some great recommendations, but are there any preferences right off-the-bat?</h2>
+                <h2>We will send you some great recommendations, but are there any preferences right off the bat?</h2>
                 <p>(food types, spicy/non-spicy, allergies, etc.)</p>
                 <%= text_field_tag :food_preferences, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>Who's the ringleader?</h2>
                 <p>Please enter an email or phone number for us to follow up with.</p>
                 <%= text_field_tag :email, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>To Where Should We Donate Meals?</h2>
+                <h2>Where Should We Donate Meals?</h2>
                 <%= radio_button_tag :donation, 'locally', value: 'locally', class: "custom-input", id: 'donation_locally', checked: 'checked' %>
                 <%= label_tag 'locally', 'Locally - <a href="www.kidsfoodbasket.org">www.kidsfoodbasket.org</a>'.html_safe, for: 'donation_locally' %>
                 <br />
