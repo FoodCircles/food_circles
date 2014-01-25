@@ -360,7 +360,7 @@
         <td><%= @calculations.payments.count %></td>
         <td><%= @calculations.payments.sum &:num_diners %></td>
         <% @calculations.charity_names.each do |charity_name|%>
-            <th><%= @calculations.total_purchases_by_charities[charity_name] %></th>
+            <th><%= @calculations.total_purchases_by_charities[charity_name].round %></th>
         <% end %>
       </tr>
       <tr>

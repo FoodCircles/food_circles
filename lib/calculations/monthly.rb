@@ -50,7 +50,7 @@ module Calculations
           })
         end
         payment = OpenStruct.new(data)
-        payment.price = (payment.num_diners * venue.multiplier.to_f).round
+        payment.price = payment.num_diners * venue.multiplier.to_f
         payment
       end
     end
@@ -76,7 +76,7 @@ module Calculations
 
     def get_total_purchases_by_charities
       total_purchases = get_total_payments_by_charitites.merge(get_total_reservations_by_charities) do |charity_name,total_payments,total_reservations|
-        total_payments.round + total_reservations.round
+        total_payments + total_reservations
       end
       total_purchases.default = 0
       total_purchases
