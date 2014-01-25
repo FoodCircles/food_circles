@@ -16,7 +16,7 @@ module Calculations
     end
 
     def human_readable_summary
-      total_purchases_by_charities.map{|charity_name, total_purchase| "#{total_purchase} children through #{charity_name}"}.to_sentence
+      total_purchases_by_charities.map{|charity_name, total_purchase| "#{total_purchase.round} children through #{charity_name}"}.to_sentence
     end
 
     def month
@@ -51,7 +51,7 @@ module Calculations
         end
         payment = OpenStruct.new(data)
         payment.price = payment.num_diners * venue.multiplier.to_f
-        payment
+        payment.round
       end
     end
 
@@ -71,7 +71,7 @@ module Calculations
               where("offers.venue_id = ?", venue.id).
               where(created_at: start_date..end_date).
               group("charities.name").
-              sum("payments.amount.round")
+              sum("payments.amount")
     end
 
     def get_total_purchases_by_charities
