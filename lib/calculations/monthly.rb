@@ -12,7 +12,7 @@ module Calculations
     end
 
     def total_purchases_by_charities
-      @total_purchases_by_charities ||= get_total_purchases_by_charities
+      @total_purchases_by_charities ||= get_total_childrenfed_by_charities
     end
 
     def human_readable_summary
@@ -62,6 +62,16 @@ module Calculations
 
     def get_payments
       Payment.where(created_at: start_date..end_date).joins(:offer).where("offers.venue_id = ?", venue.id).includes(:user, :offer)
+    end
+
+
+    def get_total_childrenfed_by_charities
+      Payment.joins(:offer).
+              joins(:charity).
+              where("offers.venue_id = ?", venue.id).
+              where(created_at: start_date..end_date).
+              group("charities.name").
+              sum("payments.amount")
     end
 
     def get_total_purchases_by_charities
