@@ -71,7 +71,7 @@ module Calculations
               where("offers.venue_id = ?", venue.id).
               where(created_at: start_date..end_date).
               group("charities.name").
-              sum("payments.amount").round(0)
+              sum("payments.amount").to_i
     end
 
     def get_total_purchases_by_charities
