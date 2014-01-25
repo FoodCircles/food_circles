@@ -50,8 +50,8 @@ module Calculations
           })
         end
         payment = OpenStruct.new(data)
-        payment.price = payment.num_diners * venue.multiplier.to_f
-        payment.round
+        payment.price = (payment.num_diners * venue.multiplier.to_f).round
+        payment
       end
     end
 
