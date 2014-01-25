@@ -76,10 +76,10 @@ module Calculations
 
     def get_total_purchases_by_charities
       total_purchases = get_total_payments_by_charitites.merge(get_total_reservations_by_charities) do |charity_name,total_payments,total_reservations|
-        total_payments + total_reservations
+        total_payments.round + total_reservations.round
       end
       total_purchases.default = 0
-      total_purchases.round
+      total_purchases
     end
 
     def get_total_payments_by_charitites
