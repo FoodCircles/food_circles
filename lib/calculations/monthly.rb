@@ -66,13 +66,12 @@ module Calculations
 
 
     def get_total_childrenfed_by_charities
-      childrenfed = Payment.joins(:offer).
-                            joins(:charity).
-                            where("offers.venue_id = ?", venue.id).
-                            where(created_at: start_date..end_date).
-                            group("charities.name").
-                            sum("payments.amount")
-      childrenfed.to_i
+      Payment.joins(:offer).
+              joins(:charity).
+              where("offers.venue_id = ?", venue.id).
+              where(created_at: start_date..end_date).
+              group("charities.name").
+              sum("payments.amount.round")
     end
 
     def get_total_purchases_by_charities
