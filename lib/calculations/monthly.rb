@@ -79,7 +79,7 @@ module Calculations
         total_payments + total_reservations
       end
       total_purchases.default = 0
-      total_purchases
+      total_purchases.round
     end
 
     def get_total_payments_by_charitites
