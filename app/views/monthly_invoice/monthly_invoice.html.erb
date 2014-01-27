@@ -190,13 +190,13 @@
         text-align:left;
         padding-top:5px;
         padding-bottom:4px;
-        background-color:#FFF5EE;
+        background-color:#FFF5F5;
         color:#000000;
     }
     #summary td, #summary th
     {
         font-size:1em;
-        border:5px solid #a34a4b;
+        border:2px solid #a34a4b;
         padding:5px 7px 2px 7px;
     }
     #summary
@@ -209,7 +209,7 @@
     #customers tr.alt td
     {
         color:#000000;
-        background-color:#FFF5EE;
+        background-color:#FFF5F5;
     }
     table
     {
@@ -368,8 +368,8 @@
             <td colspan="4" style="color:#000000;"><%= params[:input_note] %></td>
         <%- else  %>
             <td colspan="4" style="color:#000000;" id="note_cp"><div id="remove">
-              We so appreciate <b><%= @calculations.venue.name %></b>'s as a "Buy One, Feed One" restaurant in our community. The dishes you've donated will end up feeding: <%= @calculations.human_readable_summary %>.
-              If you're not on our automated subscription you may receive a separate invoice in the mail. Please call or email with any questions. We would love to hear from you.</div>
+              We so appreciate <b><%= @calculations.venue.name %></b>'s as a "Buy One, Feed One" restaurant in our community. The dishes you've donated will end up feeding <%= @calculations.human_readable_summary %>.
+              If you're not on our automated subscription plan you may receive a separate invoice in the mail. Please call or email with any questions. We would love to hear from you.</div>
               <div class = "edit_able" id = "note"><b><i>Edit message.</i></b> </div>
             </td>
         <% end  %>
