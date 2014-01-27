@@ -16,7 +16,7 @@ module Calculations
     end
 
     def human_readable_summary
-      total_purchases_by_charities.map{|charity_name, total_purchase| "#{total_purchase.round} children through #{charity_name}"}.to_sentence
+      total_purchases_by_charities.map{|charity_name, total_purchase| "#{total_purchase.round} through #{charity_name}"}.to_sentence
     end
 
     def month
