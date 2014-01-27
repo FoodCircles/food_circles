@@ -11,19 +11,19 @@
     Get your <%= @calculations.month %> report on traffic at your restaurant <%= link_to "by clicking here", invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>.
   </p>
   <p style="text-align: justify;">
-    Quick Summary:
+    <b>Quick Summary:</b>
     <br><br>
-    &#8212; You provided <a href="http://blog.foodcircles.net/2014/01/08/life-of-a-sack-supper-kids-food-basket/">sack suppers</a> to <b><%= @calculations.total_purchases_by_charities['Kids Food Basket (local)'] %></b> living in poverty through Kids Food Basket. <br><br>
-    &#8212; You provided <a href="http://blog.foodcircles.net/2014/01/08/plumpynut/">plumpy'nut</a> to <b><%= @calculations.total_purchases_by_charities['World Vision (abroad)'] %></b> impoverished children via World Vision.<br><br>
-    &#8212; <b><%= @calculations.payments.count %></b> <i>“Buy One, Feed One”</i> tables came in.
+    &#8212; You created <b><%= @calculations.total_purchases_by_charities['Kids Food Basket (local)'] %></b> <a href="http://blog.foodcircles.net/2014/01/08/life-of-a-sack-supper-kids-food-basket/">sack supper(s)</a> for children living in poverty in GR (via Kids' Food Basket) <br><br>
+    &#8212; You created <b><%= @calculations.total_purchases_by_charities['World Vision (abroad)'] %></b> day(s) of <a href="http://blog.foodcircles.net/2014/01/08/plumpynut/">plumpy'nut</a> for malnourished children in Niger, West Africa (via World Vision)<br><br>
+    &#8212; You met <b><%= @calculations.payments.count %></b> group(s) overall of <i>“Buy One, Feed One”</i> diners this month
   </p>
-  <p style="text-align: justify;">You can find corresponding group names, sizes, confirmation codes, and dates in the link above.</p>
+  <p style="text-align: justify;">You can find corresponding group sizes, confirmation codes, and dates in the link above.</p>
   <p style="text-align: justify;"><i>
-"#bofo" comes alive to guests when you make it real they're doing something special by eating at your restaurant. The little things you can do (a "thank you", a table tent, etc) matter.</i>
+"#bofo" comes alive to groups when you make it real they're doing something special by eating at your restaurant. The little things you can do (a "thank you", a table tent, etc) matter.</i>
   </p>
-  <p style="text-align: justify;"><i>Our promise is this: anything we can do to help you, your staff, or to promote the fact you <b>are</b> a "Buy One, Feed One" establishment, we will. Call us 24/7 at (616) 61-FOOD-6 or email us at support@joinfoodcircles.org.</i></p>
+  <p style="text-align: justify;"><i>Our promise is this: anything we can do to help you, your staff, or to promote the fact you are a "Buy One, Feed One" establishment, we will. Request anything you need at (616) 61-FOOD-6 or support@joinfoodcircles.org.</i></p>
   <p style="text-align: justify;">
-  &#8212; FoodCircles
+  &#8212; &#8212; FoodCircles
   </p>
 </body>
 </html>
