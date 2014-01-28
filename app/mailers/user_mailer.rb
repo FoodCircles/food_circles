@@ -1,8 +1,8 @@
 ﻿class UserMailer < ActionMailer::Base
   add_template_helper(ApplicationHelper)
 
-  ADMIN_EMAIL = 'jonathan@foodcircles.net'
-  SUPPORT_EMAIL = 'support@foodcircles.net'
+  ADMIN_EMAIL = 'jk@joinfoodcircles.org'
+  SUPPORT_EMAIL = 'support@joinfoodcircles.org'
 
   #tkxel_dev: SendGrid credentilas for email.
   default from: "\"FoodCircles\" <voucher@foodcircles.net>"
@@ -11,7 +11,7 @@
     delivery_method :smtp, {:address => "smtp.mandrillapp.com",
                             :port => 587,
                             :domain => "foodcircles.net",
-                            :user_name => "jonathan@foodcircles.net",
+                            :user_name => "jk@joinfoodcircles.org",
                             :password => "uQjfYEZZxNUpGq0oeoVjmw",
                             :authentication => 'plain',
                             :enable_starttls_auto => true}
@@ -20,14 +20,14 @@
   def food_mail(email)
 
     @url = 'http://foodcircles.net/?app=mobile_email'
-    mail(:to => email, :reply_to => 'jonathan@foodcircles.net', :subject => "Your appetite is powerful.")
+    mail(:to => email, :reply_to => 'jk@joinfoodcircles.org', :subject => "Your appetite is powerful.")
   end
 
   #tkxel_dev: Email Content creation is handled in the following method.
   def setup_email(user, payment)
     mail = Mail.deliver do
       to user.email
-      from 'FoodCircles <hey@foodcircles.net>'
+      from 'FoodCircles <hey@joinfoodcircles.org>'
       subject "Got your Voucher for #{payment.offer.venue.name}"
       reply_to 'used@inbound.foodcircles.net'
       html_part do
@@ -46,7 +46,7 @@
               <b>3)</b> Mark Voucher used by following this link! <a href=\"http://staging.foodcircles.net/payment/used?code=#{payment.code}&source=email\">Mark Voucher Used</a></br>
               </p><br><br>
               Enjoy!<br><br>
-              Contact support at <b>support@foodcircles.net</b> if you have any concerns or questions whatsoever.<br><br><br>
+              Contact support at <b>support@joinfoodcircles.org</b> if you have any concerns or questions whatsoever.<br><br><br>
               <h3><u>FOR SERVERS:</u></h3>
               <p style= text-align: justify;><b>Write down the confirmation code on the table's receipt or your POS system</b>.  Place a  \"Buy One, Feed One\"  placard on the guest's table, and mark a tally on your chalkboard (if available).  Call us at 312 945 8627 with any questions!</p></td></tr></table>"
       end
@@ -56,9 +56,9 @@
   def signupsuccess(user)
     mail = Mail.deliver do
       to user.email
-      from 'FoodCircles <hey@foodcircles.net>'
+      from 'FoodCircles <hey@joinfoodcircles.org>'
       subject "Your Hunger is Powerful."
-      reply_to 'hey@foodcircles.net'
+      reply_to 'hey@joinfoodcircles.org'
       html_part do
         content_type 'text/html; charset=UTF-8'
         body "<p>You did it. You signed up for FoodCircles. But why? ...well, maybe you can relate to this situation.<br>
