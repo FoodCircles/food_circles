@@ -7,6 +7,7 @@ class Payment < ActiveRecord::Base
   belongs_to :charity
 
   before_save :add_code
+  before_save :default_charity
 
   scope :total_week_payments, where("created_at >= ?", Date.today.beginning_of_week(:saturday))
 
@@ -18,6 +19,13 @@ class Payment < ActiveRecord::Base
     unless self.code
       chars = [('a'..'z'), ('0'..'9')].map { |i| i.to_a }.flatten
       self.code = (0...5).map { chars[rand(chars.length)] }.join.upcase
+    end
+  end
+
+  def default_charity
+    unless self.charity_id
+      self.charity_id = 1
+      logger.warn "Had to change charity_id to = 1, check the database, something is wrong!"
     end
   end
 
