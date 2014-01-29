@@ -8,11 +8,11 @@ module Calculations
     end
 
     def charity_names
-      @charity_names ||= Charity.all.map(&:name)
+      @charity_names ||= total_purchases_by_charities.map{|charity_name, total_purchase| "#{charity_name}"}
     end
 
     def total_purchases_by_charities
-      @total_purchases_by_charities ||= get_total_childrenfed_by_charities
+      @total_purchases_by_charities ||= get_total_purchases_by_charities
     end
 
     def human_readable_summary
@@ -65,21 +65,19 @@ module Calculations
     end
 
 
-    def get_total_childrenfed_by_charities
-      Payment.joins(:offer).
+    def get_total_purchases_by_charities
+      paids = Payment.joins(:offer).
               joins(:charity).
               where("offers.venue_id = ?", venue.id).
               where(created_at: start_date..end_date).
               group("charities.name").
               sum("payments.amount")
-    end
-
-    def get_total_purchases_by_charities
-      total_purchases = get_total_payments_by_charitites.merge(get_total_reservations_by_charities) do |charity_name,total_payments,total_reservations|
-        total_payments + total_reservations
+      paids.each do |charity, val|
+        if val.nil?
+          paids[charity] = 0
+        end
       end
-      total_purchases.default = 0
-      total_purchases
+      return paids
     end
 
     def get_total_payments_by_charitites
