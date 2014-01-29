@@ -13,8 +13,16 @@
   <p style="text-align: justify;">
     <b>Quick Summary:</b>
     <br><br>
-    &#8212; You created <b><%= @calculations.total_purchases_by_charities['Kids Food Basket (local)'] %></b> <a href="http://blog.foodcircles.net/2014/01/08/life-of-a-sack-supper-kids-food-basket/">sack supper(s)</a> for children living in poverty in GR (via Kids' Food Basket) <br><br>
-    &#8212; You created <b><%= @calculations.total_purchases_by_charities['World Vision (abroad)'] %></b> day(s) of <a href="http://blog.foodcircles.net/2014/01/08/plumpynut/">plumpy'nut</a> for malnourished children in Niger, West Africa (via World Vision)<br><br>
+
+    <%- unless @calculations.total_purchases_by_charities['Kids Food Basket (local)'].nil? %>
+      &#8212; You created <b><%= @calculations.total_purchases_by_charities['Kids Food Basket (local)'].round %></b> <a href="http://blog.foodcircles.net/2014/01/08/life-of-a-sack-supper-kids-food-basket/">sack supper(s)</a> for children living in poverty in GR (via Kids' Food Basket) <br><br>
+    <% end %>
+
+    <%- unless @calculations.total_purchases_by_charities['World Vision (abroad)'].nil?
+      %>
+      &#8212; You created <b><%= @calculations.total_purchases_by_charities['World Vision (abroad)'].round %></b> day(s) of <a href="http://blog.foodcircles.net/2014/01/08/plumpynut/">plumpy'nut</a> for malnourished children in Niger, West Africa (via World Vision)<br><br>
+    <%- end %>
+
     &#8212; You met <b><%= @calculations.payments.count %></b> group(s) overall of <i>“Buy One, Feed One”</i> diners this month
   </p>
   <p style="text-align: justify;">You can find corresponding group sizes, confirmation codes, and dates in the link above.</p>
