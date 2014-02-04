@@ -33,5 +33,3 @@ config/database.yml
 .zeus.sock
 
 private_docs/
-
-food_circles.esproj
