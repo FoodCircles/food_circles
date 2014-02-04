@@ -1,0 +1,48 @@
+<!-- BEGIN VARIATION CODE FOR A/B TESTING -->
+<!--      TEST ADMINISTERED BY TAYLOR     -->
+
+<script type="text/javascript">
+        var $ = function(id){
+                return document.getElementById(id);
+        },
+        on = function(el, event, fn){
+                if (el.addEventListener){
+                    el.addEventListener(event,fn,false);
+            } else if (el.attachEvent) {
+                    el.attachEvent("on"+event, fn);
+            }
+         },
+         r = function(s,e){
+                return Math.floor(Math.random() * e) + s;
+         },
+         logWeight = function(info){
+                $('odds').innerHTML = ('<h3>Your Hunger is Powerful.</h3>');
+         };
+         (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+
+            
+            mixpanel.init("2388ab76edc8d1dafc869aabfbaf8338");
+            
+            
+            window.onload = function(){
+                var test = 
+                new Scenario('Followthrough On Homepage Text')
+                .test('ControlGroup', function(info){
+                    logWeight(info);
+                    $('toShow').innerHTML = ('Try a local restaurant dish for $1,<br>Your $1 gives a hungry child dinner.'); 
+                })
+                .test('AlternateText', function(info){
+                    logWeight(info);
+                    $('toShow').innerHTML = ('Try a local restaurant dish for just $1,<br>100% of your purchase is donated to feed a child in need.'); 
+                })
+                .go();
+
+                on( $('finish'), 'click', function(e){
+                    test.complete(function(){
+                        window.location.reload();
+                    });
+                });   
+            }
+</script>
+
+<!-- END VARIATION CODE FOR A/B TESTING -->
