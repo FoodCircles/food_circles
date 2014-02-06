@@ -138,19 +138,19 @@
   end
 
   def organizers_notify(email, location, address, date, num_diners, occassion, budget, food_preferences, donation, feedback)
-    mail(:to => ADMIN_EMAIL, :subject => "New Organizers Request", :body => "An organizer would like to join FoodCircles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
+    mail(:to => 'bshell@joinfoodcircles.org', cc: ADMIN_EMAIL, :subject => "New Organizers Request", :body => "An organizer would like to join FoodCircles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
   end
 
   def notification_about_available_vouchers(user, venue)
     @name = user.name || "Hey"
     @restaurant_name = venue.name
     @restaurant_url = venue_popup_url(venue)
-    mail(:to => user.email, :subject => "Pending")
+    mail(:to => user.email, :subject => "Dish Available!")
   end
 
   def monthly_invoice(venue, months_before = 1)
     @calculations = Calculations::Monthly.new(venue, months_before)
-    mail(:to => ADMIN_EMAIL, :subject => "Report from FoodCircles for the month of #{@calculations.month}.")
+    mail(:to => venue.email, cc: ADMIN_EMAIL, :subject => "Report from FoodCircles for the month of #{@calculations.month}.")
   end
 
   def postcard_notification(postcard)
