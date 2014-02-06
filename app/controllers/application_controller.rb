@@ -146,7 +146,7 @@ class ApplicationController < ActionController::Base
   def prepare_for_mobile
     return if params[:callback]
     session[:mobile_param] = params[:mobile] if params[:mobile]
-    if mobile_device?
+    if mobile_device? and request.fullpath == '/'
       if android_device?
         request.format = :android
       elsif ios_device?
