@@ -147,7 +147,7 @@
 
   def monthly_invoice(venue, months_before = 1)
     @calculations = Calculations::Monthly.new(venue, months_before)
-    mail(:to => venue.email, cc: ADMIN_EMAIL, :subject => "Report from FoodCircles for the month of #{@calculations.month}.")
+    mail(:to => ADMIN_EMAIL, :subject => "Report from FoodCircles for the month of #{@calculations.month}.")
   end
 
   def postcard_notification(postcard)
