@@ -13,11 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui-1.10.3.custom.min
-<<<<<<< HEAD
-=======
-//= require scenario-testing
->>>>>>> b628ce5e3063225530430d62e98c42d946c0f5a5
-
 
 $(function(){
    // Adjust Alert box size
