@@ -63,7 +63,9 @@ class Venue < ActiveRecord::Base
   end
 
   def lat
-    @lat ||= latlon.lat
+    @lat ||= if latlon.present?
+      latlon.lat
+    end
   end
 
   def lat=(value)
@@ -71,7 +73,9 @@ class Venue < ActiveRecord::Base
   end
 
   def lon
-    @lon ||= latlon.lon
+    @lon ||= if latlon.present?
+      latlon.lon
+    end
   end
 
   def lon=(value)
@@ -251,7 +255,11 @@ class Venue < ActiveRecord::Base
 
   private
   def dirty_latlon?
-    lat != latlon.lat || lon != latlon.lon
+    if latlon.present?
+      lat != latlon.lat || lon != latlon.lon
+    elsif self.new_record?
+      lat.present? && lon.present?
+    end
   end
 
   def update_latlon
