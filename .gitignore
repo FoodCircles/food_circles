@@ -33,6 +33,3 @@ config/database.yml
 .zeus.sock
 
 private_docs/
-
-# File MGMT @Taylor. Not For Project Usage.
-food_circles.esproj
