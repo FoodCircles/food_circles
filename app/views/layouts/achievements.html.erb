@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title><%= content_for?(:title) ? content_for(:title) : 'FoodCircles – Try a Local Dish for $1 or More. 100% of Purchases Fund Meals for Malnourished Children.' %></title>
+    <meta name="p:domain_verify" content="569802fdc2acbfc3742a1204724a08f2"/>
+
+    <% set_meta_tags :og => {
+            :title    => 'FoodCircles — Buy One, Feed One.',
+            :description    => 'Try a Dish at a Local Restaurant for Just $1. 100% of Your Purchase is Donated to Give One Dinner to a Child In Need.',
+            :type     => 'product',
+            :url      => url_for(:only_path => false),
+            :site_name => "FoodCircles"
+    } %>
+
+    <%= display_meta_tags %>
+    <meta name="apple-itunes-app" content="app-id=710592600">
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
+    <%= stylesheet_link_tag "colorbox", :media => "all" %>
+    <%= stylesheet_link_tag "fonts", :media => "all" %>
+    <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+    <%= javascript_tag "Stripe.publishableKey = '#{Rails.configuration.stripe[:publishable_key]}';" %>
+    <%= javascript_include_tag  'home', "#{controller_name}" %>
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <%= csrf_meta_tags %>
+    <%= tag :meta, :name => 'stripe-key', :content => Rails.configuration.stripe[:publishable_key] %>
+    <%= render 'layouts/google-analytics' %>
+    <%= render 'layouts/mix-panel' %>
+
+    <style>
+    table{
+        border:1px solid #121212;
+        border-left:0px;
+        margin:auto;
+        padding: 0px;
+        border-spacing: 0px;
+        width: 98%;
+    }
+
+    table > thead > tr > th:nth-child(1){
+        border-left:1px solid #333;
+    }
+
+    table > tbody > tr > td {
+        border-left:1px solid #333;
+        border-top:1px solid #333;
+        text-align: right;
+    }
+
+    td.num{
+        text-align: center;
+        font-size:1.2em;
+    }
+
+
+    </style>
+  </head>
+
+  <%- custom_body_classes << (user_signed_in? ? 'logged-in' : 'not-logged') %>
+
+  <body class="<%= custom_body_classes.join ' ' %>" data-meta="<%="#{controller_name}"%>#<%="#{action_name}"%>">
+    <div id='wrapper' >
+        <div id ='flash'>
+          <%= flash_messages %>
+        </div>
+
+        <div class="container" style=>
+            <h1><%= link_to 'FoodCircles - Achievements', achievements_url %></h1>
+
+            <p><a href="/admin">Back to rails admin</a></p>
+        </div>
+
+            <%= yield %>
+    </div>
+  </body>
+</html>

@@ -55,6 +55,9 @@ Foodcircles::Application.routes.draw do
 
   resources :payment_notifications
 
+  match '/achievements' => 'achievements#index', :as => :achievements
+  match '/achievements/best_donors' => 'achievements#best_donors', :as => :achievements_best_donors
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :socialbutterflies
