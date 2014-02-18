@@ -1,0 +1,22 @@
+%table
+  %thead
+    %th= "Email"
+    %th= "Offer"
+    %th= "Our price"
+    %th= "Price paid"
+    %th= "Date purchased"
+    %th= "Charity"
+    %th= "Code"
+    %th= "State"
+  %tbody
+    - @donors_table.each do |reg|
+      %tr
+        %td= reg[:email]
+        %td= reg[:offer]
+        %td{:class => "num"}= reg[:our_price]
+        %td{:class => "num"}
+          #{reg[:amount_paid]} <b>(+#{(reg[:amount_paid] - reg[:our_price]).to_i} !)</b>
+        %td= reg[:date]
+        %td= reg[:charity]
+        %td= reg[:code]
+        %td= reg[:state]
