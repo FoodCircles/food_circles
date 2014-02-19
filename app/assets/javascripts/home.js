@@ -7,6 +7,7 @@
 //= require jquery.infinitescroll.min
 //= require jquery.payment
 //= require stripe_payment
+//= require scenario-testing
 
 (function($){
 
