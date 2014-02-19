@@ -22,9 +22,9 @@
     <%= stylesheet_link_tag "fonts", :media => "all" %>
     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
     <%= javascript_tag "Stripe.publishableKey = '#{Rails.configuration.stripe[:publishable_key]}';" %>
+    <script src="http://www.joinfoodcircles.org/javascripts/scenario-testing.js" type="text/javascript">
     <%= javascript_include_tag  'home', "#{controller_name}" %>
 	
-	<script src="http://www.joinfoodcircles.org/javascripts/scenario-testing.js" type="text/javascript"></script>
     <link rel="icon" type="image/png" href="/favicon.png">
     <%= csrf_meta_tags %>
     <%= tag :meta, :name => 'stripe-key', :content => Rails.configuration.stripe[:publishable_key] %>

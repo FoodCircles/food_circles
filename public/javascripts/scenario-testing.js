@@ -6,7 +6,7 @@
  * http://opensource.org/licenses/MIT
  *
  * Github:  https://github.com/MakerStudios/Scenario.js/
- * Version: 1.0.0
+ * Version: 1.0.0 
  */
 (function (w, d) {
 
