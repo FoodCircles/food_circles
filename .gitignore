@@ -33,3 +33,6 @@ config/database.yml
 .zeus.sock
 
 private_docs/
+
+# Project Mgmt File. Ignore.
+Food Circles.esproj
