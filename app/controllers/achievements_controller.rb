@@ -12,15 +12,14 @@ class AchievementsController < ApplicationController
   def index
   end
 
-  def best_donors
-    dt_min = Date.new(2013, 11, 4)
-    best_donors = User.joins(payments: :offer).where("payments.amount > offers.price and payments.created_at > ?", dt_min).uniq.all
-
+  def best_donors    
+    calculations = Calculations::Achievements.new
+    best_donors = calculations.best_donors
     @donors_table = []
 
     best_donors.each do |bd|
       bd.payments.each do |pay|
-        if pay.amount > pay.offer.price && pay.created_at > dt_min
+        if pay.amount > pay.offer.price && pay.created_at > calculations.dt_min
           reg = {}
 
           reg[:email] = bd.email
