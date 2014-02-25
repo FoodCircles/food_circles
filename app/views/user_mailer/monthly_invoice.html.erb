@@ -373,41 +373,35 @@
                                                         <td valign="top">
                                                         	<img src="http://www.joinfoodcircles.org/email-header-report-ready.png" mc:edit="header-text"><br><br>
                                                             <div mc:edit="std_content00">
-                                                                <p style="text-align: justify;">
-                                                                    Hey there!
-                                                                  </p>
-                                                                  <p style="text-align: justify;">
-                                                                    Get your <%= @calculations.month %> report on traffic at your restaurant <%= link_to "by clicking here", invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>.
-                                                                  </p>
-                                                                  <p style="text-align: justify;">
-                                                                    <b>Quick Summary:</b>
-                                                                    <br><br>
-                                                                
-                                                                    <%- unless @calculations.total_purchases_by_charities['Kids Food Basket (local)'].nil? %>
-                                                                      &#8212; You created <b><%= @calculations.total_purchases_by_charities['Kids Food Basket (local)'].round %></b> <a href="http://blog.foodcircles.net/2014/01/08/life-of-a-sack-supper-kids-food-basket/">sack supper(s)</a> for children living in poverty in GR (via Kids' Food Basket) <br><br>
-                                                                    <% end %>
-                                                                
-                                                                    <%- unless @calculations.total_purchases_by_charities['World Vision (abroad)'].nil?
-                                                                      %>
-                                                                      &#8212; You created <b><%= @calculations.total_purchases_by_charities['World Vision (abroad)'].round %></b> day(s) of <a href="http://blog.foodcircles.net/2014/01/08/plumpynut/">plumpy'nut</a> for malnourished children in Niger, West Africa (via World Vision)<br><br>
-                                                                    <%- end %>
-                                                                
-                                                                    &#8212; You met <b><%= @calculations.payments.count %></b> group(s) overall of <i>“Buy One, Feed One”</i> diners this month
-                                                                    <br><br>
-                                                                    <img src="http://www.joinfoodcircles.org/email-button-monthly.png" width="560px">
-                                                                  </p>
+                                                               		
+                                                                  Hey there!<br><br>
+                                                                    
+                                                                  Here is our report on traffic at your restaurant in the month of <%= @calculations.month %><br><br>
                                                                   
                                                                   
+                                                                  Quick Summary:<br>
+                                                                  <%- unless @calculations.total_purchases_by_charities['World Vision (abroad)'].nil? %>
+                                                                  - You provided <a href="http://blog.foodcircles.net/2014/01/08/plumpynut/">plumpy'nut</a> to <%= @calculations.total_purchases_by_charities['World Vision (abroad)'].round %> impoverished children via World Vision.<br><br>
+                                                                  <% end %>
                                                                   
-                                                                  <p style="text-align: justify;">You can find corresponding group sizes, confirmation codes, and dates in the link above.</p>
-                                                                  <p style="text-align: justify;"><i>
-                                                                "#bofo" comes alive to groups when you make it real they're doing something special by eating at your restaurant. The little things you can do (a "thank you", a table tent, etc) matter.</i>
-                                                                  </p>
-                                                                  <p style="text-align: justify;"><i>Our promise is this: anything we can do to help you, your staff, or to promote the fact you are a "Buy One, Feed One" establishment, we will. Request anything you need at (616) 61-FOOD-6 or support@joinfoodcircles.org.</i>
+                                                                  <%- unless @calculations.total_purchases_by_charities['Kids Food Basket (local)'].nil? %>
+                                                                  - You provided <a href="http://blog.foodcircles.net/2014/01/08/life-of-a-sack-supper-kids-food-basket/">sack suppers</a> to <%= @calculations.total_purchases_by_charities['Kids Food Basket (local)'].round %> living in poverty thru Kids Food Basket.<br><br>
+                                                                   <% end %>
+                                                                   
+                                                                  - You met <%= @calculations.payments.count %> tables of customers who dined at your restaurant to feed those in need.
+                                                                 <br><br><br><br>
                                                                   
-                                                                  </p>
-                                                                  <p style="text-align: justify;">
-                                                                  </p>
+                                                                  
+                                                                  <a href="<%= invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>">
+                                                                  <img src="http://www.joinfoodcircles.org/email-button-monthly.png" width="560px"></a>
+                                                                  <br><br>
+                                                                  
+                                                                  
+                                                                  <b>"Buy One, Feed One"</b> comes <b>alive</b> when you make it real your diners are doing something <b>special</b>.  These folks aren't coming in based on a deal, but based on the fact that you share a belief with them – that <b>no one</b> should go to bed hungry.  When you are proud of this, use our <a href="http://f.cl.ly/items/3y2B3u3M230e06273p1i/placard%20BV.jpg" style="color: inherit;">table tent</a>, and thank your guest for participating, <b>it matters</b> to them.
+                                                                  
+                                                                  <br><br>
+                                                                  A story from one of our users:<br>
+                                                                  <i>“What a great deal on our end and LOVE that it feeds hungry kids! Best app ever! We can’t wait to try new restaurants featured on the app. More restaurants should join.  Thank you for putting this together for us. - Ashley”</i>
                                                             </div>
 														</td>
                                                     </tr>
@@ -436,7 +430,7 @@
                                                             <div mc:edit="std_footer" class="std_footer">
 																Your friends,
 																<br>
-																<i>The Foodcircles Team</i> 
+																<i>The FoodCircles Team</i> 
                                                             </div>
                                                         </td>
                                                         
