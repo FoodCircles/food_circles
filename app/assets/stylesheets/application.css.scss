@@ -84,6 +84,8 @@ body {
   font-weight: 300;
   color: #4e3e34;
   background: #f0e9de;
+  position: relative;
+  z-index: 3;
   min-width: 980px;
   -webkit-font-smoothing: antialiased;
 }
@@ -970,7 +972,7 @@ body.active-popup {
   position: relative;
   min-height: 100%;
   width: 100%;
-  overflow-y: hidden;
+  margin-bottom: 173px;
 }
 
 .active-popup #wrapper {
@@ -2754,6 +2756,78 @@ body.active-popup {
   text-align: right;
   font-size: 0;
   line-height: 0;
+}
+
+//
+//  http://tjacobdesign.com/pure-css-hidden-footer/
+//
+
+#scroll-fold {
+  width: 1280px;
+  height: 201px;
+  background-image: url(image_path('world-map.png'));
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -4px;
+  border-top: #a8a39c 1px solid;
+  color: #4e3f35;
+  background-color: #f1ebe0;
+  color: white;
+  position: fixed;
+  bottom: 0; left: 0;
+  z-index: -99;
+  overflow: hidden;
+}
+
+#scroll-fold .container {
+  margin: 0 auto;
+  width: 960px;
+  height: 200px;
+  display: table;
+}
+#scroll-fold .fold-description {
+  width: 200px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#scroll-fold .companies {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  left: -50px;
+}
+
+#scroll-fold .companies img {
+  margin-right: 10px;
+}
+
+#scroll-fold .thank-you {
+  font-size: 40px;
+  font-family: 'NeutrafaceSlab';
+  font-style: italic;
+  text-align: center;
+  color: #4e3f35;
+}
+
+#scroll-fold hr {
+  height: 3px;
+  width: 168px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  background-image: url('/assets/hr.png');
+  border: 0;
+}
+
+#scroll-fold .tagline {
+  width: 200px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4e3f35;
+  margin-top: -45px;
 }
 
 /*=== Popups ===*/
@@ -5983,4 +6057,43 @@ textarea.organizers-field {
     text-decoration: underline;
     font-size: 1.2em;
   }
+  
+  a {
+    color: inherit;
+  }
 }
+
+.signup-tooltip{
+  display: inline;
+  position: relative;
+}
+
+.signup-tooltip:hover:after{
+  bottom: -210px;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 98;
+  width: 260px;
+  height: 200px;
+}
+
+.first-tooltip:hover:after {
+  content:url(image_path('first-tooltip.png'));
+  left: -20px;
+}
+
+.second-tooltip:hover:after {
+  content:url(image_path('second-tooltip.png'));
+  left: -50px;
+}
+
+.third-tooltip:hover:after {
+  content:url(image_path('third-tooltip.png'));
+  left: -50px;
+}
+
+.fourth-tooltip:hover:after {
+  content:url(image_path('fourth-tooltip.png'));
+  left: 0px;
+}
+
