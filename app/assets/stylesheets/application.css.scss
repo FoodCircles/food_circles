@@ -90,6 +90,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+// Unifies text selection color
+// Does not fix IE
+::-moz-selection { color: gold;  background: #a34a4b; }
+::selection      { color: gold;  background: #a34a4b; } 
+
+
 a {
   color: #a34a4b;
   text-decoration: none;
@@ -1668,8 +1674,8 @@ body.active-popup {
   top: 0;
   left: 50%;
   z-index: 3;
-  margin-left: -200px;
-  width: 400px;
+  margin-left: -245px;
+  width: 490px;
   height: 100%;
 }
 
