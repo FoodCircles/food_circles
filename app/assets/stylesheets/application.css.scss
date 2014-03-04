@@ -5642,4 +5642,345 @@ textarea.organizers-field {
   color: #111; }
 #twitter-email .box .email.placeholder {
   color: #999; }
+.clear50space {
+  height: 50px;
+  width: 1px;
+}
 
+.innershadow {
+  -moz-box-shadow: 0px 0px 5px #909090, inset 0 0 4px #fff;
+  -webkit-box-shadow: 0px 0px 5px #909090, inset 0 0 4px #fff;
+  box-shadow: 0px 0px 5px #909090, inset 0 0 4px #fff;
+}
+
+.yes {
+  font-size: 1.35em;
+}
+
+.signupheader {
+  font: bold 2.7em "Neutraface Slab Text";
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-bottom: -70px;
+}
+
+#question {
+  font: italic 1.4em "Neutraface Slab Text";
+  width: 700px;
+  p {
+    position: relative;
+    left: 155px;
+    top: -7px;
+    font-weight: 300;
+  }
+}
+
+#arrow {
+  position: relative;
+  left: 100px;
+  top: 100px;
+}
+
+#plans small, #legend small {
+  position: relative;
+  top: -50px;
+  font-size: 80px;
+}
+
+#plans hr {
+  height: 3px;
+  width: 168px;
+  margin-left: 40px;
+  background-image: url('/assets/hr.png');
+  border: 0;
+}
+
+#legend hr {
+  height: 3px;
+  width: 168px;
+  margin-left: 40px;
+  background-image: url('/assets/hr.png');
+  border: 0;
+  margin-left: 20px;
+}
+
+#plans {
+  width: 750px;
+  float: left;
+  font-family: Helvetica Neue;
+  font-size: 14px;
+}
+
+#legend {
+  height: 315px;
+  width: 200px;
+  background-color: #dadada;
+  float: left;
+  margin-top: 70px;
+  font-weight: 500;
+  color: #635151;
+  overflow: hidden;
+  font-family: Helvetica Neue;
+  -moz-box-shadow: 0 0 3px #989898;
+  -webkit-box-shadow: 0 0 3px #989898;
+  box-shadow: 0 0 3px #989898;
+  background: #d9d9d9;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d9d9d9 0%, whitesmoke 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d9d9d9), color-stop(100%, whitesmoke));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d9d9d9 0%, whitesmoke 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d9d9d9 0%, whitesmoke 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d9d9d9 0%, whitesmoke 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d9d9d9 0%, whitesmoke 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9d9d9', endColorstr='#f5f5f5',GradientType=0 );
+  /* IE6-9 */
+}
+
+.centerhack {
+  display: table;
+  height: 75px;
+  overflow: hidden;
+}
+
+#legend-tables, #legend-requests, #legend-prefered, #legend-present {
+  text-align: right;
+  height: 75px;
+  width: 200px;
+  padding-right: 18px;
+  font-size: 13px;
+  line-height: 16px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.thin {
+  font-style: italic;
+  font-weight: 300;
+  vertical-align: center;
+}
+
+#participant, #supporter, #financer {
+  width: 250px;
+  height: 500px;
+  background-color: #202020;
+  float: left;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 2px solid #4e3e34;
+  overflow: hidden;
+}
+
+#plans h3 {
+  font-family: "Neutraface Slab Text";
+  font-weight: 900;
+  font-size: 22px;
+  color: #ddcece;
+  width: 250px;
+  margin-top: 20px;
+  margin-bottom: 17px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.9);
+}
+
+#participant, #financer {
+  height: 557px;
+}
+
+#participant {
+  background-color: #928d87;
+  margin-right: -7px;
+  z-index: 98;
+  background: #736d66;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #736d66 0%, #a09c97 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #736d66), color-stop(100%, #a09c97));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #736d66 0%, #a09c97 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #736d66 0%, #a09c97 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #736d66 0%, #a09c97 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #736d66 0%, #a09c97 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#736d66', endColorstr='#a09c97',GradientType=0 );
+  /* IE6-9 */
+}
+
+#supporter {
+  /* Center one // Larger */
+  background-color: #a74d4e;
+  height: 575px;
+  margin-top: -9px;
+  z-index: 99;
+  position: relative;
+  padding-top: 9px;
+  background: #913b3c;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #913b3c 0%, #b5595a 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #913b3c), color-stop(100%, #b5595a));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #913b3c 0%, #b5595a 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #913b3c 0%, #b5595a 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #913b3c 0%, #b5595a 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #913b3c 0%, #b5595a 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#913b3c', endColorstr='#b5595a',GradientType=0 );
+  /* IE6-9 */
+}
+
+#financer {
+  background-color: #d4a103;
+  margin-left: -7px;
+  z-index: 97;
+  background: #c88602;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #c88602 0%, #daae04 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c88602), color-stop(100%, #daae04));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #c88602 0%, #daae04 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #c88602 0%, #daae04 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #c88602 0%, #daae04 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #c88602 0%, #daae04 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c88602', endColorstr='#daae04',GradientType=0 );
+  /* IE6-9 */
+  .cost small {
+    position: relative;
+    left: 5px;
+  }
+}
+
+#tables, #requests, #prefered, #present {
+  width: 250px;
+  height: 75px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.cost {
+  font-size: 150px;
+  font-weight: 900;
+  position: relative;
+  top: 30px;
+  left: -15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#supporter .cost {
+  position: relative;
+  top: 39px;
+}
+
+#buttongroup {
+  margin-left: 20px;
+  width: 750px;
+  float: right;
+}
+
+#buttonwrapper {
+
+}
+
+#spaceblock-signup {
+  width: 750px;
+  height: 50px;
+  display: block;
+  clear: both;
+}
+#buttonlegend {
+  width: 180px;
+  float: left;
+  margin-top: 40px;
+  font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  text-align: right;
+  margin-top: 5px;
+  strong {
+    font-size: 1.4em;
+  }
+}
+
+.signupbutton {
+  height: 60px;
+  width: 190px;
+  display: table;
+  background: transparent;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  font: bold 14px / 40px "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif;
+  color: #fff;
+  text-shadow: 0 1px 1px #701a1a;
+  box-shadow: 0 2px 3px rgba(70, 18, 18, 0.8);
+  padding: 0 16px;
+  border-radius: 6px;
+  *zoom: 1;
+  float: left;
+  margin-right: 25px;
+  background-repeat: no-repeat;
+  background-color: #b56e6f;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b56e6f), to(#a34b4c));
+  background-image: -webkit-linear-gradient(#b56e6f 0%, #a34b4c 100%);
+  background-image: -moz-linear-gradient(#b56e6f 0%, #a34b4c 100%);
+  background-image: -o-linear-gradient(#b56e6f 0%, #a34b4c 100%);
+  background-image: linear-gradient(#b56e6f 0%, #a34b4c 100%);
+  -webkit-transition: background-position 350ms,background-color 0 350ms;
+  -moz-transition: background-position 350ms,background-color 0 350ms;
+  -o-transition: background-position 350ms,background-color 0 350ms;
+  transition: background-position 350ms,background-color 0 350ms;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    text-decoration: none;
+    background-position: 0 -40px;
+    background-color: #a34b4c;
+    -webkit-transition: background-position 350ms;
+    -moz-transition: background-position 350ms;
+    -o-transition: background-position 350ms;
+    transition: background-position 350ms;
+  }
+}
+
+.signupbuttontext {
+  display: table-cell;
+  vertical-align: middle;
+  color: #fff;
+}
+
+#refunds {
+  width: 735px;
+  margin-top: 30px;
+  margin-right: 10px;
+  float: right;
+  font: 16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#includes {
+  text-align: center;
+  margin-right: 50px;
+  font: bold 16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  u {
+    text-decoration: underline;
+    font-size: 1.2em;
+  }
+}
