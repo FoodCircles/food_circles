@@ -380,7 +380,7 @@
                                                                   
                                                                   
                                                                   Quick Summary:<br>
-                                                                  <%- unless @calculations.total_purchases_by_charities['World Vision (abroad)'].nil? %>
+                                                                  <%- unless @calculations.total_purchases_by_charities['World Vision (Niger)'].nil? %>
                                                                   - You provided <a href="http://blog.foodcircles.net/2014/01/08/plumpynut/">plumpy'nut</a> to <%= @calculations.total_purchases_by_charities['World Vision (abroad)'].round %> impoverished children via World Vision.<br><br>
                                                                   <% end %>
                                                                   
@@ -393,7 +393,7 @@
                                                                   
                                                                   
                                                                   <a href="<%= invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>">
-                                                                  <img src="http://www.joinfoodcircles.org/email-button-monthly.png" width="560px"></a>
+                                                                  <img src="http://www.joinfoodcircles.org/email-button-monthly.png" width="560px" alt="View Report"></a>
                                                                   <br><br>
                                                                   
                                                                   
