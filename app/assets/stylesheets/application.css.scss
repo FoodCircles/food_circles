@@ -2657,7 +2657,7 @@ body.active-popup {
   height: 100%;
   left: 50px;
   right: 50px;
-  z-index: -1;
+  z-index: 1;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.14);
 }
 
@@ -2685,7 +2685,7 @@ body.active-popup {
 
 .footer-main {
   position: relative;
-  z-index: -2;
+  z-index: 0;
   padding: 31px 0 35px;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#efe8dd), to(#d3c9b9));
   background-image: -webkit-linear-gradient(#efe8dd, #d3c9b9);
@@ -2768,21 +2768,23 @@ body.active-popup {
 //  http://tjacobdesign.com/pure-css-hidden-footer/
 //
 
+
 #scroll-fold {
   width: 1280px;
   height: 201px;
   background-image: url(image_path('world-map.png'));
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -4px;
+  background-repeat: no-repeat;
+  margin-top: -6px;
   border-top: #a8a39c 1px solid;
   color: #4e3f35;
   background-color: #f1ebe0;
-  color: white;
   position: fixed;
-  bottom: 0; left: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -640px;
   z-index: -99;
   overflow: hidden;
+  border-right: 9999px solid rgba(214, 205, 194, 0.85);
 }
 
 #scroll-fold .container {
