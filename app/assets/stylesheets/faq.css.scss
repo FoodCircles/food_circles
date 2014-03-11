@@ -198,8 +198,7 @@
         color: #fff;
         font-weight: bold;
         text-shadow: 0 0 15px black, 0 0 10px black, 0 0 5px black;
-        text-decoration: none;
-        text-indent: 500px; }
+        text-decoration: none; }
         #team .teampick li a:hover {
           text-indent: 0;
           border-left: 4px solid #a34a4b; }
@@ -282,3 +281,5 @@
             background-position: -96px 0; }
           #team .teammember ul.contact li a.li {
             background-position: -128px 0; }
+          #team .teammember ul.contact li a.ws {
+            background-position: -160px 0; }
