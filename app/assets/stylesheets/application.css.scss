@@ -479,6 +479,11 @@ textarea.field.small {
   height: 54px;
 }
 
+.app-icon {
+  position: relative;
+  top: -2px;
+  left: -5px;
+}
 .light-shadow[class^="btn-"], .light-shadow[class*=" btn-"] {
   box-shadow: 0 2px 3px #d3c9b9;
 }

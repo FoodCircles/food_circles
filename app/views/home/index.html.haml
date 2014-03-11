@@ -32,12 +32,12 @@
     .products
       .products-head
         .head-btns
-          %a.btn-standart.popup-link{href: app_popup_path} Get the App
-          - if current_user
-            - if show_newsletter_subscription_button?
-              = link_to "Get updates", subscribe_newsletter_path, :remote => true, :method => :post, :class => ["btn-standart"], id: 'get_updates_link'
-          - else
-            %a#get_updates_link.btn-standart.popup-link{href: notify_signup_path}Get Briefs
+          %a.btn-standart.popup-link{href: "https://itunes.apple.com/us/app/foodcircles-for-iphone/id710592600"}
+            %img.app-icon(src="/apple-logo.png") iOS
+          %a.btn-standart.popup-link{href: "https://play.google.com/store/apps/details?id=co.foodcircles"}
+            %img.app-icon(src="/android-logo.png") Android
+          
+          
 
         = render partial: "filters"
 
