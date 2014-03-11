@@ -34,5 +34,5 @@ config/database.yml
 
 private_docs/
 
-# File MGMT @Taylor. Not For Project Usage.
-food_circles.esproj
+# Project Mgmt File. Ignore.
+Food Circles.esproj

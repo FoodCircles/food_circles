@@ -1,37 +1,463 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-</head>
-<body>
-  <p style="text-align: justify;">
-    Hey there!
-  </p>
-  <p style="text-align: justify;">
-    Get your <%= @calculations.month %> report on traffic at your restaurant <%= link_to "by clicking here", invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>.
-  </p>
-  <p style="text-align: justify;">
-    <b>Quick Summary:</b>
-    <br><br>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style type="text/css">
+			/* Client-specific Styles */
+			#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
+			body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+			body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
 
-    <%- unless @calculations.total_purchases_by_charities['Kids Food Basket (local)'].nil? %>
-      &#8212; You created <b><%= @calculations.total_purchases_by_charities['Kids Food Basket (local)'].round %></b> <a href="http://blog.foodcircles.net/2014/01/08/life-of-a-sack-supper-kids-food-basket/">sack supper(s)</a> for children living in poverty in GR (via Kids' Food Basket) <br><br>
-    <% end %>
+			/* Reset Styles */
+			body{margin:0; padding:0;}
+			img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+			table td{border-collapse:collapse;}
+			#backgroundTable{height:100% !important; margin:0; padding:0; width:100% !important;}
 
-    <%- unless @calculations.total_purchases_by_charities['World Vision (abroad)'].nil?
-      %>
-      &#8212; You created <b><%= @calculations.total_purchases_by_charities['World Vision (abroad)'].round %></b> day(s) of <a href="http://blog.foodcircles.net/2014/01/08/plumpynut/">plumpy'nut</a> for malnourished children in Niger, West Africa (via World Vision)<br><br>
-    <%- end %>
+			/* Template Styles */
 
-    &#8212; You met <b><%= @calculations.payments.count %></b> group(s) overall of <i>“Buy One, Feed One”</i> diners this month
-  </p>
-  <p style="text-align: justify;">You can find corresponding group sizes, confirmation codes, and dates in the link above.</p>
-  <p style="text-align: justify;"><i>
-"#bofo" comes alive to groups when you make it real they're doing something special by eating at your restaurant. The little things you can do (a "thank you", a table tent, etc) matter.</i>
-  </p>
-  <p style="text-align: justify;"><i>Our promise is this: anything we can do to help you, your staff, or to promote the fact you are a "Buy One, Feed One" establishment, we will. Request anything you need at (616) 61-FOOD-6 or support@joinfoodcircles.org.</i></p>
-  <p style="text-align: justify;">
-  &#8212; &#8212; FoodCircles
-  </p>
-</body>
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: COMMON PAGE ELEMENTS /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Page
+			* @section background color
+			* @tip Set the background color for your email. You may want to choose one that matches your company's branding.
+			* @theme page
+			*/
+			
+			html, body, #backgroundTable{
+				background-color:#f2f2f2;
+			}
+
+			/**
+			* @tab Page
+			* @section email border
+			* @tip Set the border for your email.
+			*/
+			#templateContainer{
+				 border: 0px solid #DDDDDD;
+			}
+			
+			a {
+				color: #404040;
+				
+			}
+			/**
+			* @tab Page
+			* @section heading 1
+			* @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
+			* @style heading 1
+			*/
+			h1, .h1{
+				 color:#4e3e34;
+				display:block;
+				 font-family:Arial;
+				 font-size:34px;
+				 font-weight:bold;
+				 line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				 text-align:left;
+			}
+
+			/**
+			* @tab Page
+			* @section heading 2
+			* @tip Set the styling for all second-level headings in your emails.
+			* @style heading 2
+			*/
+			h2, .h2{
+				 color:#4e3e34;
+				display:block;
+				 font-family:Arial;
+				 font-size:30px;
+				 font-weight:bold;
+				 line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				 text-align:left;
+			}
+
+			/**
+			* @tab Page
+			* @section heading 3
+			* @tip Set the styling for all third-level headings in your emails.
+			* @style heading 3
+			*/
+			h3, .h3{
+				 color:#4e3e34;
+				display:block;
+				 font-family:Arial;
+				 font-size:26px;
+				 font-weight:bold;
+				 line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				 text-align:left;
+			}
+
+			/**
+			* @tab Page
+			* @section heading 4
+			* @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
+			* @style heading 4
+			*/
+			h4, .h4{
+				 color:#4e3e34;
+				display:block;
+				 font-family:Arial;
+				 font-size:22px;
+				 font-weight:bold;
+				 line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				 text-align:left;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: PREHEADER /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Header
+			* @section preheader style
+			* @tip Set the background color for your email's preheader area.
+			* @theme page
+			*/
+			#templatePreheader{
+				 background-color:#FAFAFA;
+			}
+
+			/**
+			* @tab Header
+			* @section preheader text
+			* @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
+			*/
+			.preheaderContent div{
+				 color:#505050;
+				 font-family:Trebuchent;
+				 font-size:10px;
+				 line-height:100%;
+				 text-align:left;
+			}
+
+			/**
+			* @tab Header
+			* @section preheader link
+			* @tip Set the styling for your email's preheader links. Choose a color that helps them stand out from your text.
+			*/
+			.preheaderContent div a:link, .preheaderContent div a:visited, /* Yahoo! Mail Override */ .preheaderContent div a .yshortcuts /* Yahoo! Mail Override */{
+				 color:#336699;
+				 font-weight:normal;
+				 text-decoration:underline;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: HEADER /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Header
+			* @section header style
+			* @tip Set the background color and border for your email's header area.
+			* @theme header
+			*/
+			#templateHeader{
+				 background-color:#FFFFFF;
+				 border-bottom:0;
+			}
+
+			/**
+			* @tab Header
+			* @section header text
+			* @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
+			*/
+			.headerContent{
+				 color:#4e3e34;
+				 font-family:Arial;
+				 font-size:34px;
+				 font-weight:bold;
+				 line-height:100%;
+				 padding:0;
+				 text-align:center;
+				 vertical-align:middle;
+			}
+
+			/**
+			* @tab Header
+			* @section header link
+			* @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
+			*/
+			.headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
+				 color:#336699;
+				 font-weight:normal;
+				 text-decoration:underline;
+			}
+
+			#headerImage{
+				height:auto;
+				max-width:600px !important;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: MAIN BODY /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Body
+			* @section body style
+			* @tip Set the background color for your email's body area.
+			*/
+			#templateContainer, .bodyContent{
+				 background-color:#FFFFFF;
+			}
+
+			/**
+			* @tab Body
+			* @section body text
+			* @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
+			* @theme main
+			*/
+			.bodyContent div{
+				 color:#766a64;
+				 font-family:Arial;
+				 font-size:16px;
+				 line-height:150%;
+				 text-align:left;
+			}
+
+			/**
+			* @tab Body
+			* @section body link
+			* @tip Set the styling for your email's main content links. Choose a color that helps them stand out from your text.
+			*/
+			.bodyContent div a:link, .bodyContent div a:visited, /* Yahoo! Mail Override */ .bodyContent div a .yshortcuts /* Yahoo! Mail Override */{
+				 color:#336699;
+				 font-weight:normal;
+				 text-decoration:underline;
+			}
+
+			.bodyContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: FOOTER /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Footer
+			* @section footer style
+			* @tip Set the background color and top border for your email's footer area.
+			* @theme footer
+			*/
+			#templateFooter{
+				 background-color:#FFFFFF;
+				 border-top:0;
+			}
+
+			/**
+			* @tab Footer
+			* @section footer text
+			* @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
+			* @theme footer
+			*/
+			.footerContent div{
+				 color:#707070;
+				 font-family:Arial;
+				 font-size:12px;
+				 line-height:125%;
+				 text-align:left;
+			}
+
+			/**
+			* @tab Footer
+			* @section footer link
+			* @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
+			*/
+			.footerContent div a:link, .footerContent div a:visited, /* Yahoo! Mail Override */ .footerContent div a .yshortcuts /* Yahoo! Mail Override */{
+				 color:#336699;
+				 font-weight:normal;
+				 text-decoration:underline;
+			}
+
+			.footerContent img{
+				display:inline;
+			}
+
+			/**
+			* @tab Footer
+			* @section social bar style
+			* @tip Set the background color and border for your email's footer social bar.
+			* @theme footer
+			*/
+			#social{
+				 background-color:#FAFAFA;
+				 border:0;
+			}
+
+			/**
+			* @tab Footer
+			* @section social bar style
+			* @tip Set the background color and border for your email's footer social bar.
+			*/
+			#social div{
+				 text-align:center;
+			}
+
+			/**
+			* @tab Footer
+			* @section utility bar style
+			* @tip Set the background color and border for your email's footer utility bar.
+			* @theme footer
+			*/
+			#utility{
+				 background-color:#FFFFFF;
+				 border:0;
+			}
+
+			/**
+			* @tab Footer
+			* @section utility bar style
+			* @tip Set the background color and border for your email's footer utility bar.
+			*/
+			#utility div{
+				 text-align:center;
+			}
+
+			#socialicons img{
+				max-width:190px;
+				float: right;
+			}
+			
+			.std_footer {
+				padding-left: 10px;
+			}
+			
+		</style>
+	</head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color:#f2f2f2;">
+    	<center>
+        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable" style="padding-top: 30px;">
+            	<tr>
+                	<td align="center" valign="top">
+                    	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+                        	<tr>
+                            	<td align="center" valign="top">
+                                    <!-- // Begin Template Header \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
+                                        <tr>
+                                            <td class="headerContent">
+                                            
+                                            	<!-- // Begin Module: Standard Header Image \\ -->
+                                            	<img src="http://gallery.mailchimp.com/ae083950237bb7c8e292ebda4/images/header.png" style="max-width:600px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner="" mc:allowtext="">
+                                            	<!-- // End Module: Standard Header Image \\ -->
+                                            
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Header \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top">
+                                    <!-- // Begin Template Body \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody" style="background-color: #fff;">
+                                    	<tr>
+                                            <td valign="top" class="bodyContent" style="color:#766a64; font-family:Arial; font-size:16px; line-height:150%; text-align:left;">
+                                
+                                                <!-- // Begin Module: Standard Content \\ -->
+                                                <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td valign="top">
+                                                        	<img src="http://www.joinfoodcircles.org/email-header-report-ready.png" mc:edit="header-text"><br><br>
+                                                            <div mc:edit="std_content00" style="color:#766a64; font-family:Arial; font-size:16px; line-height:150%; text-align:left;">
+                                                               		
+                                                                  Hey there!<br><br>
+                                                                    
+                                                                  Here is our report on traffic at your restaurant in the month of <%= @calculations.month %><br><br>
+                                                                  
+                                                                  
+                                                                  Quick Summary:<br>
+                                                                  <%- unless @calculations.total_purchases_by_charities['World Vision (abroad)'].nil? %>
+                                                                  - You provided <a href="http://blog.foodcircles.net/2014/01/08/plumpynut/">plumpy'nut</a> to <%= @calculations.total_purchases_by_charities['World Vision (abroad)'].round %> impoverished children via World Vision.<br><br>
+                                                                  <% end %>
+                                                                  
+                                                                  <%- unless @calculations.total_purchases_by_charities['Kids Food Basket (local)'].nil? %>
+                                                                  - You provided <a href="http://blog.foodcircles.net/2014/01/08/life-of-a-sack-supper-kids-food-basket/">sack suppers</a> to <%= @calculations.total_purchases_by_charities['Kids Food Basket (local)'].round %> living in poverty thru Kids Food Basket.<br><br>
+                                                                   <% end %>
+                                                                   
+                                                                  - You met <%= @calculations.payments.count %> tables of customers who dined at your restaurant to feed those in need.
+                                                                 <br><br><br><br>
+                                                                  
+                                                                  
+                                                                  <a href="<%= invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>">
+                                                                  <img src="http://www.joinfoodcircles.org/email-button-monthly.png" width="560px" alt="View Report"></a>
+                                                                  <br><br>
+                                                                  
+                                                                  
+                                                                  <b>"Buy One, Feed One"</b> comes <b>alive</b> when you make it real your diners are doing something <b>special</b>.  These folks aren't coming in based on a deal, but based on the fact that you share a belief with them – that <b>no one</b> should go to bed hungry.  When you are proud of this, use our <a href="http://f.cl.ly/items/3y2B3u3M230e06273p1i/placard%20BV.jpg" style="color: inherit;">table tent</a>, and thank your guest for participating, <b>it matters</b> to them.
+                                                                  
+                                                                  <br><br>
+                                                                  A story from one of our users:<br>
+                                                                  <i>“What a great deal on our end and LOVE that it feeds hungry kids! Best app ever! We can’t wait to try new restaurants featured on the app. More restaurants should join.  Thank you for putting this together for us. - Ashley”</i>
+                                                            </div>
+														</td>
+                                                    </tr>
+                                                </table>
+                                                <!-- // End Module: Standard Content \\ -->
+                                                
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Body \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top">
+                                    <!-- // Begin Template Footer \\ -->
+                                	<table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
+                                    	<tr>
+                                        	<td valign="top" class="footerContent">
+                                            
+                                                <!-- // Begin Module: Standard Footer \\ -->
+                                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td valign="top" width="350">
+                                                        <br>
+                                                            <div mc:edit="std_footer" class="std_footer" style="color:#707070; font-weight:normal;">
+																Your friends,
+																<br>
+																<i>The FoodCircles Team</i> 
+                                                            </div>
+                                                        </td>
+                                                        
+                                                        <td valign="top" width="190" id="socialicons">
+                                                            <div>
+                                                                <a href="http://www.facebook.com/FoodCircles"><img border="0" src="http://gallery.mailchimp.com/ae083950237bb7c8e292ebda4/images/facebook.png" alt="Facebook" width="52" height="53"></a>
+                                                                <a href="http://twitter.com/FoodCircles"><img border="0" src="http://gallery.mailchimp.com/ae083950237bb7c8e292ebda4/images/twitter.png" alt="Twitter" width="52" height="53"></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                
+                                                
+
+                                                </td></tr>	
+                                                
+                                                <!-- // End Module: Standard Footer \\ -->
+                                            
+                                            </table></td>
+                                        </tr>
+                                        
+                                    </table>
+                                    <!-- // End Template Footer \\ -->
+                                    
+                                    </td></tr>
+                        </table>
+                        <br>
+        </center>
+    </body>
 </html>
