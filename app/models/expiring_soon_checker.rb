@@ -16,7 +16,7 @@ class ExpiringSoonChecker
 
   def notify_users
     @payments.each do |payment|
-      UserMailer.delay.voucher_expiring_soon(payment)
+      UserMailer.delay.voucher_expiring_soon(payment.id)
     end
   end
 

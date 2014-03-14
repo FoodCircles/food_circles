@@ -44,7 +44,7 @@
                                                                   Your purchase for <%= @payment.offer.name %> at <%= @payment.offer.venue.name %> expires in 7 days
                                                                   (<%= @payment.short_expiration_date %>), and we just wanted to shoot you a reminder.
                                                                   Your "Buy One, Feed One" special is, well, special.
-                                                                  It goes to feed <%= @payment.amount %>  children through <%= @payment.charity.name %> and
+                                                                  It goes to feed <%= @payment.amount.truncate %>  children through <%= @payment.charity.name %> and
                                                                   our restaurant would love to thank you for your purchase.
                                                                   <br/>
                                                                   <br/>

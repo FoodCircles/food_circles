@@ -136,7 +136,8 @@
     mail(:to => SUPPORT_EMAIL, :subject => "Postcard Alert")
   end
 
-  def voucher_expiring_soon(payment)
+  def voucher_expiring_soon(payment_id)
+    payment = Payment.find_by_id(payment_id)
     @payment = payment.decorate
 
     mail(:to => payment.user.email, :subject => "FoodCircles Voucher Expiring Soon")
