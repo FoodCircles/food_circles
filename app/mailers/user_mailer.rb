@@ -161,4 +161,15 @@
     mail(:to => payment.user.email, :subject => "FoodCircles Voucher Expiring Soon")
   end
 
+  def badge_email(email, category, title)
+    @category = category
+    @title = title
+    mail(
+      :to => email,
+      #:cco => 'badges@joinfoodcircles.org',
+      :reply_to => 'badges@joinfoodcircles.org',
+      :subject => 'Have a little something for you. Need address.'
+    )
+  end
+
 end

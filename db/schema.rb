@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115235634) do
+ActiveRecord::Schema.define(:version => 20140313231244) do
+
+  create_table "badges", :force => true do |t|
+    t.string   "code"
+    t.string   "category"
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -306,6 +314,17 @@ ActiveRecord::Schema.define(:version => 20131115235634) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "user_badges", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "badge_id"
+    t.boolean  "sent_email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "user_badges", ["badge_id"], :name => "index_user_badges_on_badge_id"
+  add_index "user_badges", ["user_id"], :name => "index_user_badges_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",         :null => false

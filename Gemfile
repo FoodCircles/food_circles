@@ -25,8 +25,6 @@ gem 'aws-sdk'
 gem 'rb-readline', '~> 0.4.2'
 gem 'mandrill-rails'
 
-gem 'twilio-ruby'
-
 gem 'gibbon'
 
 gem 'omniauth-facebook', '1.4.0'
