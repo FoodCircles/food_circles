@@ -9,6 +9,10 @@ every 1.day, :at => '07:00pm' do
   rake "vouchers:check_expiring_soon", :output => 'log/cron.log'
 end
 
+every 1.day, :at => '07:30pm' do
+  rake "mailers:daily_badges", :output => 'log/cron.log'
+end
+
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
