@@ -2,10 +2,10 @@
   .cnt
     .centerer
       .centerer-inner
-        %h3#odds
-          
-        %p#toShow
-          
+        %h3
+          Your Hunger is Powerful.
+        %p
+          Try a local restaurant dish for $1,<br>Your $1 gives a hungry child dinner.
   %ul{class: "slides"}
     - @news.each do |news|
       %li
@@ -32,12 +32,10 @@
     .products
       .products-head
         .head-btns
-          %a.btn-standart.popup-link{href: app_popup_path} Get the App
-          - if current_user
-            - if show_newsletter_subscription_button?
-              = link_to "Get updates", subscribe_newsletter_path, :remote => true, :method => :post, :class => ["btn-standart"], id: 'get_updates_link'
-          - else
-            %a#get_updates_link.btn-standart.popup-link{href: notify_signup_path}Get Briefs
+          #toShow
+            
+          #odds
+            
 
         = render partial: "filters"
 

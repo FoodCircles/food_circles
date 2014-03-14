@@ -87,6 +87,7 @@ body {
   position: relative;
   z-index: 3;
   min-width: 980px;
+  margin-bottom: 200px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -479,6 +480,11 @@ textarea.field.small {
   height: 54px;
 }
 
+.app-icon {
+  position: relative;
+  top: -2px;
+  left: -5px;
+}
 .light-shadow[class^="btn-"], .light-shadow[class*=" btn-"] {
   box-shadow: 0 2px 3px #d3c9b9;
 }
@@ -1633,9 +1639,9 @@ body.active-popup {
   top: 0;
   left: 50%;
   z-index: 3;
-  width: 490px;
+  width: 500px;
   height: 100%;
-  margin-left: -245px;
+  margin-left: -250px;
   text-align: center;
   color: #fff;
   letter-spacing: .1em;
@@ -2657,7 +2663,7 @@ body.active-popup {
   height: 100%;
   left: 50px;
   right: 50px;
-  z-index: -1;
+  z-index: 1;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.14);
 }
 
@@ -2685,7 +2691,7 @@ body.active-popup {
 
 .footer-main {
   position: relative;
-  z-index: -2;
+  z-index: 0;
   padding: 31px 0 35px;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#efe8dd), to(#d3c9b9));
   background-image: -webkit-linear-gradient(#efe8dd, #d3c9b9);
@@ -2768,21 +2774,32 @@ body.active-popup {
 //  http://tjacobdesign.com/pure-css-hidden-footer/
 //
 
+#footershadow {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-image: url(image_path('footer-shadow.png'));
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 200px;
+	z-index: -90;
+}
 #scroll-fold {
   width: 1280px;
   height: 201px;
   background-image: url(image_path('world-map.png'));
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -4px;
+  background-repeat: no-repeat;
+  margin-top: -9px;
   border-top: #a8a39c 1px solid;
   color: #4e3f35;
   background-color: #f1ebe0;
-  color: white;
   position: fixed;
-  bottom: 0; left: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -640px;
   z-index: -99;
   overflow: hidden;
+  border-right: 9999px solid rgba(214, 205, 194, 0.85);
 }
 
 #scroll-fold .container {
