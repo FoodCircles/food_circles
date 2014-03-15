@@ -148,7 +148,7 @@
     @title = title
     mail(
       :to => email,
-      #:cco => 'badges@joinfoodcircles.org',
+      :cco => 'badges@joinfoodcircles.org',
       :reply_to => 'badges@joinfoodcircles.org',
       :subject => 'Have a little something for you. Need address.'
     )
