@@ -4,8 +4,8 @@
   ADMIN_EMAIL = 'jk@joinfoodcircles.org'
   SUPPORT_EMAIL = 'support@joinfoodcircles.org'
 
-  #tkxel_dev: SendGrid credentilas for email.
-  default from: "\"FoodCircles\" <voucher@foodcircles.net>"
+  #fc_dev: Mandrill credentials for email.
+  default from: "\"FoodCircles\" <hey@joinfoodcircles.org>"
   require 'mail'
   Mail.defaults do
     delivery_method :smtp, {:address => "smtp.mandrillapp.com",
@@ -20,7 +20,7 @@
   def food_mail(email)
 
     @url = 'http://foodcircles.net/?app=mobile_email'
-    mail(:to => email, :reply_to => 'jk@joinfoodcircles.org', :subject => "Your appetite is powerful.")
+    mail(:to => email, :reply_to => 'jk@joinfoodcircles.org', :subject => "Your hunger is powerful.")
   end
 
   #tkxel_dev: Email Content creation is handled in the following method.
@@ -140,7 +140,7 @@
     payment = Payment.find_by_id(payment_id)
     @payment = payment.decorate
 
-    mail(:to => payment.user.email, :subject => "FoodCircles Voucher Expiring Soon")
+    mail(:to => payment.user.email, :reply_to => 'used@inbound.foodcircles.net', :subject => "FoodCircles Voucher Expiring Soon")
   end
 
   def badge_email(email, category, title)
@@ -148,7 +148,8 @@
     @title = title
     mail(
       :to => email,
-      :cco => 'gs@joinfoodcircles.org',
+      :from => 'hey@joinfoodcircles.org',
+      :cc => 'gs@joinfoodcircles.org',
       :reply_to => 'gs@joinfoodcircles.org',
       :subject => 'Have a little something for you. Need address.'
     )

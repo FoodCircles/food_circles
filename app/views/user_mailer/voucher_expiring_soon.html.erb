@@ -18,7 +18,7 @@
                                             <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Arial;font-size: 34px;font-weight: bold;line-height: 100%;padding: 0;text-align: center;vertical-align: middle;">
                                             
                                             	<!-- // Begin Module: Standard Header Image \ -->
-                                            	<img src="http://gallery.mailchimp.com/ae083950237bb7c8e292ebda4/images/header.png" style="max-width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner="" mc:allowtext="">
+                                            	<a href="http://joinfoodcircles.org"><img src="http://gallery.mailchimp.com/ae083950237bb7c8e292ebda4/images/header.png" style="max-width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner="" mc:allowtext=""></a> 
                                             	<!-- // End Module: Standard Header Image \ -->
                                             
                                             </td>
@@ -41,18 +41,18 @@
                                                         	<img src="http://www.joinfoodcircles.org/email-templates/header-titles/expiring-soon.png" alt="Your voucher is expiring soon." mc:edit="header-text" style="border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;"><br><br>
                                                             <div mc:edit="std_content00" style="color:#766a64; font-family:Arial; font-size:16px; line-height:150%; text-align:left;">
                                                                		
-                                                                  Your purchase for <%= @payment.offer.name %> at <%= @payment.offer.venue.name %> expires in 7 days
-                                                                  (<%= @payment.short_expiration_date %>), and we just wanted to shoot you a reminder.
-                                                                  Your "Buy One, Feed One" special is, well, special.
+                                                                  Your purchase for <%= @payment.offer.name %> at <%= @payment.offer.venue.name %> expires soon
+                                                                  <b>(<%= @payment.short_expiration_date %>)</strong>, and we just wanted to shoot you a reminder.
+                                                                  Your "Buy One, Feed One" dish is special.
                                                                   It goes to feed <%= @payment.amount.truncate %>  children through <%= @payment.charity.name %> and
                                                                   our restaurant would love to thank you for your purchase.
                                                                   <br/>
                                                                   <br/>
-                                                                  Your original voucher is below. If you have any questions just let us know, and we hope you have an amazing time! 
+                                                                  Your original voucher is below. If you have any questions just let us know. 
                                                                   <br/>
                                                                   <br/>
-                                                                  “Philanthropists may urge what reforms they will, —less crowding, purer air better 
-                                                                  sanitary regulations: but this question of food underlies all.” -Helen Campbell
+                                                                  <i>“Philanthropists may urge what reforms they will, —less crowding, purer air better 
+                                                                  sanitary regulations: but this question of food underlies all.” -Helen Campbell</i>
                                                                   <br/>
                                                                   <br/>
                                                                   --
@@ -64,7 +64,7 @@
                                                                   <br/>
                                                                   <br/>
                                                                   <br/>
-                                                                  Voucher expires in 30 days, on <%= @payment.long_expiration_date %>.
+                                                                  Voucher expires on <%= @payment.long_expiration_date %>.
                                                                   <br/>
                                                                   <br/>
                                                                   <%= @payment.offer.venue.name %> - <%= @payment.offer.venue.phone %>
@@ -73,11 +73,11 @@
                                                                   <br/>
                                                                   <br/>
                                                                   <br/>
-                                                                  Contact us at support@foodcircles.net.
+                                                                  Contact us at support@joinfoodcircles.org.
                                                                   <br/>
                                                                   --
                                                                   <br/>
-                                                                  <a href="http://staging.foodcircles.net/payment/used?code=#{payment.code}&source=email"><img src="http://www.joinfoodcircles.org/email-templates/header-titles/your-voucher.png" alt="Redeem your voucher"></a>
+                                                                  <a href="http://staging.foodcircles.net/payment/used?code=#{payment.code}&source=email"><img src="http://f.cl.ly/items/3E2T1U2b240a270B0c2R/mark-as-used.png" alt="Mark as Used" align="middle" height="136" width="458"></a>
                                                                   <br>
                                                                   or REPLY "USED" ANYWHERE IN THE BODY OR SUBJECT TO MARK THIS VOUCHER AS USED
                                                             </div>
