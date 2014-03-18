@@ -70,8 +70,19 @@
                 <%= text_field_tag :email, nil, :placeholder => "Email" %><br />
                 <%= text_field_tag :website, nil, :placeholder => "We help..." %><br />
                 <%= submit_tag 'Request Invite', :class => "btn-standart" %>
+                
               <% end %>
-
+			
+			<div id="socialsharebuttons">
+			<br><br>
+			<div class="fb-like" data-href="http://www.joinfoodcircles.org/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+			
+			<div class="clear"><br></div>
+			
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.joinfoodcircles.org" data-via="FoodCircles" data-hashtags="BOFO">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+			
             </div>
 
 

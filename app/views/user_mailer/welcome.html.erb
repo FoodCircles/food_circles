@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta name="generator" content=
@@ -57,48 +56,51 @@
                                                 <tr>
                                                     <td valign="top" style=
                                                     "border-collapse: collapse;">
-                                                        <img src="http://www.joinfoodcircles.org/email-templates/header-titles/expiring-soon.png" width="550" alt="Your voucher is expiring soon." mc:edit="header-text" style="border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;"><br><br>
-                                                        <div mc:edit="std_content00" style="color:#766a64; font-family:Arial; font-size:16px; line-height:150%; text-align:left;">
-                                                           		
-                                                              Your purchase for <%= @payment.offer.name %> at <%= @payment.offer.venue.name %> expires soon
-                                                              <strong>(<%= @payment.short_expiration_date %>)</strong>, and we just wanted to shoot you a reminder.
-                                                              Your "Buy One, Feed One" dish is special.
-                                                              It goes to feed <%= @payment.amount.truncate %>  children through <%= @payment.charity.name %> and
-                                                              our restaurant would love to thank you for your purchase.
-                                                              <br/>
-                                                              <br/>
-                                                              Your original voucher is below. If you have any questions just let us know. 
-                                                              <br/>
-                                                              <br/>
-                                                              <i>“Philanthropists may urge what reforms they will, —less crowding, purer air better 
-                                                              sanitary regulations: but this question of food underlies all.” -Helen Campbell</i>
-                                                              <br/>
-                                                              <br/>
-                                                              --
-                                                              <br/>
-                                                              <br/>
-                                                              Good for: <%= @payment.offer.name %>
-                                                              <br/>
-                                                              Code: <%= @payment.code %>
-                                                              <br/>
-                                                              <br/>
-                                                              <br/>
-                                                              Voucher expires on <%= @payment.long_expiration_date %>.
-                                                              <br/>
-                                                              <br/>
-                                                              <%= @payment.offer.venue.name %> - <%= @payment.offer.venue.phone %>
-                                                              <br/>
-                                                              <a href="<%= google_maps_search(@payment.offer.venue) %>" target="_blank">Get Directions</a>
-                                                              <br/>
-                                                              <br/>
-                                                              <br/>
-                                                              Contact us at support@joinfoodcircles.org.
-                                                              <br/>
-                                                              --
-                                                              <br/>
-                                                              <a href="http://staging.foodcircles.net/payment/used?code=#{payment.code}&source=email"><img src="http://f.cl.ly/items/3E2T1U2b240a270B0c2R/mark-as-used.png" alt="Mark as Used" align="middle" height="136" width="458"></a>
-                                                              <br>
-                                                              or REPLY "USED" ANYWHERE IN THE BODY OR SUBJECT TO MARK THIS VOUCHER AS USED
+                                                        <img src=
+                                                        "http://www.joinfoodcircles.org/email-templates/header-titles/thank-you.png"
+                                                        alt="Thank you for signing up."
+                                                        mc:edit="header-text" style=
+                                                        "border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;"><br>
+
+                                                        <br>
+
+                                                        <div mc:edit="std_content00"
+                                                        style=
+                                                        "color:#766a64; font-family:Arial; font-size:16px; line-height:150%; text-align:left;">
+                                                        You did it. You signed up for
+                                                        FoodCircles. But why? ...maybe
+                                                        you can relate to this
+                                                        situation.<br>
+                                                            <br>
+                                                            If you're like me, you love
+                                                            to dine out. But the thing
+                                                            is, I can't ever decide on
+                                                            where to go. "You pick."
+                                                            "Hahaha, no, you pick."
+                                                            Geez.....<br>
+                                                            <br>
+                                                            There's also certain beliefs
+                                                            I have about the world. No
+                                                            one should go hungry, I'm
+                                                            fortunate to be in the
+                                                            position I'm in, and any kid
+                                                            should be able to choose to
+                                                            study or play when they want
+                                                            to &#8212; not just when
+                                                            their stomach allows it.<br>
+                                                            <br>
+                                                            FoodCircles lets you buy an
+                                                            appetizer, drink, or dessert
+                                                            at top local restaurants for
+                                                            only $1, and directs 100% of
+                                                            your purchase to get dinner
+                                                            to a child who needs it.
+                                                            <b>Buy one, feed one</b>. A
+                                                            simple way to know where to
+                                                            eat and feed a hungry child
+                                                            in the process.
+                                                            <br><br>
+                                                            <a href="http://www.joinfoodcircles.org"><img src="http://www.joinfoodcircles.org/email-templates/buttons/welcome.png" alt="Grab a meal!" width="555px"></a>
                                                         </div>
                                                     </td>
                                                 </tr>

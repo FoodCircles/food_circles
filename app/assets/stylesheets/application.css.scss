@@ -1170,7 +1170,15 @@ body.active-popup {
   float: left;
   font-size: 0;
   line-height: 0;
-  text-indent: -4000px
+  text-indent: -4000px;
+}
+
+.floatleft {
+	float: left;
+}
+
+.floatrigth {
+	float: right;
 }
 
 /*=== Navigation ===*/
