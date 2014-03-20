@@ -70,17 +70,17 @@
                                                         device.</p>
 
                                                             <p><b>confirmation code:</b>
-                                                            #{payment.code}<br>
+                                                            <%= @payment.code %><br>
                                                             <b>good for:</b>
-                                                            #{payment.offer.name}<br>
+                                                            <%= @payment.offer.name %><br>
                                                             <b>only at:</b>
-                                                            #{payment.offer.venue.name}<br>
+                                                            <%= @payment.offer.venue.name %><br>
 
                                                             <b>with a minimum of:</b>
-                                                            #{payment.offer.min_diners}
+                                                            <%= @payment.offer.min_diners %>
                                                             diners<br>
                                                             <b>expiring:</b>
-                                                            #{30.days.from_now.to_date}</p><br>
+                                                            <%= 30.days.from_now.to_date %></p><br>
 
                                                             <b>3 steps to redeem:</b>
 
@@ -94,7 +94,7 @@
                                                             <b>3)</b> Mark Voucher as
                                                             used by clicking below.<br>
                                                             <a href=
-                                                            "http://staging.foodcircles.net/payment/used?code=#{payment.code}&amp;source=email">
+                                                            "http://staging.foodcircles.net/payment/used?code=<%= @payment.code %>&amp;source=email">
                                                             <img src=
                                                             "http://f.cl.ly/items/3E2T1U2b240a270B0c2R/mark-as-used.png"
                                                             alt="Mark as Used" align=

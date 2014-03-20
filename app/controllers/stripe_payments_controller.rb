@@ -46,7 +46,7 @@ class StripePaymentsController < ApplicationController
     offer.venue.save
     #tkxel_dev: Error messages in case of incorrect Credentilas
 
-    UserMailer.setup_email(current_user, payment)
+    UserMailer.voucher(current_user, payment).deliver
     
     unless current_user.phone.nil?
       SmsVoucherSender.new(current_user.phone, payment).send

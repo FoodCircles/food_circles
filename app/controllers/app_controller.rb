@@ -97,7 +97,7 @@ class AppController < ApplicationController
 
   def handle_email(user, r)
     #tkxel_dev:Send user voucher confirmation via Email
-    UserMailer.create_voucher(user, r)
+    UserMailer.voucher(user, r).deliver
   end
 
 end

@@ -11,7 +11,7 @@ class Api::PaymentsController < ApplicationController
       venue = @payment.offer.venue
       venue.vouchers_available -= 1
       venue.save
-      UserMailer.setup_email(current_user, @payment)
+      UserMailer.voucher(current_user, @payment).deliver
 
       render :json => {:error => false, :content => @payment.as_json }
     else

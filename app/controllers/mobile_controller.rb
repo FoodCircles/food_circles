@@ -43,7 +43,7 @@ class MobileController < ApplicationController
     @r.save
 
     UserMailer.delay.voucher(@user, @r)
-    UserMailer.signupsuccess(@user)
+    UserMailer.signupsuccess(@user).deliver
 
     render :json => @r, :callback => params[:callback]
   end
