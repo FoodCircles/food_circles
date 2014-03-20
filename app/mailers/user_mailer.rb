@@ -26,7 +26,7 @@
   def signupsuccess(user)
     mail(
       :to => user.email,
-      :subject => "Your Hunger is Powerful.",
+      :subject => "Your hunger is powerful",
       :reply_to => 'hey@joinfoodcircles.org'
     )
   end
