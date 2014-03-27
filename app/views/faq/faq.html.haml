@@ -1,11 +1,12 @@
-<div id="fb-root"></div>
-%script 
+#fb-root
+:javascript
   (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=526839707387980";
-  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=526839707387980";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 
 #faqmain
   .container
@@ -70,6 +71,7 @@
           %a.twitter-share-button{"data-hashtags" => "BOFO", "data-url" => "http://www.joinfoodcircles.org", "data-via" => "FoodCircles", :href => "https://twitter.com/share"} Tweet
           :javascript
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+          .fb-like{"data-action" => "like", "data-href" => "http://www.joinfoodcircles.org", "data-layout" => "standard", "data-share" => "true", "data-show-faces" => "true"}
     %h4
       Unanswered question? Email us at
       %a.mailus{:href => "mailto:hey@foodcircles.net"} hey@foodcircles.net

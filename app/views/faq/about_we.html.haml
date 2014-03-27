@@ -1,11 +1,12 @@
-<div id="fb-root"></div>
-%script 
+#fb-root
+:javascript
   (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=526839707387980";
-  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=526839707387980";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 #about
   .container
     %h2 About We
@@ -17,7 +18,7 @@
       = image_tag 'about_we_diagram.png', alt: '', class: 'about-we-diagram'
       .question
         %h3 Many of us may not know what it’s like..
-        %p So we exist to be a simple way to help one child who <strong>does</strong> know what it's like to go days without eating properly.  Use the site and <a href="http://www.joinfoodcircles.org/apps/">apps</a> to make dinner plans, buy a dish for $1 (or more), and give 100% of that purchase to feed hungry children. The site can help you make a decision and purchase <strong>within 60 seconds.</strong> <br><br>Each $1 you spend provides <a href="http://blog.foodcircles.net/2012/12/10/life-of-a-sack-supper-kids-food-basket/">mind-sustaining dinner</a> to a child locally or a miraculous food called <a href="http://blog.foodcircles.net/2013/02/04/plumpynut/">Plumpy'Nut</a> for a full day to a child abroad.  The site will <strong>never</strong> take a cut of your purchase and works with great distributors such as Kids Food Basket, Feeding America WM, and World Vision.  Heck, we even challenged you to <a href="http://blog.foodcircles.net/2012/11/01/the-first-dollar-lunch-day-of-grand-rapids/">taste</a> the meals kids were getting.  Read reviews <a href="https://twitter.com/ScottHillGR/status/258210608548306944" target="_blank">here</a>, <a href="https://twitter.com/DianeTeall/status/258012856455413761" target="_blank">here</a>, and <a href="https://twitter.com/The_Love_Hate/status/259049895942553600" target="_blank">HERE</a>!
+        %p So we exist to be a simple way to help one child who <strong>does</strong> know what it's like to go days without eating properly.  Use the site and <a href="http://www.joinfoodcircles.org/apps/">apps</a> to make dinner plans, buy a dish for $1 (or more), and give 100% of that purchase to feed hungry children. The site can help you make a decision and purchase <strong>within 60 seconds.</strong> <br><br>Each $1 you spend provides <a href="http://blog.joinfoodcircles.org/2012/12/10/life-of-a-sack-supper-kids-food-basket/">mind-sustaining dinner</a> to a child locally or a miraculous food called <a href="http://blog.joinfoodcircles.org/2013/02/04/plumpynut/">Plumpy'Nut</a> for a full day to a child abroad.  The site will <strong>never</strong> take a cut of your purchase and works with great distributors such as Kids Food Basket, Feeding America WM, and World Vision.  Heck, we even challenged you to <a href="http://blog.joinfoodcircles.org/2012/11/01/the-first-dollar-lunch-day-of-grand-rapids/">taste</a> the meals kids were getting.  Read reviews <a href="https://twitter.com/ScottHillGR/status/258210608548306944" target="_blank">here</a>, <a href="https://twitter.com/DianeTeall/status/258012856455413761" target="_blank">here</a>, and <a href="https://twitter.com/The_Love_Hate/status/259049895942553600" target="_blank">HERE</a>!
       .question
         %h3 Basics on redeeming..
         %p Once you make a purchase, you can get a voucher on your smartphone, a text sent to any cell phone, or an email to print, and all you have to do is show it to the staff of the restaurant.  They'll thank you, place a special placard on your table, and bring you your dish with the rest of your regularly purchased meal.  <strong> Your hunger is powerful. Do something simple, yet truly extraordinary with it. </strong>
@@ -164,11 +165,12 @@
           %a.twitter-share-button{"data-hashtags" => "BOFO", "data-url" => "http://www.joinfoodcircles.org", "data-via" => "FoodCircles", :href => "https://twitter.com/share"} Tweet
           :javascript
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+          .fb-like{"data-action" => "like", "data-href" => "http://www.joinfoodcircles.org", "data-layout" => "standard", "data-share" => "true", "data-show-faces" => "true"}
     %h4
       How has hunger affected you? Tell our story.
   .container
     .fb-container
-      .fb-comments{"data-href" => "http://www.joinfoodcircles.org/about_we", "data-num-posts" => "10", "data-width" => "784"}
+      .fb-comments{"data-href" => "http://www.foodcircles.net/faq", "data-num-posts" => "10", "data-width" => "784"}
 .clear
 :javascript
   $('.teampick a').click(function(e){
