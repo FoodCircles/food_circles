@@ -18,7 +18,7 @@ namespace :mailers do
     send_emails = UserBadge.find_all_by_sent_email(false)
 
     send_emails.each do |se|
-      UserMailer.delay.badge_email(se.user.email, badge.category, badge.title)
+      UserMailer.badge_email(se.user.email, badge.category, badge.title)
       se.sent_email = true
       se.save
     end
