@@ -32,9 +32,12 @@
     .products
       .products-head
         .head-btns
-          #toShow
-            
-          #odds
+          %a.btn-standart{href: "https://itunes.apple.com/us/app/foodcircles-for-iphone/id710592600"}
+            %img.app-icon{src: "/apple-logo.png"}>/
+            Apple
+          %a.btn-standart{href: "https://play.google.com/store/apps/details?id=co.foodcircles"}
+            %img.app-icon{src: "/android-logo.png"}>/
+            Android
             
 
         = render partial: "filters"
