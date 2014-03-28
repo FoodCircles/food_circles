@@ -150,7 +150,7 @@ class ApplicationController < ActionController::Base
       if android_device?
         request.format = :android
       elsif ios_device?
-        request.format = :iphone
+        # Not needed anymore, we now have native iOS advertising
       else
         request.format = :mobile
       end
