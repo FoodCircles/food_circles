@@ -44,6 +44,7 @@ class Api::SessionsController < ApplicationController
     begin
       @user = User.new(email: params[:user_email], password: params[:user_password])
       if @user.save
+        UserMailer.signupsuccess(@user).deliver
         render :json => {:error => false, :description => "User saved.", :auth_token => @user.authentication_token}
       else
         if !@user.errors.messages.empty?
@@ -86,6 +87,7 @@ class Api::SessionsController < ApplicationController
       if user.new_record?
         success_message = "User saved."
         user.do_password_validation = false
+        UserMailer.signupsuccess(user).deliver
         return unless user.save
       end
       external_uid = ExternalUID.where(uid: params[:uid], user_id: user.id).first_or_initialize
