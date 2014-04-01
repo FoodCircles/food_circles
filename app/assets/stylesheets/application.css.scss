@@ -1689,7 +1689,8 @@ body.active-popup {
   left: 50%;
   z-index: 3;
   margin-left: -245px;
-  width: 490px;
+  width: 550px;
+  text-align: center;
   height: 100%;
 }
 
@@ -1699,7 +1700,7 @@ body.active-popup {
 }
 
 .lt-ie8 .banner .cnt {
-  background: url(image_path('darken.png')) no-repeat center center;
+  background: url(image_path('/*darken.png*/')) no-repeat center center;
   width: 860px;
   margin-left: -430px;
 }
@@ -1760,6 +1761,34 @@ body.active-popup {
 
 .banner .slide-next {
   right: 18px;
+}
+
+.hero-title-header {
+	line-height: 2.5em;
+}
+
+.hero-title-upper {
+	font-family: 'Neutraface Slab Text';
+	font-size: 25px;
+	display: block;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.hero-title-tagline {
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-size: 27px;
+	font-weight: 100;
+	letter-spacing: 2px;
+	text-transform: lowercase;
+	display: block;
+	text-align: center;
+}
+
+.hero-title-tagline-money {
+	font-size: 1.3em;
 }
 
 /*=== Donation Progress ===*/

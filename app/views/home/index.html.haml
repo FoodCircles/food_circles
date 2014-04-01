@@ -2,10 +2,10 @@
   .cnt
     .centerer
       .centerer-inner
-        %h3
-          Your Hunger is Powerful.
-        %p
-          Try a local restaurant dish for $1,<br>Your $1 gives a hungry child dinner.
+        %span.hero-title-upper
+          TRY A LOCAL RESTAURANT DISH FOR
+          %span.hero-title-tagline-money $1
+        %span.hero-title-tagline 100% is donated to feed a hungry child
   %ul{class: "slides"}
     - @news.each do |news|
       %li
