@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140313231244) do
+ActiveRecord::Schema.define(:version => 20140401042901) do
 
   create_table "badges", :force => true do |t|
     t.string   "code"
@@ -42,9 +42,14 @@ ActiveRecord::Schema.define(:version => 20140313231244) do
     t.integer  "state_id"
     t.string   "zip"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "image_uid"
+    t.string   "charity_type"
+    t.string   "subdomain"
+    t.string   "use_funds"
+    t.string   "logo_uid"
+    t.string   "photo_uid"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -82,6 +87,15 @@ ActiveRecord::Schema.define(:version => 20140313231244) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "follow_up_notes", :force => true do |t|
+    t.integer  "charity_id"
+    t.string   "note"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "follow_up_notes", ["charity_id"], :name => "index_follow_up_notes_on_charity_id"
 
   create_table "invoices", :force => true do |t|
     t.string   "group_name"
