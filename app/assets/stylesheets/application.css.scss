@@ -1848,7 +1848,7 @@ body.active-popup {
 	position: absolute;
 	bottom: 0;
 	color: #fff;
-	background-image: url('http://projects.threepixeldrift.com/foodcircles/sliding-back.png');
+	background-image: url(image_path('sliding-back.png'));
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	z-index: 99;
 }
@@ -1857,13 +1857,13 @@ body.active-popup {
 	position: absolute;
 	top: 5px;
 	left: 10px;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: bold;
 }
 
 .weeklygoal {
 	position: absolute;
-	top: 23px;
+	top: 20px;
 	left: 35px;
 	font-size: 20px;
 	font-weight: bold;
