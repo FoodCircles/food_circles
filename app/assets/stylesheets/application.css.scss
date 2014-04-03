@@ -1721,6 +1721,7 @@ body.active-popup {
 /*=== Banner - Paging ===*/
 .banner .paging {
   position: absolute;
+  top: 165px;
   left: 0;
   right: 0;
   z-index: 3;
@@ -1733,17 +1734,17 @@ body.active-popup {
   font-size: 0;
   line-height: 0;
   color: transparent;
-  width: 10px;
-  height: 10px;
-  background: url(image_path('sprite.png')) no-repeat -135px -127px;
-  margin: 0 2px;
+  width: 32px;
+  height: 2px;
+  background: url(image_path('inactive-indicator.png')) no-repeat;
+  margin: 0 3px;
   *display: inline;
   *zoom: 1;
 }
 
 .banner .paging a:hover,
 .banner .paging a.selected {
-  background-position: -148px -127px;
+  background: url(image_path('active-indicator.png')) no-repeat;
 }
 
 /*=== Banner - Arrows ===*/
@@ -2822,7 +2823,7 @@ body.active-popup {
 	z-index: -90;
 }
 #scroll-fold {
-  width: 100%;
+  width: 1280px;
   height: 201px;
   background-image: url(image_path('world-map.png'));
   background-repeat: no-repeat;
