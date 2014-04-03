@@ -14,13 +14,18 @@
     } %>
 
     <%= display_meta_tags %>
+	<meta name="author" content="FoodCircles LLC">
     <meta name="apple-itunes-app" content="app-id=710592600">
-
+    <meta name="google-play-app" content="app-id=co.foodcircles">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "jquerysmartbanner", :media => "all" %>
+	<link rel="apple-touch-icon" href="https://lh4.ggpht.com/kVGgp__A6KjNT9R9Dh_CBZavUvbNkAxTm4G5WpTkl1azWBpIam7IPsz1L-XI5Ddxfgg=w300
+">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
     <%= stylesheet_link_tag "colorbox", :media => "all" %>
     <%= stylesheet_link_tag "fonts", :media => "all" %>
-    <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+    <%= javascript_include_tag "https://js.stripe.com/v1/", "application", "jquerysmartbanner" %>
     <%= javascript_tag "Stripe.publishableKey = '#{Rails.configuration.stripe[:publishable_key]}';" %>
     <%= javascript_include_tag  'home', "#{controller_name}" %>
     <link rel="icon" type="image/png" href="/favicon.png">
