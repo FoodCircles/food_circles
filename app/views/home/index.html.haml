@@ -22,13 +22,13 @@
     .bar{style: "width: #{percent}%"}
     .text-pusher{style: "width: #{percent}%"}
     %span.text
-      %strong
-        %span
-          = weekly_progress[:current_progress]
-          %em of
-        = weekly_progress[:adjusted_total]
-        meals
-      donated this week
+      .goal-indication
+        %span.sofar
+          %p
+            = weekly_progress[:current_progress]
+        %span.weeklygoal
+          %p
+            = weekly_progress[:adjusted_total]
 #home
   .container
     .products

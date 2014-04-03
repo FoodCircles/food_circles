@@ -1827,15 +1827,9 @@ body.active-popup {
 .donation-progress .text {
   display: inline-block;
   position: relative;
-  top: -40px;
+  top: -11px;
   right: 55px;
   max-width: 10%;
-  font: 10px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif;
-  color: #acacac;
-  text-transform: uppercase;
-  padding-bottom: 7px;
-  text-align: center;
-  text-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
 }
 
 .donation-progress .text strong {
@@ -1846,6 +1840,34 @@ body.active-popup {
 
 .donation-progress .text strong span {
   color: #fff;
+}
+
+.goal-indication {
+	width: 150px;
+	height: 52px;
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	background-image: url('http://projects.threepixeldrift.com/foodcircles/sliding-back.png');
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	z-index: 99;
+}
+
+.sofar {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.weeklygoal {
+	position: absolute;
+	top: 23px;
+	left: 35px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: right;
 }
 
 /*=== Main ===*/
