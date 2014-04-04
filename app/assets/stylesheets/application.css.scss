@@ -1689,7 +1689,8 @@ body.active-popup {
   left: 50%;
   z-index: 3;
   margin-left: -245px;
-  width: 490px;
+  width: 550px;
+  text-align: center;
   height: 100%;
 }
 
@@ -1699,7 +1700,7 @@ body.active-popup {
 }
 
 .lt-ie8 .banner .cnt {
-  background: url(image_path('darken.png')) no-repeat center center;
+  background: url(image_path('/*darken.png*/')) no-repeat center center;
   width: 860px;
   margin-left: -430px;
 }
@@ -1720,6 +1721,7 @@ body.active-popup {
 /*=== Banner - Paging ===*/
 .banner .paging {
   position: absolute;
+  top: 165px;
   left: 0;
   right: 0;
   z-index: 3;
@@ -1732,17 +1734,17 @@ body.active-popup {
   font-size: 0;
   line-height: 0;
   color: transparent;
-  width: 10px;
-  height: 10px;
-  background: url(image_path('sprite.png')) no-repeat -135px -127px;
-  margin: 0 2px;
+  width: 32px;
+  height: 2px;
+  background: url(image_path('inactive-indicator.png')) no-repeat;
+  margin: 0 3px;
   *display: inline;
   *zoom: 1;
 }
 
 .banner .paging a:hover,
 .banner .paging a.selected {
-  background-position: -148px -127px;
+  background: url(image_path('active-indicator.png')) no-repeat;
 }
 
 /*=== Banner - Arrows ===*/
@@ -1760,6 +1762,34 @@ body.active-popup {
 
 .banner .slide-next {
   right: 18px;
+}
+
+.hero-title-header {
+	line-height: 2.5em;
+}
+
+.hero-title-upper {
+	font-family: 'NeutrafaceSlab';
+	font-size: 25px;
+	display: block;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.hero-title-tagline {
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-size: 27px;
+	font-weight: 300;
+	letter-spacing: 2px;
+	text-transform: lowercase;
+	display: block;
+	text-align: center;
+}
+
+.hero-title-tagline-money {
+	font-size: 1.3em;
 }
 
 /*=== Donation Progress ===*/
@@ -1797,15 +1827,9 @@ body.active-popup {
 .donation-progress .text {
   display: inline-block;
   position: relative;
-  top: -40px;
+  top: -11px;
   right: 55px;
   max-width: 10%;
-  font: 10px 'Helvetica Neue', Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif;
-  color: #acacac;
-  text-transform: uppercase;
-  padding-bottom: 7px;
-  text-align: center;
-  text-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
 }
 
 .donation-progress .text strong {
@@ -1816,6 +1840,34 @@ body.active-popup {
 
 .donation-progress .text strong span {
   color: #fff;
+}
+
+.goal-indication {
+	width: 150px;
+	height: 52px;
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	background-image: url(image_path('sliding-back.png'));
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	z-index: 99;
+}
+
+.sofar {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.weeklygoal {
+	position: absolute;
+	top: 20px;
+	left: 35px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: right;
 }
 
 /*=== Main ===*/
@@ -2797,6 +2849,7 @@ body.active-popup {
   height: 201px;
   background-image: url(image_path('world-map.png'));
   background-repeat: no-repeat;
+  background-position: center top;
   margin-top: -9px;
   border-top: #a8a39c 1px solid;
   color: #4e3f35;

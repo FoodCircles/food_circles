@@ -2,10 +2,12 @@
   .cnt
     .centerer
       .centerer-inner
-        %h3
-          Your Hunger is Powerful.
-        %p
-          Try a local restaurant dish for $1,<br>Your $1 gives a hungry child dinner.
+        %span.hero-title-upper
+          TRY A LOCAL RESTAURANT DISH FOR
+          %span.hero-title-tagline-money 
+            $1
+          %br/
+        %span.hero-title-tagline 100% is donated to feed a hungry child
   %ul{class: "slides"}
     - @news.each do |news|
       %li
@@ -20,13 +22,13 @@
     .bar{style: "width: #{percent}%"}
     .text-pusher{style: "width: #{percent}%"}
     %span.text
-      %strong
-        %span
-          = weekly_progress[:current_progress]
-          %em of
-        = weekly_progress[:adjusted_total]
-        meals
-      donated this week
+      .goal-indication
+        %span.sofar
+          %p
+            = weekly_progress[:current_progress]
+        %span.weeklygoal
+          %p
+            = weekly_progress[:adjusted_total]
 #home
   .container
     .products

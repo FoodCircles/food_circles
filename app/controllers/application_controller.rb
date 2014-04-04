@@ -148,11 +148,11 @@ class ApplicationController < ActionController::Base
     session[:mobile_param] = params[:mobile] if params[:mobile]
     if mobile_device? and request.fullpath == '/'
       if android_device?
-        request.format = :android
+        # Not needed anymore, we now have a Android bar plugin
       elsif ios_device?
         # Not needed anymore, we now have native iOS advertising
       else
-        request.format = :mobile
+        #request.format = :mobile  <-- Have no real usecase for non-iOS, non-Android users besides the site -->
       end
     end
   end
