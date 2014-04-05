@@ -14,6 +14,20 @@ class Charity < ActiveRecord::Base
   validates :name, presence: true
   validates :charity_type, presence: true, :inclusion => {:in => CHARITY_TYPE_ENUM}
 
+  rails_admin do
+    edit do
+      configure :subdomain do
+        label "Desired Subdomain"
+      end
+      configure :charity_type do
+        label "Charity Type"
+      end
+      configure :use_funds do
+        label "Use of Funds"
+      end
+    end
+  end
+
   def charity_type_enum
     CHARITY_TYPE_ENUM
   end
