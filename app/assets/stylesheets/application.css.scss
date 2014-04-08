@@ -72,10 +72,18 @@
   clear: both;
 }
 
+.footerspacer {
+	height: 200px;	
+	clear: both;
+}
+
 body, html {
   height: 100%;
 }
 
+html {
+	
+}
 body {
   font-size: 18px;
   line-height: 1.44;
@@ -2693,7 +2701,7 @@ body.active-popup {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+//  z-index: 3; seems to make facebook link drop under
   height: 210px;
 }
 
@@ -2828,6 +2836,10 @@ body.active-popup {
   text-align: right;
   font-size: 0;
   line-height: 0;
+}
+
+#socialsharebuttons .fb-like {
+	margin-left: -27px;
 }
 
 //

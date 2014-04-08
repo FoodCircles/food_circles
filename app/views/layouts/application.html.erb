@@ -17,10 +17,10 @@
 	<meta name="author" content="FoodCircles LLC">
     <meta name="apple-itunes-app" content="app-id=710592600">
     <meta name="google-play-app" content="app-id=co.foodcircles">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= stylesheet_link_tag "jquerysmartbanner", :media => "all" %>
+    <meta name="viewport" content="width=device-width">
 	<link rel="apple-touch-icon" href="https://lh4.ggpht.com/kVGgp__A6KjNT9R9Dh_CBZavUvbNkAxTm4G5WpTkl1azWBpIam7IPsz1L-XI5Ddxfgg=w300
 ">
+	<%= stylesheet_link_tag "jquerysmartbanner", :media => "all" %>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
     <%= stylesheet_link_tag "colorbox", :media => "all" %>
@@ -46,5 +46,8 @@
         <%= yield %>
         <%= render :partial => "partials/footer" %>
     </div>
+    <script type="text/javascript">
+    	$(function () { $.smartbanner({ daysHidden: 0, daysReminder: 0, title:'FoodCircles' }) })
+    </script>
   </body>
 </html>

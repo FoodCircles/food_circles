@@ -162,10 +162,12 @@
     #socialsharebuttons
       %br
         %center
+          .fb-like{"data-action" => "like", "data-href" => "http://www.joinfoodcircles.org", "data-layout" => "standard", "data-share" => "true", "data-show-faces" => "true"}
+          %br
+          %br
           %a.twitter-share-button{"data-hashtags" => "BOFO", "data-url" => "http://www.joinfoodcircles.org", "data-via" => "FoodCircles", :href => "https://twitter.com/share"} Tweet
           :javascript
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-          .fb-like{"data-action" => "like", "data-href" => "http://www.joinfoodcircles.org", "data-layout" => "standard", "data-share" => "true", "data-show-faces" => "true"}
     %h4
       How has hunger affected you? Tell our story.
   .container
