@@ -72,6 +72,9 @@
   clear: both;
 }
 
+html {
+	margin: 0;
+}
 body {
   font-size: 18px;
   line-height: 1.44;
@@ -83,6 +86,7 @@ body {
   position: relative;
   z-index: 3;
   min-width: 980px;
+  margin: 0;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -979,7 +983,6 @@ body.active-popup {
   position: relative;
   min-height: 100%;
   width: 100%;
-  margin-bottom: 173px;
 }
 
 .active-popup #wrapper {
