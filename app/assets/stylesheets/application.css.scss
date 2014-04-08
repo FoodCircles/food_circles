@@ -72,18 +72,6 @@
   clear: both;
 }
 
-.footerspacer {
-	height: 200px;	
-	clear: both;
-}
-
-body, html {
-  height: 100%;
-}
-
-html {
-	
-}
 body {
   font-size: 18px;
   line-height: 1.44;
@@ -95,7 +83,6 @@ body {
   position: relative;
   z-index: 3;
   min-width: 980px;
-  margin-bottom: 200px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -2701,7 +2688,7 @@ body.active-popup {
   bottom: 0;
   left: 0;
   right: 0;
-//  z-index: 3; seems to make facebook link drop under
+  z-index: 3;
   height: 210px;
 }
 
