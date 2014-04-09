@@ -982,7 +982,7 @@ body.active-popup {
   background-color: #f1ebe0;
   position: relative;
   min-height: 100%;
-  width: 100%;
+  overflow: hidden;
 }
 
 .active-popup #wrapper {
@@ -1686,8 +1686,8 @@ body.active-popup {
   top: 0;
   left: 50%;
   z-index: 3;
-  margin-left: -245px;
-  width: 550px;
+  margin-left: -350px;
+  width: 700px;
   text-align: center;
   height: 100%;
 }
@@ -1768,19 +1768,20 @@ body.active-popup {
 
 .hero-title-upper {
 	font-family: 'NeutrafaceSlab';
-	font-size: 25px;
+	font-size: 32px;
 	display: block;
 	text-transform: uppercase;
 	font-weight: 500;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	text-align: center;
+  line-height: 36px;
 }
 
 .hero-title-tagline {
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-size: 27px;
 	font-weight: 300;
-	letter-spacing: 2px;
+	letter-spacing: 1.5px;
 	text-transform: lowercase;
 	display: block;
 	text-align: center;
