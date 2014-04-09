@@ -46,17 +46,17 @@
 			                                                         device.</p>
 			 
 			                                                             <p><b>confirmation code:</b>
-			                                                             #{payment.code}<br>
+			                                                             <%= @payment.code %><br><br>
 			                                                             <b>good for:</b>
-			                                                             #{payment.offer.name}<br>
+			                                                             <%= @payment.offer.name %><br>
 			                                                             <b>only at:</b>
-			                                                             #{payment.offer.venue.name}<br>
+			                                                             <%= @payment.offer.venue.name %><br>
 			 
 			                                                             <b>with a minimum of:</b>
-			                                                             #{payment.offer.min_diners}
+			                                                             <%= @payment.offer.min_diners %>
 			                                                             diners<br>
 			                                                             <b>expiring:</b>
-			                                                             #{30.days.from_now.to_date}</p><br>
+			                                                             <%= 30.days.from_now.to_date %></p><br>
 			 
 			                                                             <b>3 Steps to Redeem:</b>
 			 
