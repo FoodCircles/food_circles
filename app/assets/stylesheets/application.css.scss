@@ -1845,7 +1845,7 @@ body.active-popup {
 	width: 150px;
 	height: 52px;
 	position: absolute;
-	bottom: 0;
+	bottom: -1px;
 	color: #fff;
 	background-image: url(image_path('sliding-back.png'));
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
