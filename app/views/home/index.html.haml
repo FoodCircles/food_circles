@@ -2,12 +2,11 @@
   .cnt
     .centerer
       .centerer-inner
-        %span.hero-title-upper
-          TRY A LOCAL RESTAURANT DISH FOR
-          %span.hero-title-tagline-money 
-            $1
+        %span#toShow.hero-title-upper
+          
           %br/
-        %span.hero-title-tagline 100% is donated to feed a hungry child
+        %span#odds.hero-title-tagline
+          
   %ul{class: "slides"}
     - @news.each do |news|
       %li

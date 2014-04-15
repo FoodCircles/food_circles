@@ -19,7 +19,7 @@ mixpanel.init("<%= Rails.configuration.mix_panel_api_key %>");</script><!-- end 
                 return Math.floor(Math.random() * e) + s;
          },
          logWeight = function(info){
-                getId('odds').innerHTML = ('&nbsp;');
+                getId('odds').innerHTML = ('100% is donated to feed a hungry child');
          };
          (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
 
@@ -33,11 +33,11 @@ mixpanel.init("<%= Rails.configuration.mix_panel_api_key %>");</script><!-- end 
                 new Scenario('Buttons')
                 .test('ControlGroup', function(info){
                     logWeight(info);
-                    getId('toShow').innerHTML = ('<a class=\'btn-standart popup-link\' href=\'/app_popup\'>Get the App</a><a class=\'btn-standart popup-link\' href=\'/notify_signup\' id=\'get_updates_link\'>Get Briefs</a>'); 
+                    getId('toShow').innerHTML = ('TRY A LOCAL RESTAURANT DISH FOR <span class="hero-title-tagline-money">$1</span><br>'); 
                 })
                 .test('AlternateText', function(info){
                     logWeight(info);
-                    getId('toShow').innerHTML = ('<a class=\'btn-standart\' href=\'https://itunes.apple.com/us/app/foodcircles-for-iphone/id710592600\'><img class=\'app-icon\' src=\'/apple-logo.png\'>Apple</img></a><a class=\'btn-standart\' href=\'https://play.google.com/store/apps/details?id=co.foodcircles\'><img class=\'app-icon\' src=\'/android-logo.png\'>Android</img></a>'); 
+                    getId('toShow').innerHTML = ('LOCAL DISHES FOR <span class="hero-title-tagline-money">$1</span><br>'); 
                 })
                 .go();
 
