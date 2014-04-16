@@ -96,7 +96,7 @@
               %span.give-to
               %span.line
             .choose-organization
-              = render :partial => "offers/charity", :collection => Charity.all, :locals => {:venue => @offer.venue}
+              = render :partial => "offers/charity", :collection => ListCharities(), :locals => {:venue => @offer.venue}
             -#.choose-organization
             .foot
               %a#dealbuy.btn-standart.full-width.light-shadow.large-font{:href => "#", "data-submit-to-stripe" => "#{!stripe_customer?}"} Buy

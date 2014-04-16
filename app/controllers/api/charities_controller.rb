@@ -1,7 +1,7 @@
 class Api::CharitiesController < ApplicationController
   def show
     begin
-      @charities = Charity.all
+      @charities = ListCharities()
       return_arr = []
       @charities.each do |c|
         return_arr << {:id => c.id, :name => c.name, :description => c.description}

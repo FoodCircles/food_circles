@@ -19,17 +19,16 @@ class Charity < ActiveRecord::Base
       configure :subdomain do
         label "Desired Subdomain"
       end
-      configure :charity_type do
+      configure :charity_type, :enum do
         label "Charity Type"
+        enum do
+          CHARITY_TYPE_ENUM
+        end
       end
       configure :use_funds do
         label "Use of Funds"
       end
     end
-  end
-
-  def charity_type_enum
-    CHARITY_TYPE_ENUM
   end
 
   def as_json(options={})

@@ -19,7 +19,7 @@ class AppController < ApplicationController
   end
 
   def getCharities
-    @charities = Charity.all
+    @charities = ListCharities()
   end
 
   def confirm

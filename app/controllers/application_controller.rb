@@ -3,16 +3,26 @@ class ApplicationController < ActionController::Base
   before_filter :email_server
   before_filter :prepare_for_mobile
   before_filter :detect_email_omniauth
+  before_filter :check_subdomain
   
 
   ACCOUNT_SID = "AC085df9dc6444a3588933ae0ddd9d95e7"
   ACCOUNT_TOKEN = "95cc7f360064ab606017dad6d2eb38a5"
 
-  BASE_URL = "http://foodcircles.net"
+  BASE_URL = "http://joinfoodcircles.org"
 
   CALLER_ID = "14422223663"
   #tkxel_dev: Following method detects incoming request from an email server and redirect users
   #To respective app store to downloaf foodcircles app.
+
+  def check_subdomain
+    unless ['', 'www'].include?(request.subdomain)
+      sub_charity = Charity.find_by_subdomain(request.subdomain)
+      unless sub_charity
+        redirect_to BASE_URL
+      end
+    end
+  end
 
   def email_server
 

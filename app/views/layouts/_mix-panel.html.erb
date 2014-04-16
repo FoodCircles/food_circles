@@ -9,11 +9,13 @@ mixpanel.init("<%= Rails.configuration.mix_panel_api_key %>");</script><!-- end 
                 return document.getElementById(id);
         },
         on = function(el, event, fn){
+          if (el){
                 if (el.addEventListener){
                     el.addEventListener(event,fn,false);
             } else if (el.attachEvent) {
                     el.attachEvent("on"+event, fn);
             }
+          }
          },
          r = function(s,e){
                 return Math.floor(Math.random() * e) + s;
