@@ -2501,6 +2501,10 @@ body.active-popup {
   font-weight: bold;
 }
 
+.products .tile.sold-out .shadow {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
 .products .tile.sold-out .notify-text {
   display: none;
   position: absolute;
