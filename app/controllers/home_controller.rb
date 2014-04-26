@@ -1,5 +1,11 @@
 class HomeController < ApplicationController
   def index
+
+    if request.subdomain and not ['', 'www'].include?(request.subdomain)
+      sub_charity = Charity.find_by_subdomain(request.subdomain)
+      flash.now[:notice] = "100% of your purchase will be directed to #{sub_charity.name}."
+    end
+
     enqueue_mix_panel_event "Visits Home Page"
 
     @venues = Venue.with_display_offers.page(params[:page]).per_page(9)
