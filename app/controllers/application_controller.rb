@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   #To respective app store to downloaf foodcircles app.
 
   def check_subdomain
-    unless ['', 'www'].include?(request.subdomain)
+    unless ['', 'www', 'staging'].include?(request.subdomain)
       sub_charity = Charity.find_by_subdomain(request.subdomain)
       unless sub_charity
         redirect_to BASE_URL
