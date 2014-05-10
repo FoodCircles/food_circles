@@ -1,3 +1,5 @@
+:javascript
+  usefunds = "#{@usefunds}";
 .popup.deal-popup
   .deal
     = form_tag("/stripe_payments.json", :method => "post", :id => "dealform", :remote => true, :"data-show-ajax-status-on" => "#dealbuy", :"data-processing-text" => "Processing ...") do

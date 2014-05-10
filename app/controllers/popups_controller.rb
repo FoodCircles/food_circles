@@ -7,6 +7,12 @@ class PopupsController < ApplicationController
     rescue ActiveRecord::RecordNotFound => e
       @offer = Venue.find(params[:id]).offers.first
     end
+
+    if request.subdomain and not ['', 'www'].include?(request.subdomain)
+      sub_charity = Charity.find_by_subdomain(request.subdomain)
+        @usefunds = sub_charity.use_funds
+    end
+
     @min_offer = @offer.venue.offers.order("min_diners ASC").first
   end
 

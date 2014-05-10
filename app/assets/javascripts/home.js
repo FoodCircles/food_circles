@@ -246,11 +246,19 @@
       });
       var $amount = $('.pay-box input[name=amount]').val();
       var $give_to = $('.deal-payment .give-to');
-      if($amount > 1){
-        $give_to.text("Give " + $amount + " Meals To")
-      } else {
-        $give_to.text("Give " + $amount + " Meal To")
+      if(usefunds == ''){
+      	usefunds = 'Give %amt% meal%s% to';
       }
+
+      var useFundsMsg = usefunds.replace(/%amt%/, $amount);
+
+      if($amount > 1){
+        useFundsMsg = useFundsMsg.replace(/%s%/, 's');
+      } else {
+        useFundsMsg = useFundsMsg.replace(/%s%/, '');
+      }
+
+      $give_to.text(useFundsMsg);
 		})
 
 		.on('click', '.deal-payment .back', function(event){
