@@ -7,7 +7,7 @@ Stripe::setApiKey($stripe_secret_key);
 date_default_timezone_set('America/Los_Angeles');
 $db = new mysqli("localhost", "kfb", "kfb", "kfb_donations");
 
-$email = $_GET['token']['email'];
+$email = $_GET['e_mail'];
 $token  = $_GET['token'];
 $amount = $_GET['amount'];
 $data = $_GET['metadata'];
@@ -69,7 +69,8 @@ if($recurring){
 				'currency' => 'usd',
 				'metadata' => array(
 					'designation' => $data['designation'],
-					'honormemory' => $data['honormemory']
+					'honormemory' => $data['honormemory'],
+					'subscribe_newsletter' => $data['subscribe_newsletter']
 				),
 			));
 
