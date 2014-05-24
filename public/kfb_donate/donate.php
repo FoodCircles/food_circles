@@ -16,24 +16,31 @@ $response->error = '';
 $response->error_detail = '';
 $error = false;
 
+try {
+	$customer = Stripe_Customer::create(array(
+    'email' => $email,
+    'card'  => $token['id']
+  ));
+} catch (Exception $e) {
+	$error = true;
+	$response->error = 'An unexpected error occurred. Please try again.';
+	$response->error_detail = $e->getMessage();
+}
 
-if($recurring){
-	try {
-		$customer = Stripe_Customer::create(array(
-	    'email' => $email,
-	    'card'  => $token['id'],
-	    'plan' => 'recurring_gift',
-	    'quantity' => $amount
-	  ));
-
-	} catch (Exception $e) {
-		$error = true;
-		$response->error = 'An unexpected error occurred. Please try again.';
-		$response->error_detail = $e->getMessage();
-	}
-
-	if (!$error) {
+if (!$error) {
+	if($recurring == 'true'){
+		
 		try {
+
+			$customer->subscriptions->create(array(
+				"plan" => "recurring_gift",
+				"quantity" => $amount,
+				'metadata' => array(
+					'designation' => $data['designation'],
+					'honormemory' => $data['honormemory'],
+					'subscribe_newsletter' => $data['subscribe_newsletter']
+				)
+			));
 
 			$response->amount = sprintf("%01.2f", $amount / 100);
 			$response->last4 = $token['card']['last4'];
@@ -47,21 +54,9 @@ if($recurring){
 			$response->error = 'An unexpected error occurred. Please try again.';
 			$response->error_detail = $e->getMessage();
 		}
-	}
 
-}else{
-	try {
-		$customer = Stripe_Customer::create(array(
-	    'email' => $email,
-	    'card'  => $token['id']
-	  ));
-	} catch (Exception $e) {
-		$error = true;
-		$response->error = 'An unexpected error occurred. Please try again.';
-		$response->error_detail = $e->getMessage();
-	}
-
-	if (!$error) {
+	}else{
+		
 		try {
 			$charge = Stripe_Charge::create(array(
 				'customer' => $customer->id,
@@ -86,8 +81,8 @@ if($recurring){
 			$response->error = 'An unexpected error occurred. Please try again.';
 			$response->error_detail = $e->getMessage();
 		}
-	}
 
+	}
 }
 
 
