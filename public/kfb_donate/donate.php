@@ -19,7 +19,10 @@ $error = false;
 try {
 	$customer = Stripe_Customer::create(array(
     'email' => $email,
-    'card'  => $token['id']
+    'card'  => $token['id'],
+		'metadata' => array(
+			'subscribe_newsletter' => $data['subscribe_newsletter']
+		)
   ));
 } catch (Exception $e) {
 	$error = true;
@@ -37,8 +40,7 @@ if (!$error) {
 				"quantity" => $amount,
 				'metadata' => array(
 					'designation' => $data['designation'],
-					'honormemory' => $data['honormemory'],
-					'subscribe_newsletter' => $data['subscribe_newsletter']
+					'honormemory' => $data['honormemory']
 				)
 			));
 
@@ -64,8 +66,7 @@ if (!$error) {
 				'currency' => 'usd',
 				'metadata' => array(
 					'designation' => $data['designation'],
-					'honormemory' => $data['honormemory'],
-					'subscribe_newsletter' => $data['subscribe_newsletter']
+					'honormemory' => $data['honormemory']
 				),
 			));
 
