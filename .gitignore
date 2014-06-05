@@ -36,3 +36,5 @@ private_docs/
 
 # Project Mgmt File. Ignore.
 Food Circles.esproj
+# Ignore application configuration
+/config/application.yml
