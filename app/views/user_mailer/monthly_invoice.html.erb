@@ -43,17 +43,15 @@
                                                                		
                                                                   Hey there!<br><br>
                                                                     
-                                                                  Here is our report on traffic at your restaurant in the month of <%= @calculations.month %><br><br>
+                                                                  Here is our report on traffic at your restaurant in the month of <%= @calculations.month %>.<br><br>
                                                                   
                                                                   
-                                                                  Quick Summary:<br>
+                                                                  Impact Summary:<br>
                                                                   <%- Charity.all.each do |charity| %>
                                                                     <%- unless @calculations.total_purchases_by_charities[charity.name].nil? %>
-                                                                    - <%= @calculations.total_purchases_by_charities[charity.name].round %> <%= charity.use_funds %> via <%= charity.name %> .<br><br>
+                                                                    - <%= @calculations.total_purchases_by_charities[charity.name].round %> <%= charity.use_funds %> via <%= charity.name %> <br><br>
                                                                     <% end %>
                                                                   <% end %>
-                                                                   
-                                                                  - The dishes you've donated make the difference you see in the Metrics above
                                                                  <br><br><br><br>
                                                                   
                                                                   
@@ -63,11 +61,11 @@
                                                                   <br><br>
                                                                   
                                                                   
-                                                                  <b>"Buy One, Feed One"</b> comes <b>alive</b> when you make it real your diners are doing something <b>special</b>.  These folks aren't coming in based on a deal, but based on the fact that you share a belief with them – that <b>no one</b> should go to bed hungry.  When you are proud of this, use our <a href="http://f.cl.ly/items/3y2B3u3M230e06273p1i/placard%20BV.jpg" style="color: inherit;font-weight: normal;text-decoration: underline;">table tent</a>, and thank your guest for participating, <b>it matters</b> to them.
+                                                                  <b>Marketing Tip:</b> Ask servers to notify the manager when they see a "Buy One, Feed One" group visit.  Have the manager briefly thank the guests for participating and ask how they came to join the movement. If you are out of <a href="http://f.cl.ly/items/3y2B3u3M230e06273p1i/placard%20BV.jpg" style="color: inherit;font-weight: normal;text-decoration: underline;">table tents</a>, reply here to request more.
                                                                   
                                                                   <br><br>
                                                                   A story from one of our users:<br>
-                                                                  <i>“What a great deal on our end and LOVE that it feeds hungry kids! Best app ever! We can’t wait to try new restaurants featured on the app. More restaurants should join.  Thank you for putting this together for us. - Ashley”</i>
+                                                                  <i>“I have a strong desire to feed those who are underprivileged, especially children, and more specifically, those in my own backyard. I'm excited to see that I can eat out, which my husband and I frequently do, and feed children with no additional effort.“ -Amber</i>
                                                             </div>
 														</td>
                                                     </tr>
