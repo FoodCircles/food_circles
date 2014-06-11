@@ -38,7 +38,7 @@
                                                 <table border="0" cellpadding="20" cellspacing="0" width="100%">
                                                     <tr>
                                                         <td valign="top" style="border-collapse: collapse;">
-                                                        	<img src="http://www.joinfoodcircles.org/email-templates/header-titles/report-ready.png" mc:edit="header-text" style="border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;"><br><br>
+                                                        	<img src="http://www.joinfoodcircles.org/email-templates/header-titles/report-ready.png" alt="Thank You." mc:edit="header-text" style="border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;"><br><br>
                                                             <div mc:edit="std_content00" style="color:#766a64; font-family:Arial; font-size:16px; line-height:150%; text-align:left;">
                                                                		
                                                                   Hey there!<br><br>
@@ -46,26 +46,26 @@
                                                                   Here is our report on traffic at your restaurant in the month of <%= @calculations.month %>.<br><br>
                                                                   
                                                                   
-                                                                  Impact Summary:<br>
+                                                                  <strong>Impact Summary:</strong><br>
                                                                   <%- Charity.all.each do |charity| %>
                                                                     <%- unless @calculations.total_purchases_by_charities[charity.name].nil? %>
                                                                     - <%= @calculations.total_purchases_by_charities[charity.name].round %> <%= charity.use_funds %> via <%= charity.name %> <br><br>
                                                                     <% end %>
                                                                   <% end %>
-                                                                 <br><br><br><br>
+                                                                 <br><br><br>
                                                                   
                                                                   
                                                                   <a href="<%= invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>">
                                                                   <img src="http://www.joinfoodcircles.org/email-button-monthly.png" width="560px" alt="View Report" style="border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;">
                                                                   </a>
+                                                                  <br><br><br>
+                                                                  
+                                                                  
+                                                                  <b>Build a Rapport:</b> Ask servers to notify the manager when they see a <strong>"Buy One, Feed One"</strong> group visit.  Have the manager briefly thank the guests for participating and ask how they came to join the movement. If you are out of <strong><a href="http://f.cl.ly/items/3y2B3u3M230e06273p1i/placard%20BV.jpg" style="color: inherit;font-weight: normal;text-decoration: underline;">table tents</a></strong>, reply here to request more.
+                                                                  
                                                                   <br><br>
-                                                                  
-                                                                  
-                                                                  <b>Marketing Tip:</b> Ask servers to notify the manager when they see a "Buy One, Feed One" group visit.  Have the manager briefly thank the guests for participating and ask how they came to join the movement. If you are out of <a href="http://f.cl.ly/items/3y2B3u3M230e06273p1i/placard%20BV.jpg" style="color: inherit;font-weight: normal;text-decoration: underline;">table tents</a>, reply here to request more.
-                                                                  
-                                                                  <br><br>
-                                                                  A story from one of our users:<br>
-                                                                  <i>“I have a strong desire to feed those who are underprivileged, especially children, and more specifically, those in my own backyard. I'm excited to see that I can eat out, which my husband and I frequently do, and feed children with no additional effort.“ -Amber</i>
+                                                                  Another story from a diner:<br>
+                                                                  <i>“I have a strong desire to feed those who are underprivileged, especially children, and more specifically, those in my own backyard. I'm excited to see that I can eat out, which my husband and I frequently do, and feed children with no additional effort. Thank you.“ -Amber</i>
                                                             </div>
 														</td>
                                                     </tr>
