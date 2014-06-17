@@ -9,7 +9,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'high_voltage'
 gem 'rack-cache', :require => 'rack/cache'
-gem 'dragonfly'
+gem 'dragonfly', "~> 0.9.15"
 gem "rails_admin", "~> 0.0.5"
 gem 'twilio-ruby'
 gem 'fastercsv'

@@ -90,7 +90,8 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     diff-lcs (1.2.4)
-    dragonfly (0.9.12)
+    dragonfly (0.9.15)
+      multi_json (~> 1.0)
       rack
     draper (1.3.0)
       actionpack (>= 3.0)
@@ -153,7 +154,7 @@ GEM
       actionpack
     method_source (0.8.1)
     mime-types (1.23)
-    multi_json (1.7.3)
+    multi_json (1.10.1)
     multi_xml (0.5.4)
     multipart-post (1.2.0)
     nokogiri (1.5.6)
@@ -323,7 +324,7 @@ DEPENDENCIES
   database_cleaner
   delayed_job_active_record!
   devise
-  dragonfly
+  dragonfly (~> 0.9.15)
   draper
   execjs
   factory_girl_rails
