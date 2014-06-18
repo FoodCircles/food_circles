@@ -46,4 +46,19 @@ class Charity < ActiveRecord::Base
     "#{self.address}, #{self.city}, #{self.state.name}"
   end
 
+  def msg_usefunds(amt)
+    uf = self.use_funds
+    uf['%amt%'] = amt.to_s if uf.include? '%amt%'
+
+    if uf.include? '%s%'
+      if amt > 1
+        uf['%s%'] = 's'
+      else
+        uf['%s%'] = ''
+      end
+    end
+    return uf
+  end
+
+
 end

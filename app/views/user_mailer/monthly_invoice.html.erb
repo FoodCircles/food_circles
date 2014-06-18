@@ -49,7 +49,7 @@
                                                                   <strong>Impact Summary:</strong><br>
                                                                   <%- Charity.all.each do |charity| %>
                                                                     <%- unless @calculations.total_purchases_by_charities[charity.id].nil? %>
-                                                                    - <%= @calculations.total_purchases_by_charities[charity.id].round %> <%= charity.use_funds %> via <%= charity.name %> <br><br>
+                                                                    - <%= charity.msg_usefunds(@calculations.total_purchases_by_charities[charity.id].round) %> via <%= charity.name %> <br><br>
                                                                     <% end %>
                                                                   <% end %>
                                                                  <br><br><br>
