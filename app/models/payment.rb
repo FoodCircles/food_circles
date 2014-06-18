@@ -1,6 +1,7 @@
 class Payment < ActiveRecord::Base
   EXPIRATION_DAYS = 30
   EXPIRING_SOON_DAYS = 7
+  FOLLOW_UP_DAYS = 4
 
   belongs_to :user
   belongs_to :offer
@@ -14,6 +15,8 @@ class Payment < ActiveRecord::Base
   scope :active_payments, where("state is null OR state = 'Active'")
 
   scope :expiring_soon, lambda { where("created_at > ? and created_at < ?", expiring_soon_date, expiring_soon_date + 24.hours) }
+
+  scope :follow_up, lambda { where("created_at > ? and created_at < ?", follow_up_date, follow_up_date + 24.hours) }
 
   def add_code
     unless self.code
@@ -49,6 +52,10 @@ class Payment < ActiveRecord::Base
 
   def self.expiring_soon_date
     (EXPIRATION_DAYS - EXPIRING_SOON_DAYS).days.ago.to_date
+  end
+
+  def self.follow_up_date
+    FOLLOW_UP_DAYS.days.ago.to_date
   end
 
 end

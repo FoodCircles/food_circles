@@ -104,6 +104,11 @@
     mail(:to => ADMIN_EMAIL, :subject => "Our Report for #{@calculations.month}")
   end
 
+  def followup_email(payment)
+    @payment = payment
+    mail(:to => ADMIN_EMAIL, :subject => "A followup from #{@payment.charity.name}")
+  end
+
   def postcard_notification(postcard)
     @postcard = postcard
     mail(:to => SUPPORT_EMAIL, :subject => "Postcard Alert")

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="background-color: #f2f2f2;">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  </head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color: #f2f2f2;-webkit-text-size-adjust: none;margin: 0;padding: 0;width: 100%;">
+      <center>
+          <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable" style="padding-top: 30px;margin: 0;padding: 0;background-color: #f2f2f2;height: 100%;width: 100%;">
+              <tr>
+                  <td align="center" valign="top" style="border-collapse: collapse;">
+                      <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer" style="margin-top: 30px;border: 0px solid #DDDDDD;background-color: #FFFFFF;box-shadow: 0px 0px 10px #cecece;">
+                          <tr>
+                              <td align="center" valign="top" style="border-collapse: collapse;">
+                                    <!-- // Begin Template Header \ -->
+                                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0;">
+                                        <tr>
+                                            <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Arial;font-size: 34px;font-weight: bold;line-height: 100%;padding: 0;text-align: center;vertical-align: middle;">
+                                            
+                                              <!-- // Begin Module: Standard Header Image \ -->
+                                              <%= image_tag 'mails/followup_header.png' , :style => "width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;", :id => "headerImage campaign-icon" %>
+                                              <!-- // End Module: Standard Header Image \ -->
+                                            
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Header \ -->
+                                </td>
+                            </tr>
+                          <tr>
+                              <td align="center" valign="top" style="border-collapse: collapse;">
+                                    <!-- // Begin Template Body \ -->
+                                  <table border="0" cellpadding="0" cellspacing="0" width="598" id="templateBody" style="background-color: #fff;">
+                                      <tr>
+                                            <td valign="top" class="bodyContent" style="color: #766a64;font-family: Arial;font-size: 16px;line-height: 150%;text-align: left;border-collapse: collapse;background-color: #fff; border: 0px solid #333;">
+                                
+                                                <!-- // Begin Module: Standard Content \ -->
+                                                <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td valign="top" style="border-collapse: collapse;">
+                                                          <%= image_tag 'mails/followup_head.png' , :style => "border: 0; border-top: 9px solid #fff;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" %>
+                                                          <br><br>
+                                                            <div mc:edit="std_content00" style="color:#4e3e34; font-family:'Helvetica', Arial; font-weight: 300; font-size:18px; line-height:125%; text-align:left;">
+                                                                  
+                                                                  At FoodCircles we think it's important for you to hear, "Thank you." from the people you impact. Accordingly, we've got a message for you from <b><%= @payment.charity.name %></b>:
+                                                                  <br>
+                                                                  
+                                                                  <div style="width: 470px; font-weight: 300; font-family: 'Helvetica';font-style: italic; font-size: 15px; color: #5d4a3e; line-height: 130%; margin-left: auto; margin-right: auto; padding-top: 20px;">
+                                                                  <%= simple_format(@payment.charity.follow_up_notes.order('random()').first().note) %>
+                                                                  <hr style="margin-top: 15px; margin-bottom: 25px;height: 1px; border: 0; border-top: 2px solid #cbcbcb;">
+                                                                  </div>
+                                                                  
+                                                                  <center>
+                                                                  We've added this purchase (<%= @payment.amount.round %> <%= @payment.charity.use_funds %>) to your <a href="" style="color: #a34a4b; font-weight: bold; font-style: normal; text-decoration: none;">FoodCircles Timeline</a>. Thanks again.
+                                                                  
+                                                                  <br><br>
+                                                                  
+                                                                  <div style="width: 500px; text-align: center;">
+                                                                    <a href="http://"><img src="facebook.png" alt="" width="200" /></a>
+                                                                    <a href="http://"><img src="twitter.png" alt="" width="200" /></a>
+                                                                  </div>
+                                                                  
+                                                                  <br><br>
+                                                                  <div style="font-family: 'Helvetica Neue'; width: 500px; color: #999; font-size: 12px; line-height: 1.5em;">
+                                                                  
+                                                                  ps. <b><%= @payment.offer.venue.name %></b> definitely deserves some credit and we think they're doing some pretty cool things online.
+                                                                  <%- if @payment.offer.venue.social_links.any? %>
+                                                                    Check 'em out and say hello via
+                                                                    <%- @payment.offer.venue.social_links.each do |social_link| %><%=
+                                                                      ',' unless social_link == @payment.offer.venue.social_links.first
+                                                                      %><%=
+                                                                      ' or ' if social_link == @payment.offer.venue.social_links.last
+                                                                      %><a href="<%= social_link.url %>" style="color: #a34a4b; font-weight: bold; text-decoration: none;"><%= social_link.source %></a><%end%>
+                                                                  <%end%>
+                                                                  </div>
+                                                                  </center>
+                                                                  
+                                                                                                                              </div>
+                            </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- // End Module: Standard Content \ -->
+                                                
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Body \ -->
+                                </td>
+                            </tr>
+                                        
+                                    </table>
+                                    <!-- // End Template Footer \ -->
+                                    
+                                    </td></tr>
+                        </table>
+                        <br>
+        </center>
+    </body>
+</html>
