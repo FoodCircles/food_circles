@@ -99,7 +99,8 @@
   end
 
   def monthly_invoice(venue, months_before = 1)
-    @calculations = Calculations::Monthly.new(venue, months_before)
+    d = months_before.month.ago
+    @calculations = Calculations::Monthly.new(venue, d.month.to_s + "_" + d.year.to_s)
     mail(:to => ADMIN_EMAIL, :subject => "Our Report for #{@calculations.month}")
   end
 

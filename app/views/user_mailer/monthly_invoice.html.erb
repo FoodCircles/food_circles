@@ -48,14 +48,14 @@
                                                                   
                                                                   <strong>Impact Summary:</strong><br>
                                                                   <%- Charity.all.each do |charity| %>
-                                                                    <%- unless @calculations.total_purchases_by_charities[charity.name].nil? %>
-                                                                    - <%= @calculations.total_purchases_by_charities[charity.name].round %> <%= charity.use_funds %> via <%= charity.name %> <br><br>
+                                                                    <%- unless @calculations.total_purchases_by_charities[charity.id].nil? %>
+                                                                    - <%= @calculations.total_purchases_by_charities[charity.id].round %> <%= charity.use_funds %> via <%= charity.name %> <br><br>
                                                                     <% end %>
                                                                   <% end %>
                                                                  <br><br><br>
                                                                   
                                                                   
-                                                                  <a href="<%= invoice_url(vid: @calculations.venue.id, months_before: @calculations.months_before) %>">
+                                                                  <a href="<%= invoice_url(vid: @calculations.venue.id, date: @calculations.link_date) %>">
                                                                   <img src="http://www.joinfoodcircles.org/email-button-monthly.png" width="560px" alt="View Report" style="border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;">
                                                                   </a>
                                                                   <br><br><br>

@@ -1,10 +1,10 @@
-function change_view(vid,months_before){
+function change_view(vid,date){
 
     $("#loading").show();
 
     $.ajax({
         type: 'GET',
-        url: '/monthly_invoice?vid='+vid+'&months_before='+months_before+'&input_note='+input_note,
+        url: '/monthly_invoice?vid='+vid+'&date='+date+'&input_note='+input_note,
         success: function(data) {
 
             if(data == "") {

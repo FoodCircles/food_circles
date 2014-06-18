@@ -37,7 +37,7 @@
         }
 
 
-        change_view("<%= @calculations.venue.id %>","<%=@calculations.months_before %>",input_note) ;
+        change_view("<%= @calculations.venue.id %>","<%=@calculations.date %>",input_note) ;
 
 
 
@@ -55,7 +55,7 @@
             var Id = jQuery(this).attr("id");
             if(Id == "amount_heading")
             {
-                change_view("<%= @calculations.venue.id %>","<%=@calculations.months_before %>");
+                change_view("<%= @calculations.venue.id %>","<%=@calculations.date %>");
             }
 
 
@@ -330,7 +330,7 @@
       <tr>
         <td colspan="4" class="amount"></td>
 
-        <td style="text-align:right;"><b>Children Fed</b></td>
+        <td style="text-align:right;"><b>Results</b></td>
             <td style="text-align:right;"><b><%= @calculations.human_readable_summary %></b></td>
       </tr>
       <tr>
@@ -359,8 +359,8 @@
       <tr>
         <td><%= @calculations.payments.count %></td>
         <td><%= @calculations.payments.sum &:num_diners %></td>
-        <% @calculations.charity_names.each do |charity_name|%>
-            <th><%= @calculations.total_purchases_by_charities[charity_name].round %></th>
+        <% @calculations.charity_ids.each do |charity_id|%>
+            <th><%= @calculations.total_purchases_by_charities[charity_id].round %></th>
         <% end %>
       </tr>
       <tr>
@@ -368,9 +368,8 @@
             <td colspan="4" style="color:#000000;"><%= params[:input_note] %></td>
         <%- else  %>
             <td colspan="4" style="color:#000000;" id="note_cp"><div id="remove">
-              We so appreciate <b><%= @calculations.venue.name %></b>'s as a "Buy One, Feed One" restaurant in our community. The dishes you've donated will end up feeding <%= @calculations.human_readable_summary %>.
+              We so appreciate <b><%= @calculations.venue.name %></b>'s as a "Buy One, Feed One" restaurant in our community. The dishes you've donated make the difference you see in the Metrics above.
               If you're not on our automated subscription plan you may receive a separate invoice in the mail. Please call or email with any questions. We would love to hear from you.</div>
-              <div class = "edit_able" id = "note"><b><i>Edit message.</i></b> </div>
             </td>
         <% end  %>
 
@@ -380,7 +379,7 @@
     </table></br>
 
     <div  style ='text-align:center; margin-top:160px' id="download">
-      <%= button_to "Download", invoice_path(:vid => @calculations.venue.id, :months_before => @calculations.months_before,:input_note => params[:input_note], :format => 'pdf') %>    </div>
+      <%= button_to "Download", invoice_path(:vid => @calculations.venue.id, :date => @calculations.date,:input_note => params[:input_note], :format => 'pdf') %>    </div>
   </div>
   <div id="loading" style="position: absolute; width: 100%; height: 100%; top:0"><div style="background-color: #ff8c00; color: #ffffff; width: 70px; margin:200px auto 0;"><b>Loading....</b></div></div>
 </div>
