@@ -1719,7 +1719,7 @@ body.active-popup {
 /*=== Banner - Paging ===*/
 
 .banner .paging { position: absolute; top: 50%; left: 50%; z-index: 3; width: 300px; height: 32px; margin: -16px 0 0 -150px; text-align: center; font-size: 0; line-height: 0; }
-.banner .paging a { display: inline-block; vertical-align: top; color: transparent; width: 32px; height: 32px; background: url(image_path('inactive-indicator.png')) no-repeat center center; margin: 0 3px; *display: inline; *zoom: 1; }
+.banner .paging a { display: inline-block; vertical-align: top; color: transparent; width: 32px; height: 2px; background: url(image_path('inactive-indicator.png')) no-repeat center center; margin: 18px 3px; *display: inline; *zoom: 1; }
 
 .banner .paging a:hover,
 .banner .paging a.selected {
