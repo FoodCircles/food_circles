@@ -330,8 +330,8 @@
       <tr>
         <td colspan="4" class="amount"></td>
 
-        <td style="text-align:right;"><b>Results</b></td>
-            <td style="text-align:right;"><b><%= @calculations.human_readable_summary %></b></td>
+        <td style="text-align:left;"><b>Metrics</b></td>
+            <td style="text-align:left;"><b><%= @calculations.human_readable_summary %></b></td>
       </tr>
       <tr>
         <td colspan="3" class="amount"></td>
@@ -368,8 +368,7 @@
             <td colspan="4" style="color:#000000;"><%= params[:input_note] %></td>
         <%- else  %>
             <td colspan="4" style="color:#000000;" id="note_cp"><div id="remove">
-              We so appreciate <b><%= @calculations.venue.name %></b>'s as a "Buy One, Feed One" restaurant in our community. The dishes you've donated make the difference you see in the Metrics above.
-              If you're not on our automated subscription plan you may receive a separate invoice in the mail. Please call or email with any questions. We would love to hear from you.</div>
+              We so appreciate <b><%= @calculations.venue.name %></b>'s as a "Buy One, Feed One" restaurant in our community. The dishes you've donated make the difference you see in the Metrics above. Please call or email with any questions. We would love to hear from you.</div>
             </td>
         <% end  %>
 
