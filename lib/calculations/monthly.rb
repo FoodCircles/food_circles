@@ -27,7 +27,7 @@ module Calculations
     end
 
     def human_readable_summary
-      total_purchases_by_charities.map{|charity_id, total_purchase| "#{total_purchase.round} #{Charity.find(charity_id).use_funds} via #{Charity.find(charity_id).name}"}.to_sentence
+      total_purchases_by_charities.map{|charity_id, total_purchase| Charity.find(charity_id).msg_usefunds(total_purchase.round)}.to_sentence
     end
 
     def date
