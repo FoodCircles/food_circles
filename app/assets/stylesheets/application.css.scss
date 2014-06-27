@@ -1718,7 +1718,7 @@ body.active-popup {
 
 /*=== Banner - Paging ===*/
 
-.banner .paging { position: absolute; top: 50%; left: 50%; z-index: 3; width: 300px; height: 32px; margin: -16px 0 0 -150px; text-align: center; font-size: 0; line-height: 0; }
+.banner .paging { position: absolute; top: 50%; left: 50%; z-index: 3; width: 300px; height: 33px; margin: -17px 0 0 -150px; text-align: center; font-size: 0; line-height: 0; }
 .banner .paging a { display: inline-block; vertical-align: top; color: transparent; width: 32px; height: 2px; background: url(image_path('inactive-indicator.png')) no-repeat center center; margin: 18px 3px; *display: inline; *zoom: 1; }
 
 .banner .paging a:hover,
@@ -1763,9 +1763,8 @@ body.active-popup {
 	font-size: 27px;
 	font-weight: 300;
 	letter-spacing: 1.5px;
-	text-transform: lowercase;
 	display: block;
-	margin-top: 10px;
+	margin-top: 16px;
 	text-align: center;
 }
 
