@@ -14,6 +14,8 @@ Foodcircles::Application.routes.draw do
   get 'payment/send_text' => 'payment#send_text' , :as => "payment_send_text"
 
 
+  get 'signup' => 'signup#index'
+
   resource :inbox, :controller => 'inbox', :only => [:show, :create]
 
   match '/auth/:provider/callback', :to => 'sessions#create', as: 'callback'
