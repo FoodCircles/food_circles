@@ -101,7 +101,7 @@
   def monthly_invoice(venue, months_before = 1)
     d = months_before.month.ago
     @calculations = Calculations::Monthly.new(venue, d.month.to_s + "_" + d.year.to_s)
-    mail(:to => venue.email, cc: ADMIN_EMAIL, :subject => "And then here's your report for #{@calculations.month}")
+    mail(:to => ADMIN_EMAIL, :subject => "#{@calculations.month} impact reports are in.")
   end
 
   def followup_email(payment)
@@ -118,7 +118,7 @@
     payment = Payment.find_by_id(payment_id)
     @payment = payment.decorate
 
-    mail(:to => payment.user.email, :reply_to => 'used@inbound.foodcircles.net', :subject => "FoodCircles Voucher Expiring Soon")
+    mail(:to => payment.user.email, :reply_to => 'used@inbound.foodcircles.net', :subject => "Hanging out with friends this week? Grabbing food could be an option")
   end
 
   def badge_email(email, category, title)
