@@ -61,7 +61,7 @@
                                                         <div mc:edit="std_content00" style="color:#766a64; font-family:Arial; font-size:16px; line-height:150%; text-align:left;">
                                                            		
                                                               Your purchase for <%= @payment.offer.name %> at <%= @payment.offer.venue.name %> expires soon
-                                                              <strong>(<%= @payment.short_expiration_date %>)</strong>, and we just wanted to shoot you a reminder.
+                                                              <strong>(<%= @payment.short_expiration_date %>)</strong>, and we just wanted to shoot you a reminder.  Or if you've already used it, just hit the button below.
                                                               Your "Buy One, Feed One" dish is special.
                                                               It goes to feed <%= @payment.amount.truncate %>  children through <%= @payment.charity.name %> and
                                                               our restaurant would love to thank you for your purchase.
@@ -96,9 +96,14 @@
                                                               <br/>
                                                               --
                                                               <br/>
-                                                              <a href="http://staging.foodcircles.net/payment/used?code=#{payment.code}&source=email"><img src="http://f.cl.ly/items/3E2T1U2b240a270B0c2R/mark-as-used.png" alt="Mark as Used" align="middle" height="136" width="458"></a>
+                                                              <a href="http://staging.foodcircles.net/payment/used?code=<%= @payment.code %>&amp;source=email">
+                                                                   <img src=
+                                                                   "http://f.cl.ly/items/3E2T1U2b240a270B0c2R/mark-as-used.png"
+                                                                   alt="Mark as Used" align=
+                                                                   "middle" height="136" width=
+                                                                   "458"></a>
                                                               <br>
-                                                              or REPLY "USED" ANYWHERE IN THE BODY OR SUBJECT TO MARK THIS VOUCHER AS USED
+                                                              (or reply with "used" in the body or subject)
                                                         </div>
                                                     </td>
                                                 </tr>
