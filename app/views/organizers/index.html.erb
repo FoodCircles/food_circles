@@ -79,11 +79,11 @@
                 <p>Please enter an email or phone number for us to follow up with.</p>
                 <%= text_field_tag :email, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>Where Should We Donate Meals?</h2>
-                <%= radio_button_tag :donation, 'locally', value: 'locally', class: "custom-input", id: 'donation_locally', checked: 'checked' %>
-                <%= label_tag 'locally', 'Locally - <a href="www.kidsfoodbasket.org">www.kidsfoodbasket.org</a>'.html_safe, for: 'donation_locally' %>
+                <%= radio_button_tag :donation, 'Grand Rapids', value: 'Grand Rapids', class: "custom-input", id: 'donation_GR', checked: 'checked' %>
+                <%= label_tag 'GR', 'Grand Rapids - <a href="www.kidsfoodbasket.org">www.kidsfoodbasket.org</a>'.html_safe, for: 'donation_GR' %>
                 <br />
-                <%= radio_button_tag :donation, 'globally', value: 'globally', class: "custom-input"%>
-                <%= label_tag 'globally', 'West Africa - <a href="http://donate.worldvision.org/OA_HTML/xxwv2ibeCCtpItmDspRte.jsp?funnel=dn&item=1753174&go=item&section=10366&">www.worldvision.org</a>'.html_safe, for: 'donation_globally' %>
+                <%= radio_button_tag :donation, 'West Michigan', value: 'West Michigan', class: "custom-input"%>
+                <%= label_tag 'WMI', 'West Michigan - <a href="https://www.feedingamericawestmichigan.org/donate/">www.feedingamericawestmichigan.org</a>'.html_safe, for: 'donation_WMI' %>
                 <br />
                 <h2>Any other comments or feedback?</h2>
                 <%= text_area_tag :feedback, nil, rows: "10", cols: "60", class: 'field standart organizers-field' %><br />
