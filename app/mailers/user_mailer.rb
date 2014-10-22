@@ -88,7 +88,7 @@
   end
 
   def organizers_notify(email, location, address, date, num_diners, occassion, budget, food_preferences, donation, feedback)
-    mail(:to => 'riley@joinfoodcircles.org', cc: ADMIN_EMAIL, :subject => "New Organizers Request", :body => "An organizer would like to join FoodCircles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
+    mail(:to => ADMIN_EMAIL, :subject => "New Organizers Request", :body => "An organizer would like to join FoodCircles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
   end
 
   def notification_about_available_vouchers(user, venue)
@@ -101,7 +101,7 @@
   def monthly_invoice(venue, months_before = 1)
     d = months_before.month.ago
     @calculations = Calculations::Monthly.new(venue, d.month.to_s + "_" + d.year.to_s)
-    mail(:to => venue.email, cc: ADMIN_EMAIL, :subject => "Impact reports are in for #{@calculations.month}")
+    mail(:to => venue.email, cc: ADMIN_EMAIL, :reply_to => 'hey@joinfoodcircles.org', :subject => "Your #{@calculations.month} impact report")
   end
 
   def followup_email(payment)
