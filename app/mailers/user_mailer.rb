@@ -1,7 +1,7 @@
 ﻿class UserMailer < ActionMailer::Base
   add_template_helper(ApplicationHelper)
 
-  ADMIN_EMAIL = 'jk@joinfoodcircles.org'
+  ADMIN_EMAIL = 'pabloseibelt@gmail.com'
   SUPPORT_EMAIL = 'support@joinfoodcircles.org'
 
   #fc_dev: Mandrill credentials for email.
@@ -106,6 +106,17 @@
 
   def followup_email(payment)
     @payment = payment
+    fun = @payment.charity.follow_up_notes
+    used_fun = @payment.user.follow_up_notes
+    available_fun = fun - used_fun
+
+    if available_fun.size > 0
+      @selected_fun = available_fun.sample
+      @payment.user.follow_up_notes << @selected_fun
+    else
+      @selected_fun = nil
+    end
+    
     mail(:to => ADMIN_EMAIL, :subject => "A followup from #{@payment.charity.name}")
   end
 

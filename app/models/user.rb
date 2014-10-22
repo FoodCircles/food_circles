@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   has_many :watched_venues, :through => :notification_requests, :source => :venue
   has_many :external_uids, :class_name => "ExternalUID", :dependent => :destroy
 
+  has_and_belongs_to_many :follow_up_notes
+
   before_save :format
   
   before_save :ensure_authentication_token

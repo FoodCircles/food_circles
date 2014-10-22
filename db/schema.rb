@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140405200325) do
+ActiveRecord::Schema.define(:version => 20141009033205) do
 
   create_table "badges", :force => true do |t|
     t.string   "code"
@@ -96,6 +96,11 @@ ActiveRecord::Schema.define(:version => 20140405200325) do
   end
 
   add_index "follow_up_notes", ["charity_id"], :name => "index_follow_up_notes_on_charity_id"
+
+  create_table "follow_up_notes_users", :id => false, :force => true do |t|
+    t.integer "follow_up_note_id"
+    t.integer "user_id"
+  end
 
   create_table "invoices", :force => true do |t|
     t.string   "group_name"
