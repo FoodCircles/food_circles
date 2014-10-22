@@ -1,7 +1,7 @@
 ﻿class UserMailer < ActionMailer::Base
   add_template_helper(ApplicationHelper)
 
-  ADMIN_EMAIL = 'pabloseibelt@gmail.com'
+  ADMIN_EMAIL = 'jk@joinfoodcircles.org'
   SUPPORT_EMAIL = 'support@joinfoodcircles.org'
 
   #fc_dev: Mandrill credentials for email.
