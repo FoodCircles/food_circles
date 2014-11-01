@@ -28,6 +28,8 @@ module PaymentCommons
       @friends_payments.flatten.uniq
     rescue Twitter::Error::TooManyRequests => e
       logger.debug "HIT THE RATE LIMIT"
+    rescue Twitter::Error::Forbidden => e
+      logger.debug "WRONG TWITTER CREDS"
     end
   end
 
