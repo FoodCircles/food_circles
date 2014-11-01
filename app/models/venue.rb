@@ -28,7 +28,6 @@ class Venue < ActiveRecord::Base
 
   PLACES_KEY = "AIzaSyA3XZ8R5H4Q8xsnaMMJKIPYxiBadpAt_a4"
   SRID = 4326
-  MIN_DISPLAY_DINERS = 2
 
   set_rgeo_factory_for_column(:latlon,
                               RGeo::Geographic.spherical_factory(:srid => SRID))
@@ -297,6 +296,6 @@ class Venue < ActiveRecord::Base
   end
 
   def self.with_display_offers
-    joins(:offers).where("offers.min_diners = ?", MIN_DISPLAY_DINERS).uniq
+    joins(:offers).uniq
   end
 end
