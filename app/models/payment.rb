@@ -14,6 +14,8 @@ class Payment < ActiveRecord::Base
 
   scope :active_payments, where("state is null OR state = 'Active'")
 
+  scope :valid_payments, where("offer.venue is not null")
+
   scope :expiring_soon, lambda { where("created_at > ? and created_at < ?", expiring_soon_date, expiring_soon_date + 24.hours) }
 
   scope :follow_up, lambda { where("created_at > ? and created_at < ?", follow_up_date, follow_up_date + 24.hours) }

@@ -36,7 +36,7 @@ module PaymentCommons
   end
 
   def load_payments
-    @payments = current_user.payments.order("created_at DESC")
+    @payments = current_user.payments.order("created_at DESC").joins(:offers).uniq
   end
 
   def load_weekly_total
