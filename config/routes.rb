@@ -68,6 +68,7 @@ Foodcircles::Application.routes.draw do
   resources :nonprofits
   resources :students
   resources :organizers
+  resources :nominate
 
   scope "mobi" do
     resources :payments

@@ -1,0 +1,219 @@
+  h1 {
+  color: #4e3e34;
+}
+
+h2 {
+  font-size: 24px;
+  color: #4e3e34;text-align: center;
+  font-family: "NeutrafaceSlab", "Neutraface Slab", serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+
+.placard {
+  width: 100%;
+  background-image: linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
+background-image: -o-linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
+background-image: -moz-linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
+background-image: -webkit-linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
+background-image: -ms-linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
+
+background-image: -webkit-gradient(
+  linear,
+  left top,
+  right bottom,
+  color-stop(0.11, #FFFFFF),
+  color-stop(0.56, #F7F7F7)
+);
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  margin-top: 40px;
+  -moz-box-shadow: 3px 3px 2px #d6cdbd;
+  -webkit-box-shadow: 3px 3px 2px #d6cdbd;
+  box-shadow: 3px 3px 2px #d6cdbd;
+  text-align: center;
+  display: block;
+  padding: 50px 0;
+  color: #4e3e34;
+  position: relative;
+  font-family: "NeutrafaceSlab", serif;
+}
+
+.placard-body {
+  position: relative;
+  top: -70px;
+}
+
+.placard h1 {
+  font-size: 30px;
+  font-family: "NeutrafaceSlab", serif;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 30px;
+  color: #4e3e34;
+}
+
+.placard h2 {
+  font-size: 18px;
+  font-family: "NeutrafaceSlab", serif;
+  color: #4e3e34;
+}
+
+.placard p {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
+  color: #4e3e34;
+}
+
+.organizers-arrow {
+  position: relative;
+
+  top: -50px;
+  left: 60px;
+}
+
+.image-alpha {
+  position: relative;
+  left: 30px;
+}
+
+.organizers-steps {
+  width: 150px;
+}
+
+.stringleft{
+  position: absolute;
+  top: -80px;
+  left: 100px;
+}
+
+.stringright{
+  position: absolute;
+  top: -80px;
+  right: 100px;
+}
+
+.omega {
+
+  margin-bottom: 100px;
+}
+
+.steps {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.steps p {
+  width: 90%;
+  margin: 15px auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
+}
+
+.steps h3 {
+  font-size: 20px;
+}
+
+.step1 {
+  width: 32%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.step2 {
+  width: 32%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.step3 {
+  width: 32%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#needtoknow {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#jointhecause {
+  display: inline-block;
+}
+
+.alpha {
+  color: #4e3e34;
+}
+
+.beta {
+  color: #4e3e34;
+}
+
+.beta h1, .beta h2, .beta p {
+  color: #4e3e34;
+}
+
+.leadchar {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+#restaurant-invite {
+  margin-top: 30px;
+}
+
+#organizers {
+  text-align: left;
+  padding: 0 60px 0 60px;
+  margin-top: 40px;
+}
+
+#organizers h2 {
+  text-align: left;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 25px;
+  font-family: "NeutrafaceSlab", serif;
+}
+
+#organizers p {
+  font-size: 16px;
+  font-weight: 200;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
+  font-style: italic;
+  padding-bottom: 0;
+}
+
+#organizers label {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
+  color: #423f37;
+}
+
+#organizers input, #organizers textarea {
+  margin-bottom: 5px;
+}
+label {
+  margin: 10px;
+}
+
+#organizers-submit-button {
+  text-align: center;
+}
+
+
+.responses {
+  text-align: left;
+  padding-left: 50px;
+}
+
+.responses p {
+  line-height: 30px;
+  color: #8a857f;
+}
+
+.answer {
+  font-weight: bold;
+}
