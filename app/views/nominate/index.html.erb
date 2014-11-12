@@ -16,9 +16,9 @@
           <h1>Share a Slice of a Family's Story</h1>
           <div id="needtoknow">
           <p>
-            <strong>The Gilmore Collection is cooking a special meal for five families this Thanksgiving.</strong> Please let us know about a family that may not be able to enjoy a traditional Thanksgiving meal on their own. Names will not be released publicly.</p>
-          <br></br>
-          <p>So we can let selected families know in advance, deadline to nominate is <strong>Friday midnight, 21st of November.</strong></p>
+            <strong>The Gilmore Collection is cooking a special meal for five families this Thanksgiving.</strong> Please let us know about a family that may not be able to enjoy a traditional Thanksgiving meal on their own. The team at FoodCircles & Gilmore will select five familes and deliver the meals the night before Thanksgiving. Names will not be released publicly.</p>
+          <br>
+          <p>Selected families will be notified in advance. The deadline to nominate is <strong>Friday midnight, 21st of November.</strong></p>
           </div>
         </div>
 
@@ -26,7 +26,7 @@
             <%= image_tag "stringleft.png", class:"stringleft" %>
             <%= image_tag "stringright.png", class:"stringright" %>
 
-            <h1>Nominate-A-Family</h1>
+            <h1>Nominate a Family</h1>
             <%= form_tag '/nominate', :id => "nominate", method: :post do %>
                 <h2>Name of the family?</h2>
                 <%= text_field_tag :name, nil, size: "60", class: 'field standart organizers-field' %>
