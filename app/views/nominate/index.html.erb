@@ -10,81 +10,33 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="container">
-        <h2>Need <span id="meal">lunch</span> for <span id="number">80</span> on <span id="day">Friday</span>? Done.</h2>
-
-        <div class="placard alpha">
-                <h1>Get Fed in 3 Steps</h1>
-
-            <div class="steps">
-                <div class="step1">
-                    <h2>Tell us about your event</h2>
-                   <%= image_tag "organizers/organizers-tellus.png", class:"organizers-steps image-alpha" %>
-                   <%= image_tag "organizers/organizers-arrow.png", class:"organizers-arrow" %>
-                   <p>Fill out the form below to let us know the Who, Where, When, and budget.</p>
-                </div>
-                <div class="step2">
-                    <h2>We'll collect bids</h2>
-                    <%= image_tag "organizers/organizers-bids.png", class:"organizers-steps image-alpha" %>
-                    <%= image_tag "organizers/organizers-arrow.png", class:"organizers-arrow" %>
-                    <p>Many places would LOVE to host/serve your event. We'll make sure you get the best deal possible.</p>
-                </div>
-                <div class="step3">
-                    <h2>Pick a vendor</h2>
-                    <%= image_tag "organizers/organizers-vendor.png", class:"organizers-steps" %>
-                    <p>You get to choose from a couple of different options. Pick a vendor and pay them directly.</p>
-                </div>
-
-            </div>
-        </div>
+        <h2>Nominate a Family for a Thankgiving from Gilmore Collection</h2>
 
         <div class="placard beta">
-          <%= image_tag "stringleft.png", class:"stringleft" %>
-          <%= image_tag "stringright.png", class:"stringright" %>
-
-          <h1>For Every Head You Feed, We Fed One Too.</h1>
+          <h1>Share a Slice of a Family's Story</h1>
           <div id="needtoknow">
-          <p><strong>Our goal is to save you time, money, and feed many hungry children in the process.</strong> 10% of what you spend will go directly to putting dinner on the table for those in need, and all we ask is that you pass along the word about our apps and site.</p>
+          <p>
+            <strong>The Gilmore Collection is cooking a special meal for five families this Thanksgiving.</strong> Please let us know about a family that may not be able to enjoy a traditional meal on their own. Let us know who they are and a bit of their story. <strong>Names will not be released publicly.</strong></p>
           <br></br>
-          <p>Bids will be returned within 24-48 hours. Please register your event far in advance for the restaurants when possible. Thanks!</p>
+          <p>So we can let families know in advance, deadline to nominate is Friday, 21st of November Midnight.</p>
           </div>
         </div>
 
         <div class="placard omega">
-          <%= image_tag "stringleft.png", class:"stringleft" %>
-          <%= image_tag "stringright.png", class:"stringright" %>
 
             <h1>Sign up</h1>
             <%= form_tag '/nominate', :id => "nominate", method: :post do %>
-                <h2>Are you looking for a venue or do you have the space set?</h2>
-                <%= radio_button_tag :location, 'at the restaurant', value: "1", class: "custom-input" %>
-                <%= label_tag 'at the restaurant', 'I want a venue' %>
-                <br />
-                <%= radio_button_tag :location, 'different location', value: "2", class: "custom-input" %>
-                <%= label_tag 'different location', "We've got a venue" %>
-                <br />
-                <%= text_field_tag :address, nil, placeholder: "Delivery address", size: "60", class: 'field standart organizers-field' %>
-                <h2>What date and time will this event be?</h2>
+                <h2>Name of the family?</h2>
                 <%= text_field_tag :date, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>How many people would you like to order food for?</h2>
-                <%= text_field_tag :num_people, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>Is there an occasion? (e.g., a wedding, meetup, or work celebration?)</h2>
-                <%= text_field_tag :occassion, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>Is there a specified budget?</h2>
-                <p>Add a desired per head or total cost here</p>
+                <h2>If selected, how may we get in contact with them?</h2>
+                <p>Known phone number, or email?</p>
                 <%= text_field_tag :budget, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>We will send you some great recommendations, but are there any preferences right off the bat?</h2>
-                <p>(food types, spicy/non-spicy, allergies, etc.)</p>
-                <%= text_field_tag :food_preferences, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>Who's the ringleader?</h2>
-                <p>Please enter an email or phone number for us to follow up with.</p>
+                <h2>Share their story or current circumstances here.</h2>
+                <p>(will not be released publicly)</p>
+                <%= text_field_tag :food_preferences, nil, rows: "10", cols: "60", class: 'field standart organizers-field' %>
+                <h2>How may we get in contact with you?</h2>
+                <p>In case we need help getting in touch with the family.</p>
                 <%= text_field_tag :email, nil, size: "60", class: 'field standart organizers-field' %>
-                <h2>Where Should We Donate Meals?</h2>
-                <%= radio_button_tag :donation, 'Grand Rapids', value: 'Grand Rapids', class: "custom-input", id: 'donation_GR', checked: 'checked' %>
-                <%= label_tag 'GR', 'Grand Rapids - <a href="www.kidsfoodbasket.org">www.kidsfoodbasket.org</a>'.html_safe, for: 'donation_GR' %>
-                <br />
-                <%= radio_button_tag :donation, 'West Michigan', value: 'West Michigan', class: "custom-input"%>
-                <%= label_tag 'WMI', 'West Michigan - <a href="https://www.feedingamericawestmichigan.org/donate/">www.feedingamericawestmichigan.org</a>'.html_safe, for: 'donation_WMI' %>
-                <br />
                 <h2>Any other comments or feedback?</h2>
                 <%= text_area_tag :feedback, nil, rows: "10", cols: "60", class: 'field standart organizers-field' %><br />
                 <%= submit_tag "Submit", :class => "btn-standart" %>
