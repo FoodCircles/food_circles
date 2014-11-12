@@ -1,21 +1,17 @@
 <div class="container">
   <div class="placard alpha">
-    <h1>Thanks for your event request!</h1>
-    <h2>We got your submission and we will be contacting you shortly with bids.</h2>
-    <h2>Stay tuned!</h2>
+    <h1>Thanks for your nomination.</h1>
+    <h2>We really appreciate your time, your effort, and the fact that you thought for others.</h2>
+    <h2>We'll reach out to selected families shortly.</h2>
   </div>
   <div class="placard omega">
-    <%= image_tag 'stringleft.png', class: "stringleft-confirm" %>
-    <%= image_tag 'stringright.png', class: "stringright-confirm" %>
     <div class="responses">
-      <p>Delivery Address: <span class="answer"><%= @event.address %></span></p>
-      <p>Date and time: <span class="answer"><%= @event.date %></span></p>
-      <p>How many people? <span class="answer"><%= @event.num_people %></span></p>
-      <p>Occassion: <span class="answer"><%= @event.occassion %></span></p>
-      <p>Budget: <span class="answer"><%= @event.budget %></span></p>
-      <p>Food types: <span class="answer"><%= @event.food_preferences %></span></p>
-      <p>Contact: <span class="answer"><%= @event.email %></span></p>
-      <p>Charity: <span class="answer"><%= @event.donation %></span></p>
+      <p>Family's Name: <span class="answer"><%= @event.name %></span></p>
+      <p>Family's Contact: <span class="answer"><%= @event.contact %></span></p>
+      <p>Family's Story: <span class="answer"><%= @event.story %></span></p>
+      <p>Your Contact: <span class="answer"><%= @event.email %></span></p>
+      <br><br>
+      <h2>Contact us anytime at <a href="mailto:hey@joinfoodcircles.org" target="_blank">hey@joinfoodcircles.org</a>. 
     </div>
   </div>
 </div>
