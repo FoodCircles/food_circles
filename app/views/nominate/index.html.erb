@@ -16,9 +16,9 @@
           <h1>Share a Slice of a Family's Story</h1>
           <div id="needtoknow">
           <p>
-            <strong>The Gilmore Collection is cooking a special meal for five families this Thanksgiving.</strong> Please let us know about a family that may not be able to enjoy a traditional meal on their own. Names will not be released publicly.</p>
+            <strong>The Gilmore Collection is cooking a special meal for five families this Thanksgiving.</strong> Please let us know about a family that may not be able to enjoy a traditional Thanksgiving meal on their own. Names will not be released publicly.</p>
           <br></br>
-          <p>So we can let selected families know in advance, deadline to nominate is <strong>Friday, 21st of November at Midnight.</strong></p>
+          <p>So we can let selected families know in advance, deadline to nominate is <strong>Friday midnight, 21st of November.</strong></p>
           </div>
         </div>
 
@@ -29,13 +29,13 @@
             <h1>Nominate-A-Family</h1>
             <%= form_tag '/nominate', :id => "nominate", method: :post do %>
                 <h2>Name of the family?</h2>
-                <%= text_field_tag :date, nil, size: "60", class: 'field standart organizers-field' %>
+                <%= text_field_tag :name, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>If selected, how may we get in contact with them?</h2>
                 <p>Known phone number, or email?</p>
-                <%= text_field_tag :budget, nil, size: "60", class: 'field standart organizers-field' %>
+                <%= text_field_tag :contact, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>Share their story or current circumstances here.</h2>
                 <p>(will not be released publicly)</p>
-                <%= text_area_tag :food_preferences, nil, rows: "10", cols: "60", class: 'field standart organizers-field' %>
+                <%= text_area_tag :story, nil, rows: "10", cols: "60", class: 'field standart organizers-field' %>
                 <h2>How may we get in contact with you?</h2>
                 <p>In case we need help getting in touch with the family.</p>
                 <%= text_field_tag :email, nil, size: "60", class: 'field standart organizers-field' %>

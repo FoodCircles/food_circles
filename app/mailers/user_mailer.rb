@@ -91,6 +91,14 @@
     mail(:to => ADMIN_EMAIL, :subject => "New Organizers Request", :body => "An organizer would like to join FoodCircles. They will be dining #{location} on #{date} with #{num_diners} guests. The occasion is #{occassion} with a budget of #{budget}. Their food preferences include #{food_preferences}. They would like to donate #{donation}. They provided the following feedback: #{feedback}. Please contact them at #{email}")
   end
 
+  def nomination_signup(email)
+    mail(:to => email, :reply_to => 'hey@joinfoodcircles.org', :subject => "Thanks for your nomination.", :body => "Really appreciate it. Let us know if you have any questions at all.")
+  end
+
+  def nomination_notify(email, name, contact, story, feedback)
+    mail(:to => ADMIN_EMAIL, :subject => "New Nomination", :body => "A nomination has come in. The name is #{name}. The contact is #{contact}. The story is #{story}. They provided the following feedback: #{feedback}. If need be, reach them at #{email}.")
+  end
+
   def notification_about_available_vouchers(user, venue)
     @name = user.name || "Hey"
     @restaurant_name = venue.name
