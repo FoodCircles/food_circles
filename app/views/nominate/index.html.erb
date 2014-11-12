@@ -1,4 +1,4 @@
-<% content_for(:title, "FoodCircles – For Organizers | Save Time, Money, and Feed Kids for Your Event") %>
+<% content_for(:title, "FoodCircles – Nominate a Family for a Free Thankgiving Meal from the Gilmore Collection") %>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -16,15 +16,17 @@
           <h1>Share a Slice of a Family's Story</h1>
           <div id="needtoknow">
           <p>
-            <strong>The Gilmore Collection is cooking a special meal for five families this Thanksgiving.</strong> Please let us know about a family that may not be able to enjoy a traditional meal on their own. Let us know who they are and a bit of their story. <strong>Names will not be released publicly.</strong></p>
+            <strong>The Gilmore Collection is cooking a special meal for five families this Thanksgiving.</strong> Please let us know about a family that may not be able to enjoy a traditional meal on their own. Names will not be released publicly.</p>
           <br></br>
-          <p>So we can let families know in advance, deadline to nominate is Friday, 21st of November Midnight.</p>
+          <p>So we can let selected families know in advance, deadline to nominate is <strong>Friday, 21st of November at Midnight.</strong></p>
           </div>
         </div>
 
         <div class="placard omega">
+            <%= image_tag "stringleft.png", class:"stringleft" %>
+            <%= image_tag "stringright.png", class:"stringright" %>
 
-            <h1>Sign up</h1>
+            <h1>Nominate-A-Family</h1>
             <%= form_tag '/nominate', :id => "nominate", method: :post do %>
                 <h2>Name of the family?</h2>
                 <%= text_field_tag :date, nil, size: "60", class: 'field standart organizers-field' %>
@@ -33,7 +35,7 @@
                 <%= text_field_tag :budget, nil, size: "60", class: 'field standart organizers-field' %>
                 <h2>Share their story or current circumstances here.</h2>
                 <p>(will not be released publicly)</p>
-                <%= text_field_tag :food_preferences, nil, rows: "10", cols: "60", class: 'field standart organizers-field' %>
+                <%= text_area_tag :food_preferences, nil, rows: "10", cols: "60", class: 'field standart organizers-field' %>
                 <h2>How may we get in contact with you?</h2>
                 <p>In case we need help getting in touch with the family.</p>
                 <%= text_field_tag :email, nil, size: "60", class: 'field standart organizers-field' %>
