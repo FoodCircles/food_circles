@@ -2,190 +2,227 @@
 <html style="background-color: #f2f2f2;">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
   </head>
   <%- if @selected_fun.nil? %>
-  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color: #f2f2f2;-webkit-text-size-adjust: none;margin: 0;padding: 0;width: 100%;">
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color: #f2f2f2;-webkit-text-size-adjust: none;margin: 0;padding: 0;width: 100%;">
+<style>
+@media all and (max-width:599px) {
+  #templateContainer, #templateHeader, #templateBody, #w1, #w2, #w3, #w4 {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+</style>
+  <center>
+      <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable" style="padding-top: 30px;margin: 0;padding: 0;background-color: #f2f2f2;height: 100%;width: 100%;">
+          <tr>
+              <td align="center" valign="top" style="border-collapse: collapse;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer" style="margin-top: 30px;border: 0px solid #DDDDDD;background-color: #FFFFFF;box-shadow: 0px 0px 10px #cecece;">
+                      <tr>
+                          <td align="center" valign="top" style="border-collapse: collapse;">
+                                <!-- // Begin Template Body \ -->
+                              <table border="0" cellpadding="0" cellspacing="0" width="598" id="templateBody" style="background-color: #fff;">
+                                  <tr>
+                                      <td align="center" valign="top" style="border-collapse: collapse;">
+                                            <!-- // Begin Template Header \ -->
+                                          <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0;">
+                                                <tr>
+                                                    <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 21px;line-height: 150%;padding: 0;text-align: center; letter-spacing: .05em; vertical-align: middle;height:525px; font-weight: 300; background:url(<%=asset_path "mails/followup-image-sample.png"%>) 50% 50% no-repeat;color:#fff">
+
+                                                      <span style="display:inline-block;width:210px" id="w1">Nutrition packages delivered to <span style="font-weight: 700;"><%=@payment.amount.to_i%> local <%=@payment.amount.to_i > 1 ? "children" : "child"%></span> in poverty</span>
+                                                      <!-- // Begin Module: Standard Header Image \ -->
+                                                      <!--
+                                                      <%= image_tag 'mails/followup_header.png' , :style => "width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;", :id => "headerImage campaign-icon" %>
+                                                      -->
+                                                      <!-- // End Module: Standard Header Image \ -->
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!-- // End Template Header \ -->
+                                        </td>
+                                    </tr>
+                                  <tr>
+                                        <td valign="top" class="bodyContent" style="color: #766a64;font-family: Arial;font-size: 16px;line-height: 150%;text-align: left;border-collapse: collapse;background-color: #fff; border: 0px solid #333;">
+
+                                            <!-- // Begin Module: Standard Content \ -->
+                                            <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                <tr>
+                                                    <td valign="top" style="border-collapse: collapse;">
+                                                      <%= image_tag 'mails/followup-header-default.png' , :style => "border: 0; border-top: 9px solid #fff;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" %>
+                                                      <br><br>
+                                                        <div mc:edit="std_content00" style="color:#4e3e34; font-family:'Helvetica', Arial; font-weight: 300; font-size:18px; line-height:125%; text-align:left;">
+
+                                                              We received the funds from your purchase @ <b><%= @payment.offer.venue.name %></b>.
+                                                              100% of the proceeds will go on to create the impact described above, through <a href="<%= @payment.charity.web %>"><%= @payment.charity.name %></a>.
+                                                              <br>
+                                                              <br>
+                                                              <hr style="margin-top: 15px; margin-bottom: 25px;height: 1px; border: 0; border-top: 2px solid #cbcbcb;">
+                                                              </div>
+
+                                                              <center>
+                                                              We've added this purchase (<%= @payment.charity.msg_usefunds(@payment.amount.round) %>) to your <a href="http://joinfoodcircles.org/timeline" style="color: #a34a4b; font-weight: bold; font-style: normal; text-decoration: none;">FoodCircles Timeline</a>. Thanks again.
+
+                                                              <br><br>
+
+                                                              <div id="w3" style="width: 500px; text-align: center;">
+                                                                <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://joinfoodcircles.org/<%=@payment.offer.venue.slug%>&p[images][0]=http://staging.foodcircles.net<%= @payment.offer.venue.restaurant_tile_image.thumb("274x163").url%>.png&p[title]=Bought 1, fed <%=@payment.amount.to_i%> <%=@payment.amount.to_i > 1 ? "children" : "child"%>.&p[summary]=Fed <%=@payment.amount.to_i%> <%=@payment.amount.to_i > 1 ? "children" : "child"%> simply by eating out. Picked out <%=@payment.offer.venue.name%> via FoodCircles.">
+                                                                  <%= image_tag 'mails/facebook.png', width:200, alt:'Share on Facebook'  %>
+                                                                </a>
+                                                                <a href="https://twitter.com/intent/tweet?status=Fed%20<%=@payment.amount.to_i%>%20<%=@payment.amount.to_i > 1 ? "children" : "child"%>%20in%20need%20simply%20by%20eating%20out.%20Picked%20out%20<%=@payment.offer.venue.name%>%20via%20@foodcircles.%20%23bofo%20http://joinfoodcircles.org/<%=@payment.offer.venue.slug%>">
+                                                                  <%= image_tag 'mails/twitter.png', width:200, alt:'Share on Twitter'  %>
+                                                                </a>
+                                                              </div>
+
+                                                              <br><br>
+                                                              <div id="w4" style="font-family: 'Helvetica Neue'; width: 500px; color: #999; font-size: 12px; line-height: 1.5em;">
+
+                                                              ps. <b><%= @payment.offer.venue.name %></b> definitely deserves some credit and we think they're doing some pretty cool things online.
+                                                              <%- if @payment.offer.venue.social_links.any? %>
+                                                                Check 'em out and say hello via
+                                                                <%- @payment.offer.venue.social_links.each do |social_link| %><%=
+                                                                  ', their ' unless social_link == @payment.offer.venue.social_links.first
+                                                                  %><%=
+                                                                  ' or their ' if social_link == @payment.offer.venue.social_links.last
+                                                                  %><a href="<%= social_link.url %>" style="color: #a34a4b; font-weight: bold; text-decoration: none;"><%= social_link.source %></a><%end%>
+                                                              <%end%>
+                                                              </div>
+                                                              </center>
+
+                                                                                                                          </div>
+                        </td>
+                                                </tr>
+                                            </table>
+                                            <!-- // End Module: Standard Content \ -->
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // End Template Body \ -->
+                            </td>
+                        </tr>
+
+                                </table>
+                                <!-- // End Template Footer \ -->
+
+                                </td></tr>
+                    </table>
+                    <br>
+    </center>
+</body>
+
+<%- else%>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color: #f2f2f2;-webkit-text-size-adjust: none;margin: 0;padding: 0;width: 100%;">
+    <style>
+    @media all and (max-width:599px) {
+      #templateContainer, #templateHeader, #templateBody, #w1, #w2, #w3, #w4 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+    </style>
       <center>
           <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable" style="padding-top: 30px;margin: 0;padding: 0;background-color: #f2f2f2;height: 100%;width: 100%;">
               <tr>
                   <td align="center" valign="top" style="border-collapse: collapse;">
                       <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer" style="margin-top: 30px;border: 0px solid #DDDDDD;background-color: #FFFFFF;box-shadow: 0px 0px 10px #cecece;">
-                          <tr>
-                              <td align="center" valign="top" style="border-collapse: collapse;">
-                                    <!-- // Begin Template Header \ -->
-                                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0;">
-                                        <tr>
-                                            <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Arial;font-size: 34px;font-weight: bold;line-height: 100%;padding: 0;text-align: center;vertical-align: middle;">
-                                            
-                                              <!-- // Begin Module: Standard Header Image \ -->
-                                              <%= image_tag 'mails/followup_header.png' , :style => "width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;", :id => "headerImage campaign-icon" %>
-                                              <!-- // End Module: Standard Header Image \ -->
-                                            
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // End Template Header \ -->
-                                </td>
-                            </tr>
+                      <tr>
+                          <td align="center" valign="top" style="border-collapse: collapse;">
+                                <!-- // Begin Template Header \ -->
+                              <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0;">
+                                    <tr>
+                                        <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 21px;line-height: 150%;padding: 0;text-align: center; letter-spacing: .05em; vertical-align: middle;height:525px; font-weight: 300; background:url(<%=asset_path "mails/followup-image-sample.png"%>) 50% 50% no-repeat;color:#fff">
+
+                                          <span style="display:inline-block;width:210px" id="w1">Nutrition packages delivered to <span style="font-weight: 700;"><%=@payment.amount.to_i%> local <%=@payment.amount.to_i > 1 ? "children" : "child"%></span> in poverty</span>
+                                          <!-- // Begin Module: Standard Header Image \ -->
+                                          <!--
+                                          <%= image_tag 'mails/followup_header.png' , :style => "width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;", :id => "headerImage campaign-icon" %>
+                                          -->
+                                          <!-- // End Module: Standard Header Image \ -->
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // End Template Header \ -->
+                            </td>
+                        </tr>
                           <tr>
                               <td align="center" valign="top" style="border-collapse: collapse;">
                                     <!-- // Begin Template Body \ -->
                                   <table border="0" cellpadding="0" cellspacing="0" width="598" id="templateBody" style="background-color: #fff;">
                                       <tr>
                                             <td valign="top" class="bodyContent" style="color: #766a64;font-family: Arial;font-size: 16px;line-height: 150%;text-align: left;border-collapse: collapse;background-color: #fff; border: 0px solid #333;">
-                                
+
                                                 <!-- // Begin Module: Standard Content \ -->
                                                 <table border="0" cellpadding="20" cellspacing="0" width="100%">
                                                     <tr>
                                                         <td valign="top" style="border-collapse: collapse;">
-                                                          <h1>Just to confirm</h1>
+                                                          <%= image_tag 'mails/followup-header-quote.png' , :style => "border: 0; border-top: 9px solid #fff;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" %>
                                                           <br><br>
                                                             <div mc:edit="std_content00" style="color:#4e3e34; font-family:'Helvetica', Arial; font-weight: 300; font-size:18px; line-height:125%; text-align:left;">
 
-                                                                  
-                                                                  We received the funds from your purchase @ <b><%= @payment.offer.venue.name %></b> 100% of it will go on to create the impact described below, through <b><%= @payment.charity.name %></b>:
-                                                                  <br>
-                                                                  
-                                                                  <center>
-                                                                  We've added this purchase (<%= @payment.charity.msg_usefunds(@payment.amount.round) %>) to your <a href="" style="color: #a34a4b; font-weight: bold; font-style: normal; text-decoration: none;">FoodCircles Timeline</a>. Thanks again.
-                                                                  
-                                                                  <br><br>
-                                                                  
-                                                                  <div style="width: 500px; text-align: center;">
-                                                                    <a href="http://"><img src="facebook.png" alt="" width="200" /></a>
-                                                                    <a href="http://"><img src="twitter.png" alt="" width="200" /></a>
-                                                                  </div>
-                                                                  
-                                                                  <br><br>
-                                                                  <div style="font-family: 'Helvetica Neue'; width: 500px; color: #999; font-size: 12px; line-height: 1.5em;">
-                                                                  
-                                                                  ps. <b><%= @payment.offer.venue.name %></b> definitely deserves some credit and we think they're doing some pretty cool things online.
-                                                                  <%- if @payment.offer.venue.social_links.any? %>
-                                                                    Check 'em out and say hello via
-                                                                    <%- @payment.offer.venue.social_links.each do |social_link| %><%=
-                                                                      ',' unless social_link == @payment.offer.venue.social_links.first
-                                                                      %><%=
-                                                                      ' or ' if social_link == @payment.offer.venue.social_links.last
-                                                                      %><a href="<%= social_link.url %>" style="color: #a34a4b; font-weight: bold; text-decoration: none;"><%= social_link.source %></a><%end%>
-                                                                  <%end%>
-                                                                  </div>
-                                                                  </center>
-                                                                  
-                                                                                                                              </div>
-                            </td>
-                                                    </tr>
-                                                </table>
-                                                <!-- // End Module: Standard Content \ -->
-                                                
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // End Template Body \ -->
-                                </td>
-                            </tr>
-                                        
-                                    </table>
-                                    <!-- // End Template Footer \ -->
-                                    
-                                    </td></tr>
-                        </table>
-                        <br>
-        </center>
-    </body>
-<%- else%>
-    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color: #f2f2f2;-webkit-text-size-adjust: none;margin: 0;padding: 0;width: 100%;">
-      <center>
-          <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable" style="padding-top: 30px;margin: 0;padding: 0;background-color: #f2f2f2;height: 100%;width: 100%;">
-              <tr>
-                  <td align="center" valign="top" style="border-collapse: collapse;">
-                      <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer" style="margin-top: 30px;border: 0px solid #DDDDDD;background-color: #FFFFFF;box-shadow: 0px 0px 10px #cecece;">
-                          <tr>
-                              <td align="center" valign="top" style="border-collapse: collapse;">
-                                    <!-- // Begin Template Header \ -->
-                                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0;">
-                                        <tr>
-                                            <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Arial;font-size: 34px;font-weight: bold;line-height: 100%;padding: 0;text-align: center;vertical-align: middle;">
-                                            
-                                              <!-- // Begin Module: Standard Header Image \ -->
-                                              <%= image_tag 'mails/followup_header.png' , :style => "width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;", :id => "headerImage campaign-icon" %>
-                                              <!-- // End Module: Standard Header Image \ -->
-                                            
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // End Template Header \ -->
-                                </td>
-                            </tr>
-                          <tr>
-                              <td align="center" valign="top" style="border-collapse: collapse;">
-                                    <!-- // Begin Template Body \ -->
-                                  <table border="0" cellpadding="0" cellspacing="0" width="598" id="templateBody" style="background-color: #fff;">
-                                      <tr>
-                                            <td valign="top" class="bodyContent" style="color: #766a64;font-family: Arial;font-size: 16px;line-height: 150%;text-align: left;border-collapse: collapse;background-color: #fff; border: 0px solid #333;">
-                                
-                                                <!-- // Begin Module: Standard Content \ -->
-                                                <table border="0" cellpadding="20" cellspacing="0" width="100%">
-                                                    <tr>
-                                                        <td valign="top" style="border-collapse: collapse;">
-                                                          <%= image_tag 'mails/followup_head.png' , :style => "border: 0; border-top: 9px solid #fff;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" %>
-                                                          <br><br>
-                                                            <div mc:edit="std_content00" style="color:#4e3e34; font-family:'Helvetica', Arial; font-weight: 300; font-size:18px; line-height:125%; text-align:left;">
-                                                                  
                                                                   At FoodCircles we think it's important for you to hear, "Thank you." from the people you impact. Accordingly, we've got a message for you from <b><%= @payment.charity.name %></b>:
                                                                   <br>
-                                                                  
-                                                                  <div style="width: 470px; font-weight: 300; font-family: 'Helvetica';font-style: italic; font-size: 15px; color: #5d4a3e; line-height: 130%; margin-left: auto; margin-right: auto; padding-top: 20px;">
+
+                                                                  <div id="w2" style="width: 470px; font-weight: 300; font-family: 'Helvetica';font-style: italic; font-size: 15px; color: #5d4a3e; line-height: 130%; margin-left: auto; margin-right: auto; padding-top: 20px;">
                                                                   <%= simple_format(@selected_fun.note) %>
                                                                   <hr style="margin-top: 15px; margin-bottom: 25px;height: 1px; border: 0; border-top: 2px solid #cbcbcb;">
                                                                   </div>
-                                                                  
+
                                                                   <center>
-                                                                  We've added this purchase (<%= @payment.charity.msg_usefunds(@payment.amount.round) %>) to your <a href="" style="color: #a34a4b; font-weight: bold; font-style: normal; text-decoration: none;">FoodCircles Timeline</a>. Thanks again.
-                                                                  
+                                                                  We've added this purchase (<%= @payment.charity.msg_usefunds(@payment.amount.round) %>) to your <a href="http://joinfoodcircles.org/timeline" style="color: #a34a4b; font-weight: bold; font-style: normal; text-decoration: none;">FoodCircles Timeline</a>. Thanks again.
+
                                                                   <br><br>
-                                                                  
-                                                                  <div style="width: 500px; text-align: center;">
-                                                                    <a href="http://"><img src="facebook.png" alt="" width="200" /></a>
-                                                                    <a href="http://"><img src="twitter.png" alt="" width="200" /></a>
+
+                                                                  <div id="w3" style="width: 500px; text-align: center;">
+                                                                    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://joinfoodcircles.org/<%=@payment.offer.venue.slug%>&p[images][0]=http://staging.foodcircles.net<%= @payment.offer.venue.restaurant_tile_image.thumb("274x163").url%>.png&p[title]=Bought 1, fed <%=@payment.amount.to_i%> <%=@payment.amount.to_i > 1 ? "children" : "child"%>.&p[summary]=Fed <%=@payment.amount.to_i%> <%=@payment.amount.to_i > 1 ? "children" : "child"%> simply by eating out. Picked out <%=@payment.offer.venue.name%> via FoodCircles.">
+                                                                      <%= image_tag 'mails/facebook.png', width:200, alt:'Share on Facebook'  %>
+                                                                    </a>
+                                                                    <a href="https://twitter.com/intent/tweet?status=Fed%20<%=@payment.amount.to_i%>%20<%=@payment.amount.to_i > 1 ? "children" : "child"%>%20in%20need%20simply%20by%20eating%20out.%20Picked%20out%20<%=@payment.offer.venue.name%>%20via%20@foodcircles.%20%23bofo%20http://joinfoodcircles.org/<%=@payment.offer.venue.slug%>">
+                                                                      <%= image_tag 'mails/twitter.png', width:200, alt:'Share on Twitter'  %>
+                                                                    </a>
                                                                   </div>
-                                                                  
+
                                                                   <br><br>
-                                                                  <div style="font-family: 'Helvetica Neue'; width: 500px; color: #999; font-size: 12px; line-height: 1.5em;">
-                                                                  
+                                                                  <div id="w4" style="font-family: 'Helvetica Neue'; width: 500px; color: #999; font-size: 12px; line-height: 1.5em;">
+
                                                                   ps. <b><%= @payment.offer.venue.name %></b> definitely deserves some credit and we think they're doing some pretty cool things online.
                                                                   <%- if @payment.offer.venue.social_links.any? %>
                                                                     Check 'em out and say hello via
                                                                     <%- @payment.offer.venue.social_links.each do |social_link| %><%=
-                                                                      ',' unless social_link == @payment.offer.venue.social_links.first
+                                                                      ', their ' unless social_link == @payment.offer.venue.social_links.first
                                                                       %><%=
-                                                                      ' or ' if social_link == @payment.offer.venue.social_links.last
+                                                                      ' or their ' if social_link == @payment.offer.venue.social_links.last
                                                                       %><a href="<%= social_link.url %>" style="color: #a34a4b; font-weight: bold; text-decoration: none;"><%= social_link.source %></a><%end%>
                                                                   <%end%>
                                                                   </div>
                                                                   </center>
-                                                                  
+
                                                                                                                               </div>
                             </td>
                                                     </tr>
                                                 </table>
                                                 <!-- // End Module: Standard Content \ -->
-                                                
+
                                             </td>
                                         </tr>
                                     </table>
                                     <!-- // End Template Body \ -->
                                 </td>
                             </tr>
-                                        
+
                                     </table>
                                     <!-- // End Template Footer \ -->
-                                    
+
                                     </td></tr>
                         </table>
                         <br>
         </center>
     </body>
+
 
 <%end%>
 </html>

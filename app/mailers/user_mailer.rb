@@ -124,7 +124,7 @@
     else
       @selected_fun = nil
     end
-    
+
     mail(:to => ADMIN_EMAIL, :subject => "A followup from #{@payment.charity.name}")
   end
 
