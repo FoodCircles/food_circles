@@ -29,14 +29,9 @@
                                             <!-- // Begin Template Header \ -->
                                           <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0;">
                                                 <tr>
-                                                    <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 21px;line-height: 150%;padding: 0;text-align: center; letter-spacing: .05em; vertical-align: middle;height:525px; font-weight: 300; background:url(<%=asset_path "mails/followup-image-sample.png"%>) 50% 50% no-repeat;color:#fff">
+                                                    <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 21px;line-height: 150%;padding: 0;text-align: center; letter-spacing: .05em; vertical-align: middle;height:525px; font-weight: 300; background:url(<%= @payment.charity.photo.nil? ? asset_path("mails/followup-image-sample.png") : Foodcircles::Application.config.action_mailer.asset_host + @payment.charity.photo.remote_url %>) 50% 50% no-repeat;color:#fff">
 
-                                                      <span style="display:inline-block;width:210px" id="w1">Nutrition packages delivered to <span style="font-weight: 700;"><%=@payment.amount.to_i%> local <%=@payment.amount.to_i > 1 ? "children" : "child"%></span> in poverty</span>
-                                                      <!-- // Begin Module: Standard Header Image \ -->
-                                                      <!--
-                                                      <%= image_tag 'mails/followup_header.png' , :style => "width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;", :id => "headerImage campaign-icon" %>
-                                                      -->
-                                                      <!-- // End Module: Standard Header Image \ -->
+                                                      <span style="display:inline-block;width:210px" id="w1"><%= @payment.charity.msg_usefunds(@payment.amount.round) %></span>
 
                                                     </td>
                                                 </tr>
@@ -71,7 +66,7 @@
                                                                 <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://joinfoodcircles.org/<%=@payment.offer.venue.slug%>&p[images][0]=http://staging.foodcircles.net<%= @payment.offer.venue.restaurant_tile_image.thumb("274x163").url%>.png&p[title]=Bought 1, fed <%=@payment.amount.to_i%> <%=@payment.amount.to_i > 1 ? "children" : "child"%>.&p[summary]=Fed <%=@payment.amount.to_i%> <%=@payment.amount.to_i > 1 ? "children" : "child"%> simply by eating out. Picked out <%=@payment.offer.venue.name%> via FoodCircles.">
                                                                   <%= image_tag 'mails/facebook.png', width:200, alt:'Share on Facebook'  %>
                                                                 </a>
-                                                                <a href="https://twitter.com/intent/tweet?status=Fed%20<%=@payment.amount.to_i%>%20<%=@payment.amount.to_i > 1 ? "children" : "child"%>%20in%20need%20simply%20by%20eating%20out.%20Picked%20out%20<%=@payment.offer.venue.name%>%20via%20@foodcircles.%20%23bofo%20http://joinfoodcircles.org/<%=@payment.offer.venue.slug%>">
+                                                                <a href="https://twitter.com/intent/tweet?text=Fed+<%=@payment.amount.to_i%>+<%=@payment.amount.to_i > 1 ? "children" : "child"%>+in+need+simply+by+eating+out.+Picked+out+<%=CGI.escape(@payment.offer.venue.name)%>&via=foodcircles&hashtags=bofo&url=http%3A%2F%2Fjoinfoodcircles.org%2F<%=@payment.offer.venue.slug%>">
                                                                   <%= image_tag 'mails/twitter.png', width:200, alt:'Share on Twitter'  %>
                                                                 </a>
                                                               </div>
@@ -134,14 +129,10 @@
                                 <!-- // Begin Template Header \ -->
                               <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0;">
                                     <tr>
-                                        <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 21px;line-height: 150%;padding: 0;text-align: center; letter-spacing: .05em; vertical-align: middle;height:525px; font-weight: 300; background:url(<%=asset_path "mails/followup-image-sample.png"%>) 50% 50% no-repeat;color:#fff">
+                                        <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 21px;line-height: 150%;padding: 0;text-align: center; letter-spacing: .05em; vertical-align: middle;height:525px; font-weight: 300; background:url(<%= @payment.charity.photo.nil? ? asset_path("mails/followup-image-sample.png") : Foodcircles::Application.config.action_mailer.asset_host + @payment.charity.photo.remote_url %>) 50% 50% no-repeat;color:#fff">
 
-                                          <span style="display:inline-block;width:210px" id="w1">Nutrition packages delivered to <span style="font-weight: 700;"><%=@payment.amount.to_i%> local <%=@payment.amount.to_i > 1 ? "children" : "child"%></span> in poverty</span>
-                                          <!-- // Begin Module: Standard Header Image \ -->
-                                          <!--
-                                          <%= image_tag 'mails/followup_header.png' , :style => "width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;", :id => "headerImage campaign-icon" %>
-                                          -->
-                                          <!-- // End Module: Standard Header Image \ -->
+                                          <span style="display:inline-block;width:210px" id="w1"><%= @payment.charity.msg_usefunds(@payment.amount.round) %></span>
+
 
                                         </td>
                                     </tr>
@@ -181,7 +172,7 @@
                                                                     <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://joinfoodcircles.org/<%=@payment.offer.venue.slug%>&p[images][0]=http://staging.foodcircles.net<%= @payment.offer.venue.restaurant_tile_image.thumb("274x163").url%>.png&p[title]=Bought 1, fed <%=@payment.amount.to_i%> <%=@payment.amount.to_i > 1 ? "children" : "child"%>.&p[summary]=Fed <%=@payment.amount.to_i%> <%=@payment.amount.to_i > 1 ? "children" : "child"%> simply by eating out. Picked out <%=@payment.offer.venue.name%> via FoodCircles.">
                                                                       <%= image_tag 'mails/facebook.png', width:200, alt:'Share on Facebook'  %>
                                                                     </a>
-                                                                    <a href="https://twitter.com/intent/tweet?status=Fed%20<%=@payment.amount.to_i%>%20<%=@payment.amount.to_i > 1 ? "children" : "child"%>%20in%20need%20simply%20by%20eating%20out.%20Picked%20out%20<%=@payment.offer.venue.name%>%20via%20@foodcircles.%20%23bofo%20http://joinfoodcircles.org/<%=@payment.offer.venue.slug%>">
+                                                                    <a href="https://twitter.com/intent/tweet?text=Fed+<%=@payment.amount.to_i%>+<%=@payment.amount.to_i > 1 ? "children" : "child"%>+in+need+simply+by+eating+out.+Picked+out+<%=URI::encode(@payment.offer.venue.name)%>&via=foodcircles&hashtags=bofo&url=http%3A%2F%2Fjoinfoodcircles.org%2F<%=@payment.offer.venue.slug%>">
                                                                       <%= image_tag 'mails/twitter.png', width:200, alt:'Share on Twitter'  %>
                                                                     </a>
                                                                   </div>
