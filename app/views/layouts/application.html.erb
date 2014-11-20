@@ -7,7 +7,7 @@
 
 
     <%
-      if @meta_tags["og"]["title"].nil?
+      if @meta_tags.nil?
       set_meta_tags :og => {
             :title    => 'FoodCircles — Buy One, Feed One.',
             :description    => 'Try a Dish at a Local Restaurant for Just $1. 100% of Your Purchase is Donated to Give One Dinner to a Child In Need.',
