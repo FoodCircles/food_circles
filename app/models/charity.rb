@@ -57,6 +57,14 @@ class Charity < ActiveRecord::Base
         uf['%s%'] = ''
       end
     end
+
+    if uf.include? '%ren%'
+      if amt > 1
+        uf['%ren%'] = 'ren'
+      else
+        uf['%ren%'] = ''
+      end
+    end
     return uf
   end
 
