@@ -31,7 +31,7 @@
                                                 <tr>
                                                     <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 21px;line-height: 150%;padding: 0;text-align: center; letter-spacing: .05em; vertical-align: middle;height:525px; font-weight: 300; background:url(<%= @payment.charity.photo.nil? ? asset_path("mails/followup-image-sample.png") : Foodcircles::Application.config.action_mailer.asset_host + @payment.charity.photo.remote_url %>) 50% 50% no-repeat;color:#fff">
 
-                                                      <span style="display:inline-block;width:210px" id="w1"><%= @payment.charity.msg_usefunds(@payment.amount.round) %></span>
+                                                      <span style="display:inline-block;width:210px" id="w1"><%= @payment.charity.raw_msg_usefunds(@payment.amount.round).html_safe %></span>
 
                                                     </td>
                                                 </tr>
@@ -58,7 +58,7 @@
 
 
                                                               <center>
-                                                              We've added this purchase (<%= @payment.charity.raw_msg_usefunds(@payment.amount.round).html_safe %>) to your <a href="http://joinfoodcircles.org/timeline" style="color: #a34a4b; font-weight: bold; font-style: normal; text-decoration: none;">FoodCircles Timeline</a>. Thanks again.
+                                                              We've added this purchase (<%= @payment.charity.msg_usefunds(@payment.amount.round) %>) to your <a href="http://joinfoodcircles.org/timeline" style="color: #a34a4b; font-weight: bold; font-style: normal; text-decoration: none;">FoodCircles Timeline</a>. Thanks again.
 
                                                               <br><br>
 
@@ -131,7 +131,7 @@
                                     <tr>
                                         <td class="headerContent" style="border-collapse: collapse;color: #4e3e34;font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 21px;line-height: 150%;padding: 0;text-align: center; letter-spacing: .05em; vertical-align: middle;height:525px; font-weight: 300; background:url(<%= @payment.charity.photo.nil? ? asset_path("mails/followup-image-sample.png") : Foodcircles::Application.config.action_mailer.asset_host + @payment.charity.photo.remote_url %>) 50% 50% no-repeat;color:#fff">
 
-                                          <span style="display:inline-block;width:210px" id="w1"><%= @payment.charity.msg_usefunds(@payment.amount.round) %></span>
+                                          <span style="display:inline-block;width:210px" id="w1"><%= @payment.charity.raw_msg_usefunds(@payment.amount.round).html_safe %></span>
 
 
                                         </td>
@@ -164,7 +164,7 @@
                                                                   </div>
 
                                                                   <center>
-                                                                  We've added this purchase (<%= @payment.charity.raw_msg_usefunds(@payment.amount.round).html_safe %>) to your <a href="http://joinfoodcircles.org/timeline" style="color: #a34a4b; font-weight: bold; font-style: normal; text-decoration: none;">FoodCircles Timeline</a>. Thanks again.
+                                                                  We've added this purchase (<%= @payment.charity.msg_usefunds(@payment.amount.round) %>) to your <a href="http://joinfoodcircles.org/timeline" style="color: #a34a4b; font-weight: bold; font-style: normal; text-decoration: none;">FoodCircles Timeline</a>. Thanks again.
 
                                                                   <br><br>
 
