@@ -1,5 +1,15 @@
 <% content_for(:title, "FoodCircles – Nominate a Family for a Free Thankgiving Meal from the Gilmore Collection") %>
 
+<% set_meta_tags :og => {
+        :title    => 'Nominate a Family for a Thanksgiving Meal From Gilmore Collection',
+        :description    => 'Help us see the invisible. Tell us a brief story about a family that may not be able to provide for Thanksgiving. The Gilmore Collection will deliver gourmet meals to five of them the night before.',
+        :image     => 'https://dl.dropboxusercontent.com/u/38930645/nominate-2.jpg',
+        :url      => url_for(:only_path => false),
+        :site_name => "FoodCircles",
+        :type => 'website'
+}
+%>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
