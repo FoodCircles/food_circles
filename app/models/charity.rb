@@ -46,8 +46,8 @@ class Charity < ActiveRecord::Base
     "#{self.address}, #{self.city}, #{self.state.name}"
   end
 
-  def msg_usefunds(amt)
-    uf = self.use_funds
+  def raw_msg_usefunds(amt)
+    uf = self.use_funds.dup
     uf['%amt%'] = amt.to_s if uf.include? '%amt%'
 
     if uf.include? '%s%'
@@ -58,6 +58,13 @@ class Charity < ActiveRecord::Base
       end
     end
     return uf
+  end
+
+  def msg_usefunds(amt)
+    raw = raw_msg_usefunds(amt)
+
+    return ActionController::Base.helpers.strip_tags(raw)
+
   end
 
 
