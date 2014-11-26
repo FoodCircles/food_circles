@@ -8,6 +8,7 @@ class Charity < ActiveRecord::Base
   belongs_to :state
   has_many :payments
   has_many :follow_up_notes
+  has_many :charity_photos
 
   CHARITY_TYPE_ENUM = %w(main extra)
 

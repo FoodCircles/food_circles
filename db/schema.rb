@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141009033205) do
+ActiveRecord::Schema.define(:version => 20141126173536) do
 
   create_table "badges", :force => true do |t|
     t.string   "code"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20141009033205) do
     t.string   "subdomain"
     t.string   "use_funds"
     t.string   "logo_uid"
+    t.string   "photo_uid"
+  end
+
+  create_table "charity_photos", :force => true do |t|
+    t.integer  "charity_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "photo_uid"
   end
 
