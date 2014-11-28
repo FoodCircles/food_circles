@@ -45,6 +45,8 @@ Foodcircles::Application.routes.draw do
   resources :venues, :only => [:show] do
     member do
       post "subscribe"
+      post "unsubscribe"
+      get "subscribed"
     end
   end
 

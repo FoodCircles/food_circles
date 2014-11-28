@@ -24,7 +24,7 @@ class VenuesController < ApplicationController
       end
     end
 
-    
+
 
     if ['json','jsonp'].include?(params[:format])
       if (params[:offline])
@@ -38,7 +38,7 @@ class VenuesController < ApplicationController
   def show
     # @v = Venue.find(params[:id])
     @offer = Venue.find(params[:id]).offers.first
-    
+
     if ['json','jsonp'].include?(params[:format])
         render :json => @v, :callback => params[:callback]
     end
@@ -60,6 +60,45 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       format.js{ render partial, locals: {message: message} }
+    end
+  end
+
+  def unsubscribe
+    partial, message = if current_user
+      venue = Venue.find(params[:id])
+      user = current_user
+      notification_reqs = user.notification_requests.where(:venue_id => venue.id)
+      if notification_reqs.size > 0
+        notification_reqs.destroy_all
+        ['unsubscribe_success', 'Subscription cancelled']
+      else
+        ['unsubscribe_success', "Already unsubscribed!"]
+      end
+    else
+      ['unsubscribe_error', 'Sign in to unsubscribe.']
+    end
+
+    respond_to do |format|
+      format.js{ render partial, locals: {message: message} }
+    end
+  end
+
+  def subscribed
+    subscribed = if current_user
+      venue = Venue.find(params[:id])
+      user = current_user
+      notification_reqs = user.notification_requests.where(:venue_id => venue.id)
+      if notification_reqs.size > 0
+        true
+      else
+        false
+      end
+    else
+      false
+    end
+
+    respond_to do |format|
+      format.json{ render json: {:subscribed => subscribed} }
     end
   end
 
