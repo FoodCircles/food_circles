@@ -117,6 +117,14 @@
     fun = @payment.charity.follow_up_notes
     used_fun = @payment.user.follow_up_notes
     available_fun = fun - used_fun
+    available_photos = @payment.charity.charity_photos
+
+    if available_photos.size > 0
+      selected_photo = available_photos.sample
+      @img_photo = Foodcircles::Application.config.action_mailer.asset_host + selected_photo.photo.remote_url
+    else
+      @img_photo = ActionController::Base.helpers.asset_path("mails/followup-image-sample.png")
+    end
 
     if available_fun.size > 0
       @selected_fun = available_fun.sample
@@ -125,7 +133,8 @@
       @selected_fun = nil
     end
 
-    mail(:to => ADMIN_EMAIL, :subject => "A followup from #{@payment.charity.name}")
+
+    mail(:to => @payment.user.email, :subject => "A followup from #{@payment.charity.name}")
   end
 
   def postcard_notification(postcard)
