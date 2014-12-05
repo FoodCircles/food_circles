@@ -48,7 +48,7 @@ Foodcircles::Application.configure do
     if source.starts_with?('/media')
       nil
     else
-      "//#{ENV['FOG_DIRECTORY']}.s3-website-us-east-1.amazonaws.com"
+      "//foodcirclesassets.s3-website-us-east-1.amazonaws.com"
     end
   end
 
