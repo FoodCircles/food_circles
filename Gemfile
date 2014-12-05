@@ -49,6 +49,7 @@ group :assets do
   gem 'compass-rails'
   gem 'twitter-bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
+  gem 'asset_sync'
 end
 
 group :development, :test do
