@@ -27,12 +27,12 @@
 ">
 	<%= stylesheet_link_tag "jquerysmartbanner", :media => "all" %>
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= stylesheet_link_tag "#{controller_name}", :media => "all" %>
+    <%= stylesheet_link_tag "#{controller_name}", :media => "all" if Foodcircles::Application.assets.find_asset("#{controller_name}.css") %>
     <%= stylesheet_link_tag "colorbox", :media => "all" %>
     <%= stylesheet_link_tag "fonts", :media => "all" %>
     <%= javascript_include_tag "https://js.stripe.com/v1/", "application", "jquerysmartbanner" %>
     <%= javascript_tag "Stripe.publishableKey = '#{Rails.configuration.stripe[:publishable_key]}';" %>
-    <%= javascript_include_tag  'home', "#{controller_name}" %>
+    <%= javascript_include_tag  'home', "#{controller_name}" if Foodcircles::Application.assets.find_asset("#{controller_name}.js") %>
     <link rel="icon" type="image/png" href="/favicon.png">
     <%= csrf_meta_tags %>
     <%= tag :meta, :name => 'stripe-key', :content => Rails.configuration.stripe[:publishable_key] %>

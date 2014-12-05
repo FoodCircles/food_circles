@@ -3,10 +3,10 @@
     .centerer
       .centerer-inner
         %span#toShow.hero-title-upper
-          
+
           %br/
         %span#odds.hero-title-tagline
-          
+
   %ul{class: "slides"}
     - @news.each do |news|
       %li
@@ -39,7 +39,7 @@
           %a.btn-standart{href: "https://play.google.com/store/apps/details?id=co.foodcircles"}
             %img.app-icon{src: "/android-logo.png"}>/
             Android
-            
+
 
         = render partial: "filters"
 
@@ -80,7 +80,6 @@
                     %i{class: "icon-strike strike"}
                 %span{class: "shadow"}
                 = image_tag venue.restaurant_tile_image.thumb("274x163").url
-                / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
                 %span{class: "title"}= venue.sold_out? ? "Sold Out" : venue.offers.order("min_diners ASC").first.name
             .tags
               - tags = []
@@ -91,7 +90,7 @@
                 - venue.venue_tags.each do |t|
                   - tags << {name: t.name, type: 'venue_tag'}
               - if not tags.empty?
-                tags: 
+                tags:
                 = raw tags.collect { |tag| link_to tag[:name], '#', class: 'filter-tag', data: { type: tag[:type] }}.join(", ")
         %a.tile.add-new.popup-link{href: postcard_popup_path }
           %div.add-new-inner
@@ -100,5 +99,3 @@
             %i.icon-plus
 
       = will_paginate @venues, :style => 'display: none;'
-
-

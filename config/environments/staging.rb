@@ -15,7 +15,7 @@ Foodcircles::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -44,10 +44,21 @@ Foodcircles::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
-  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3-website-us-east-1.amazonaws.com"
+  config.action_controller.asset_host = Proc.new do |source|
+    if source.starts_with?('/media')
+      nil
+    else
+      "//#{ENV['FOG_DIRECTORY']}.s3-website-us-east-1.amazonaws.com"
+    end
+  end
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( jquerysmartbanner.js )
+  Dir.chdir "#{Rails.root}/app/assets/javascripts"
+  a = Dir.glob("*.{js,coffee,erb}")
+  Dir.chdir "#{Rails.root}/app/assets/stylesheets"
+  b = Dir.glob("*.{css,erb,scss}").map{|f| f.gsub(".scss","")}
+  config.assets.precompile +=  a.concat(b)
+  Dir.chdir Rails.root
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

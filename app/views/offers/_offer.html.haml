@@ -18,7 +18,7 @@
             %span.block
               %strong= offer.venue.vouchers_available
               %small left
-          
+
       /%a{href: main_app.deal_popup_not_logged_path(offer)}
       %a.deallink.popup-link{href: '/deal_popup_not_logged/' + offer.id.to_s}
         %span.price
@@ -28,7 +28,6 @@
             %i{class: "icon-strike strike"}
           %span{class: "shadow"}
         = image_tag offer.image.url(:deal)
-        / %img{src: "http://html-preview.htmlburger.com/jonathan_kumar/foodcircles/r165787-4d7faa81/css/images/brownies.jpg", alt: "", width: "253", height: "163"}
         %span{class: "title"}= offer.name
     .tags
       - if not offer.category.empty?

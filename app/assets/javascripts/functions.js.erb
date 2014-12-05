@@ -257,7 +257,7 @@
 
 			//set little timeout to prevent item from close immidiatly after the open
 			setTimeout(function(){
-				
+
 				if($filter.is('.expanded')){
 					$filter.removeClass('expanded');
 				}else{
@@ -295,7 +295,7 @@
 			var $filter = $(this).closest('.filter');
 			if($filter.find('input:checked').length){
 				$filter.addClass('has-checked');
-			}else{	
+			}else{
 				$filter.removeClass('has-checked');
 			}
 		});
@@ -374,7 +374,7 @@
 			if($.payment.validateCardNumber($(this).val())){
 				$('.deal .card-number').addClass('valid');
 			}else{
-				$('.deal .card-number').removeClass('valid');	
+				$('.deal .card-number').removeClass('valid');
 			}
 		});
 		$('.deal .cv-code .field').payment('formatCardCVC');
@@ -401,7 +401,7 @@
 			$fieldset.addClass('editing').find('.field').each(function(){
 				if($(this).is('[type="password"]')){
 					$(this).val('');
-				}else{	
+				}else{
 					$(this).val($(this).siblings('.value').text());
 				}
 			});
@@ -460,7 +460,7 @@
 		},
 		pos: function(initial){
 			if($('#hero').length){
-				this.breakPoint = $('#hero').offset().top + $('#hero').outerHeight(); 
+				this.breakPoint = $('#hero').offset().top + $('#hero').outerHeight();
 			}else{
 				if(initial){
 					this.breakPoint = $('#header').outerHeight();
@@ -479,7 +479,7 @@
 					}
 				}
 			});
-			
+
 		}
 	}
 
@@ -496,7 +496,7 @@
 				itemSelector:'.tile',
 				bufferPx:-200,
 				loading: {
-					img: <%= asset_path 'images/loader.png' %>
+					img: "<%= asset_path('images/loader.png') %>" 
 				}
 			}, function(newElements){
 				var $addNew = $ptiles.find('.add-new');

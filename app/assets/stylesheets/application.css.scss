@@ -93,7 +93,7 @@ body {
 // Unifies text selection color
 // Does not fix IE
 ::-moz-selection { color: gold;  background: #a34a4b; }
-::selection      { color: gold;  background: #a34a4b; } 
+::selection      { color: gold;  background: #a34a4b; }
 
 
 a {
@@ -6129,7 +6129,7 @@ textarea.organizers-field {
     text-decoration: underline;
     font-size: 1.2em;
   }
-  
+
   a {
     color: inherit;
   }
@@ -6168,4 +6168,3 @@ textarea.organizers-field {
   content:url(image_path('fourth-tooltip.png'));
   left: 0px;
 }
-
