@@ -109,7 +109,7 @@
   def monthly_invoice(venue, months_before = 1)
     d = months_before.month.ago
     @calculations = Calculations::Monthly.new(venue, d.month.to_s + "_" + d.year.to_s)
-    mail(:to => venue.email, cc: ADMIN_EMAIL, :reply_to => 'hey@joinfoodcircles.org', :subject => "Your #{@calculations.month} impact report")
+    mail(:to => ADMIN_EMAIL, :reply_to => 'hey@joinfoodcircles.org', :subject => "Your #{@calculations.month} impact report")
   end
 
   def followup_email(payment)
