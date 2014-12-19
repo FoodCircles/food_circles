@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :prepare_for_mobile
   before_filter :detect_email_omniauth
   before_filter :check_subdomain
-  
+
 
   ACCOUNT_SID = "AC085df9dc6444a3588933ae0ddd9d95e7"
   ACCOUNT_TOKEN = "95cc7f360064ab606017dad6d2eb38a5"
@@ -25,29 +25,30 @@ class ApplicationController < ActionController::Base
   end
 
   def email_server
+    unless request.env['HTTP_USER_AGENT'].nil?
+      user_agent =  request.env['HTTP_USER_AGENT'].downcase
+      request.user_agent =~ /Mobile|webOS/
 
-    user_agent =  request.env['HTTP_USER_AGENT'].downcase
-    request.user_agent =~ /Mobile|webOS/
+      if(params['app'].present?)
 
-    if(params['app'].present?)
+        if(user_agent.include?"android")
 
-      if(user_agent.include?"android")
+          redirect_to  "https://play.google.com/store/apps/details?id=co.foodcircles"
 
-        redirect_to  "https://play.google.com/store/apps/details?id=co.foodcircles"
+        elsif (user_agent.include?"iphone")
+          redirect_to "http://itunes.apple.com/us/app/foodcircles/id526107767"
+        elsif !((request.user_agent =~ /Mobile/).nil?)
+          redirect_to root_path
+        else
 
-      elsif (user_agent.include?"iphone")
-        redirect_to "http://itunes.apple.com/us/app/foodcircles/id526107767"
-      elsif !((request.user_agent =~ /Mobile/).nil?)
-        redirect_to root_path
+          redirect_to  "http://www.foodcircles.net/app"
+
+        end
       else
 
-        redirect_to  "http://www.foodcircles.net/app"
+        prepare_for_mobile
 
       end
-    else
-
-      prepare_for_mobile
-
     end
 
   end
@@ -56,19 +57,19 @@ class ApplicationController < ActionController::Base
     s = [('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
     (0..4).map{s[rand(s.length)]}.join.downcase
   end
-  
+
   def makeCall(v,r,minutes)
     return if r.called
-    
+
     r.called = true
     r.save
-    
+
     data = {
       :from => CALLER_ID,
       :to => v.phone,
       :url => BASE_URL + "/notification?r=#{r.id}&m=#{minutes}"
     }
-    
+
     begin
       client = Twilio::REST::Client.new(ACCOUNT_SID, ACCOUNT_TOKEN)
       client.account.calls.create data
@@ -77,7 +78,7 @@ class ApplicationController < ActionController::Base
       return
     end
   end
-  
+
   def notification
     @r = Reservation.find(params[:r])
     @minutes = params[:minutes]
@@ -85,10 +86,10 @@ class ApplicationController < ActionController::Base
     @r.save
     render :action => "notification.xml.builder", :layout => false
   end
-  
+
   def sendText(p, b)
     @twilio = Twilio::REST::Client.new(ACCOUNT_SID, ACCOUNT_TOKEN)
-    @account = @twilio.account 
+    @account = @twilio.account
     @account.sms.messages.create(:from => '+14422223663', :to => p, :body => b)
     #@twilio.account.sms.messages.delay.create(:from => "+14422223663", :to => p, :body => b)
   end
@@ -230,4 +231,3 @@ class ApplicationController < ActionController::Base
   helper_method :stripe_customer?, :current_user_credit_card_data, :total_meals
   helper_method :enqueue_mix_panel_event, :queued_mixpanel_events
 end
-
