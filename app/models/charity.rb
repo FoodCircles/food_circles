@@ -51,6 +51,9 @@ class Charity < ActiveRecord::Base
     uf = self.use_funds.dup
     uf['%amt%'] = amt.to_s if uf.include? '%amt%'
 
+    amt_mult = uf.match('\%amt:([0-9\.]+)%')
+    uf[amt_mult[0]] = (amt.to_f*amt_mult[1].to_f).to_s unless amt_mult.nil?
+
     if uf.include? '%s%'
       if amt > 1
         uf['%s%'] = 's'
