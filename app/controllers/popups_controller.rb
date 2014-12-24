@@ -10,7 +10,7 @@ class PopupsController < ApplicationController
 
     if request.subdomain and not ['', 'www'].include?(request.subdomain)
       sub_charity = Charity.find_by_subdomain(request.subdomain)
-        @usefunds = sub_charity.msg_usefunds(1)
+      @usefunds = sub_charity.use_funds
     end
 
     @min_offer = @offer.venue.offers.order("min_diners ASC").first
