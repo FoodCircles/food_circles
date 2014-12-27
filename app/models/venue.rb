@@ -36,7 +36,7 @@ class Venue < ActiveRecord::Base
   image_accessor :outside_image
   image_accessor :restaurant_tile_image
   image_accessor :timeline_image
-  
+
 
   validates_presence_of :name
   validates :email, :on => :update, :'validators/email' => true
@@ -128,7 +128,8 @@ class Venue < ActiveRecord::Base
               :end => self.close_at,
               :vouchers_available => self.vouchers_available.to_i,
               :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : ''),
-              :social_links => self.social_links
+              :social_links => self.social_links,
+              :slug => self.slug
           }
     data[:offers] = if options[:all]
       self.offers
