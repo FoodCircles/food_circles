@@ -255,7 +255,7 @@
       var amt_re = /%amt:([0-9\.]+)%/
       var res_amt_re = amt_re.exec(useFundsMsg);
       if(res_amt_re){
-        useFundsMsg = useFundsMsg.replace(res_amt_re[0], $amount*res_amt_re[0]);
+        useFundsMsg = useFundsMsg.replace(res_amt_re[0], $amount*res_amt_re[1]);
       }
 
       if($amount > 1){
