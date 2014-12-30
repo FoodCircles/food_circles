@@ -187,7 +187,7 @@ class ApplicationController < ActionController::Base
   end
 
   def total_meals_adjustment
-    -1395
+    -1151
   end
 
   def total_meals
