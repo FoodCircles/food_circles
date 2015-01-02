@@ -1,4 +1,5 @@
 class VenuesController < ApplicationController
+  protect_from_forgery :except => :subscribe 
 
   def index
 
