@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141126173536) do
+ActiveRecord::Schema.define(:version => 20150108135206) do
 
   create_table "badges", :force => true do |t|
     t.string   "code"
@@ -42,14 +42,15 @@ ActiveRecord::Schema.define(:version => 20141126173536) do
     t.integer  "state_id"
     t.string   "zip"
     t.text     "description"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "image_uid"
     t.string   "charity_type"
     t.string   "subdomain"
     t.string   "use_funds"
     t.string   "logo_uid"
     t.string   "photo_uid"
+    t.boolean  "active",       :default => true
   end
 
   create_table "charity_photos", :force => true do |t|
