@@ -48,7 +48,7 @@ Foodcircles::Application.configure do
     if source.starts_with?('/media')
       nil
     else
-      "//foodcirclesassets.s3.amazonaws.com"
+      "//foodtestsicarul.s3.amazonaws.com"
     end
   end
 

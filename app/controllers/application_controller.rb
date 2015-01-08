@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def check_subdomain
     unless ['', 'www', 'staging'].include?(request.subdomain)
-      sub_charity = Charity.find_by_subdomain(request.subdomain)
+      sub_charity = Charity.active.find_by_subdomain(request.subdomain)
       unless sub_charity
         redirect_to BASE_URL
       end

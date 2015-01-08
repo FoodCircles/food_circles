@@ -1,6 +1,6 @@
 .radio-holder{:class => charity_counter == 0 ? 'checked' : ''}
   %label{:for => "charity-#{charity.id}"}
-    %a{:href => charity.web}= charity.name
+    %a{:href => charity.web, :target => '_blank'}= charity.name
     = charity.full_address
   - if charity_counter == 0
     %input.custom-input{:checked => 'checked', :id => "charity-#{charity.id}", :name => "charity_id", :type => "radio", :value => "#{charity.id}", :"data-mixpanel-event" => "Picked different charity", :"data-mixpanel-trigger-on" => "change", :"data-mixpanel-options" => {:restaurant => venue.name, :charity => "#{charity.name}"}.to_json}/

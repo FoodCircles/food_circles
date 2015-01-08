@@ -93,10 +93,10 @@ module ApplicationHelper
 
   def ListCharities
     if request.subdomain and not ['', 'www', 'staging'].include?(request.subdomain)
-      sub_charity = Charity.find_by_subdomain(request.subdomain)
+      sub_charity = Charity.active.find_by_subdomain(request.subdomain)
       [sub_charity]
     else
-      Charity.find_all_by_charity_type('main')
+      Charity.active.find_all_by_charity_type('main')
     end
   end
 end

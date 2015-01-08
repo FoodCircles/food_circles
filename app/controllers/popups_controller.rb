@@ -9,7 +9,7 @@ class PopupsController < ApplicationController
     end
 
     if request.subdomain and not ['', 'www'].include?(request.subdomain)
-      sub_charity = Charity.find_by_subdomain(request.subdomain)
+      sub_charity = Charity.active.find_by_subdomain(request.subdomain)
       @usefunds = sub_charity.use_funds
     end
 

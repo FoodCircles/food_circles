@@ -1,12 +1,12 @@
 class Api::CharitiesController < ApplicationController
   def show
     begin
-      @charities = Charity.all() 
+      @charities = Charity.active.all() 
       return_arr = []
       @charities.each do |c|
         return_arr << {:id => c.id, :name => c.name, :description => c.description}
       end
-    
+
       render :json => {:error => false, :content => return_arr}
     rescue Exception => e
       render :json => {:error => true, :description => "Internal Server Error."}, status: 503 and return

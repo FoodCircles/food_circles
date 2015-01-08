@@ -31,6 +31,10 @@ class Charity < ActiveRecord::Base
       end
     end
   end
+  
+  def self.active
+    where(:active => true)
+  end
 
   def as_json(options={})
     { :id => self.id,

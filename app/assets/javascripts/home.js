@@ -627,6 +627,8 @@
         sliderMin = parseInt($holder.find('.min').text().replace('$', ''));
         sliderMax = parseInt($holder.find('.max').text().replace('$', ''));
       }
+
+      $('.donation-info .meal-text').text(useFundsMsg(1));
       $slider.slider({
         min: sliderMin,
         max: sliderMax,
@@ -634,7 +636,6 @@
         slide: function(event, ui){
           if($slider.closest('.pay-box').length){
                   $('.pay-box').find('.field').val(ui.value);
-              $('.donation-info strong').text(Math.floor($('.pay-box').find('.field').val()));
             var mixPanelOptions = $slider.data('mixpanel-options')
             mixPanelOptions.value = ui.value;
             mixpanel.track("Touched slider handle", mixPanelOptions);
