@@ -18,7 +18,7 @@
 
   var useFundsMsg = function(amt){
     if(typeof usefunds !== 'string' || usefunds === ''){
-      usefunds = 'Give %amt% meal%s% to';
+      usefunds = '<strong>%amt%</strong> meal%s% donated';
     }
 
     var resultMsg = usefunds.replace(/%amt%/, amt);
@@ -271,7 +271,7 @@
       var $amount = $('.pay-box input[name=amount]').val();
       var $give_to = $('.deal-payment .give-to');
 
-      $give_to.text(useFundsMsg($amount));
+      $give_to.html(useFundsMsg($amount));
     })
 
     .on('click', '.deal-payment .back', function(event){
@@ -628,7 +628,7 @@
         sliderMax = parseInt($holder.find('.max').text().replace('$', ''));
       }
 
-      $('.donation-info .meal-text').text(useFundsMsg(1));
+      $('.donation-info .meal-text').html(useFundsMsg(1));
       $slider.slider({
         min: sliderMin,
         max: sliderMax,
