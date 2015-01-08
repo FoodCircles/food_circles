@@ -17,13 +17,13 @@
       position;
 
   var useFundsMsg = function(amt){
-    if(usefunds == ''){
+    if(typeof usefunds !== 'string' || usefunds === ''){
       usefunds = 'Give %amt% meal%s% to';
     }
 
     var resultMsg = usefunds.replace(/%amt%/, amt);
 
-    var amt_re = /%amt:([0-9\.]+)%/
+    var amt_re = /%amt:([0-9\.]+)%/;
     var res_amt_re = amt_re.exec(resultMsg);
     if(res_amt_re){
       resultMsg = resultMsg.replace(res_amt_re[0], amt*res_amt_re[1]);
@@ -38,7 +38,7 @@
     }
 
     return resultMsg;
-  }
+  };
 
   //document ready event
   $doc.on('ready', function(){
@@ -639,8 +639,10 @@
             mixPanelOptions.value = ui.value;
             mixpanel.track("Touched slider handle", mixPanelOptions);
           }
-            $('.donation-info .meal-text').text(useFundsMsg(Math.floor($('.pay-box').find('.field').val()));
-          
+          var amt = Math.floor($('.pay-box').find('.field').val());
+          var msg = useFundsMsg(amt);
+          $('.donation-info .meal-text').text(msg);
+
         }
       });
     });
