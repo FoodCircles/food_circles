@@ -16,6 +16,30 @@
       $body = null,
       position;
 
+  var useFundsMsg = function(amt){
+    if(usefunds == ''){
+      usefunds = 'Give %amt% meal%s% to';
+    }
+
+    var resultMsg = usefunds.replace(/%amt%/, amt);
+
+    var amt_re = /%amt:([0-9\.]+)%/
+    var res_amt_re = amt_re.exec(resultMsg);
+    if(res_amt_re){
+      resultMsg = resultMsg.replace(res_amt_re[0], amt*res_amt_re[1]);
+    }
+
+    if(amt > 1){
+      resultMsg = resultMsg.replace(/%s%/, 's');
+      resultMsg = resultMsg.replace(/%ren%/, 'ren');
+    } else {
+      resultMsg = resultMsg.replace(/%s%/, '');
+      resultMsg = resultMsg.replace(/%ren%/, '');
+    }
+
+    return resultMsg;
+  }
+
   //document ready event
   $doc.on('ready', function(){
 
@@ -246,27 +270,8 @@
       });
       var $amount = $('.pay-box input[name=amount]').val();
       var $give_to = $('.deal-payment .give-to');
-      if(usefunds == ''){
-        usefunds = 'Give %amt% meal%s% to';
-      }
 
-      var useFundsMsg = usefunds.replace(/%amt%/, $amount);
-
-      var amt_re = /%amt:([0-9\.]+)%/
-      var res_amt_re = amt_re.exec(useFundsMsg);
-      if(res_amt_re){
-        useFundsMsg = useFundsMsg.replace(res_amt_re[0], $amount*res_amt_re[1]);
-      }
-
-      if($amount > 1){
-        useFundsMsg = useFundsMsg.replace(/%s%/, 's');
-        useFundsMsg = useFundsMsg.replace(/%ren%/, 'ren');
-      } else {
-        useFundsMsg = useFundsMsg.replace(/%s%/, '');
-        useFundsMsg = useFundsMsg.replace(/%ren%/, '');
-      }
-
-      $give_to.text(useFundsMsg);
+      $give_to.text(useFundsMsg($amount));
     })
 
     .on('click', '.deal-payment .back', function(event){
@@ -634,13 +639,8 @@
             mixPanelOptions.value = ui.value;
             mixpanel.track("Touched slider handle", mixPanelOptions);
           }
-          if(Math.floor($('.pay-box').find('.field').val()) > 1){
-            $('.donation-info .meal-text').text('meals donated');
-          }
-          else
-          {
-            $('.donation-info .meal-text').text('meal donated');
-          }
+            $('.donation-info .meal-text').text(useFundsMsg(Math.floor($('.pay-box').find('.field').val()));
+          
         }
       });
     });
