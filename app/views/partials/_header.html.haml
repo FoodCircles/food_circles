@@ -104,7 +104,7 @@
         %a{class: "logo", href: root_path}
         .donation-count
           %strong= total_meals
-          meals donated to date
+          people aided to date
         .account
           %a{href: "#"}
             My Account
@@ -139,10 +139,10 @@
         .current-goal
           .current
             %strong= weekly_progress[:current_progress]
-            %small meals
+            %small aided
           .progress
             %span.goal this week's goal
-            %span.total= "#{weekly_progress[:adjusted_total]} meals"
+            %span.total= "#{weekly_progress[:adjusted_total]} people aided"
             %em.bar{style: "width: #{[percent, 100].min}%"}
         %p.getapp
           Arm yourself for the streets.
