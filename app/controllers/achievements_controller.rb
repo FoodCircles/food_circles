@@ -12,30 +12,32 @@ class AchievementsController < ApplicationController
   def index
   end
 
-  def best_donors    
+  def best_donors
     calculations = Calculations::Achievements.new
     best_donors = calculations.best_donors
     @donors_table = []
 
     best_donors.each do |bd|
       bd.payments.each do |pay|
-        if pay.amount > pay.offer.price && pay.created_at > calculations.dt_min
-          reg = {}
+        if pay.offer
+          if pay.amount > pay.offer.price && pay.created_at > calculations.dt_min
+            reg = {}
 
-          reg[:email] = bd.email
-          reg[:offer] = pay.offer.name
-          reg[:our_price] = pay.offer.price.to_i
-          reg[:amount_paid] = pay.amount.to_i
-          reg[:date] = pay.created_at
-          if pay.charity_id == nil
-            reg[:charity] = "Null"
-          else
-            reg[:charity] = pay.charity.name
+            reg[:email] = bd.email
+            reg[:offer] = pay.offer.name
+            reg[:our_price] = pay.offer.price.to_i
+            reg[:amount_paid] = pay.amount.to_i
+            reg[:date] = pay.created_at
+            if pay.charity_id == nil
+              reg[:charity] = "Null"
+            else
+              reg[:charity] = pay.charity.name
+            end
+            reg[:code] = pay.code
+            reg[:state] = pay.state
+
+            @donors_table.push(reg)
           end
-          reg[:code] = pay.code
-          reg[:state] = pay.state
-
-          @donors_table.push(reg)
         end
       end
     end
