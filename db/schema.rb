@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150108135206) do
+ActiveRecord::Schema.define(:version => 20150127011747) do
 
   create_table "badges", :force => true do |t|
     t.string   "code"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20150108135206) do
     t.string   "logo_uid"
     t.string   "photo_uid"
     t.boolean  "active",       :default => true
+    t.integer  "order"
   end
 
   create_table "charity_photos", :force => true do |t|
@@ -133,6 +134,7 @@ ActiveRecord::Schema.define(:version => 20150108135206) do
     t.string   "website_url"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.integer  "order"
   end
 
   create_table "notification_requests", :force => true do |t|
