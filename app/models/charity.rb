@@ -3,7 +3,7 @@ class Charity < ActiveRecord::Base
   image_accessor :logo
   image_accessor :photo
 
-  default_scope order('charity.order ASC')
+  default_scope order('charities.order ASC')
 
   belongs_to :charity
   belongs_to :region
