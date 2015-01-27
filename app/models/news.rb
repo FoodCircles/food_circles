@@ -2,6 +2,8 @@ class News < ActiveRecord::Base
   image_accessor :mobile_image
   image_accessor :website_image
 
+  default_scope order('news.order ASC')
+
   scope :website, where("website_image_uid IS NOT NULL")
   scope :mobile, where("mobile_image_uid IS NOT NULL")
 
