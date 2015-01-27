@@ -3,8 +3,6 @@ class Charity < ActiveRecord::Base
   image_accessor :logo
   image_accessor :photo
 
-  default_scope order('charity.order ASC')
-
   belongs_to :charity
   belongs_to :region
   belongs_to :state
@@ -33,7 +31,7 @@ class Charity < ActiveRecord::Base
       end
     end
   end
-
+  
   def self.active
     where(:active => true)
   end
