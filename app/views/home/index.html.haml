@@ -50,7 +50,7 @@
 
       .products-tiles
         - @venues.each do |venue|
-          %div{class: "tile #{ venue.vouchers_available > 2 ? "green" : (venue.vouchers_available == 1 ? "red" : "yellow")} #{( venue.vouchers_available == 0 ? "sold-out" : "" )} #{venue.venue_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.experience_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
+          %div{class: "tile #{ venue.num_vouchers > 2 ? "green" : (venue.num_vouchers == 1 ? "red" : "yellow")} #{( venue.num_vouchers == 0 ? "sold-out" : "" )} #{venue.venue_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.experience_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
             %h3= venue.name
             .thumb
               - if venue.has_vouchers?
@@ -60,7 +60,7 @@
                   %a{href: "https://twitter.com/intent/tweet?status=At%20"+venue.name+":%20"+venue.offers.order("min_diners ASC").first.name+"%20for%20$1.%20100%25%20of%20purchase%20goes%20to%20buy%20dinner%20for%20a%20child%20in%20need%20@foodcircles.%20http://joinfoodcircles.org/"+venue.slug+"%20#bofo", target: "_blank", class: "btn-mini"}
                     %i.icon-twitter
               .progress
-                - percent = (venue.vouchers_available.to_f / venue.vouchers_total.to_f) * 100
+                - percent = (venue.num_vouchers.to_f / venue.vouchers_total.to_f) * 100
                 - if venue.sold_out?
                   %span.pbar{style: "height: 0"}
                     - unless @watched_venues.include? venue
@@ -68,7 +68,7 @@
                 - else
                   %span.pbar{style: "height:" + percent.to_s + "%"}
                     %span.block
-                      %strong= venue.vouchers_available
+                      %strong= venue.num_vouchers
                       %small left
 
               /%a{href: main_app.deal_popup_not_logged_path(offer)}

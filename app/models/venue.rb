@@ -81,6 +81,14 @@ class Venue < ActiveRecord::Base
     @lon = value
   end
 
+  def num_vouchers
+    if active
+      vouchers_available.to_i
+    else
+      0
+    end
+  end
+
   def has_new_vouchers?
     vouchers_available_changed? &&
     vouchers_available_change.first &&
@@ -88,7 +96,7 @@ class Venue < ActiveRecord::Base
   end
 
   def has_vouchers?
-    vouchers_available.to_i > 0
+    num_vouchers > 0
   end
 
   def sold_out?
@@ -126,7 +134,7 @@ class Venue < ActiveRecord::Base
               :restaurant_tile_image => (self.restaurant_tile_image ? self.restaurant_tile_image.url : ''),
               :start => (self.available? ? 'Later Tonight' : self.open_at),
               :end => self.close_at,
-              :vouchers_available => self.vouchers_available.to_i,
+              :vouchers_available => self.num_vouchers,
               :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : ''),
               :social_links => self.social_links,
               :slug => self.slug
