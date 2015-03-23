@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150127011747) do
+ActiveRecord::Schema.define(:version => 20150323180756) do
 
   create_table "badges", :force => true do |t|
     t.string   "code"
@@ -221,6 +221,7 @@ ActiveRecord::Schema.define(:version => 20150127011747) do
     t.string   "state"
     t.string   "paypal_charge_token"
     t.integer  "charity_id"
+    t.string   "friend"
   end
 
   add_index "payments", ["user_id"], :name => "index_payments_on_user_id"

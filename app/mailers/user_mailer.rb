@@ -34,8 +34,16 @@
   def voucher(user, r)
     @user = user
     @payment = r
+
+    if r.friend
+      email = r.friend
+      mail(:to => @user.email, :subject => "Voucher gifted to friend", :body => "Your voucher for your friend at #{email} was sent succesfully.").deliver
+    else
+      email = @user.email
+    end
+
     mail(
-      :to => @user.email,
+      :to => email,
       :subject => "Your Voucher for #{r.offer.venue.name}",
       :reply_to => 'hey@joinfoodcircles.org'
     )
