@@ -111,6 +111,12 @@ class Venue < ActiveRecord::Base
   end
 
   def as_json(options={})
+    if options[:lat]
+      distance_venue = distance(options[:lat], options[:lon])
+    else
+      distance_venue = 0
+    end
+
     data = {
               :id => self.id,
               :name => self.name,
@@ -135,7 +141,7 @@ class Venue < ActiveRecord::Base
               :start => (self.available? ? 'Later Tonight' : self.open_at),
               :end => self.close_at,
               :vouchers_available => self.num_vouchers,
-              :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : ''),
+              :distance => distance_venue,
               :social_links => self.social_links,
               :slug => self.slug
           }
@@ -194,7 +200,7 @@ class Venue < ActiveRecord::Base
   def distance(lat, lon)
     point_a = Venue.rgeo_factory_for_column(:latlon).point(lon, lat)
     point_b = Venue.rgeo_factory_for_column(:latlon).point(latlon.y, latlon.x) # to workaroud the fact that the db has switched lon, lat
-    ((point_a.distance(point_b) / 1000) * 0.621371192).round(2).to_s + "mi"
+    ((point_a.distance(point_b) / 1000) * 0.621371192).round(2)
   end
 
   def full_address
@@ -222,6 +228,16 @@ class Venue < ActiveRecord::Base
       where("? BETWEEN open_times.start AND open_times.end", t).
       uniq
   end
+
+
+
+    def self.nearby(lat, lon)
+      sql_dist = "ST_Distance(venues.latlon, 'POINT(#{lat} #{lon})')"
+
+      Venue.
+        where("#{sql_dist} < 50000").
+        order("#{sql_dist}")
+    end
 
   def self.currently_available_with_location(lat, lon, time=Time.now)
     t = ((time - time.beginning_of_week) / 60) + 300
