@@ -1,310 +1,3 @@
-
-
-h2 {
-	color: #4e3e34;
-	font-family: "NeutrafaceSlab", serif;	
-  font-size: 24px;
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-  line-height: 24px;
-}
-
-.placard {
-  position: relative;
-	width: 100%;
-		background-image: linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
-background-image: -o-linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
-background-image: -moz-linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
-background-image: -webkit-linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
-background-image: -ms-linear-gradient(left top, #FFFFFF 11%, #F7F7F7 56%);
-
-background-image: -webkit-gradient(
-	linear,
-	left top,
-	right bottom,
-	color-stop(0.11, #FFFFFF),
-	color-stop(0.56, #F7F7F7)
-);
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	margin-top: 40px;
-	-moz-box-shadow: 3px 3px 2px #d6cdbd;
-	-webkit-box-shadow: 3px 3px 2px #d6cdbd;
-	box-shadow: 3px 3px 2px #d6cdbd;
-	text-align: center;
-	display: block;
-	padding: 20px 0 50px 0;
-	color: #4e3e34;
-	font-family: "NeutrafaceSlab", serif;
-}
-
-.placard-heading h1{
-	font-size: 24px;
-	margin-bottom: 30px;
-	display: block;
-  color: #4e3e34;
-  font-weight: 300;
-}
-
-.stringleft{
-	position: absolute;
-	top: -80px;
-	left: 30px;
-}
-
-.stringright{
-	position: absolute;
-	top: -80px;
-	right: 30px;
-}
-
-.stringleft-second{
-	position: absolute;
-	top: 843px;
-	left: 100px;
-}
-
-.stringright-second{
-	position: absolute;
-	top: 843px;
-	left: 840px;
-}
-
-.omega {
-	margin-bottom: 100px;
-}
-
-.steps {
-	width: 90%;
-	margin: 10px auto;
-	display: block
-}
-
-.steps p {
-	margin: 15px auto;
-	font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
-}
-
-.steps h3 {
-	font-size: 20px;
-}
-
-.step1 {
-	width: 32%;
-	display: inline-block;
-	vertical-align: top;
-}
-
-.step1 h3, .step2 h3, .step3 h3 {
-	font-family: "NeutrafaceSlab", serif;
-	font-size: 18px;
-	font-weight: bold;
-}
-
-.step1 p, .step2 p, .step3 p {
-	width: 85%;
-}
-
-.step2 {
-	width: 32%;
-	display: inline-block;
-	vertical-align: top;
-}
-
-.step3 {
-	width: 32%;
-	display: inline-block;
-	vertical-align: top;
-}
-
-#jointhecause {
-	display: inline-block;
-}
-
-.bignumber {
-	font-size:200%;
-}
-
-#restaurant-invite {
-	display: block;
-	font-family: "NeutrafaceSlab", serif;
-	font-weight: 700;
-}
-
-#restaurant-invite input {
-	margin-left: 10px;
-	font-size: 16px;
-	line-height: 18px;
-	font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
-	display: inline-block;
-	color: #423f37;
-
-  &.btn-standart {
-    color: #fff;
-    line-height: 40px;
-    height: 40px;
-  }
-}
-
-#restaurants-send {
-	position: relative;
-	top: -8px;
-}
-
-#restaurant-invite .button {
-	
-	margin-left:auto;
-	margin-right:auto;
-	width:150px;
-}
-
-.btn-large { line-height:54px; font-size:18px; }
-
-.light-shadow[class^="btn-"], .light-shadow[class*=" btn-"] { box-shadow:0 2px 3px #d3c9b9; }
-
-[class^="btn-"] i, [class*=" btn-"] i { vertical-align:middle; margin-left:2px; }
-
-#restaurant-invite .button {
-	
-	text-decoration:none;
-	padding-top:10px;
-	padding-bottom:15px;
-	padding-left:24px;
-	padding-right:24px;
-	font-family: "Helvetica-Neue", Helvetica, Arial, Sans-serif;
-	font-weight: 400;
-	font-size:18pt;
-	height: 40px;
-	color:#ffffff;
-	text-align:center;
-	
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-    -border-radius: 8px;
-	
-	text-shadow:0px 1px 1px rgb(112,26,26);
-}
-
-#restaurant-invite .button:link {
-	
-	-moz-box-shadow:0px 2px 3px rgba(102,51,51,0.2);
-	-webkit-box-shadow:0px 2px 3px rgba(102,51,51,0.2);
-	box-shadow:0px 2px 3px rgba(102,51,51,0.2);
-
-	background: #b56d6e; /* Old browsers */
-
-background: -moz-linear-gradient(top,  #b56d6e 0%, #a34a4b 100%); /* FF3.6+ */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b56d6e), color-stop(100%,#a34a4b)); /* Chrome,Safari4+ */
-
-background: -webkit-linear-gradient(top,  #b56d6e 0%,#a34a4b 100%); /* Chrome10+,Safari5.1+ */
-
-background: -o-linear-gradient(top,  #b56d6e 0%,#a34a4b 100%); /* Opera 11.10+ */
-
-background: -ms-linear-gradient(top,  #b56d6e 0%,#a34a4b 100%); /* IE10+ */
-
-background: linear-gradient(to bottom,  #b56d6e 0%,#a34a4b 100%); /* W3C */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b56d6e', endColorstr='#a34a4b',GradientType=0 ); /* IE6-9 */
-	
-}
-
-
-#restaurant-invite .button:hover {
-	
-	-moz-box-shadow:0px 2px 3px rgba(102,51,51,0.2);
-	-webkit-box-shadow:0px 2px 3px rgba(102,51,51,0.2);
-	box-shadow:0px 2px 3px rgba(102,51,51,0.2);
-
-	background: #c47b7b; /* Old browsers */
-
-background: -moz-linear-gradient(top,  #c47b7b 0%, #b65c5d 100%); /* FF3.6+ */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c47b7b), color-stop(100%,#b65c5d)); /* Chrome,Safari4+ */
-
-background: -webkit-linear-gradient(top,  #c47b7b 0%,#b65c5d 100%); /* Chrome10+,Safari5.1+ */
-
-background: -o-linear-gradient(top,  #c47b7b 0%,#b65c5d 100%); /* Opera 11.10+ */
-
-background: -ms-linear-gradient(top,  #c47b7b 0%,#b65c5d 100%); /* IE10+ */
-
-background: linear-gradient(to bottom,  #c47b7b 0%,#b65c5d 100%); /* W3C */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c47b7b', endColorstr='#b65c5d',GradientType=0 ); /* IE6-9 */
-
-
-}
-
-#restaurant-invite .button:visited {
-	
-	-moz-box-shadow:0px 2px 3px rgba(102,51,51,0.2);
-	-webkit-box-shadow:0px 2px 3px rgba(102,51,51,0.2);
-	box-shadow:0px 2px 3px rgba(102,51,51,0.2);
-
-	background: #b56d6e; /* Old browsers */
-
-background: -moz-linear-gradient(top,  #b56d6e 0%, #a34a4b 100%); /* FF3.6+ */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b56d6e), color-stop(100%,#a34a4b)); /* Chrome,Safari4+ */
-
-background: -webkit-linear-gradient(top,  #b56d6e 0%,#a34a4b 100%); /* Chrome10+,Safari5.1+ */
-
-background: -o-linear-gradient(top,  #b56d6e 0%,#a34a4b 100%); /* Opera 11.10+ */
-
-background: -ms-linear-gradient(top,  #b56d6e 0%,#a34a4b 100%); /* IE10+ */
-
-background: linear-gradient(to bottom,  #b56d6e 0%,#a34a4b 100%); /* W3C */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b56d6e', endColorstr='#a34a4b',GradientType=0 ); /* IE6-9 */
-	
-
-	}
-
-
-#restaurant-invite .button:active {
-	
-	-moz-box-shadow:inset 0px -3px 4px rgba(0,0,0,0.4);
-	-webkit-box-shadow:inset 0px -3px 4px rgba(0,0,0,0.4);
-	box-shadow:inset 0px -3px 4px rgba(0,0,0,0.4);
-	
-	text-shadow:0px 1px 1px rgb(70,18,18);
-	
-	background: #6d1d1d; /* Old browsers */
-
-background: -moz-linear-gradient(top,  #6d1d1d 0%, #c3797a 100%); /* FF3.6+ */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6d1d1d), color-stop(100%,#c3797a)); /* Chrome,Safari4+ */
-
-background: -webkit-linear-gradient(top,  #6d1d1d 0%,#c3797a 100%); /* Chrome10+,Safari5.1+ */
-
-background: -o-linear-gradient(top,  #6d1d1d 0%,#c3797a 100%); /* Opera 11.10+ */
-
-background: -ms-linear-gradient(top,  #6d1d1d 0%,#c3797a 100%); /* IE10+ */
-
-background: linear-gradient(to bottom,  #6d1d1d 0%,#c3797a 100%); /* W3C */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1d1d', endColorstr='#c3797a',GradientType=0 ); /* IE6-9 */
-
-	
-}
-
-.restaurant-numbers {
-	margin-right: 8px;
-	position: relative;
-	top: 5px;
-  vertical-align: baseline;
-}
-
-
-
-
-/* Nico's Restaurant Page */
-
-
-
-
 #hero.restaurants-hero {
     height: 355px;
 
@@ -355,7 +48,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1d1d', end
         max-width: 100%;
     }
     .intro {
-        padding: 40px 0 80px;
+        border-radius: 10px;
+        box-shadow: 0 5px 3px -3px #d3c9b9;
+        margin: 40px 0 60px;
+        padding-bottom: 20px;
         &:after {
             display: table;
             content: "";
@@ -412,6 +108,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1d1d', end
             strong {
                 display: block;
                 font-weight: bold;
+            }
+        }
+        blockquote {
+            position: relative;
+            &:before, &:after {
+                display: block;
+                content: "";
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: 50px;
+                left: -20px;
+                background: url(https://dl.dropboxusercontent.com/u/38930645/site%20assets/quotes.jpg) 0 0 no-repeat;
+            }
+            &:after {
+                top: auto;
+                bottom: 20px;
+                left: auto;
+                right: -30px;
+                background-position: -40px 0;
             }
         }
         &:before,
@@ -483,6 +199,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1d1d', end
         }
         blockquote {
             clear: both;
+            position: relative;
+            &:before, &:after {
+                display: block;
+                content: "";
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: 60px;
+                left: -50px;
+                background: url(https://dl.dropboxusercontent.com/u/38930645/site%20assets/quotes.jpg) 0 -40px no-repeat;
+            }
+            &:after {
+                top: auto;
+                bottom: 30px;
+                left: auto;
+                right: -60px;
+                background-position: -40px -40px;
+            }
         }
     }
     .levels {
