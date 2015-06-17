@@ -6,4 +6,9 @@ class Api::VenuesController < ApplicationController
       :people_aided => weekly_progress[:current_progress],
       :weekly_goal => weekly_progress[:adjusted_total]}
   end
+
+  def homeless
+  	@venue = Venue.where(device_id: params[:device_id]).first
+  	render json: @venue.to_json
+  end
 end

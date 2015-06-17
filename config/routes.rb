@@ -115,6 +115,7 @@ Foodcircles::Application.routes.draw do
     get '/news' => 'news#show'
 
     get '/venues/:lat/:lon' => 'venues#show', :constraints => {:lat => /[^\/]*/, :lon => /[^\/]*/}
+    get '/homeless/:device_id' => "venues#homeless"
     get '/charities' => 'charities#show'
 
     get '/timeline' => 'timeline#show'
