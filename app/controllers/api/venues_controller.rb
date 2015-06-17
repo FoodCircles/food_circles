@@ -9,6 +9,6 @@ class Api::VenuesController < ApplicationController
 
   def homeless
   	@venue = Venue.where(device_id: params[:device_id]).first
-  	render json: venue.to_json
+  	render json: @venue.to_json
   end
 end
