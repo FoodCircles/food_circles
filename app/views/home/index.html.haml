@@ -50,7 +50,7 @@
 
       .products-tiles
         - @venues.each do |venue|
-          %div{class: "tile #{ venue.num_vouchers > 2 ? "green" : (venue.num_vouchers == 1 ? "red" : "yellow")} #{( venue.num_vouchers == 0 ? "sold-out" : "" )} #{venue.venue_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.experience_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
+          %div{:data => {:lat=>venue.lat, :lon=>venue.lon}, class: "tile #{ venue.num_vouchers > 2 ? "green" : (venue.num_vouchers == 1 ? "red" : "yellow")} #{( venue.num_vouchers == 0 ? "sold-out" : "" )} #{venue.venue_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.experience_tags.map{|c| c.name.parameterize }.join(" ")} #{venue.city.parameterize}"}
             %h3= venue.name
             .thumb
               - if venue.has_vouchers?
