@@ -3,7 +3,7 @@
     %h5
       Location:
       %a{href: "#"}
-        GR
+        Choose
         %i{class: "arrow-down"}
     .dropdown
       %i{class: "arrow-up"}
@@ -14,9 +14,13 @@
           %i{class: "arrow-right"}
       .col
         %ul
+          %li
+            %input{type: "checkbox", name:'Nearest', value: 'Nearest', id: 'nearest'}
+            %label{for: 'nearest'}
+              = 'Nearest'
           - @cities.each_pair do |city, count|
             %li
-              %input{type: "checkbox", name: city, value: city, id: city}
+              %input{type: "checkbox", name: city, value: city, id: city, class:'city'}
               %label{for: city}
                 = city
                 %em= "(#{count})"
@@ -61,4 +65,3 @@
         %a{href: "#", class: "clear-all"} Clear All
         %a{href: "#", class: "cancel"} Cancel
         %a{href: "#", class: "btn-mini filter-btn"} Filter
- 

@@ -16,6 +16,10 @@
       $body = null,
       position;
 
+  var geoLoc = {};
+
+
+
   var useFundsMsg = function(amt){
     if(typeof usefunds !== 'string' || usefunds === ''){
       usefunds = '<strong>%amt%</strong> meal%s% donated';
@@ -339,7 +343,6 @@
           popupOpen('/deal_popup_not_logged/'+$(this).data('slug'));
 
       } else {
-        console.log($(this));
         popupOpen($(this).attr('href'));
       }
 
@@ -678,7 +681,6 @@
         $('.deal-payment').removeClass('has-value');
       }
 
-      console.log($.payment.cardType(val_))
       switch($.payment.cardType(val_)){
         case 'visa':
           $('.cards').find('.visa').addClass('active').siblings().removeClass('active');
@@ -809,6 +811,37 @@
       });
     }
   }
+  function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(lat2-lat1);  // deg2rad below
+    var dLon = deg2rad(lon2-lon1);
+    var a =
+      Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon/2) * Math.sin(dLon/2)
+      ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c; // Distance in km
+    return d;
+  }
+
+  function deg2rad(deg) {
+    return deg * (Math.PI/180)
+  }
+
+  var numFiltered = function(){
+    var num = 0;
+
+    $('.products-tiles > div.tile').each(function(){
+      var el = $(this);
+      if (getDistanceFromLatLonInKm(geoLoc.lat, geoLoc.lon, el.data('lat'), el.data('lon')) <= 80){
+        num++;
+      }
+    })
+
+    return num;
+  }
 
   var Tiles = {
     init: function(){
@@ -844,22 +877,62 @@
 
         $ptiles.isotope('insert', $(newElements)).isotope('insert', $addNew);
       });
+
+
+
+      $('#nearest').click(function enable_cb() {
+        $("input.city").prop("disabled", this.checked);
+        if(this.checked){
+          $("input.city").prop("checked", false);
+        }
+      });
+
+
+      var that = this;
+      if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position){
+              geoLoc.lat = position.coords.latitude;
+              geoLoc.lon = position.coords.longitude;
+              $('#nearest').click();
+              $("input.city").prop("disabled", true);
+              that.filter();
+            }, function(){
+
+            });
+      }
     },
     filter: function(){
       var that = this,
         $filters = $('.filters'),
         aFilter = [],
-        selector;
+        selector,
+        nearest = false;
 
       if($filters.find('input:checked').length){
         $filters.find('input:checked').each(function(){
-          aFilter.push('.' + $(this).val().toLowerCase().replace(/[^\w-]+/g,' ').trim().replace(/ /g,'-'));
+          if($(this).val().toLowerCase() == 'nearest'){
+            nearest = true;
+          }else{
+            aFilter.push('.' + $(this).val().toLowerCase().replace(/[^\w-]+/g,' ').trim().replace(/ /g,'-'));
+          }
         });
         selector = aFilter.join(', ') + ', .add-new';
       }else{
         selector = '.tile';
       }
-      $('.products-tiles').isotope({filter:selector});
+
+      if(nearest){
+        selector = '.tile';
+      }
+
+      if(nearest && numFiltered() > 0){
+        $('.products-tiles').isotope({filter:function(){
+          var el = $(this);
+          return getDistanceFromLatLonInKm(geoLoc.lat, geoLoc.lon, el.data('lat'), el.data('lon')) <= 80;
+        }});
+      }else{
+        $('.products-tiles').isotope({filter:selector});
+      }
       $('.filter.expanded').removeClass('expanded');
     }
   }
