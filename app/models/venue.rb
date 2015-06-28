@@ -137,7 +137,8 @@ class Venue < ActiveRecord::Base
               :vouchers_available => self.num_vouchers,
               :distance => (options[:lat] ? distance(options[:lat], options[:lon]) : ''),
               :social_links => self.social_links,
-              :slug => self.slug
+              :slug => self.slug,
+              :device_id => self.device_id
           }
     data[:offers] = if options[:all]
       self.offers
