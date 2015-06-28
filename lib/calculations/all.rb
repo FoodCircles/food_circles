@@ -1,17 +1,9 @@
 module Calculations
-  class Monthly
-    attr_reader :venue, :pdate
+  class All
+    attr_reader :venue
 
-    def initialize(venue, pdate)
+    def initialize(venue)
       @venue = venue
-      @date = pdate
-
-      date_split = pdate.split('_')
-
-      if date_split.length == 2 then
-        @pmonth = date_split[0].to_i
-        @pyear = date_split[1].to_i
-      end
     end
 
     def charity_names
@@ -28,26 +20,6 @@ module Calculations
 
     def human_readable_summary
       total_purchases_by_charities.map{|charity_id, total_purchase| Charity.find(charity_id).msg_usefunds(total_purchase.round)}.to_sentence
-    end
-
-    def date
-      @date
-    end
-
-    def month
-      start_date.strftime "%B"
-    end
-
-    def link_date
-      start_date.strftime "%m_%Y"
-    end
-
-    def pretty_start_date
-      pretty_date(start_date)
-    end
-
-    def pretty_end_date
-      pretty_date(end_date)
     end
 
     def payments
@@ -76,11 +48,11 @@ module Calculations
 
     private
     def get_reservations
-      Reservation.where(created_at: start_date..end_date).where(venue_id: venue.id).includes(:user, :offer)
+      Reservation.where(venue_id: venue.id).includes(:user, :offer)
     end
 
     def get_payments
-      Payment.where(created_at: start_date..end_date).joins(:offer).where("offers.venue_id = ?", venue.id).includes(:user, :offer)
+      Payment.joins(:offer).where("offers.venue_id = ?", venue.id).includes(:user, :offer)
     end
 
 paids = Payment.joins(:offer).joins(:charity).group("charities.name").sum("payments.amount")
@@ -88,7 +60,6 @@ paids = Payment.joins(:offer).joins(:charity).group("charities.name").sum("payme
       paids = Payment.joins(:offer).
               joins(:charity).
               where("offers.venue_id = ?", venue.id).
-              where(created_at: start_date..end_date).
               group("charities.id").
               sum("payments.amount")
       paids.each do |charity, val|
@@ -103,30 +74,15 @@ paids = Payment.joins(:offer).joins(:charity).group("charities.name").sum("payme
       Payment.joins(:offer).
               joins(:charity).
               where("offers.venue_id = ?", venue.id).
-              where(created_at: start_date..end_date).
               group("charities.name").
               count
     end
 
     def get_total_reservations_by_charities
       Reservation.where(venue_id: venue.id).
-                  where(created_at: start_date..end_date).
                   joins(:charity).
                   group("charities.name").
                   count
     end
-
-    def start_date
-      DateTime.new(@pyear, @pmonth, 1).to_date
-    end
-
-    def end_date
-      DateTime.new(@pyear, @pmonth, 1).end_of_month.to_date
-    end
-
-    def pretty_date(date)
-      date.to_formatted_s(:rfc822)
-    end
-
   end
 end
