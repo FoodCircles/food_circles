@@ -10,7 +10,7 @@ class Api::VenuesController < ApplicationController
   def homeless
     venue = Venue.where(device_id: params[:device_id]).first.as_json
     calculations = Calculations::All.new(venue)
-    balance = calculations.total_purchases_by_charities[charity_id].round
+    balance = calculations.total_purchases_by_charities[1].round
     render :json => {
       :error => false,
       :content =>  venue,
