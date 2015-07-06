@@ -182,7 +182,7 @@
         }
         .apps-phone {
             float: left;
-            margin-left: 50px;
+            margin-left: -40px;
         }
         div {
             margin-left: 50%;
@@ -223,10 +223,12 @@
         background: url(https://dl.dropboxusercontent.com/u/38930645/site%20assets/levels.jpg) 100% 0 no-repeat;
         min-height: 800px;
         .container {
-            width: 40%;
+            width: 33%;
             padding: 50px;
+            padding-left: 300px;
             color: #4D3E34;
             margin: 0;
+
         }
         h4 {
             color: #4D3E34;
@@ -305,7 +307,6 @@
         overflow: hidden;
         position: relative;
         height: 600px;
-        max-width: 1280px;
         margin: 0 auto;
         video {
             width: 100%;
