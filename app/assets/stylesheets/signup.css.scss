@@ -69,6 +69,7 @@
         }
         .intro-btns {
             float: left;
+            padding-top: 10px;
         }
     }
     .main-box {
@@ -94,11 +95,12 @@
             }
             h4 {
                 color: #fff;
-                padding-bottom: 50px;
+                line-height: 48px;
+                font-size: 37px;
             }
             p {
                 padding-bottom: 0;
-                line-height: 1.2;
+                line-height: 1.25;
             }
             b {
                 font-weight: bold;
@@ -154,9 +156,9 @@
         text-align: center;
         li {
             display: inline-block;
-            width: 32%;
+            width: 31%;
             vertical-align: top;
-            text-align: left;
+            text-align: center;
         }
         h5 {
             color: #701A1A;
@@ -193,7 +195,7 @@
             display: block;
             margin: 50px auto 0;
             width: 150px;
-            font-size: 24px;
+            font-size: 21px;
         }
         blockquote {
             clear: both;
@@ -234,7 +236,7 @@
         }
         .btn-large {
             width: 150px;
-            font-size: 24px;
+            font-size: 21px;
         }
     }
     .call {
@@ -248,7 +250,7 @@
         }
         .desc {
             p {
-                width: 50%;
+                width: 60%;
             }
         }
         .actions {
@@ -266,6 +268,7 @@
             .btn-large {
                 float: right;
                 margin-top: 15px;
+                width: 180px;
             }
         }
     }
@@ -301,7 +304,7 @@
     .bottomvid {
         overflow: hidden;
         position: relative;
-        height: 800px;
+        height: 600px;
         max-width: 1280px;
         margin: 0 auto;
         video {
