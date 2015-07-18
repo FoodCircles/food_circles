@@ -69,6 +69,7 @@
         }
         .intro-btns {
             float: left;
+            padding-top: 10px;
         }
     }
     .main-box {
@@ -90,15 +91,16 @@
                 position: absolute;
                 bottom: 40px;
                 right: 40px;
-                width: 53%;
+                width: 60%;
             }
             h4 {
                 color: #fff;
-                padding-bottom: 50px;
+                line-height: 48px;
+                font-size: 37px;
             }
             p {
                 padding-bottom: 0;
-                line-height: 1.2;
+                line-height: 1.25;
             }
             b {
                 font-weight: bold;
@@ -154,9 +156,9 @@
         text-align: center;
         li {
             display: inline-block;
-            width: 32%;
+            width: 31%;
             vertical-align: top;
-            text-align: left;
+            text-align: center;
         }
         h5 {
             color: #701A1A;
@@ -180,7 +182,7 @@
         }
         .apps-phone {
             float: left;
-            margin-left: 50px;
+            margin-left: -40px;
         }
         div {
             margin-left: 50%;
@@ -193,7 +195,7 @@
             display: block;
             margin: 50px auto 0;
             width: 150px;
-            font-size: 24px;
+            font-size: 21px;
         }
         blockquote {
             clear: both;
@@ -221,10 +223,12 @@
         background: url(https://dl.dropboxusercontent.com/u/38930645/site%20assets/levels.jpg) 100% 0 no-repeat;
         min-height: 800px;
         .container {
-            width: 40%;
+            width: 33%;
             padding: 50px;
+            padding-left: 300px;
             color: #4D3E34;
             margin: 0;
+
         }
         h4 {
             color: #4D3E34;
@@ -234,7 +238,7 @@
         }
         .btn-large {
             width: 150px;
-            font-size: 24px;
+            font-size: 21px;
         }
     }
     .call {
@@ -248,7 +252,7 @@
         }
         .desc {
             p {
-                width: 50%;
+                width: 60%;
             }
         }
         .actions {
@@ -266,6 +270,7 @@
             .btn-large {
                 float: right;
                 margin-top: 15px;
+                width: 180px;
             }
         }
     }
@@ -302,7 +307,6 @@
         overflow: hidden;
         position: relative;
         height: 800px;
-        max-width: 1280px;
         margin: 0 auto;
         video {
             width: 100%;
