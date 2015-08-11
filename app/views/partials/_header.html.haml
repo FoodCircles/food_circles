@@ -87,15 +87,9 @@
             %li
               = link_to "For Restaurants", main_app.restaurants_path
             %li
-              = link_to "For Students", main_app.students_path
-            %li
-              = link_to "For Organizers", main_app.organizers_path
-            %li
-              = link_to "For Companies", main_app.companies_path
-            %li
               = link_to "For Nonprofits", main_app.nonprofits_path
             %li
-              = link_to "For Butterflies", main_app.socialbutterflies_path
+              = link_to "For Students", main_app.students_path
   / %li{:class => "#{ 'active' if controller_name == 'home' }"}
 - if controller_name == "home" && action_name = "index"
   .mini-header
@@ -124,16 +118,9 @@
               %li
                 = link_to "For Restaurants", main_app.restaurants_path
               %li
-                = link_to "For Students", main_app.students_path
-              %li
-                = link_to "For Organizers", main_app.organizers_path
-              %li
-                = link_to "For Companies", main_app.companies_path
-              %li
                 = link_to "For Nonprofits", main_app.nonprofits_path
               %li
-                = link_to "For Butterflies", main_app.socialbutterflies_path
-
+                = link_to "For Students", main_app.students_path
     .mh-sub
       .container
         .current-goal
