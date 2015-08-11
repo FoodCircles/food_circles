@@ -1,5 +1,5 @@
 #hero.restaurants-hero {
-    height: 455px;
+    height: 550px;
 
     video {
         width: 100%;
@@ -8,12 +8,12 @@
     strong {
         position: absolute;
         display: block;
-        width: 700px;
+        width: 500px;
         text-align: center;
-        top: 50%;
+        top: 54%;
         left: 50%;
-        margin: -60px 0 0 -350px;
-        font-size: 40px;
+        margin: -60px 0 0 -250px;
+        font-size: 32px;
         text-transform: uppercase;
         color: #fff;
     }
@@ -100,7 +100,7 @@
             }
             p {
                 padding-bottom: 0;
-                line-height: 1.25;
+                line-height: 1.35;
             }
             b {
                 font-weight: bold;
@@ -292,6 +292,8 @@
             line-height: 12px;
             text-align: left;
             display: block;
+            padding-left: 15px;
+            padding-top: 5px;
         }
         ul {
             list-style: none;
