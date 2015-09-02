@@ -176,6 +176,9 @@
         margin: 0 auto;
     }
     .apps {
+
+        margin-top: 100px;
+        
         .apps-heading {
             display: block;
             margin: 100px auto;
@@ -223,7 +226,7 @@
         background: url(https://dl.dropboxusercontent.com/u/38930645/site%20assets/levels.jpg) 100% 0 no-repeat;
         min-height: 800px;
         .container {
-            width: 33%;
+            width: 27%;
             padding: 50px;
             padding-left: 300px;
             color: #4D3E34;
@@ -232,6 +235,7 @@
         }
         h4 {
             color: #4D3E34;
+            min-width: 435px;
         }
         p {
             font-size: 18px;
@@ -258,6 +262,7 @@
         .actions {
             img {
                 float: left;
+                height: 100px;
             }
             .action {
                 margin-left: 200px;
