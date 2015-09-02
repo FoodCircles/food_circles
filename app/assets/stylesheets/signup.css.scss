@@ -2,6 +2,12 @@
     color: #4e3e34;
 }
 
+h3 {
+   font-size: 23px;
+   line-height: 1.25em;
+   text-align: center;
+}
+
 h2 {
     font-size: 24px;
     color: #4e3e34;text-align: center;
@@ -46,7 +52,7 @@ background-image: -webkit-gradient(
 }
 
 .placard h1 {
-    font-size: 30px;
+    font-size: 45px;
     font-family: "NeutrafaceSlab", serif;
     font-weight: 700;
     position: relative;
@@ -226,6 +232,7 @@ label {
 .placard.thin {
     width: 70%;
     margin-left: 30%;
+    padding-bottom: 50px;
 }
 
 .placard-sidebar {
@@ -262,8 +269,8 @@ label {
 }
 
 #signup .shifted-input {
-    width: 75% !important;
-    margin-left: 5% !important;
+    width: 70% !important;
+    margin-left: 10% !important;
 }
 
 #signup label {
