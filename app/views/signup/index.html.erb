@@ -30,10 +30,10 @@
             <form id="signup">
 
                 <h1>Tell Us About Yourself…</h1>
-                <p>Always feel free to give us a call too (616-61-FOOD-6) if you have questions or prefer to sign up that way. Our email is hey@joinfoodcircles.org.</p>  
+                <p>Always feel free to give us a call too (616-61-FOOD-6) if you have questions or prefer to sign up that way.</p>  
 
                 <input type="text" name="name" class="field standart small-input" placeholder="Your Name">
-                <input type="text" name="email" class="field standart small-input" placeholder="Email">
+                <input type="text" name="email" class="field standart small-input" placeholder="Your Email">
                 <input type="text" name="restaurant_name" class="field standart small-input" placeholder="Restaurant Name">
                 <input type="text" name="phone" class="field standart small-input" placeholder="Restaurant Phone">
                 <input type="text" name="restaurant_address" class="field standart input" placeholder="Restaurant Address">
@@ -46,7 +46,7 @@
                 <input type="text" name="social_contact" class="field standart input" placeholder="Email of Social Mediaperson">
                 <br>
                 <input type="text" name="first_dish" class="field standart input" placeholder="First 'Buy One, Feed One' Dish">
-                <input type="text" name="first_dish_price" class="field standart shifted-input" placeholder="Dish Menu Price">
+                <input type="text" name="first_dish_price" class="field standart shifted-input" placeholder="Menu Price">
                 <label>
                     <input type="file" name="">
                     Dish Photo (Optional)
@@ -55,8 +55,8 @@
                     <input type="file" name="">
                     Interior/Exterior Photo (Optional)
                 </label>
-                <br>
-                <h1>Set Up Payment</h1>
+                <br><br>
+                <h1>Payment Details</h1>
 
                 <input type="text" name="cc" class="field standart input" placeholder="Credit or Debit Card Number">
 
@@ -66,7 +66,7 @@
                 <p class="small">
                     * Your card will not be charged until you are live on site and app.
                 </p>
-
+                <br><br>
                 <input type="submit" value="Sign Us Up" class="btn-large">
 
                 <img src="https://dl.dropboxusercontent.com/u/38930645/site%20assets/heart.png" alt="Picture" style="margin:50px auto 0;display:block">
@@ -82,7 +82,7 @@
 <script type="text/javascript">
     (function(){
     $('input[name="restaurant_name"]').on('change keyup', function(){
-        $('#sidebar_restaurant_name').text($(this).val() || 'your restaurant');
+        $('#sidebar_restaurant_name').text($(this).val() || 'your restaurant.');
     }).trigger('change');
     })();
     </script>
