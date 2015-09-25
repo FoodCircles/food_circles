@@ -4,7 +4,12 @@ class Api::CharitiesController < ApplicationController
       @charities = Charity.active.all() 
       return_arr = []
       @charities.each do |c|
-        return_arr << {:id => c.id, :name => c.name, :description => c.description}
+        return_arr << {
+          :id => c.id,
+          :name => c.name,
+          :description => c.description,
+          :use_of_funds => nil
+        }
       end
 
       render :json => {:error => false, :content => return_arr}
