@@ -8,7 +8,7 @@ class Api::CharitiesController < ApplicationController
           :id => c.id,
           :name => c.name,
           :description => c.description,
-          :use_of_funds => nil
+          :use_funds => c.use_funds
         }
       end
 
