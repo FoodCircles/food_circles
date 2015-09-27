@@ -24,13 +24,12 @@ class PaymentController < ApplicationController
   def expired
     if params[:coupon].blank?
       payment = Payment.find_by_code(params[:code])
-      payment.state = "Expired"
-      payment.save
     else
       payment = Payment.find_by_coupon(params[:coupon])
-      payment.state = "Expired"
-      payment.save
     end
+
+    payment.state = "Expired" unless payment.used?
+    payment.save
 
     render :nothing => true
   end
