@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def index
-
     if request.subdomain and not ['', 'www','staging', 'testing'].include?(request.subdomain)
       @sub_charity = Charity.active.find_by_subdomain(request.subdomain)
       flash.now[:notice] = "100% of your purchase will be directed to #{@sub_charity.name}."
@@ -8,7 +7,15 @@ class HomeController < ApplicationController
 
     enqueue_mix_panel_event "Visits Home Page"
 
-    @venues = Venue.with_display_offers.page(params[:page]).per_page(9)
+    # Rescue failed ip address geocoding requests
+    begin
+      lat, lon = request.location.coordinates
+    rescue => e
+    end
+
+    @venues = Venue.within_radius_of_location(lat, lon)
+    @venues = @venues.empty? ? Venue.scoped : @venues
+    @venues = @venues.with_display_offers.page(params[:page]).per_page(9)
     @cities = {}
     @news = News.website
 
