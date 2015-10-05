@@ -8,11 +8,11 @@
         .deal-banner
           = image_tag @offer.venue.main_image.thumb("670x313").url
           %h2= @offer.venue.name
-          %span.price
-            %strong= number_to_currency(@min_offer.price, :precision => 0)
-            %small
-              = number_to_currency(@min_offer.original_price, :precision => 0)
-              %i.icon-strike-big.strike
+          -#%span.price
+            -#%strong= number_to_currency(@min_offer.price, :precision => 0)
+            -#%small
+              -#= number_to_currency(@min_offer.original_price, :precision => 0)
+              -#%i.icon-strike-big.strike
           %span.count
             = @min_offer.venue.vouchers_available
             %small left
@@ -55,8 +55,8 @@
             .donation-info
               slide to give more
               %br/
-              .meal-text{ :style => "display: inline-block" }
-                meal donated
+              -#.meal-text{ :style => "display: inline-block" }
+                -#meal donated
             -#.donation-info
             %a.btn-large.full-width.light-shadow.buy-btn{:href => "#", :"data-mixpanel-options" => {:restaurant => @offer.venue.name}.to_json, :"data-mixpanel-event" => "Clicked 'I want this'" } I want this!
             .help
@@ -65,10 +65,10 @@
                 %ul
                   %li
                     %strong 1
-                    Purchase online
+                    Purchase dish online
                   %li
                     %strong 2
-                    Display receipt on arrival
+                    Show Voucher within 30 days
                   %li
                     %strong 3
                     Enjoy with regular food purchase
