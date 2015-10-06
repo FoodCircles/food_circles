@@ -7,15 +7,7 @@ class HomeController < ApplicationController
 
     enqueue_mix_panel_event "Visits Home Page"
 
-    # Rescue failed ip address geocoding requests
-    begin
-      lat, lon = request.location.coordinates
-    rescue => e
-    end
-
-    @venues = Venue.within_radius_of_location(lat, lon)
-    @venues = @venues.empty? ? Venue.scoped : @venues
-    @venues = @venues.with_display_offers.page(params[:page]).per_page(9)
+    @venues = Venue.with_display_offers.page(params[:page]).per_page(9)
     @cities = {}
     @news = News.website
 
