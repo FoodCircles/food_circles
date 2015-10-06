@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def index
-
     if request.subdomain and not ['', 'www','staging', 'testing'].include?(request.subdomain)
       @sub_charity = Charity.active.find_by_subdomain(request.subdomain)
       flash.now[:notice] = "100% of your purchase will be directed to #{@sub_charity.name}."
