@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151006071734) do
+ActiveRecord::Schema.define(:version => 20151007055936) do
 
   create_table "badges", :force => true do |t|
     t.string   "code"
@@ -42,15 +42,15 @@ ActiveRecord::Schema.define(:version => 20151006071734) do
     t.integer  "state_id"
     t.string   "zip"
     t.text     "description"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",                                                                                 :null => false
+    t.datetime "updated_at",                                                                                 :null => false
     t.string   "image_uid"
     t.string   "charity_type"
     t.string   "subdomain"
     t.string   "use_funds"
     t.string   "logo_uid"
     t.string   "photo_uid"
-    t.boolean  "active",       :default => true
+    t.boolean  "active",                                                                   :default => true
     t.integer  "order"
     t.float    "lat"
     t.float    "lon"
@@ -442,6 +442,19 @@ ActiveRecord::Schema.define(:version => 20151006071734) do
     t.string   "timeline_image_uid"
     t.string   "google_maps_url"
     t.string   "times"
+    t.string   "device_id"
+    t.boolean  "visible",                                                                               :default => true
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "cc_num"
+    t.string   "cc_expm"
+    t.string   "cc_expy"
+    t.string   "cc_cvv2"
+    t.string   "cc_zip"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "social_media_email"
   end
 
   add_index "venues", ["slug"], :name => "index_venues_on_slug", :unique => true
