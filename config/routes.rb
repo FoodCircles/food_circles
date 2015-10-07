@@ -14,7 +14,9 @@ Foodcircles::Application.routes.draw do
   get 'payment/send_text' => 'payment#send_text' , :as => "payment_send_text"
 
 
-  get 'signup' => 'signup#index'
+  get 'signup' => 'signup#index', as: 'signup'
+  post 'signup' => 'signup#create'
+  resource :signup, controller: 'signup', only: [:index, :create]
 
   resource :inbox, :controller => 'inbox', :only => [:show, :create]
 

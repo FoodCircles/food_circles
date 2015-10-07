@@ -7,21 +7,21 @@ class VenuesController < ApplicationController
 
     if params[:offline]
       begin
-        @venues = (lat(params[:lat]) ? Venue.active.not_available_with_location(params[:lat],params[:lon]) : Venue.active.not_available)
+        @venues = (lat(params[:lat]) ? Venue.visible.active.not_available_with_location(params[:lat],params[:lon]) : Venue.visible.active.not_available)
         if !@venues || !@venues.any?
-          @venues = Venue.active.not_available
+          @venues = Venue.visible.active.not_available
         end
       rescue
-        @venues = Venue.active.not_available
+        @venues = Venue.visible.active.not_available
       end
     else
       begin
-        @venues = (lat(params[:lat]) ? Venue.active.currently_available_with_location(params[:lat],params[:lon]) : Venue.active.currently_available)
+        @venues = (lat(params[:lat]) ? Venue.visible.active.currently_available_with_location(params[:lat],params[:lon]) : Venue.visible.active.currently_available)
         if !@venues || !@venues.any?
-          @venues = Venue.active.currently_available
+          @venues = Venue.visible.active.currently_available
         end
       rescue
-        @venues = Venue.active.currently_available
+        @venues = Venue.visible.active.currently_available
       end
     end
 
