@@ -254,17 +254,6 @@ class Venue < ActiveRecord::Base
       group("venues.id")
   end
 
-  # Returns all venues within the specified radius. Note radius is in meters
-  def self.within_radius_of_location(latitude, longitude, radius = 80467.2)
-    return Venue.scoped unless latitude && longitude
-    Venue.where(
-      "ST_Distance(venues.latlon, 'POINT(? ?)') <= ?",
-      latitude,
-      longitude,
-      radius
-    )
-  end
-
   def getReviews
     return if !self.reference
     query = "https://maps.googleapis.com/maps/api/place/details/json?reference=#{self.reference}&sensor=true&key=#{PLACES_KEY}"
