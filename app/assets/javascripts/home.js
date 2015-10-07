@@ -22,7 +22,7 @@
 
   var useFundsMsg = function(amt){
     if(typeof usefunds !== 'string' || usefunds === ''){
-      usefunds = "<strong>%amt%</strong> dollar%s% donated";
+      usefunds = '<strong>%amt%</strong> meal%s% donated';
     }
 
     var resultMsg = usefunds.replace(/%amt%/, amt);
@@ -645,7 +645,7 @@
           }
           var amt = Math.floor($('.pay-box').find('.field').val());
           var msg = useFundsMsg(amt);
-          $('.donation-info .meal-text').html(msg);
+          $('.donation-info .meal-text').text(msg);
 
         }
       });

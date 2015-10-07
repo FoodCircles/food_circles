@@ -91,16 +91,12 @@ module ApplicationHelper
     flash_messages.join("\n").html_safe
   end
 
-  def ListCharities(venue = nil)
+  def ListCharities
     if request.subdomain and not ['', 'www', 'staging'].include?(request.subdomain)
       sub_charity = Charity.active.find_by_subdomain(request.subdomain)
       [sub_charity]
     else
-      charities = venue ? Charity.where(state: venue.state) : Charity.scoped
-      if charities.empty?
-        charities = Charity.scoped
-      end
-      charities.active.find_all_by_charity_type('main')
+      Charity.active.find_all_by_charity_type('main')
     end
   end
 end
