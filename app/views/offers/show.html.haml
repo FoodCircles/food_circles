@@ -53,11 +53,11 @@
               -#.slider-wrap
             -#.slider-holder
             .donation-info
-              slide to give more
+              (slide to give more)
               %br/
-              -#.meal-text{ :style => "display: inline-block" }
-                -#meal donated
-            -#.donation-info
+              .meal-text{ :style => "display: inline-block" }
+                dollar donated
+            .donation-info
             %a.btn-large.full-width.light-shadow.buy-btn{:href => "#", :"data-mixpanel-options" => {:restaurant => @offer.venue.name}.to_json, :"data-mixpanel-event" => "Clicked 'I want this'" } I want this!
             .help
               .balloon
