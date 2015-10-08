@@ -256,11 +256,11 @@ class Venue < ActiveRecord::Base
 
   # Returns all venues within the specified radius. Note radius is in meters
   def self.within_radius_of_location(latitude, longitude, radius = 80467.2)
-    return Venue.scoped unless latitude && longitude
+    return Venue.scoped unless latitude.present? && longitude.present?
     Venue.where(
       "ST_Distance(venues.latlon, 'POINT(? ?)') <= ?",
-      latitude,
-      longitude,
+      latitude.to_f,
+      longitude.to_f,
       radius
     )
   end
