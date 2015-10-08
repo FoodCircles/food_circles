@@ -259,8 +259,8 @@ class Venue < ActiveRecord::Base
     return Venue.scoped unless latitude.present? && longitude.present?
     Venue.where(
       "ST_Distance(venues.latlon, 'POINT(? ?)') <= ?",
-      latitude.to_f,
       longitude.to_f,
+      latitude.to_f,
       radius
     )
   end
