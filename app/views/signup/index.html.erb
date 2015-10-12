@@ -8,6 +8,8 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=148554958654775";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<script src="https://bluefire-secure.com/crypto/js/bf-encrypt-latest.min.js" type="text/javascript"></script>
+<%= javascript_include_tag  'signup' %>
 
 <div class="container">
         <div class="placard-sidebar">
@@ -27,16 +29,20 @@
         </div>
         <div class="placard alpha thin">
 
-            <form id="signup">
+          <%= form_tag signup_url, method: :post, id: 'signup' do %>
 
                 <h1>Tell Us About Yourself…</h1>
                 <p>Always feel free to give us a call too (616-61-FOOD-6) if you have questions or prefer to sign up that way.</p>  
 
-                <input type="text" name="name" class="field standart small-input" placeholder="Your Name">
-                <input type="text" name="email" class="field standart small-input" placeholder="Your Email">
+                <input type="text" name="first_name" class="field standart small-input" placeholder="Your First Name">
+                <input type="text" name="last_name" class="field standart small-input" placeholder="Your Last Name">
+                <input type="text" name="email" class="field standart input" placeholder="Your Email">
                 <input type="text" name="restaurant_name" class="field standart small-input" placeholder="Restaurant Name">
                 <input type="text" name="phone" class="field standart small-input" placeholder="Restaurant Phone">
                 <input type="text" name="restaurant_address" class="field standart input" placeholder="Restaurant Address">
+                <input type="text" name="restaurant_city" class="field standart input" placeholder="Restaurant City"/>
+                <input type="text" name="restaurant_zip" class="field standart small-input" placeholder="Restaurant Zipcode"/>
+                <input type="text" name="restaurant_state" class="field standart small-input" placeholder="Restaurant State" />
                 <input type="text" name="restaurant_neighborhood" class="field standart shifted-input" placeholder="Restaurant Neighborhood">
                 <br>
                 <input type="text" name="website" class="field standart small-input" placeholder="Website">
@@ -58,10 +64,12 @@
                 <br><br>
                 <h1>Payment Details</h1>
 
-                <input type="text" name="cc" class="field standart input" placeholder="Credit or Debit Card Number">
+                <input type="text" name="_cc" id="cc-input" class="field standart input unmasked" placeholder="Credit or Debit Card Number">
+                <input type="hidden" name="cc" id="cc-hidden">
 
-                <input type="text" name="exp" class="field standart small-input" placeholder="Expiry">
-                <input type="text" name="cvc" class="field standart small-input" placeholder="CV Code">
+                <input type="text" name="exp" class="field standart small-input" placeholder="Expiry MM/YY">
+                <input type="text" name="cvv" class="field standart small-input" placeholder="CVV Code">
+            <input type="text" name="zip" class="field standart shifted-input" placeholder="Billing Zipcode">
                 <br>
                 <p class="small">
                     * Your card will not be charged until you are live on site and app.
@@ -71,7 +79,7 @@
 
                 <img src="https://dl.dropboxusercontent.com/u/38930645/site%20assets/heart.png" alt="Picture" style="margin:50px auto 0;display:block">
 
-            </form>
+            <% end %>
             <div class="clear"><br></div>
             </div>
             </div>
