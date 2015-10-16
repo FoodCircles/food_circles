@@ -1,7 +1,7 @@
 class Api::CharitiesController < ApplicationController
   def show
     begin
-      loc = Geocoder.search(request.remote_ip).first
+      loc = request.location
       @charities = Charity.within_radius_of_location(loc.latitude, loc.longitude)
       @charities = @charities.empty? ? Charity.scoped : @charities
       @charities = @charities.active.all()
