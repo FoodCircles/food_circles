@@ -1,10 +1,7 @@
 class Api::CharitiesController < ApplicationController
   def show
     begin
-      loc = request.location
-      @charities = Charity.within_radius_of_location(loc.latitude, loc.longitude)
-      @charities = @charities.empty? ? Charity.scoped : @charities
-      @charities = @charities.active.all()
+      @charities = Charity.active.all() 
       return_arr = []
       @charities.each do |c|
         return_arr << {
