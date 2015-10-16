@@ -52,8 +52,7 @@ ActiveRecord::Schema.define(:version => 20151007055936) do
     t.string   "photo_uid"
     t.boolean  "active",                                                                   :default => true
     t.integer  "order"
-    t.float    "lat"
-    t.float    "lon"
+    t.spatial  "latlon",       :limit => {:srid=>4326, :type=>"point", :geographic=>true}
   end
 
   create_table "charity_photos", :force => true do |t|

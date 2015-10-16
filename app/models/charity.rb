@@ -13,9 +13,15 @@ class Charity < ActiveRecord::Base
   has_many :charity_photos
 
   CHARITY_TYPE_ENUM = %w(main extra)
+  SRID = 4326
+
+  set_rgeo_factory_for_column(:latlon,
+                              RGeo::Geographic.spherical_factory(:srid => SRID))
 
   validates :name, presence: true
   validates :charity_type, presence: true, :inclusion => {:in => CHARITY_TYPE_ENUM}
+
+  before_save :update_latlon, :if => :dirty_latlon?
 
   rails_admin do
     edit do
@@ -38,6 +44,16 @@ class Charity < ActiveRecord::Base
     where(:active => true)
   end
 
+  def self.within_radius_of_location(latitude, longitude, radius = 80467.2)
+    return Charity.scoped unless latitude && longitude
+    Charity.where(
+      "ST_Distance(charities.latlon, 'POINT(? ?)') <= ?",
+      longitude.to_f,
+      latitude.to_f,
+      radius
+    )
+  end
+
   def as_json(options={})
     { :id => self.id,
       :name => self.name,
@@ -47,6 +63,26 @@ class Charity < ActiveRecord::Base
       :state => self.state.name,
       :image => self.image.present? ? self.image.url : ''
     }
+  end
+
+  def lat
+    @lat ||= if latlon.present?
+      latlon.lat
+    end
+  end
+
+  def lat=(value)
+    @lat = value
+  end
+
+  def lon
+    @lon ||= if latlon.present?
+      latlon.lon
+    end
+  end
+
+  def lon=(value)
+    @lon = value
   end
 
   def full_address
@@ -85,5 +121,18 @@ class Charity < ActiveRecord::Base
 
   end
 
+  private
 
+  def dirty_latlon?
+    if latlon.present?
+      lat != latlon.lat || lon != latlon.lon
+    else
+      lat.present? && lon.present?
+    end
+  end
+
+  def update_latlon
+    new_latlon = Charity.rgeo_factory_for_column(:latlon).point(lon, lat)
+    self.latlon = new_latlon
+  end
 end
