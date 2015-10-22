@@ -6,6 +6,7 @@ h3 {
    font-size: 23px;
    line-height: 1.25em;
    text-align: center;
+   margin-left: -35px;
 }
 
 h2 {
@@ -15,6 +16,16 @@ h2 {
     font-weight: 700;
     letter-spacing: 1px;
     line-height: 24px;
+}
+
+h5 {
+    font-family: "NeutrafaceSlab", "Neutraface Slab", serif;
+}
+
+.bullets {
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif ;
+    padding-right: 10px;
 }
 
 .placard {
@@ -241,9 +252,11 @@ label {
 }
 
 .placard-sidebar .hilitd {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Dejavu Sans", Verdana, sans-serif;
     padding: 20px 10px 40px;
-    font-size: .8em;
-    text-align: center;
+    font-size: 14px;
+    text-align: left;
+    margin-left: -10px;
 }
 
 #signup {
@@ -284,6 +297,7 @@ label {
 #signup p.small {
     font-size: .6em;
     padding-bottom: 10px;
+    margin-top: 10px;
 }
 
 #signup .btn-large {
